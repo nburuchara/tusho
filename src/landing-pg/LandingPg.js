@@ -22,14 +22,22 @@ const Styles = styled.div `
     margin-top: 15px;
     border-radius: 8px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
 }
 
 .navbar-option-icon {
-    width: 5.5%;
-    border: 1px solid white;
+    width: 5%;
+    // border: 1px solid white;
     height: 100%;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.navbar-option-icon img {
+    width: 35%;
+    margin-right: 10.5%;
 }
 
 `
@@ -49,7 +57,7 @@ export default class LandingPg extends Component {
                 <div className='fullPage'>
                     <div className='navbar'>
                         <div className='navbar-option-icon'>
-                            
+                            <img src='./assets/icons/navbar/menu-icon.png'/>
                         </div>
                         <div className='navbar-logo-icon'>
 
