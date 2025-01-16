@@ -46,19 +46,20 @@ const Styles = styled.div `
 
 .navbar-logo-icon {
     width: 10%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .navbar-logo-icon img {
     width: 80px;
     margin-top: -10px;
+    margin-left: 5%;
 }
 
     // - NAVBAR SEARCH BAR - //
 
 .navbar-search-bar-area {
     width: 75%;
-    border: 1px solid white;
+    // border: 1px solid white;
     display: flex;
     justify-content: space-between;
 }
@@ -67,7 +68,7 @@ const Styles = styled.div `
 
 .navbar-shopping-cart-area {
     width: 10%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 
