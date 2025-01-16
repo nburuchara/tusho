@@ -8,14 +8,22 @@ const Styles = styled.div `
     // - - FULL PAGE - - //
 
 .fullPage {
-    width: 100%;
+    width: 98%;
     height: 100vh;
+    margin: auto;
 }
 
     // - - NAVBAR - - //
 
 .navbar {
-
+    width: 100%;
+    background-color: #FF5733;
+    height: 60px;
+    margin-top: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 `
@@ -34,7 +42,15 @@ export default class LandingPg extends Component {
             <Styles>
                 <div className='fullPage'>
                     <div className='navbar'>
+                        <div className='navbar-option-icon'>
 
+                        </div>
+                        <div className='navbar-logo-icon'>
+
+                        </div>
+                        <div className='navbar-search-bar'>
+
+                        </div>
                     </div>
                 </div>
                 
