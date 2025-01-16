@@ -29,7 +29,7 @@ const Styles = styled.div `
 
 .navbar-option-icon {
     width: 5%;
-    border: 1px solid white;
+    // border: 1px solid white;
     height: 100%;
     text-align: right;
     display: flex;
@@ -50,7 +50,8 @@ const Styles = styled.div `
 }
 
 .navbar-logo-icon img {
-    width: 45%;
+    width: 50%;
+    margin-top: -5px;
 }
 
     // - NAVBAR SEARCH BAR - //
