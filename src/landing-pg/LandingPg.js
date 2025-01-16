@@ -26,6 +26,12 @@ const Styles = styled.div `
     justify-content: space-between;
 }
 
+.navbar-option-icon {
+    width: 5.5%;
+    border: 1px solid white;
+    height: 100%;
+}
+
 `
 
 export default class LandingPg extends Component {
@@ -43,12 +49,15 @@ export default class LandingPg extends Component {
                 <div className='fullPage'>
                     <div className='navbar'>
                         <div className='navbar-option-icon'>
-
+                            
                         </div>
                         <div className='navbar-logo-icon'>
 
                         </div>
                         <div className='navbar-search-bar'>
+
+                        </div>
+                        <div className='navbar-shopping-cart'>
 
                         </div>
                     </div>
