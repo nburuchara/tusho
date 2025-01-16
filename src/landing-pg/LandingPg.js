@@ -50,20 +50,22 @@ const Styles = styled.div `
 }
 
 .navbar-logo-icon img {
-    width: 50%;
-    margin-top: -5px;
+    width: 80px;
+    margin-top: -10px;
 }
 
     // - NAVBAR SEARCH BAR - //
 
-.navbar-search-bar {
+.navbar-search-bar-area {
     width: 75%;
     border: 1px solid white;
+    display: flex;
+    justify-content: space-between;
 }
 
     // - NAVBAR SHOPPING CART - //
 
-.navbar-shopping-cart {
+.navbar-shopping-cart-area {
     width: 10%;
     border: 1px solid black;
 }
@@ -91,10 +93,15 @@ export default class LandingPg extends Component {
                         <div className='navbar-logo-icon'>
                             <img src='./assets/icons/navbar/tusho-logo2.png'/>
                         </div>
-                        <div className='navbar-search-bar'>
+                        <div className='navbar-search-bar-area'>
+                            <div className='navbar-search-bar'>
 
+                            </div>
+                            <div className='navbar-promo-text'>
+
+                            </div>
                         </div>
-                        <div className='navbar-shopping-cart'>
+                        <div className='navbar-shopping-cart-area'>
 
                         </div>
                     </div>
