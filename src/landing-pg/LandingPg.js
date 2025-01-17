@@ -137,11 +137,26 @@ const Styles = styled.div `
     margin-top: 3px;
     margin-bottom: 3px;
     border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .searchResultCell:hover {
     background-color: #fae4e0;
     cursor: pointer;
+}
+
+.searchResultCellImg {
+    width: 10%;
+}
+
+.searchResultCellImg img {
+    width: 60%;
+    border: 1px solid black;
+}
+
+.searchResultCellDetails {
+    width: 90%;
 }
 
 .searchResultCell p {
@@ -449,8 +464,13 @@ export default class LandingPg extends Component {
                                                             onClick={() => this.searchedTermClicked(category, option, option.page)}
                                                             className='searchResultCell' 
                                                             key={option.id}>
-                                                                <p className='searchResultOption'>{option.highlightedName}</p>
-                                                                <p className='searchResultCategory'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null } </p> 
+                                                                <div className='searchResultCellImg'>
+                                                                    <img src={option.img}/>
+                                                                </div>
+                                                                <div className='searchResultCellDetails'>
+                                                                    <p className='searchResultOption'>{option.highlightedName}</p>
+                                                                    <p className='searchResultCategory'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null } </p> 
+                                                                </div>
                                                             </div>
                                                         ))}
                                                     </div>
