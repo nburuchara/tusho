@@ -72,12 +72,16 @@ const Styles = styled.div `
     margin-left: 2.5%;
     width: 60%;
     height: 58.5%;
-    border: 1px solid black;
+    // border: 1.5px solid #222f3e;
     background-color: white;
     border-radius: 20px;
-    border: 1px solid white;
+    // border: 1px solid white;
     display: flex;
     justify-content: space-between;
+}
+
+.navbar-search-bar.clicked {
+    border: 1px solid #222f3e;
 }
 
     // # SEARCH BAR SEARCH ICON
@@ -134,6 +138,13 @@ const Styles = styled.div `
 .navbar-shopping-cart-area {
     width: 10%;
     // border: 1px solid black;
+}
+
+    // - - CSS TRANSITIONS / ANIMATIONS - - //
+
+.navbar-search-bar {
+    transition-duration: var(--def-transition-duration);
+    transition-timing-function: ease-in-out;
 }
 
 
@@ -266,7 +277,6 @@ export default class LandingPg extends Component {
                     resultsFound: false,
                     showDocsPopupHomescreen: true,
                     clearSearchBtn: false,
-                    showTimezones: true
                 });
 
             } else {
@@ -366,7 +376,9 @@ export default class LandingPg extends Component {
                             <img src='./assets/icons/navbar/tusho-logo2.png'/>
                         </div>
                         <div className='navbar-search-bar-area'>
-                            <div className='navbar-search-bar'>
+                            <div 
+                            ref={this.searchBarRef}
+                            className={`navbar-search-bar ${searchBarIsClicked ? 'clicked' : ''}`}>
                                 <div className='navbar-search-bar-icon'>
                                     <img src='/assets/icons/navbar/search-icon.png'/>
                                 </div>

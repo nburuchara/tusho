@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import styled from 'styled-components';
+import GlobalStyles from './CSS/GlobalStyle';
 import LandingPg from './landing-pg/LandingPg'
 import './App.css';
 
@@ -22,7 +23,8 @@ class App extends Component {
 
   render () {
     return (
-      <Styles>
+      <>
+        <GlobalStyles/>
         {this.state.user ? (
           <Router>
             <Routes>
@@ -49,7 +51,7 @@ class App extends Component {
             </Routes>
           </Router>
         )}
-      </Styles>
+      </>
     )
   }}
 
