@@ -55,13 +55,61 @@ const Styles = styled.div `
     margin-left: 5%;
 }
 
-    // - NAVBAR SEARCH BAR - //
+    // - NAVBAR SEARCH BAR / PROMO TEXT AREA - //
 
 .navbar-search-bar-area {
     width: 75%;
     // border: 1px solid white;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+}
+
+.navbar-search-bar {
+    margin-left: 2.5%;
+    width: 60%;
+    height: 58.5%;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-search-bar-icon {
+    width: 6%;
+    // border: 1px solid black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-search-bar-icon img {
+    width: 18.5px;
+}
+
+.navbar-search-bar-textarea {
+    width: 88%;
+    border: 1px solid black;
+}
+
+.navbar-search-bar-clear-btn {
+    width: 6%;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.navbar-search-bar-clear-btn img {
+    width: 18.5px;
+}
+
+.navbar-promo-text {
+    text-align: right;
 }
 
     // - NAVBAR SHOPPING CART - //
@@ -96,10 +144,18 @@ export default class LandingPg extends Component {
                         </div>
                         <div className='navbar-search-bar-area'>
                             <div className='navbar-search-bar'>
+                                <div className='navbar-search-bar-icon'>
+                                    <img src='/assets/icons/navbar/search-icon.png'/>
+                                </div>
+                                <div className='navbar-search-bar-textarea'>
 
+                                </div>
+                                <div className='navbar-search-bar-clear-btn'>
+                                    <img src='/assets/icons/navbar/clear-search-icon.png'/>
+                                </div>
                             </div>
                             <div className='navbar-promo-text'>
-
+                                <p>text</p>
                             </div>
                         </div>
                         <div className='navbar-shopping-cart-area'>
