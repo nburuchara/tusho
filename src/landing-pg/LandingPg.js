@@ -18,7 +18,7 @@ const Styles = styled.div `
 .navbar {
     width: 100%;
     background-color: #FF5733;
-    height: 60px;
+    height: 70px;
     margin-top: 15px;
     border-radius: 8px;
     display: flex;
@@ -50,8 +50,8 @@ const Styles = styled.div `
 }
 
 .navbar-logo-icon img {
-    width: 80px;
-    margin-top: -10px;
+    width: 90px;
+    margin-top: -8px;
     margin-left: 5%;
 }
 
