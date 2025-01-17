@@ -99,7 +99,7 @@ const Styles = styled.div `
     width: 18.5px;
 }
 
-    // # SEARCH BAR TEXTAREA
+    // # SEARCH BAR TEXTAREA 
 
 .navbar-search-bar-textarea {
     width: 88%;
@@ -113,6 +113,49 @@ const Styles = styled.div `
     font-size: 100%;
     border: 1px solid transparent;
 }   
+
+    // # SEARCH RESULTS
+
+.searchResults {
+    margin-left: -6%;
+    width: 112%;
+    // border: 1px solid black;
+    border-radius: 8px;
+    background-color: white;
+    margin-top: 10px;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.searchResults.empty {
+    opacity: 0;
+}
+
+.searchResultCell {
+    padding: 2%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+}
+
+.searchResultCell:hover {
+    background-color: #dae6f3;
+    cursor: pointer;
+}
+
+.searchResultCell p {
+    margin-top: 0px;
+    margin-bottom: 3px;
+}
+
+.searchResultOption {
+
+}
+
+.searchResultCategory {
+    font-size: 80%;
+    margin-bottom: 0px;
+}
 
     // # SEARCH BAR CLEAR SEARCH ICON
 
@@ -340,7 +383,7 @@ export default class LandingPg extends Component {
             const highlightedName = (
                 <span>
                     {option.name.substring(0, startIndex)}
-                    <span style={{ fontWeight: "bold", color: "#4497f1" }}>
+                    <span style={{ fontWeight: "bold", color: "#FF5733" }}>
                         {option.name.substring(startIndex, endIndex)}
                     </span>
                     {option.name.substring(endIndex)}
@@ -378,7 +421,7 @@ export default class LandingPg extends Component {
                         <div className='navbar-search-bar-area'>
                             <div 
                             ref={this.searchBarRef}
-                            className={`navbar-search-bar ${searchBarIsClicked ? 'clicked' : ''}`}>
+                            className={`navbar-search-bar`}>
                                 <div className='navbar-search-bar-icon'>
                                     <img src='/assets/icons/navbar/search-icon.png'/>
                                 </div>
@@ -399,7 +442,7 @@ export default class LandingPg extends Component {
                                             }
                                             {!isSearchLoading && resultsFound && 
                                                 Object.entries(groupedOptions).map(([category, options]) => (
-                                                    <div style={{borderBottom: "1px solid #ccc", paddingTop: "1.5%", paddingBottom: "1.5%", position: "sticky"}} key={category}>
+                                                    <div style={{borderBottom: "1px solid #ccc", position: "sticky"}} key={category}>
                                                         {options.map(option => (
                                                             <div 
                                                             onClick={() => this.searchedTermClicked(category, option, option.page)}
@@ -412,8 +455,8 @@ export default class LandingPg extends Component {
                                                     </div>
                                                 ))
                                             }
-                                            {!isSearchLoading && !resultsFound && 
-                                                <div style={{textAlign: "center"}}>
+                                            {!isSearchLoading && !resultsFound &&
+                                                <div className='navbar-search-bar-no-results' style={{textAlign: "center"}}>
                                                     <p style={{fontWeight: "bold", marginTop: "4.25%", color: "#4497f1"}}>No results found</p>
                                                 </div>
                                             }
