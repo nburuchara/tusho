@@ -151,8 +151,11 @@ const Styles = styled.div `
 }
 
 .searchResultCellImg img {
-    width: 60%;
-    border: 1px solid black;
+    width: 70%;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 .searchResultCellDetails {
@@ -160,12 +163,12 @@ const Styles = styled.div `
 }
 
 .searchResultCell p {
-    margin-top: 0px;
+    margin-top: 5px;
     margin-bottom: 3px;
 }
 
 .searchResultOption {
-
+    // margin-top: 10px;
 }
 
 .searchResultCategory {
