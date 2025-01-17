@@ -30,7 +30,7 @@ const Styles = styled.div `
 
     // - NAVBAR OPTIONS ICON - //
 
-.navbar-option-icon {
+.navbar-options-icon {
     width: 5%;
     // border: 1px solid white;
     height: 100%;
@@ -40,7 +40,7 @@ const Styles = styled.div `
     justify-content: right;
 }
 
-.navbar-option-icon img {
+.navbar-options-icon img {
     width: 35%;
     padding-right: 10.5%;
     padding-left: 10.5%;
@@ -288,6 +288,17 @@ const Styles = styled.div `
     margin: auto;
  }
 
+.navbar-options-dropdown {
+    width: 40%;
+    // border: 1px solid black;
+    height: 500px;
+    margin-top: -10px;
+    margin-left: 1%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar {
@@ -517,7 +528,7 @@ export default class LandingPg extends Component {
             <Styles>
                 <div className='fullPage'>
                     <div className='navbar'>
-                        <div className='navbar-option-icon'>
+                        <div className='navbar-options-icon'>
                             <img src='./assets/icons/navbar/menu-icon.png'/>
                         </div>
                         <div className='navbar-logo-icon'>
@@ -593,6 +604,9 @@ export default class LandingPg extends Component {
                                 <img src='/assets/icons/navbar/profile-btn-icon.png'/>
                             </div>
                         </div>
+                    </div>
+                    <div className='navbar-options-dropdown'>
+
                     </div>
                 </div>
                 
