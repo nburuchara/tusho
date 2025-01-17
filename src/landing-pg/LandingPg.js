@@ -43,6 +43,11 @@ const Styles = styled.div `
 .navbar-option-icon img {
     width: 35%;
     padding-right: 10.5%;
+    padding-left: 10.5%;
+    padding-top: 6.5%;
+    padding-bottom: 8.5%;
+    border: 1px solid white;
+    border-radius: 8px;
 }
 
     // - NAVBAR LOGO - //
