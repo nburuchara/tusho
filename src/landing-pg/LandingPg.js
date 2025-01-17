@@ -409,7 +409,7 @@ export default class LandingPg extends Component {
                                     )}
                                 </div>
                                 <div className='navbar-search-bar-clear-btn'>
-                                    <img src='/assets/icons/navbar/clear-search-icon.png'/>
+                                {this.state.clearSearchBtn && <img onClick={this.clearSearchBar} src='/assets/icons/navbar/clear-search-icon.png'/>}
                                 </div>
                             </div>
                             <div className='navbar-promo-text'>
