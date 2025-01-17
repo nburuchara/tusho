@@ -202,10 +202,17 @@ const Styles = styled.div `
 
 .navbar-search-bar-clear-btn img {
     width: 18.5px;
+    cursor: pointer;
 }
 
 .navbar-promo-text {
     text-align: right;
+}
+
+.navbar-promo-text p {
+    text-align: right;
+    color: white;
+    font-weight: bold;
 }
 
     // - NAVBAR SHOPPING CART - //
@@ -213,7 +220,28 @@ const Styles = styled.div `
 .navbar-shopping-cart-area {
     width: 10%;
     // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.navbar-shopping-cart {
+    width: 35px;
+    height: 35px;
+    // margin-left: 20%;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-right: 1%;
+}
+
+.navbar-shopping-cart img {
+    width: 18px;
+    margin-right: 35px;
+    margin: auto;
+ }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
@@ -508,11 +536,13 @@ export default class LandingPg extends Component {
                                 </div>
                             </div>
                             <div className='navbar-promo-text'>
-                                <p>text</p>
+                                <p><label>⚡️ </label>Order now and get it within <span style={{color:"#ffd755"}}>90 min</span>!</p>
                             </div>
                         </div>
                         <div className='navbar-shopping-cart-area'>
-
+                            <div className='navbar-shopping-cart'>
+                                <img src='/assets/icons/navbar/cart-icon.png'/>
+                            </div>
                         </div>
                     </div>
                 </div>
