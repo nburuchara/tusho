@@ -129,6 +129,7 @@ const Styles = styled.div `
 
 .searchResults.empty {
     opacity: 0;
+    pointer-events: none;
 }
 
 .searchResultCell {
