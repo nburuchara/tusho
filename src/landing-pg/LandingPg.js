@@ -77,6 +77,8 @@ const Styles = styled.div `
     justify-content: space-between;
 }
 
+    // # SEARCH BAR SEARCH ICON
+
 .navbar-search-bar-icon {
     width: 6%;
     // border: 1px solid black;
@@ -90,10 +92,22 @@ const Styles = styled.div `
     width: 18.5px;
 }
 
+    // # SEARCH BAR TEXTAREA
+
 .navbar-search-bar-textarea {
     width: 88%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
+
+.navbar-search-bar-textarea input { 
+    width: 98.5%;
+    height: 88.5%;
+    outline: none;
+    font-size: 100%;
+    border: 1px solid transparent;
+}   
+
+    // # SEARCH BAR CLEAR SEARCH ICON
 
 .navbar-search-bar-clear-btn {
     width: 6%;
@@ -148,7 +162,9 @@ export default class LandingPg extends Component {
                                     <img src='/assets/icons/navbar/search-icon.png'/>
                                 </div>
                                 <div className='navbar-search-bar-textarea'>
-
+                                    <input
+                                    placeholder='Search for an item'
+                                    />
                                 </div>
                                 <div className='navbar-search-bar-clear-btn'>
                                     <img src='/assets/icons/navbar/clear-search-icon.png'/>
