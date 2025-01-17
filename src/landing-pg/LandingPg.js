@@ -373,8 +373,10 @@ export default class LandingPg extends Component {
                                 <div className='navbar-search-bar-textarea'>
                                     <input
                                     id='searchBarInput'
+                                    onClick={this.searchBarClicked}
                                     value={this.state.searchBarInput}
-                                    placeholder='Search for an item'
+                                    placeholder='Search for an item...'
+                                    onChange={this.handleSearchChange}
                                     />
                                     {searchInput !== "" && (
                                         <div className={`searchResults ${this.state.searchBarInput === '' ? 'empty' : ''}`}>
