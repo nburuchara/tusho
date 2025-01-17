@@ -142,7 +142,7 @@ const Styles = styled.div `
 }
 
 .searchResultCell:hover {
-    background-color: #fae4e0;
+    background-color: #faece9;
     cursor: pointer;
 }
 
@@ -152,6 +152,7 @@ const Styles = styled.div `
 
 .searchResultCellImg img {
     width: 70%;
+    height: 70%;
     border: 1px solid white;
     border-radius: 8px;
     padding: 5px;
@@ -159,7 +160,19 @@ const Styles = styled.div `
 }
 
 .searchResultCellDetails {
-    width: 90%;
+    width: 70%;
+    padding-left: 1%;
+}
+
+.searchResultCellLabel {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchResultCellLabel p {
+    font-size: 20%;
 }
 
 .searchResultCell p {
@@ -473,6 +486,9 @@ export default class LandingPg extends Component {
                                                                 <div className='searchResultCellDetails'>
                                                                     <p className='searchResultOption'>{option.highlightedName}</p>
                                                                     <p className='searchResultCategory'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null } </p> 
+                                                                </div>
+                                                                <div className='searchResultCellLabel'>
+                                                                    <p>[click to add to cart]</p>
                                                                 </div>
                                                             </div>
                                                         ))}

@@ -1,9 +1,11 @@
 const results = [
 
-    {"id": "998573", "name": "Tuesday BB Meeting", "category": "Zoom", "subCat1": "Tuesday", "subCat2": "Morning",  "subCat3": "Kansas", "page": "Event types", "img": "/assets/images/products/min-maid-product.png", "lastCat": "top"},
-    {"id": "998573", "name": "The Wild Flowers", "category": "FreeConferenceCall", "subCat1": "Monday", "subCat2": "Evening", "subCat3": "Dubai", "page": "Event types", "lastCat": "top"},
-    {"id": "998573", "name": "Text-Based Study", "category": "Google Meets", "subCat1": "Friday", "subCat2": "Afternoon", "subCat3": "Kenya", "page": "Event types", "lastCat": "top"},
-    {"id": "998573", "name": "The Word Group", "category": "Phone Call", "subCat1": "Saturday", "subCat2": "Evening", "subCat3": "San Francisco", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "Minute Maid: Fruit Cooler (500ml)", "category": "Rina Brands", "page": "Event types", "img": "/assets/images/products/min-maid-product.png", "lastCat": "top"},
+    {"id": "998573", "name": "MacCoffee Classic", "category": "Coffee House", "img": "/assets/images/products/mac-coffee-product.png", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "Blueband Original (200g)", "img": "/assets/images/products/bband-product.png", "category": "Soko Brands", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "Brookside Whole Milk 1L Long Life", "category": "Soko Brands", "img": "/assets/images/products/brookside-milk-product.png", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "Brookside Full Cream Milk Powder Tin (500g)", "category": "Soko Brands", "img": "/assets/images/products/brookside-milk-powder-product.png", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "McVities Digestive Biscuits (400g)", "category": "Soko Brands", "img": "/assets/images/products/digestives-product.png", "page": "Event types", "lastCat": "top"},
   
 
 ]
