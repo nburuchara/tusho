@@ -139,7 +139,7 @@ const Styles = styled.div `
 }
 
 .searchResultCell:hover {
-    background-color: #dae6f3;
+    background-color: #fae4e0;
     cursor: pointer;
 }
 
@@ -457,7 +457,7 @@ export default class LandingPg extends Component {
                                             }
                                             {!isSearchLoading && !resultsFound &&
                                                 <div className='navbar-search-bar-no-results' style={{textAlign: "center"}}>
-                                                    <p style={{fontWeight: "bold", marginTop: "4.25%", color: "#4497f1"}}>No results found</p>
+                                                    <p style={{fontWeight: "bold", marginTop: "4.25%", color: "#FF5733"}}>No results found</p>
                                                 </div>
                                             }
                                         </div>
