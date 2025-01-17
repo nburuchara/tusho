@@ -222,22 +222,62 @@ const Styles = styled.div `
     // border: 1px solid black;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .navbar-shopping-cart {
     width: 35px;
     height: 35px;
-    // margin-left: 20%;
+    margin-left: 15%;
     background-color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     padding-right: 1%;
+    position: relative; /* Add position relative to position the badge */
+    padding: 0; /* Adjust padding to avoid misalignment */
 }
 
 .navbar-shopping-cart img {
+    width: 18px;
+    margin-right: 35px;
+    margin: auto;
+ }
+
+ .navbar-shopping-cart-badge {
+    position: absolute; /* Use absolute to position it relative to the parent */
+    top: -10px; /* Adjust to place it in the top-right */
+    right: -10px;
+    width: 19px; /* Badge width */
+    height: 19px; /* Badge height */
+    background-color: white;
+    border: 1.5px solid #FF5733;
+    color: #FF5733;
+    font-size: 11.5px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* Makes it circular */
+    // box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); /* Optional: Adds a shadow for better visibility */
+}
+
+.navbar-profile-btn {
+    width: 35px;
+    height: 35px;
+    margin-right: 15%;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 1%;
+    position: relative; /* Add position relative to position the badge */
+    padding: 0; /* Adjust padding to avoid misalignment */
+}
+
+.navbar-profile-btn img {
     width: 18px;
     margin-right: 35px;
     margin: auto;
@@ -542,6 +582,10 @@ export default class LandingPg extends Component {
                         <div className='navbar-shopping-cart-area'>
                             <div className='navbar-shopping-cart'>
                                 <img src='/assets/icons/navbar/cart-icon.png'/>
+                                <div className="navbar-shopping-cart-badge">3</div>
+                            </div>
+                            <div className='navbar-profile-btn'>
+                                <img src='/assets/icons/navbar/profile-btn-icon.png'/>
                             </div>
                         </div>
                     </div>
