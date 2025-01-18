@@ -309,7 +309,7 @@ const Styles = styled.div `
 
 .navbar-options-dropdown-left-menu-options {
     position: absolute;
-    border: 1px solid black;
+    // border: 1px solid black;
     border-bottom: 1px solid transparent;
     bottom: 0;
     left: 0;
@@ -322,6 +322,43 @@ const Styles = styled.div `
     height: 69px;
     display: flex;
     justify-content: space-between;
+}
+
+.navbar-options-dropdown-left-menu-options-cell-icon { 
+    width: 27.5%;
+    // border: 1px solid black;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-options-dropdown-left-menu-options-cell-icon img {
+    width: 50%;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.navbar-options-dropdown-left-menu-options-cell-details { 
+    width: 72.5%;
+    // border: 1px solid black;
+
+}
+
+.navbar-options-dropdown-left-menu-options-cell-details h5 {
+    margin-top: 10px;
+    margin-bottom: 3px;
+    // margin-left: 2.5%;
+}
+
+.navbar-options-dropdown-left-menu-options-cell-details p {
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 80%;
 }
 
 .navbar-options-dropdown-right {
@@ -641,19 +678,45 @@ export default class LandingPg extends Component {
                         <div className='navbar-options-dropdown-left'>
                             <div className='navbar-options-dropdown-left-menu-options'>
                                 <div className='navbar-options-dropdown-left-menu-options-cell'>
-
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
+                                        <img src='/assets/icons/navbar/all-brands-dropdown-icon0.png'/>
+                                    </div>
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-details'>
+                                        <h5>Shop All Brands</h5>
+                                        <p>Shop online from 130+ brands</p>
+                                    </div>
                                 </div>
                                 <div className='navbar-options-dropdown-left-menu-options-cell'>
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
 
+                                    </div>
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-details'>
+
+                                    </div>
                                 </div>
                                 <div className='navbar-options-dropdown-left-menu-options-cell'>
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
 
+                                    </div>
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-details'>
+
+                                    </div>
                                 </div>
                                 <div className='navbar-options-dropdown-left-menu-options-cell'>
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
 
+                                    </div>
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-details'>
+
+                                    </div>
                                 </div>
                                 <div className='navbar-options-dropdown-left-menu-options-cell'>
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
 
+                                    </div>
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-details'>
+
+                                    </div>
                                 </div>
                                 <div className='navbar-options-dropdown-left-menu-options-cell'>
 
