@@ -315,6 +315,7 @@ const Styles = styled.div `
     position: relative;
     border: 5px solid white;
     border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .navbar-options-dropdown-left-header {
@@ -444,7 +445,7 @@ const Styles = styled.div `
 }
 
 .navbar-options-dropdown-option-selected {
-    margin-left: 10%;
+    margin-left: 12.5%;
     position: relative;
     height: 93%;
     border-bottom-right-radius: 8px;
@@ -477,6 +478,11 @@ const Styles = styled.div `
     justify-content: space-between;
     border: 1px solid transparent;
     border-radius: 8px;
+    margin-top: 2px;
+}
+
+#top-navbar-dropdown-option-brand-cell {
+    margin-top: 28.5px;
 }
 
 .navbar-options-dropdown-option-brand-cell:hover {
@@ -487,8 +493,8 @@ const Styles = styled.div `
     cursor: pointer;
  }
 
-#top-navbar-dropdown-option-brand-cell {
-    margin-top: 28.5px;
+.navbar-options-dropdown-option-brand-cell:hover .navbar-options-dropdown-option-brand-cell-icon img { 
+    transform: translateX(5px);
 }
 
 .navbar-options-dropdown-option-brand-cell-name {
@@ -518,6 +524,7 @@ const Styles = styled.div `
 
 .navbar-options-dropdown-option-brand-cell-icon img {
     width: 40%;
+    margin-left: -10px;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -528,6 +535,8 @@ const Styles = styled.div `
 .navbar-options-dropdown-left-menu-options-cell-details p,
 .navbar-options-dropdown-left-menu-options-cell-details h5,
 .navbar-options-dropdown-left-menu-options-cell-arrow img,
+.navbar-options-dropdown-option-brand-cell,
+.navbar-options-dropdown-option-brand-cell-icon img
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
@@ -948,6 +957,22 @@ export default class LandingPg extends Component {
                                         <div className='navbar-options-dropdown-option-brand-cell'>
                                             <div className='navbar-options-dropdown-option-brand-cell-name'>
                                                 <p>Garnier</p>
+                                            </div>
+                                            <div className='navbar-options-dropdown-option-brand-cell-icon'>
+                                                <img src='/assets/icons/navbar/external-link-dropdown-icon.png'/>
+                                            </div>
+                                        </div>
+                                        <div className='navbar-options-dropdown-option-brand-cell'>
+                                            <div className='navbar-options-dropdown-option-brand-cell-name'>
+                                                <p>Victory Farms</p>
+                                            </div>
+                                            <div className='navbar-options-dropdown-option-brand-cell-icon'>
+                                                <img src='/assets/icons/navbar/external-link-dropdown-icon.png'/>
+                                            </div>
+                                        </div>
+                                        <div className='navbar-options-dropdown-option-brand-cell'>
+                                            <div className='navbar-options-dropdown-option-brand-cell-name'>
+                                                <p>The Cookie Bar</p>
                                             </div>
                                             <div className='navbar-options-dropdown-option-brand-cell-icon'>
                                                 <img src='/assets/icons/navbar/external-link-dropdown-icon.png'/>
