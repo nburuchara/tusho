@@ -384,6 +384,8 @@ const Styles = styled.div `
     margin-top: 10px;
     margin-bottom: 3px;
     // margin-left: 2.5%;
+    font-family: lexend;
+    font-size: 75%;
 }
 
 .navbar-options-dropdown-left-menu-options-cell-details p {
@@ -391,6 +393,7 @@ const Styles = styled.div `
     margin-bottom: 5px;
     margin-right: 5%;
     font-size: 70%;
+    font-family: lexend;
 }
 
 .navbar-options-dropdown-left-menu-options-cell-arrow {
