@@ -461,10 +461,21 @@ const Styles = styled.div `
     position: absolute;
     bottom: 0;
     right: 0;
+    top: 10;
     width: 100%;
     border: 1px solid black;
     height: 100%;
     border-bottom-right-radius: 8px;
+}
+
+.navbar-options-dropdown-option-brand-cell {
+    height: 6%;
+    width: 100%;
+    border: 1px solid black;
+}
+
+#top-navbar-dropdown-option-brand-cell {
+    margin-top: 22.5px;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -868,8 +879,8 @@ export default class LandingPg extends Component {
                                 <div className='navbar-options-dropdown-option-selected'>
                                     <h4>BRANDS</h4>
                                     <div className='navbar-options-dropdown-option-brands'>
-                                        <div className='navbar-options-dropdown-option-brand-cell'>
-                                            
+                                        <div id='top-navbar-dropdown-option-brand-cell' className='navbar-options-dropdown-option-brand-cell'>
+
                                         </div>
                                     </div>  
                                 </div>
