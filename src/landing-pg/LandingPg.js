@@ -911,7 +911,7 @@ export default class LandingPg extends Component {
                                         <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
                                     </div>
                                 </div>
-                                <div style={{border: "1px solid #FF5733"}} className='navbar-options-dropdown-left-menu-options-cell'>
+                                <div className='navbar-options-dropdown-left-menu-options-cell'>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
                                         <img src='/assets/icons/navbar/exit-dropdown-icon2.png'/>
                                     </div>
