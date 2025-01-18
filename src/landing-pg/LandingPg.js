@@ -122,7 +122,7 @@ const Styles = styled.div `
     // # SEARCH RESULTS
 
 .searchResults {
-    z-index: 0;
+    z-index: 1;
     position: relative;
     margin-left: -6%;
     width: 112%;
@@ -305,24 +305,43 @@ const Styles = styled.div `
 }
 
 .navbar-options-dropdown-left {
+    z-index: 0;
     width: 55%;
     // border-right: 1px solid black;
     position: relative;
+    background-color: #FF5733;
+    position: relative;
+    border: 5px solid white;
+    border-top-left-radius: 8px;
+}
+
+.navbar-options-dropdown-left-header {
+    font-family: lexend;
+    font-size: 100%;
+    margin-left: 5%;
+    color: white;
+    text-decoration: underline;
+}
+
+.navbar-options-dropdown-left-header-img img {
+    width: 100%;
 }
 
 .navbar-options-dropdown-left-menu-options {
     position: absolute;
+    background-color: white;
     // border: 1px solid black;
     border-bottom: 1px solid transparent;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 420px;
+    padding-top: 8px;
 }
 
 .navbar-options-dropdown-left-menu-options-cell {
     margin: auto;
-    width: 95%;
+    width: 100%;
     // border-bottom: 1px solid #5e626a;
     border-radius: 8px;
     height: 69px;
@@ -396,6 +415,10 @@ const Styles = styled.div `
     font-family: lexend;
 }
 
+.navbar-options-dropdown-left-menu-options-cell-details-hiring {
+    color: #FF5733;
+}
+
 .navbar-options-dropdown-left-menu-options-cell-arrow {
     width: 9%;
     // text-align: center;
@@ -405,8 +428,8 @@ const Styles = styled.div `
 }
 
 .navbar-options-dropdown-left-menu-options-cell-arrow img {
-    width: 60%;
-    margin-left: -20px;
+    width: 50%;
+    margin-left: -8px;
 }
 
 .navbar-options-dropdown-right {
@@ -730,14 +753,18 @@ export default class LandingPg extends Component {
                     </div>
                     <div className='navbar-options-dropdown'>
                         <div className='navbar-options-dropdown-left'>
+                            <h3 className='navbar-options-dropdown-left-header'>Thanks for choosing tushop!</h3>
+                            {/* <div className='navbar-options-dropdown-left-header-img'>
+                                <img src='/assets/images/navbar-dropdown/promo-dropdown-header-icon.png'/>
+                            </div> */}
                             <div className='navbar-options-dropdown-left-menu-options'>
                                 <div className='navbar-options-dropdown-left-menu-options-cell'>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
                                         <img src='/assets/icons/navbar/all-brands-dropdown-icon0.png'/>
                                     </div>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-details'>
-                                        <h5>Shop All Brands</h5>
-                                        <p>Shop online from 130+ brands</p>
+                                        <h5>Our Partner Brands</h5>
+                                        <p>Shop online from 130+ of your favorite brands</p>
                                     </div>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-arrow'>
                                         <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
@@ -757,30 +784,51 @@ export default class LandingPg extends Component {
                                 </div>
                                 <div className='navbar-options-dropdown-left-menu-options-cell'>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
-
+                                        <img src='/assets/icons/navbar/sell-with-us-dropdown-icon.png'/>
                                     </div>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-details'>
-
+                                        <h5>Sell With Us</h5>
+                                        <p>Broaden the distribution of your brand with us</p>
+                                    </div>
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-arrow'>
+                                        <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
                                     </div>
                                 </div>
                                 <div className='navbar-options-dropdown-left-menu-options-cell'>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
-
+                                        <img src='/assets/icons/navbar/sell-tickets-dropdown-icon.png'/>
                                     </div>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-details'>
-
+                                        <h5>Sell Tickets</h5>
+                                        <p>Create an events page and sell tickets for your event</p>
+                                    </div>
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-arrow'>
+                                        <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
                                     </div>
                                 </div>
                                 <div className='navbar-options-dropdown-left-menu-options-cell'>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
-
+                                        <img src='/assets/icons/navbar/join-us-dropdown-icon.png'/>
                                     </div>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-details'>
-
+                                        <h5 className='navbar-options-dropdown-left-menu-options-cell-details-hiring'><label style={{color: "#FF5733"}}>●  </label>We're Hiring!</h5>
+                                        <p>Join the tushop team!</p>
+                                    </div>
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-arrow'>
+                                        <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
                                     </div>
                                 </div>
                                 <div className='navbar-options-dropdown-left-menu-options-cell'>
-
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
+                                        <img src='/assets/icons/navbar/exit-dropdown-icon2.png'/>
+                                    </div>
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-details'>
+                                        <h5 className='navbar-options-dropdown-left-menu-options-cell-details-hiring'><label style={{color: "#FF5733"}}>←  </label>Get back to shopping</h5>
+                                        <p>Exit menu</p>
+                                    </div>
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-arrow'>
+                                        <img src='/assets/icons/navbar/clear-search-icon.png'/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
