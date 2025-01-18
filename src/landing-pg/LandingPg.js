@@ -290,6 +290,8 @@ const Styles = styled.div `
     margin: auto;
  }
 
+    // - NAVBAR OPTIONS DROPDOWN - //
+
 .navbar-options-dropdown {
     z-index: 0;
     width: 35%;
@@ -432,10 +434,36 @@ const Styles = styled.div `
     margin-left: -8px;
 }
 
+    // # NAVBAR DROPDOWN OPTIONS (RIGHT SIDE)
+
 .navbar-options-dropdown-right {
     width: 45%;
     background-color: #f3f5f7;
     border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.navbar-options-dropdown-option-selected {
+    margin-left: 25%;
+    position: relative;
+    height: 93%;
+    border-bottom-right-radius: 8px;
+}
+
+.navbar-options-dropdown-option-selected h4 {
+    font-size: 80%;
+    font-family: lexend;
+    margin-top: 35px;
+    color: #222f3e;
+}
+
+.navbar-options-dropdown-option-brands {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    border: 1px solid black;
+    height: 100%;
     border-bottom-right-radius: 8px;
 }
 
@@ -511,6 +539,9 @@ export default class LandingPg extends Component {
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
             searchBarInput: '',
+
+            //* - NAVBAR DROPDOWN OPTIONS INFO - *//
+            showNavbarDropdownOption1: true
 
         }
 
@@ -818,7 +849,7 @@ export default class LandingPg extends Component {
                                         <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
                                     </div>
                                 </div>
-                                <div className='navbar-options-dropdown-left-menu-options-cell'>
+                                <div style={{border: "1px solid #FF5733"}}className='navbar-options-dropdown-left-menu-options-cell'>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
                                         <img src='/assets/icons/navbar/exit-dropdown-icon2.png'/>
                                     </div>
@@ -833,7 +864,16 @@ export default class LandingPg extends Component {
                             </div>
                         </div>
                         <div className='navbar-options-dropdown-right'>
-
+                            {this.state.showNavbarDropdownOption1 && 
+                                <div className='navbar-options-dropdown-option-selected'>
+                                    <h4>BRANDS</h4>
+                                    <div className='navbar-options-dropdown-option-brands'>
+                                        <div className='navbar-options-dropdown-option-brand-cell'>
+                                            
+                                        </div>
+                                    </div>  
+                                </div>
+                            }
                         </div>
                     </div>
                 </div>
