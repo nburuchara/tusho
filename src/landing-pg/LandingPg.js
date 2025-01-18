@@ -289,7 +289,7 @@ const Styles = styled.div `
  }
 
 .navbar-options-dropdown {
-    width: 40%;
+    width: 35%;
     // border: 1px solid black;
     height: 500px;
     margin-top: -10px;
@@ -297,6 +297,30 @@ const Styles = styled.div `
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-options-dropdown-left {
+    width: 55%;
+    // border-right: 1px solid black;
+    position: relative;
+}
+
+.navbar-options-dropdown-left-menu-options {
+    position: absolute;
+    border: 1px solid black;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 420px;
+}
+
+.navbar-options-dropdown-right {
+    width: 45%;
+    background-color: #f3f5f7;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -606,7 +630,14 @@ export default class LandingPg extends Component {
                         </div>
                     </div>
                     <div className='navbar-options-dropdown'>
+                        <div className='navbar-options-dropdown-left'>
+                            <div className='navbar-options-dropdown-left-menu-options'>
 
+                            </div>
+                        </div>
+                        <div className='navbar-options-dropdown-right'>
+
+                        </div>
                     </div>
                 </div>
                 
