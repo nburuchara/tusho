@@ -444,7 +444,7 @@ const Styles = styled.div `
 }
 
 .navbar-options-dropdown-option-selected {
-    margin-left: 25%;
+    margin-left: 10%;
     position: relative;
     height: 93%;
     border-bottom-right-radius: 8px;
@@ -455,6 +455,7 @@ const Styles = styled.div `
     font-family: lexend;
     margin-top: 35px;
     color: #222f3e;
+    margin-left: 1%;
 }
 
 .navbar-options-dropdown-option-brands {
@@ -463,19 +464,60 @@ const Styles = styled.div `
     right: 0;
     top: 10;
     width: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 100%;
     border-bottom-right-radius: 8px;
 }
 
 .navbar-options-dropdown-option-brand-cell {
-    height: 6%;
-    width: 100%;
+    height: 8%;
+    width: 93.5%;
     border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid transparent;
+    border-radius: 8px;
 }
 
+.navbar-options-dropdown-option-brand-cell:hover {
+    background-color: #faece9;
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.09), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
+    // border: 1px solid #222f3e;
+    border: 1px solid #FF5733;
+    cursor: pointer;
+ }
+
 #top-navbar-dropdown-option-brand-cell {
-    margin-top: 22.5px;
+    margin-top: 28.5px;
+}
+
+.navbar-options-dropdown-option-brand-cell-name {
+    width: 80%;
+    // border: 1px solid black;
+    align-items: center;
+    display: flex;
+    justify-content: left;
+}
+
+.navbar-options-dropdown-option-brand-cell-name p {
+    margin-top: -1px;
+    margin-bottom: 0px;
+    margin-left: 2%;
+    font-size: 75%;
+    font-family: poppins;
+}
+
+.navbar-options-dropdown-option-brand-cell-icon {
+    width: 20%;
+    // border: 1px solid black;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-options-dropdown-option-brand-cell-icon img {
+    width: 40%;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -860,7 +902,7 @@ export default class LandingPg extends Component {
                                         <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
                                     </div>
                                 </div>
-                                <div style={{border: "1px solid #FF5733"}}className='navbar-options-dropdown-left-menu-options-cell'>
+                                <div style={{border: "1px solid #FF5733"}} className='navbar-options-dropdown-left-menu-options-cell'>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
                                         <img src='/assets/icons/navbar/exit-dropdown-icon2.png'/>
                                     </div>
@@ -880,7 +922,36 @@ export default class LandingPg extends Component {
                                     <h4>BRANDS</h4>
                                     <div className='navbar-options-dropdown-option-brands'>
                                         <div id='top-navbar-dropdown-option-brand-cell' className='navbar-options-dropdown-option-brand-cell'>
-
+                                            <div className='navbar-options-dropdown-option-brand-cell-name'>
+                                                <p>Soko</p>
+                                            </div>
+                                            <div className='navbar-options-dropdown-option-brand-cell-icon'>
+                                                <img src='/assets/icons/navbar/external-link-dropdown-icon.png'/>
+                                            </div>
+                                        </div>
+                                        <div className='navbar-options-dropdown-option-brand-cell'>
+                                            <div className='navbar-options-dropdown-option-brand-cell-name'>
+                                                <p>Rina</p>
+                                            </div>
+                                            <div className='navbar-options-dropdown-option-brand-cell-icon'>
+                                                <img src='/assets/icons/navbar/external-link-dropdown-icon.png'/>
+                                            </div>
+                                        </div>
+                                        <div className='navbar-options-dropdown-option-brand-cell'>
+                                            <div className='navbar-options-dropdown-option-brand-cell-name'>
+                                                <p>Festive</p>
+                                            </div>
+                                            <div className='navbar-options-dropdown-option-brand-cell-icon'>
+                                                <img src='/assets/icons/navbar/external-link-dropdown-icon.png'/>
+                                            </div>
+                                        </div>
+                                        <div className='navbar-options-dropdown-option-brand-cell'>
+                                            <div className='navbar-options-dropdown-option-brand-cell-name'>
+                                                <p>Garnier</p>
+                                            </div>
+                                            <div className='navbar-options-dropdown-option-brand-cell-icon'>
+                                                <img src='/assets/icons/navbar/external-link-dropdown-icon.png'/>
+                                            </div>
                                         </div>
                                     </div>  
                                 </div>
