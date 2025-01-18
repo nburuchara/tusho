@@ -122,6 +122,8 @@ const Styles = styled.div `
     // # SEARCH RESULTS
 
 .searchResults {
+    z-index: 0;
+    position: relative;
     margin-left: -6%;
     width: 112%;
     // border: 1px solid black;
@@ -289,6 +291,7 @@ const Styles = styled.div `
  }
 
 .navbar-options-dropdown {
+    z-index: 0;
     width: 35%;
     // border: 1px solid black;
     height: 500px;
@@ -318,10 +321,39 @@ const Styles = styled.div `
 }
 
 .navbar-options-dropdown-left-menu-options-cell {
-    border-bottom: 1px solid #5e626a;
+    margin: auto;
+    width: 95%;
+    // border-bottom: 1px solid #5e626a;
+    border-radius: 8px;
     height: 69px;
     display: flex;
     justify-content: space-between;
+}
+
+.navbar-options-dropdown-left-menu-options-cell:hover {
+    background-color: #faece9;
+    // border-bottom: 1px solid #FF5733;
+    cursor: pointer;
+}
+
+.navbar-options-dropdown-left-menu-options-cell:hover .navbar-options-dropdown-left-menu-options-cell-icon img {
+   background-color: #fff;
+   border: 1px solid #FF5733;
+   width: 52.5%;
+}
+
+.navbar-options-dropdown-left-menu-options-cell:hover .navbar-options-dropdown-left-menu-options-cell-details h5 {
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
+}
+
+.navbar-options-dropdown-left-menu-options-cell:hover .navbar-options-dropdown-left-menu-options-cell-details p {
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
+}
+
+.navbar-options-dropdown-left-menu-options-cell:hover .navbar-options-dropdown-left-menu-options-cell-arrow img {
+    transform: translateX(5px);
 }
 
 .navbar-options-dropdown-left-menu-options-cell-icon { 
@@ -335,7 +367,7 @@ const Styles = styled.div `
 
 .navbar-options-dropdown-left-menu-options-cell-icon img {
     width: 50%;
-    border: 1px solid #bbb;
+    border: 1px solid white;
     border-radius: 8px;
     padding-top: 7%;
     padding-bottom: 7%;
@@ -344,9 +376,8 @@ const Styles = styled.div `
 }
 
 .navbar-options-dropdown-left-menu-options-cell-details { 
-    width: 72.5%;
+    width: 63.5%;
     // border: 1px solid black;
-
 }
 
 .navbar-options-dropdown-left-menu-options-cell-details h5 {
@@ -362,6 +393,19 @@ const Styles = styled.div `
     font-size: 70%;
 }
 
+.navbar-options-dropdown-left-menu-options-cell-arrow {
+    width: 9%;
+    // text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-options-dropdown-left-menu-options-cell-arrow img {
+    width: 60%;
+    margin-left: -20px;
+}
+
 .navbar-options-dropdown-right {
     width: 45%;
     background-color: #f3f5f7;
@@ -371,7 +415,13 @@ const Styles = styled.div `
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
-.navbar-search-bar {
+.navbar-search-bar,
+.navbar-options-dropdown-left-menu-options-cell,
+.navbar-options-dropdown-left-menu-options-cell-icon img,
+.navbar-options-dropdown-left-menu-options-cell-details p,
+.navbar-options-dropdown-left-menu-options-cell-details h5,
+.navbar-options-dropdown-left-menu-options-cell-arrow img,
+ {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
 }
@@ -686,6 +736,9 @@ export default class LandingPg extends Component {
                                         <h5>Shop All Brands</h5>
                                         <p>Shop online from 130+ brands</p>
                                     </div>
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-arrow'>
+                                        <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
+                                    </div>
                                 </div>
                                 <div className='navbar-options-dropdown-left-menu-options-cell'>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
@@ -693,7 +746,10 @@ export default class LandingPg extends Component {
                                     </div>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-details'>
                                         <h5>Jipange</h5>
-                                        <p>Subscribe to our delivery service</p>
+                                        <p>Subscribe to our scheduled delivery service</p>
+                                    </div>
+                                    <div className='navbar-options-dropdown-left-menu-options-cell-arrow'>
+                                        <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
                                     </div>
                                 </div>
                                 <div className='navbar-options-dropdown-left-menu-options-cell'>
