@@ -358,7 +358,8 @@ const Styles = styled.div `
 .navbar-options-dropdown-left-menu-options-cell-details p {
     margin-top: 0px;
     margin-bottom: 5px;
-    font-size: 80%;
+    margin-right: 5%;
+    font-size: 70%;
 }
 
 .navbar-options-dropdown-right {
@@ -688,10 +689,11 @@ export default class LandingPg extends Component {
                                 </div>
                                 <div className='navbar-options-dropdown-left-menu-options-cell'>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
-
+                                        <img src='/assets/icons/navbar/jipange-dropdown-icon.png'/>
                                     </div>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-details'>
-
+                                        <h5>Jipange</h5>
+                                        <p>Subscribe to our delivery service</p>
                                     </div>
                                 </div>
                                 <div className='navbar-options-dropdown-left-menu-options-cell'>
