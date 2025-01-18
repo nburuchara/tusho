@@ -310,10 +310,18 @@ const Styles = styled.div `
 .navbar-options-dropdown-left-menu-options {
     position: absolute;
     border: 1px solid black;
+    border-bottom: 1px solid transparent;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 420px;
+}
+
+.navbar-options-dropdown-left-menu-options-cell {
+    border-bottom: 1px solid #5e626a;
+    height: 69px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .navbar-options-dropdown-right {
@@ -632,7 +640,24 @@ export default class LandingPg extends Component {
                     <div className='navbar-options-dropdown'>
                         <div className='navbar-options-dropdown-left'>
                             <div className='navbar-options-dropdown-left-menu-options'>
+                                <div className='navbar-options-dropdown-left-menu-options-cell'>
 
+                                </div>
+                                <div className='navbar-options-dropdown-left-menu-options-cell'>
+
+                                </div>
+                                <div className='navbar-options-dropdown-left-menu-options-cell'>
+
+                                </div>
+                                <div className='navbar-options-dropdown-left-menu-options-cell'>
+
+                                </div>
+                                <div className='navbar-options-dropdown-left-menu-options-cell'>
+
+                                </div>
+                                <div className='navbar-options-dropdown-left-menu-options-cell'>
+
+                                </div>
                             </div>
                         </div>
                         <div className='navbar-options-dropdown-right'>
