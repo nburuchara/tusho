@@ -516,6 +516,7 @@ const Styles = styled.div `
 
 #top-navbar-dropdown-option-brand-cell {
     margin-top: 0px;
+    cursor: pointer;
 }
 
 .navbar-options-dropdown-option-brand-cell:hover {
@@ -624,9 +625,9 @@ const Styles = styled.div `
 .navbar-options-dropdown-option-jipange p {
     margin-top: 0px;
     margin-right: 20%;
-    font-size: 85%;
+    font-size: 80%;
     font-family: poppins;
-    color: #FF5733;
+    // color: #FF5733;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -707,8 +708,8 @@ export default class LandingPg extends Component {
             searchBarInput: '',
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
-            showNavbarDropdownOption1: false,
-            showNavbarDropdownOption2: true,
+            showNavbarDropdownOption1: true,
+            showNavbarDropdownOption2: false,
 
         }
 
