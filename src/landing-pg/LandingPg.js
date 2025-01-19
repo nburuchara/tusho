@@ -471,7 +471,7 @@ const Styles = styled.div `
     margin-left: 1%;
 }
 
-.navbar-options-dropdown-option-brands {
+.navbar-options-dropdown-option-selected-container {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -482,7 +482,7 @@ const Styles = styled.div `
     border-bottom-right-radius: 8px;
 }
 
-.navbar-options-dropdown-option-brands-header div {
+.navbar-options-dropdown-option-selected-container-header div {
     background-color: #FF5733;
     width: fit-content;
     margin-top: 25px;
@@ -491,7 +491,7 @@ const Styles = styled.div `
     // padding-right: 5px;
 }
 
-.navbar-options-dropdown-option-brands-header p {
+.navbar-options-dropdown-option-selected-container-header p {
     margin-bottom: 8px;
     font-size: 60%;
     font-weight: bold;
@@ -500,6 +500,8 @@ const Styles = styled.div `
     padding-left: 8.5px;
     padding-right: 8.5px;
 }
+
+    //! # OPTION 1
 
 .navbar-options-dropdown-option-brand-cell {
     height: 8%;
@@ -610,6 +612,19 @@ const Styles = styled.div `
     width: 35%;
     margin-left: -10px;
     margin-top: 2px;
+}
+
+    //! # OPTION 2
+
+.navbar-options-dropdown-option-jipange {
+    border: 1px solid black;
+    margin-top: 35px;
+}
+
+.navbar-options-dropdown-option-jipange p {
+    margin-top: 0px;
+    margin-right: 20%;
+    font-size: 90%;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -944,7 +959,7 @@ export default class LandingPg extends Component {
                                         <img src='/assets/icons/navbar/all-brands-dropdown-icon0.png'/>
                                     </div>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-details'>
-                                        <h5>Our Partner Brands</h5>
+                                        <h5>Shop by Brand</h5>
                                         <p>Shop online from 130+ of your favorite brands</p>
                                     </div>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-arrow'>
@@ -1017,8 +1032,8 @@ export default class LandingPg extends Component {
                             {this.state.showNavbarDropdownOption1 && 
                                 <div className='navbar-options-dropdown-option-selected'>
                                     <h4>OUR PARTNER BRANDS</h4>
-                                    <div className='navbar-options-dropdown-option-brands'>
-                                        <div className='navbar-options-dropdown-option-brands-header'>
+                                    <div className='navbar-options-dropdown-option-selected-container'>
+                                        <div className='navbar-options-dropdown-option-selected-container-header'>
                                             <div><p>MOST POPULAR</p></div>
                                         </div>
                                         <div id='top-navbar-dropdown-option-brand-cell' className='navbar-options-dropdown-option-brand-cell'>
@@ -1084,8 +1099,10 @@ export default class LandingPg extends Component {
                             {this.state.showNavbarDropdownOption2 && 
                                 <div className='navbar-options-dropdown-option-selected'>
                                     <h4>SCHEDULED DELIVERY</h4>
-                                    <div className='navbar-options-dropdown-option-brands'>
-                                        <p>Schedule your deliveries once and get fresh groceries, household essentials and everyday necessities delivered weekly to your doorstep</p>
+                                    <div className='navbar-options-dropdown-option-selected-container'>
+                                        <div className='navbar-options-dropdown-option-jipange'>
+                                            <p>Schedule your deliveries once and get fresh groceries, household essentials and everyday necessities delivered weekly to your doorstep</p>
+                                        </div>
                                     </div>
                                 </div>
                             }
