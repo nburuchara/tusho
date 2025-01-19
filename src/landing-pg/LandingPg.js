@@ -696,6 +696,38 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+    //! # OPTION 3
+
+.navbar-options-dropdown-option-sell-with-us {
+    // border: 1px solid black;
+    margin-top: 32.5px;
+}
+
+.navbar-options-dropdown-option-sell-with-us p {
+    margin-top: 0px;
+    margin-right: 20%;
+    font-size: 80%;
+    font-family: poppins;
+    // color: #FF5733;
+}
+
+.navbar-options-dropdown-option-sell-with-us span {
+    color: #FF5733;
+    font-weight: bold;
+}
+
+.navbar-options-dropdown-option-sell-with-us button {
+    margin-top: 15px;
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #FF5733;
+    background-color: #FF5733;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
@@ -1239,7 +1271,11 @@ export default class LandingPg extends Component {
                                 <div className='navbar-options-dropdown-option-selected'>
                                     <h4>SELL YOUR <label>PRODUCTS</label></h4>
                                     <div className='navbar-options-dropdown-option-selected-container'>
-
+                                        <div className='navbar-options-dropdown-option-sell-with-us'>
+                                            <p>Sell and deliver your products directly to your customers Nairobi-wide at <label><span>KES 99</span></label>.</p>
+                                            <p>Transform your business with a digital storefront that attracts more customers, offers secure storage in our warehouse, manages payment collections, and ensures seamless doorstep delivery to your customers.</p>
+                                            <button>Sign up</button>
+                                        </div>
                                     </div>
                                 </div>
                             }
