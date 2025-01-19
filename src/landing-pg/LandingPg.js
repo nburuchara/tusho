@@ -1045,6 +1045,12 @@ export default class LandingPg extends Component {
         })
     }
 
+    navbarDropdownOptionSelected = (option) => {
+        this.setState({
+            
+        })
+    }
+
     render () {
 
         const { searchBarIsClicked, searchInput, isSearchLoading, resultsFound, groupedOptions } = this.state;
