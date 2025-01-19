@@ -808,7 +808,8 @@ export default class LandingPg extends Component {
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
             showNavbarDropdownOption2: false,
-            showNavbarDropdownOption3: true,
+            showNavbarDropdownOption3: false,
+            showNavbarDropdownOption4: true,
 
         }
 
@@ -1273,7 +1274,20 @@ export default class LandingPg extends Component {
                                     <div className='navbar-options-dropdown-option-selected-container'>
                                         <div className='navbar-options-dropdown-option-sell-with-us'>
                                             <p>Sell and deliver your products directly to your customers Nairobi-wide at <label><span>KES 99</span></label>.</p>
-                                            <p>Bring your business online with a digital storefront to attracts more customers. We also offer secure storage in our warehouse, manage your payment collections, and ensure seamless doorstep delivery to your customers.</p>
+                                            <p>Bring your business online with a digital storefront to attract more customers. We also offer secure storage in our warehouse, manage your payment collections, and ensure seamless doorstep delivery to your customers.</p>
+                                            <button>Sign up</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                            {this.state.showNavbarDropdownOption4 && 
+                                <div className='navbar-options-dropdown-option-selected'>
+                                    <h4>SELL EVENT <label>TICKETS</label></h4>
+                                    <div className='navbar-options-dropdown-option-selected-container'>
+                                        <div className='navbar-options-dropdown-option-sell-with-us'>
+                                            <p>Sell and deliver your products directly to your customers Nairobi-wide at <label><span>KES 99</span></label>.</p>
+                                            <p>Bring your business online with a digital storefront to attract more customers. We also offer secure storage in our warehouse, manage your payment collections, and ensure seamless doorstep delivery to your customers.</p>
                                             <button>Sign up</button>
                                         </div>
                                     </div>
