@@ -314,6 +314,7 @@ const Styles = styled.div `
     background-color: #FF5733;
     border: 5px solid white;
     border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     border-bottom-left-radius: 8px;
 }
 
@@ -322,7 +323,7 @@ const Styles = styled.div `
     // border: 1px solid black;
     max-width: 65%;
     font-size: 90%;
-    margin-top: 12.5px;
+    margin-top: 11.5px;
     margin-left: 5%;
     color: white;
     text-decoration: underline;
@@ -481,6 +482,25 @@ const Styles = styled.div `
     border-bottom-right-radius: 8px;
 }
 
+.navbar-options-dropdown-option-brands-header div {
+    background-color: #FF5733;
+    width: fit-content;
+    margin-top: 25px;
+    border-radius: 20px;
+    // padding-left: 5px;
+    // padding-right: 5px;
+}
+
+.navbar-options-dropdown-option-brands-header p {
+    margin-bottom: 8px;
+    font-size: 60%;
+    font-weight: bold;
+    color: white;
+    padding: 2.5px;
+    padding-left: 8.5px;
+    padding-right: 8.5px;
+}
+
 .navbar-options-dropdown-option-brand-cell {
     height: 8%;
     width: 93.5%;
@@ -493,13 +513,13 @@ const Styles = styled.div `
 }
 
 #top-navbar-dropdown-option-brand-cell {
-    margin-top: 28.5px;
+    margin-top: 0px;
 }
 
 .navbar-options-dropdown-option-brand-cell:hover {
     background-color: #faece9;
     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.09), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
-    // border: 1px solid #222f3e;
+    border: 1px solid #222f3e;
     border: 1px solid #FF5733;
     cursor: pointer;
  }
@@ -939,8 +959,11 @@ export default class LandingPg extends Component {
                         <div className='navbar-options-dropdown-right'>
                             {this.state.showNavbarDropdownOption1 && 
                                 <div className='navbar-options-dropdown-option-selected'>
-                                    <h4>BRANDS</h4>
+                                    <h4>OUR PARTNER BRANDS</h4>
                                     <div className='navbar-options-dropdown-option-brands'>
+                                        <div className='navbar-options-dropdown-option-brands-header'>
+                                            <div><p>MOST POPULAR</p></div>
+                                        </div>
                                         <div id='top-navbar-dropdown-option-brand-cell' className='navbar-options-dropdown-option-brand-cell'>
                                             <div className='navbar-options-dropdown-option-brand-cell-name'>
                                                 <p>Soko</p>
