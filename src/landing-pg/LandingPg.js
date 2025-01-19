@@ -775,7 +775,8 @@ export default class LandingPg extends Component {
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
-            showNavbarDropdownOption2: true,
+            showNavbarDropdownOption2: false,
+            showNavbarDropdownOption3: true,
 
         }
 
@@ -1230,6 +1231,15 @@ export default class LandingPg extends Component {
                                                 
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                            }
+
+                            {this.state.showNavbarDropdownOption3 && 
+                                <div className='navbar-options-dropdown-option-selected'>
+                                    <h4>SELL YOUR <label>PRODUCTS</label></h4>
+                                    <div className='navbar-options-dropdown-option-selected-container'>
+
                                     </div>
                                 </div>
                             }
