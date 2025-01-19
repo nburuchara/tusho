@@ -471,6 +471,13 @@ const Styles = styled.div `
     margin-left: 1%;
 }
 
+.navbar-options-dropdown-option-selected label {
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
+    text-decoration-thickness: 2px;
+    text-decoration-style: wavy;
+}
+
 .navbar-options-dropdown-option-selected-container {
     position: absolute;
     bottom: 0;
@@ -621,7 +628,7 @@ const Styles = styled.div `
 
 .navbar-options-dropdown-option-jipange {
     // border: 1px solid black;
-    margin-top: 35px;
+    margin-top: 32.5px;
 }
 
 .navbar-options-dropdown-option-jipange p {
@@ -630,6 +637,63 @@ const Styles = styled.div `
     font-size: 80%;
     font-family: poppins;
     // color: #FF5733;
+}
+
+.navbar-options-dropdown-option-jipange-steps {
+    // border: 1px solid black;
+    margin-right: 10%;
+    height: 180px;
+}
+
+.navbar-options-dropdown-option-jipange-step {
+    height: 30px;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-options-dropdown-option-jipange-step-icon {
+    width: 20%;
+    // border: 1px solid black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-options-dropdown-option-jipange-step-icon img {
+    width: 60%;
+}
+
+.navbar-options-dropdown-option-jipange-step-name {
+    width: 80%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.navbar-options-dropdown-option-jipange-step-name p {
+    all: unset;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 10%;
+    font-size: 75%;
+    font-weight: bold;
+    color: #5e626a;
+    font-family: poppins;
+}
+
+.navbar-options-dropdown-option-jipange-steps button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #FF5733;
+    background-color: #FF5733;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -1036,7 +1100,7 @@ export default class LandingPg extends Component {
                         <div className='navbar-options-dropdown-right'>
                             {this.state.showNavbarDropdownOption1 && 
                                 <div className='navbar-options-dropdown-option-selected'>
-                                    <h4>OUR PARTNER BRANDS</h4>
+                                    <h4>OUR PARTNER <label>BRANDS</label></h4>
                                     <div className='navbar-options-dropdown-option-selected-container'>
                                         <div className='navbar-options-dropdown-option-selected-container-header'>
                                             <div><p>MOST POPULAR</p></div>
@@ -1103,10 +1167,68 @@ export default class LandingPg extends Component {
 
                             {this.state.showNavbarDropdownOption2 && 
                                 <div className='navbar-options-dropdown-option-selected'>
-                                    <h4>SCHEDULED DELIVERY</h4>
+                                    <h4>SCHEDULED <label>DELIVERY</label></h4>
                                     <div className='navbar-options-dropdown-option-selected-container'>
                                         <div className='navbar-options-dropdown-option-jipange'>
-                                            <p>Schedule your deliveries once and get fresh groceries, household essentials and everyday necessities delivered weekly to your doorstep.</p>
+                                            <p>Schedule your deliveries once and get fresh groceries, household essentials and everyday necessities delivered weekly to your doorstep - in just 6 easy steps.</p>
+                                            <div className='navbar-options-dropdown-option-jipange-steps'>
+                                                <div className='navbar-options-dropdown-option-jipange-step'>
+                                                    <div className='navbar-options-dropdown-option-jipange-step-icon'>
+                                                        <img src='/assets/icons/navbar/jipange-bullet-1-dropdown-icon.png'/>
+                                                    </div>
+                                                    <div className='navbar-options-dropdown-option-jipange-step-name'>
+                                                        <p>Browse</p>
+                                                    </div>  
+                                                </div>
+
+                                                <div className='navbar-options-dropdown-option-jipange-step'>
+                                                    <div className='navbar-options-dropdown-option-jipange-step-icon'>
+                                                        <img src='/assets/icons/navbar/jipange-bullet-2-dropdown-icon.png'/>
+                                                    </div>
+                                                    <div className='navbar-options-dropdown-option-jipange-step-name'>
+                                                        <p>Select</p>
+                                                    </div>  
+                                                </div>
+
+                                                <div className='navbar-options-dropdown-option-jipange-step'>
+                                                    <div className='navbar-options-dropdown-option-jipange-step-icon'>
+                                                        <img src='/assets/icons/navbar/jipange-bullet-3-dropdown-icon.png'/>
+                                                    </div>
+                                                    <div className='navbar-options-dropdown-option-jipange-step-name'>
+                                                        <p>Make a Jipange</p>
+                                                    </div>  
+                                                </div>
+
+                                                <div className='navbar-options-dropdown-option-jipange-step'>
+                                                    <div className='navbar-options-dropdown-option-jipange-step-icon'>
+                                                        <img src='/assets/icons/navbar/jipange-bullet-4-dropdown-icon.png'/>
+                                                    </div>
+                                                    <div className='navbar-options-dropdown-option-jipange-step-name'>
+                                                        <p>Customize</p>
+                                                    </div>  
+                                                </div>
+
+                                                <div className='navbar-options-dropdown-option-jipange-step'>
+                                                    <div className='navbar-options-dropdown-option-jipange-step-icon'>
+                                                        <img src='/assets/icons/navbar/jipange-bullet-5-dropdown-icon.png'/>
+                                                    </div>
+                                                    <div className='navbar-options-dropdown-option-jipange-step-name'>
+                                                        <p>Schedule</p>
+                                                    </div>  
+                                                </div>
+
+                                                <div className='navbar-options-dropdown-option-jipange-step'>
+                                                    <div className='navbar-options-dropdown-option-jipange-step-icon'>
+                                                        <img src='/assets/icons/navbar/jipange-bullet-6-dropdown-icon.png'/>
+                                                    </div>
+                                                    <div className='navbar-options-dropdown-option-jipange-step-name'>
+                                                        <p>Confirm</p>
+                                                    </div>  
+                                                </div>
+
+                                                <button>Sign up</button>
+                                                
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
