@@ -326,6 +326,7 @@ const Styles = styled.div `
     // border-right: 1px solid black;
     position: relative;
     background-color: #FF5733;
+    padding-top: 0px;
     border: 5px solid white;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -336,8 +337,8 @@ const Styles = styled.div `
     font-family: lexend;
     // border: 1px solid black;
     max-width: 65%;
-    font-size: 90%;
-    margin-top: 11.5px;
+    font-size: 85%;
+    margin-top: 8.5px;
     margin-left: 5%;
     color: white;
     text-decoration: underline;
@@ -353,7 +354,7 @@ const Styles = styled.div `
 
 .navbar-options-dropdown-left-header-img img {
     width: 82.5px;
-    margin-top: -18px;
+    margin-top: -22px;
 }
 
 .navbar-options-dropdown-left-menu-options {
