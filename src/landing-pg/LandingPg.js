@@ -808,14 +808,17 @@ const Styles = styled.div `
     background-color: white;
     border-left: 1px solid black;
     width: 25%;
+    min-height: 800px;
     top: 0;
     bottom: 0;
     right: 0;
 }
 
+    // # NAVBAR CHECKOUT HOME HEADER
+
 .navbar-options-checkout-home-header { 
     height: 82.5px;
-    // border: 1px solid black;
+    border: 1px solid black;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -836,7 +839,7 @@ const Styles = styled.div `
 
 .navbar-options-checkout-home-header-details p {
     font-family: poppins;
-    font-size: 95%;
+    font-size: 105%;
     margin-left: 5%;
 }   
 
@@ -864,6 +867,30 @@ const Styles = styled.div `
 
 .navbar-options-checkout-home-header-icon img:hover {
     filter: grayscale(0%);
+}
+
+    // # NAVBAR CHECKOUT HOME BODY
+
+.navbar-options-checkout-home-body {
+    height: auto;
+    min-height: 515px;
+    // border: 1px solid black;
+    // margin-top: 82.5px;
+    border-bottom: 2px solid blue;
+}
+
+    // # NAVBAR CHECKOUT HOME FOOTER
+
+.navbar-options-checkout-home-footer {
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    min-height: 285px;
+    // border: 1px solid black;
+    // margin-top: 82.5px;
+    border-top: 2px solid red;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -1493,6 +1520,12 @@ export default class LandingPg extends Component {
                             <div className='navbar-options-checkout-home-header-icon'>
                                 <img src='/assets/icons/navbar/clear-search-icon-color.png'/>
                             </div>
+                        </div>
+                        {/* <div className='navbar-options-checkout-home-body'>
+
+                        </div> */}
+                        <div className='navbar-options-checkout-home-footer'>
+
                         </div>
                     </div>
                 </div>
