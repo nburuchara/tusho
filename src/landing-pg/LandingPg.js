@@ -897,14 +897,33 @@ const Styles = styled.div `
 }
 
 .navbar-options-checkout-home-footer-header h3 {
-    width: 50%;
+    margin-top: 13px;
+    margin-bottom: 8px;
 }
 
 .navbar-options-checkout-home-footer-header-label {
+    width: 50%;
+}
+
+.navbar-options-checkout-home-footer-header-label h3 {
     margin-left: 3%;
+    font-family: lexend;
+}
+
+.navbar-options-checkout-home-footer-header-label h5 {
+    margin-left: 3%;
+    margin-top: 5px;
+    font-family: poppins;
+    font-weight: normal;
 }
 
 .navbar-options-checkout-home-footer-header-price {
+    text-align: right;
+    width: 50%;
+    font-family: poppins;
+}
+
+.navbar-options-checkout-home-footer-header-price h3 {
     text-align: right;
     margin-right: 3%;
     font-weight: normal;
@@ -912,10 +931,6 @@ const Styles = styled.div `
 
 .navbar-options-checkout-home-footer-footer {
 
-}
-
-.navbar-options-checkout-home-footer h3 {
-    font-family: lexend;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -1551,8 +1566,13 @@ export default class LandingPg extends Component {
                         </div>
                         <div className='navbar-options-checkout-home-footer'>
                             <div className='navbar-options-checkout-home-footer-header'>
-                                <h3 className='navbar-options-checkout-home-footer-header-label'>Subtotal</h3>
-                                <h3 className='navbar-options-checkout-home-footer-header-price'>KES 32,000.00</h3>
+                                <div className='navbar-options-checkout-home-footer-header-label'>
+                                    <h3>Subtotal</h3>
+                                    <h5>Left to FREE shipping.</h5>
+                                </div>
+                                <div className='navbar-options-checkout-home-footer-header-price'>
+                                    <h3 className=''>KES 950.00</h3>
+                                </div>
                             </div>
                             <div className='navbar-options-checkout-home-footer-footer'>
 
