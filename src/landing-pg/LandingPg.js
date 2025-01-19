@@ -297,7 +297,7 @@ const Styles = styled.div `
     width: 35%;
     // border: 1px solid black;
     height: 500px;
-    margin-top: -10px;
+    margin-top: -6px;
     margin-left: 1%;
     background-color: white;
     border-radius: 8px;
@@ -580,7 +580,7 @@ const Styles = styled.div `
 .navbar-options-dropdown-option-brand-full-list-text h5 {
     margin-top: 0px;
     margin-bottom: 0px;
-    margin-left: 2%;
+    margin-left: 3%;
     font-family: lexend;
 }
 
