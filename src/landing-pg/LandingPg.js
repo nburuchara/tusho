@@ -297,7 +297,7 @@ const Styles = styled.div `
     width: 35%;
     // border: 1px solid black;
     height: 500px;
-    margin-top: -6px;
+    margin-top: -5.5px;
     margin-left: 1%;
     background-color: white;
     border-radius: 8px;
@@ -690,7 +690,8 @@ export default class LandingPg extends Component {
             searchBarInput: '',
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
-            showNavbarDropdownOption1: true
+            showNavbarDropdownOption1: false,
+            showNavbarDropdownOption2: true,
 
         }
 
@@ -1077,6 +1078,15 @@ export default class LandingPg extends Component {
                                             </div>
                                         </div>
                                     </div>  
+                                </div>
+                            }
+
+                            {this.state.showNavbarDropdownOption2 && 
+                                <div className='navbar-options-dropdown-option-selected'>
+                                    <h4>SCHEDULED DELIVERY</h4>
+                                    <div className='navbar-options-dropdown-option-brands'>
+                                        <p>Schedule your deliveries once and get fresh groceries, household essentials and everyday necessities delivered weekly to your doorstep</p>
+                                    </div>
                                 </div>
                             }
                         </div>
