@@ -1273,7 +1273,7 @@ export default class LandingPg extends Component {
                                     <div className='navbar-options-dropdown-option-selected-container'>
                                         <div className='navbar-options-dropdown-option-sell-with-us'>
                                             <p>Sell and deliver your products directly to your customers Nairobi-wide at <label><span>KES 99</span></label>.</p>
-                                            <p>Transform your business with a digital storefront that attracts more customers, offers secure storage in our warehouse, manages payment collections, and ensures seamless doorstep delivery to your customers.</p>
+                                            <p>Bring your business online with a digital storefront that attracts more customers, offers secure storage in our warehouse, manages payment collections, and ensures seamless doorstep delivery to your customers.</p>
                                             <button>Sign up</button>
                                         </div>
                                     </div>
