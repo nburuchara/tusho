@@ -820,7 +820,7 @@ const Styles = styled.div `
 
 .navbar-options-checkout-home-header { 
     height: 82.5px; /* Fixed height for header */
-    border-bottom: 1px solid #ccc;
+    // border-bottom: 1px solid #ccc;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -877,21 +877,21 @@ const Styles = styled.div `
     flex-grow: 1; /* Takes remaining space between header and footer */
     overflow-y: auto; /* Enables scrolling if content overflows */
     padding: 16px; /* Optional: Adds padding around the content */
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
     // # NAVBAR CHECKOUT HOME FOOTER
 
 .navbar-options-checkout-home-footer {
     min-height: 200px; /* Fixed height for footer */
-    border-top: 2px solid red;
+    // border-top: 2px solid red;
     background-color: white;
     z-index: 3;
 }
 
 .navbar-options-checkout-home-footer-header {
     height: 75px;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     justify-content: space-between;
 }
@@ -905,13 +905,13 @@ const Styles = styled.div `
 }
 
 .navbar-options-checkout-home-footer-header-label h3 {
-    margin-left: 3%;
+    margin-left: 5%;
     font-family: lexend;
     margin-bottom: 8px;
 }
 
 .navbar-options-checkout-home-footer-header-label h5 {
-    margin-left: 3%;
+    margin-left: 5%;
     margin-top: 5px;
     font-family: poppins;
     font-weight: normal;
@@ -926,7 +926,7 @@ const Styles = styled.div `
 
 .navbar-options-checkout-home-footer-header-price h3 {
     text-align: right;
-    margin-right: 3%;
+    margin-right: 5%;
     margin-bottom: 3px;
     font-weight: normal;
 }
@@ -934,7 +934,7 @@ const Styles = styled.div `
 .navbar-options-checkout-home-footer-header-price h5 {
     text-align: right;
     margin-top: 0px;
-    margin-right: 3%;
+    margin-right: 5%;
     // font-weight: normal;
     color: #5e626a;
 }
