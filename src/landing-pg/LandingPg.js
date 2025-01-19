@@ -1319,7 +1319,7 @@ export default class LandingPg extends Component {
                                     <h4><label>SCHEDULED</label> DELIVERY</h4>
                                     <div className='navbar-options-dropdown-option-selected-container'>
                                         <div className='navbar-options-dropdown-option-jipange'>
-                                            <p>Schedule your deliveries once and get fresh groceries, household essentials and everyday necessities delivered weekly to your doorstep - in just 6 easy steps.</p>
+                                            <p>Schedule your deliveries once and get fresh groceries, household essentials and everyday necessities delivered weekly to your doorstep - in just <label>6 easy steps</label>.</p>
                                             <div className='navbar-options-dropdown-option-jipange-steps'>
                                                 <div className='navbar-options-dropdown-option-jipange-step'>
                                                     <div className='navbar-options-dropdown-option-jipange-step-icon'>
@@ -1389,7 +1389,7 @@ export default class LandingPg extends Component {
                                     <div className='navbar-options-dropdown-option-selected-container'>
                                         <div className='navbar-options-dropdown-option-sell-with-us'>
                                             <p>Sell and deliver your products directly to your customers Nairobi-wide at <label><span>KES 99</span></label>.</p>
-                                            <p>Bring your business online with a digital storefront to attract more customers. We also offer secure storage in our warehouse, manage your payment collections, and ensure seamless doorstep delivery to your customers.</p>
+                                            <p>Bring your business online with a digital storefront that attract more customers. We also offer secure storage in our warehouse, manage your payment collections, and ensure seamless doorstep delivery to your customers.</p>
                                             <button>Open a store</button>
                                         </div>
                                     </div>
