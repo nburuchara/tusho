@@ -1037,7 +1037,12 @@ export default class LandingPg extends Component {
     }
 
     exitNavbarMenu = () => {
-
+        this.setState({  
+            dropdownMenuDisplayed: false,
+            showNavbarDropdownOption2 : false,
+            showNavbarDropdownOption3 : false,
+            showNavbarDropdownOption4 : false,
+        })
     }
 
     render () {
@@ -1144,39 +1149,39 @@ export default class LandingPg extends Component {
                                         <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
                                     </div>
                                 </div>
-                                <div className='navbar-options-dropdown-left-menu-options-cell'>
-                                    <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
+                                <div className={`navbar-options-dropdown-left-menu-options-cell ${this.state.showNavbarDropdownOption2 ? 'clicked' : ''}`}>
+                                    <div className={`navbar-options-dropdown-left-menu-options-cell-icon ${this.state.showNavbarDropdownOption2 ? 'clicked' : ''}`}>
                                         <img src='/assets/icons/navbar/jipange-dropdown-icon.png'/>
                                     </div>
-                                    <div className='navbar-options-dropdown-left-menu-options-cell-details'>
+                                    <div className={`navbar-options-dropdown-left-menu-options-cell-details ${this.state.showNavbarDropdownOption2 ? 'clicked' : ''}`}>
                                         <h5>Jipange</h5>
                                         <p>Subscribe to our scheduled delivery service</p>
                                     </div>
-                                    <div className='navbar-options-dropdown-left-menu-options-cell-arrow'>
+                                    <div className={`navbar-options-dropdown-left-menu-options-cell-arrow ${this.state.showNavbarDropdownOption2 ? 'clicked' : ''}`}>
                                         <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
                                     </div>
                                 </div>
-                                <div className='navbar-options-dropdown-left-menu-options-cell'>
-                                    <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
+                                <div className={`navbar-options-dropdown-left-menu-options-cell ${this.state.showNavbarDropdownOption3 ? 'clicked' : ''}`}>
+                                    <div className={`navbar-options-dropdown-left-menu-options-cell-icon ${this.state.showNavbarDropdownOption3 ? 'clicked' : ''}`}>
                                         <img src='/assets/icons/navbar/sell-with-us-dropdown-icon.png'/>
                                     </div>
-                                    <div className='navbar-options-dropdown-left-menu-options-cell-details'>
+                                    <div className={`navbar-options-dropdown-left-menu-options-cell-details ${this.state.showNavbarDropdownOption3 ? 'clicked' : ''}`}>
                                         <h5>Sell With Us</h5>
                                         <p>Broaden the distribution of your brand with us</p>
                                     </div>
-                                    <div className='navbar-options-dropdown-left-menu-options-cell-arrow'>
+                                    <div className={`navbar-options-dropdown-left-menu-options-cell-arrow ${this.state.showNavbarDropdownOption3 ? 'clicked' : ''}`}>
                                         <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
                                     </div>
                                 </div>
-                                <div className='navbar-options-dropdown-left-menu-options-cell'>
-                                    <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
+                                <div className={`navbar-options-dropdown-left-menu-options-cell ${this.state.showNavbarDropdownOption4 ? 'clicked' : ''}`}>
+                                    <div className={`navbar-options-dropdown-left-menu-options-cell-icon ${this.state.showNavbarDropdownOption4 ? 'clicked' : ''}`}>
                                         <img src='/assets/icons/navbar/sell-tickets-dropdown-icon.png'/>
                                     </div>
-                                    <div className='navbar-options-dropdown-left-menu-options-cell-details'>
+                                    <div className={`navbar-options-dropdown-left-menu-options-cell-details ${this.state.showNavbarDropdownOption4 ? 'clicked' : ''}`}>
                                         <h5>Sell Tickets</h5>
                                         <p>Create an events page and sell tickets for your event</p>
                                     </div>
-                                    <div className='navbar-options-dropdown-left-menu-options-cell-arrow'>
+                                    <div className={`navbar-options-dropdown-left-menu-options-cell-arrow ${this.state.showNavbarDropdownOption4 ? 'clicked' : ''}`}>
                                         <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
                                     </div>
                                 </div>
@@ -1192,7 +1197,7 @@ export default class LandingPg extends Component {
                                         <img src='/assets/icons/navbar/external-link-dropdown-icon.png'/>
                                     </div>
                                 </div>
-                                <div className='navbar-options-dropdown-left-menu-options-cell'>
+                                <div onClick={this.exitNavbarMenu} className='navbar-options-dropdown-left-menu-options-cell'>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
                                         <img src='/assets/icons/navbar/exit-dropdown-icon2.png'/>
                                     </div>
