@@ -898,7 +898,6 @@ const Styles = styled.div `
 
 .navbar-options-checkout-home-footer-header h3 {
     margin-top: 13px;
-    margin-bottom: 8px;
 }
 
 .navbar-options-checkout-home-footer-header-label {
@@ -908,6 +907,7 @@ const Styles = styled.div `
 .navbar-options-checkout-home-footer-header-label h3 {
     margin-left: 3%;
     font-family: lexend;
+    margin-bottom: 8px;
 }
 
 .navbar-options-checkout-home-footer-header-label h5 {
@@ -915,6 +915,7 @@ const Styles = styled.div `
     margin-top: 5px;
     font-family: poppins;
     font-weight: normal;
+    color: #5e626a;
 }
 
 .navbar-options-checkout-home-footer-header-price {
@@ -926,7 +927,16 @@ const Styles = styled.div `
 .navbar-options-checkout-home-footer-header-price h3 {
     text-align: right;
     margin-right: 3%;
+    margin-bottom: 3px;
     font-weight: normal;
+}
+
+.navbar-options-checkout-home-footer-header-price h5 {
+    text-align: right;
+    margin-top: 0px;
+    margin-right: 3%;
+    // font-weight: normal;
+    color: #5e626a;
 }
 
 .navbar-options-checkout-home-footer-footer {
@@ -1568,10 +1578,11 @@ export default class LandingPg extends Component {
                             <div className='navbar-options-checkout-home-footer-header'>
                                 <div className='navbar-options-checkout-home-footer-header-label'>
                                     <h3>Subtotal</h3>
-                                    <h5>Left to FREE shipping.</h5>
+                                    <h5>Left to FREE shipping:</h5>
                                 </div>
                                 <div className='navbar-options-checkout-home-footer-header-price'>
-                                    <h3 className=''>KES 950.00</h3>
+                                    <h3 className=''>KES 1550.00</h3>
+                                    <h5>KES 4050</h5>
                                 </div>
                             </div>
                             <div className='navbar-options-checkout-home-footer-footer'>
