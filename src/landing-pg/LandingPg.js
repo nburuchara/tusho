@@ -558,6 +558,60 @@ const Styles = styled.div `
     margin-left: -10px;
 }
 
+.navbar-options-dropdown-option-brand-full-list {
+    margin-top: 20px;
+    width: 93.5%;
+    display: flex;
+    justify-content: space-between;
+    // border: 1px solid black;
+    border-radius: 8px;
+    height: 5%;
+    cursor: pointer;
+}
+
+.navbar-options-dropdown-option-brand-full-list-text {
+    width: 80%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.navbar-options-dropdown-option-brand-full-list-text h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 2%;
+    font-family: lexend;
+}
+
+.navbar-options-dropdown-option-brand-full-list:hover {
+    // border: 1px solid #FF5733;
+}
+
+.navbar-options-dropdown-option-brand-full-list:hover .navbar-options-dropdown-option-brand-full-list-text h5 {
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
+    // transform: translateY(-1px);
+}
+
+.navbar-options-dropdown-option-brand-full-list:hover .navbar-options-dropdown-option-brand-full-list-icon img {
+    transform: translateX(5px);
+}
+
+.navbar-options-dropdown-option-brand-full-list-icon {
+    width: 20%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-options-dropdown-option-brand-full-list-icon img { 
+    width: 35%;
+    margin-left: -10px;
+    margin-top: 2px;
+}
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
@@ -567,7 +621,8 @@ const Styles = styled.div `
 .navbar-options-dropdown-left-menu-options-cell-details h5,
 .navbar-options-dropdown-left-menu-options-cell-arrow img,
 .navbar-options-dropdown-option-brand-cell,
-.navbar-options-dropdown-option-brand-cell-icon img
+.navbar-options-dropdown-option-brand-cell-icon img,
+.navbar-options-dropdown-option-brand-full-list-icon img,
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
@@ -1010,6 +1065,14 @@ export default class LandingPg extends Component {
                                             </div>
                                             <div className='navbar-options-dropdown-option-brand-cell-icon'>
                                                 <img src='/assets/icons/navbar/external-link-dropdown-icon.png'/>
+                                            </div>
+                                        </div>
+                                        <div className='navbar-options-dropdown-option-brand-full-list'>
+                                            <div className='navbar-options-dropdown-option-brand-full-list-text'>
+                                                <h5>See all brands</h5>
+                                            </div>
+                                            <div className='navbar-options-dropdown-option-brand-full-list-icon'>
+                                                <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
                                             </div>
                                         </div>
                                     </div>  
