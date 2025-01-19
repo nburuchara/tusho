@@ -503,10 +503,18 @@ const Styles = styled.div `
 }
 
 .navbar-options-dropdown-option-selected {
-    margin-left: 12.5%;
+    margin-left: 0%;
     position: relative;
     height: 93%;
     border-bottom-right-radius: 8px;
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+.navbar-options-dropdown-option-selected.clicked {
+    transform: translateX(12.5%);
+    opacity: 1;
+    transition-property: transform, opacity;
 }
 
 .navbar-options-dropdown-option-selected h4 {
@@ -558,7 +566,7 @@ const Styles = styled.div `
 
 .navbar-options-dropdown-option-brand-cell {
     height: 8%;
-    width: 93.5%;
+    width: 82.5%;
     border: 1px solid black;
     display: flex;
     justify-content: space-between;
@@ -616,7 +624,7 @@ const Styles = styled.div `
 
 .navbar-options-dropdown-option-brand-full-list {
     margin-top: 20px;
-    width: 93.5%;
+    width: 82.5%;
     display: flex;
     justify-content: space-between;
     // border: 1px solid black;
@@ -786,6 +794,8 @@ const Styles = styled.div `
 .navbar-options-dropdown-left-menu-options-cell-details p,
 .navbar-options-dropdown-left-menu-options-cell-details h5,
 .navbar-options-dropdown-left-menu-options-cell-arrow img,
+.navbar-options-dropdown-option-selected,
+.navbar-options-dropdown-option-selected.clicked,
 .navbar-options-dropdown-option-brand-cell,
 .navbar-options-dropdown-option-brand-cell-icon img,
 .navbar-options-dropdown-option-brand-full-list-text h5,
@@ -1047,8 +1057,16 @@ export default class LandingPg extends Component {
 
     navbarDropdownOptionSelected = (option) => {
         this.setState({
-            
+            [`showNavbarDropdownOption${option}`] : true,
         })
+
+        for (let i = 1; i < 5; i++) {
+            if (option !== i) {
+                this.setState({
+                    [`showNavbarDropdownOption${i}`]: false
+                })
+            }
+        }
     }
 
     render () {
@@ -1143,7 +1161,7 @@ export default class LandingPg extends Component {
                                 <img src='/assets/images/navbar-dropdown/promo-dropdown-header-icon3.png'/>
                             </div>
                             <div className='navbar-options-dropdown-left-menu-options'>
-                                <div className={`navbar-options-dropdown-left-menu-options-cell ${this.state.showNavbarDropdownOption1 ? 'clicked' : ''}`}>
+                                <div onClick={() => this.navbarDropdownOptionSelected(1)} className={`navbar-options-dropdown-left-menu-options-cell ${this.state.showNavbarDropdownOption1 ? 'clicked' : ''}`}>
                                     <div className={`navbar-options-dropdown-left-menu-options-cell-icon ${this.state.showNavbarDropdownOption1 ? 'clicked' : ''}`}>
                                         <img src='/assets/icons/navbar/all-brands-dropdown-icon0.png'/>
                                     </div>
@@ -1155,7 +1173,7 @@ export default class LandingPg extends Component {
                                         <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
                                     </div>
                                 </div>
-                                <div className={`navbar-options-dropdown-left-menu-options-cell ${this.state.showNavbarDropdownOption2 ? 'clicked' : ''}`}>
+                                <div onClick={() => this.navbarDropdownOptionSelected(2)} className={`navbar-options-dropdown-left-menu-options-cell ${this.state.showNavbarDropdownOption2 ? 'clicked' : ''}`}>
                                     <div className={`navbar-options-dropdown-left-menu-options-cell-icon ${this.state.showNavbarDropdownOption2 ? 'clicked' : ''}`}>
                                         <img src='/assets/icons/navbar/jipange-dropdown-icon.png'/>
                                     </div>
@@ -1167,7 +1185,7 @@ export default class LandingPg extends Component {
                                         <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
                                     </div>
                                 </div>
-                                <div className={`navbar-options-dropdown-left-menu-options-cell ${this.state.showNavbarDropdownOption3 ? 'clicked' : ''}`}>
+                                <div onClick={() => this.navbarDropdownOptionSelected(3)} className={`navbar-options-dropdown-left-menu-options-cell ${this.state.showNavbarDropdownOption3 ? 'clicked' : ''}`}>
                                     <div className={`navbar-options-dropdown-left-menu-options-cell-icon ${this.state.showNavbarDropdownOption3 ? 'clicked' : ''}`}>
                                         <img src='/assets/icons/navbar/sell-with-us-dropdown-icon.png'/>
                                     </div>
@@ -1179,7 +1197,7 @@ export default class LandingPg extends Component {
                                         <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
                                     </div>
                                 </div>
-                                <div className={`navbar-options-dropdown-left-menu-options-cell ${this.state.showNavbarDropdownOption4 ? 'clicked' : ''}`}>
+                                <div onClick={() => this.navbarDropdownOptionSelected(4)} className={`navbar-options-dropdown-left-menu-options-cell ${this.state.showNavbarDropdownOption4 ? 'clicked' : ''}`}>
                                     <div className={`navbar-options-dropdown-left-menu-options-cell-icon ${this.state.showNavbarDropdownOption4 ? 'clicked' : ''}`}>
                                         <img src='/assets/icons/navbar/sell-tickets-dropdown-icon.png'/>
                                     </div>
@@ -1219,7 +1237,7 @@ export default class LandingPg extends Component {
                         </div>
                         <div className='navbar-options-dropdown-right'>
                             {this.state.showNavbarDropdownOption1 && 
-                                <div className='navbar-options-dropdown-option-selected'>
+                                <div className={`navbar-options-dropdown-option-selected ${this.state.showNavbarDropdownOption1 ? 'clicked' : ''}`}>
                                     <h4>OUR PARTNER <label>BRANDS</label></h4>
                                     <div className='navbar-options-dropdown-option-selected-container'>
                                         <div className='navbar-options-dropdown-option-selected-container-header'>
