@@ -901,17 +901,17 @@ const Styles = styled.div `
 }
 
 .navbar-options-checkout-home-footer-header-label {
-    width: 50%;
+    width: 40%;
 }
 
 .navbar-options-checkout-home-footer-header-label h3 {
-    margin-left: 5%;
+    margin-left: 7%;
     font-family: lexend;
     margin-bottom: 8px;
 }
 
 .navbar-options-checkout-home-footer-header-label h5 {
-    margin-left: 5%;
+    margin-left: 7%;
     margin-top: 5px;
     font-family: poppins;
     font-weight: normal;
@@ -920,14 +920,14 @@ const Styles = styled.div `
 
 .navbar-options-checkout-home-footer-header-price {
     text-align: right;
-    width: 50%;
+    width: 60%;
     font-family: poppins;
 }
 
 .navbar-options-checkout-home-footer-header-price h3 {
     text-align: right;
     margin-right: 5%;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
     font-weight: normal;
 }
 
