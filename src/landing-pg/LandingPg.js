@@ -516,7 +516,7 @@ const Styles = styled.div `
 
 #top-navbar-dropdown-option-brand-cell {
     margin-top: 0px;
-    cursor: pointer;
+    // cursor: pointer;
 }
 
 .navbar-options-dropdown-option-brand-cell:hover {
@@ -585,6 +585,8 @@ const Styles = styled.div `
     margin-bottom: 0px;
     margin-left: 3%;
     font-family: lexend;
+    font-weight: normal;
+    color: #5e626a;
 }
 
 .navbar-options-dropdown-option-brand-full-list:hover {
@@ -708,8 +710,8 @@ export default class LandingPg extends Component {
             searchBarInput: '',
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
-            showNavbarDropdownOption1: true,
-            showNavbarDropdownOption2: false,
+            showNavbarDropdownOption1: false,
+            showNavbarDropdownOption2: true,
 
         }
 
