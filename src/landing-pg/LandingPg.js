@@ -731,6 +731,7 @@ const Styles = styled.div `
 
 .navbar-options-dropdown-option-jipange-step-icon img {
     width: 60%;
+    // filter: grayscale(100%);
 }
 
 .navbar-options-dropdown-option-jipange-step-name {
@@ -1325,7 +1326,7 @@ export default class LandingPg extends Component {
                                                         <img src='/assets/icons/navbar/jipange-bullet-1-dropdown-icon.png'/>
                                                     </div>
                                                     <div className='navbar-options-dropdown-option-jipange-step-name'>
-                                                        <p>Browse</p>
+                                                        <p><label>Browse</label></p>
                                                     </div>  
                                                 </div>
 
@@ -1334,7 +1335,7 @@ export default class LandingPg extends Component {
                                                         <img src='/assets/icons/navbar/jipange-bullet-2-dropdown-icon.png'/>
                                                     </div>
                                                     <div className='navbar-options-dropdown-option-jipange-step-name'>
-                                                        <p>Select</p>
+                                                        <p><label>Select</label></p>
                                                     </div>  
                                                 </div>
 
@@ -1343,7 +1344,7 @@ export default class LandingPg extends Component {
                                                         <img src='/assets/icons/navbar/jipange-bullet-3-dropdown-icon.png'/>
                                                     </div>
                                                     <div className='navbar-options-dropdown-option-jipange-step-name'>
-                                                        <p>Make a Jipange</p>
+                                                        <p><label>Make a Jipange</label></p>
                                                     </div>  
                                                 </div>
 
@@ -1352,7 +1353,7 @@ export default class LandingPg extends Component {
                                                         <img src='/assets/icons/navbar/jipange-bullet-4-dropdown-icon.png'/>
                                                     </div>
                                                     <div className='navbar-options-dropdown-option-jipange-step-name'>
-                                                        <p>Customize</p>
+                                                        <p><label>Customize</label></p>
                                                     </div>  
                                                 </div>
 
@@ -1361,7 +1362,7 @@ export default class LandingPg extends Component {
                                                         <img src='/assets/icons/navbar/jipange-bullet-5-dropdown-icon.png'/>
                                                     </div>
                                                     <div className='navbar-options-dropdown-option-jipange-step-name'>
-                                                        <p>Schedule</p>
+                                                        <p><label>Schedule</label></p>
                                                     </div>  
                                                 </div>
 
@@ -1370,7 +1371,7 @@ export default class LandingPg extends Component {
                                                         <img src='/assets/icons/navbar/jipange-bullet-6-dropdown-icon.png'/>
                                                     </div>
                                                     <div className='navbar-options-dropdown-option-jipange-step-name'>
-                                                        <p>Confirm</p>
+                                                        <p><label>Confirm</label></p>
                                                     </div>  
                                                 </div>
 
