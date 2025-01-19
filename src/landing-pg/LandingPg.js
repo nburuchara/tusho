@@ -883,10 +883,39 @@ const Styles = styled.div `
     // # NAVBAR CHECKOUT HOME FOOTER
 
 .navbar-options-checkout-home-footer {
-    height: 200px; /* Fixed height for footer */
+    min-height: 200px; /* Fixed height for footer */
     border-top: 2px solid red;
     background-color: white;
     z-index: 3;
+}
+
+.navbar-options-checkout-home-footer-header {
+    height: 75px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-options-checkout-home-footer-header h3 {
+    width: 50%;
+}
+
+.navbar-options-checkout-home-footer-header-label {
+    margin-left: 3%;
+}
+
+.navbar-options-checkout-home-footer-header-price {
+    text-align: right;
+    margin-right: 3%;
+    font-weight: normal;
+}
+
+.navbar-options-checkout-home-footer-footer {
+
+}
+
+.navbar-options-checkout-home-footer h3 {
+    font-family: lexend;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -1518,10 +1547,16 @@ export default class LandingPg extends Component {
                                 </div>
                             </div>
                         <div className='navbar-options-checkout-home-body'>
-
+                            
                         </div>
                         <div className='navbar-options-checkout-home-footer'>
+                            <div className='navbar-options-checkout-home-footer-header'>
+                                <h3 className='navbar-options-checkout-home-footer-header-label'>Subtotal</h3>
+                                <h3 className='navbar-options-checkout-home-footer-header-price'>KES 32,000.00</h3>
+                            </div>
+                            <div className='navbar-options-checkout-home-footer-footer'>
 
+                            </div>
                         </div>
                     </div>
                 </div>
