@@ -808,8 +808,8 @@ export default class LandingPg extends Component {
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
             showNavbarDropdownOption2: false,
-            showNavbarDropdownOption3: false,
-            showNavbarDropdownOption4: true,
+            showNavbarDropdownOption3: true,
+            showNavbarDropdownOption4: false,
 
         }
 
@@ -1114,7 +1114,7 @@ export default class LandingPg extends Component {
                                         <p>Join the tushop team!</p>
                                     </div>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-arrow'>
-                                        <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
+                                        <img src='/assets/icons/navbar/external-link-dropdown-icon.png'/>
                                     </div>
                                 </div>
                                 <div className='navbar-options-dropdown-left-menu-options-cell'>
@@ -1275,7 +1275,7 @@ export default class LandingPg extends Component {
                                         <div className='navbar-options-dropdown-option-sell-with-us'>
                                             <p>Sell and deliver your products directly to your customers Nairobi-wide at <label><span>KES 99</span></label>.</p>
                                             <p>Bring your business online with a digital storefront to attract more customers. We also offer secure storage in our warehouse, manage your payment collections, and ensure seamless doorstep delivery to your customers.</p>
-                                            <button>Sign up</button>
+                                            <button>Open a store</button>
                                         </div>
                                     </div>
                                 </div>
@@ -1288,7 +1288,7 @@ export default class LandingPg extends Component {
                                         <div className='navbar-options-dropdown-option-sell-with-us'>
                                             <p>Set up an events page, sell tickets effortlessly, and host a memorable event today with no monthly fees or commissions — just a <label><span>3%</span></label> processing fee.</p>
                                             {/* <p>Bring your business online with a digital storefront to attract more customers. We also offer secure storage in our warehouse, manage your payment collections, and ensure seamless doorstep delivery to your customers.</p> */}
-                                            <button>Sign up</button>
+                                            <button>Create an event</button>
                                         </div>
                                     </div>
                                 </div>
