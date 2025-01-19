@@ -618,6 +618,10 @@ const Styles = styled.div `
     font-family: poppins;
 }
 
+.navbar-options-dropdown-option-brand-cell-name span {
+    color: #1980ff;
+}
+
 .navbar-options-dropdown-option-brand-cell-icon {
     width: 20%;
     // border: 1px solid black;
@@ -1401,7 +1405,7 @@ export default class LandingPg extends Component {
                                     <h4>SELL <label>EVENT TICKETS</label></h4>
                                     <div className='navbar-options-dropdown-option-selected-container'>
                                         <div className='navbar-options-dropdown-option-sell-with-us'>
-                                            <p>Set up an events page, sell tickets effortlessly, and host a memorable event today with no monthly fees or commissions — just a <label><span>3%</span></label> processing fee.</p>
+                                            <p>Set up an events page, sell tickets effortlessly, and host a memorable event with no monthly fees or commissions — just a <label><span>3%</span></label> processing fee.</p>
                                             {/* <p>Bring your business online with a digital storefront to attract more customers. We also offer secure storage in our warehouse, manage your payment collections, and ensure seamless doorstep delivery to your customers.</p> */}
                                             <button>Create an event</button>
                                         </div>
