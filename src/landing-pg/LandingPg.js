@@ -617,14 +617,16 @@ const Styles = styled.div `
     //! # OPTION 2
 
 .navbar-options-dropdown-option-jipange {
-    border: 1px solid black;
+    // border: 1px solid black;
     margin-top: 35px;
 }
 
 .navbar-options-dropdown-option-jipange p {
     margin-top: 0px;
     margin-right: 20%;
-    font-size: 90%;
+    font-size: 85%;
+    font-family: poppins;
+    color: #FF5733;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -1101,7 +1103,7 @@ export default class LandingPg extends Component {
                                     <h4>SCHEDULED DELIVERY</h4>
                                     <div className='navbar-options-dropdown-option-selected-container'>
                                         <div className='navbar-options-dropdown-option-jipange'>
-                                            <p>Schedule your deliveries once and get fresh groceries, household essentials and everyday necessities delivered weekly to your doorstep</p>
+                                            <p>Schedule your deliveries once and get fresh groceries, household essentials and everyday necessities delivered weekly to your doorstep.</p>
                                         </div>
                                     </div>
                                 </div>
