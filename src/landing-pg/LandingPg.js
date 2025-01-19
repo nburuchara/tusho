@@ -312,7 +312,6 @@ const Styles = styled.div `
     // border-right: 1px solid black;
     position: relative;
     background-color: #FF5733;
-    position: relative;
     border: 5px solid white;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -320,14 +319,26 @@ const Styles = styled.div `
 
 .navbar-options-dropdown-left-header {
     font-family: lexend;
-    font-size: 100%;
+    // border: 1px solid black;
+    max-width: 65%;
+    font-size: 90%;
+    margin-top: 12.5px;
     margin-left: 5%;
     color: white;
     text-decoration: underline;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.navbar-options-dropdown-left-header-img {
+    display: flex;
+    justify-content: right;
 }
 
 .navbar-options-dropdown-left-header-img img {
-    width: 100%;
+    width: 82.5px;
+    margin-top: -18px;
 }
 
 .navbar-options-dropdown-left-menu-options {
@@ -846,10 +857,10 @@ export default class LandingPg extends Component {
                     </div>
                     <div className='navbar-options-dropdown'>
                         <div className='navbar-options-dropdown-left'>
-                            <h3 className='navbar-options-dropdown-left-header'>Thanks for choosing tushop!</h3>
-                            {/* <div className='navbar-options-dropdown-left-header-img'>
-                                <img src='/assets/images/navbar-dropdown/promo-dropdown-header-icon.png'/>
-                            </div> */}
+                            <h5 className='navbar-options-dropdown-left-header'>Save up to 16% on your weekly shopping!</h5>
+                            <div className='navbar-options-dropdown-left-header-img'>
+                                <img src='/assets/images/navbar-dropdown/promo-dropdown-header-icon3.png'/>
+                            </div>
                             <div className='navbar-options-dropdown-left-menu-options'>
                                 <div className='navbar-options-dropdown-left-menu-options-cell'>
                                     <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
