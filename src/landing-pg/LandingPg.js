@@ -300,7 +300,7 @@ const Styles = styled.div `
 
 .navbar-options-dropdown {
     z-index: 0;
-    width: 35%;
+    width: 40%;
     // border: 1px solid black;
     height: 500px;
     margin-top: -5.5px;
