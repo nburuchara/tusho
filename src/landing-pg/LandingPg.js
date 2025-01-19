@@ -363,24 +363,31 @@ const Styles = styled.div `
     border-bottom: 1px solid transparent;
     bottom: 0;
     left: 0;
-    width: 100%;
+    margin-left: -1%;
+    width: 102%;
     height: 420px;
     padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 .navbar-options-dropdown-left-menu-options-cell {
     margin: auto;
-    width: 100%;
-    // border-bottom: 1px solid #5e626a;
+    width: 95%;
+    border: 1px solid transparent;
     border-radius: 8px;
     height: 69px;
     display: flex;
     justify-content: space-between;
 }
 
+.navbar-options-dropdown-left-menu-options-cell.clicked {
+    border: 1px solid #FF5733;
+    background-color: #faece9;
+}
+
 .navbar-options-dropdown-left-menu-options-cell:hover {
     background-color: #faece9;
-    // border-bottom: 1px solid #FF5733;
+    border: 1px solid #FF5733;
     cursor: pointer;
 }
 
@@ -421,6 +428,13 @@ const Styles = styled.div `
     padding-bottom: 7%;
     padding-left: 10%;
     padding-right: 10%;
+    transition-property: width, background-color, border;
+}
+
+.navbar-options-dropdown-left-menu-options-cell-icon.clicked img {
+    width: 52.5%;
+    background-color: white;
+    border: 1px solid #FF5733;
 }
 
 .navbar-options-dropdown-left-menu-options-cell-details { 
@@ -434,6 +448,12 @@ const Styles = styled.div `
     // margin-left: 2.5%;
     font-family: lexend;
     font-size: 75%;
+    transition-property: text-decoration, text-decoration-color;
+}
+
+.navbar-options-dropdown-left-menu-options-cell-details.clicked h5 {
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
 }
 
 .navbar-options-dropdown-left-menu-options-cell-details p {
@@ -442,6 +462,12 @@ const Styles = styled.div `
     margin-right: 5%;
     font-size: 70%;
     font-family: lexend;
+    transition-property: text-decoration, text-decoration-color;
+}
+
+.navbar-options-dropdown-left-menu-options-cell-details.clicked p {
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
 }
 
 .navbar-options-dropdown-left-menu-options-cell-details-hiring {
@@ -454,11 +480,16 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    transition-property: transform;
 }
 
 .navbar-options-dropdown-left-menu-options-cell-arrow img {
     width: 50%;
     margin-left: -8px;
+}
+
+.navbar-options-dropdown-left-menu-options-cell-arrow.clicked img {
+    transform: translateX(5px);
 }
 
     // # NAVBAR DROPDOWN OPTIONS (RIGHT SIDE)
@@ -608,6 +639,10 @@ const Styles = styled.div `
     font-family: lexend;
     font-weight: normal;
     color: #5e626a;
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
+    text-decoration-thickness: 2px;
+    text-decoration-style: wavy;
 }
 
 .navbar-options-dropdown-option-brand-full-list:hover {
@@ -829,6 +864,11 @@ export default class LandingPg extends Component {
 
             dropdownMenuDisplayed: false,
 
+            dropdownMenuOption1Selected: true,
+            dropdownMenuOption2Selected: false,
+            dropdownMenuOption3Selected: false,
+            dropdownMenuOption4Selected: false,
+
         }
 
         //* - TRIE NODE (for search functionality) - *//
@@ -984,6 +1024,14 @@ export default class LandingPg extends Component {
     }
 
     navbarMenuClicked = () => {
+        if (this.state.dropdownMenuDisplayed === false) {
+            this.setState({ 
+                showNavbarDropdownOption1 : true,
+                showNavbarDropdownOption2 : false,
+                showNavbarDropdownOption3 : false,
+                showNavbarDropdownOption4 : false,
+             })
+        }
         this.setState((prevState) => ({ dropdownMenuDisplayed: !prevState.dropdownMenuDisplayed }));
     }
 
@@ -1083,15 +1131,15 @@ export default class LandingPg extends Component {
                                 <img src='/assets/images/navbar-dropdown/promo-dropdown-header-icon3.png'/>
                             </div>
                             <div className='navbar-options-dropdown-left-menu-options'>
-                                <div className='navbar-options-dropdown-left-menu-options-cell'>
-                                    <div className='navbar-options-dropdown-left-menu-options-cell-icon'>
+                                <div className={`navbar-options-dropdown-left-menu-options-cell ${this.state.showNavbarDropdownOption1 ? 'clicked' : ''}`}>
+                                    <div className={`navbar-options-dropdown-left-menu-options-cell-icon ${this.state.showNavbarDropdownOption1 ? 'clicked' : ''}`}>
                                         <img src='/assets/icons/navbar/all-brands-dropdown-icon0.png'/>
                                     </div>
-                                    <div className='navbar-options-dropdown-left-menu-options-cell-details'>
+                                    <div className={`navbar-options-dropdown-left-menu-options-cell-details ${this.state.showNavbarDropdownOption1 ? 'clicked' : ''}`}>
                                         <h5>Shop by Brand</h5>
                                         <p>Shop online from 130+ of your favorite brands</p>
                                     </div>
-                                    <div className='navbar-options-dropdown-left-menu-options-cell-arrow'>
+                                    <div className={`navbar-options-dropdown-left-menu-options-cell-arrow ${this.state.showNavbarDropdownOption1 ? 'clicked' : ''}`}>
                                         <img src='/assets/icons/navbar/right-arrow-dropdow-icon.png'/>
                                     </div>
                                 </div>
