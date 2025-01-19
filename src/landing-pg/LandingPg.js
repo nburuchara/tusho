@@ -396,7 +396,7 @@ const Styles = styled.div `
 .navbar-options-dropdown-left-menu-options-cell:hover .navbar-options-dropdown-left-menu-options-cell-icon img {
    background-color: #fff;
    border: 1px solid #FF5733;
-   width: 52.5%;
+//    width: 52.5%;
 }
 
 .navbar-options-dropdown-left-menu-options-cell:hover .navbar-options-dropdown-left-menu-options-cell-details h5 {
@@ -434,7 +434,7 @@ const Styles = styled.div `
 }
 
 .navbar-options-dropdown-left-menu-options-cell-icon.clicked img {
-    width: 52.5%;
+    // width: 52.5%;
     background-color: white;
     border: 1px solid #FF5733;
 }
@@ -806,16 +806,64 @@ const Styles = styled.div `
 .navbar-options-checkout-home {
     position: fixed;
     background-color: white;
-    border: 1px solid black;
+    border-left: 1px solid black;
     width: 25%;
     top: 0;
     bottom: 0;
     right: 0;
 }
 
-
 .navbar-options-checkout-home-header { 
+    height: 82.5px;
+    // border: 1px solid black;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 
+.navbar-options-checkout-home-header-details {
+    width: 80%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}  
+
+.navbar-options-checkout-home-header-details label {
+    font-weight: bold;
+    color: #FF5733;
+}
+
+.navbar-options-checkout-home-header-details p {
+    font-family: poppins;
+    font-size: 95%;
+    margin-left: 5%;
+}   
+
+.navbar-options-checkout-home-header-details span {
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
+    text-decoration-thickness: 2px;
+    text-decoration-style: wavy;
+}   
+
+.navbar-options-checkout-home-header-icon {
+    width: 20%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-options-checkout-home-header-icon img {
+    width: 40%;
+    filter: grayscale(100%);
+    transition-property: filter;
+    cursor: pointer;
+}
+
+.navbar-options-checkout-home-header-icon img:hover {
+    filter: grayscale(0%);
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -832,6 +880,7 @@ const Styles = styled.div `
 .navbar-options-dropdown-option-brand-full-list-icon img,
 .navbar-options-dropdown,
 .navbar-options-icon,
+.navbar-options-checkout-home-header-icon img,
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
@@ -909,6 +958,9 @@ export default class LandingPg extends Component {
             dropdownMenuOption2Selected: false,
             dropdownMenuOption3Selected: false,
             dropdownMenuOption4Selected: false,
+
+            //* - NAVBAR SHOPPING CART INFO - *//
+            totalCartItems: 3,
 
         }
 
@@ -1434,7 +1486,14 @@ export default class LandingPg extends Component {
                     </div>
 
                     <div className='navbar-options-checkout-home'>
-
+                        <div className='navbar-options-checkout-home-header'>
+                            <div className='navbar-options-checkout-home-header-details'>
+                                <p>Your cart has (<label>{this.state.totalCartItems}</label>) <span>items</span></p>
+                            </div>
+                            <div className='navbar-options-checkout-home-header-icon'>
+                                <img src='/assets/icons/navbar/clear-search-icon-color.png'/>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
