@@ -1581,8 +1581,8 @@ export default class LandingPg extends Component {
                                     <h5>Left to FREE shipping:</h5>
                                 </div>
                                 <div className='navbar-options-checkout-home-footer-header-price'>
-                                    <h3 className=''>KES 1550.00</h3>
-                                    <h5>KES 4050</h5>
+                                    <h3 className=''>KES 950.00</h3>
+                                    <h5>KES 1550</h5>
                                 </div>
                             </div>
                             <div className='navbar-options-checkout-home-footer-footer'>
