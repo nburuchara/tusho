@@ -628,7 +628,7 @@ const Styles = styled.div `
 }
 
 .navbar-options-dropdown-option-brand-cell-icon img {
-    width: 40%;
+    width: 32.5%;
     margin-left: -10px;
 }
 
