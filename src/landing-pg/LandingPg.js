@@ -812,13 +812,15 @@ const Styles = styled.div `
     top: 0;
     bottom: 0;
     right: 0;
+    display: flex;
+    flex-direction: column;
 }
 
     // # NAVBAR CHECKOUT HOME HEADER
 
 .navbar-options-checkout-home-header { 
-    height: 82.5px;
-    border: 1px solid black;
+    height: 82.5px; /* Fixed height for header */
+    border-bottom: 1px solid #ccc;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -872,25 +874,19 @@ const Styles = styled.div `
     // # NAVBAR CHECKOUT HOME BODY
 
 .navbar-options-checkout-home-body {
-    height: auto;
-    min-height: 515px;
-    // border: 1px solid black;
-    // margin-top: 82.5px;
-    border-bottom: 2px solid blue;
+    flex-grow: 1; /* Takes remaining space between header and footer */
+    overflow-y: auto; /* Enables scrolling if content overflows */
+    padding: 16px; /* Optional: Adds padding around the content */
+    border: 1px solid black;
 }
 
     // # NAVBAR CHECKOUT HOME FOOTER
 
 .navbar-options-checkout-home-footer {
-    height: auto;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    min-height: 285px;
-    // border: 1px solid black;
-    // margin-top: 82.5px;
+    height: 200px; /* Fixed height for footer */
     border-top: 2px solid red;
+    background-color: white;
+    z-index: 3;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -1514,16 +1510,16 @@ export default class LandingPg extends Component {
 
                     <div className='navbar-options-checkout-home'>
                         <div className='navbar-options-checkout-home-header'>
-                            <div className='navbar-options-checkout-home-header-details'>
-                                <p>Your cart has (<label>{this.state.totalCartItems}</label>) <span>items</span></p>
+                                <div className='navbar-options-checkout-home-header-details'>
+                                    <p>Your cart has (<label>{this.state.totalCartItems}</label>) <span>items</span></p>
+                                </div>
+                                <div className='navbar-options-checkout-home-header-icon'>
+                                    <img src='/assets/icons/navbar/clear-search-icon-color.png'/>
+                                </div>
                             </div>
-                            <div className='navbar-options-checkout-home-header-icon'>
-                                <img src='/assets/icons/navbar/clear-search-icon-color.png'/>
-                            </div>
-                        </div>
-                        {/* <div className='navbar-options-checkout-home-body'>
+                        <div className='navbar-options-checkout-home-body'>
 
-                        </div> */}
+                        </div>
                         <div className='navbar-options-checkout-home-footer'>
 
                         </div>
