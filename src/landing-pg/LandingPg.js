@@ -1315,7 +1315,7 @@ export default class LandingPg extends Component {
 
                             {this.state.showNavbarDropdownOption2 && 
                                 <div className='navbar-options-dropdown-option-selected'>
-                                    <h4>SCHEDULED <label>DELIVERY</label></h4>
+                                    <h4><label>SCHEDULED</label> DELIVERY</h4>
                                     <div className='navbar-options-dropdown-option-selected-container'>
                                         <div className='navbar-options-dropdown-option-jipange'>
                                             <p>Schedule your deliveries once and get fresh groceries, household essentials and everyday necessities delivered weekly to your doorstep - in just 6 easy steps.</p>
@@ -1397,7 +1397,7 @@ export default class LandingPg extends Component {
 
                             {this.state.showNavbarDropdownOption4 && 
                                 <div className='navbar-options-dropdown-option-selected'>
-                                    <h4>SELL EVENT <label>TICKETS</label></h4>
+                                    <h4>SELL <label>EVENT TICKETS</label></h4>
                                     <div className='navbar-options-dropdown-option-selected-container'>
                                         <div className='navbar-options-dropdown-option-sell-with-us'>
                                             <p>Set up an events page, sell tickets effortlessly, and host a memorable event today with no monthly fees or commissions — just a <label><span>3%</span></label> processing fee.</p>
