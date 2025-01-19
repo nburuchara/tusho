@@ -801,6 +801,23 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+    // - - NAVBAR CHECKOUT HOME VIEW - - //
+
+.navbar-options-checkout-home {
+    position: fixed;
+    background-color: white;
+    border: 1px solid black;
+    width: 25%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
+.navbar-options-checkout-home-header { 
+
+}
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
@@ -1250,6 +1267,7 @@ export default class LandingPg extends Component {
                                 </div>
                             </div>
                         </div>
+
                         <div className={`navbar-options-dropdown-right ${this.state.showNavbarDropdownOption1 || this.state.showNavbarDropdownOption2 || this.state.showNavbarDropdownOption3 || this.state.showNavbarDropdownOption4 ? 'clicked' : ''}`}>
                             {this.state.showNavbarDropdownOption1 && 
                                 <div className={`navbar-options-dropdown-option-selected`}>
@@ -1413,6 +1431,10 @@ export default class LandingPg extends Component {
                                 </div>
                             }
                         </div>
+                    </div>
+
+                    <div className='navbar-options-checkout-home'>
+
                     </div>
                 </div>
                 
