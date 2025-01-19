@@ -591,7 +591,7 @@ const Styles = styled.div `
 .navbar-options-dropdown-option-brand-full-list:hover .navbar-options-dropdown-option-brand-full-list-text h5 {
     text-decoration: underline;
     text-decoration-color: #FF5733;
-    // transform: translateY(-1px);
+    color: #FF5733;
 }
 
 .navbar-options-dropdown-option-brand-full-list:hover .navbar-options-dropdown-option-brand-full-list-icon img {
@@ -622,6 +622,7 @@ const Styles = styled.div `
 .navbar-options-dropdown-left-menu-options-cell-arrow img,
 .navbar-options-dropdown-option-brand-cell,
 .navbar-options-dropdown-option-brand-cell-icon img,
+.navbar-options-dropdown-option-brand-full-list-text h5,
 .navbar-options-dropdown-option-brand-full-list-icon img,
  {
     transition-duration: var(--def-transition-duration);
