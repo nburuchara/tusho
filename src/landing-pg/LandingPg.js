@@ -46,8 +46,14 @@ const Styles = styled.div `
     padding-left: 10.5%;
     padding-top: 6.5%;
     padding-bottom: 8.5%;
-    border: 1px solid white;
+    border: 1px solid transparent;
     border-radius: 8px;
+    cursor: pointer;
+    transition-property: border;
+}
+
+.navbar-options-icon.clicked img {
+    border: 1px solid white;
 }
 
     // - NAVBAR LOGO - //
@@ -298,12 +304,20 @@ const Styles = styled.div `
     // border: 1px solid black;
     height: 500px;
     margin-top: -5.5px;
-    margin-left: 1%;
+    margin-left: -1%;
+    opacity: 0;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+}
+
+.navbar-options-dropdown.clicked {
+    transform: translateX(5%);
+    opacity: 1;
+    transition-property: transform, opacity;
 }
 
 .navbar-options-dropdown-left {
@@ -740,6 +754,8 @@ const Styles = styled.div `
 .navbar-options-dropdown-option-brand-cell-icon img,
 .navbar-options-dropdown-option-brand-full-list-text h5,
 .navbar-options-dropdown-option-brand-full-list-icon img,
+.navbar-options-dropdown,
+.navbar-options-icon,
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
@@ -810,6 +826,8 @@ export default class LandingPg extends Component {
             showNavbarDropdownOption2: false,
             showNavbarDropdownOption3: true,
             showNavbarDropdownOption4: false,
+
+            dropdownMenuDisplayed: false,
 
         }
 
@@ -965,6 +983,14 @@ export default class LandingPg extends Component {
         })
     }
 
+    navbarMenuClicked = () => {
+        this.setState((prevState) => ({ dropdownMenuDisplayed: !prevState.dropdownMenuDisplayed }));
+    }
+
+    exitNavbarMenu = () => {
+
+    }
+
     render () {
 
         const { searchBarIsClicked, searchInput, isSearchLoading, resultsFound, groupedOptions } = this.state;
@@ -973,8 +999,8 @@ export default class LandingPg extends Component {
             <Styles>
                 <div className='fullPage'>
                     <div className='navbar'>
-                        <div className='navbar-options-icon'>
-                            <img src='./assets/icons/navbar/menu-icon.png'/>
+                        <div className={`navbar-options-icon ${this.state.dropdownMenuDisplayed ? 'clicked' : ''}`}>
+                            <img onClick={this.navbarMenuClicked} src='./assets/icons/navbar/menu-icon.png'/>
                         </div>
                         <div className='navbar-logo-icon'>
                             <img src='./assets/icons/navbar/tusho-logo2.png'/>
@@ -1050,7 +1076,7 @@ export default class LandingPg extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className='navbar-options-dropdown'>
+                    <div className={`navbar-options-dropdown ${this.state.dropdownMenuDisplayed ? 'clicked' : ''}`}>
                         <div className='navbar-options-dropdown-left'>
                             <h5 className='navbar-options-dropdown-left-header'>Save up to 16% on your weekly shopping!</h5>
                             <div className='navbar-options-dropdown-left-header-img'>
