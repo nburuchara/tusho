@@ -306,7 +306,8 @@ const Styles = styled.div `
     margin-top: -5.5px;
     margin-left: -1%;
     opacity: 0;
-    background-color: white;
+    // background-color: white;
+    background-color: #f3f5f7;
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     display: flex;
@@ -500,22 +501,31 @@ const Styles = styled.div `
     background-color: #f3f5f7;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+    opacity: 0;
+    transform: translateX(-5%);
+}
+
+.navbar-options-dropdown-right.clicked {
+    width: 45%;
+    background-color: #f3f5f7;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    opacity: 1;
+    transform: translateX(0%);
+    transition-property: opacity, transform;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .navbar-options-dropdown-option-selected {
-    margin-left: 0%;
+    margin-left: 12.5%;
     position: relative;
     height: 93%;
     border-bottom-right-radius: 8px;
-    opacity: 0;
-    transition-property: transform, opacity;
+    opacity: 1;
+    transform: translateX(0%);
+    // transition-property: transform, opacity;
 }
 
-.navbar-options-dropdown-option-selected.clicked {
-    transform: translateX(12.5%);
-    opacity: 1;
-    transition-property: transform, opacity;
-}
 
 .navbar-options-dropdown-option-selected h4 {
     font-size: 80%;
@@ -566,7 +576,7 @@ const Styles = styled.div `
 
 .navbar-options-dropdown-option-brand-cell {
     height: 8%;
-    width: 82.5%;
+    width: 93.5%;
     border: 1px solid black;
     display: flex;
     justify-content: space-between;
@@ -624,7 +634,7 @@ const Styles = styled.div `
 
 .navbar-options-dropdown-option-brand-full-list {
     margin-top: 20px;
-    width: 82.5%;
+    width: 93.5%;
     display: flex;
     justify-content: space-between;
     // border: 1px solid black;
@@ -794,8 +804,6 @@ const Styles = styled.div `
 .navbar-options-dropdown-left-menu-options-cell-details p,
 .navbar-options-dropdown-left-menu-options-cell-details h5,
 .navbar-options-dropdown-left-menu-options-cell-arrow img,
-.navbar-options-dropdown-option-selected,
-.navbar-options-dropdown-option-selected.clicked,
 .navbar-options-dropdown-option-brand-cell,
 .navbar-options-dropdown-option-brand-cell-icon img,
 .navbar-options-dropdown-option-brand-full-list-text h5,
@@ -1049,6 +1057,7 @@ export default class LandingPg extends Component {
     exitNavbarMenu = () => {
         this.setState({  
             dropdownMenuDisplayed: false,
+            showNavbarDropdownOption1: false,
             showNavbarDropdownOption2 : false,
             showNavbarDropdownOption3 : false,
             showNavbarDropdownOption4 : false,
@@ -1056,10 +1065,6 @@ export default class LandingPg extends Component {
     }
 
     navbarDropdownOptionSelected = (option) => {
-        this.setState({
-            [`showNavbarDropdownOption${option}`] : true,
-        })
-
         for (let i = 1; i < 5; i++) {
             if (option !== i) {
                 this.setState({
@@ -1067,6 +1072,11 @@ export default class LandingPg extends Component {
                 })
             }
         }
+        setTimeout(() => {
+            this.setState({
+                [`showNavbarDropdownOption${option}`] : true,
+            })
+        }, 0)
     }
 
     render () {
@@ -1235,9 +1245,9 @@ export default class LandingPg extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className='navbar-options-dropdown-right'>
+                        <div className={`navbar-options-dropdown-right ${this.state.showNavbarDropdownOption1 || this.state.showNavbarDropdownOption2 || this.state.showNavbarDropdownOption3 || this.state.showNavbarDropdownOption4 ? 'clicked' : ''}`}>
                             {this.state.showNavbarDropdownOption1 && 
-                                <div className={`navbar-options-dropdown-option-selected ${this.state.showNavbarDropdownOption1 ? 'clicked' : ''}`}>
+                                <div className={`navbar-options-dropdown-option-selected`}>
                                     <h4>OUR PARTNER <label>BRANDS</label></h4>
                                     <div className='navbar-options-dropdown-option-selected-container'>
                                         <div className='navbar-options-dropdown-option-selected-container-header'>
