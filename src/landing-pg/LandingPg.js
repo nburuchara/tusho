@@ -881,21 +881,38 @@ const Styles = styled.div `
 }
 
 .navbar-options-checkout-home-item-cell {
-    height: 90px;
+    height: 70px;
     border: 1px solid black;
     display: flex;
     justify-content: space-between;
 }
 
 .navbar-options-checkout-home-item-cell-icon {
-    width: 25%;
+    width: 20%;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Ensures image stays within bounds */
+    overflow: hidden; /* Prevents overflow of larger images */
+}
+
+.navbar-options-checkout-home-item-cell-icon img {
+    width: 100%; /* Ensures image fills container width */
+    height: auto; /* Maintains aspect ratio */
+    max-height: 100%; /* Ensures the image fits within the container height */
+    object-fit: contain; /* Ensures the entire image is visible without distortion */
+}
+
+.navbar-options-checkout-home-item-cell-details {
+    width: 52.5%;
     border: 1px solid black;
 }
-.navbar-options-checkout-home-item-cell-details {
 
-}
 .navbar-options-checkout-home-item-cell-qty {
-
+    width: 27.5%;
+    border: 1px solid black;
 }
 
     // # NAVBAR CHECKOUT HOME FOOTER
@@ -1629,10 +1646,10 @@ export default class LandingPg extends Component {
                         <div className='navbar-options-checkout-home-body'>
                             <div className='navbar-options-checkout-home-item-cell'>
                                 <div className='navbar-options-checkout-home-item-cell-icon'>
-
-                                </div>
+                                    <img src='/assets/images/products/bband-product.png'/>
+                                </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
-
+                                    <p></p>
                                 </div>
                                 <div className='navbar-options-checkout-home-item-cell-qty'>
 
