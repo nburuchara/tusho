@@ -891,7 +891,7 @@ const Styles = styled.div `
 
 .navbar-options-checkout-home-footer-header {
     height: 75px;
-    // border: 1px solid black;
+    border: 1px solid black;
     display: flex;
     justify-content: space-between;
 }
@@ -940,7 +940,22 @@ const Styles = styled.div `
 }
 
 .navbar-options-checkout-home-footer-footer {
+    height: 125px;
+    border: 1px solid black;
+    text-align: center;
+}
 
+.navbar-options-checkout-home-footer-footer button { 
+    width: 80%;
+    margin-top: 15px;
+    height: 50px;
+    background-color: #FF5733;
+    border: 1px solid #FF5733;
+    color: white;
+    font-family: poppins;
+    font-size: 100%;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -1586,7 +1601,7 @@ export default class LandingPg extends Component {
                                 </div>
                             </div>
                             <div className='navbar-options-checkout-home-footer-footer'>
-
+                                <button>Checkout</button>
                             </div>
                         </div>
                     </div>
