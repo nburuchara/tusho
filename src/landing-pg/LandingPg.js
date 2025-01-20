@@ -927,8 +927,25 @@ const Styles = styled.div `
 }
 
 .navbar-options-checkout-home-item-cell-qty-toggle {
-    width: 85%;
-    height: 45%;
+    width: 95%;
+    height: 40%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-options-checkout-home-item-cell-qty-toggle-left {
+    width: 30%;
+    border: 1px solid black;
+}
+
+.navbar-options-checkout-home-item-cell-qty-toggle-center {
+    width: 40%;
+    border: 1px solid black;
+}
+
+.navbar-options-checkout-home-item-cell-qty-toggle-right {
+    width: 30%;
     border: 1px solid black;
 }
 
@@ -1670,7 +1687,15 @@ export default class LandingPg extends Component {
                                 </div>
                                 <div className='navbar-options-checkout-home-item-cell-qty'>
                                     <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
 
+                                        </div>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
+
+                                        </div>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
