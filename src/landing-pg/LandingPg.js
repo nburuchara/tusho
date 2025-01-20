@@ -877,19 +877,19 @@ const Styles = styled.div `
     flex-grow: 1; /* Takes remaining space between header and footer */
     overflow-y: auto; /* Enables scrolling if content overflows */
     // padding: 16px; /* Optional: Adds padding around the content */
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .navbar-options-checkout-home-item-cell {
     height: 75px;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     justify-content: space-between;
 }
 
 .navbar-options-checkout-home-item-cell-icon {
     width: 20%;
-    border: 1px solid black;
+    // border: 1px solid black;
     text-align: center;
     display: flex;
     align-items: center;
@@ -907,7 +907,7 @@ const Styles = styled.div `
 
 .navbar-options-checkout-home-item-cell-details {
     width: 52.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .navbar-options-checkout-home-item-cell-details p {
@@ -920,33 +920,36 @@ const Styles = styled.div `
 
 .navbar-options-checkout-home-item-cell-qty {
     width: 27.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
 }
 
 .navbar-options-checkout-home-item-cell-qty-toggle {
-    width: 95%;
-    height: 40%;
-    border: 1px solid black;
+    width: 85%;
+    height: 35%;
+    border: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
 }
 
 .navbar-options-checkout-home-item-cell-qty-toggle-left {
     width: 30%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    background-color: #FF5733;
 }
 
 .navbar-options-checkout-home-item-cell-qty-toggle-center {
     width: 40%;
-    border: 1px solid black;
+    // border-right: 1px solid black;
+    // border-left: 1px solid black;
 }
 
 .navbar-options-checkout-home-item-cell-qty-toggle-right {
     width: 30%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    background-color: #FF5733;
 }
 
     // # NAVBAR CHECKOUT HOME FOOTER
