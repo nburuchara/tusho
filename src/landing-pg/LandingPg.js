@@ -877,7 +877,7 @@ const Styles = styled.div `
     flex-grow: 1; /* Takes remaining space between header and footer */
     overflow-y: auto; /* Enables scrolling if content overflows */
     padding: 16px; /* Optional: Adds padding around the content */
-    // border: 1px solid black;
+    border: 1px solid black;
 }
 
     // # NAVBAR CHECKOUT HOME FOOTER
@@ -947,7 +947,7 @@ const Styles = styled.div `
 
 .navbar-options-checkout-home-footer-footer button { 
     width: 80%;
-    margin-top: 12.5px;
+    margin-top: 10.5px;
     height: 50px;
     background-color: #FF5733;
     border: 1px solid #FF5733;
@@ -960,7 +960,7 @@ const Styles = styled.div `
 }
 
 .navbar-options-checkout-home-footer-footer-payment-methods {
-    margin-top: 15px;
+    margin-top: 18px;
 }
 
 .navbar-options-checkout-home-footer-footer img {
@@ -1231,6 +1231,13 @@ export default class LandingPg extends Component {
                 showNavbarDropdownOption3 : false,
                 showNavbarDropdownOption4 : false,
              })
+        } else {
+            this.setState({
+                showNavbarDropdownOption1 : false,
+                showNavbarDropdownOption2 : false,
+                showNavbarDropdownOption3 : false,
+                showNavbarDropdownOption4 : false,
+            })
         }
         this.setState((prevState) => ({ dropdownMenuDisplayed: !prevState.dropdownMenuDisplayed }));
     }
