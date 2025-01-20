@@ -876,8 +876,26 @@ const Styles = styled.div `
 .navbar-options-checkout-home-body {
     flex-grow: 1; /* Takes remaining space between header and footer */
     overflow-y: auto; /* Enables scrolling if content overflows */
-    padding: 16px; /* Optional: Adds padding around the content */
+    // padding: 16px; /* Optional: Adds padding around the content */
     border: 1px solid black;
+}
+
+.navbar-options-checkout-home-item-cell {
+    height: 90px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-options-checkout-home-item-cell-icon {
+    width: 25%;
+    border: 1px solid black;
+}
+.navbar-options-checkout-home-item-cell-details {
+
+}
+.navbar-options-checkout-home-item-cell-qty {
+
 }
 
     // # NAVBAR CHECKOUT HOME FOOTER
@@ -1609,7 +1627,17 @@ export default class LandingPg extends Component {
                                 </div>
                             </div>
                         <div className='navbar-options-checkout-home-body'>
-                            
+                            <div className='navbar-options-checkout-home-item-cell'>
+                                <div className='navbar-options-checkout-home-item-cell-icon'>
+
+                                </div>
+                                <div className='navbar-options-checkout-home-item-cell-details'>
+
+                                </div>
+                                <div className='navbar-options-checkout-home-item-cell-qty'>
+
+                                </div>
+                            </div>
                         </div>
                         <div className='navbar-options-checkout-home-footer'>
                             <div className='navbar-options-checkout-home-footer-header'>
