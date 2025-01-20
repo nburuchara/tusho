@@ -881,7 +881,7 @@ const Styles = styled.div `
 }
 
 .navbar-options-checkout-home-item-cell {
-    height: 70px;
+    height: 75px;
     border: 1px solid black;
     display: flex;
     justify-content: space-between;
@@ -920,6 +920,15 @@ const Styles = styled.div `
 
 .navbar-options-checkout-home-item-cell-qty {
     width: 27.5%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-options-checkout-home-item-cell-qty-toggle {
+    width: 85%;
+    height: 45%;
     border: 1px solid black;
 }
 
@@ -1660,7 +1669,9 @@ export default class LandingPg extends Component {
                                     <p>Blueband Original (200g)</p>
                                 </div>
                                 <div className='navbar-options-checkout-home-item-cell-qty'>
+                                    <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
