@@ -910,6 +910,14 @@ const Styles = styled.div `
     border: 1px solid black;
 }
 
+.navbar-options-checkout-home-item-cell-details p {
+    font-size: 75%;
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: poppins;
+}
+
 .navbar-options-checkout-home-item-cell-qty {
     width: 27.5%;
     border: 1px solid black;
@@ -1649,7 +1657,7 @@ export default class LandingPg extends Component {
                                     <img src='/assets/images/products/bband-product.png'/>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
-                                    <p></p>
+                                    <p>Blueband Original (200g)</p>
                                 </div>
                                 <div className='navbar-options-checkout-home-item-cell-qty'>
 
