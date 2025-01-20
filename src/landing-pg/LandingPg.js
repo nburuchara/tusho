@@ -423,7 +423,7 @@ const Styles = styled.div `
 }
 
 .navbar-options-dropdown-left-menu-options-cell-icon img {
-    width: 50%;
+    width: 40px;
     border: 1px solid white;
     border-radius: 8px;
     padding-top: 7%;
@@ -891,7 +891,7 @@ const Styles = styled.div `
 
 .navbar-options-checkout-home-footer-header {
     height: 75px;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     justify-content: space-between;
 }
@@ -941,21 +941,36 @@ const Styles = styled.div `
 
 .navbar-options-checkout-home-footer-footer {
     height: 125px;
-    border: 1px solid black;
+    // border: 1px solid black;
     text-align: center;
 }
 
 .navbar-options-checkout-home-footer-footer button { 
     width: 80%;
-    margin-top: 15px;
+    margin-top: 12.5px;
     height: 50px;
     background-color: #FF5733;
     border: 1px solid #FF5733;
     color: white;
-    font-family: poppins;
+    font-family: lexend;
     font-size: 100%;
+    font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.navbar-options-checkout-home-footer-footer-payment-methods {
+    margin-top: 15px;
+}
+
+.navbar-options-checkout-home-footer-footer img {
+    width: 38px;
+    height: 16.5px;
+    padding: 3px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -1602,6 +1617,11 @@ export default class LandingPg extends Component {
                             </div>
                             <div className='navbar-options-checkout-home-footer-footer'>
                                 <button>Checkout</button>
+                                <div className='navbar-options-checkout-home-footer-footer-payment-methods'>
+                                    <img src='/assets/icons/home-checkout/mpesa-logo.png'/>
+                                    <img src='/assets/icons/home-checkout/airtel-money-logo.png'/>
+                                    <img src='/assets/icons/home-checkout/visa-logo.png'/>
+                                </div>
                             </div>
                         </div>
                     </div>
