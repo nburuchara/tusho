@@ -881,10 +881,11 @@ const Styles = styled.div `
 }
 
 .navbar-options-checkout-home-item-cell {
-    height: 75px;
+    height: auto;
     // border: 1px solid black;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .navbar-options-checkout-home-item-cell-icon {
@@ -899,8 +900,8 @@ const Styles = styled.div `
 }
 
 .navbar-options-checkout-home-item-cell-icon img {
-    width: 100%; /* Ensures image fills container width */
-    height: auto; /* Maintains aspect ratio */
+    width: 60px; /* Ensures image fills container width */
+    height: 60px; /* Maintains aspect ratio */
     max-height: 100%; /* Ensures the image fits within the container height */
     object-fit: contain; /* Ensures the entire image is visible without distortion */
 }
@@ -911,7 +912,7 @@ const Styles = styled.div `
 }
 
 .navbar-options-checkout-home-item-cell-details p {
-    font-size: 75%;
+    font-size: 80%;
     margin-top: 10px;
     margin-left: 5%;
     margin-right: 5%;
@@ -929,10 +930,11 @@ const Styles = styled.div `
 
 .navbar-options-checkout-home-item-cell-qty-toggle {
     width: 85%;
-    height: 38.5%;
+    height: 32.5px;
     border: 1px solid #bababa;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .navbar-options-checkout-home-item-cell-qty-toggle-left {
@@ -1712,6 +1714,72 @@ export default class LandingPg extends Component {
                         <div className='navbar-options-checkout-home-body'>
                             <div className='navbar-options-checkout-home-item-cell'>
                                 <div className='navbar-options-checkout-home-item-cell-icon'>
+                                    <img src='/assets/images/products/brookside-milk-powder-product.png'/>
+                                </div>  
+                                <div className='navbar-options-checkout-home-item-cell-details'>
+                                    <p>Brookside Full Cream Milk Powder Tin (500g)</p>
+                                </div>
+                                <div className='navbar-options-checkout-home-item-cell-qty'>
+                                    <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
+                                            <p>-</p>
+                                        </div>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
+
+                                        </div>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
+                                            <p>+</p>
+                                        </div>
+                                    </div>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 250.00</p>
+                                </div>
+                            </div>
+                            <div className='navbar-options-checkout-home-item-cell'>
+                                <div className='navbar-options-checkout-home-item-cell-icon'>
+                                    <img src='/assets/images/products/min-maid-product.png'/>
+                                </div>  
+                                <div className='navbar-options-checkout-home-item-cell-details'>
+                                    <p>Minute Maid: Fruit Cooler (500ml)</p>
+                                </div>
+                                <div className='navbar-options-checkout-home-item-cell-qty'>
+                                    <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
+                                            <p>-</p>
+                                        </div>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
+
+                                        </div>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
+                                            <p>+</p>
+                                        </div>
+                                    </div>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 250.00</p>
+                                </div>
+                            </div>
+                            <div className='navbar-options-checkout-home-item-cell'>
+                                <div className='navbar-options-checkout-home-item-cell-icon'>
+                                    <img src='/assets/images/products/mac-coffee-product.png'/>
+                                </div>  
+                                <div className='navbar-options-checkout-home-item-cell-details'>
+                                    <p>MacCoffee Classic (200g)</p>
+                                </div>
+                                <div className='navbar-options-checkout-home-item-cell-qty'>
+                                    <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
+                                            <p>-</p>
+                                        </div>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
+
+                                        </div>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
+                                            <p>+</p>
+                                        </div>
+                                    </div>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 250.00</p>
+                                </div>
+                            </div>
+                            <div className='navbar-options-checkout-home-item-cell'>
+                                <div className='navbar-options-checkout-home-item-cell-icon'>
                                     <img src='/assets/images/products/bband-product.png'/>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
@@ -1730,6 +1798,50 @@ export default class LandingPg extends Component {
                                         </div>
                                     </div>
                                     <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 250.00</p>
+                                </div>
+                            </div>
+                            <div className='navbar-options-checkout-home-item-cell'>
+                                <div className='navbar-options-checkout-home-item-cell-icon'>
+                                    <img src='/assets/images/products/brookside-milk-product.png'/>
+                                </div>  
+                                <div className='navbar-options-checkout-home-item-cell-details'>
+                                    <p>Brookside Whole Milk 1L Long Life</p>
+                                </div>
+                                <div className='navbar-options-checkout-home-item-cell-qty'>
+                                    <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
+                                            <p>-</p>
+                                        </div>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
+
+                                        </div>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
+                                            <p>+</p>
+                                        </div>
+                                    </div>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 156.00</p>
+                                </div>
+                            </div>
+                            <div className='navbar-options-checkout-home-item-cell'>
+                                <div className='navbar-options-checkout-home-item-cell-icon'>
+                                    <img src='/assets/images/products/digestives-product.png'/>
+                                </div>  
+                                <div className='navbar-options-checkout-home-item-cell-details'>
+                                    <p>McVities Digestive Biscuits (400g)</p>
+                                </div>
+                                <div className='navbar-options-checkout-home-item-cell-qty'>
+                                    <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
+                                            <p>-</p>
+                                        </div>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
+
+                                        </div>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
+                                            <p>+</p>
+                                        </div>
+                                    </div>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 339.00</p>
                                 </div>
                             </div>
                         </div>
