@@ -1192,6 +1192,7 @@ export default class LandingPg extends Component {
 
             //* - NAVBAR SHOPPING CART INFO - *//
             totalCartItems: 8,
+            totalCartPrice: 0,
 
             item1CartQty: 1,
             item1CartPrice: 1198,
@@ -1241,6 +1242,14 @@ export default class LandingPg extends Component {
     componentWillUnmount() {
         // Remove the click event listener to prevent memory leaks
         document.removeEventListener('click', this.handleOutsideSearchBarClick);
+    }
+
+    loadCartTotal = () => {
+        let total = this.state.item1CartPrice + this.state.item2CartPrice + this.state.item3CartPrice + this.state.item4CartPrice + this.state.item5CartPrice + this.state.item6CartPrice + this.state.item7CartPrice + this.state.item8CartPrice 
+
+        this.setState({
+            total
+        })
     }
 
     searchBarClicked = () => {
@@ -1957,7 +1966,7 @@ export default class LandingPg extends Component {
                                     <h5>Left to FREE shipping:</h5>
                                 </div>
                                 <div className='navbar-options-checkout-home-footer-header-price'>
-                                    <h3 className=''>KES 4693.00</h3>
+                                    <h3 className=''>KES {this.state.totalCartPrice}.00</h3>
                                     <h5>KES 1550</h5>
                                 </div>
                             </div>
