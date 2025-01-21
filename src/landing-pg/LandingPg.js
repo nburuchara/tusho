@@ -963,7 +963,8 @@ const Styles = styled.div `
 .navbar-options-checkout-home-item-cell-qty-toggle-center p {
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 
+    font-size: 90%;
+    font-family: poppins;
 }
 
 .navbar-options-checkout-home-item-cell-qty-toggle-right {
@@ -1179,7 +1180,7 @@ export default class LandingPg extends Component {
             dropdownMenuOption4Selected: false,
 
             //* - NAVBAR SHOPPING CART INFO - *//
-            totalCartItems: 3,
+            totalCartItems: 8,
 
         }
 
@@ -1734,7 +1735,7 @@ export default class LandingPg extends Component {
                                             <p>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-                                            <p>1000</p>
+                                            <p>2</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
