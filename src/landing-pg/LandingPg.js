@@ -955,6 +955,15 @@ const Styles = styled.div `
     width: 40%;
     // border-right: 1px solid black;
     // border-left: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-options-checkout-home-item-cell-qty-toggle-center p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 
 }
 
 .navbar-options-checkout-home-item-cell-qty-toggle-right {
@@ -1725,7 +1734,7 @@ export default class LandingPg extends Component {
                                             <p>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-
+                                            <p>1000</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
