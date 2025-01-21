@@ -7,6 +7,7 @@ const results = [
     {"id": "998573", "name": "Brookside Full Cream Milk Powder Tin (500g)", "category": "Soko Brands", "img": "/assets/images/products/brookside-milk-powder-product.png", "page": "Event types", "lastCat": "top"},
     {"id": "998573", "name": "McVities Digestive Biscuits (400g)", "category": "Soko Brands", "img": "/assets/images/products/digestives-product.png", "page": "Event types", "lastCat": "top"},
     {"id": "998573", "name": "Mumias Sugar White (2kg)", "category": "Soko Brands", "img": "/assets/images/products/mumias-sugar-product.png", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "Rinsun 100% Sunflower Oil (3L)", "category": "Rinsun", "img": "/assets/images/products/rinsun-oil-product.png", "page": "Event types", "lastCat": "top"},
   
 
 ]

@@ -1844,6 +1844,50 @@ export default class LandingPg extends Component {
                                     <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 339.00</p>
                                 </div>
                             </div>
+                            <div className='navbar-options-checkout-home-item-cell'>
+                                <div className='navbar-options-checkout-home-item-cell-icon'>
+                                    <img src='/assets/images/products/mumias-sugar-product.png'/>
+                                </div>  
+                                <div className='navbar-options-checkout-home-item-cell-details'>
+                                    <p>Mumias Sugar White (2kg)</p>
+                                </div>
+                                <div className='navbar-options-checkout-home-item-cell-qty'>
+                                    <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
+                                            <p>-</p>
+                                        </div>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
+
+                                        </div>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
+                                            <p>+</p>
+                                        </div>
+                                    </div>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 278.00</p>
+                                </div>
+                            </div>
+                            <div className='navbar-options-checkout-home-item-cell'>
+                                <div className='navbar-options-checkout-home-item-cell-icon'>
+                                    <img src='/assets/images/products/rinsun-oil-product.png'/>
+                                </div>  
+                                <div className='navbar-options-checkout-home-item-cell-details'>
+                                    <p>Rinsun 100% Sunflower Oil (3L)</p>
+                                </div>
+                                <div className='navbar-options-checkout-home-item-cell-qty'>
+                                    <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
+                                            <p>-</p>
+                                        </div>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
+
+                                        </div>
+                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
+                                            <p>+</p>
+                                        </div>
+                                    </div>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 1149.00</p>
+                                </div>
+                            </div>
                         </div>
                         <div className='navbar-options-checkout-home-footer'>
                             <div className='navbar-options-checkout-home-footer-header'>
