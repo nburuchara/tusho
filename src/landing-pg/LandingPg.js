@@ -1182,6 +1182,38 @@ export default class LandingPg extends Component {
             //* - NAVBAR SHOPPING CART INFO - *//
             totalCartItems: 8,
 
+            item1CartQty: 1,
+            item1CartPrice: 1198,
+            item1CartTotal: 0,
+
+            item2CartQty: 1,
+            item2CartPrice: 75,
+            item2CartTotal: 0,
+
+            item3CartQty: 1,
+            item3CartPrice: 1350,
+            item3CartTotal: 0,
+
+            item4CartQty: 1,
+            item4CartPrice: 148,
+            item4CartTotal: 0,
+
+            item5CartQty: 1,
+            item5CartPrice: 156,
+            item5CartTotal: 0,
+
+            item6CartQty: 1,
+            item6CartPrice: 339,
+            item6CartTotal: 0,
+
+            item7CartQty: 1,
+            item7CartPrice: 278,
+            item7CartTotal: 0,
+
+            item8CartQty: 1,
+            item8CartPrice: 1149,
+            item8CartTotal: 0,
+
         }
 
         //* - TRIE NODE (for search functionality) - *//
@@ -1735,7 +1767,7 @@ export default class LandingPg extends Component {
                                             <p>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-                                            <p>2</p>
+                                            <p>{this.state.item1CartQty}</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
@@ -1757,7 +1789,7 @@ export default class LandingPg extends Component {
                                             <p>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-
+                                            <p>{this.state.item2CartQty}</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
@@ -1779,7 +1811,7 @@ export default class LandingPg extends Component {
                                             <p>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-
+                                            <p>{this.state.item3CartQty}</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
@@ -1801,7 +1833,7 @@ export default class LandingPg extends Component {
                                             <p>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-
+                                            <p>{this.state.item4CartQty}</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
@@ -1823,7 +1855,7 @@ export default class LandingPg extends Component {
                                             <p>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-
+                                            <p>{this.state.item5CartQty}</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
@@ -1845,7 +1877,7 @@ export default class LandingPg extends Component {
                                             <p>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-
+                                            <p>{this.state.item6CartQty}</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
@@ -1867,7 +1899,7 @@ export default class LandingPg extends Component {
                                             <p>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-
+                                            <p>{this.state.item7CartQty}</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
@@ -1889,7 +1921,7 @@ export default class LandingPg extends Component {
                                             <p>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-
+                                            <p>{this.state.item8CartQty}</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
