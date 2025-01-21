@@ -1442,6 +1442,16 @@ export default class LandingPg extends Component {
         }, 0)
     }
 
+    decreaseItemQty = (item) => {
+        this.setState({
+            
+        })
+    }
+
+    increaseItemQty = (item) => {
+        
+    }
+
     render () {
 
         const { searchBarIsClicked, searchInput, isSearchLoading, resultsFound, groupedOptions } = this.state;
@@ -1804,7 +1814,7 @@ export default class LandingPg extends Component {
                                             <p>+</p>
                                         </div>
                                     </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 1198.00</p>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES {this.state.item1CartPrice}.00</p>
                                 </div>
                             </div>
                             <div className='navbar-options-checkout-home-item-cell'>
@@ -1827,7 +1837,7 @@ export default class LandingPg extends Component {
                                             <p>+</p>
                                         </div>
                                     </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 75.00</p>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES {this.state.item2CartPrice}.00</p>
                                 </div>
                             </div>
                             <div className='navbar-options-checkout-home-item-cell'>
@@ -1850,7 +1860,7 @@ export default class LandingPg extends Component {
                                             <p>+</p>
                                         </div>
                                     </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 1350.00</p>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES {this.state.item3CartPrice}.00</p>
                                 </div>
                             </div>
                             <div className='navbar-options-checkout-home-item-cell'>
@@ -1873,7 +1883,7 @@ export default class LandingPg extends Component {
                                             <p>+</p>
                                         </div>
                                     </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 148.00</p>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES {this.state.item4CartPrice}.00</p>
                                 </div>
                             </div>
                             <div className='navbar-options-checkout-home-item-cell'>
@@ -1896,7 +1906,7 @@ export default class LandingPg extends Component {
                                             <p>+</p>
                                         </div>
                                     </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 156.00</p>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES {this.state.item5CartPrice}.00</p>
                                 </div>
                             </div>
                             <div className='navbar-options-checkout-home-item-cell'>
@@ -1919,7 +1929,7 @@ export default class LandingPg extends Component {
                                             <p>+</p>
                                         </div>
                                     </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 339.00</p>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES {this.state.item6CartPrice}.00</p>
                                 </div>
                             </div>
                             <div className='navbar-options-checkout-home-item-cell'>
@@ -1942,7 +1952,7 @@ export default class LandingPg extends Component {
                                             <p>+</p>
                                         </div>
                                     </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 278.00</p>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES {this.state.item7CartPrice}.00</p>
                                 </div>
                             </div>
                             <div className='navbar-options-checkout-home-item-cell'>
@@ -1965,7 +1975,7 @@ export default class LandingPg extends Component {
                                             <p>+</p>
                                         </div>
                                     </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 1149.00</p>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES {this.state.item8CartPrice}.00</p>
                                 </div>
                             </div>
                         </div>
