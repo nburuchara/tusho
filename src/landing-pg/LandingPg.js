@@ -1031,7 +1031,7 @@ const Styles = styled.div `
     text-align: right;
     margin-right: 5%;
     margin-bottom: 4px;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 .navbar-options-checkout-home-footer-header-price h5 {
@@ -1896,7 +1896,7 @@ export default class LandingPg extends Component {
                                     <h5>Left to FREE shipping:</h5>
                                 </div>
                                 <div className='navbar-options-checkout-home-footer-header-price'>
-                                    <h3 className=''>KES 950.00</h3>
+                                    <h3 className=''>KES 4693.00</h3>
                                     <h5>KES 1550</h5>
                                 </div>
                             </div>
