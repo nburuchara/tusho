@@ -921,6 +921,7 @@ const Styles = styled.div `
 .navbar-options-checkout-home-item-cell-qty {
     width: 27.5%;
     // border: 1px solid black;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: left;
@@ -966,6 +967,18 @@ const Styles = styled.div `
     margin-top: 10px;
     font-weight: bold;
     font-size: 80%;
+}
+
+.navbar-options-checkout-home-item-cell-qty-item-price {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 67.5%;
+    font-weight: bold;
+    font-family: lexend;
+    margin-right: 15%;
 }
 
     // # NAVBAR CHECKOUT HOME FOOTER
@@ -1716,6 +1729,7 @@ export default class LandingPg extends Component {
                                             <p>+</p>
                                         </div>
                                     </div>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 250.00</p>
                                 </div>
                             </div>
                         </div>
