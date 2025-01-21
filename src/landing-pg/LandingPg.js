@@ -806,7 +806,7 @@ const Styles = styled.div `
 .navbar-options-checkout-home {
     position: fixed;
     background-color: white;
-    border-left: 1px solid black;
+    border-left: 1px solid #ccc;
     width: 25%;
     min-height: 800px;
     top: 0;
