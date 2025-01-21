@@ -897,6 +897,7 @@ const Styles = styled.div `
     justify-content: center;
     position: relative; /* Ensures image stays within bounds */
     overflow: hidden; /* Prevents overflow of larger images */
+    flex-direction: column;
 }
 
 .navbar-options-checkout-home-item-cell-icon img {
@@ -904,6 +905,16 @@ const Styles = styled.div `
     height: 60px; /* Maintains aspect ratio */
     max-height: 100%; /* Ensures the image fits within the container height */
     object-fit: contain; /* Ensures the entire image is visible without distortion */
+}
+
+.navbar-options-checkout-home-item-cell-icon p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 70%;
+    font-style: italic;
+    text-decoration: underline;
+    color: #FF5733;
+    cursor: pointer;
 }
 
 .navbar-options-checkout-home-item-cell-details {
@@ -934,7 +945,7 @@ const Styles = styled.div `
     border: 1px solid #bababa;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 
 .navbar-options-checkout-home-item-cell-qty-toggle-left {
@@ -1757,6 +1768,7 @@ export default class LandingPg extends Component {
                             <div className='navbar-options-checkout-home-item-cell'>
                                 <div className='navbar-options-checkout-home-item-cell-icon'>
                                     <img src='/assets/images/products/brookside-milk-powder-product.png'/>
+                                    <p>remove</p>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
                                     <p>Brookside Full Cream Milk Powder Tin (900g)</p>
@@ -1779,6 +1791,7 @@ export default class LandingPg extends Component {
                             <div className='navbar-options-checkout-home-item-cell'>
                                 <div className='navbar-options-checkout-home-item-cell-icon'>
                                     <img src='/assets/images/products/min-maid-product.png'/>
+                                    <p>remove</p>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
                                     <p>Minute Maid: Mango Pulpy Juice (400ml)</p>
@@ -1801,6 +1814,7 @@ export default class LandingPg extends Component {
                             <div className='navbar-options-checkout-home-item-cell'>
                                 <div className='navbar-options-checkout-home-item-cell-icon'>
                                     <img src='/assets/images/products/mac-coffee-product.png'/>
+                                    <p>remove</p>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
                                     <p>MacCoffee Classic (200g)</p>
@@ -1823,6 +1837,7 @@ export default class LandingPg extends Component {
                             <div className='navbar-options-checkout-home-item-cell'>
                                 <div className='navbar-options-checkout-home-item-cell-icon'>
                                     <img src='/assets/images/products/bband-product.png'/>
+                                    <p>remove</p>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
                                     <p>Blueband Original (250g)</p>
@@ -1845,6 +1860,7 @@ export default class LandingPg extends Component {
                             <div className='navbar-options-checkout-home-item-cell'>
                                 <div className='navbar-options-checkout-home-item-cell-icon'>
                                     <img src='/assets/images/products/brookside-milk-product.png'/>
+                                    <p>remove</p>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
                                     <p>Brookside Whole Milk 1L Long Life</p>
@@ -1867,6 +1883,7 @@ export default class LandingPg extends Component {
                             <div className='navbar-options-checkout-home-item-cell'>
                                 <div className='navbar-options-checkout-home-item-cell-icon'>
                                     <img src='/assets/images/products/digestives-product.png'/>
+                                    <p>remove</p>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
                                     <p>McVities Digestive Biscuits (400g)</p>
@@ -1889,6 +1906,7 @@ export default class LandingPg extends Component {
                             <div className='navbar-options-checkout-home-item-cell'>
                                 <div className='navbar-options-checkout-home-item-cell-icon'>
                                     <img src='/assets/images/products/mumias-sugar-product.png'/>
+                                    <p>remove</p>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
                                     <p>Mumias Sugar White (2kg)</p>
@@ -1911,6 +1929,7 @@ export default class LandingPg extends Component {
                             <div className='navbar-options-checkout-home-item-cell'>
                                 <div className='navbar-options-checkout-home-item-cell-icon'>
                                     <img src='/assets/images/products/rinsun-oil-product.png'/>
+                                    <p>remove</p>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
                                     <p>Rinsun 100% Sunflower Oil (3L)</p>
