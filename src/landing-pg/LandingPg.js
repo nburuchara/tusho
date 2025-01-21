@@ -928,8 +928,8 @@ const Styles = styled.div `
 
 .navbar-options-checkout-home-item-cell-qty-toggle {
     width: 85%;
-    height: 35%;
-    border: 1px solid #ccc;
+    height: 38.5%;
+    border: 1px solid #bababa;
     display: flex;
     justify-content: space-between;
 }
@@ -937,7 +937,15 @@ const Styles = styled.div `
 .navbar-options-checkout-home-item-cell-qty-toggle-left {
     width: 30%;
     // border: 1px solid black;
-    background-color: #FF5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-options-checkout-home-item-cell-qty-toggle-left p {
+    font-weight: bold;
+    font-size: 80%;
+    margin-top: 10px;
 }
 
 .navbar-options-checkout-home-item-cell-qty-toggle-center {
@@ -949,7 +957,15 @@ const Styles = styled.div `
 .navbar-options-checkout-home-item-cell-qty-toggle-right {
     width: 30%;
     // border: 1px solid black;
-    background-color: #FF5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-options-checkout-home-item-cell-qty-toggle-right p {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 80%;
 }
 
     // # NAVBAR CHECKOUT HOME FOOTER
@@ -1691,13 +1707,13 @@ export default class LandingPg extends Component {
                                 <div className='navbar-options-checkout-home-item-cell-qty'>
                                     <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
-
+                                            <p>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
 
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
-
+                                            <p>+</p>
                                         </div>
                                     </div>
                                 </div>
