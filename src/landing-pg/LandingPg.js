@@ -1191,7 +1191,7 @@ export default class LandingPg extends Component {
             dropdownMenuOption4Selected: false,
 
             //* - NAVBAR SHOPPING CART INFO - *//
-            totalCartItems: 8,
+            totalCartItems: 0,
             totalCartPrice: 0,
 
             item1CartQty: 1,
@@ -1237,6 +1237,8 @@ export default class LandingPg extends Component {
 
     componentDidMount = () => {
         document.addEventListener('click', this.handleOutsideSearchBarClick);
+        this.loadCartTotal()
+        this.loadCartQty()
     }
 
     componentWillUnmount() {
@@ -1248,7 +1250,15 @@ export default class LandingPg extends Component {
         let total = this.state.item1CartPrice + this.state.item2CartPrice + this.state.item3CartPrice + this.state.item4CartPrice + this.state.item5CartPrice + this.state.item6CartPrice + this.state.item7CartPrice + this.state.item8CartPrice 
 
         this.setState({
-            total
+            totalCartPrice: total
+        })
+    }
+
+    loadCartQty = () => {
+        let total = this.state.item1CartQty + this.state.item2CartQty + this.state.item3CartQty + this.state.item4CartQty + this.state.item5CartQty + this.state.item6CartQty + this.state.item7CartQty + this.state.item8CartQty 
+
+        this.setState({
+            totalCartItems: total
         })
     }
 
