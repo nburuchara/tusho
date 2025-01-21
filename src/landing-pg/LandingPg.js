@@ -1717,7 +1717,7 @@ export default class LandingPg extends Component {
                                     <img src='/assets/images/products/brookside-milk-powder-product.png'/>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
-                                    <p>Brookside Full Cream Milk Powder Tin (500g)</p>
+                                    <p>Brookside Full Cream Milk Powder Tin (900g)</p>
                                 </div>
                                 <div className='navbar-options-checkout-home-item-cell-qty'>
                                     <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
@@ -1731,7 +1731,7 @@ export default class LandingPg extends Component {
                                             <p>+</p>
                                         </div>
                                     </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 250.00</p>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 1198.00</p>
                                 </div>
                             </div>
                             <div className='navbar-options-checkout-home-item-cell'>
@@ -1739,7 +1739,7 @@ export default class LandingPg extends Component {
                                     <img src='/assets/images/products/min-maid-product.png'/>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
-                                    <p>Minute Maid: Fruit Cooler (500ml)</p>
+                                    <p>Minute Maid: Mango Pulpy Juice (400ml)</p>
                                 </div>
                                 <div className='navbar-options-checkout-home-item-cell-qty'>
                                     <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
@@ -1753,7 +1753,7 @@ export default class LandingPg extends Component {
                                             <p>+</p>
                                         </div>
                                     </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 250.00</p>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 75.00</p>
                                 </div>
                             </div>
                             <div className='navbar-options-checkout-home-item-cell'>

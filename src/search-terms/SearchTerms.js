@@ -1,6 +1,6 @@
 const results = [
 
-    {"id": "998573", "name": "Minute Maid: Fruit Cooler (500ml)", "category": "Rina Brands", "page": "Event types", "img": "/assets/images/products/min-maid-product.png", "lastCat": "top"},
+    {"id": "998573", "name": "Minute Maid: Mango Pulpy Juice (400ml)", "category": "Rina Brands", "page": "Event types", "img": "/assets/images/products/min-maid-product.png", "lastCat": "top"},
     {"id": "998573", "name": "MacCoffee Classic (200g)", "category": "Coffee House", "img": "/assets/images/products/mac-coffee-product.png", "page": "Event types", "lastCat": "top"},
     {"id": "998573", "name": "Blueband Original (200g)", "img": "/assets/images/products/bband-product.png", "category": "Soko Brands", "page": "Event types", "lastCat": "top"},
     {"id": "998573", "name": "Brookside Whole Milk 1L Long Life", "category": "Soko Brands", "img": "/assets/images/products/brookside-milk-product.png", "page": "Event types", "lastCat": "top"},
