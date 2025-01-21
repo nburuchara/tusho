@@ -1775,7 +1775,7 @@ export default class LandingPg extends Component {
                                             <p>+</p>
                                         </div>
                                     </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 250.00</p>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 1350.00</p>
                                 </div>
                             </div>
                             <div className='navbar-options-checkout-home-item-cell'>
@@ -1783,7 +1783,7 @@ export default class LandingPg extends Component {
                                     <img src='/assets/images/products/bband-product.png'/>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
-                                    <p>Blueband Original (200g)</p>
+                                    <p>Blueband Original (250g)</p>
                                 </div>
                                 <div className='navbar-options-checkout-home-item-cell-qty'>
                                     <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
@@ -1797,7 +1797,7 @@ export default class LandingPg extends Component {
                                             <p>+</p>
                                         </div>
                                     </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 250.00</p>
+                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES 148.00</p>
                                 </div>
                             </div>
                             <div className='navbar-options-checkout-home-item-cell'>
