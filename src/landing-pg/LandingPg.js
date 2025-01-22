@@ -159,6 +159,10 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+.searchResultCell:hover .searchResultCellImg img {
+    background-color: #fff;
+}
+
 .searchResultCellImg {
     width: 10%;
 }
@@ -1100,6 +1104,7 @@ const Styles = styled.div `
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
+// .searchResultCellImg img,
 .navbar-options-dropdown-left-menu-options-cell,
 .navbar-options-dropdown-left-menu-options-cell-icon img,
 .navbar-options-dropdown-left-menu-options-cell-details p,
@@ -1442,14 +1447,21 @@ export default class LandingPg extends Component {
         }, 0)
     }
 
-    decreaseItemQty = (item) => {
-        this.setState({
-            
-        })
+    decreaseItemQty = (item, itemQty) => {
+        if (itemQty > 1) {
+            this.setState({
+                [`this.state.item${item}CartQty`]: this.state.item1CartQty-1
+            })
+        }
+        
     }
 
     increaseItemQty = (item) => {
-        
+        // console.log('did we get here, ', item)
+        this.state.item1CartQty = this.state.item1CartQty + 1 
+        this.setState({
+            [`this.state.item${item}CartQty`]: this.state.item1CartQty+1
+        })
     }
 
     render () {
@@ -1804,13 +1816,13 @@ export default class LandingPg extends Component {
                                 </div>
                                 <div className='navbar-options-checkout-home-item-cell-qty'>
                                     <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
+                                        <div onClick={() => this.decreaseItemQty(1, this.state.item1CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
                                             <p>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
                                             <p>{this.state.item1CartQty}</p>
                                         </div>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
+                                        <div onClick={() => this.increaseItemQty(1)} className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
                                         </div>
                                     </div>
