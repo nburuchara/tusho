@@ -1449,19 +1449,16 @@ export default class LandingPg extends Component {
 
     decreaseItemQty = (item, itemQty) => {
         if (itemQty > 1) {
-            this.setState({
-                [`this.state.item${item}CartQty`]: this.state.item1CartQty-1
-            })
+          this.setState((prevState) => ({
+            [`item${item}CartQty`]: prevState[`item${item}CartQty`] - 1,
+          }));
         }
-        
-    }
+    };
 
     increaseItemQty = (item) => {
-        // console.log('did we get here, ', item)
-        this.state.item1CartQty = this.state.item1CartQty + 1 
-        this.setState({
-            [`this.state.item${item}CartQty`]: this.state.item1CartQty+1
-        })
+        this.setState((prevState) => ({
+            [`item${item}CartQty`]: prevState[`item${item}CartQty`] + 1,
+        }));
     }
 
     render () {
