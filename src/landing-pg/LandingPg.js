@@ -958,6 +958,7 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .navbar-options-checkout-home-item-cell-qty-toggle-left p {
@@ -988,6 +989,7 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
 .navbar-options-checkout-home-item-cell-qty-toggle-right p {
@@ -1207,37 +1209,37 @@ export default class LandingPg extends Component {
             item2CartQty: 1,
             item2CartPrice: 75,
             item2CartTotal: 0,
-            minimumItem2Quantity: false,
+            minimumItem2QtyColor: '#bbb',
 
             item3CartQty: 1,
             item3CartPrice: 1350,
             item3CartTotal: 0,
-            minimumItem3Quantity: false,
+            minimumItem3QtyColor: '#bbb',
 
             item4CartQty: 1,
             item4CartPrice: 148,
             item4CartTotal: 0,
-            minimumItem4Quantity: false,
+            minimumItem4QtyColor: '#bbb',
 
             item5CartQty: 1,
             item5CartPrice: 156,
             item5CartTotal: 0,
-            minimumItem5Quantity: false,
+            minimumItem5QtyColor: '#bbb',
 
             item6CartQty: 1,
             item6CartPrice: 339,
             item6CartTotal: 0,
-            minimumItem6Quantity: false,
+            minimumItem6QtyColor: '#bbb',
 
             item7CartQty: 1,
             item7CartPrice: 278,
             item7CartTotal: 0,
-            minimumItem7Quantity: false,
+            minimumItem7QtyColor: '#bbb',
 
             item8CartQty: 1,
             item8CartPrice: 1149,
             item8CartTotal: 0,
-            minimumItem8Quantity: false,
+            minimumItem8QtyColor: '#bbb',
 
         }
 
@@ -1855,13 +1857,13 @@ export default class LandingPg extends Component {
                                 </div>
                                 <div className='navbar-options-checkout-home-item-cell-qty'>
                                     <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
-                                            <p>-</p>
+                                        <div  onClick={() => this.decreaseItemQty(2, this.state.item2CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
+                                            <p style={{color: this.state.minimumItem2QtyColor}}>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
                                             <p>{this.state.item2CartQty}</p>
                                         </div>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
+                                        <div  onClick={() => this.increaseItemQty(2, this.state.item2CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
                                         </div>
                                     </div>
@@ -1878,13 +1880,13 @@ export default class LandingPg extends Component {
                                 </div>
                                 <div className='navbar-options-checkout-home-item-cell-qty'>
                                     <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
-                                            <p>-</p>
+                                        <div onClick={() => this.decreaseItemQty(3, this.state.item3CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
+                                            <p style={{color: this.state.minimumItem3QtyColor}}>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
                                             <p>{this.state.item3CartQty}</p>
                                         </div>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
+                                        <div onClick={() => this.increaseItemQty(3, this.state.item3CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
                                         </div>
                                     </div>
@@ -1901,13 +1903,13 @@ export default class LandingPg extends Component {
                                 </div>
                                 <div className='navbar-options-checkout-home-item-cell-qty'>
                                     <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
-                                            <p>-</p>
+                                        <div onClick={() => this.decreaseItemQty(4, this.state.item4CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
+                                            <p style={{color: this.state.minimumItem4QtyColor}}>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
                                             <p>{this.state.item4CartQty}</p>
                                         </div>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
+                                        <div onClick={() => this.increaseItemQty(4, this.state.item4CartQty)}  className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
                                         </div>
                                     </div>
@@ -1924,13 +1926,13 @@ export default class LandingPg extends Component {
                                 </div>
                                 <div className='navbar-options-checkout-home-item-cell-qty'>
                                     <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
-                                            <p>-</p>
+                                        <div onClick={() => this.decreaseItemQty(5, this.state.item5CartQty)}  className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
+                                            <p style={{color: this.state.minimumItem5QtyColor}}>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
                                             <p>{this.state.item5CartQty}</p>
                                         </div>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
+                                        <div onClick={() => this.increaseItemQty(5, this.state.item5CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
                                         </div>
                                     </div>
@@ -1947,13 +1949,13 @@ export default class LandingPg extends Component {
                                 </div>
                                 <div className='navbar-options-checkout-home-item-cell-qty'>
                                     <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
-                                            <p>-</p>
+                                        <div onClick={() => this.decreaseItemQty(6, this.state.item6CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
+                                            <p style={{color: this.state.minimumItem6QtyColor}}>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
                                             <p>{this.state.item6CartQty}</p>
                                         </div>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
+                                        <div onClick={() => this.increaseItemQty(6, this.state.item6CartQty)}  className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
                                         </div>
                                     </div>
@@ -1970,13 +1972,13 @@ export default class LandingPg extends Component {
                                 </div>
                                 <div className='navbar-options-checkout-home-item-cell-qty'>
                                     <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
-                                            <p>-</p>
+                                        <div onClick={() => this.decreaseItemQty(7, this.state.item7CartQty)}  className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
+                                            <p style={{color: this.state.minimumItem7QtyColor}}>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
                                             <p>{this.state.item7CartQty}</p>
                                         </div>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
+                                        <div onClick={() => this.increaseItemQty(7, this.state.item7CartQty)}  className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
                                         </div>
                                     </div>
@@ -1993,13 +1995,13 @@ export default class LandingPg extends Component {
                                 </div>
                                 <div className='navbar-options-checkout-home-item-cell-qty'>
                                     <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
-                                            <p>-</p>
+                                        <div onClick={() => this.decreaseItemQty(8, this.state.item8CartQty)}  className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
+                                            <p style={{color: this.state.minimumItem8QtyColor}}>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
                                             <p>{this.state.item8CartQty}</p>
                                         </div>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
+                                        <div onClick={() => this.increaseItemQty(8, this.state.item8CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
                                         </div>
                                     </div>
