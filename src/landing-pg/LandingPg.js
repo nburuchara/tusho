@@ -1142,22 +1142,46 @@ const Styles = styled.div `
     z-index: 1;
 }
 
+.navbar-profile-dropdown-header {
+    background-color: #FF5733;
+    border: 5px solid #f3f5f7;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
 .navbar-profile-dropdown-header h3 {
     font-family: lexend;
-    font-size: 95%;
+    font-size: 88%;
     margin-left: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+    margin-right: 18%;
+    text-decoration: underline;
 }
 
 .navbar-profile-dropdown-header span {
     text-decoration: underline;
-    text-decoration-color: #FF5733;
+    text-decoration-color: #FFF;
     text-decoration-thickness: 2px;
     text-decoration-style: wavy;
 }
 
+.navbar-profile-dropdown-header img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 18.5%;
+}
+
 .navbar-profile-dropdown-body {
     flex-grow: 1;
-    border: 1px solid black;
+    // border: 1px solid black;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
 }
@@ -2116,7 +2140,8 @@ export default class LandingPg extends Component {
 
                     <div className='navbar-profile-dropdown'>
                         <div className='navbar-profile-dropdown-header'>
-                            <h3><span>CREATE</span> AN ACCOUNT</h3>
+                            <h3>Create your account in seconds with OTP</h3>
+                            <img src='/assets/images/navbar-dropdown/phone-dropdown-header.png'/>
                         </div>
                         <div className='navbar-profile-dropdown-body'>
                             <p>Enter your number</p>
