@@ -1482,6 +1482,10 @@ export default class LandingPg extends Component {
         }));
     }
 
+    hideHomeCartClicked = () => {
+        
+    }
+
     render () {
 
         const { searchBarIsClicked, searchInput, isSearchLoading, resultsFound, groupedOptions } = this.state;
@@ -1820,7 +1824,7 @@ export default class LandingPg extends Component {
                                     <p>Your cart has (<label>{this.state.totalCartItems}</label>) <span>items</span></p>
                                 </div>
                                 <div className='navbar-options-checkout-home-header-icon'>
-                                    <img src='/assets/icons/navbar/clear-search-icon-color.png'/>
+                                    <img onClick={this.hideHomeCartClicked} src='/assets/icons/navbar/clear-search-icon-color.png'/>
                                 </div>
                             </div>
                         <div className='navbar-options-checkout-home-body'>
