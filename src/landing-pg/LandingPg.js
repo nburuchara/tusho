@@ -820,6 +820,13 @@ const Styles = styled.div `
     right: 0;
     display: flex;
     flex-direction: column;
+    opacity: 0;
+}
+
+.navbar-options-checkout-home.clicked {
+    transform: translateX(5%);
+    opacity: 1;
+    transition-property: opacity;
 }
 
     // # NAVBAR CHECKOUT HOME HEADER
@@ -1185,6 +1192,8 @@ export default class LandingPg extends Component {
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
             searchBarInput: '',
+
+            //* - HOME SCREEN SHOPPING CART - *//
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
