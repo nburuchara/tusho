@@ -1306,6 +1306,11 @@ export default class LandingPg extends Component {
             //* - HOME SCREEN SHOPPING CART - *//
             homeScreenCartClicked: false,
 
+            //* - HOME SCREEN PROFILE COMPONENTS - *//
+            showHomeProfileEnterOTP: false,
+            showHomeProfileVerifyOTP: true,
+            otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
+
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
             showNavbarDropdownOption2: false,
@@ -1370,6 +1375,7 @@ export default class LandingPg extends Component {
 
         //* - SEARCH BAR REFERENCE - *//
         this.searchBarRef = React.createRef();
+        this.inputs = []; // To store input element references
     }
 
     componentDidMount = () => {
@@ -1615,6 +1621,28 @@ export default class LandingPg extends Component {
             homeScreenCartClicked: false
         })
     }
+
+    handleOTPDigitChange = (index, event) => {
+        const value = event.target.value;
+        if (isNaN(value)) return; // Only allow numeric input
+    
+        const otp = [...this.state.otp];
+        otp[index] = value;
+    
+        this.setState({ otp }, () => {
+          if (value && index < this.inputs.length - 1) {
+            // Move to the next input if a value is entered
+            this.inputs[index + 1].focus();
+          }
+        });
+      };
+    
+      handleOTPKeyShift = (index, event) => {
+        if (event.key === 'Backspace' && !this.state.otp[index] && index > 0) {
+          // Move to the previous input on backspace if the current input is empty
+          this.inputs[index - 1].focus();
+        }
+      };
 
     render () {
 
@@ -2182,8 +2210,26 @@ export default class LandingPg extends Component {
                             }
                             {this.state.showHomeProfileVerifyOTP && 
                                 <div className='navbar-profile-dropdown-body-verify-otp'>
-                               
-                                <button>Verify OTP</button>
+                                    {this.state.otp.map((digit, index) => (
+                                        <input
+                                            key={index}
+                                            type="text"
+                                            maxLength="1"
+                                            value={digit}
+                                            onChange={(event) => this.handleOTPDigitChange(index, event)}
+                                            onKeyDown={(event) => this.handleOTPKeyShift(index, event)}
+                                            ref={(input) => (this.inputs[index] = input)} // Save input reference
+                                            style={{
+                                            width: '40px',
+                                            height: '40px',
+                                            textAlign: 'center',
+                                            fontSize: '18px',
+                                            border: '1px solid #ccc',
+                                            borderRadius: '4px',
+                                            }}
+                                        />
+                                        ))}
+                                    <button>Verify OTP</button>
                             </div>
                             }
                             
