@@ -1125,7 +1125,7 @@ const Styles = styled.div `
     width: 16.5%;
     position: absolute;
     border: 1px solid #ccc;
-    height: 300px;
+    height: auto;
     margin-right: 1%;
     // opacity: 0;
     top: 0;
@@ -1137,7 +1137,8 @@ const Styles = styled.div `
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: right;
-    cursor: pointer;
+    // cursor: pointer;
+    padding-bottom: 11.5px;
     z-index: 1;
 }
 
@@ -1188,15 +1189,15 @@ const Styles = styled.div `
 .navbar-profile-dropdown-body p {
     font-family: poppins;
     font-size: 80%;
-    margin-left: 6.5%;
+    margin-left: 3.5%;
     margin-right: 6.5%;
     margin-top: 2.5px;
     margin-bottom: 5px;
 }
 
 .navbar-profile-dropdown-body input {
-    width: 85%;
-    margin-left: 5%;
+    width: 88.5%;
+    margin-left: 2.5%;
     font-size: 14px;
     font-family: poppins;
     padding: 2.5%;
@@ -1206,7 +1207,16 @@ const Styles = styled.div `
 }
 
 .navbar-profile-dropdown-body button {
-
+    margin-left: 2.5%;
+    width: 94.5%;
+    margin-top: 9.5px;
+    padding: 4.5%;
+    background-color: #FF5733;
+    border: 1px solid #FF5733;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -2163,7 +2173,7 @@ export default class LandingPg extends Component {
                             <input
                             placeholder='07123456789'
                             />
-                            <button></button>
+                            <button>Send OTP</button>
                         </div>
                     </div>
 
