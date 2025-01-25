@@ -1153,7 +1153,7 @@ const Styles = styled.div `
 
 .navbar-profile-dropdown-header h3 {
     font-family: lexend;
-    font-size: 88%;
+    font-size: 82.5%;
     margin-left: 5%;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -1188,9 +1188,9 @@ const Styles = styled.div `
 
 .navbar-profile-dropdown-body p {
     font-family: poppins;
-    font-size: 90%;
+    font-size: 80%;
     margin-left: 5%;
-    margin-top: 0px;
+    margin-top: 2.5px;
     margin-bottom: 5px;
 }
 
