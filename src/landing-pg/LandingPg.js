@@ -1138,7 +1138,6 @@ const Styles = styled.div `
     display: flex;
     justify-content: right;
     cursor: pointer;
-    pointer-events: none;
     z-index: 1;
 }
 
@@ -1189,9 +1188,25 @@ const Styles = styled.div `
 .navbar-profile-dropdown-body p {
     font-family: poppins;
     font-size: 80%;
-    margin-left: 5%;
+    margin-left: 6.5%;
+    margin-right: 6.5%;
     margin-top: 2.5px;
     margin-bottom: 5px;
+}
+
+.navbar-profile-dropdown-body input {
+    width: 85%;
+    margin-left: 5%;
+    font-size: 14px;
+    font-family: poppins;
+    padding: 2.5%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.navbar-profile-dropdown-body button {
+
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -2144,7 +2159,11 @@ export default class LandingPg extends Component {
                             <img src='/assets/images/navbar-dropdown/phone-dropdown-header.png'/>
                         </div>
                         <div className='navbar-profile-dropdown-body'>
-                            <p>Enter your number</p>
+                            <p>Enter your mobile number</p>
+                            <input
+                            placeholder='07123456789'
+                            />
+                            <button></button>
                         </div>
                     </div>
 
