@@ -1202,34 +1202,42 @@ export default class LandingPg extends Component {
             item1CartQty: 1,
             item1CartPrice: 1198,
             item1CartTotal: 0,
+            minimumItem1QtyColor: '#bbb',
 
             item2CartQty: 1,
             item2CartPrice: 75,
             item2CartTotal: 0,
+            minimumItem2Quantity: false,
 
             item3CartQty: 1,
             item3CartPrice: 1350,
             item3CartTotal: 0,
+            minimumItem3Quantity: false,
 
             item4CartQty: 1,
             item4CartPrice: 148,
             item4CartTotal: 0,
+            minimumItem4Quantity: false,
 
             item5CartQty: 1,
             item5CartPrice: 156,
             item5CartTotal: 0,
+            minimumItem5Quantity: false,
 
             item6CartQty: 1,
             item6CartPrice: 339,
             item6CartTotal: 0,
+            minimumItem6Quantity: false,
 
             item7CartQty: 1,
             item7CartPrice: 278,
             item7CartTotal: 0,
+            minimumItem7Quantity: false,
 
             item8CartQty: 1,
             item8CartPrice: 1149,
             item8CartTotal: 0,
+            minimumItem8Quantity: false,
 
         }
 
@@ -1448,14 +1456,25 @@ export default class LandingPg extends Component {
     }
 
     decreaseItemQty = (item, itemQty) => {
-        if (itemQty > 1) {
+        if (itemQty > 1 && itemQty !== 2) {
           this.setState((prevState) => ({
             [`item${item}CartQty`]: prevState[`item${item}CartQty`] - 1,
+            [`minimumItem${item}QtyColor`]: "#000"
           }));
+        } else if (itemQty === 2) {
+            this.setState((prevState) => ({
+                [`item${item}CartQty`]: prevState[`item${item}CartQty`] - 1,
+                [`minimumItem${item}QtyColor`]: "#bbb"
+              }));
         }
     };
 
-    increaseItemQty = (item) => {
+    increaseItemQty = (item, itemQty) => {
+        if (itemQty === 1) {
+            this.setState({
+                [`minimumItem${item}QtyColor`]: "#000"
+            })
+        }
         this.setState((prevState) => ({
             [`item${item}CartQty`]: prevState[`item${item}CartQty`] + 1,
         }));
@@ -1814,12 +1833,12 @@ export default class LandingPg extends Component {
                                 <div className='navbar-options-checkout-home-item-cell-qty'>
                                     <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
                                         <div onClick={() => this.decreaseItemQty(1, this.state.item1CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
-                                            <p>-</p>
+                                            <p style={{color: this.state.minimumItem1QtyColor}}>-</p>
                                         </div>
                                         <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
                                             <p>{this.state.item1CartQty}</p>
                                         </div>
-                                        <div onClick={() => this.increaseItemQty(1)} className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
+                                        <div onClick={() => this.increaseItemQty(1, this.state.item1CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
                                             <p>+</p>
                                         </div>
                                     </div>
