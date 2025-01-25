@@ -821,12 +821,13 @@ const Styles = styled.div `
     display: flex;
     flex-direction: column;
     opacity: 0;
+    // margin-left: -25%;
 }
 
 .navbar-options-checkout-home.clicked {
-    transform: translateX(5%);
+    transform: translateX(10px);
     opacity: 1;
-    transition-property: opacity;
+    transition-property: opacity, transform;
 }
 
     // # NAVBAR CHECKOUT HOME HEADER
@@ -1194,6 +1195,7 @@ export default class LandingPg extends Component {
             searchBarInput: '',
 
             //* - HOME SCREEN SHOPPING CART - *//
+            homeScreenCartClicked: false,
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
@@ -1493,6 +1495,12 @@ export default class LandingPg extends Component {
         }));
     }
 
+    openHomeShoppingCartClicked = () => {
+        this.setState({
+            homeScreenCartClicked: true
+        })
+    }
+
     hideHomeCartClicked = () => {
         this.setState({
             
@@ -1576,7 +1584,7 @@ export default class LandingPg extends Component {
                         </div>
                         <div className='navbar-shopping-cart-area'>
                             <div className='navbar-shopping-cart'>
-                                <img src='/assets/icons/navbar/cart-icon.png'/>
+                                <img onClick={this.openHomeShoppingCartClicked} src='/assets/icons/navbar/cart-icon.png'/>
                                 <div className="navbar-shopping-cart-badge">3</div>
                             </div>
                             <div className='navbar-profile-btn'>
@@ -1831,7 +1839,7 @@ export default class LandingPg extends Component {
                         </div>
                     </div>
 
-                    <div className='navbar-options-checkout-home'>
+                    <div className={`navbar-options-checkout-home ${this.state.hideHomeCartClicked ? 'clicked' : ''}`}>
                         <div className='navbar-options-checkout-home-header'>
                                 <div className='navbar-options-checkout-home-header-details'>
                                     <p>Your cart has (<label>{this.state.totalCartItems}</label>) <span>items</span></p>
