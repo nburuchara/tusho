@@ -1196,7 +1196,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-dropdown-body input {
-    width: 88.5%;
+    width: 89%;
     margin-left: 2.5%;
     font-size: 14px;
     font-family: poppins;
@@ -1208,7 +1208,7 @@ const Styles = styled.div `
 
 .navbar-profile-dropdown-body button {
     margin-left: 2.5%;
-    width: 94.5%;
+    width: 95%;
     margin-top: 9.5px;
     padding: 4.5%;
     background-color: #FF5733;
