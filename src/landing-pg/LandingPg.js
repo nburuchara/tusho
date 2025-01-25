@@ -2171,11 +2171,22 @@ export default class LandingPg extends Component {
                             <img src='/assets/images/navbar-dropdown/phone-dropdown-header.png'/>
                         </div>
                         <div className='navbar-profile-dropdown-body'>
-                            <p>Enter your mobile number</p>
-                            <input
-                            placeholder='07123456789'
-                            />
-                            <button>Send OTP</button>
+                            {this.state.showHomeProfileEnterOTP && 
+                                <div className='navbar-profile-dropdown-body-enter-otp'>
+                                    <p>Enter your mobile number</p>
+                                    <input
+                                    placeholder='07123456789'
+                                    />
+                                    <button>Send OTP</button>
+                                </div>
+                            }
+                            {this.state.showHomeProfileVerifyOTP && 
+                                <div className='navbar-profile-dropdown-body-verify-otp'>
+                               
+                                <button>Verify OTP</button>
+                            </div>
+                            }
+                            
                         </div>
                     </div>
 
