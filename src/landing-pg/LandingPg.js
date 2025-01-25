@@ -317,11 +317,13 @@ const Styles = styled.div `
     display: flex;
     justify-content: space-between;
     cursor: pointer;
+    pointer-events: none;
 }
 
 .navbar-options-dropdown.clicked {
     transform: translateX(5%);
     opacity: 1;
+    pointer-events: auto;
     transition-property: transform, opacity;
 }
 
@@ -514,8 +516,8 @@ const Styles = styled.div `
     background-color: #f3f5f7;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    opacity: 1;
     transform: translateX(0%);
+    opacity: 1;
     transition-property: opacity, transform;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
@@ -1483,7 +1485,9 @@ export default class LandingPg extends Component {
     }
 
     hideHomeCartClicked = () => {
-        
+        this.setState({
+            
+        })
     }
 
     render () {
