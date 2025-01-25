@@ -1124,22 +1124,50 @@ const Styles = styled.div `
     z-index: 0;
     width: 16.5%;
     position: absolute;
-    // border: 1px solid black;
+    border: 1px solid #ccc;
     height: 300px;
     margin-right: 1%;
     // opacity: 0;
     top: 0;
     right: 0;
     margin-top: 90px;
-    background-color: white;
+    flex-direction: column;
     background-color: #f3f5f7;
     border-radius: 8px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: right;
     cursor: pointer;
     pointer-events: none;
     z-index: 1;
+}
+
+.navbar-profile-dropdown-header h3 {
+    font-family: lexend;
+    font-size: 95%;
+    margin-left: 5%;
+}
+
+.navbar-profile-dropdown-header span {
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
+    text-decoration-thickness: 2px;
+    text-decoration-style: wavy;
+}
+
+.navbar-profile-dropdown-body {
+    flex-grow: 1;
+    border: 1px solid black;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.navbar-profile-dropdown-body p {
+    font-family: poppins;
+    font-size: 90%;
+    margin-left: 5%;
+    margin-top: 0px;
+    margin-bottom: 5px;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -2087,7 +2115,12 @@ export default class LandingPg extends Component {
                     </div>
 
                     <div className='navbar-profile-dropdown'>
-                        
+                        <div className='navbar-profile-dropdown-header'>
+                            <h3><span>CREATE</span> AN ACCOUNT</h3>
+                        </div>
+                        <div className='navbar-profile-dropdown-body'>
+                            <p>Enter your number</p>
+                        </div>
                     </div>
 
 
