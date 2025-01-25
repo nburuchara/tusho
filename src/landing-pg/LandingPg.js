@@ -1143,6 +1143,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-dropdown-header {
+    height: 55px;
     background-color: #FF5733;
     border: 5px solid #f3f5f7;
     border-top-right-radius: 8px;
@@ -1153,7 +1154,7 @@ const Styles = styled.div `
 
 .navbar-profile-dropdown-header h3 {
     font-family: lexend;
-    font-size: 82.5%;
+    font-size: 85%;
     margin-left: 5%;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -1171,12 +1172,12 @@ const Styles = styled.div `
 
 .navbar-profile-dropdown-header img {
     position: absolute;
-    right: 0;
+    right: 2.5%;
     top: 0;
     display: flex;
     align-items: center;
     justify-content: right;
-    width: 18.5%;
+    width: 16.5%;
 }
 
 .navbar-profile-dropdown-body {
@@ -2216,7 +2217,7 @@ export default class LandingPg extends Component {
 
                     <div className='navbar-profile-dropdown'>
                         <div className='navbar-profile-dropdown-header'>
-                            <h3>Create your account in seconds with OTP</h3>
+                            <h3>Create your account in seconds with an OTP</h3>
                             <img src='/assets/images/navbar-dropdown/phone-dropdown-header.png'/>
                         </div>
                         <div className='navbar-profile-dropdown-body'>
