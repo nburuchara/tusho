@@ -823,15 +823,15 @@ const Styles = styled.div `
     bottom: 0;
     right: 0;
     display: flex;
+    opacity: 0;
     flex-direction: column;
     transform: translateX(100%); /* Default transform */
-    transition: transform 0.3s ease-in-out;
 }
 
 .navbar-options-checkout-home.clicked {
-    transform: translateX(-100%); /* Slide into view */
-    // visibility: visible;
-    transition-property: transform;
+    transform: translateX(0); /* Slide into view */
+    opacity: 1;
+    transition-property: transform, opacity;
 }
 
     // # NAVBAR CHECKOUT HOME HEADER
@@ -1508,7 +1508,7 @@ export default class LandingPg extends Component {
 
     hideHomeCartClicked = () => {
         this.setState({
-            
+            homeScreenCartClicked: false
         })
     }
 
@@ -1590,7 +1590,7 @@ export default class LandingPg extends Component {
                         <div className='navbar-shopping-cart-area'>
                             <div className='navbar-shopping-cart'>
                                 <img onClick={this.openHomeShoppingCartClicked} src='/assets/icons/navbar/cart-icon.png'/>
-                                <div className="navbar-shopping-cart-badge">3</div>
+                                <div className="navbar-shopping-cart-badge">8</div>
                             </div>
                             <div className='navbar-profile-btn'>
                                 <img src='/assets/icons/navbar/profile-btn-icon.png'/>
@@ -1844,7 +1844,7 @@ export default class LandingPg extends Component {
                         </div>
                     </div>
 
-                    <div className={`navbar-options-checkout-home ${this.state.hideHomeCartClicked ? 'clicked' : ''}`}>
+                    <div className={`navbar-options-checkout-home ${this.state.homeScreenCartClicked ? 'clicked' : ''}`}>
                         <div className='navbar-options-checkout-home-header'>
                                 <div className='navbar-options-checkout-home-header-details'>
                                     <p>Your cart has (<label>{this.state.totalCartItems}</label>) <span>items</span></p>
