@@ -262,6 +262,10 @@ const Styles = styled.div `
     margin: auto;
  }
 
+ .navbar-shopping-cart img:hover {
+    cursor: pointer;
+ }
+
  .navbar-shopping-cart-badge {
     position: absolute; /* Use absolute to position it relative to the parent */
     top: -10px; /* Adjust to place it in the top-right */
@@ -820,14 +824,14 @@ const Styles = styled.div `
     right: 0;
     display: flex;
     flex-direction: column;
-    opacity: 0;
-    // margin-left: -25%;
+    transform: translateX(100%); /* Default transform */
+    transition: transform 0.3s ease-in-out;
 }
 
 .navbar-options-checkout-home.clicked {
-    transform: translateX(10px);
-    opacity: 1;
-    transition-property: opacity, transform;
+    transform: translateX(-100%); /* Slide into view */
+    // visibility: visible;
+    transition-property: transform;
 }
 
     // # NAVBAR CHECKOUT HOME HEADER
@@ -1129,6 +1133,7 @@ const Styles = styled.div `
 .navbar-options-dropdown,
 .navbar-options-icon,
 .navbar-options-checkout-home-header-icon img,
+.navbar-options-checkout-home,
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
