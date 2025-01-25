@@ -1122,7 +1122,7 @@ const Styles = styled.div `
 
 .navbar-profile-dropdown {
     z-index: 0;
-    width: 16.5%;
+    width: 20.5%;
     position: absolute;
     border: 1px solid #ccc;
     height: auto;
@@ -1195,7 +1195,11 @@ const Styles = styled.div `
     margin-bottom: 5px;
 }
 
-.navbar-profile-dropdown-body input {
+.navbar-profile-dropdown-body  {
+   
+}
+
+.navbar-profile-dropdown-body-enter-otp input {
     width: 89%;
     margin-left: 2.5%;
     font-size: 14px;
@@ -1203,6 +1207,23 @@ const Styles = styled.div `
     padding: 2.5%;
     border-radius: 5px;
     border: 1px solid #ccc;
+    outline: none;
+}
+
+.navbar-profile-dropdown-body-verify-otp {
+    text-align: center;
+    margin-top: 8.5px;
+}
+
+.navbar-profile-dropdown-body-verify-otp input {
+    width: 32.5px;
+    height: 32.5px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
     outline: none;
 }
 
@@ -1307,8 +1328,8 @@ export default class LandingPg extends Component {
             homeScreenCartClicked: false,
 
             //* - HOME SCREEN PROFILE COMPONENTS - *//
-            showHomeProfileEnterOTP: false,
-            showHomeProfileVerifyOTP: true,
+            showHomeProfileEnterOTP: true,
+            showHomeProfileVerifyOTP: false,
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
@@ -2219,16 +2240,8 @@ export default class LandingPg extends Component {
                                             onChange={(event) => this.handleOTPDigitChange(index, event)}
                                             onKeyDown={(event) => this.handleOTPKeyShift(index, event)}
                                             ref={(input) => (this.inputs[index] = input)} // Save input reference
-                                            style={{
-                                            width: '40px',
-                                            height: '40px',
-                                            textAlign: 'center',
-                                            fontSize: '18px',
-                                            border: '1px solid #ccc',
-                                            borderRadius: '4px',
-                                            }}
                                         />
-                                        ))}
+                                    ))}
                                     <button>Verify OTP</button>
                             </div>
                             }
