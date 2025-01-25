@@ -1117,6 +1117,29 @@ const Styles = styled.div `
     margin-right: 2%;
 }
 
+    // - - NAVBAR PROFILE DROPDOWN - - //
+
+.navbar-profile-dropdown {
+    z-index: 0;
+    width: 16.5%;
+    position: absolute;
+    // border: 1px solid black;
+    height: 300px;
+    margin-right: 1%;
+    // opacity: 0;
+    top: 0;
+    right: 0;
+    margin-top: 90px;
+    background-color: white;
+    background-color: #f3f5f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: right;
+    cursor: pointer;
+    pointer-events: none;
+}
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
@@ -2060,6 +2083,12 @@ export default class LandingPg extends Component {
                             </div>
                         </div>
                     </div>
+
+                    <div className='navbar-profile-dropdown'>
+                        
+                    </div>
+
+
                 </div>
                 
             </Styles>
