@@ -1215,7 +1215,9 @@ const Styles = styled.div `
     border: 1px solid #FF5733;
     border-radius: 8px;
     color: white;
+    font-size: 80%;
     font-weight: bold;
+    font-family: lexend;
     cursor: pointer;
 }
 
