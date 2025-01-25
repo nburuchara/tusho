@@ -1211,6 +1211,21 @@ const Styles = styled.div `
     outline: none;
 }
 
+.navbar-profile-dropdown-body-enter-otp button {
+    margin-left: 2.5%;
+    width: 95%;
+    margin-top: 9.5px;
+    padding: 4.5%;
+    background-color: #FF5733;
+    border: 1px solid #FF5733;
+    border-radius: 8px;
+    color: white;
+    font-size: 80%;
+    font-weight: bold;
+    font-family: lexend;
+    cursor: pointer;
+}
+
 .navbar-profile-dropdown-body-verify-otp {
     text-align: center;
     margin-top: 8.5px;
@@ -1228,9 +1243,9 @@ const Styles = styled.div `
     outline: none;
 }
 
-.navbar-profile-dropdown-body button {
-    margin-left: 2.5%;
-    width: 95%;
+.navbar-profile-dropdown-body-verify-otp button {
+    margin-left: 0%;
+    width: 92.5%;
     margin-top: 9.5px;
     padding: 4.5%;
     background-color: #FF5733;
@@ -1241,7 +1256,7 @@ const Styles = styled.div `
     font-weight: bold;
     font-family: lexend;
     cursor: pointer;
-}
+}   
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
@@ -1329,8 +1344,8 @@ export default class LandingPg extends Component {
             homeScreenCartClicked: false,
 
             //* - HOME SCREEN PROFILE COMPONENTS - *//
-            showHomeProfileEnterOTP: true,
-            showHomeProfileVerifyOTP: false,
+            showHomeProfileEnterOTP: false,
+            showHomeProfileVerifyOTP: true,
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
