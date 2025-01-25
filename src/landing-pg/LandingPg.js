@@ -826,6 +826,7 @@ const Styles = styled.div `
     opacity: 0;
     flex-direction: column;
     transform: translateX(100%); /* Default transform */
+    z-index: 3;
 }
 
 .navbar-options-checkout-home.clicked {
@@ -1138,6 +1139,7 @@ const Styles = styled.div `
     justify-content: right;
     cursor: pointer;
     pointer-events: none;
+    z-index: 1;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
