@@ -1412,8 +1412,8 @@ export default class LandingPg extends Component {
             homeScreenCartClicked: false,
 
             //* - HOME SCREEN PROFILE COMPONENTS - *//
-            showHomeProfileOTPLoading: true,
-            showHomeProfileEnterOTP: false,
+            showHomeProfileOTPLoading: false,
+            showHomeProfileEnterOTP: true,
             showHomeProfileVerifyOTP: false,
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
@@ -1803,6 +1803,21 @@ export default class LandingPg extends Component {
                     OTPBtnClicked: false,
                     showEnterOPTHomeLoading: false,
                     showEnterOPTBtnTextHome: true
+                })
+                this.switchViewToVerifyOTP()
+            }, 2000)
+        })
+    }
+
+    switchViewToVerifyOTP = () => {
+        this.setState({
+            showHomeProfileOTPLoading: true,
+            showHomeProfileEnterOTP: false
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    showHomeProfileOTPLoading: false,
+                    showHomeProfileVerifyOTP: true
                 })
             }, 2000)
         })
