@@ -1188,8 +1188,11 @@ const Styles = styled.div `
     border-bottom-left-radius: 8px;
 }
 
-.navbar-profile-dropdown-body-otp-btn-loading {
-    
+.navbar-profile-dropdown-body-loading-otp {
+    height: 10.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -1213,10 +1216,17 @@ const Styles = styled.div `
     outline: none;
 }
 
-.navbar-profile-dropdown-body-enter-otp button {
-    margin-left: 2.5%;
-    width: 95%;
-    margin-top: 9.5px;
+.navbar-profile-dropdown-body-enter-otp-btn {
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.navbar-profile-dropdown-body-enter-otp-btn button {
+    margin-left: 0%;
+    width: 92.5%;
+    margin-top: 3.5px;
     padding: 4.5%;
     background-color: #FF5733;
     border: 1px solid #FF5733;
@@ -1226,6 +1236,10 @@ const Styles = styled.div `
     font-weight: bold;
     font-family: lexend;
     cursor: pointer;
+}   
+
+.navbar-profile-dropdown-body-enter-otp-btn.clicked button {
+    padding: 4%;
 }
 
 .navbar-profile-dropdown-body-verify-otp {
@@ -1292,7 +1306,7 @@ const Styles = styled.div `
     font-weight: bold;
 }
 
-.navbar-profile-dropdown-body-verify-otp button {
+.navbar-profile-dropdown-body-verify-otp-btn button {
     margin-left: 0%;
     width: 92.5%;
     margin-top: 3.5px;
@@ -1306,6 +1320,10 @@ const Styles = styled.div `
     font-family: lexend;
     cursor: pointer;
 }   
+
+.navbar-profile-dropdown-body-verify-otp-btn.clicked button {
+    padding: 4%;
+}
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
@@ -1394,10 +1412,14 @@ export default class LandingPg extends Component {
             homeScreenCartClicked: false,
 
             //* - HOME SCREEN PROFILE COMPONENTS - *//
+            showHomeProfileOTPLoading: true,
             showHomeProfileEnterOTP: false,
-            showHomeProfileVerifyOTP: true,
+            showHomeProfileVerifyOTP: false,
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
+            OTPBtnClicked: false,
+            showEnterOPTBtnTextHome: true,
+            showVerifyOPTBtnTextHome: true,
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
@@ -1753,6 +1775,40 @@ export default class LandingPg extends Component {
     const seconds = this.state.countdown % 60;
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     };
+
+    verifyOTPClicked = () => {
+        this.setState({
+            OTPBtnClicked: true,
+            showVerifyOPTHomeLoading: true,
+            showVerifyOPTBtnTextHome: false
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    OTPBtnClicked: false,
+                    showVerifyOPTHomeLoading: false,
+                    showVerifyOPTBtnTextHome: true
+                })
+            }, 2000)
+        })
+    }
+
+    enterOTPClicked = () => {
+        this.setState({
+            OTPBtnClicked: true,
+            showEnterOPTHomeLoading: true,
+            showEnterOPTBtnTextHome: false
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    OTPBtnClicked: false,
+                    showEnterOPTHomeLoading: false,
+                    showEnterOPTBtnTextHome: true
+                })
+            }, 2000)
+        })
+    }
+
+
 
     render () {
 
@@ -2309,28 +2365,51 @@ export default class LandingPg extends Component {
                             <img src='/assets/images/navbar-dropdown/phone-dropdown-header.png'/>
                         </div>
                         <div className='navbar-profile-dropdown-body'>
+                            {this.state.showHomeProfileOTPLoading && 
+                                <div className='navbar-profile-dropdown-body-loading-otp'>
+                                    <RotatingLines
+                                    visible={true}
+                                    height="23.5"
+                                    width="23.5"
+                                    strokeColor="#FF5733"
+                                    strokeWidth="3"
+                                    animationDuration="0.75"
+                                    ariaLabel="rotating-lines-loading"
+                                    wrapperStyle={{}}
+                                    wrapperClass=""
+                                    />
+                                </div>
+                            }
                             {this.state.showHomeProfileEnterOTP && 
                                 <div className='navbar-profile-dropdown-body-enter-otp'>
                                     <p>Enter your mobile number</p>
                                     <input
                                     placeholder='07123456789'
                                     />
-                                    <button>
-                                        {/* <span>Send OTP</span> */}
-                                        <span className='navbar-profile-dropdown-body-otp-btn-loading'>
-                                            <RotatingLines
-                                            visible={true}
-                                            height="22.7"
-                                            width="22.7"
-                                            strokeColor="white"
-                                            strokeWidth="3"
-                                            animationDuration="0.75"
-                                            ariaLabel="rotating-lines-loading"
-                                            wrapperStyle={{}}
-                                            wrapperClass=""
-                                            />
-                                        </span>
-                                    </button>
+                                    <div className={`navbar-profile-dropdown-body-enter-otp-btn ${this.state.OTPBtnClicked ? 'clicked' : ''}`}>
+                                        <button
+                                        onClick={this.enterOTPClicked}
+                                        >
+                                            {this.state.showEnterOPTBtnTextHome &&
+                                                <span>Send OTP</span>
+                                            }
+                                            {this.state.showEnterOPTHomeLoading && 
+                                                <span className='navbar-profile-dropdown-body-otp-btn-loading'>
+                                                    <RotatingLines
+                                                    visible={true}
+                                                    height="16.5"
+                                                    width="16.5"
+                                                    strokeColor="white"
+                                                    strokeWidth="3"
+                                                    animationDuration="0.75"
+                                                    ariaLabel="rotating-lines-loading"
+                                                    wrapperStyle={{}}
+                                                    wrapperClass=""
+                                                    />
+                                                </span>
+                                            }
+                                        </button>
+                                    </div>
                                 </div>
                             }
                             {this.state.showHomeProfileVerifyOTP && 
@@ -2353,23 +2432,32 @@ export default class LandingPg extends Component {
                                         <p>Resend OTP</p>
                                         <h5>OTP Expres in <label>{this.formatTime()}</label></h5>
                                     </div>
-                                    <button>
-                                        {/* <span>Verify OTP</span> */}
-                                        <span className='navbar-profile-dropdown-body-otp-btn-loading'>
-                                            <RotatingLines
-                                            visible={true}
-                                            height="16.7"
-                                            width="16.7"
-                                            strokeColor="white"
-                                            strokeWidth="3"
-                                            animationDuration="0.75"
-                                            ariaLabel="rotating-lines-loading"
-                                            wrapperStyle={{}}
-                                            wrapperClass=""
-                                            />
-                                        </span>
-                                    </button>
-                            </div>
+                                    <div className={`navbar-profile-dropdown-body-verify-otp-btn ${this.state.OTPBtnClicked ? 'clicked' : ''}`}>
+                                        <button
+                                        onClick={this.verifyOTPClicked}
+                                        >
+                                            {this.state.showVerifyOPTBtnTextHome && 
+                                                <span>Verify OTP</span>
+                                            }
+                                            {this.state.showVerifyOPTHomeLoading && 
+                                                 <span className='navbar-profile-dropdown-body-otp-btn-loading'>
+                                                    <RotatingLines
+                                                    visible={true}
+                                                    height="16.5"
+                                                    width="16.5"
+                                                    strokeColor="white"
+                                                    strokeWidth="3"
+                                                    animationDuration="0.75"
+                                                    ariaLabel="rotating-lines-loading"
+                                                    wrapperStyle={{}}
+                                                    wrapperClass=""
+                                                    />
+                                                </span>
+                                            }
+                                           
+                                        </button>
+                                    </div>
+                                </div>
                             }
                             
                         </div>
