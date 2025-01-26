@@ -1232,15 +1232,17 @@ const Styles = styled.div `
 }
 
 .navbar-profile-dropdown-body-verify-otp input {
-    width: 32.5px;
-    height: 32.5px;
+    width: 12.5%; /* Relative to the parent container */
+    max-width: 50px; /* Optional max size for larger screens */
+    height: 2.2rem; /* Adjust height automatically based on width */
     text-align: center;
-    font-size: 18px;
+    font-size: 1.2rem; /* Scales with screen size */
     border: 1px solid #ccc;
     border-radius: 4px;
-    margin-left: 1.5%;
+    margin-left: 1.5%; /* Spacing between boxes */
     margin-right: 1.5%;
     outline: none;
+    box-sizing: border-box; /* Ensures padding is included in size */
 }
 
 .navbar-profile-dropdown-body-verify-otp button {
