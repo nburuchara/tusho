@@ -1188,16 +1188,17 @@ const Styles = styled.div `
 }
 
 .navbar-profile-dropdown-body p {
+
+}
+
+
+.navbar-profile-dropdown-body-enter-otp p {
     font-family: poppins;
     font-size: 80%;
     margin-left: 3.5%;
     margin-right: 6.5%;
     margin-top: 2.5px;
     margin-bottom: 5px;
-}
-
-.navbar-profile-dropdown-body  {
-   
 }
 
 .navbar-profile-dropdown-body-enter-otp input {
@@ -1245,10 +1246,37 @@ const Styles = styled.div `
     box-sizing: border-box; /* Ensures padding is included in size */
 }
 
+.navbar-profile-dropdown-body-verify-otp-labels {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-profile-dropdown-body-verify-otp-labels p {
+    font-family: poppins;
+    font-size: 80%;
+    margin-right: 6.5%;
+    margin-top: 3.5px;
+    margin-bottom: 3.5px;
+    margin-left: 4%;
+}
+
+.navbar-profile-dropdown-body-verify-otp-labels h5 {
+    font-family: poppins;
+    font-weight: normal;
+    font-size: 80%;
+    margin-top: 3.5px;
+    margin-bottom: 3.5px;
+    margin-right: 4%;
+}
+
+.navbar-profile-dropdown-body-verify-otp-labels label {
+    font-weight: bold;
+}
+
 .navbar-profile-dropdown-body-verify-otp button {
     margin-left: 0%;
     width: 92.5%;
-    margin-top: 9.5px;
+    margin-top: 3.5px;
     padding: 4.5%;
     background-color: #FF5733;
     border: 1px solid #FF5733;
@@ -1349,6 +1377,7 @@ export default class LandingPg extends Component {
             showHomeProfileEnterOTP: false,
             showHomeProfileVerifyOTP: true,
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
+            countdown: 59, // Starting countdown value (in seconds)
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
@@ -1414,6 +1443,7 @@ export default class LandingPg extends Component {
 
         //* - SEARCH BAR REFERENCE - *//
         this.searchBarRef = React.createRef();
+
         this.inputs = []; // To store input element references
     }
 
@@ -1421,11 +1451,13 @@ export default class LandingPg extends Component {
         document.addEventListener('click', this.handleOutsideSearchBarClick);
         this.loadCartTotal()
         this.loadCartQty()
+        this.startCountdown();
     }
 
     componentWillUnmount() {
         // Remove the click event listener to prevent memory leaks
         document.removeEventListener('click', this.handleOutsideSearchBarClick);
+        clearInterval(this.timer); // Clear the timer when the component unmounts
     }
 
     loadCartTotal = () => {
@@ -1674,14 +1706,33 @@ export default class LandingPg extends Component {
             this.inputs[index + 1].focus();
           }
         });
-      };
+    };
     
-      handleOTPKeyShift = (index, event) => {
-        if (event.key === 'Backspace' && !this.state.otp[index] && index > 0) {
-          // Move to the previous input on backspace if the current input is empty
-          this.inputs[index - 1].focus();
-        }
-      };
+    handleOTPKeyShift = (index, event) => {
+    if (event.key === 'Backspace' && !this.state.otp[index] && index > 0) {
+        // Move to the previous input on backspace if the current input is empty
+        this.inputs[index - 1].focus();
+    }
+    };
+
+    startCountdown = () => {
+        this.timer = setInterval(() => {
+          this.setState((prevState) => {
+            if (prevState.countdown > 0) {
+              return { countdown: prevState.countdown - 1 }; // Decrease countdown
+            } else {
+              clearInterval(this.timer); // Stop the timer when it reaches 0
+              return null;
+            }
+          });
+        }, 1000); // Update every second
+    };
+    
+    formatTime = () => {
+    const minutes = Math.floor(this.state.countdown / 60);
+    const seconds = this.state.countdown % 60;
+    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    };
 
     render () {
 
@@ -2234,7 +2285,7 @@ export default class LandingPg extends Component {
 
                     <div className='navbar-profile-dropdown'>
                         <div className='navbar-profile-dropdown-header'>
-                            <h3>Create your account in seconds with an OTP</h3>
+                            <h3>Create your account in seconds with OTP verification</h3>
                             <img src='/assets/images/navbar-dropdown/phone-dropdown-header.png'/>
                         </div>
                         <div className='navbar-profile-dropdown-body'>
@@ -2260,6 +2311,10 @@ export default class LandingPg extends Component {
                                             ref={(input) => (this.inputs[index] = input)} // Save input reference
                                         />
                                     ))}
+                                    <div className='navbar-profile-dropdown-body-verify-otp-labels'>
+                                        <p>Resend OTP</p>
+                                        <h5>OTP Expres in <label>{this.formatTime()}</label></h5>
+                                    </div>
                                     <button>Verify OTP</button>
                             </div>
                             }
