@@ -1493,7 +1493,6 @@ export default class LandingPg extends Component {
         document.addEventListener('click', this.handleOutsideSearchBarClick);
         this.loadCartTotal()
         this.loadCartQty()
-        this.startCountdown();
     }
 
     componentWillUnmount() {
@@ -1819,6 +1818,7 @@ export default class LandingPg extends Component {
                     showHomeProfileOTPLoading: false,
                     showHomeProfileVerifyOTP: true
                 })
+                this.startCountdown();
             }, 2000)
         })
     }
