@@ -1232,6 +1232,15 @@ const Styles = styled.div `
     margin-top: 8.5px;
 }
 
+.navbar-profile-dropdown-body-verify-otp-header p {
+    font-family: poppins;
+    font-size: 82.5%;
+    margin-left: 4%;
+    margin-right: 6.5%;
+    margin-top: 0px;
+    margin-bottom: 6.5px;
+}
+
 .navbar-profile-dropdown-body-verify-otp input {
     width: 12.5%; /* Relative to the parent container */
     max-width: 50px; /* Optional max size for larger screens */
@@ -1258,6 +1267,15 @@ const Styles = styled.div `
     margin-top: 3.5px;
     margin-bottom: 3.5px;
     margin-left: 4%;
+    color: #5e626a;
+    text-decoration: none;
+    transition-property: color, text-decoration;
+}
+
+.navbar-profile-dropdown-body-verify-otp-labels p:hover { 
+    color: #1980ff;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .navbar-profile-dropdown-body-verify-otp-labels h5 {
@@ -1305,6 +1323,7 @@ const Styles = styled.div `
 .navbar-options-icon,
 .navbar-options-checkout-home-header-icon img,
 .navbar-options-checkout-home,
+.navbar-profile-dropdown-body-verify-otp-labels p,
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
@@ -1374,8 +1393,8 @@ export default class LandingPg extends Component {
             homeScreenCartClicked: false,
 
             //* - HOME SCREEN PROFILE COMPONENTS - *//
-            showHomeProfileEnterOTP: false,
-            showHomeProfileVerifyOTP: true,
+            showHomeProfileEnterOTP: true,
+            showHomeProfileVerifyOTP: false,
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
 
@@ -2300,6 +2319,9 @@ export default class LandingPg extends Component {
                             }
                             {this.state.showHomeProfileVerifyOTP && 
                                 <div className='navbar-profile-dropdown-body-verify-otp'>
+                                    <div className='navbar-profile-dropdown-body-verify-otp-header'>
+                                        <p style={{textAlign: "left"}}>Enter the OTP sent to your phone via SMS: </p>
+                                    </div>
                                     {this.state.otp.map((digit, index) => (
                                         <input
                                             key={index}
