@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import styled from 'styled-components'; 
+import { ColorRing, RotatingLines } from 'react-loader-spinner'
 
 //? - - FILES - - //
 import SearchTerms from '../search-terms/SearchTerms'
@@ -1187,8 +1188,8 @@ const Styles = styled.div `
     border-bottom-left-radius: 8px;
 }
 
-.navbar-profile-dropdown-body p {
-
+.navbar-profile-dropdown-body-otp-btn-loading {
+    
 }
 
 
@@ -1393,8 +1394,8 @@ export default class LandingPg extends Component {
             homeScreenCartClicked: false,
 
             //* - HOME SCREEN PROFILE COMPONENTS - *//
-            showHomeProfileEnterOTP: true,
-            showHomeProfileVerifyOTP: false,
+            showHomeProfileEnterOTP: false,
+            showHomeProfileVerifyOTP: true,
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
 
@@ -2314,7 +2315,22 @@ export default class LandingPg extends Component {
                                     <input
                                     placeholder='07123456789'
                                     />
-                                    <button>Send OTP</button>
+                                    <button>
+                                        {/* <span>Send OTP</span> */}
+                                        <span className='navbar-profile-dropdown-body-otp-btn-loading'>
+                                            <RotatingLines
+                                            visible={true}
+                                            height="22.7"
+                                            width="22.7"
+                                            strokeColor="white"
+                                            strokeWidth="3"
+                                            animationDuration="0.75"
+                                            ariaLabel="rotating-lines-loading"
+                                            wrapperStyle={{}}
+                                            wrapperClass=""
+                                            />
+                                        </span>
+                                    </button>
                                 </div>
                             }
                             {this.state.showHomeProfileVerifyOTP && 
@@ -2337,7 +2353,22 @@ export default class LandingPg extends Component {
                                         <p>Resend OTP</p>
                                         <h5>OTP Expres in <label>{this.formatTime()}</label></h5>
                                     </div>
-                                    <button>Verify OTP</button>
+                                    <button>
+                                        {/* <span>Verify OTP</span> */}
+                                        <span className='navbar-profile-dropdown-body-otp-btn-loading'>
+                                            <RotatingLines
+                                            visible={true}
+                                            height="16.7"
+                                            width="16.7"
+                                            strokeColor="white"
+                                            strokeWidth="3"
+                                            animationDuration="0.75"
+                                            ariaLabel="rotating-lines-loading"
+                                            wrapperStyle={{}}
+                                            wrapperClass=""
+                                            />
+                                        </span>
+                                    </button>
                             </div>
                             }
                             
