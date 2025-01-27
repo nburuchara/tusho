@@ -1153,7 +1153,7 @@ const Styles = styled.div `
     overflow: hidden;
 }
 
-.navbar-profile-dropdown-header h3 {
+.navbar-profile-dropdown-header-default h3 {
     font-family: lexend;
     font-size: 85%;
     margin-left: 5%;
@@ -1164,14 +1164,14 @@ const Styles = styled.div `
     text-decoration: underline;
 }
 
-.navbar-profile-dropdown-header span {
+.navbar-profile-dropdown-header-default span {
     text-decoration: underline;
     text-decoration-color: #FFF;
     text-decoration-thickness: 2px;
     text-decoration-style: wavy;
 }
 
-.navbar-profile-dropdown-header img {
+.navbar-profile-dropdown-header-default img {
     position: absolute;
     right: 2.5%;
     top: 0;
@@ -1179,6 +1179,17 @@ const Styles = styled.div `
     align-items: center;
     justify-content: right;
     width: 16.5%;
+}
+
+.navbar-profile-dropdown-header-success {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-profile-dropdown-header-success img {
+    margin-top: 10px;
+    width: 35px;
 }
 
 .navbar-profile-dropdown-body {
@@ -1412,6 +1423,8 @@ export default class LandingPg extends Component {
             homeScreenCartClicked: false,
 
             //* - HOME SCREEN PROFILE COMPONENTS - *//
+            showProfileDropdownHeaderDefault: false,
+            showProfileDropdownHeaderSuccess: true,
             showHomeProfileOTPLoading: false,
             showHomeProfileEnterOTP: true,
             showHomeProfileVerifyOTP: false,
@@ -2376,8 +2389,17 @@ export default class LandingPg extends Component {
 
                     <div className='navbar-profile-dropdown'>
                         <div className='navbar-profile-dropdown-header'>
-                            <h3>Create your account in seconds with OTP verification</h3>
-                            <img src='/assets/images/navbar-dropdown/phone-dropdown-header.png'/>
+                            {this.state.showProfileDropdownHeaderDefault &&
+                                <div className='navbar-profile-dropdown-header-default'>
+                                    <h3>Create your account in seconds with OTP verification</h3>
+                                    <img src='/assets/images/navbar-dropdown/phone-dropdown-header.png'/>
+                                </div>
+                            }
+                            {this.state.showProfileDropdownHeaderSuccess && 
+                                <div className='navbar-profile-dropdown-header-success'>
+                                    <img src='/assets/icons/home-profile/otp-successful-icon.png'/>
+                                </div>
+                            }
                         </div>
                         <div className='navbar-profile-dropdown-body'>
                             {this.state.showHomeProfileOTPLoading && 
