@@ -1188,10 +1188,10 @@ const Styles = styled.div `
 }
 
 .navbar-profile-dropdown-header-success img {
-    margin-top: 10px;
+    margin-top: 55px;
     width: 35px;
-    transform: translateY(45px);
-    transition-property: transform;
+    transform: translateY(0px);
+    transition: transform 1s ease-in-out;
 }
 
 .navbar-profile-dropdown-header-success.clicked img {
@@ -1429,14 +1429,15 @@ export default class LandingPg extends Component {
             homeScreenCartClicked: false,
 
             //* - HOME SCREEN PROFILE COMPONENTS - *//
-            showProfileDropdownHeaderDefault: false,
-            showProfileDropdownHeaderSuccess: true,
+            showProfileDropdownHeaderDefault: true,
+            showProfileDropdownHeaderSuccess: false,
             showHomeProfileOTPLoading: false,
             showHomeProfileEnterOTP: true,
             showHomeProfileVerifyOTP: false,
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
             OTPBtnClicked: false,
+            OTPVerifySuccess:false,
             showEnterOPTBtnTextHome: true,
             showVerifyOPTBtnTextHome: true,
 
@@ -1806,6 +1807,7 @@ export default class LandingPg extends Component {
                     showVerifyOPTHomeLoading: false,
                     showVerifyOPTBtnTextHome: true
                 })
+                this.switchViewToSuccessOTP();
             }, 2000)
         })
     }
@@ -1844,13 +1846,14 @@ export default class LandingPg extends Component {
 
     switchViewToSuccessOTP = () => {
         this.setState({
-
+            showProfileDropdownHeaderDefault: false,
+            showProfileDropdownHeaderSuccess: true,
         }, () => {
             setTimeout(() => {
                 this.setState({
-
+                    OTPVerifySuccess: true
                 })
-            }, 2000);
+            }, 1000);
         })
     }
 
@@ -2414,7 +2417,7 @@ export default class LandingPg extends Component {
                                 </div>
                             }
                             {this.state.showProfileDropdownHeaderSuccess && 
-                                <div className='navbar-profile-dropdown-header-success'>
+                                <div className={`navbar-profile-dropdown-header-success ${this.state.OTPVerifySuccess ? 'clicked' : ''}`}>
                                     <img src='/assets/icons/home-profile/otp-successful-icon.png'/>
                                 </div>
                             }
