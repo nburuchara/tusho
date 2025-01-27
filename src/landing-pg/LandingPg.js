@@ -1192,6 +1192,10 @@ const Styles = styled.div `
     width: 35px;
 }
 
+.navbar-profile-dropdown-header-success.clicked img {
+    
+}
+
 .navbar-profile-dropdown-body {
     flex-grow: 1;
     // border: 1px solid black;
