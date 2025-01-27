@@ -1198,7 +1198,7 @@ const Styles = styled.div `
     margin-top: 55px;
     width: 30px;
     transform: translateY(0px);
-    transition: transform 1s ease-in-out;
+    transition: transform 0.85s ease-in-out;
 }
 
 .navbar-profile-dropdown-header-success.clicked img {
