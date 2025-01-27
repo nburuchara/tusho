@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import styled from 'styled-components'; 
-import { ColorRing, RotatingLines } from 'react-loader-spinner'
+import { ColorRing, RotatingLines, TailSpin } from 'react-loader-spinner'
 
 //? - - FILES - - //
 import SearchTerms from '../search-terms/SearchTerms'
@@ -1181,6 +1181,13 @@ const Styles = styled.div `
     width: 16.5%;
 }
 
+.navbar-profile-dropdown-header-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
 .navbar-profile-dropdown-header-success {
     display: flex;
     align-items: center;
@@ -1429,7 +1436,8 @@ export default class LandingPg extends Component {
             homeScreenCartClicked: false,
 
             //* - HOME SCREEN PROFILE COMPONENTS - *//
-            showProfileDropdownHeaderDefault: true,
+            showProfileDropdownHeaderDefault: false,
+            showProfileDropdownHeaderLoading: true,
             showProfileDropdownHeaderSuccess: false,
             showHomeProfileOTPLoading: false,
             showHomeProfileEnterOTP: true,
@@ -2414,6 +2422,20 @@ export default class LandingPg extends Component {
                                 <div className='navbar-profile-dropdown-header-default'>
                                     <h3>Create your account in seconds with OTP verification</h3>
                                     <img src='/assets/images/navbar-dropdown/phone-dropdown-header.png'/>
+                                </div>
+                            }
+                            {this.state.showProfileDropdownHeaderLoading && 
+                                <div className={`navbar-profile-dropdown-header-loading`}>
+                                    <TailSpin
+                                    visible={true}
+                                    height="25px"
+                                    width="25px"
+                                    color="#fff"
+                                    ariaLabel="tail-spin-loading"
+                                    radius="1"
+                                    wrapperStyle={{}}
+                                    wrapperClass=""
+                                    />
                                 </div>
                             }
                             {this.state.showProfileDropdownHeaderSuccess && 
