@@ -1196,13 +1196,13 @@ const Styles = styled.div `
 
 .navbar-profile-dropdown-header-success img {
     margin-top: 55px;
-    width: 35px;
+    width: 30px;
     transform: translateY(0px);
     transition: transform 1s ease-in-out;
 }
 
 .navbar-profile-dropdown-header-success.clicked img {
-    transform: translateY(-45px);
+    transform: translateY(-40px);
 }
 
 .navbar-profile-dropdown-body {
@@ -1436,8 +1436,8 @@ export default class LandingPg extends Component {
             homeScreenCartClicked: false,
 
             //* - HOME SCREEN PROFILE COMPONENTS - *//
-            showProfileDropdownHeaderDefault: false,
-            showProfileDropdownHeaderLoading: true,
+            showProfileDropdownHeaderDefault: true,
+            showProfileDropdownHeaderLoading: false,
             showProfileDropdownHeaderSuccess: false,
             showHomeProfileOTPLoading: false,
             showHomeProfileEnterOTP: true,
@@ -1807,13 +1807,16 @@ export default class LandingPg extends Component {
         this.setState({
             OTPBtnClicked: true,
             showVerifyOPTHomeLoading: true,
-            showVerifyOPTBtnTextHome: false
+            showVerifyOPTBtnTextHome: false,
+            showProfileDropdownHeaderDefault: false,
+            showProfileDropdownHeaderLoading: true,
         }, () => {
             setTimeout(() => {
                 this.setState({
                     OTPBtnClicked: false,
                     showVerifyOPTHomeLoading: false,
-                    showVerifyOPTBtnTextHome: true
+                    showVerifyOPTBtnTextHome: true,
+                    showProfileDropdownHeaderLoading: false,
                 })
                 this.switchViewToSuccessOTP();
             }, 2000)
@@ -1854,14 +1857,13 @@ export default class LandingPg extends Component {
 
     switchViewToSuccessOTP = () => {
         this.setState({
-            showProfileDropdownHeaderDefault: false,
             showProfileDropdownHeaderSuccess: true,
         }, () => {
             setTimeout(() => {
                 this.setState({
                     OTPVerifySuccess: true
                 })
-            }, 1000);
+            }, 500);
         })
     }
 
@@ -2432,7 +2434,7 @@ export default class LandingPg extends Component {
                                     width="25px"
                                     color="#fff"
                                     ariaLabel="tail-spin-loading"
-                                    radius="1"
+                                    radius="2"
                                     wrapperStyle={{}}
                                     wrapperClass=""
                                     />
