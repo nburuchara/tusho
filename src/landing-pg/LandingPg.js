@@ -1190,10 +1190,12 @@ const Styles = styled.div `
 .navbar-profile-dropdown-header-success img {
     margin-top: 10px;
     width: 35px;
+    transform: translateY(45px);
+    transition-property: transform;
 }
 
 .navbar-profile-dropdown-header-success.clicked img {
-    
+    transform: translateY(-45px);
 }
 
 .navbar-profile-dropdown-body {
@@ -1837,6 +1839,18 @@ export default class LandingPg extends Component {
                 })
                 this.startCountdown();
             }, 2000)
+        })
+    }
+
+    switchViewToSuccessOTP = () => {
+        this.setState({
+
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+
+                })
+            }, 2000);
         })
     }
 
