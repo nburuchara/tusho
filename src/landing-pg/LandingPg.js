@@ -1225,7 +1225,7 @@ const Styles = styled.div `
 
 .navbar-profile-dropdown-body-enter-otp-btn button {
     margin-left: 0%;
-    width: 92.5%;
+    width: 94%;
     margin-top: 3.5px;
     padding: 4.5%;
     background-color: #FF5733;
@@ -2445,7 +2445,7 @@ export default class LandingPg extends Component {
                                     ))}
                                     <div className='navbar-profile-dropdown-body-verify-otp-labels'>
                                         <p>Resend OTP</p>
-                                        <h5>OTP Expres in <label>{this.formatTime()}</label></h5>
+                                        <h5>OTP Expires in <label>{this.formatTime()}</label></h5>
                                     </div>
                                     <div className={`navbar-profile-dropdown-body-verify-otp-btn ${this.state.OTPBtnClicked ? 'clicked' : ''}`}>
                                         <button
