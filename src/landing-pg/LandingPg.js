@@ -1158,6 +1158,11 @@ const Styles = styled.div `
     background-color: #50b65d;
 }
 
+.navbar-profile-dropdown-header.signed-in {
+    background-color: #f3f5f7;
+    border-bottom: 1px solid #ccc;
+}
+
 .navbar-profile-dropdown-header.profile-loading {
     background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
     background-size: 200% 100%; /* Make the gradient larger than the div to allow animation */
@@ -1484,7 +1489,7 @@ export default class LandingPg extends Component {
         this.state = {
 
             //* - USER ACCOUNT STATUS - *//
-            userSignedIn: false,
+            userSignedIn: true,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -1503,7 +1508,7 @@ export default class LandingPg extends Component {
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
             OTPBtnClicked: false,
-            OTPVerifySuccess:false,
+            OTPVerifySuccess:true,
             showEnterOPTBtnTextHome: true,
             showVerifyOPTBtnTextHome: true,
             verifyOTPBtnText: 'Verify OTP',
@@ -2502,7 +2507,7 @@ export default class LandingPg extends Component {
                     </div>
 
                     <div className='navbar-profile-dropdown'>
-                        <div className={`navbar-profile-dropdown-header ${this.state.OTPVerifySuccess ? this.state.transferToProfile ? 'profile-loading' : this.state.userSignedIn ? '' : 'success' : ''}`}>
+                        <div className={`navbar-profile-dropdown-header ${this.state.OTPVerifySuccess ? this.state.transferToProfile ? 'profile-loading' : this.state.userSignedIn ? 'signed-in' : 'success' : ''}`}>
                             {!this.state.userSignedIn && 
                                 <div className='navbar-profile-dropdown-header-signed-out'>
                                     {this.state.showProfileDropdownHeaderDefault &&
