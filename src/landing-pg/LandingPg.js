@@ -1232,16 +1232,18 @@ const Styles = styled.div `
 }
 
 .navbar-profile-dropdown-header-signed-in {
-    // border: 1px solid black;
-    height: 91%;
+    border: 1px solid transparent;
+    height: 88%;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
     transition-property: background-color;
+    border-radius: 8px;
 }
 
 .navbar-profile-dropdown-header-signed-in:hover {
     background-color: #ffe3dd;
+    border: 1px solid #FF5733;
 }
 
 .navbar-profile-dropdown-header-signed-in:hover .navbar-profile-dropdown-header-signed-in-img img {
@@ -1467,24 +1469,63 @@ const Styles = styled.div `
 
 .navbar-profile-dropdown-body-signed-in-options-container {
     height: 10rem;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .navbar-profile-dropdown-body-signed-in-options-cell {
     height: 2.5rem;
-    border: 1px solid black;
+    border: 1px solid transparent;
     display: flex;
     justify-content: space-between;
+    border-radius: 8px;
+    cursor: pointer;
+    transition-property: background-color, border;
 }
+
+.navbar-profile-dropdown-body-signed-in-options-cell:hover {
+    background-color: #ffe3dd;
+    border: 1px solid #FF5733;
+}
+
+.navbar-profile-dropdown-body-signed-in-options-cell:hover .navbar-profile-dropdown-body-signed-in-options-cell-img img {
+    filter: grayscale(0);
+}   
+
+.navbar-profile-dropdown-body-signed-in-options-cell:hover .navbar-profile-dropdown-body-signed-in-options-cell-label p {
+    // font-weight: bold;
+    text-decoration: underline;
+    // color: 
+    text-decoration-color: #FF5733;
+}   
 
 .navbar-profile-dropdown-body-signed-in-options-cell-img  {
     width: 15%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-property: filter;
 }
 
-.navbar-profile-dropdown-body-signed-in-options-cell-label  {
+.navbar-profile-dropdown-body-signed-in-options-cell-img img {
+    width: 50%;
+    filter: grayscale(100);
+}
+
+.navbar-profile-dropdown-body-signed-in-options-cell-label {
     width: 85%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.navbar-profile-dropdown-body-signed-in-options-cell-label p {
+    font-family: poppins;
+    // margin-top: 0px;
+    margin-left: 2.5%;
+    font-size:  85%;
+    transition-property: text-decoration, color, text-decoration-color;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -1510,6 +1551,9 @@ const Styles = styled.div `
 .navbar-profile-dropdown-body,
 .navbar-profile-dropdown-body-verify-otp-labels p,
 .navbar-profile-dropdown-body-verify-otp-btn button,
+.navbar-profile-dropdown-body-signed-in-options-cell,
+.navbar-profile-dropdown-body-signed-in-options-cell-img img,
+.navbar-profile-dropdown-body-signed-in-options-cell-label p,
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
@@ -2738,10 +2782,18 @@ export default class LandingPg extends Component {
                                      <div className='navbar-profile-dropdown-body-signed-in-options-container'>
                                         <div className='navbar-profile-dropdown-body-signed-in-options-cell'>
                                             <div className='navbar-profile-dropdown-body-signed-in-options-cell-img'>
-
+                                                <img src='/assets/icons/home-profile/jipange-dropdown-icon.png'/>
                                             </div>
                                             <div className='navbar-profile-dropdown-body-signed-in-options-cell-label'>
-
+                                                <p>Jipange</p>
+                                            </div>
+                                        </div>
+                                        <div className='navbar-profile-dropdown-body-signed-in-options-cell'>
+                                            <div className='navbar-profile-dropdown-body-signed-in-options-cell-img'>
+                                                <img src='/assets/icons/home-profile/pamoja-dropdown-icon.png'/>
+                                            </div>
+                                            <div className='navbar-profile-dropdown-body-signed-in-options-cell-label'>
+                                                <p>Order Pamoja</p>
                                             </div>
                                         </div>
                                     </div>
