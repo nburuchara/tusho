@@ -1310,7 +1310,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-dropdown-body.signed-in {
-    height: 13.2rem;
+    height: 10rem;
 }
 
 .navbar-profile-dropdown-body-loading-otp {
@@ -1464,7 +1464,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-dropdown-body-signed-in {
-    height: 12.2 rem;
+    // height: 12.2 rem;
 }
 
 .navbar-profile-dropdown-body-signed-in-options-container {
