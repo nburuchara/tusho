@@ -1233,6 +1233,19 @@ const Styles = styled.div `
 
 .navbar-profile-dropdown-header-signed-in {
     border: 1px solid black;
+    height: 88.5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-profile-dropdown-header-signed-in-img {
+    width: 20%;
+    border: 1px solid black;
+}
+
+.navbar-profile-dropdown-header-signed-in-details {
+    width: 80%;
+    border: 1px solid black;
 }
 
     // # NAVBAR PROFILE DROPDOWN BODY
@@ -2545,7 +2558,12 @@ export default class LandingPg extends Component {
                             }
                             {this.state.userSignedIn && 
                                 <div className='navbar-profile-dropdown-header-signed-in'>
-                                    {/* <h3>profile header</h3> */}
+                                    <div className='navbar-profile-dropdown-header-signed-in-img'>
+
+                                    </div>
+                                    <div className='navbar-profile-dropdown-header-signed-in-details'>
+
+                                    </div>
                                 </div>
                             }
                         </div>
