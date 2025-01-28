@@ -1916,7 +1916,7 @@ export default class LandingPg extends Component {
                     showHomeProfileOTPLoading: true,
                     // showHomeProfileVerifyOTP: false
                 })
-            }, 2000)
+            }, 3000)
         })
     }
 
@@ -2499,7 +2499,7 @@ export default class LandingPg extends Component {
                                 </div>
                             }
                         </div>
-                        <div className='navbar-profile-dropdown-body'>
+                        <div className='navbar-profile-dropdown-body' style={{border: "1px solid black"}}>
                             {this.state.showHomeProfileOTPLoading && 
                                 <div className='navbar-profile-dropdown-body-loading-otp'>
                                     <RotatingLines
