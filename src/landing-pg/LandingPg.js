@@ -1221,7 +1221,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-dropdown-header-success img {
-    margin-top: 50px;
+    margin-top: 55px;
     width: 30px;
     transform: translateY(0px);
     transition: transform 0.85s ease-in-out;
@@ -2586,6 +2586,7 @@ export default class LandingPg extends Component {
                                     </div>
                                     <div className='navbar-profile-dropdown-header-signed-in-details'>
                                         <h4><label>@</label>0717230621</h4>
+                                        <p>Complete account setup</p>
                                     </div>
                                 </div>
                             }
