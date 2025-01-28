@@ -1860,7 +1860,7 @@ export default class LandingPg extends Component {
     switchViewToVerifyOTP = () => {
         this.setState({
             showHomeProfileOTPLoading: true,
-            showHomeProfileEnterOTP: false
+            showHomeProfileEnterOTP: false,
         }, () => {
             setTimeout(() => {
                 this.setState({
@@ -1882,18 +1882,25 @@ export default class LandingPg extends Component {
                     OTPVerifySuccess: true
                 })
             }, 500);
+            setTimeout(() => {
+                this.switchToUserProfile()
+            }, 1500)
         })
     }
 
     switchToUserProfile = () => {
         this.setState({
-            
+            transferToProfile: true,
+            showHomeProfileOTPLoading: true,
+            showHomeProfileVerifyOTP: false,
+            showProfileDropdownHeaderSuccess: false
         }, () => {
             setTimeout(() => {
                 this.setState({
-
+                    showHomeProfileOTPLoading: true,
+                    // showHomeProfileVerifyOTP: false
                 })
-            }, 1500)
+            }, 2000)
         })
     }
 
@@ -2449,7 +2456,7 @@ export default class LandingPg extends Component {
                     </div>
 
                     <div className='navbar-profile-dropdown'>
-                        <div className={`navbar-profile-dropdown-header ${this.state.OTPVerifySuccess ? 'success' : ''}`}>
+                        <div className={`navbar-profile-dropdown-header ${this.state.OTPVerifySuccess ? this.state.transferToProfile ? '' : 'success' : ''}`}>
                             {this.state.showProfileDropdownHeaderDefault &&
                                 <div className='navbar-profile-dropdown-header-default'>
                                     <h3>Create your account in seconds with OTP verification</h3>
