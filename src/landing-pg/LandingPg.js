@@ -1248,8 +1248,8 @@ const Styles = styled.div `
 }
 
 .navbar-profile-dropdown-header-signed-in-img img {
-    width: 60%;
-    padding: 5px;
+    width: 28.5px;
+    padding: 6.5px;
     border: 2px solid #ccc;
     border-radius: 50%;
 }
@@ -1262,7 +1262,9 @@ const Styles = styled.div `
 .navbar-profile-dropdown-header-signed-in-details h4 {
     margin-top: 4.5px;
     margin-bottom: 5px;
+    margin-left: 5%;
     font-family: inter;
+    font-size: 95%;
 }   
 
 .navbar-profile-dropdown-header-signed-in-details p {
