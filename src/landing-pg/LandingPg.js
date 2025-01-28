@@ -1473,6 +1473,9 @@ export default class LandingPg extends Component {
         super()
         this.state = {
 
+            //* - USER ACCOUNT STATUS - *//
+            userSignedIn: false,
+
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
             searchBarInput: '',
@@ -2489,32 +2492,42 @@ export default class LandingPg extends Component {
 
                     <div className='navbar-profile-dropdown'>
                         <div className={`navbar-profile-dropdown-header ${this.state.OTPVerifySuccess ? this.state.transferToProfile ? 'profile-loading' : 'success' : ''}`}>
-                            {this.state.showProfileDropdownHeaderDefault &&
-                                <div className='navbar-profile-dropdown-header-default'>
-                                    <h3>Create your account in seconds with OTP verification</h3>
-                                    <img src='/assets/images/navbar-dropdown/phone-dropdown-header.png'/>
+                            {!this.state.userSignedIn && 
+                                <div className='navbar-profile-dropdown-signed-out'>
+                                    {this.state.showProfileDropdownHeaderDefault &&
+                                        <div className='navbar-profile-dropdown-header-default'>
+                                            <h3>Create your account in seconds with OTP verification</h3>
+                                            <img src='/assets/images/navbar-dropdown/phone-dropdown-header.png'/>
+                                        </div>
+                                    }
+                                    {this.state.showProfileDropdownHeaderLoading && 
+                                        <div className={`navbar-profile-dropdown-header-loading`}>
+                                            <TailSpin
+                                            visible={true}
+                                            height="25px"
+                                            width="25px"
+                                            color="#fff"
+                                            ariaLabel="tail-spin-loading"
+                                            radius="2"
+                                            wrapperStyle={{}}
+                                            wrapperClass=""
+                                            />
+                                        </div>
+                                    }
+                                    {this.state.showProfileDropdownHeaderSuccess && 
+                                        <div className={`navbar-profile-dropdown-header-success ${this.state.OTPVerifySuccess ? 'clicked' : ''}`}>
+                                            <img src='/assets/icons/home-profile/otp-successful-icon.png'/>
+                                        </div>
+                                    }
                                 </div>
                             }
-                            {this.state.showProfileDropdownHeaderLoading && 
-                                <div className={`navbar-profile-dropdown-header-loading`}>
-                                    <TailSpin
-                                    visible={true}
-                                    height="25px"
-                                    width="25px"
-                                    color="#fff"
-                                    ariaLabel="tail-spin-loading"
-                                    radius="2"
-                                    wrapperStyle={{}}
-                                    wrapperClass=""
-                                    />
-                                </div>
-                            }
-                            {this.state.showProfileDropdownHeaderSuccess && 
-                                <div className={`navbar-profile-dropdown-header-success ${this.state.OTPVerifySuccess ? 'clicked' : ''}`}>
-                                    <img src='/assets/icons/home-profile/otp-successful-icon.png'/>
+                            {this.state.userSignedIn && 
+                                <div className='navbar-profile-dropdown-signed-in'>
+
                                 </div>
                             }
                         </div>
+
                         <div className={`navbar-profile-dropdown-body ${this.state.OTPVerifySuccess && this.state.transferToProfile ? 'profile-loading' : ''}`}>
                             {this.state.showHomeProfileOTPLoading && 
                                 <div className='navbar-profile-dropdown-body-loading-otp'>
@@ -2611,7 +2624,6 @@ export default class LandingPg extends Component {
                                     </div>
                                 </div>
                             }
-                            
                         </div>
                     </div>
 
