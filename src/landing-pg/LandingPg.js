@@ -1158,6 +1158,10 @@ const Styles = styled.div `
     background-color: #50b65d;
 }
 
+.navbar-profile-dropdown-header.profile-loading {
+    
+}
+
 .navbar-profile-dropdown-header-default h3 {
     font-family: lexend;
     font-size: 85%;
@@ -2456,7 +2460,7 @@ export default class LandingPg extends Component {
                     </div>
 
                     <div className='navbar-profile-dropdown'>
-                        <div className={`navbar-profile-dropdown-header ${this.state.OTPVerifySuccess ? this.state.transferToProfile ? '' : 'success' : ''}`}>
+                        <div className={`navbar-profile-dropdown-header ${this.state.OTPVerifySuccess ? this.state.transferToProfile ? 'profile-loading' : 'success' : ''}`}>
                             {this.state.showProfileDropdownHeaderDefault &&
                                 <div className='navbar-profile-dropdown-header-default'>
                                     <h3>Create your account in seconds with OTP verification</h3>
