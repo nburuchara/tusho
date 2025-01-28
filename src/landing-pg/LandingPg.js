@@ -1151,6 +1151,11 @@ const Styles = styled.div `
     border-top-left-radius: 8px;
     position: relative;
     overflow: hidden;
+    transition-property: background-color;
+}
+
+.navbar-profile-dropdown-header.success {
+    background-color: #50b65d;
 }
 
 .navbar-profile-dropdown-header-default h3 {
@@ -1266,6 +1271,10 @@ const Styles = styled.div `
     padding: 4%;
 }
 
+.navbar-profile-dropdown-body-otp-btn-loading {
+    margin-top: 2px;
+}
+
 .navbar-profile-dropdown-body-verify-otp {
     text-align: center;
     margin-top: 8.5px;
@@ -1346,7 +1355,9 @@ const Styles = styled.div `
 }   
 
 .navbar-profile-dropdown-body-verify-otp-btn.clicked button {
-    padding: 4%;
+    background-color: #e8e8e8;
+    color: #818181;
+    border: 1px solid #818181;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -1366,6 +1377,7 @@ const Styles = styled.div `
 .navbar-options-icon,
 .navbar-options-checkout-home-header-icon img,
 .navbar-options-checkout-home,
+.navbar-profile-dropdown-header,
 .navbar-profile-dropdown-body-verify-otp-labels p,
  {
     transition-duration: var(--def-transition-duration);
@@ -1448,6 +1460,7 @@ export default class LandingPg extends Component {
             OTPVerifySuccess:false,
             showEnterOPTBtnTextHome: true,
             showVerifyOPTBtnTextHome: true,
+            verifyOTPBtnText: 'Verify OTP',
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
@@ -1806,20 +1819,22 @@ export default class LandingPg extends Component {
     verifyOTPClicked = () => {
         this.setState({
             OTPBtnClicked: true,
-            showVerifyOPTHomeLoading: true,
-            showVerifyOPTBtnTextHome: false,
+            // showVerifyOPTHomeLoading: true,
+            // showVerifyOPTBtnTextHome: false,
             showProfileDropdownHeaderDefault: false,
             showProfileDropdownHeaderLoading: true,
+            verifyOTPBtnText: 'Verifying...'
         }, () => {
             setTimeout(() => {
                 this.setState({
-                    OTPBtnClicked: false,
-                    showVerifyOPTHomeLoading: false,
-                    showVerifyOPTBtnTextHome: true,
+                    // OTPBtnClicked: false,
+                    // showVerifyOPTHomeLoading: false,
+                    // showVerifyOPTBtnTextHome: true,
+                    verifyOTPBtnText: 'Successful ✔︎',
                     showProfileDropdownHeaderLoading: false,
                 })
                 this.switchViewToSuccessOTP();
-            }, 2000)
+            }, 4500)
         })
     }
 
@@ -2419,7 +2434,7 @@ export default class LandingPg extends Component {
                     </div>
 
                     <div className='navbar-profile-dropdown'>
-                        <div className='navbar-profile-dropdown-header'>
+                        <div className={`navbar-profile-dropdown-header ${this.state.OTPVerifySuccess ? 'success' : ''}`}>
                             {this.state.showProfileDropdownHeaderDefault &&
                                 <div className='navbar-profile-dropdown-header-default'>
                                     <h3>Create your account in seconds with OTP verification</h3>
@@ -2476,7 +2491,7 @@ export default class LandingPg extends Component {
                                                 <span>Send OTP</span>
                                             }
                                             {this.state.showEnterOPTHomeLoading && 
-                                                <span className='navbar-profile-dropdown-body-otp-btn-loading'>
+                                                <div className='navbar-profile-dropdown-body-otp-btn-loading'>
                                                     <RotatingLines
                                                     visible={true}
                                                     height="16.5"
@@ -2488,7 +2503,7 @@ export default class LandingPg extends Component {
                                                     wrapperStyle={{}}
                                                     wrapperClass=""
                                                     />
-                                                </span>
+                                                </div>
                                             }
                                         </button>
                                     </div>
@@ -2516,12 +2531,13 @@ export default class LandingPg extends Component {
                                     </div>
                                     <div className={`navbar-profile-dropdown-body-verify-otp-btn ${this.state.OTPBtnClicked ? 'clicked' : ''}`}>
                                         <button
+                                        style={{color: this.state.OTPVerifySuccess ? '#50b65d' : ''}}
                                         onClick={this.verifyOTPClicked}
                                         >
                                             {this.state.showVerifyOPTBtnTextHome && 
-                                                <span>Verify OTP</span>
+                                                <span>{this.state.verifyOTPBtnText}</span>
                                             }
-                                            {this.state.showVerifyOPTHomeLoading && 
+                                            {/* {this.state.showVerifyOPTHomeLoading && 
                                                  <span className='navbar-profile-dropdown-body-otp-btn-loading'>
                                                     <RotatingLines
                                                     visible={true}
@@ -2535,7 +2551,7 @@ export default class LandingPg extends Component {
                                                     wrapperClass=""
                                                     />
                                                 </span>
-                                            }
+                                            } */}
                                            
                                         </button>
                                     </div>
