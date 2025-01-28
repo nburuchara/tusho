@@ -2782,6 +2782,14 @@ export default class LandingPg extends Component {
                                      <div className='navbar-profile-dropdown-body-signed-in-options-container'>
                                         <div className='navbar-profile-dropdown-body-signed-in-options-cell'>
                                             <div className='navbar-profile-dropdown-body-signed-in-options-cell-img'>
+                                                <img src='/assets/icons/home-profile/orders-dropdown-icon.png'/>
+                                            </div>
+                                            <div className='navbar-profile-dropdown-body-signed-in-options-cell-label'>
+                                                <p>My Orders</p>
+                                            </div>
+                                        </div>
+                                        <div className='navbar-profile-dropdown-body-signed-in-options-cell'>
+                                            <div className='navbar-profile-dropdown-body-signed-in-options-cell-img'>
                                                 <img src='/assets/icons/home-profile/jipange-dropdown-icon.png'/>
                                             </div>
                                             <div className='navbar-profile-dropdown-body-signed-in-options-cell-label'>
