@@ -1259,9 +1259,10 @@ const Styles = styled.div `
     // border: 1px solid black;
 }
 
-.navbar-profile-dropdown-header-signed-in-details h5 {
+.navbar-profile-dropdown-header-signed-in-details h4 {
     margin-top: 4.5px;
     margin-bottom: 5px;
+    font-family: inter;
 }   
 
 .navbar-profile-dropdown-header-signed-in-details p {
@@ -2582,7 +2583,7 @@ export default class LandingPg extends Component {
                                         <img src='/assets/icons/home-profile/signed-in-profile-placeholder2.png'/>
                                     </div>
                                     <div className='navbar-profile-dropdown-header-signed-in-details'>
-                                        <h5>0717230621</h5>
+                                        <h4><label>@</label>0717230621</h4>
                                     </div>
                                 </div>
                             }
