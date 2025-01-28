@@ -1232,7 +1232,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-dropdown-header-signed-in {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 88.5%;
     display: flex;
     justify-content: space-between;
@@ -1241,11 +1241,29 @@ const Styles = styled.div `
 .navbar-profile-dropdown-header-signed-in-img {
     width: 20%;
     border: 1px solid black;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.navbar-profile-dropdown-header-signed-in-img img {
+    width: 65%;
 }
 
 .navbar-profile-dropdown-header-signed-in-details {
     width: 80%;
     border: 1px solid black;
+}
+
+.navbar-profile-dropdown-header-signed-in-details h5 {
+    margin-top: 4.5px;
+    margin-bottom: 5px;
+}   
+
+.navbar-profile-dropdown-header-signed-in-details p {
+    margin-top: 0px;
+    margin-bottom: 5px;
 }
 
     // # NAVBAR PROFILE DROPDOWN BODY
@@ -1276,7 +1294,6 @@ const Styles = styled.div `
     align-items: center;
     justify-content: center;
 }
-
 
 .navbar-profile-dropdown-body-enter-otp p {
     font-family: poppins;
@@ -2559,10 +2576,10 @@ export default class LandingPg extends Component {
                             {this.state.userSignedIn && 
                                 <div className='navbar-profile-dropdown-header-signed-in'>
                                     <div className='navbar-profile-dropdown-header-signed-in-img'>
-
+                                        <img src='/assets/icons/home-profile/signed-in-profile-placeholder.png'/>
                                     </div>
                                     <div className='navbar-profile-dropdown-header-signed-in-details'>
-
+                                        <h5>0717230621</h5>
                                     </div>
                                 </div>
                             }
