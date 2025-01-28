@@ -1234,6 +1234,13 @@ const Styles = styled.div `
     border-radius: 8px;
 }
 
+.navbar-profile-dropdown-body.profile-loading {
+    height: 10.2rem;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%; /* Make the gradient larger than the div to allow animation */
+    animation: loading 1.5s infinite;
+}
+
 .navbar-profile-dropdown-body-loading-otp {
     height: 10.2rem;
     display: flex;
@@ -1377,6 +1384,14 @@ const Styles = styled.div `
     border: 1px solid #818181;
 }
 
+.navbar-profile-dropdown-body-verify-otp-btn.btn-success button {
+    background-color: #e8e8e8;
+    color: #818181;
+    border: 1px solid #818181;
+    color: #50b65d; 
+    border: 1px solid #50b65d;
+}
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
@@ -1396,6 +1411,7 @@ const Styles = styled.div `
 .navbar-options-checkout-home,
 .navbar-profile-dropdown-header,
 .navbar-profile-dropdown-body-verify-otp-labels p,
+.navbar-profile-dropdown-body-verify-otp-btn button,
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
@@ -1901,21 +1917,20 @@ export default class LandingPg extends Component {
             }, 500);
             setTimeout(() => {
                 this.switchToUserProfile()
-            }, 1500)
+            }, 2500)
         })
     }
 
     switchToUserProfile = () => {
         this.setState({
             transferToProfile: true,
-            showHomeProfileOTPLoading: true,
+            // showHomeProfileOTPLoading: true,
             showHomeProfileVerifyOTP: false,
             showProfileDropdownHeaderSuccess: false
         }, () => {
             setTimeout(() => {
                 this.setState({
-                    showHomeProfileOTPLoading: true,
-                    // showHomeProfileVerifyOTP: false
+                   
                 })
             }, 3000)
         })
@@ -2500,7 +2515,7 @@ export default class LandingPg extends Component {
                                 </div>
                             }
                         </div>
-                        <div className='navbar-profile-dropdown-body'>
+                        <div className={`navbar-profile-dropdown-body ${this.state.OTPVerifySuccess && this.state.transferToProfile ? 'profile-loading' : ''}`}>
                             {this.state.showHomeProfileOTPLoading && 
                                 <div className='navbar-profile-dropdown-body-loading-otp'>
                                     <RotatingLines
@@ -2569,9 +2584,8 @@ export default class LandingPg extends Component {
                                         <p>Resend OTP</p>
                                         <h5>OTP Expires in <label>{this.formatTime()}</label></h5>
                                     </div>
-                                    <div className={`navbar-profile-dropdown-body-verify-otp-btn ${this.state.OTPBtnClicked ? 'clicked' : ''}`}>
+                                    <div className={`navbar-profile-dropdown-body-verify-otp-btn ${this.state.OTPBtnClicked ? this.state.OTPVerifySuccess ? 'btn-success' : 'clicked' : ''}`}>
                                         <button
-                                        style={{color: this.state.OTPVerifySuccess ? '#50b65d' : '', border: this.state.OTPVerifySuccess ? '1px solid #50b65d' : ''}}
                                         onClick={this.verifyOTPClicked}
                                         >
                                             {this.state.showVerifyOPTBtnTextHome && 
