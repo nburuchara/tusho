@@ -1232,6 +1232,7 @@ const Styles = styled.div `
     padding-bottom: 10px;
     border: 5px solid #f3f5f7;
     border-radius: 8px;
+    transition-property: height;
 }
 
 .navbar-profile-dropdown-body.profile-loading {
@@ -1239,6 +1240,10 @@ const Styles = styled.div `
     background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
     background-size: 200% 100%; /* Make the gradient larger than the div to allow animation */
     animation: loading 1.5s infinite;
+}
+
+.navbar-profile-dropdown-body.signed-in {
+    height: 13.2rem;
 }
 
 .navbar-profile-dropdown-body-loading-otp {
@@ -1392,6 +1397,10 @@ const Styles = styled.div `
     border: 1px solid #50b65d;
 }
 
+.navbar-profile-dropdown-body-signed-in {
+    height: 12.2 rem;
+}
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
@@ -1410,6 +1419,7 @@ const Styles = styled.div `
 .navbar-options-checkout-home-header-icon img,
 .navbar-options-checkout-home,
 .navbar-profile-dropdown-header,
+.navbar-profile-dropdown-body,
 .navbar-profile-dropdown-body-verify-otp-labels p,
 .navbar-profile-dropdown-body-verify-otp-btn button,
  {
@@ -1933,7 +1943,8 @@ export default class LandingPg extends Component {
         }, () => {
             setTimeout(() => {
                 this.setState({
-                   userSignedIn: true
+                    transferToProfile: false,
+                    userSignedIn: true
                 })
             }, 3500)
         })
@@ -2491,7 +2502,7 @@ export default class LandingPg extends Component {
                     </div>
 
                     <div className='navbar-profile-dropdown'>
-                        <div className={`navbar-profile-dropdown-header ${this.state.OTPVerifySuccess ? this.state.transferToProfile ? 'profile-loading' : 'success' : ''}`}>
+                        <div className={`navbar-profile-dropdown-header ${this.state.OTPVerifySuccess ? this.state.transferToProfile ? 'profile-loading' : this.state.userSignedIn ? '' : 'success' : ''}`}>
                             {!this.state.userSignedIn && 
                                 <div className='navbar-profile-dropdown-header-signed-out'>
                                     {this.state.showProfileDropdownHeaderDefault &&
@@ -2528,7 +2539,7 @@ export default class LandingPg extends Component {
                             }
                         </div>
 
-                        <div className={`navbar-profile-dropdown-body ${this.state.OTPVerifySuccess && this.state.transferToProfile ? 'profile-loading' : ''}`}>
+                        <div className={`navbar-profile-dropdown-body ${this.state.OTPVerifySuccess && this.state.transferToProfile ? 'profile-loading' : this.state.OTPVerifySuccess && this.state.userSignedIn ? 'signed-in' : ''}`}>
                             {!this.state.userSignedIn && 
                                 <div className='navbar-profile-dropdown-body-signed-out'>
                                     {this.state.showHomeProfileOTPLoading && 
