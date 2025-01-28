@@ -1274,7 +1274,7 @@ const Styles = styled.div `
 
 .navbar-profile-dropdown-header-signed-in-details h4 {
     margin-top: 6px;
-    margin-bottom: 2.5px;
+    margin-bottom: 2.25px;
     margin-left: 3.5%;
     font-family: inter;
     font-size: 92.5%;
@@ -1463,6 +1463,28 @@ const Styles = styled.div `
 
 .navbar-profile-dropdown-body-signed-in {
     height: 12.2 rem;
+}
+
+.navbar-profile-dropdown-body-signed-in-options-container {
+    height: 10rem;
+    border: 1px solid black;
+}
+
+.navbar-profile-dropdown-body-signed-in-options-cell {
+    height: 2.5rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-profile-dropdown-body-signed-in-options-cell-img  {
+    width: 15%;
+    border: 1px solid black;
+}
+
+.navbar-profile-dropdown-body-signed-in-options-cell-label  {
+    width: 85%;
+    border: 1px solid black;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -2713,7 +2735,16 @@ export default class LandingPg extends Component {
                             }
                             {this.state.userSignedIn && 
                                 <div className='navbar-profile-dropdown-body-signed-in'>
-                                    <h3>profile body</h3>
+                                     <div className='navbar-profile-dropdown-body-signed-in-options-container'>
+                                        <div className='navbar-profile-dropdown-body-signed-in-options-cell'>
+                                            <div className='navbar-profile-dropdown-body-signed-in-options-cell-img'>
+
+                                            </div>
+                                            <div className='navbar-profile-dropdown-body-signed-in-options-cell-label'>
+
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             }
                         </div>
