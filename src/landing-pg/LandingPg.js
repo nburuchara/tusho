@@ -1139,7 +1139,7 @@ const Styles = styled.div `
     display: flex;
     justify-content: right;
     // cursor: pointer;
-    padding-bottom: 11.5px;
+    // padding-bottom: 11.5px;
     z-index: 1;
 }
 
@@ -1228,9 +1228,10 @@ const Styles = styled.div `
 
 .navbar-profile-dropdown-body {
     flex-grow: 1;
-    // border: 1px solid black;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
+    // background-color: blue;
+    padding-bottom: 10px;
+    border: 5px solid #f3f5f7;
+    border-radius: 8px;
 }
 
 .navbar-profile-dropdown-body-loading-otp {
@@ -1244,15 +1245,15 @@ const Styles = styled.div `
 .navbar-profile-dropdown-body-enter-otp p {
     font-family: poppins;
     font-size: 80%;
-    margin-left: 3.5%;
+    margin-left: 2%;
     margin-right: 6.5%;
     margin-top: 2.5px;
     margin-bottom: 5px;
 }
 
 .navbar-profile-dropdown-body-enter-otp input {
-    width: 89%;
-    margin-left: 2.5%;
+    width: 91%;
+    margin-left: 1.5%;
     font-size: 14px;
     font-family: poppins;
     padding: 2.5%;
@@ -1270,7 +1271,7 @@ const Styles = styled.div `
 
 .navbar-profile-dropdown-body-enter-otp-btn button {
     margin-left: 0%;
-    width: 94%;
+    width: 96%;
     margin-top: 3.5px;
     padding: 4.5%;
     background-color: #FF5733;
@@ -1299,14 +1300,14 @@ const Styles = styled.div `
 .navbar-profile-dropdown-body-verify-otp-header p {
     font-family: poppins;
     font-size: 82.5%;
-    margin-left: 4%;
+    margin-left: 2%;
     margin-right: 6.5%;
     margin-top: 0px;
     margin-bottom: 6.5px;
 }
 
 .navbar-profile-dropdown-body-verify-otp input {
-    width: 12.5%; /* Relative to the parent container */
+    width: 13.5%; /* Relative to the parent container */
     max-width: 50px; /* Optional max size for larger screens */
     height: 2.2rem; /* Adjust height automatically based on width */
     text-align: center;
@@ -1330,7 +1331,7 @@ const Styles = styled.div `
     margin-right: 6.5%;
     margin-top: 3.5px;
     margin-bottom: 3.5px;
-    margin-left: 4%;
+    margin-left: 2%;
     color: #5e626a;
     text-decoration: none;
     transition-property: color, text-decoration;
@@ -1348,7 +1349,7 @@ const Styles = styled.div `
     font-size: 80%;
     margin-top: 3.5px;
     margin-bottom: 3.5px;
-    margin-right: 4%;
+    margin-right: 2%;
 }
 
 .navbar-profile-dropdown-body-verify-otp-labels label {
@@ -1357,7 +1358,7 @@ const Styles = styled.div `
 
 .navbar-profile-dropdown-body-verify-otp-btn button {
     margin-left: 0%;
-    width: 92.5%;
+    width: 96%;
     margin-top: 3.5px;
     padding: 4.5%;
     background-color: #FF5733;
@@ -2499,7 +2500,7 @@ export default class LandingPg extends Component {
                                 </div>
                             }
                         </div>
-                        <div className='navbar-profile-dropdown-body' style={{border: "1px solid black"}}>
+                        <div className='navbar-profile-dropdown-body'>
                             {this.state.showHomeProfileOTPLoading && 
                                 <div className='navbar-profile-dropdown-body-loading-otp'>
                                     <RotatingLines
