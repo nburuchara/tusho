@@ -1461,6 +1461,7 @@ export default class LandingPg extends Component {
             showEnterOPTBtnTextHome: true,
             showVerifyOPTBtnTextHome: true,
             verifyOTPBtnText: 'Verify OTP',
+            OTPInputDisabled: false,
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
@@ -1823,6 +1824,7 @@ export default class LandingPg extends Component {
             // showVerifyOPTBtnTextHome: false,
             showProfileDropdownHeaderDefault: false,
             showProfileDropdownHeaderLoading: true,
+            OTPInputDisabled: true,
             verifyOTPBtnText: 'Verifying...'
         }, () => {
             setTimeout(() => {
@@ -1830,7 +1832,6 @@ export default class LandingPg extends Component {
                     // OTPBtnClicked: false,
                     // showVerifyOPTHomeLoading: false,
                     // showVerifyOPTBtnTextHome: true,
-                    verifyOTPBtnText: 'Successful ✔︎',
                     showProfileDropdownHeaderLoading: false,
                 })
                 this.switchViewToSuccessOTP();
@@ -1873,12 +1874,25 @@ export default class LandingPg extends Component {
     switchViewToSuccessOTP = () => {
         this.setState({
             showProfileDropdownHeaderSuccess: true,
+            verifyOTPBtnText: 'Successful ✔︎',
         }, () => {
             setTimeout(() => {
                 this.setState({
                     OTPVerifySuccess: true
                 })
             }, 500);
+        })
+    }
+
+    switchToUserProfile = () => {
+        this.setState({
+            
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+
+                })
+            }, 1500)
         })
     }
 
@@ -2516,6 +2530,7 @@ export default class LandingPg extends Component {
                                     </div>
                                     {this.state.otp.map((digit, index) => (
                                         <input
+                                            disabled={this.state.OTPInputDisabled}
                                             key={index}
                                             type="text"
                                             maxLength="1"
