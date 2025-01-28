@@ -2782,7 +2782,7 @@ export default class LandingPg extends Component {
                                      <div className='navbar-profile-dropdown-body-signed-in-options-container'>
                                         <div className='navbar-profile-dropdown-body-signed-in-options-cell'>
                                             <div className='navbar-profile-dropdown-body-signed-in-options-cell-img'>
-                                                <img src='/assets/icons/home-profile/orders-dropdown-icon.png'/>
+                                                <img src='/assets/icons/home-profile/orders-dropdown-icon2.png'/>
                                             </div>
                                             <div className='navbar-profile-dropdown-body-signed-in-options-cell-label'>
                                                 <p>My Orders</p>
@@ -2802,6 +2802,14 @@ export default class LandingPg extends Component {
                                             </div>
                                             <div className='navbar-profile-dropdown-body-signed-in-options-cell-label'>
                                                 <p>Order Pamoja</p>
+                                            </div>
+                                        </div>
+                                        <div className='navbar-profile-dropdown-body-signed-in-options-cell'>
+                                            <div className='navbar-profile-dropdown-body-signed-in-options-cell-img'>
+                                                <img src='/assets/icons/home-profile/logout-dropdown-icon2.png'/>
+                                            </div>
+                                            <div className='navbar-profile-dropdown-body-signed-in-options-cell-label'>
+                                                <p>Sign Out</p>
                                             </div>
                                         </div>
                                     </div>
