@@ -1933,9 +1933,9 @@ export default class LandingPg extends Component {
         }, () => {
             setTimeout(() => {
                 this.setState({
-                   
+                   userSignedIn: true
                 })
-            }, 3000)
+            }, 3500)
         })
     }
 
@@ -2493,7 +2493,7 @@ export default class LandingPg extends Component {
                     <div className='navbar-profile-dropdown'>
                         <div className={`navbar-profile-dropdown-header ${this.state.OTPVerifySuccess ? this.state.transferToProfile ? 'profile-loading' : 'success' : ''}`}>
                             {!this.state.userSignedIn && 
-                                <div className='navbar-profile-dropdown-signed-out'>
+                                <div className='navbar-profile-dropdown-header-signed-out'>
                                     {this.state.showProfileDropdownHeaderDefault &&
                                         <div className='navbar-profile-dropdown-header-default'>
                                             <h3>Create your account in seconds with OTP verification</h3>
@@ -2522,15 +2522,15 @@ export default class LandingPg extends Component {
                                 </div>
                             }
                             {this.state.userSignedIn && 
-                                <div className='navbar-profile-dropdown-signed-in'>
-
+                                <div className='navbar-profile-dropdown-header-signed-in'>
+                                    <h3>profile header</h3>
                                 </div>
                             }
                         </div>
 
                         <div className={`navbar-profile-dropdown-body ${this.state.OTPVerifySuccess && this.state.transferToProfile ? 'profile-loading' : ''}`}>
                             {!this.state.userSignedIn && 
-                                <div className='navbar-profile-dropdown-signed-out'>
+                                <div className='navbar-profile-dropdown-body-signed-out'>
                                     {this.state.showHomeProfileOTPLoading && 
                                         <div className='navbar-profile-dropdown-body-loading-otp'>
                                             <RotatingLines
@@ -2629,8 +2629,8 @@ export default class LandingPg extends Component {
                                 </div>
                             }
                             {this.state.userSignedIn && 
-                                <div className='navbar-profile-dropdown-signed-in'>
-
+                                <div className='navbar-profile-dropdown-body-signed-in'>
+                                    <h3>profile body</h3>
                                 </div>
                             }
                         </div>
