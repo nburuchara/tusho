@@ -1231,6 +1231,12 @@ const Styles = styled.div `
     transform: translateY(-40px);
 }
 
+.navbar-profile-dropdown-header-signed-in {
+    border: 1px solid black;
+}
+
+    // # NAVBAR PROFILE DROPDOWN BODY
+
 .navbar-profile-dropdown-body {
     flex-grow: 1;
     // background-color: blue;
@@ -2539,7 +2545,7 @@ export default class LandingPg extends Component {
                             }
                             {this.state.userSignedIn && 
                                 <div className='navbar-profile-dropdown-header-signed-in'>
-                                    <h3>profile header</h3>
+                                    {/* <h3>profile header</h3> */}
                                 </div>
                             }
                         </div>
