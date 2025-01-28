@@ -2529,99 +2529,108 @@ export default class LandingPg extends Component {
                         </div>
 
                         <div className={`navbar-profile-dropdown-body ${this.state.OTPVerifySuccess && this.state.transferToProfile ? 'profile-loading' : ''}`}>
-                            {this.state.showHomeProfileOTPLoading && 
-                                <div className='navbar-profile-dropdown-body-loading-otp'>
-                                    <RotatingLines
-                                    visible={true}
-                                    height="23.5"
-                                    width="23.5"
-                                    strokeColor="#FF5733"
-                                    strokeWidth="3"
-                                    animationDuration="0.75"
-                                    ariaLabel="rotating-lines-loading"
-                                    wrapperStyle={{}}
-                                    wrapperClass=""
-                                    />
+                            {!this.state.userSignedIn && 
+                                <div className='navbar-profile-dropdown-signed-out'>
+                                    {this.state.showHomeProfileOTPLoading && 
+                                        <div className='navbar-profile-dropdown-body-loading-otp'>
+                                            <RotatingLines
+                                            visible={true}
+                                            height="23.5"
+                                            width="23.5"
+                                            strokeColor="#FF5733"
+                                            strokeWidth="3"
+                                            animationDuration="0.75"
+                                            ariaLabel="rotating-lines-loading"
+                                            wrapperStyle={{}}
+                                            wrapperClass=""
+                                            />
+                                        </div>
+                                    }
+                                    {this.state.showHomeProfileEnterOTP && 
+                                        <div className='navbar-profile-dropdown-body-enter-otp'>
+                                            <p>Enter your mobile number</p>
+                                            <input
+                                            placeholder='07123456789'
+                                            />
+                                            <div className={`navbar-profile-dropdown-body-enter-otp-btn ${this.state.OTPBtnClicked ? 'clicked' : ''}`}>
+                                                <button
+                                                onClick={this.enterOTPClicked}
+                                                >
+                                                    {this.state.showEnterOPTBtnTextHome &&
+                                                        <span>Send OTP</span>
+                                                    }
+                                                    {this.state.showEnterOPTHomeLoading && 
+                                                        <div className='navbar-profile-dropdown-body-otp-btn-loading'>
+                                                            <RotatingLines
+                                                            visible={true}
+                                                            height="16.5"
+                                                            width="16.5"
+                                                            strokeColor="white"
+                                                            strokeWidth="3"
+                                                            animationDuration="0.75"
+                                                            ariaLabel="rotating-lines-loading"
+                                                            wrapperStyle={{}}
+                                                            wrapperClass=""
+                                                            />
+                                                        </div>
+                                                    }
+                                                </button>
+                                            </div>
+                                        </div>
+                                    }
+                                    {this.state.showHomeProfileVerifyOTP && 
+                                        <div className='navbar-profile-dropdown-body-verify-otp'>
+                                            <div className='navbar-profile-dropdown-body-verify-otp-header'>
+                                                <p style={{textAlign: "left"}}>Enter the OTP sent to your phone via SMS: </p>
+                                            </div>
+                                            {this.state.otp.map((digit, index) => (
+                                                <input
+                                                    disabled={this.state.OTPInputDisabled}
+                                                    key={index}
+                                                    type="text"
+                                                    maxLength="1"
+                                                    value={digit}
+                                                    onChange={(event) => this.handleOTPDigitChange(index, event)}
+                                                    onKeyDown={(event) => this.handleOTPKeyShift(index, event)}
+                                                    ref={(input) => (this.inputs[index] = input)} // Save input reference
+                                                />
+                                            ))}
+                                            <div className='navbar-profile-dropdown-body-verify-otp-labels'>
+                                                <p>Resend OTP</p>
+                                                <h5>OTP Expires in <label>{this.formatTime()}</label></h5>
+                                            </div>
+                                            <div className={`navbar-profile-dropdown-body-verify-otp-btn ${this.state.OTPBtnClicked ? this.state.OTPVerifySuccess ? 'btn-success' : 'clicked' : ''}`}>
+                                                <button
+                                                onClick={this.verifyOTPClicked}
+                                                >
+                                                    {this.state.showVerifyOPTBtnTextHome && 
+                                                        <span>{this.state.verifyOTPBtnText}</span>
+                                                    }
+                                                    {/* {this.state.showVerifyOPTHomeLoading && 
+                                                        <span className='navbar-profile-dropdown-body-otp-btn-loading'>
+                                                            <RotatingLines
+                                                            visible={true}
+                                                            height="16.5"
+                                                            width="16.5"
+                                                            strokeColor="white"
+                                                            strokeWidth="3"
+                                                            animationDuration="0.75"
+                                                            ariaLabel="rotating-lines-loading"
+                                                            wrapperStyle={{}}
+                                                            wrapperClass=""
+                                                            />
+                                                        </span>
+                                                    } */}
+                                                
+                                                </button>
+                                            </div>
+                                        </div>
+                                    }
                                 </div>
                             }
-                            {this.state.showHomeProfileEnterOTP && 
-                                <div className='navbar-profile-dropdown-body-enter-otp'>
-                                    <p>Enter your mobile number</p>
-                                    <input
-                                    placeholder='07123456789'
-                                    />
-                                    <div className={`navbar-profile-dropdown-body-enter-otp-btn ${this.state.OTPBtnClicked ? 'clicked' : ''}`}>
-                                        <button
-                                        onClick={this.enterOTPClicked}
-                                        >
-                                            {this.state.showEnterOPTBtnTextHome &&
-                                                <span>Send OTP</span>
-                                            }
-                                            {this.state.showEnterOPTHomeLoading && 
-                                                <div className='navbar-profile-dropdown-body-otp-btn-loading'>
-                                                    <RotatingLines
-                                                    visible={true}
-                                                    height="16.5"
-                                                    width="16.5"
-                                                    strokeColor="white"
-                                                    strokeWidth="3"
-                                                    animationDuration="0.75"
-                                                    ariaLabel="rotating-lines-loading"
-                                                    wrapperStyle={{}}
-                                                    wrapperClass=""
-                                                    />
-                                                </div>
-                                            }
-                                        </button>
-                                    </div>
-                                </div>
-                            }
-                            {this.state.showHomeProfileVerifyOTP && 
-                                <div className='navbar-profile-dropdown-body-verify-otp'>
-                                    <div className='navbar-profile-dropdown-body-verify-otp-header'>
-                                        <p style={{textAlign: "left"}}>Enter the OTP sent to your phone via SMS: </p>
-                                    </div>
-                                    {this.state.otp.map((digit, index) => (
-                                        <input
-                                            disabled={this.state.OTPInputDisabled}
-                                            key={index}
-                                            type="text"
-                                            maxLength="1"
-                                            value={digit}
-                                            onChange={(event) => this.handleOTPDigitChange(index, event)}
-                                            onKeyDown={(event) => this.handleOTPKeyShift(index, event)}
-                                            ref={(input) => (this.inputs[index] = input)} // Save input reference
-                                        />
-                                    ))}
-                                    <div className='navbar-profile-dropdown-body-verify-otp-labels'>
-                                        <p>Resend OTP</p>
-                                        <h5>OTP Expires in <label>{this.formatTime()}</label></h5>
-                                    </div>
-                                    <div className={`navbar-profile-dropdown-body-verify-otp-btn ${this.state.OTPBtnClicked ? this.state.OTPVerifySuccess ? 'btn-success' : 'clicked' : ''}`}>
-                                        <button
-                                        onClick={this.verifyOTPClicked}
-                                        >
-                                            {this.state.showVerifyOPTBtnTextHome && 
-                                                <span>{this.state.verifyOTPBtnText}</span>
-                                            }
-                                            {/* {this.state.showVerifyOPTHomeLoading && 
-                                                 <span className='navbar-profile-dropdown-body-otp-btn-loading'>
-                                                    <RotatingLines
-                                                    visible={true}
-                                                    height="16.5"
-                                                    width="16.5"
-                                                    strokeColor="white"
-                                                    strokeWidth="3"
-                                                    animationDuration="0.75"
-                                                    ariaLabel="rotating-lines-loading"
-                                                    wrapperStyle={{}}
-                                                    wrapperClass=""
-                                                    />
-                                                </span>
-                                            } */}
-                                           
-                                        </button>
-                                    </div>
+                            {this.state.userSignedIn && 
+                                <div className='navbar-profile-dropdown-signed-in'>
+
                                 </div>
                             }
                         </div>
