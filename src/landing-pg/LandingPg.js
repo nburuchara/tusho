@@ -1462,6 +1462,7 @@ export default class LandingPg extends Component {
             showVerifyOPTBtnTextHome: true,
             verifyOTPBtnText: 'Verify OTP',
             OTPInputDisabled: false,
+            transferToProfile: false,
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
@@ -2546,7 +2547,7 @@ export default class LandingPg extends Component {
                                     </div>
                                     <div className={`navbar-profile-dropdown-body-verify-otp-btn ${this.state.OTPBtnClicked ? 'clicked' : ''}`}>
                                         <button
-                                        style={{color: this.state.OTPVerifySuccess ? '#50b65d' : ''}}
+                                        style={{color: this.state.OTPVerifySuccess ? '#50b65d' : '', border: this.state.OTPVerifySuccess ? '1px solid #50b65d' : ''}}
                                         onClick={this.verifyOTPClicked}
                                         >
                                             {this.state.showVerifyOPTBtnTextHome && 
