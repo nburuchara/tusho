@@ -1544,6 +1544,22 @@ const Styles = styled.div `
     transition-property: text-decoration, color, text-decoration-color;
 }
 
+.navbar-profile-account-popup {
+    z-index: 3;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    height: 45rem;
+    width: 50%;
+    border-radius: 8px;
+}
+
+.navbar-profile-account-popup-header {
+    
+}
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
@@ -1632,7 +1648,8 @@ export default class LandingPg extends Component {
         this.state = {
 
             //* - USER ACCOUNT STATUS - *//
-            userSignedIn: false,
+            userSignedIn: true,
+            accountSetupComplete: false,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -1651,7 +1668,7 @@ export default class LandingPg extends Component {
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
             OTPBtnClicked: false,
-            OTPVerifySuccess: false,
+            OTPVerifySuccess: true,
             showEnterOPTBtnTextHome: true,
             showVerifyOPTBtnTextHome: true,
             verifyOTPBtnText: 'Verify OTP',
@@ -1982,6 +1999,7 @@ export default class LandingPg extends Component {
 
         if (this.state.accountSettingsOpen) {
             this.setState({
+                showProfileAccountSettings: false,
                 accountSettingsOpen: false
             })
         }
@@ -2115,8 +2133,15 @@ export default class LandingPg extends Component {
     }
 
     accountSettingsClicked = () => {
-
+        if (!this.state.accountSetupComplete) {
+            this.setState({
+                showProfileAccountSettings: true,
+                accountSettingsOpen: true
+            })
+        }
     }
+
+    
 
     render () {
 
@@ -2124,7 +2149,7 @@ export default class LandingPg extends Component {
 
         return (
             <Styles>
-                <div onClick={this.hideHomeCartClicked} className={`overlay ${this.state.homeScreenCartClicked || this.state.accountSettingsOpen ? 'active' : ''}`}></div>
+                <div onClick={this.hideNonOverlayElements} className={`overlay ${this.state.homeScreenCartClicked || this.state.accountSettingsOpen ? 'active' : ''}`}></div>
                 <div className='fullPage'>
                     <div className='navbar'>
                         <div className={`navbar-options-icon ${this.state.dropdownMenuDisplayed ? 'clicked' : ''}`}>
@@ -2700,7 +2725,7 @@ export default class LandingPg extends Component {
                                 </div>
                             }
                             {this.state.userSignedIn && 
-                                <div className='navbar-profile-dropdown-header-signed-in'>
+                                <div onClick={this.accountSettingsClicked} className='navbar-profile-dropdown-header-signed-in'>
                                     <div className='navbar-profile-dropdown-header-signed-in-img'>
                                         <img src='/assets/icons/home-profile/signed-in-profile-placeholder2.png'/>
                                     </div>
@@ -2853,7 +2878,13 @@ export default class LandingPg extends Component {
                         </div>
                     </div>
 
+                    {this.state.showProfileAccountSettings &&
+                        <div className='navbar-profile-account-popup'>
+                            <div className='navbar-profile-account-popup-header'>
 
+                            </div>
+                        </div>
+                    }
                 </div>
                 
             </Styles>
