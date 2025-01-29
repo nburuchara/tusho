@@ -8,6 +8,22 @@ import SearchTerms from '../search-terms/SearchTerms'
 
 const Styles = styled.div `
 
+    // - - PAGE OVERLAY - - //
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 2; /* Below the side pane but above the full page */
+    display: none; /* Hidden by default */
+}
+
+.overlay.active {
+    display: block;
+}
 
     // - - FULL PAGE - - //
 
@@ -1641,6 +1657,7 @@ export default class LandingPg extends Component {
             verifyOTPBtnText: 'Verify OTP',
             OTPInputDisabled: false,
             transferToProfile: false,
+            accountSettingsOpen: false,
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
@@ -1953,6 +1970,21 @@ export default class LandingPg extends Component {
         this.setState({
             homeScreenCartClicked: false
         })
+        this.hideNonOverlayElements();
+    }
+
+    hideNonOverlayElements = () => {
+        if (this.state.homeScreenCartClicked) {
+            this.setState({
+                homeScreenCartClicked: false,
+            })
+        }
+
+        if (this.state.accountSettingsOpen) {
+            this.setState({
+                accountSettingsOpen: false
+            })
+        }
     }
 
     handleOTPDigitChange = (index, event) => {
@@ -2082,7 +2114,9 @@ export default class LandingPg extends Component {
         })
     }
 
+    accountSettingsClicked = () => {
 
+    }
 
     render () {
 
@@ -2090,6 +2124,7 @@ export default class LandingPg extends Component {
 
         return (
             <Styles>
+                <div onClick={this.hideHomeCartClicked} className={`overlay ${this.state.homeScreenCartClicked || this.state.accountSettingsOpen ? 'active' : ''}`}></div>
                 <div className='fullPage'>
                     <div className='navbar'>
                         <div className={`navbar-options-icon ${this.state.dropdownMenuDisplayed ? 'clicked' : ''}`}>
