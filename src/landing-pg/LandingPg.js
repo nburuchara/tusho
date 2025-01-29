@@ -1557,7 +1557,22 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-header {
-    
+    height: 5rem;
+    border-bottom: 1.5px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-profile-account-popup-header-left {
+    width: 30%;
+    border-right: 1.5px solid #ccc;
+    border-top-left-radius: 8px;
+}
+
+.navbar-profile-account-popup-header-right {
+    width: 70%;
+    // border: 1.5px solid #ccc;
+    border-top-right-radius: 8px;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -2881,7 +2896,12 @@ export default class LandingPg extends Component {
                     {this.state.showProfileAccountSettings &&
                         <div className='navbar-profile-account-popup'>
                             <div className='navbar-profile-account-popup-header'>
+                                <div className='navbar-profile-account-popup-header-left'>
 
+                                </div>
+                                <div className='navbar-profile-account-popup-header-right'>
+
+                                </div>
                             </div>
                         </div>
                     }
