@@ -1616,7 +1616,7 @@ export default class LandingPg extends Component {
         this.state = {
 
             //* - USER ACCOUNT STATUS - *//
-            userSignedIn: true,
+            userSignedIn: false,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -1635,7 +1635,7 @@ export default class LandingPg extends Component {
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
             OTPBtnClicked: false,
-            OTPVerifySuccess:true,
+            OTPVerifySuccess: false,
             showEnterOPTBtnTextHome: true,
             showVerifyOPTBtnTextHome: true,
             verifyOTPBtnText: 'Verify OTP',
