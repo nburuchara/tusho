@@ -1575,6 +1575,19 @@ const Styles = styled.div `
     border-top-right-radius: 8px;
 }
 
+.navbar-profile-account-popup-header-account-setup-incomplete {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.navbar-profile-account-popup-header-account-setup-incomplete h2 {
+    font-family: inter;
+    margin-top: 1.65rem;
+    margin-left: 2.5%;
+    // font-weight: bolder;
+}
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
@@ -1677,6 +1690,7 @@ export default class LandingPg extends Component {
             showProfileDropdownHeaderDefault: true,
             showProfileDropdownHeaderLoading: false,
             showProfileDropdownHeaderSuccess: false,
+            showProfileAccountSettings: true,
             showHomeProfileOTPLoading: false,
             showHomeProfileEnterOTP: true,
             showHomeProfileVerifyOTP: false,
@@ -1689,7 +1703,8 @@ export default class LandingPg extends Component {
             verifyOTPBtnText: 'Verify OTP',
             OTPInputDisabled: false,
             transferToProfile: false,
-            accountSettingsOpen: false,
+            accountSettingsOpen: true,
+            showAccountSetupIncompleteHeader: true,
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
@@ -2897,11 +2912,18 @@ export default class LandingPg extends Component {
                         <div className='navbar-profile-account-popup'>
                             <div className='navbar-profile-account-popup-header'>
                                 <div className='navbar-profile-account-popup-header-left'>
-
+                                    
                                 </div>
                                 <div className='navbar-profile-account-popup-header-right'>
-
+                                    {!this.state.accountSetupComplete && 
+                                        <div className='navbar-profile-account-popup-header-account-setup-incomplete'>
+                                            <h2>Complete Account Setup</h2>
+                                        </div>
+                                    }
                                 </div>
+                            </div>
+                            <div className='navbar-profile-account-popup-body'>
+
                             </div>
                         </div>
                     }
