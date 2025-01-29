@@ -1544,6 +1544,8 @@ const Styles = styled.div `
     transition-property: text-decoration, color, text-decoration-color;
 }
 
+    // - - HOMESCREEN ACCOUNT SETTINGS POPUP - - //
+
 .navbar-profile-account-popup {
     z-index: 3;
     position: fixed;
@@ -1554,6 +1556,8 @@ const Styles = styled.div `
     height: 45rem;
     width: 50%;
     border-radius: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
 .navbar-profile-account-popup-header {
@@ -1581,11 +1585,17 @@ const Styles = styled.div `
     justify-content: left;
 }
 
-.navbar-profile-account-popup-header-account-setup-incomplete h2 {
+.navbar-profile-account-popup-header-account-setup-incomplete h1 {
     font-family: inter;
+    font-size: 21.5px;
     margin-top: 1.65rem;
     margin-left: 2.5%;
     // font-weight: bolder;
+}
+
+.navbar-profile-account-popup-body {
+    border: 1px solid black;
+    flex-grow: 1;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -2917,7 +2927,7 @@ export default class LandingPg extends Component {
                                 <div className='navbar-profile-account-popup-header-right'>
                                     {!this.state.accountSetupComplete && 
                                         <div className='navbar-profile-account-popup-header-account-setup-incomplete'>
-                                            <h2>Complete Account Setup</h2>
+                                            <h1>Complete Account Setup</h1>
                                         </div>
                                     }
                                 </div>
