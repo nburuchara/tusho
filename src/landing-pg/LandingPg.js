@@ -1596,6 +1596,8 @@ const Styles = styled.div `
 .navbar-profile-account-popup-body {
     border: 1px solid black;
     flex-grow: 1;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
