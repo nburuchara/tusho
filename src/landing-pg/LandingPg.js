@@ -1644,9 +1644,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-account-info {
     margin-left: 6.5%;
-    border: 1px solid black;
-    display: flex;
-    flext-direction: column;
+    // border: 1px solid black;
 }
 
 .navbar-profile-account-popup-account-info p { 
@@ -1726,7 +1724,30 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-account-info-details {
+    margin-top: 1.25rem;
     border: 1px solid black;
+}
+
+.navbar-profile-account-popup-account-info-names {
+    display: flex;
+    align-items: space-between;
+}
+
+.navbar-profile-account-popup-account-info-names p {
+    display: flex;
+    align-items: space-between;
+    font-family: poppins;
+    font-size: 85%;
+    margin-bottom: 6.5px;
+    color: #5e626a;
+}
+
+.navbar-profile-account-popup-account-info-first-name {
+    width: 50%;
+}
+
+.navbar-profile-account-popup-account-info-last-name {
+    width: 50%;
 }
 
 
@@ -3092,7 +3113,9 @@ export default class LandingPg extends Component {
                                                     </div>  
                                                 </div>
                                                 <div className='navbar-profile-account-popup-account-info-details'>
-                                                    
+                                                    <div className=''>
+
+                                                    </div>
                                                 </div>
                                             </div>
                                         }
