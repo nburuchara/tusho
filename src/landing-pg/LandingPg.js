@@ -1661,23 +1661,56 @@ const Styles = styled.div `
     border: 1px solid black;
 }
 
+.navbar-profile-account-popup-account-info-profile-pic-img p {
+    font-family: lexend;
+    font-size: 85%;
+    margin-bottom: 8.5px;
+}
+
+.navbar-profile-account-popup-account-info-profile-pic-img img {
+    width: 40%;
+    border: 1.5px solid #ccc;
+    border-radius: 50%;
+    padding: 11.5px;
+}
+
 .navbar-profile-account-popup-account-info-profile-pic-btn-1 {
     width: 35%;
     border: 1px solid black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.navbar-profile-account-popup-account-info-profile-pic-btn-1 button {
+    margin-top: 2rem;
+    padding: 9px;
+    width: 80%;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
 
 .navbar-profile-account-popup-account-info-profile-pic-btn-2 {
     width: 40%;
     border: 1px solid black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
 
-.navbar-profile-account-popup-account-info-profile-pic p {
-    font-family: lexend;
-    font-size: 85%;
+.navbar-profile-account-popup-account-info-profile-pic-btn-2 button {
+    margin-top: 2rem;
+    width: 75%;
+    padding: 9px;
+    border-radius: 8px;
+    border: 1px solid black;
 }
 
 .navbar-profile-account-popup-account-info-profile-pic img { 
-
+   
 }
 
 
@@ -3033,12 +3066,13 @@ export default class LandingPg extends Component {
                                                 <div className='navbar-profile-account-popup-account-info-profile-pic'>
                                                     <div className='navbar-profile-account-popup-account-info-profile-pic-img'>
                                                         <p>Profile picture</p>
+                                                        <img src='/assets/icons/home-profile/signed-in-profile-placeholder2.png'/>
                                                     </div>  
                                                     <div className='navbar-profile-account-popup-account-info-profile-pic-btn-1'>
-
+                                                        <button>Change picture</button>
                                                     </div>  
                                                     <div className='navbar-profile-account-popup-account-info-profile-pic-btn-2'>
-
+                                                        <button>Delete picture</button>
                                                     </div>  
                                                 </div>
                                             </div>
