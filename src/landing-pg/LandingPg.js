@@ -1258,7 +1258,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-dropdown-header-signed-in:hover {
-    background-color: #ffe3dd;
+    background-color: #faece9;
     border: 1px solid #FF5733;
 }
 
@@ -1499,7 +1499,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-dropdown-body-signed-in-options-cell:hover {
-    background-color: #ffe3dd;
+    background-color: #faece9;;
     border: 1px solid #FF5733;
 }
 
@@ -1587,17 +1587,27 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-header-account-setup-incomplete h1 {
     font-family: inter;
-    font-size: 21.5px;
-    margin-top: 1.65rem;
+    font-size: 19.5px;
+    margin-top: 1.85rem;
     margin-left: 2.5%;
     // font-weight: bolder;
 }
 
 .navbar-profile-account-popup-body {
-    border: 1px solid black;
+    // border: 1px solid black;
     flex-grow: 1;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
+}
+
+.navbar-profile-account-popup-body-left {
+    border-right: 1.5px solid #ccc;
+    width: 29.9%;
+    height: 100%;
+}
+
+.navbar-profile-account-popup-body-right {
+    width: 70%;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -2927,15 +2937,25 @@ export default class LandingPg extends Component {
                                     
                                 </div>
                                 <div className='navbar-profile-account-popup-header-right'>
-                                    {!this.state.accountSetupComplete && 
-                                        <div className='navbar-profile-account-popup-header-account-setup-incomplete'>
-                                            <h1>Complete Account Setup</h1>
-                                        </div>
-                                    }
+                                    <div className='navbar-profile-account-popup-header-right-label'>
+                                        {!this.state.accountSetupComplete && 
+                                            <div className='navbar-profile-account-popup-header-account-setup-incomplete'>
+                                                <h1>Complete Account Setup</h1>
+                                            </div>
+                                        }
+                                    </div>
+                                    <div className='navbar-profile-account-popup-header-right-close'>
+
+                                    </div>
                                 </div>
                             </div>
                             <div className='navbar-profile-account-popup-body'>
+                                <div className='navbar-profile-account-popup-body-left'>
 
+                                </div>
+                                <div className='navbar-profile-account-popup-body-right'>
+
+                                </div>
                             </div>
                         </div>
                     }
