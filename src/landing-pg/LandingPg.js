@@ -1577,6 +1577,25 @@ const Styles = styled.div `
     width: 70%;
     // border: 1.5px solid #ccc;
     border-top-right-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-profile-account-popup-header-right-label {
+    width: 85%;
+    // border: 1.5px solid #ccc;
+}
+
+.navbar-profile-account-popup-header-right-close {
+    width: 15%;
+    // border: 1.5px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-profile-account-popup-header-right-close img {
+    width: 35%;
 }
 
 .navbar-profile-account-popup-header-account-setup-incomplete {
@@ -1588,7 +1607,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-header-account-setup-incomplete h1 {
     font-family: inter;
     font-size: 19.5px;
-    margin-top: 1.85rem;
+    margin-top: 1.7rem;
     margin-left: 2.5%;
     // font-weight: bolder;
 }
@@ -2945,7 +2964,7 @@ export default class LandingPg extends Component {
                                         }
                                     </div>
                                     <div className='navbar-profile-account-popup-header-right-close'>
-
+                                        <img src='/assets/icons/navbar/clear-search-icon-color.png'/>
                                     </div>
                                 </div>
                             </div>
