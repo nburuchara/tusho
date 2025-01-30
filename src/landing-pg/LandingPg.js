@@ -1799,6 +1799,19 @@ const Styles = styled.div `
     // border: 1px solid black;
 }
 
+.navbar-profile-account-popup-account-single-input {
+    margin-top: 0.5rem;
+}
+
+.navbar-profile-account-popup-account-single-input p {
+    display: flex;
+    align-items: space-between;
+    font-family: poppins;
+    font-size: 80%;
+    margin-bottom: 6.5px;
+    color: #5e626a;
+}
+
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
@@ -3185,6 +3198,9 @@ export default class LandingPg extends Component {
                                                             <p>Phone no.</p>
                                                             <input/>
                                                         </div>
+                                                    </div>
+                                                    <div className='navbar-profile-account-popup-account-single-input'>
+                                                        <p>What are three grocery items you can't live without</p>
                                                     </div>
                                                 </div>
                                             </div>
