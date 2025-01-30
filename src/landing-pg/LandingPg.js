@@ -1625,6 +1625,8 @@ const Styles = styled.div `
     flex-grow: 1;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .navbar-profile-account-popup-body-left {
@@ -1635,6 +1637,13 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-body-right {
     width: 70%;
+    height: 100%;
+    border: 1px solid black;
+    border-bottom-right-radius: 8px;
+}
+
+.navbar-profile-account-popup-account-info {
+    // border: 1px solid black;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -1728,6 +1737,7 @@ export default class LandingPg extends Component {
             //* - USER ACCOUNT STATUS - *//
             userSignedIn: true,
             accountSetupComplete: false,
+            showAccountInformation: true,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -2982,7 +2992,13 @@ export default class LandingPg extends Component {
 
                                 </div>
                                 <div className='navbar-profile-account-popup-body-right'>
-
+                                    <div className=''>
+                                        {this.state.showAccountInformation && 
+                                            <div className='navbar-profile-account-popup-account-info'>
+                                                <p>Profile picture</p>
+                                            </div>
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>
