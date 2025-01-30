@@ -1644,7 +1644,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-account-info {
     margin-left: 6.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .navbar-profile-account-popup-account-info p { 
@@ -1657,44 +1657,51 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-account-info-profile-pic-img {
-    width: 25%;
-    border: 1px solid black;
+    width: 20%;
+    // border: 1px solid black;
 }
 
 .navbar-profile-account-popup-account-info-profile-pic-img p {
-    font-family: lexend;
+    font-family: poppins;
     font-size: 85%;
-    margin-bottom: 8.5px;
+    margin-bottom: 6.5px;
+    color: #5e626a;
 }
 
 .navbar-profile-account-popup-account-info-profile-pic-img img {
-    width: 40%;
+    width: 45%;
     border: 1.5px solid #ccc;
     border-radius: 50%;
     padding: 11.5px;
+    background-color: #f6f8fa;
 }
 
 .navbar-profile-account-popup-account-info-profile-pic-btn-1 {
-    width: 35%;
-    border: 1px solid black;
+    width: 40%;
+    // border: 1px solid black;
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
 }
 
 .navbar-profile-account-popup-account-info-profile-pic-btn-1 button {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     padding: 9px;
     width: 80%;
     border-radius: 8px;
     border: 1px solid black;
+    background-color: #2c95ef;
+    border: 1px solid #2c95ef;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 
 .navbar-profile-account-popup-account-info-profile-pic-btn-2 {
     width: 40%;
-    border: 1px solid black;
+    // border: 1px solid black;
     position: relative;
     display: flex;
     align-items: center;
@@ -1702,15 +1709,22 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-account-info-profile-pic-btn-2 button {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     width: 75%;
     padding: 9px;
     border-radius: 8px;
     border: 1px solid black;
+    margin-left: -5%;
+    background-color: #f6f8fa;
+    border: 1px solid #ccc;
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    color: #FF5733;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.navbar-profile-account-popup-account-info-profile-pic img { 
-   
+.navbar-profile-account-popup-account-info-details {
+    
 }
 
 
@@ -3074,6 +3088,9 @@ export default class LandingPg extends Component {
                                                     <div className='navbar-profile-account-popup-account-info-profile-pic-btn-2'>
                                                         <button>Delete picture</button>
                                                     </div>  
+                                                </div>
+                                                <div className='navbar-profile-account-popup-account-info-details'>
+                                                    
                                                 </div>
                                             </div>
                                         }
