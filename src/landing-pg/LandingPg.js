@@ -1655,7 +1655,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-body-left {
     border-right: 1.5px solid #ccc;
-    width: 29.9%;
+    width: 30%;
     height: 100%;
 }
 
