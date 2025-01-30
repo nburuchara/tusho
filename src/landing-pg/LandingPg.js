@@ -1596,6 +1596,14 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-header-right-close img {
     width: 35%;
+    margin-top: 0.225rem;
+    filter: grayscale(100);
+    cursor: pointer;
+    transition-property: filter;
+}
+
+.navbar-profile-account-popup-header-right-close img:hover {
+    filter: grayscale(0);
 }
 
 .navbar-profile-account-popup-header-account-setup-incomplete {
@@ -1607,7 +1615,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-header-account-setup-incomplete h1 {
     font-family: inter;
     font-size: 19.5px;
-    margin-top: 1.7rem;
+    margin-top: 1.85rem;
     margin-left: 2.5%;
     // font-weight: bolder;
 }
@@ -1655,6 +1663,7 @@ const Styles = styled.div `
 .navbar-profile-dropdown-body-signed-in-options-cell,
 .navbar-profile-dropdown-body-signed-in-options-cell-img img,
 .navbar-profile-dropdown-body-signed-in-options-cell-label p,
+.navbar-profile-account-popup-header-right-close img,
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
