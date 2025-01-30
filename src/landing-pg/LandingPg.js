@@ -1644,7 +1644,9 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-account-info {
     margin-left: 6.5%;
-    // border: 1px solid black;
+    border: 1px solid black;
+    display: flex;
+    flext-direction: column;
 }
 
 .navbar-profile-account-popup-account-info p { 
@@ -1724,7 +1726,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-account-info-details {
-    
+    border: 1px solid black;
 }
 
 
