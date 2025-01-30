@@ -1638,13 +1638,48 @@ const Styles = styled.div `
 .navbar-profile-account-popup-body-right {
     width: 70%;
     height: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     border-bottom-right-radius: 8px;
 }
 
 .navbar-profile-account-popup-account-info {
-    // border: 1px solid black;
+    margin-left: 6.5%;
+    border: 1px solid black;
 }
+
+.navbar-profile-account-popup-account-info p { 
+    
+}
+
+.navbar-profile-account-popup-account-info-profile-pic {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-profile-account-popup-account-info-profile-pic-img {
+    width: 25%;
+    border: 1px solid black;
+}
+
+.navbar-profile-account-popup-account-info-profile-pic-btn-1 {
+    width: 35%;
+    border: 1px solid black;
+}
+
+.navbar-profile-account-popup-account-info-profile-pic-btn-2 {
+    width: 40%;
+    border: 1px solid black;
+}
+
+.navbar-profile-account-popup-account-info-profile-pic p {
+    font-family: lexend;
+    font-size: 85%;
+}
+
+.navbar-profile-account-popup-account-info-profile-pic img { 
+
+}
+
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
@@ -2995,7 +3030,17 @@ export default class LandingPg extends Component {
                                     <div className=''>
                                         {this.state.showAccountInformation && 
                                             <div className='navbar-profile-account-popup-account-info'>
-                                                <p>Profile picture</p>
+                                                <div className='navbar-profile-account-popup-account-info-profile-pic'>
+                                                    <div className='navbar-profile-account-popup-account-info-profile-pic-img'>
+                                                        <p>Profile picture</p>
+                                                    </div>  
+                                                    <div className='navbar-profile-account-popup-account-info-profile-pic-btn-1'>
+
+                                                    </div>  
+                                                    <div className='navbar-profile-account-popup-account-info-profile-pic-btn-2'>
+
+                                                    </div>  
+                                                </div>
                                             </div>
                                         }
                                     </div>
