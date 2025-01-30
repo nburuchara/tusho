@@ -1279,10 +1279,34 @@ const Styles = styled.div `
 .navbar-profile-dropdown-header-signed-in-img img {
     width: 23.5px;
     padding: 4.5px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    // filter: grayscale(100);
+    transition-property: filter;
+}
+
+.profile-dropdown-img-container {
+    width: 23.5px;
+    height: 23.5px; /* Ensure height is the same as width for a perfect circle */
+    padding: 4.5px;
     border: 2px solid #FF5733;
     border-radius: 50%;
-    filter: grayscale(100);
+    // filter: grayscale(100%);
     transition-property: filter;
+    
+    /* Background image */
+    background-image: url('/assets/icons/home-profile/profile-img-bg.png'); /* Set your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.profile-dropdown-img-container img {
+    width: 100%; /* Ensures image scales within the container */
+    border-radius: 50%;
 }
 
 .navbar-profile-dropdown-header-signed-in-details {
@@ -1668,12 +1692,24 @@ const Styles = styled.div `
     color: #5e626a;
 }
 
-.navbar-profile-account-popup-account-info-profile-pic-img img {
+.profile-pic-container {
     width: 45%;
-    border: 1.5px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 50%;
     padding: 11.5px;
     background-color: #f6f8fa;
+    background-image: url('/assets/icons/home-profile/profile-img-bg.png'); /* Set your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex; /* Helps center the image */
+    justify-content: center;
+    align-items: center;
+}
+
+
+.profile-pic-container img {
+    width: 100%; /* Adjust as needed */
+    border-radius: 50%; /* Keeps circular shape */
 }
 
 .navbar-profile-account-popup-account-info-profile-pic-btn-1 {
@@ -1725,29 +1761,42 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-account-info-details {
     margin-top: 1.25rem;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
-.navbar-profile-account-popup-account-info-names {
+.navbar-profile-account-popup-account-dual-inputs {
     display: flex;
     align-items: space-between;
+    margin-bottom: 0.5rem;
 }
 
-.navbar-profile-account-popup-account-info-names p {
+.navbar-profile-account-popup-account-dual-inputs p {
     display: flex;
     align-items: space-between;
     font-family: poppins;
-    font-size: 85%;
+    font-size: 80%;
     margin-bottom: 6.5px;
     color: #5e626a;
 }
 
+.navbar-profile-account-popup-account-dual-inputs input {
+    width: 85%;
+    padding: 8px;
+    font-size: 90%;
+    outline: none;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    font-family: inter;
+}
+
 .navbar-profile-account-popup-account-info-first-name {
     width: 50%;
+    // border: 1px solid black;
 }
 
 .navbar-profile-account-popup-account-info-last-name {
     width: 50%;
+    // border: 1px solid black;
 }
 
 
@@ -2922,7 +2971,9 @@ export default class LandingPg extends Component {
                             {this.state.userSignedIn && 
                                 <div onClick={this.accountSettingsClicked} className='navbar-profile-dropdown-header-signed-in'>
                                     <div className='navbar-profile-dropdown-header-signed-in-img'>
-                                        <img src='/assets/icons/home-profile/signed-in-profile-placeholder2.png'/>
+                                        <div className='profile-dropdown-img-container'>
+                                            <img src='/assets/icons/home-profile/signed-in-profile-placeholder2.png'/>
+                                        </div>
                                     </div>
                                     <div className='navbar-profile-dropdown-header-signed-in-details'>
                                         <h4><label>@</label>0717230621</h4>
@@ -3103,7 +3154,9 @@ export default class LandingPg extends Component {
                                                 <div className='navbar-profile-account-popup-account-info-profile-pic'>
                                                     <div className='navbar-profile-account-popup-account-info-profile-pic-img'>
                                                         <p>Profile picture</p>
-                                                        <img src='/assets/icons/home-profile/signed-in-profile-placeholder2.png'/>
+                                                        <div className="profile-pic-container">
+                                                            <img src='/assets/icons/home-profile/signed-in-profile-placeholder2.png'/>
+                                                        </div>
                                                     </div>  
                                                     <div className='navbar-profile-account-popup-account-info-profile-pic-btn-1'>
                                                         <button>Change picture</button>
@@ -3113,8 +3166,25 @@ export default class LandingPg extends Component {
                                                     </div>  
                                                 </div>
                                                 <div className='navbar-profile-account-popup-account-info-details'>
-                                                    <div className=''>
-
+                                                    <div className='navbar-profile-account-popup-account-dual-inputs'>
+                                                        <div className='navbar-profile-account-popup-account-info-first-name'>
+                                                            <p>First name</p>
+                                                            <input/>
+                                                        </div>
+                                                        <div className='navbar-profile-account-popup-account-info-last-name'>
+                                                            <p>Last name</p>
+                                                            <input/>
+                                                        </div>
+                                                    </div>
+                                                    <div className='navbar-profile-account-popup-account-dual-inputs'>
+                                                        <div className='navbar-profile-account-popup-account-info-first-name'>
+                                                            <p>Email</p>
+                                                            <input/>
+                                                        </div>
+                                                        <div className='navbar-profile-account-popup-account-info-last-name'>
+                                                            <p>Phone no.</p>
+                                                            <input/>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
