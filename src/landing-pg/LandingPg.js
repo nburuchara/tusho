@@ -1806,14 +1806,27 @@ const Styles = styled.div `
     align-items: space-between;
     font-family: poppins;
     font-size: 80%;
-    margin-bottom: 6.5px;
+    margin-bottom: 0px;
     color: #5e626a;
 }
 
 .navbar-profile-account-popup-account-single-input h5 {
-    font-size: 85%;
-    margin-top: 5px;
+    font-size: 70%;
+    margin-top: 0px;
     margin-right: 5%;
+    font-family: lexend;
+    font-weight: normal;
+    // font-style: italic;
+}
+
+.navbar-profile-account-popup-account-single-input input {
+    width: 85%;
+    padding: 8px;
+    font-size: 90%;
+    outline: none;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+    font-family: inter;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -3204,7 +3217,8 @@ export default class LandingPg extends Component {
                                                     </div>
                                                     <div className='navbar-profile-account-popup-account-single-input'>
                                                         <p>What are three grocery items you just can't live without</p>
-                                                        <h5>(Sometimes we suprise shoppers with their favorite items):</h5>
+                                                        <h5>Sometimes we surprise shoppers with their favorite items! </h5>
+                                                        <input/>
                                                     </div>
                                                 </div>
                                             </div>
