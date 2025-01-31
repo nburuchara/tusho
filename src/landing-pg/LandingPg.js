@@ -1732,6 +1732,7 @@ const Styles = styled.div `
     font-family: poppins;
     font-size: 86.5%;
     padding-top: 2.5px;
+    color: #5e626a;
 }
 
 .navbar-profile-account-popup-body-left-settings-option-cell-selected { 
