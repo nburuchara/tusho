@@ -476,7 +476,7 @@ const Styles = styled.div `
     margin-bottom: 3px;
     // margin-left: 2.5%;
     font-family: poppins;
-    font-size: 75%;
+    font-size: 70%;
     transition-property: text-decoration, text-decoration-color;
 }
 
@@ -3584,7 +3584,7 @@ export default class LandingPg extends Component {
                                                     </div>
                                                     <div className='navbar-profile-account-popup-account-single-input'>
                                                         <p>What are three grocery items you just can't live without? 😍</p>
-                                                        <h5>Sometimes we surprise shoppers with their favorite items! 🍫</h5>
+                                                        <h5>We might surprise gift you one of your favorite items! 🍫</h5>
                                                         <p>Item #1</p>
                                                         <input/>
                                                         <p>Item #2</p>
