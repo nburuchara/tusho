@@ -475,7 +475,7 @@ const Styles = styled.div `
     margin-top: 10px;
     margin-bottom: 3px;
     // margin-left: 2.5%;
-    font-family: lexend;
+    font-family: poppins;
     font-size: 75%;
     transition-property: text-decoration, text-decoration-color;
 }
@@ -490,7 +490,7 @@ const Styles = styled.div `
     margin-bottom: 5px;
     margin-right: 5%;
     font-size: 70%;
-    font-family: lexend;
+    font-family: poppins;
     transition-property: text-decoration, text-decoration-color;
 }
 
@@ -1703,6 +1703,13 @@ const Styles = styled.div `
     // border: 1px solid black;
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+}
+
+.navbar-profile-account-popup-body-left-settings-option-cell:hover {
+    background-color:  #faece9;
+    transition-property: background-color;
+    cursor: pointer;
 }
 
 .navbar-profile-account-popup-body-left-settings-option-cell.selected {
@@ -1802,12 +1809,14 @@ const Styles = styled.div `
 .navbar-profile-account-popup-body-left-footer-sign-out {
     background-color: #f6f8fa;
     border: 1px solid #5e626a;
+    cursor: pointer;
     transition-property: background-color, border;
 }
 
 .navbar-profile-account-popup-body-left-footer-sign-out:hover {
     background-color: #faece9;
     border: 1px solid #ff5733;
+    cursor: pointer;
 }
 
 .navbar-profile-account-popup-body-left-footer-sign-out:hover .navbar-profile-account-popup-body-left-footer-sign-out-icon img {
@@ -2111,6 +2120,7 @@ const Styles = styled.div `
 .navbar-profile-dropdown-body-signed-in-options-cell-img img,
 .navbar-profile-dropdown-body-signed-in-options-cell-label p,
 .navbar-profile-account-popup-header-right-close img,
+.navbar-profile-account-popup-body-left-settings-option-cell,
 .navbar-profile-account-popup-body-left-footer-sign-out,
 .navbar-profile-account-popup-body-left-footer-sign-out-icon img,
 .navbar-profile-account-popup-body-left-footer-sign-out-label p,
