@@ -1809,10 +1809,6 @@ const Styles = styled.div `
     position: relative;
 }
 
-.navbar-profile-account-popup-account-info-first-name-header-priority.success {
-
-}
-
 .navbar-profile-account-popup-account-info-first-name-header-priority span {
     position: absolute;
     bottom: 0.5rem;
@@ -1823,8 +1819,15 @@ const Styles = styled.div `
     padding-left: 8%;
     padding-right: 8%;
     border-radius: 20px;
-    font-size: 65%;
+    font-size: 60%;
     font-weight: bold;
+}
+
+.navbar-profile-account-popup-account-info-first-name-header-priority.success span {
+    background-color: #d3eee1;
+    color: #0d8360;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .navbar-profile-account-popup-account-info-last-name {
@@ -1981,6 +1984,7 @@ export default class LandingPg extends Component {
             userSignedIn: true,
             accountSetupComplete: false,
             showAccountInformation: true,
+            phoneNumberVerified: true,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
