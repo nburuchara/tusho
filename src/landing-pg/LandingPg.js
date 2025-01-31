@@ -1718,7 +1718,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-body-left-settings-option-cell-icon img { 
-    width: 36.5%;
+    width: 30.5%;
 }
 
 .navbar-profile-account-popup-body-left-settings-option-cell-label { 
@@ -1731,7 +1731,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-body-left-settings-option-cell-label p { 
     font-family: poppins;
-    font-size: 86.5%;
+    font-size: 79.5%;
     padding-top: 2.5px;
     color: #5e626a;
 }
@@ -1747,7 +1747,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-body-left-footer {
     position: absolute;
-    bottom: -1.5rem;
+    bottom: -1.65rem;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 85%;
@@ -1759,20 +1759,74 @@ const Styles = styled.div `
     gap: 1rem; /* Adds spacing between child divs */
 }
 
-.navbar-profile-account-popup-body-left-footer-sign-out {
-    border: 1px solid black;
+.navbar-profile-account-popup-body-left-footer-sign-out,
+.navbar-profile-account-popup-body-left-footer-delete {
+    // border: 1px solid black;
     height: 2.65rem;
     display: flex;
     justify-content: space-between;
     border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.navbar-profile-account-popup-body-left-footer-sign-out-icon,
+.navbar-profile-account-popup-body-left-footer-delete-icon {
+    // border: 1px solid black;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-profile-account-popup-body-left-footer-sign-out-icon img,
+.navbar-profile-account-popup-body-left-footer-delete-icon img {
+    width: 31.5%;
+}
+
+.navbar-profile-account-popup-body-left-footer-sign-out-label,
+.navbar-profile-account-popup-body-left-footer-delete-label {
+    // border: 1px solid black;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.navbar-profile-account-popup-body-left-footer-sign-out-label p,
+.navbar-profile-account-popup-body-left-footer-delete-label p {
+    
+}
+
+.navbar-profile-account-popup-body-left-footer-sign-out {
+    background-color: #f6f8fa;
+    border: 1px solid #5e626a;
+}
+
+.navbar-profile-account-popup-body-left-footer-sign-out-icon img {
+    width: 28%;
+    filter: grayscale(100);
+}
+
+.navbar-profile-account-popup-body-left-footer-sign-out-label p {
+    color: #5e626a;
+   font-family: inter;
+   font-size: 85%;
+   padding-top: 0.5px;
 }
 
 .navbar-profile-account-popup-body-left-footer-delete {
-    border: 1px solid black;
-    height: 2.65rem;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 8px;
+   background-color: #ee362a;
+   color: white;
+   font-family: inter;
+}
+
+.navbar-profile-account-popup-body-left-footer-delete p {
+   color: white;
+   font-family: inter;
+   font-size: 85%;
+   padding-top: 2.5px;
 }
 
 
@@ -1804,7 +1858,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-account-info-profile-pic-img p {
     font-family: poppins;
-    font-size: 85%;
+    font-size: 75%;
     margin-bottom: 6.5px;
     color: #5e626a;
 }
@@ -1847,7 +1901,8 @@ const Styles = styled.div `
     background-color: #2c95ef;
     border: 1px solid #2c95ef;
     color: white;
-    font-weight: bold;
+    // font-weight: bold;
+    font-family: inter;
     cursor: pointer;
 }
 
@@ -1872,7 +1927,8 @@ const Styles = styled.div `
     border: 1px solid #ccc;
     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     color: #FF5733;
-    font-weight: bold;
+    // font-weight: bold;
+    font-family: inter;
     cursor: pointer;
 }
 
@@ -1889,7 +1945,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-account-dual-inputs p {
     font-family: poppins;
-    font-size: 80%;
+    font-size: 75%;
     margin-bottom: 6.5px;
     color: #5e626a;
 }
@@ -1960,8 +2016,8 @@ const Styles = styled.div `
     display: flex;
     align-items: space-between;
     font-family: poppins;
-    font-size: 80%;
-    margin-bottom: 0px;
+    font-size: 75%;
+    margin-bottom: 3.5px;
     color: #5e626a;
 }
 
@@ -2004,7 +2060,8 @@ const Styles = styled.div `
     background-color: #2c95ef;
     border: 1px solid #2c95ef;
     color: white;
-    font-weight: bold;
+    // font-weight: bold;
+    font-family: inter;
     border-radius: 8px;
     cursor: pointer;
 }
@@ -3412,10 +3469,20 @@ export default class LandingPg extends Component {
                                     </div>
                                     <div className='navbar-profile-account-popup-body-left-footer'>
                                         <div className='navbar-profile-account-popup-body-left-footer-sign-out'>
-
+                                            <div className='navbar-profile-account-popup-body-left-footer-sign-out-icon'>
+                                                <img src='/assets/icons/home-profile/logout-dropdown-icon.png'/>
+                                            </div>
+                                            <div className='navbar-profile-account-popup-body-left-footer-sign-out-label'>
+                                                <p>Sign Out</p>
+                                            </div>
                                         </div>
                                         <div className='navbar-profile-account-popup-body-left-footer-delete'>
-
+                                            <div className='navbar-profile-account-popup-body-left-footer-delete-icon'>
+                                                <img src='/assets/icons/home-profile/edit-trash-option-icon.png'/>
+                                            </div>
+                                            <div className='navbar-profile-account-popup-body-left-footer-delete-label'>
+                                                <p>Delete Account</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
