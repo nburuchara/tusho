@@ -1834,7 +1834,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-account-save-profile-btn {
     position: absolute;
-    bottom: 2rem;
+    bottom: 1.8rem;
     right: 2.5%;
     margin-right: 0px;
     width: 62.5%;
@@ -1844,8 +1844,14 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-account-save-profile-btn button {
-    width: 25%;
-    padding: 5px;
+    width: 30%;
+    padding: 2.6%;
+    background-color: #2c95ef;
+    border: 1px solid #2c95ef;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
