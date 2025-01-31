@@ -1792,6 +1792,37 @@ const Styles = styled.div `
     // border: 1px solid black;
 }
 
+.navbar-profile-account-popup-account-info-first-name-header {
+    display: flex;
+    justify-content: space-between;
+    // border: 1px solid black;
+}
+
+.navbar-profile-account-popup-account-info-first-name-header-label {
+    width: 50%;
+    // border: 1px solid black;
+}
+
+.navbar-profile-account-popup-account-info-first-name-header-priority {
+    width: 50%;
+    // border: 1px solid black;
+    position: relative;
+}
+
+.navbar-profile-account-popup-account-info-first-name-header-priority span {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 15%;
+    background-color: #ffdae0;
+    color: #da5773;
+    padding: 3%;
+    padding-left: 8%;
+    padding-right: 8%;
+    border-radius: 20px;
+    font-size: 70%;
+    font-weight: bold;
+}
+
 .navbar-profile-account-popup-account-info-last-name {
     width: 50%;
     // border: 1px solid black;
@@ -1834,7 +1865,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-account-save-profile-btn {
     position: absolute;
-    bottom: 1.8rem;
+    bottom: 1.6rem;
     right: 2.5%;
     margin-right: 0px;
     width: 62.5%;
@@ -1845,7 +1876,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-account-save-profile-btn button {
     width: 30%;
-    padding: 2.6%;
+    padding: 2.3%;
     background-color: #2c95ef;
     border: 1px solid #2c95ef;
     color: white;
@@ -3222,17 +3253,38 @@ export default class LandingPg extends Component {
                                                 <div className='navbar-profile-account-popup-account-info-details'>
                                                     <div className='navbar-profile-account-popup-account-dual-inputs'>
                                                         <div className='navbar-profile-account-popup-account-info-first-name'>
-                                                            <p>First name</p>
+                                                            <div className='navbar-profile-account-popup-account-info-first-name-header'>
+                                                                <div className='navbar-profile-account-popup-account-info-first-name-header-label'>
+                                                                    <p>First name</p>
+                                                                </div>
+                                                                <div className='navbar-profile-account-popup-account-info-first-name-header-priority'>
+                                                                    <span>REQUIRED</span>
+                                                                </div>
+                                                            </div>
                                                             <input/>
                                                         </div>
                                                         <div className='navbar-profile-account-popup-account-info-last-name'>
-                                                            <p>Last name</p>
+                                                            <div className='navbar-profile-account-popup-account-info-first-name-header'>
+                                                                <div className='navbar-profile-account-popup-account-info-first-name-header-label'>
+                                                                    <p>Last name</p>
+                                                                </div>
+                                                                <div className='navbar-profile-account-popup-account-info-first-name-header-priority'>
+                                                                    <span>REQUIRED</span>
+                                                                </div>
+                                                            </div>
                                                             <input/>
                                                         </div>
                                                     </div>
                                                     <div className='navbar-profile-account-popup-account-dual-inputs'>
                                                         <div className='navbar-profile-account-popup-account-info-first-name'>
-                                                            <p>Email</p>
+                                                            <div className='navbar-profile-account-popup-account-info-first-name-header'>
+                                                                <div className='navbar-profile-account-popup-account-info-first-name-header-label'>
+                                                                    <p>Email</p>
+                                                                </div>
+                                                                <div className='navbar-profile-account-popup-account-info-first-name-header-priority'>
+                                                                    <span>REQUIRED</span>
+                                                                </div>
+                                                            </div>
                                                             <input/>
                                                         </div>
                                                         <div className='navbar-profile-account-popup-account-info-last-name'>
