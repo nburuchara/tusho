@@ -1809,6 +1809,10 @@ const Styles = styled.div `
     position: relative;
 }
 
+.navbar-profile-account-popup-account-info-first-name-header-priority.success {
+
+}
+
 .navbar-profile-account-popup-account-info-first-name-header-priority span {
     position: absolute;
     bottom: 0.5rem;
@@ -1819,7 +1823,7 @@ const Styles = styled.div `
     padding-left: 8%;
     padding-right: 8%;
     border-radius: 20px;
-    font-size: 70%;
+    font-size: 65%;
     font-weight: bold;
 }
 
@@ -3288,7 +3292,14 @@ export default class LandingPg extends Component {
                                                             <input/>
                                                         </div>
                                                         <div className='navbar-profile-account-popup-account-info-last-name'>
-                                                            <p>Phone no.</p>
+                                                            <div className='navbar-profile-account-popup-account-info-first-name-header'>
+                                                                <div className='navbar-profile-account-popup-account-info-first-name-header-label'>
+                                                                    <p>Phone no.</p>
+                                                                </div>
+                                                                <div className={`navbar-profile-account-popup-account-info-first-name-header-priority ${this.state.phoneNumberVerified ? 'success' : ''}`}>
+                                                                    <span>✓</span>
+                                                                </div>
+                                                            </div>
                                                             <input/>
                                                         </div>
                                                     </div>
