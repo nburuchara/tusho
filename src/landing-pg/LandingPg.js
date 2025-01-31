@@ -1613,10 +1613,25 @@ const Styles = styled.div `
 .navbar-profile-account-popup-header-left-search-bar-icon {
     width: 17.5%;
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.navbar-profile-account-popup-header-left-search-bar-icon img {
+    width: 55%;
+}
+
 .navbar-profile-account-popup-header-left-search-bar {
     width: 82.5%;
     border: 1px solid black;
+}
+
+.navbar-profile-account-popup-header-left-search-bar input {
+    width: 93.5%;
+    padding: 3px;
+    outline: none;
+    border: 1px solid transparent;
 }
 
 .navbar-profile-account-popup-header-right {
@@ -3245,10 +3260,10 @@ export default class LandingPg extends Component {
                                 <div className='navbar-profile-account-popup-header-left'>
                                     <div className='navbar-profile-account-popup-header-left-search-bar-container'>
                                         <div className='navbar-profile-account-popup-header-left-search-bar-icon'>
-
+                                            <img src='/assets/icons/navbar/search-icon.png'/>
                                         </div>
                                         <div className='navbar-profile-account-popup-header-left-search-bar'>
-
+                                            <input/>
                                         </div>
                                     </div>
                                 </div>
