@@ -1802,18 +1802,36 @@ const Styles = styled.div `
 .navbar-profile-account-popup-body-left-footer-sign-out {
     background-color: #f6f8fa;
     border: 1px solid #5e626a;
+    transition-property: background-color, border;
+}
+
+.navbar-profile-account-popup-body-left-footer-sign-out:hover {
+    background-color: #faece9;
+    border: 1px solid #ff5733;
+}
+
+.navbar-profile-account-popup-body-left-footer-sign-out:hover .navbar-profile-account-popup-body-left-footer-sign-out-icon img {
+    filter: grayscale(0);
+}
+
+.navbar-profile-account-popup-body-left-footer-sign-out:hover .navbar-profile-account-popup-body-left-footer-sign-out-label p {
+    color: #ff5733;
+    // font-weight: bold;
 }
 
 .navbar-profile-account-popup-body-left-footer-sign-out-icon img {
     width: 28%;
     filter: grayscale(100);
+    transition-property: filter;
 }
 
 .navbar-profile-account-popup-body-left-footer-sign-out-label p {
     color: #5e626a;
-   font-family: inter;
-   font-size: 85%;
-   padding-top: 0.5px;
+    font-family: inter;
+    font-weight: normal;
+    font-size: 85%;
+    padding-top: 0.5px;
+    transition-property: color;
 }
 
 .navbar-profile-account-popup-body-left-footer-delete {
@@ -2093,6 +2111,9 @@ const Styles = styled.div `
 .navbar-profile-dropdown-body-signed-in-options-cell-img img,
 .navbar-profile-dropdown-body-signed-in-options-cell-label p,
 .navbar-profile-account-popup-header-right-close img,
+.navbar-profile-account-popup-body-left-footer-sign-out,
+.navbar-profile-account-popup-body-left-footer-sign-out-icon img,
+.navbar-profile-account-popup-body-left-footer-sign-out-label p,
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
