@@ -1523,7 +1523,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-dropdown-body-signed-in-options-cell:hover {
-    background-color: #faece9;;
+    background-color: #faece9;
     border: 1px solid #FF5733;
 }
 
@@ -1699,31 +1699,42 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-body-left-settings-option-cell {
     height: 3rem;
-    border: 1px solid black;
+    // border: 1px solid black;
+    background-color: #faece9;
     display: flex;
     justify-content: space-between;
 }
 
 .navbar-profile-account-popup-body-left-settings-option-cell-icon { 
     width: 20%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .navbar-profile-account-popup-body-left-settings-option-cell-icon img { 
-    width: 45%;
+    width: 36.5%;
 }
 
 .navbar-profile-account-popup-body-left-settings-option-cell-label { 
     width: 78%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.navbar-profile-account-popup-body-left-settings-option-cell-label p { 
+    font-family: poppins;
+    font-size: 86.5%;
+    padding-top: 2.5px;
 }
 
 .navbar-profile-account-popup-body-left-settings-option-cell-selected { 
     width: 2%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    background-color: #FF5733;
 }
 
 .navbar-profile-account-popup-body-right {
