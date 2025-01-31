@@ -1586,14 +1586,14 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-header {
     height: 5rem;
-    border-bottom: 1.5px solid #ccc;
+    border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
 }
 
 .navbar-profile-account-popup-header-left {
     width: 30%;
-    border-right: 1.5px solid #ccc;
+    border-right: 1px solid #ccc;
     border-top-left-radius: 8px;
     position: relative;
     display: flex;
@@ -1692,7 +1692,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-body-left {
-    border-right: 1.5px solid #ccc;
+    border-right: 1px solid #ccc;
     width: 30%;
     height: 100%;
     position: relative;
@@ -2210,9 +2210,9 @@ export default class LandingPg extends Component {
             accountSettingsOpen: true,
             showAccountSetupIncompleteHeader: true,
             accountMenuOption1Selected: true,
-            accountMenuOption2Selected: true,
-            accountMenuOption3Selected: true,
-            accountMenuOption4Selected: true,
+            accountMenuOption2Selected: false,
+            accountMenuOption3Selected: false,
+            accountMenuOption4Selected: false,
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
@@ -3455,16 +3455,14 @@ export default class LandingPg extends Component {
                                         </div>
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption1Selected ? 'selected' : ''}`}></div>
                                     </div>
-                                    <div className='navbar-profile-account-popup-body-left-settings-option-cell'>
+                                    <div className={`navbar-profile-account-popup-body-left-settings-option-cell ${this.state.accountMenuOption2Selected ? 'selected' : ''}`}>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
                                             <img src='/assets/icons/home-profile/edit-jipange-option-icon.png'/>
                                         </div>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
                                             <p>Jipange</p>
                                         </div>
-                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-selected'>
-
-                                        </div>
+                                        <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption2Selected ? 'selected' : ''}`}></div>
                                     </div>
                                     <div className='navbar-profile-account-popup-body-left-settings-option-cell'>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
