@@ -1707,6 +1707,13 @@ const Styles = styled.div `
 .navbar-profile-account-popup-body-left-settings-option-cell-icon { 
     width: 20%;
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-profile-account-popup-body-left-settings-option-cell-icon img { 
+    width: 45%;
 }
 
 .navbar-profile-account-popup-body-left-settings-option-cell-label { 
@@ -3307,10 +3314,10 @@ export default class LandingPg extends Component {
                                 <div className='navbar-profile-account-popup-body-left'>
                                     <div className='navbar-profile-account-popup-body-left-settings-option-cell'>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
-
+                                            <img src='/assets/icons/home-profile/edit-profile-option-icon.png'/>
                                         </div>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
-
+                                            <p>Profile</p>
                                         </div>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-selected'>
 
