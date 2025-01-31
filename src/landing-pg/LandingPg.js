@@ -1602,36 +1602,37 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-header-left-search-bar-container {
     position: absolute;
-    bottom: 0.3rem;
-    border: 1px solid black;
+    bottom: 1rem;
     width: 80%;
     height: 1.8rem;
     display: flex;
     justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 
 .navbar-profile-account-popup-header-left-search-bar-icon {
-    width: 17.5%;
-    border: 1px solid black;
+    width: 13.5%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
 }
 
 .navbar-profile-account-popup-header-left-search-bar-icon img {
     width: 55%;
+    margin-right: 12.5%;
 }
 
 .navbar-profile-account-popup-header-left-search-bar {
-    width: 82.5%;
-    border: 1px solid black;
+    width: 86.5%;
 }
 
 .navbar-profile-account-popup-header-left-search-bar input {
     width: 93.5%;
-    padding: 3px;
+    padding: 4px;
+    padding-top: 6.8px;
     outline: none;
-    border: 1px solid transparent;
+    border: 0px solid transparent;
 }
 
 .navbar-profile-account-popup-header-right {
@@ -1676,7 +1677,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-header-account-setup-incomplete h1 {
     font-family: inter;
     font-size: 19.5px;
-    margin-top: 1.85rem;
+    margin-top: 2.25rem;
     margin-left: 2.5%;
     // font-weight: bolder;
 }
