@@ -1747,12 +1747,32 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-body-left-footer {
     position: absolute;
-    bottom: -2rem;
+    bottom: -1.5rem;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 85%;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 7.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Pushes children to the bottom */
+    gap: 1rem; /* Adds spacing between child divs */
+}
+
+.navbar-profile-account-popup-body-left-footer-sign-out {
+    border: 1px solid black;
+    height: 2.65rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
+}
+
+.navbar-profile-account-popup-body-left-footer-delete {
+    border: 1px solid black;
+    height: 2.65rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
 }
 
 
@@ -3391,7 +3411,12 @@ export default class LandingPg extends Component {
                                         </div>
                                     </div>
                                     <div className='navbar-profile-account-popup-body-left-footer'>
+                                        <div className='navbar-profile-account-popup-body-left-footer-sign-out'>
 
+                                        </div>
+                                        <div className='navbar-profile-account-popup-body-left-footer-delete'>
+
+                                        </div>
                                     </div>
                                 </div>
                                 <div className='navbar-profile-account-popup-body-right'>
