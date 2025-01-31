@@ -1697,6 +1697,28 @@ const Styles = styled.div `
     height: 100%;
 }
 
+.navbar-profile-account-popup-body-left-settings-option-cell {
+    height: 3rem;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-profile-account-popup-body-left-settings-option-cell-icon { 
+    width: 20%;
+    border: 1px solid black;
+}
+
+.navbar-profile-account-popup-body-left-settings-option-cell-label { 
+    width: 78%;
+    border: 1px solid black;
+}
+
+.navbar-profile-account-popup-body-left-settings-option-cell-selected { 
+    width: 2%;
+    border: 1px solid black;
+}
+
 .navbar-profile-account-popup-body-right {
     width: 70%;
     height: 100%;
@@ -3283,7 +3305,17 @@ export default class LandingPg extends Component {
                             </div>
                             <div className='navbar-profile-account-popup-body'>
                                 <div className='navbar-profile-account-popup-body-left'>
+                                    <div className='navbar-profile-account-popup-body-left-settings-option-cell'>
+                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
 
+                                        </div>
+                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
+
+                                        </div>
+                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-selected'>
+
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className='navbar-profile-account-popup-body-right'>
                                     <div className=''>
