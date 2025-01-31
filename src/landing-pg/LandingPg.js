@@ -1700,9 +1700,12 @@ const Styles = styled.div `
 .navbar-profile-account-popup-body-left-settings-option-cell {
     height: 3rem;
     // border: 1px solid black;
-    background-color: #faece9;
     display: flex;
     justify-content: space-between;
+}
+
+.navbar-profile-account-popup-body-left-settings-option-cell.selected {
+    background-color: #faece9;
 }
 
 .navbar-profile-account-popup-body-left-settings-option-cell-icon { 
@@ -1734,6 +1737,9 @@ const Styles = styled.div `
 .navbar-profile-account-popup-body-left-settings-option-cell-selected { 
     width: 2%;
     // border: 1px solid black;
+}
+
+.navbar-profile-account-popup-body-left-settings-option-cell-selected.selected {
     background-color: #FF5733;
 }
 
@@ -2088,8 +2094,14 @@ export default class LandingPg extends Component {
             verifyOTPBtnText: 'Verify OTP',
             OTPInputDisabled: false,
             transferToProfile: false,
+
+            //* - HOME SCREEN ACCOUNT SETTINGS - *//    
             accountSettingsOpen: true,
             showAccountSetupIncompleteHeader: true,
+            accountMenuOption1Selected: true,
+            accountMenuOption2Selected: true,
+            accountMenuOption3Selected: true,
+            accountMenuOption4Selected: true,
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
@@ -3323,12 +3335,43 @@ export default class LandingPg extends Component {
                             </div>
                             <div className='navbar-profile-account-popup-body'>
                                 <div className='navbar-profile-account-popup-body-left'>
-                                    <div className='navbar-profile-account-popup-body-left-settings-option-cell'>
+                                    <div className={`navbar-profile-account-popup-body-left-settings-option-cell ${this.state.accountMenuOption1Selected ? 'selected' : ''}`}>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
                                             <img src='/assets/icons/home-profile/edit-profile-option-icon.png'/>
                                         </div>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
                                             <p>Profile</p>
+                                        </div>
+                                        <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption1Selected ? 'selected' : ''}`}></div>
+                                    </div>
+                                    <div className='navbar-profile-account-popup-body-left-settings-option-cell'>
+                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
+                                            <img src='/assets/icons/home-profile/edit-jipange-option-icon.png'/>
+                                        </div>
+                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
+                                            <p>Jipange</p>
+                                        </div>
+                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-selected'>
+
+                                        </div>
+                                    </div>
+                                    <div className='navbar-profile-account-popup-body-left-settings-option-cell'>
+                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
+                                            <img src='/assets/icons/home-profile/edit-pamoja-option-icon.png'/>
+                                        </div>
+                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
+                                            <p>Pamoja</p>
+                                        </div>
+                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-selected'>
+
+                                        </div>
+                                    </div>
+                                    <div className='navbar-profile-account-popup-body-left-settings-option-cell'>
+                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
+                                            <img src='/assets/icons/home-profile/edit-location-option-icon.png'/>
+                                        </div>
+                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
+                                            <p>Delivery</p>
                                         </div>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-selected'>
 
