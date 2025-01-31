@@ -1827,6 +1827,7 @@ const Styles = styled.div `
     border: 1px solid #bdbdbd;
     border-radius: 5px;
     font-family: inter;
+    margin-bottom: 0.2rem;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -3217,7 +3218,12 @@ export default class LandingPg extends Component {
                                                     </div>
                                                     <div className='navbar-profile-account-popup-account-single-input'>
                                                         <p>What are three grocery items you just can't live without</p>
-                                                        <h5>Sometimes we surprise shoppers with their favorite items! </h5>
+                                                        <h5>Sometimes we surprise shoppers with their favorite items! 🍫</h5>
+                                                        <p>Item #1</p>
+                                                        <input/>
+                                                        <p>Item #2</p>
+                                                        <input/>
+                                                        <p>Item #3</p>
                                                         <input/>
                                                     </div>
                                                 </div>
