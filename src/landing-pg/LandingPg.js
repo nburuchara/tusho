@@ -1760,7 +1760,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-account-info-details {
-    margin-top: 1.25rem;
+    margin-top: 0.65rem;
     // border: 1px solid black;
 }
 
@@ -1828,6 +1828,24 @@ const Styles = styled.div `
     border-radius: 5px;
     font-family: inter;
     margin-bottom: 0.2rem;
+}
+
+    // # SAVE PROFILE INFORMATION
+
+.navbar-profile-account-popup-account-save-profile-btn {
+    position: absolute;
+    bottom: 2rem;
+    right: 2.5%;
+    margin-right: 0px;
+    width: 62.5%;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: right;
+}
+
+.navbar-profile-account-popup-account-save-profile-btn button {
+    width: 25%;
+    padding: 5px;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -3217,7 +3235,7 @@ export default class LandingPg extends Component {
                                                         </div>
                                                     </div>
                                                     <div className='navbar-profile-account-popup-account-single-input'>
-                                                        <p>What are three grocery items you just can't live without</p>
+                                                        <p>What are three grocery items you just can't live without? 😍</p>
                                                         <h5>Sometimes we surprise shoppers with their favorite items! 🍫</h5>
                                                         <p>Item #1</p>
                                                         <input/>
@@ -3226,6 +3244,9 @@ export default class LandingPg extends Component {
                                                         <p>Item #3</p>
                                                         <input/>
                                                     </div>
+                                                </div>
+                                                <div className='navbar-profile-account-popup-account-save-profile-btn'>
+                                                    <button>Save</button>
                                                 </div>
                                             </div>
                                         }
