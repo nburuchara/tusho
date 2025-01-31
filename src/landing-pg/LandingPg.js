@@ -1695,6 +1695,7 @@ const Styles = styled.div `
     border-right: 1.5px solid #ccc;
     width: 30%;
     height: 100%;
+    position: relative;
 }
 
 .navbar-profile-account-popup-body-left-settings-option-cell {
@@ -1743,6 +1744,17 @@ const Styles = styled.div `
 .navbar-profile-account-popup-body-left-settings-option-cell-selected.selected {
     background-color: #FF5733;
 }
+
+.navbar-profile-account-popup-body-left-footer {
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    border: 1px solid black;
+    height: 7.5rem;
+}
+
 
 .navbar-profile-account-popup-body-right {
     width: 70%;
@@ -3377,6 +3389,9 @@ export default class LandingPg extends Component {
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-selected'>
 
                                         </div>
+                                    </div>
+                                    <div className='navbar-profile-account-popup-body-left-footer'>
+
                                     </div>
                                 </div>
                                 <div className='navbar-profile-account-popup-body-right'>
