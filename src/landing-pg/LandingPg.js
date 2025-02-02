@@ -2162,6 +2162,7 @@ const Styles = styled.div `
     font-size: 90%;
     font-family: inter;
     margin-left: 0.5%;
+    color: #5e626a;
 }
   
 .jipange-settings-calendar-day:hover {
@@ -2311,8 +2312,8 @@ export default class LandingPg extends Component {
             //* - HOME SCREEN ACCOUNT SETTINGS - *//    
             accountSettingsOpen: true,
             showAccountSetupIncompleteHeader: true,
-            accountMenuOption1Selected: true,
-            accountMenuOption2Selected: false,
+            accountMenuOption1Selected: false,
+            accountMenuOption2Selected: true,
             accountMenuOption3Selected: false,
             accountMenuOption4Selected: false,
 
@@ -3571,9 +3572,23 @@ export default class LandingPg extends Component {
                                 </div>
                                 <div className='navbar-profile-account-popup-header-right'>
                                     <div className='navbar-profile-account-popup-header-right-label'>
-                                        {!this.state.accountSetupComplete && 
+                                        {this.state.showAccountInformation && 
+                                            <div>
+                                                {!this.state.accountSetupComplete && 
+                                                    <div className='navbar-profile-account-popup-header-account-setup-incomplete'>
+                                                        <h1>Complete Account Setup</h1>
+                                                    </div>
+                                                }
+                                                {!this.state.accountSetupComplete && 
+                                                    <div className='navbar-profile-account-popup-header-account-setup-incomplete'>
+                                                        <h1>Complete Account Setup</h1>
+                                                    </div>
+                                                }
+                                            </div>
+                                        }
+                                        {this.state.showJipangeSettings && 
                                             <div className='navbar-profile-account-popup-header-account-setup-incomplete'>
-                                                <h1>Complete Account Setup</h1>
+                                                <h1>My Jipange</h1>
                                             </div>
                                         }
                                     </div>
