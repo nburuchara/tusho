@@ -2279,11 +2279,11 @@ const Styles = styled.div `
 }
 
 .jipange-settings-loading-screen {
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 18rem;
+    height: 25rem;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -3946,8 +3946,8 @@ export default class LandingPg extends Component {
                                                     <div className='jipange-settings-loading-screen'>
                                                         <TailSpin
                                                         visible={true}
-                                                        height="35px"
-                                                        width="35px"
+                                                        height="45px"
+                                                        width="45px"
                                                         color="#ff5733"
                                                         ariaLabel="tail-spin-loading"
                                                         radius="2"
