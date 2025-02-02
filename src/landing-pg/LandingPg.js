@@ -2169,6 +2169,11 @@ const Styles = styled.div `
     background-color: #faece9;
     border: 1px solid #ff5733;
 }
+
+.jipange-settings-calendar-day.today {
+    font-weight: bold;
+    border: 2px solid #ff5733;
+}
   
 .jipange-settings-calendar-day.selected {
     background-color: #ff5733;
@@ -2823,6 +2828,8 @@ export default class LandingPg extends Component {
         const monthNames = [
         "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
         ];
+        const today = new Date();
+        const isCurrentMonth = today.getMonth() === currentMonth && today.getFullYear() === currentYear;
 
         return (
             <Styles>
@@ -3757,10 +3764,11 @@ export default class LandingPg extends Component {
                                                         {[...Array(daysInMonth)].map((_, index) => {
                                                             const day = index + 1;
                                                             const dayOfWeek = this.getDayOfWeek(day, currentMonth, currentYear);
+                                                            const isToday = isCurrentMonth && today.getDate() === day;
                                                             return (
                                                             <div 
                                                                 key={index} 
-                                                                className={`jipange-settings-calendar-day ${selectedDates.has(day) ? "selected" : ""}`}
+                                                                className={`jipange-settings-calendar-day ${selectedDates.has(day) ? "selected" : ""} ${isToday ? "today" : ""}`}
                                                                 onClick={() => this.toggleDateSelection(day)}
                                                             >
                                                                 <div className="jipange-settings-day-label"><label>{dayOfWeek}</label></div>
