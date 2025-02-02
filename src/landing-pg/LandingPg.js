@@ -2211,10 +2211,6 @@ const Styles = styled.div `
     max-height: 200px; /* Set the max height */
     overflow-y: auto;  /* Vertical scroll */
     overflow-x: hidden; /* Prevent horizontal scroll */
-    position: relative; /* To position the fade mask */
-    // padding-bottom: 20px; /* Optional: adds a small buffer */
-    mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%); /* Fade effect */
-    -webkit-mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%); /* For Safari */
 }
 
 .jipange-settings-selected-dates-container p {
