@@ -2204,6 +2204,12 @@ const Styles = styled.div `
     // overflow-x: auto;
 }
 
+.jipange-settings-selected-dates-container p {
+    margin-left: 0px;
+    margin-bottom: 0.6rem;
+    border-bottom: 1px solid #ccc;
+}
+
 .jipange-settings-selected-dates-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -2219,17 +2225,15 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-dates-grid-empty img {
-    text-align: center;
+    width: 10.5%;
+    margin-top: 1.5rem;
 }
 
 .jipange-settings-selected-dates-grid-empty h3 {
     font-weight: normal;
-}
-
-.jipange-settings-selected-dates-container p {
-    margin-left: 0px;
-    margin-bottom: 0.6rem;
-    border-bottom: 1px solid #ccc;
+    font-size: 85%;
+    font-family: poppins;
+    color: #5e626a;
 }
 
 .jipange-settings-selected-date-square {
@@ -3879,12 +3883,15 @@ export default class LandingPg extends Component {
                                                 </div>
                                                 
                                                 <div className='jipange-settings-selected-dates-container'>
-                                                    <p>Select a day to add grocery items:</p>
+                                                    <p>Select a date to add grocery items:</p>
                                                     <div className=''>
                                                         {this.state.selectedDates.size < 1 ? 
                                                             (   
                                                                 <div className='jipange-settings-selected-dates-grid-empty'>
-                                                                    <h3>No plans </h3>
+                                                                    <div>
+                                                                        <img src='/assets/icons/home-profile/no-selected-jipange-icon.png'/>
+                                                                    </div>
+                                                                    <h3>No existing jipange plans</h3>
                                                                 </div>
                                                             
                                                             ) :
