@@ -2211,11 +2211,13 @@ const Styles = styled.div `
     max-height: 200px; /* Set the max height */
     overflow-y: auto;  /* Vertical scroll */
     overflow-x: hidden; /* Prevent horizontal scroll */
+    border-bottom: 1px solid #ccc;
 }
 
 .jipange-settings-selected-dates-container p {
     margin-left: 0px;
     margin-bottom: 0.5rem;
+    border-bottom: 1px solid #ccc;
 }
 
 .jipange-settings-selected-date-square {
