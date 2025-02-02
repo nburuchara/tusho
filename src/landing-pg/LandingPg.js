@@ -2278,6 +2278,8 @@ const Styles = styled.div `
     font-weight: bold;
 }
 
+    // # # JIPANGE LOADING SCREEN
+
 .jipange-settings-loading-screen {
     // border: 1px solid black;
     display: flex;
@@ -2289,6 +2291,14 @@ const Styles = styled.div `
 
 .jipange-settings-loading-screen p {
     margin-top: 1rem;
+}
+
+    // # # JIPANGE SELECTED SCREEN
+
+.jipange-settings-selected-date-screen {
+    width: 100%;
+    border: 1px solid black;
+    height: 100%;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
