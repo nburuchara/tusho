@@ -2202,6 +2202,11 @@ const Styles = styled.div `
     // overflow-x: auto;
 }
 
+.jipange-settings-selected-dates-container p {
+    margin-left: 0px;
+    margin-bottom: 0.5rem;
+}
+
 .jipange-settings-selected-date-square {
     width: 65px;
     height: 50px;
@@ -3832,6 +3837,7 @@ export default class LandingPg extends Component {
                                                     </div>
                                                 </div>
                                                 <div className='jipange-settings-selected-dates-container'>
+                                                    <p>Select a day below to add grocery items</p>
                                                     {Array.from(selectedDates).map((date) => {
                                                         // Get the day of the week for the selected date
                                                         const dayOfWeek = this.getDayOfWeek(date, currentMonth, currentYear); // Assuming you have this function
