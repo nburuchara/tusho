@@ -2278,6 +2278,13 @@ const Styles = styled.div `
     font-weight: bold;
 }
 
+.jipange-settings-loading-screen {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 18rem;
+}
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
@@ -3936,8 +3943,17 @@ export default class LandingPg extends Component {
                                                     </div>
                                                 }
                                                 {this.state.showJipangeSettingsLoading && 
-                                                    <div className=''>
-
+                                                    <div className='jipange-settings-loading-screen'>
+                                                        <TailSpin
+                                                        visible={true}
+                                                        height="35px"
+                                                        width="35px"
+                                                        color="#ff5733"
+                                                        ariaLabel="tail-spin-loading"
+                                                        radius="2"
+                                                        wrapperStyle={{}}
+                                                        wrapperClass=""
+                                                        />
                                                     </div>
                                                 }
                                             </div>
