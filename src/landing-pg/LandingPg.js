@@ -2253,6 +2253,7 @@ const Styles = styled.div `
     font-weight: bold;
 }
 
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
