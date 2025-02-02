@@ -2186,6 +2186,24 @@ const Styles = styled.div `
     font-size: 75%;
 }
 
+.jipange-settings-selected-dates-container {
+    border: 1px solid black;
+}
+
+.jipange-settings-selected-date-square {
+    width: 70px;
+    height: 50px;
+    display: inline-block;
+    border: 1px solid  #ff5733;
+    border-radius: 8px;
+    background-color: #faece9;
+    margin-right: 5px;
+}
+
+.jipange-settings-selected-date-square label {
+    padding: 10px;
+}
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
@@ -3777,6 +3795,26 @@ export default class LandingPg extends Component {
                                                             );
                                                         })}
                                                     </div>
+                                                </div>
+                                                <div className='jipange-settings-selected-dates-container'>
+                                                    {Array.from(selectedDates).map((date) => (
+                                                        <div 
+                                                            key={date} 
+                                                            className="jipange-settings-selected-date-square"
+                                                            style={{
+                                                            // width: '30px',
+                                                            // height: '30px',
+                                                            // margin: '5px',
+                                                            // backgroundColor: 'blue', // Customize this style as needed
+                                                            // display: 'inline-block',
+                                                            // textAlign: 'center',
+                                                            // color: 'white',
+                                                            // lineHeight: '30px',
+                                                            }}
+                                                        >
+                                                            <label>{date}</label>
+                                                        </div>
+                                                    ))}
                                                 </div>
                                             </div>
                                         }
