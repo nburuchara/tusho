@@ -2297,13 +2297,13 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen {
     width: 93.5%;
-    // border: 1px solid black;
+    border: 1px solid black;
     height: 100%;
 }
 
 .jipange-settings-selected-date-screen-header {
     height: 9rem;
-    // border: 1px solid black;
+    border: 1px solid black;
 }
 
 .jipange-settings-selected-date-screen-body {
@@ -2326,6 +2326,9 @@ const Styles = styled.div `
     width: 100%;
     height: 65%;
     border: 1px solid black;
+    // display: grid;
+    // grid-template-columns: repeat(5, 1fr);
+    // gap: 5px;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-category {
@@ -2342,6 +2345,16 @@ const Styles = styled.div `
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.jipange-settings-selected-date-screen-body-inner-header-category p {
+    position: absolute;
+    bottom: 1.15rem;
+    left: 5%;
+    // margin: auto;
+    // justify-content: center;
+    font-size: 70%;
+    // transform: translate(-50%, -50%);
 }
 
 .jipange-settings-selected-date-screen-body-inner-body {
@@ -4016,6 +4029,7 @@ export default class LandingPg extends Component {
                                                                 <div className='jipange-settings-selected-date-screen-body-inner-header-categories-carousel'>
                                                                     <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                         <img src='/assets/images/product-categories/fruits-and-veg.png'/>
+                                                                        <p>Fruit & Veg</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
