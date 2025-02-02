@@ -2100,9 +2100,19 @@ const Styles = styled.div `
     // border: 1px solid black;
 }
 
+.navbar-profile-account-popup-jipange-settings p {
+    font-family: poppins;
+    font-size: 85%;
+    margin-left: 3.5%;
+    margin-bottom: 0px;
+    // margin-top: 6rem;
+    color: #5e626a;
+}
+
 .jipange-settings-calendar-container {
     max-width: 93.5%;
     margin: 20px auto;
+    border: 1px solid black;
     text-align: center;
 }
   
@@ -2137,7 +2147,7 @@ const Styles = styled.div `
 }
   
 .jipange-settings-calendar-day {
-    border: 1px solid black;
+    border: 1px solid #ccc;
     padding: 5px;
     text-align: center;
     cursor: pointer;
@@ -2145,6 +2155,10 @@ const Styles = styled.div `
     font-size: 80%;
     border-radius: 6px;
     transition: background-color 0.3s;
+}
+
+.jipange-settings-calendar-header h2 {
+    margin-top: 5px;
 }
   
 .jipange-settings-calendar-day:hover {
@@ -3711,7 +3725,7 @@ export default class LandingPg extends Component {
                                         }
                                         {this.state.showJipangeSettings && 
                                             <div className='navbar-profile-account-popup-jipange-settings'>
-                                                <p></p>
+                                                <p>Select the dates you want scheduled delivery:</p>
                                                 <div className="jipange-settings-calendar-container">
                                                     <div className={`jipange-settings-calendar-header`}>
                                                         <img 
