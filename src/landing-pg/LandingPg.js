@@ -2396,7 +2396,8 @@ export default class LandingPg extends Component {
 
             //* # Jipange
             showJipangeSettingsHome: false,
-            showJipangeSettingsLoading: true,
+            showJipangeSettingsSelectedDate: true,
+            showJipangeSettingsLoading: false,
             selectedDates: new Set(), // Store the selected dates as a set of 'YYYY-MM-DD' strings
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
@@ -3947,7 +3948,7 @@ export default class LandingPg extends Component {
                                                         </div>
                                                     </div>
                                                 }
-                                                {this.state.showJipangeSettingsHome && 
+                                                {this.state.showJipangeSettingsSelectedDate && 
                                                     <div className='jipange-settings-selected-date-screen'>
                                                         
                                                     </div>
