@@ -1862,6 +1862,7 @@ const Styles = styled.div `
     height: 100%;
     // border: 1px solid black;
     border-bottom-right-radius: 8px;
+    overflow-y: auto;
 }
 
 .navbar-profile-account-popup-account-info {
@@ -2158,7 +2159,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-calendar-header h2 {
-    margin-top: 5px;
+    margin-top: 0px;
     font-size: 90%;
     font-family: inter;
     margin-left: 0.5%;
@@ -2208,8 +2209,8 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-square {
-    width: 65px;
-    height: 50px;
+    width: 4.125rem;
+    height: 45px;
     display: inline-block;
     border: 1px solid  #ff5733;
     border-radius: 8px;
