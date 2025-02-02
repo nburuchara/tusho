@@ -2297,13 +2297,13 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen {
     width: 93.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 100%;
 }
 
 .jipange-settings-selected-date-screen-header {
     height: 9rem;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .jipange-settings-selected-date-screen-body {
@@ -2316,6 +2316,32 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-body-inner-header {
     border: 1px solid black;
     height: 7.125rem;
+    position: relative;
+}
+
+.jipange-settings-selected-date-screen-body-inner-header-categories-carousel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65%;
+    border: 1px solid black;
+}
+
+.jipange-settings-selected-date-screen-body-inner-header-category {
+    width: 16.5%;
+    height: 100%;
+    border: 1px solid white;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.jipange-settings-selected-date-screen-body-inner-header-category img {
+    width: 75%;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .jipange-settings-selected-date-screen-body-inner-body {
@@ -3987,7 +4013,11 @@ export default class LandingPg extends Component {
                                                         </div>
                                                         <div className='jipange-settings-selected-date-screen-body'>
                                                             <div className='jipange-settings-selected-date-screen-body-inner-header'>
-
+                                                                <div className='jipange-settings-selected-date-screen-body-inner-header-categories-carousel'>
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                        <img src='/assets/images/product-categories/fruits-and-veg.png'/>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                             <div className='jipange-settings-selected-date-screen-body-inner-body'>
 
