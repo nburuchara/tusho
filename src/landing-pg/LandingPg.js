@@ -2296,9 +2296,14 @@ const Styles = styled.div `
     // # # JIPANGE SELECTED SCREEN
 
 .jipange-settings-selected-date-screen {
-    width: 100%;
+    width: 93.5%;
     border: 1px solid black;
     height: 100%;
+}
+
+.jipange-settings-selected-date-screen-header {
+    height: 8rem;
+    border: 1px solid black;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -3720,9 +3725,9 @@ export default class LandingPg extends Component {
                                                         <h1>Complete Account Setup</h1>
                                                     </div>
                                                 }
-                                                {!this.state.accountSetupComplete && 
+                                                {this.state.accountSetupComplete && 
                                                     <div className='navbar-profile-account-popup-header-account-setup-incomplete'>
-                                                        <h1>Complete Account Setup</h1>
+                                                        <h1>Account Information</h1>
                                                     </div>
                                                 }
                                             </div>
@@ -3960,7 +3965,9 @@ export default class LandingPg extends Component {
                                                 }
                                                 {this.state.showJipangeSettingsSelectedDate && 
                                                     <div className='jipange-settings-selected-date-screen'>
-                                                        <div></div>
+                                                        <div className='jipange-settings-selected-date-screen-header'>
+
+                                                        </div>
                                                     </div>
                                                 }
                                                 {this.state.showJipangeSettingsLoading && 
