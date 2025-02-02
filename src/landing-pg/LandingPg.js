@@ -2199,7 +2199,7 @@ const Styles = styled.div `
 .jipange-settings-selected-dates-container {
     // border: 1px solid black;
     padding-left: 3%;
-    overflow-x: auto;
+    // overflow-x: auto;
 }
 
 .jipange-settings-selected-date-square {
@@ -2211,6 +2211,14 @@ const Styles = styled.div `
     background-color: #faece9;
     margin-right: 8.5px;
     margin-bottom: 8.5px;
+    opacity: 0; /* Initially invisible */
+    transform: translateX(-5px); /* Initially position it above */
+    transition-property: opacity, transform ; /* Smooth transition */
+}
+
+.jipange-settings-selected-date-square.show {
+    opacity: 1; /* Fade in */
+    transform: translateX(0); /* Slide to normal position */
 }
 
 .jipange-settings-selected-date-square label {
@@ -2252,6 +2260,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-body-left-footer-sign-out-icon img,
 .navbar-profile-account-popup-body-left-footer-sign-out-label p,
 .jipange-settings-calendar-header img,
+.jipange-settings-selected-date-square,
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
@@ -2857,9 +2866,10 @@ export default class LandingPg extends Component {
           } else {
             newSelectedDates.add(day);
           }
+          console.log(newSelectedDates); // Log the new selected dates
           return { selectedDates: newSelectedDates };
         });
-    };
+      };
     
 
     render () {
@@ -3829,7 +3839,7 @@ export default class LandingPg extends Component {
                                                         return (
                                                             <div 
                                                             key={date} 
-                                                            className="jipange-settings-selected-date-square"
+                                                            className={`jipange-settings-selected-date-square ${selectedDates.has(date) ? "show" : ""}`}
                                                             >
                                                                 <label>{dayOfWeek}</label> {/* Day of the week */}
                                                                 <label>{date}</label> {/* Date */}
