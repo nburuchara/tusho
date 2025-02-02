@@ -2172,7 +2172,7 @@ const Styles = styled.div `
 
 .jipange-settings-calendar-day.today {
     font-weight: bold;
-    border: 2px solid #ff5733;
+    border: 1px solid #ff5733;
 }
   
 .jipange-settings-calendar-day.selected {
