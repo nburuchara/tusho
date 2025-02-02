@@ -2097,34 +2097,46 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-jipange-settings {
     margin-left: 6.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
-.calendar-container {
+.jipange-settings-calendar-container {
     max-width: 93.5%;
     margin: 20px auto;
     text-align: center;
 }
   
-.calendar-header {
+.jipange-settings-calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
 }
 
-
-.calendar-header-prev-btn.hidden {
+.jipange-settings-calendar-header-prev-btn.hidden {
     display: none;
 }
+
+.jipange-settings-calendar-header img {
+    width: 21.5px;
+    padding-top: 2.5px;
+    filter: grayscale(100);
+    transition-property: filter;
+    cursor: pointer;
+}
+
+.jipange-settings-calendar-header img:hover {
+    filter: grayscale(0);
+    cursor: pointer;
+}
   
-.calendar-grid {
+.jipange-settings-calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 5px;
 }
   
-.calendar-day {
+.jipange-settings-calendar-day {
     border: 1px solid black;
     padding: 18px;
     text-align: center;
@@ -2132,12 +2144,12 @@ const Styles = styled.div `
     transition: background-color 0.3s;
 }
   
-.calendar-day:hover {
+.jipange-settings-calendar-day:hover {
     // background-color: #f0f0f0;
 }
   
-.selected {
-    background-color: #4caf50;
+.jipange-settings-calendar-day.selected {
+    background-color: #ff5733;
     color: white;
     font-weight: bold;
 }
@@ -2173,6 +2185,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-body-left-footer-sign-out,
 .navbar-profile-account-popup-body-left-footer-sign-out-icon img,
 .navbar-profile-account-popup-body-left-footer-sign-out-label p,
+.jipange-settings-calendar-header img,
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
@@ -3685,22 +3698,22 @@ export default class LandingPg extends Component {
                                         }
                                         {this.state.showJipangeSettings && 
                                             <div className='navbar-profile-account-popup-jipange-settings'>
-                                                <div className="calendar-container">
-                                                    <div className={`calendar-header`}>
-                                                        <button 
+                                                <div className="jipange-settings-calendar-container">
+                                                    <div className={`jipange-settings-calendar-header`}>
+                                                        <img 
+                                                        src='/assets/icons/home-profile/jipange-settings-prev-calendar-icon.png'
                                                         onClick={this.handlePrevMonth}
-                                                        className={`calendar-header-prev-btn ${currentMonth === new Date().getMonth() ? "hidden" : ""}`}
-                                                        >Prev</button>
+                                                        className={`jipange-settings-calendar-header-prev-btn ${currentMonth === new Date().getMonth() ? "hidden" : ""}`} />
                                                         <h2>{monthNames[currentMonth]} {currentYear}</h2>
-                                                        <button onClick={this.handleNextMonth}>Next</button>
+                                                        <img src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png' onClick={this.handleNextMonth}/>
                                                     </div>
-                                                    <div className="calendar-grid">
+                                                    <div className="jipange-settings-calendar-grid">
                                                         {[...Array(daysInMonth)].map((_, index) => {
                                                             const day = index + 1;
                                                             return (
                                                             <div 
                                                                 key={index} 
-                                                                className={`calendar-day ${selectedDates.has(day) ? "selected" : ""}`}
+                                                                className={`jipange-settings-calendar-day ${selectedDates.has(day) ? "selected" : ""}`}
                                                                 onClick={() => this.toggleDateSelection(day)}
                                                             >
                                                                 {day}
