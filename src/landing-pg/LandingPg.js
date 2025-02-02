@@ -2230,9 +2230,10 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-square:hover {
     text-decoration: underline;
-    font-weight: bold;
-    color: #ff5733;
+    text-decoration-color: #ff5733;
+    // font-weight: bold;
     border: 1px solid #5e626a;
+    cursor: pointer;
 }
 
 .jipange-settings-selected-date-square.show {
@@ -2347,9 +2348,9 @@ export default class LandingPg extends Component {
             showJipangeSettings: true,
             accountSetupComplete: false,
             phoneNumberVerified: true,
+            selectedDates: new Set(), // Store the selected dates as a set of 'YYYY-MM-DD' strings
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
-            selectedDates: new Set(),
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -2873,22 +2874,24 @@ export default class LandingPg extends Component {
 
     handleNextMonth = () => {
         this.setState((prevState) => ({
-            currentMonth: prevState.currentMonth === 11 ? 0 : prevState.currentMonth + 1,
+          currentMonth: prevState.currentMonth === 11 ? 0 : prevState.currentMonth + 1,
         }));
     };
 
     toggleDateSelection = (day) => {
+        const { currentMonth, currentYear } = this.state;
+        const selectedDate = `${currentYear}-${currentMonth + 1}-${day}`; // Format as 'YYYY-MM-DD'
+    
         this.setState((prevState) => {
-          const newSelectedDates = new Set(prevState.selectedDates);
-          if (newSelectedDates.has(day)) {
-            newSelectedDates.delete(day);
-          } else {
-            newSelectedDates.add(day);
-          }
-          console.log(newSelectedDates); // Log the new selected dates
-          return { selectedDates: newSelectedDates };
+            const newSelectedDates = new Set(prevState.selectedDates);
+            if (newSelectedDates.has(selectedDate)) {
+                newSelectedDates.delete(selectedDate);
+            } else {
+                newSelectedDates.add(selectedDate);
+            }
+            return { selectedDates: newSelectedDates };
         });
-      };
+    };
     
 
     render () {
@@ -3837,10 +3840,11 @@ export default class LandingPg extends Component {
                                                             const dayOfWeek = this.getDayOfWeek(day, currentMonth, currentYear);
                                                             const isToday = isCurrentMonth && today.getDate() === day;
                                                             const isPastDate = this.isPastDate(day, currentMonth, currentYear);
+                                                            const selectedDate = `${currentYear}-${currentMonth + 1}-${day}`;
                                                             return (
                                                             <div 
                                                                 key={index} 
-                                                                className={`jipange-settings-calendar-day ${selectedDates.has(day) ? "selected" : ""} ${isToday ? "today" : ""} ${isPastDate ? "disabled" : ""}`}
+                                                                className={`jipange-settings-calendar-day ${this.state.selectedDates.has(selectedDate) ? "selected" : ""} ${isToday ? "today" : ""} ${isPastDate ? "disabled" : ""}`}
                                                                 onClick={() => !isPastDate && this.toggleDateSelection(day)}
                                                             >
                                                                 <div className="jipange-settings-day-label"><label>{dayOfWeek}</label></div>
@@ -3854,18 +3858,18 @@ export default class LandingPg extends Component {
                                                 <div className='jipange-settings-selected-dates-container'>
                                                     <p>Select a day below to add grocery items</p>
                                                     <div className='jipange-settings-selected-dates-grid'>
-                                                        {Array.from(selectedDates).map((date) => {
-                                                            // Get the day of the week for the selected date
-                                                            const dateObject = new Date(currentYear, currentMonth, date);
-                                                            const monthName = dateObject.toLocaleString('default', { month: 'short' }); // Get the full month name
+                                                        {Array.from(this.state.selectedDates).map((dateString) => {
+                                                            const [year, month, day] = dateString.split('-'); // Extract day, month, year
+                                                            const dateObject = new Date(year, month - 1, day); // Month is zero-indexed
+                                                            const monthName = dateObject.toLocaleString('default', { month: 'short' });
 
                                                             return (
                                                                 <div 
-                                                                key={date} 
-                                                                className={`jipange-settings-selected-date-square ${selectedDates.has(date) ? "show" : ""}`}
+                                                                    key={dateString} 
+                                                                    className={`jipange-settings-selected-date-square ${this.state.selectedDates.has(dateString) ? "show" : ""}`}
                                                                 >
-                                                                    <label>{monthName}</label> {/* Day of the week */}
-                                                                    <label>{date}</label> {/* Date */}
+                                                                    <label>{monthName}</label> {/* Month */}
+                                                                    <label>{day}</label> {/* Date */}
                                                                 </div>
                                                             );
                                                         })}
