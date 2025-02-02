@@ -2188,6 +2188,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-dates-container {
     border: 1px solid black;
+    padding-left: 3%;
 }
 
 .jipange-settings-selected-date-square {
@@ -2201,7 +2202,8 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-square label {
-    padding: 10px;
+    margin-left: 5px;
+    margin-top: 15px;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
