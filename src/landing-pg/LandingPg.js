@@ -2103,9 +2103,9 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-jipange-settings p {
     font-family: poppins;
-    font-size: 85%;
+    font-size: 80%;
     margin-left: 3.5%;
-    margin-bottom: 0px;
+    margin-bottom: -0.95rem;
     // margin-top: 6rem;
     color: #5e626a;
 }
@@ -2113,7 +2113,8 @@ const Styles = styled.div `
 .jipange-settings-calendar-container {
     max-width: 93.5%;
     margin: 20px auto;
-    // border: 1px solid black;
+    padding-top: 1rem;
+    border-top: 1px solid #ccc;
     text-align: center;
 }
   
@@ -2207,7 +2208,9 @@ const Styles = styled.div `
 .jipange-settings-selected-dates-container p {
     margin-left: 0px;
     margin-bottom: 0.6rem;
+    padding-bottom: 0.3rem;
     border-bottom: 1px solid #ccc;
+    font-size: 80%;
 }
 
 .jipange-settings-selected-dates-grid {
@@ -2218,6 +2221,7 @@ const Styles = styled.div `
     overflow-y: auto;  /* Vertical scroll */
     overflow-x: hidden; /* Prevent horizontal scroll */
     border-bottom: 1px solid #ccc;
+    padding-bottom: 0.3rem;
 }
 
 .jipange-settings-selected-dates-grid-empty {
@@ -2226,7 +2230,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-dates-grid-empty img {
     width: 10.5%;
-    margin-top: 1.5rem;
+    margin-top: 1.2rem;
 }
 
 .jipange-settings-selected-dates-grid-empty h3 {
@@ -2238,7 +2242,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-square {
     width: 88.5%;
-    height: 45px;
+    height: 40px;
     display: inline-block;
     border: 1px solid  #ff5733;
     border-radius: 8px;
