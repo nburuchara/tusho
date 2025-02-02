@@ -2093,8 +2093,15 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+    // # JIPANGE SETTINGS
+
+.navbar-profile-account-popup-jipange-settings {
+    margin-left: 6.5%;
+    border: 1px solid black;
+}
+
 .calendar-container {
-    width: 300px;
+    max-width: 93.5%;
     margin: 20px auto;
     text-align: center;
 }
@@ -2114,7 +2121,7 @@ const Styles = styled.div `
   
 .calendar-day {
     border: 1px solid black;
-    padding: 10px;
+    padding: 18px;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s;
