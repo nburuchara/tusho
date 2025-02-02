@@ -2093,6 +2093,43 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+.calendar-container {
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+}
+  
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+  
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+  
+.calendar-day {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+  
+.calendar-day:hover {
+    // background-color: #f0f0f0;
+}
+  
+.selected {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+}
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
@@ -2187,9 +2224,13 @@ export default class LandingPg extends Component {
 
             //* - USER ACCOUNT STATUS - *//
             userSignedIn: true,
+            showAccountInformation: false,
+            showJipangeSettings: true,
             accountSetupComplete: false,
-            showAccountInformation: true,
             phoneNumberVerified: true,
+            currentMonth: new Date().getMonth(),
+            currentYear: new Date().getFullYear(),
+            selectedDates: new Set(),
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -2689,11 +2730,43 @@ export default class LandingPg extends Component {
         }
     }
 
+    getDaysInMonth = (month, year) => {
+        return new Date(year, month + 1, 0).getDate();
+    };
+
+    handlePrevMonth = () => {
+        this.setState((prevState) => ({
+            currentMonth: prevState.currentMonth === 0 ? 11 : prevState.currentMonth - 1,
+        }));
+    };
+
+    handleNextMonth = () => {
+        this.setState((prevState) => ({
+            currentMonth: prevState.currentMonth === 11 ? 0 : prevState.currentMonth + 1,
+        }));
+    };
+
+    toggleDateSelection = (day) => {
+        this.setState((prevState) => {
+          const newSelectedDates = new Set(prevState.selectedDates);
+          if (newSelectedDates.has(day)) {
+            newSelectedDates.delete(day);
+          } else {
+            newSelectedDates.add(day);
+          }
+          return { selectedDates: newSelectedDates };
+        });
+    };
     
 
     render () {
 
         const { searchBarIsClicked, searchInput, isSearchLoading, resultsFound, groupedOptions } = this.state;
+        const { currentMonth, currentYear, selectedDates } = this.state;
+        const daysInMonth = this.getDaysInMonth(currentMonth, currentYear);
+        const monthNames = [
+        "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+        ];
 
         return (
             <Styles>
@@ -3490,7 +3563,7 @@ export default class LandingPg extends Component {
                                             <img src='/assets/icons/home-profile/edit-location-option-icon.png'/>
                                         </div>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
-                                            <p>Delivery</p>
+                                            <p>Delivery Info</p>
                                         </div>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-selected'>
 
@@ -3595,6 +3668,31 @@ export default class LandingPg extends Component {
                                                 </div>
                                                 <div className='navbar-profile-account-popup-account-save-profile-btn'>
                                                     <button>Save</button>
+                                                </div>
+                                            </div>
+                                        }
+                                        {this.state.showJipangeSettings && 
+                                            <div className='navbar-profile-account-popup-jipange-settings'>
+                                                <div className="calendar-container">
+                                                    <div className="calendar-header">
+                                                        <button onClick={this.handlePrevMonth}>Prev</button>
+                                                        <h2>{monthNames[currentMonth]} {currentYear}</h2>
+                                                        <button onClick={this.handleNextMonth}>Next</button>
+                                                    </div>
+                                                    <div className="calendar-grid">
+                                                        {[...Array(daysInMonth)].map((_, index) => {
+                                                            const day = index + 1;
+                                                            return (
+                                                            <div 
+                                                                key={index} 
+                                                                className={`calendar-day ${selectedDates.has(day) ? "selected" : ""}`}
+                                                                onClick={() => this.toggleDateSelection(day)}
+                                                            >
+                                                                {day}
+                                                            </div>
+                                                            );
+                                                        })}
+                                                    </div>
                                                 </div>
                                             </div>
                                         }
