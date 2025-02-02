@@ -2200,7 +2200,14 @@ const Styles = styled.div `
 .jipange-settings-selected-dates-container {
     // border: 1px solid black;
     padding-left: 3%;
+    padding-right: 2%;
     // overflow-x: auto;
+}
+
+.jipange-settings-selected-dates-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.3px;
 }
 
 .jipange-settings-selected-dates-container p {
@@ -2209,22 +2216,21 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-square {
-    width: 4.125rem;
+    width: 88.5%;
     height: 45px;
     display: inline-block;
     border: 1px solid  #ff5733;
     border-radius: 8px;
     background-color: #faece9;
-    margin-right: 8.5px;
-    margin-bottom: 8.5px;
+    margin-bottom: 0.35rem;
     opacity: 0; /* Initially invisible */
-    transform: translateX(-5px); /* Initially position it above */
+    // transform: translateX(-5px); /* Initially position it above */
     transition-property: opacity, transform ; /* Smooth transition */
 }
 
 .jipange-settings-selected-date-square.show {
     opacity: 1; /* Fade in */
-    transform: translateX(0); /* Slide to normal position */
+    // transform: translateX(0); /* Slide to normal position */
 }
 
 .jipange-settings-selected-date-square label {
@@ -3837,22 +3843,26 @@ export default class LandingPg extends Component {
                                                         })}
                                                     </div>
                                                 </div>
+                                                
                                                 <div className='jipange-settings-selected-dates-container'>
                                                     <p>Select a day below to add grocery items</p>
-                                                    {Array.from(selectedDates).map((date) => {
-                                                        // Get the day of the week for the selected date
-                                                        const dayOfWeek = this.getDayOfWeek(date, currentMonth, currentYear); // Assuming you have this function
+                                                    <div className='jipange-settings-selected-dates-grid'>
+                                                        {Array.from(selectedDates).map((date) => {
+                                                            // Get the day of the week for the selected date
+                                                            const dateObject = new Date(currentYear, currentMonth, date);
+                                                            const monthName = dateObject.toLocaleString('default', { month: 'short' }); // Get the full month name
 
-                                                        return (
-                                                            <div 
-                                                            key={date} 
-                                                            className={`jipange-settings-selected-date-square ${selectedDates.has(date) ? "show" : ""}`}
-                                                            >
-                                                                <label>{dayOfWeek}</label> {/* Day of the week */}
-                                                                <label>{date}</label> {/* Date */}
-                                                            </div>
-                                                        );
-                                                    })}
+                                                            return (
+                                                                <div 
+                                                                key={date} 
+                                                                className={`jipange-settings-selected-date-square ${selectedDates.has(date) ? "show" : ""}`}
+                                                                >
+                                                                    <label>{monthName}</label> {/* Day of the week */}
+                                                                    <label>{date}</label> {/* Date */}
+                                                                </div>
+                                                            );
+                                                        })}
+                                                    </div>
                                                 </div>
                                             </div>
                                         }
