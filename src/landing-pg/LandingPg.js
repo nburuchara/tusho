@@ -2248,6 +2248,11 @@ const Styles = styled.div `
     margin-top: 15px;
 }
 
+.jipange-settings-selected-date-square-item-count label {
+    font-size: 65%;
+    font-weight: bold;
+}
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
@@ -3870,6 +3875,9 @@ export default class LandingPg extends Component {
                                                                 >
                                                                     <label>{monthName}</label> {/* Month */}
                                                                     <label>{day}</label> {/* Date */}
+                                                                    <div className='jipange-settings-selected-date-square-item-count'>
+                                                                        <label>no items</label>
+                                                                    </div>
                                                                 </div>
                                                             );
                                                         })}
