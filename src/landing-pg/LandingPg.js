@@ -2208,6 +2208,13 @@ const Styles = styled.div `
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 0.3px;
+    max-height: 200px; /* Set the max height */
+    overflow-y: auto;  /* Vertical scroll */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    position: relative; /* To position the fade mask */
+    // padding-bottom: 20px; /* Optional: adds a small buffer */
+    mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%); /* Fade effect */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%); /* For Safari */
 }
 
 .jipange-settings-selected-dates-container p {
@@ -3877,7 +3884,7 @@ export default class LandingPg extends Component {
                                                                     <label>{monthName}</label> {/* Month */}
                                                                     <label>{day}</label> {/* Date */}
                                                                     <div className='jipange-settings-selected-date-square-item-count'>
-                                                                        <label>no items</label>
+                                                                        <label>0 items</label>
                                                                     </div>
                                                                 </div>
                                                             );
