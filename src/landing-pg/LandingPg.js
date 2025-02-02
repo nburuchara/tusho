@@ -2302,20 +2302,20 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-header {
-    height: 12rem;
+    height: 9rem;
     border: 1px solid black;
 }
 
 .jipange-settings-selected-date-screen-body {
     border: 1px solid black;
-    height: 25.5rem;
+    height: 28.5rem;
     display: flex;
     flex-direction: column;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header {
     border: 1px solid black;
-    height: 7.375rem;
+    height: 7.125rem;
 }
 
 .jipange-settings-selected-date-screen-body-inner-body {
