@@ -3051,7 +3051,7 @@ export default class LandingPg extends Component {
                         <div className='navbar-options-dropdown-left'>
                             <h5 className='navbar-options-dropdown-left-header'>Save up to 16% on your weekly shopping!</h5>
                             <div className='navbar-options-dropdown-left-header-img'>
-                                <img src='/assets/images/navbar-dropdown/promo-dropdown-header-icon3.png'/>
+                                <img src='/assets/images/navbar-dropdown/promo-dropdown-header-icon3.webp'/>
                             </div>
                             <div className='navbar-options-dropdown-left-menu-options'>
                                 <div onClick={() => this.navbarDropdownOptionSelected(1)} className={`navbar-options-dropdown-left-menu-options-cell ${this.state.showNavbarDropdownOption1 ? 'clicked' : ''}`}>
@@ -3518,7 +3518,7 @@ export default class LandingPg extends Component {
                                     {this.state.showProfileDropdownHeaderDefault &&
                                         <div className='navbar-profile-dropdown-header-default'>
                                             <h3>Create your account in seconds with OTP verification</h3>
-                                            <img src='/assets/images/navbar-dropdown/phone-dropdown-header.png'/>
+                                            <img src='/assets/images/navbar-dropdown/phone-dropdown-header.webp'/>
                                         </div>
                                     }
                                     {this.state.showProfileDropdownHeaderLoading && 
@@ -3960,7 +3960,7 @@ export default class LandingPg extends Component {
                                                 }
                                                 {this.state.showJipangeSettingsSelectedDate && 
                                                     <div className='jipange-settings-selected-date-screen'>
-                                                        
+                                                        <div></div>
                                                     </div>
                                                 }
                                                 {this.state.showJipangeSettingsLoading && 
