@@ -2228,6 +2228,13 @@ const Styles = styled.div `
     transition-property: opacity, transform ; /* Smooth transition */
 }
 
+.jipange-settings-selected-date-square:hover {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #ff5733;
+    border: 1px solid #5e626a;
+}
+
 .jipange-settings-selected-date-square.show {
     opacity: 1; /* Fade in */
     // transform: translateX(0); /* Slide to normal position */
