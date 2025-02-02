@@ -2283,7 +2283,7 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 32.5rem;
+    height: 30.5rem;
     flex-direction: column;
 }
 
@@ -3947,12 +3947,17 @@ export default class LandingPg extends Component {
                                                         </div>
                                                     </div>
                                                 }
+                                                {this.state.showJipangeSettingsHome && 
+                                                    <div className='jipange-settings-selected-date-screen'>
+                                                        
+                                                    </div>
+                                                }
                                                 {this.state.showJipangeSettingsLoading && 
                                                     <div className='jipange-settings-loading-screen'>
                                                         <TailSpin
                                                         visible={true}
-                                                        height="45px"
-                                                        width="45px"
+                                                        height="40px"
+                                                        width="40px"
                                                         color="#ff5733"
                                                         ariaLabel="tail-spin-loading"
                                                         radius="2"
