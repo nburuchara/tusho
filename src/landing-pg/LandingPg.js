@@ -2112,7 +2112,7 @@ const Styles = styled.div `
 .jipange-settings-calendar-container {
     max-width: 93.5%;
     margin: 20px auto;
-    border: 1px solid black;
+    // border: 1px solid black;
     text-align: center;
 }
   
@@ -2128,8 +2128,8 @@ const Styles = styled.div `
 }
 
 .jipange-settings-calendar-header img {
-    width: 21.5px;
-    padding-top: 2.5px;
+    width: 16.5px;
+    padding-bottom: 6.5px;
     filter: grayscale(100);
     transition-property: filter;
     cursor: pointer;
@@ -2159,6 +2159,9 @@ const Styles = styled.div `
 
 .jipange-settings-calendar-header h2 {
     margin-top: 5px;
+    font-size: 90%;
+    font-family: inter;
+    margin-left: 0.5%;
 }
   
 .jipange-settings-calendar-day:hover {
