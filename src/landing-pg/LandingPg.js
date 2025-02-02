@@ -2112,6 +2112,11 @@ const Styles = styled.div `
     align-items: center;
     margin-bottom: 10px;
 }
+
+
+.calendar-header-prev-btn.hidden {
+    display: none;
+}
   
 .calendar-grid {
     display: grid;
@@ -3681,8 +3686,11 @@ export default class LandingPg extends Component {
                                         {this.state.showJipangeSettings && 
                                             <div className='navbar-profile-account-popup-jipange-settings'>
                                                 <div className="calendar-container">
-                                                    <div className="calendar-header">
-                                                        <button onClick={this.handlePrevMonth}>Prev</button>
+                                                    <div className={`calendar-header`}>
+                                                        <button 
+                                                        onClick={this.handlePrevMonth}
+                                                        className={`calendar-header-prev-btn ${currentMonth === new Date().getMonth() ? "hidden" : ""}`}
+                                                        >Prev</button>
                                                         <h2>{monthNames[currentMonth]} {currentYear}</h2>
                                                         <button onClick={this.handleNextMonth}>Next</button>
                                                     </div>
