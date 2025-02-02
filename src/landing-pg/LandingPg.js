@@ -2377,8 +2377,14 @@ export default class LandingPg extends Component {
             userSignedIn: true,
             showAccountInformation: false,
             showJipangeSettings: true,
+
+            //* # Profile
             accountSetupComplete: false,
             phoneNumberVerified: true,
+
+            //* # Jipange
+            showJipangeSettingsHome: false,
+            showJipangeSettingsLoading: true,
             selectedDates: new Set(), // Store the selected dates as a set of 'YYYY-MM-DD' strings
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
@@ -3855,76 +3861,85 @@ export default class LandingPg extends Component {
                                         }
                                         {this.state.showJipangeSettings && 
                                             <div className='navbar-profile-account-popup-jipange-settings'>
-                                                <p>Select the dates you want scheduled delivery:</p>
-                                                <div className="jipange-settings-calendar-container">
-                                                    <div className={`jipange-settings-calendar-header`}>
-                                                        <img 
-                                                        src='/assets/icons/home-profile/jipange-settings-prev-calendar-icon.png'
-                                                        onClick={this.handlePrevMonth}
-                                                        className={`jipange-settings-calendar-header-prev-btn ${currentMonth === new Date().getMonth() ? "hidden" : ""}`} />
-                                                        <h2>{monthNames[currentMonth]} {currentYear}</h2>
-                                                        <img src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png' onClick={this.handleNextMonth}/>
-                                                    </div>
-                                                    <div className="jipange-settings-calendar-grid">
-                                                        {[...Array(daysInMonth)].map((_, index) => {
-                                                            const day = index + 1;
-                                                            const dayOfWeek = this.getDayOfWeek(day, currentMonth, currentYear);
-                                                            const isToday = isCurrentMonth && today.getDate() === day;
-                                                            const isPastDate = this.isPastDate(day, currentMonth, currentYear);
-                                                            const selectedDate = `${currentYear}-${currentMonth + 1}-${day}`;
-                                                            return (
-                                                            <div 
-                                                                key={index} 
-                                                                className={`jipange-settings-calendar-day ${this.state.selectedDates.has(selectedDate) ? "selected" : ""} ${isToday ? "today" : ""} ${isPastDate ? "disabled" : ""}`}
-                                                                onClick={() => !isPastDate && this.toggleDateSelection(day)}
-                                                            >
-                                                                <div className="jipange-settings-day-label"><label>{dayOfWeek}</label></div>
-                                                                {day}
-                                                            </div>
-                                                            );
-                                                        })}
-                                                    </div>
-                                                </div>
-                                                
-                                                <div className='jipange-settings-selected-dates-container'>
-                                                    <p>Select a date to add grocery items:</p>
+                                                {this.state.showJipangeSettingsHome && 
                                                     <div className=''>
-                                                        {this.state.selectedDates.size < 1 ? 
-                                                            (   
-                                                                <div className='jipange-settings-selected-dates-grid-empty'>
-                                                                    <div>
-                                                                        <img src='/assets/icons/home-profile/no-selected-jipange-icon.png'/>
+                                                        <p>Select the dates you want scheduled delivery:</p>
+                                                        <div className="jipange-settings-calendar-container">
+                                                            <div className={`jipange-settings-calendar-header`}>
+                                                                <img 
+                                                                src='/assets/icons/home-profile/jipange-settings-prev-calendar-icon.png'
+                                                                onClick={this.handlePrevMonth}
+                                                                className={`jipange-settings-calendar-header-prev-btn ${currentMonth === new Date().getMonth() ? "hidden" : ""}`} />
+                                                                <h2>{monthNames[currentMonth]} {currentYear}</h2>
+                                                                <img src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png' onClick={this.handleNextMonth}/>
+                                                            </div>
+                                                            <div className="jipange-settings-calendar-grid">
+                                                                {[...Array(daysInMonth)].map((_, index) => {
+                                                                    const day = index + 1;
+                                                                    const dayOfWeek = this.getDayOfWeek(day, currentMonth, currentYear);
+                                                                    const isToday = isCurrentMonth && today.getDate() === day;
+                                                                    const isPastDate = this.isPastDate(day, currentMonth, currentYear);
+                                                                    const selectedDate = `${currentYear}-${currentMonth + 1}-${day}`;
+                                                                    return (
+                                                                    <div 
+                                                                        key={index} 
+                                                                        className={`jipange-settings-calendar-day ${this.state.selectedDates.has(selectedDate) ? "selected" : ""} ${isToday ? "today" : ""} ${isPastDate ? "disabled" : ""}`}
+                                                                        onClick={() => !isPastDate && this.toggleDateSelection(day)}
+                                                                    >
+                                                                        <div className="jipange-settings-day-label"><label>{dayOfWeek}</label></div>
+                                                                        {day}
                                                                     </div>
-                                                                    <h3>No existing jipange plans</h3>
-                                                                </div>
-                                                            
-                                                            ) :
-
-                                                            (
-                                                                <div className='jipange-settings-selected-dates-grid'>
-                                                                    {Array.from(this.state.selectedDates).map((dateString) => {
-                                                                        const [year, month, day] = dateString.split('-'); // Extract day, month, year
-                                                                        const dateObject = new Date(year, month - 1, day); // Month is zero-indexed
-                                                                        const monthName = dateObject.toLocaleString('default', { month: 'short' });
-
-                                                                        return (
-                                                                            <div 
-                                                                                key={dateString} 
-                                                                                className={`jipange-settings-selected-date-square ${this.state.selectedDates.has(dateString) ? "show" : ""}`}
-                                                                            >
-                                                                                <label>{monthName}</label> {/* Month */}
-                                                                                <label>{day}</label> {/* Date */}
-                                                                                <div className='jipange-settings-selected-date-square-item-count'>
-                                                                                    <label>0 items</label>
-                                                                                </div>
+                                                                    );
+                                                                })}
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <div className='jipange-settings-selected-dates-container'>
+                                                            <p>Select a date to add grocery items:</p>
+                                                            <div className=''>
+                                                                {this.state.selectedDates.size < 1 ? 
+                                                                    (   
+                                                                        <div className='jipange-settings-selected-dates-grid-empty'>
+                                                                            <div>
+                                                                                <img src='/assets/icons/home-profile/no-selected-jipange-icon.png'/>
                                                                             </div>
-                                                                        );
-                                                                    })}
-                                                                </div>
-                                                            )
-                                                        }
+                                                                            <h3>No existing jipange plans</h3>
+                                                                        </div>
+                                                                    
+                                                                    ) :
+
+                                                                    (
+                                                                        <div className='jipange-settings-selected-dates-grid'>
+                                                                            {Array.from(this.state.selectedDates).map((dateString) => {
+                                                                                const [year, month, day] = dateString.split('-'); // Extract day, month, year
+                                                                                const dateObject = new Date(year, month - 1, day); // Month is zero-indexed
+                                                                                const monthName = dateObject.toLocaleString('default', { month: 'short' });
+
+                                                                                return (
+                                                                                    <div 
+                                                                                        key={dateString} 
+                                                                                        className={`jipange-settings-selected-date-square ${this.state.selectedDates.has(dateString) ? "show" : ""}`}
+                                                                                    >
+                                                                                        <label>{monthName}</label> {/* Month */}
+                                                                                        <label>{day}</label> {/* Date */}
+                                                                                        <div className='jipange-settings-selected-date-square-item-count'>
+                                                                                            <label>0 items</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                );
+                                                                            })}
+                                                                        </div>
+                                                                    )
+                                                                }
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                }
+                                                {this.state.showJipangeSettingsLoading && 
+                                                    <div className=''>
+
+                                                    </div>
+                                                }
                                             </div>
                                         }
                                     </div>
