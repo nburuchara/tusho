@@ -2283,7 +2283,12 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 25rem;
+    height: 32.5rem;
+    flex-direction: column;
+}
+
+.jipange-settings-loading-screen p {
+    margin-top: 1rem;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -3954,6 +3959,9 @@ export default class LandingPg extends Component {
                                                         wrapperStyle={{}}
                                                         wrapperClass=""
                                                         />
+                                                        <div>
+                                                            <p>Loading...</p>
+                                                        </div>
                                                     </div>
                                                 }
                                             </div>
