@@ -2214,6 +2214,18 @@ const Styles = styled.div `
     border-bottom: 1px solid #ccc;
 }
 
+.jipange-settings-selected-dates-grid-empty {
+    text-align: center;
+}
+
+.jipange-settings-selected-dates-grid-empty img {
+    text-align: center;
+}
+
+.jipange-settings-selected-dates-grid-empty h3 {
+    font-weight: normal;
+}
+
 .jipange-settings-selected-dates-container p {
     margin-left: 0px;
     margin-bottom: 0.6rem;
@@ -3868,18 +3880,17 @@ export default class LandingPg extends Component {
                                                 
                                                 <div className='jipange-settings-selected-dates-container'>
                                                     <p>Select a day to add grocery items:</p>
-                                                    <div className='jipange-settings-selected-dates-grid'>
-                                                        {this.state.selectedDates.length !== 0 ? 
+                                                    <div className=''>
+                                                        {this.state.selectedDates.size < 1 ? 
                                                             (   
-                                                            
-                                                                <div>
+                                                                <div className='jipange-settings-selected-dates-grid-empty'>
                                                                     <h3>No plans </h3>
                                                                 </div>
                                                             
                                                             ) :
 
                                                             (
-                                                                <div>
+                                                                <div className='jipange-settings-selected-dates-grid'>
                                                                     {Array.from(this.state.selectedDates).map((dateString) => {
                                                                         const [year, month, day] = dateString.split('-'); // Extract day, month, year
                                                                         const dateObject = new Date(year, month - 1, day); // Month is zero-indexed
