@@ -2186,22 +2186,36 @@ const Styles = styled.div `
     font-size: 75%;
 }
 
+.jipange-settings-calendar-day.disabled {
+    background-color: #f0f0f0; /* Light gray to indicate it's disabled */
+    color: #ccc; /* Light gray text */
+    cursor: not-allowed; /* Change cursor to indicate unclickable */
+}
+  
+.jipange-settings-calendar-day.disabled:hover {
+    background-color: #f0f0f0; /* Disable hover effect */
+}
+
 .jipange-settings-selected-dates-container {
-    border: 1px solid black;
+    // border: 1px solid black;
     padding-left: 3%;
+    overflow-x: auto;
 }
 
 .jipange-settings-selected-date-square {
-    width: 70px;
+    width: 65px;
     height: 50px;
     display: inline-block;
     border: 1px solid  #ff5733;
     border-radius: 8px;
     background-color: #faece9;
-    margin-right: 5px;
+    margin-right: 8.5px;
+    margin-bottom: 8.5px;
 }
 
 .jipange-settings-selected-date-square label {
+    font-size: 75%;
+    font-family: poppins;
     margin-left: 5px;
     margin-top: 15px;
 }
@@ -2813,6 +2827,14 @@ export default class LandingPg extends Component {
 
     getDayOfWeek = (day, month, year) => { // Added function to get day of the week
         return new Date(year, month, day).toLocaleDateString("en-US", { weekday: "short" });
+    };
+
+    isPastDate = (day, month, year) => {
+        const today = new Date();  // Get today's date
+        const selectedDate = new Date(year, month, day); // Create a date object for the selected day
+        
+        // Compare current date with the selected date, excluding time
+        return selectedDate < today.setHours(0, 0, 0, 0); // Returns true if the date has passed
     };
 
     handlePrevMonth = () => {
@@ -3785,11 +3807,12 @@ export default class LandingPg extends Component {
                                                             const day = index + 1;
                                                             const dayOfWeek = this.getDayOfWeek(day, currentMonth, currentYear);
                                                             const isToday = isCurrentMonth && today.getDate() === day;
+                                                            const isPastDate = this.isPastDate(day, currentMonth, currentYear);
                                                             return (
                                                             <div 
                                                                 key={index} 
-                                                                className={`jipange-settings-calendar-day ${selectedDates.has(day) ? "selected" : ""} ${isToday ? "today" : ""}`}
-                                                                onClick={() => this.toggleDateSelection(day)}
+                                                                className={`jipange-settings-calendar-day ${selectedDates.has(day) ? "selected" : ""} ${isToday ? "today" : ""} ${isPastDate ? "disabled" : ""}`}
+                                                                onClick={() => !isPastDate && this.toggleDateSelection(day)}
                                                             >
                                                                 <div className="jipange-settings-day-label"><label>{dayOfWeek}</label></div>
                                                                 {day}
@@ -3799,24 +3822,20 @@ export default class LandingPg extends Component {
                                                     </div>
                                                 </div>
                                                 <div className='jipange-settings-selected-dates-container'>
-                                                    {Array.from(selectedDates).map((date) => (
-                                                        <div 
+                                                    {Array.from(selectedDates).map((date) => {
+                                                        // Get the day of the week for the selected date
+                                                        const dayOfWeek = this.getDayOfWeek(date, currentMonth, currentYear); // Assuming you have this function
+
+                                                        return (
+                                                            <div 
                                                             key={date} 
                                                             className="jipange-settings-selected-date-square"
-                                                            style={{
-                                                            // width: '30px',
-                                                            // height: '30px',
-                                                            // margin: '5px',
-                                                            // backgroundColor: 'blue', // Customize this style as needed
-                                                            // display: 'inline-block',
-                                                            // textAlign: 'center',
-                                                            // color: 'white',
-                                                            // lineHeight: '30px',
-                                                            }}
-                                                        >
-                                                            <label>{date}</label>
-                                                        </div>
-                                                    ))}
+                                                            >
+                                                                <label>{dayOfWeek}</label> {/* Day of the week */}
+                                                                <label>{date}</label> {/* Date */}
+                                                            </div>
+                                                        );
+                                                    })}
                                                 </div>
                                             </div>
                                         }
