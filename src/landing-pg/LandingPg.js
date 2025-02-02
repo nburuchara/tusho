@@ -2216,7 +2216,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-dates-container p {
     margin-left: 0px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
     border-bottom: 1px solid #ccc;
 }
 
@@ -3867,26 +3867,40 @@ export default class LandingPg extends Component {
                                                 </div>
                                                 
                                                 <div className='jipange-settings-selected-dates-container'>
-                                                    <p>Select a day below to add grocery items</p>
+                                                    <p>Select a day to add grocery items:</p>
                                                     <div className='jipange-settings-selected-dates-grid'>
-                                                        {Array.from(this.state.selectedDates).map((dateString) => {
-                                                            const [year, month, day] = dateString.split('-'); // Extract day, month, year
-                                                            const dateObject = new Date(year, month - 1, day); // Month is zero-indexed
-                                                            const monthName = dateObject.toLocaleString('default', { month: 'short' });
-
-                                                            return (
-                                                                <div 
-                                                                    key={dateString} 
-                                                                    className={`jipange-settings-selected-date-square ${this.state.selectedDates.has(dateString) ? "show" : ""}`}
-                                                                >
-                                                                    <label>{monthName}</label> {/* Month */}
-                                                                    <label>{day}</label> {/* Date */}
-                                                                    <div className='jipange-settings-selected-date-square-item-count'>
-                                                                        <label>0 items</label>
-                                                                    </div>
+                                                        {this.state.selectedDates.length !== 0 ? 
+                                                            (   
+                                                            
+                                                                <div>
+                                                                    <h3>No plans </h3>
                                                                 </div>
-                                                            );
-                                                        })}
+                                                            
+                                                            ) :
+
+                                                            (
+                                                                <div>
+                                                                    {Array.from(this.state.selectedDates).map((dateString) => {
+                                                                        const [year, month, day] = dateString.split('-'); // Extract day, month, year
+                                                                        const dateObject = new Date(year, month - 1, day); // Month is zero-indexed
+                                                                        const monthName = dateObject.toLocaleString('default', { month: 'short' });
+
+                                                                        return (
+                                                                            <div 
+                                                                                key={dateString} 
+                                                                                className={`jipange-settings-selected-date-square ${this.state.selectedDates.has(dateString) ? "show" : ""}`}
+                                                                            >
+                                                                                <label>{monthName}</label> {/* Month */}
+                                                                                <label>{day}</label> {/* Date */}
+                                                                                <div className='jipange-settings-selected-date-square-item-count'>
+                                                                                    <label>0 items</label>
+                                                                                </div>
+                                                                            </div>
+                                                                        );
+                                                                    })}
+                                                                </div>
+                                                            )
+                                                        }
                                                     </div>
                                                 </div>
                                             </div>
