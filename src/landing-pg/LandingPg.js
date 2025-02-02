@@ -2138,18 +2138,23 @@ const Styles = styled.div `
   
 .jipange-settings-calendar-day {
     border: 1px solid black;
-    padding: 18px;
+    padding: 12px;
     text-align: center;
     cursor: pointer;
+    font-family: poppins;
+    font-size: 85%;
+    border-radius: 6px;
     transition: background-color 0.3s;
 }
   
 .jipange-settings-calendar-day:hover {
-    // background-color: #f0f0f0;
+    background-color: #faece9;
+    border: 1px solid #ff5733;
 }
   
 .jipange-settings-calendar-day.selected {
     background-color: #ff5733;
+    border: 1px solid #ff5733;
     color: white;
     font-weight: bold;
 }
