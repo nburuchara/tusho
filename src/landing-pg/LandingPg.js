@@ -2138,11 +2138,11 @@ const Styles = styled.div `
   
 .jipange-settings-calendar-day {
     border: 1px solid black;
-    padding: 12px;
+    padding: 5px;
     text-align: center;
     cursor: pointer;
     font-family: poppins;
-    font-size: 85%;
+    font-size: 80%;
     border-radius: 6px;
     transition: background-color 0.3s;
 }
@@ -2157,6 +2157,10 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
     color: white;
     font-weight: bold;
+}
+
+.jipange-settings-day-label {
+    font-size: 75%;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -2762,6 +2766,10 @@ export default class LandingPg extends Component {
 
     getDaysInMonth = (month, year) => {
         return new Date(year, month + 1, 0).getDate();
+    };
+
+    getDayOfWeek = (day, month, year) => { // Added function to get day of the week
+        return new Date(year, month, day).toLocaleDateString("en-US", { weekday: "short" });
     };
 
     handlePrevMonth = () => {
@@ -3703,6 +3711,7 @@ export default class LandingPg extends Component {
                                         }
                                         {this.state.showJipangeSettings && 
                                             <div className='navbar-profile-account-popup-jipange-settings'>
+                                                <p></p>
                                                 <div className="jipange-settings-calendar-container">
                                                     <div className={`jipange-settings-calendar-header`}>
                                                         <img 
@@ -3715,12 +3724,14 @@ export default class LandingPg extends Component {
                                                     <div className="jipange-settings-calendar-grid">
                                                         {[...Array(daysInMonth)].map((_, index) => {
                                                             const day = index + 1;
+                                                            const dayOfWeek = this.getDayOfWeek(day, currentMonth, currentYear);
                                                             return (
                                                             <div 
                                                                 key={index} 
                                                                 className={`jipange-settings-calendar-day ${selectedDates.has(day) ? "selected" : ""}`}
                                                                 onClick={() => this.toggleDateSelection(day)}
                                                             >
+                                                                <div className="jipange-settings-day-label"><label>{dayOfWeek}</label></div>
                                                                 {day}
                                                             </div>
                                                             );
