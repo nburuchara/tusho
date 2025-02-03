@@ -2394,6 +2394,17 @@ const Styles = styled.div `
     font-size: 70%;
 }
 
+.jipange-settings-selected-date-screen-body-inner-header-next-category {
+    width: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jipange-settings-selected-date-screen-body-inner-header-next-category img {
+    width: 100%;
+}
+
 .jipange-settings-selected-date-screen-body-inner-body {
     // border: 1px solid black;
     flex-grow: 1;
@@ -4091,6 +4102,9 @@ export default class LandingPg extends Component {
                                                                     <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                         <img src='/assets/images/product-categories/oil.webp'/>
                                                                         <p>Food Cupboard</p>
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
+                                                                        <img src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
                                                                     </div>
                                                                 </div>
                                                             </div>
