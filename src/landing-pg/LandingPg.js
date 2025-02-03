@@ -2322,11 +2322,11 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-search-container {
-    border: 1px solid black;
-    height: 26.5%;
+    border: 1px solid #ccc;
+    height: 25.5%;
     width: 100%;
-    margin-top: 0.2rem;
-    border-radius: 20px;
+    margin-top: 0rem;
+    border-radius: 5px;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-categories-carousel {
