@@ -2317,6 +2317,16 @@ const Styles = styled.div `
     // border: 1px solid black;
     height: 7.125rem;
     position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.jipange-settings-selected-date-screen-body-inner-header-search-container {
+    border: 1px solid black;
+    height: 26.5%;
+    width: 100%;
+    margin-top: 0.2rem;
+    border-radius: 20px;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-categories-carousel {
@@ -2327,6 +2337,7 @@ const Styles = styled.div `
     height: 65%;
     display: flex;
     flex-direction: row;
+    // border: 1px solid black;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-category {
@@ -2350,10 +2361,7 @@ const Styles = styled.div `
     position: absolute;
     bottom: 1.15rem;
     left: 5%;
-    // margin: auto;
-    // justify-content: center;
     font-size: 70%;
-    // transform: translate(-50%, -50%);
 }
 
 .jipange-settings-selected-date-screen-body-inner-body {
@@ -4021,10 +4029,13 @@ export default class LandingPg extends Component {
                                                 {this.state.showJipangeSettingsSelectedDate && 
                                                     <div className='jipange-settings-selected-date-screen'>
                                                         <div className='jipange-settings-selected-date-screen-header'>
-
+                                                    
                                                         </div>
                                                         <div className='jipange-settings-selected-date-screen-body'>
                                                             <div className='jipange-settings-selected-date-screen-body-inner-header'>
+                                                                <div className='jipange-settings-selected-date-screen-body-inner-header-search-container'>
+
+                                                                </div>
                                                                 <div className='jipange-settings-selected-date-screen-body-inner-header-categories-carousel'>
                                                                     <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                         <img src='/assets/images/product-categories/fruits-and-veg.webp'/>
