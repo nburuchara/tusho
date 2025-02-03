@@ -4027,23 +4027,23 @@ export default class LandingPg extends Component {
                                                             <div className='jipange-settings-selected-date-screen-body-inner-header'>
                                                                 <div className='jipange-settings-selected-date-screen-body-inner-header-categories-carousel'>
                                                                     <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                        <img src='/assets/images/product-categories/fruits-and-veg.png'/>
+                                                                        <img src='/assets/images/product-categories/fruits-and-veg.webp'/>
                                                                         <p>Fruit & Veg</p>
                                                                     </div>
                                                                     <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                        <img src='/assets/images/product-categories/organic.png'/>
+                                                                        <img src='/assets/images/product-categories/organic.webp'/>
                                                                         <p>Organic</p>
                                                                     </div>
                                                                     <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                        <img src='/assets/images/product-categories/meat.png'/>
+                                                                        <img src='/assets/images/product-categories/meat.webp'/>
                                                                         <p>Meat</p>
                                                                     </div>
                                                                     <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                        <img src='/assets/images/product-categories/milk.png'/>
+                                                                        <img src='/assets/images/product-categories/milk.webp'/>
                                                                         <p>Dairy</p>
                                                                     </div>
                                                                     <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                        <img src='/assets/images/product-categories/oil.png'/>
+                                                                        <img src='/assets/images/product-categories/oil.webp'/>
                                                                         <p>Food Cupboard</p>
                                                                     </div>
                                                                 </div>
