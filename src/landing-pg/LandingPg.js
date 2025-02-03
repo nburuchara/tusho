@@ -2297,24 +2297,24 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen {
     width: 93.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 100%;
 }
 
 .jipange-settings-selected-date-screen-header {
     height: 9rem;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .jipange-settings-selected-date-screen-body {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 28.5rem;
     display: flex;
     flex-direction: column;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 7.125rem;
     position: relative;
 }
@@ -2325,10 +2325,8 @@ const Styles = styled.div `
     left: 0;
     width: 100%;
     height: 65%;
-    border: 1px solid black;
-    // display: grid;
-    // grid-template-columns: repeat(5, 1fr);
-    // gap: 5px;
+    display: flex;
+    flex-direction: row;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-category {
@@ -2338,10 +2336,11 @@ const Styles = styled.div `
     position: relative;
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+    margin-right: 2.5%;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-category img {
-    width: 75%;
+    width: 52.5px;
     position: absolute;
     top: 0;
     right: 0;
@@ -2358,7 +2357,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-body-inner-body {
-    border: 1px solid black;
+    // border: 1px solid black;
     flex-grow: 1;
 }
 
@@ -4030,6 +4029,22 @@ export default class LandingPg extends Component {
                                                                     <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                         <img src='/assets/images/product-categories/fruits-and-veg.png'/>
                                                                         <p>Fruit & Veg</p>
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                        <img src='/assets/images/product-categories/organic.png'/>
+                                                                        <p>Organic</p>
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                        <img src='/assets/images/product-categories/meat.png'/>
+                                                                        <p>Meat</p>
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                        <img src='/assets/images/product-categories/milk.png'/>
+                                                                        <p>Dairy</p>
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                        <img src='/assets/images/product-categories/oil.png'/>
+                                                                        <p>Food Cupboard</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
