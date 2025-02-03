@@ -2391,7 +2391,7 @@ const Styles = styled.div `
     position: absolute;
     bottom: 1.15rem;
     left: 5%;
-    font-size: 70%;
+    font-size: 65%;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-next-category {
