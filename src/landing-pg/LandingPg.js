@@ -2327,6 +2327,35 @@ const Styles = styled.div `
     width: 100%;
     margin-top: 0rem;
     border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jipange-settings-selected-date-screen-body-inner-header-search-bar-icon {
+    width: 7.5%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jipange-settings-selected-date-screen-body-inner-header-search-bar-icon img {
+    width: 45%;
+}
+
+.jipange-settings-selected-date-screen-body-inner-header-search-bar {
+    width: 92.5%;
+    // border: 1px solid black;
+    overflow: hidden;
+}
+
+.jipange-settings-selected-date-screen-body-inner-header-search-bar input {
+    width: 97.5%;
+    height: 80.5%;
+    padding: 2.5px;
+    border: 1px solid transparent;
+    outline: none;
+    // overflow: hidden;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-categories-carousel {
@@ -2342,16 +2371,17 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-header-category {
     width: 16.5%;
-    height: 100%;
+    height: 96.5%;
     border: 1px solid white;
     position: relative;
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
     margin-right: 2.5%;
+    margin-top: 0.1rem;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-category img {
-    width: 52.5px;
+    width: 47.5px;
     position: absolute;
     top: 0;
     right: 0;
@@ -4034,7 +4064,12 @@ export default class LandingPg extends Component {
                                                         <div className='jipange-settings-selected-date-screen-body'>
                                                             <div className='jipange-settings-selected-date-screen-body-inner-header'>
                                                                 <div className='jipange-settings-selected-date-screen-body-inner-header-search-container'>
-
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-header-search-bar-icon'>
+                                                                        <img src='/assets/icons/navbar/search-icon.png'/>
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-header-search-bar'>
+                                                                        <input/>
+                                                                    </div>
                                                                 </div>
                                                                 <div className='jipange-settings-selected-date-screen-body-inner-header-categories-carousel'>
                                                                     <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
