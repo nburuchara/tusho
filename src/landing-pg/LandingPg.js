@@ -3366,7 +3366,7 @@ export default class LandingPg extends Component {
                         <div className='navbar-options-checkout-home-body'>
                             <div className='navbar-options-checkout-home-item-cell'>
                                 <div className='navbar-options-checkout-home-item-cell-icon'>
-                                    <img src='/assets/images/products/brookside-milk-powder-product.png'/>
+                                    <img src='/assets/images/products/brookside-milk-powder-product.webp'/>
                                     <p>remove</p>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
@@ -3389,7 +3389,7 @@ export default class LandingPg extends Component {
                             </div>
                             <div className='navbar-options-checkout-home-item-cell'>
                                 <div className='navbar-options-checkout-home-item-cell-icon'>
-                                    <img src='/assets/images/products/min-maid-product.png'/>
+                                    <img src='/assets/images/products/min-maid-product.webp'/>
                                     <p>remove</p>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
@@ -3412,7 +3412,7 @@ export default class LandingPg extends Component {
                             </div>
                             <div className='navbar-options-checkout-home-item-cell'>
                                 <div className='navbar-options-checkout-home-item-cell-icon'>
-                                    <img src='/assets/images/products/mac-coffee-product.png'/>
+                                    <img src='/assets/images/products/mac-coffee-product.webp'/>
                                     <p>remove</p>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
@@ -3458,7 +3458,7 @@ export default class LandingPg extends Component {
                             </div>
                             <div className='navbar-options-checkout-home-item-cell'>
                                 <div className='navbar-options-checkout-home-item-cell-icon'>
-                                    <img src='/assets/images/products/brookside-milk-product.png'/>
+                                    <img src='/assets/images/products/brookside-milk-product.webp'/>
                                     <p>remove</p>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
@@ -3481,7 +3481,7 @@ export default class LandingPg extends Component {
                             </div>
                             <div className='navbar-options-checkout-home-item-cell'>
                                 <div className='navbar-options-checkout-home-item-cell-icon'>
-                                    <img src='/assets/images/products/digestives-product.png'/>
+                                    <img src='/assets/images/products/digestives-product.webp'/>
                                     <p>remove</p>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
@@ -3504,7 +3504,7 @@ export default class LandingPg extends Component {
                             </div>
                             <div className='navbar-options-checkout-home-item-cell'>
                                 <div className='navbar-options-checkout-home-item-cell-icon'>
-                                    <img src='/assets/images/products/mumias-sugar-product.png'/>
+                                    <img src='/assets/images/products/mumias-sugar-product.webp'/>
                                     <p>remove</p>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
@@ -3527,7 +3527,7 @@ export default class LandingPg extends Component {
                             </div>
                             <div className='navbar-options-checkout-home-item-cell'>
                                 <div className='navbar-options-checkout-home-item-cell-icon'>
-                                    <img src='/assets/images/products/rinsun-oil-product.png'/>
+                                    <img src='/assets/images/products/rinsun-oil-product.webp'/>
                                     <p>remove</p>
                                 </div>  
                                 <div className='navbar-options-checkout-home-item-cell-details'>
