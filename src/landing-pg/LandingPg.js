@@ -2375,7 +2375,7 @@ const Styles = styled.div `
     border: 1px solid white;
     position: relative;
     border-radius: 8px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12), 0px 6px 12px rgba(0, 0, 0, 0.10);
     margin-right: 2.5%;
     margin-top: 0.1rem;
 }
