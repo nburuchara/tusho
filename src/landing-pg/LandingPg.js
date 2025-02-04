@@ -2372,7 +2372,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-body-inner-header-category {
     width: 16.5%;
     height: 96.5%;
-    border: 1px solid white;
+    border: 0.05px solid #fff;
     position: relative;
     border-radius: 8px;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.12), 0px 6px 12px rgba(0, 0, 0, 0.10);
