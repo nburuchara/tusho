@@ -3100,13 +3100,13 @@ export default class LandingPg extends Component {
                     transitionJipangeSettingsProductList: false,
                     transitionHelperJipangeSettingsProductList: true
                 })
-            }, 450)
+            }, 500)
             setTimeout(() => {
                 this.setState({
                     [`showJipangeProductsList${currList+1}`]: true,
                     transitionHelperJipangeSettingsProductList: false
                 })
-            }, 680)
+            }, 800)
         })
     }
 
