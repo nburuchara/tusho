@@ -2367,6 +2367,20 @@ const Styles = styled.div `
     display: flex;
     flex-direction: row;
     // border: 1px solid black;
+    transform: translateX(-110%);
+    transition-property: transform;
+}
+
+.jipange-settings-selected-date-screen-body-inner-header-categories-carousel.next {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: row;
+    // border: 1px solid black;
+    transform: translateX(110%);
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-category {
@@ -2456,6 +2470,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-body-left-footer-sign-out-label p,
 .jipange-settings-calendar-header img,
 .jipange-settings-selected-date-square,
+.jipange-settings-selected-date-screen-body-inner-header-categories-carousel.next,
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
@@ -2934,9 +2949,9 @@ export default class LandingPg extends Component {
     };
     
     formatTime = () => {
-    const minutes = Math.floor(this.state.countdown / 60);
-    const seconds = this.state.countdown % 60;
-    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        const minutes = Math.floor(this.state.countdown / 60);
+        const seconds = this.state.countdown % 60;
+        return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     };
 
     verifyOTPClicked = () => {
