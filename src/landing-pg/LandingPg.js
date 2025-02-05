@@ -3114,18 +3114,19 @@ export default class LandingPg extends Component {
 
     prevJipangeSettingsProductList = (currList) => {
         this.setState({
-            transitionJipangeSettingsProductList: true,
+            transitionHelperJipangeSettingsProductList: true,
         }, () => {
             setTimeout(() => {
                 this.setState({
                     [`showJipangeProductsList${currList}`]: false,
                     transitionJipangeSettingsProductList: false,
                     transitionHelperJipangeSettingsProductList: true
+                    
                 })
             }, 350)
             setTimeout(() => {
                 this.setState({
-                    [`showJipangeProductsList${currList+1}`]: true,
+                    [`showJipangeProductsList${currList-1}`]: true,
                     transitionHelperJipangeSettingsProductList: false
                 })
             }, 35)
@@ -4182,7 +4183,7 @@ export default class LandingPg extends Component {
                                                                     {this.state.showJipangeProductsList2 && 
                                                                         <>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-prev-category'>
-                                                                                <img src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                                <img onClick={() => this.prevJipangeSettingsProductList(2)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/fruits-and-veg.webp'/>
