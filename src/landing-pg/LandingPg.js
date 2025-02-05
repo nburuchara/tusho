@@ -2367,19 +2367,15 @@ const Styles = styled.div `
     display: flex;
     flex-direction: row;
     // border: 1px solid black;
-    transform: translateX(-110%);
+    transform: translateX(0);
     transition-property: transform;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-categories-carousel.next {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 65%;
-    display: flex;
-    flex-direction: row;
-    // border: 1px solid black;
+    transform: translateX(-110%);
+}
+
+.jipange-settings-selected-date-screen-body-inner-header-categories-carousel.transition {
     transform: translateX(110%);
 }
 
@@ -2470,7 +2466,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-body-left-footer-sign-out-label p,
 .jipange-settings-calendar-header img,
 .jipange-settings-selected-date-square,
-.jipange-settings-selected-date-screen-body-inner-header-categories-carousel.next,
+.jipange-settings-selected-date-screen-body-inner-header-categories-carousel,
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
@@ -2545,8 +2541,10 @@ export default class LandingPg extends Component {
             showJipangeSettingsHome: false,
             showJipangeSettingsSelectedDate: true,
             showJipangeSettingsLoading: false,
-            showJipangeProductsList1: false,
-            showJipangeProductsList2: true,
+            transitionJipangeSettingsProductList: false,
+            transitionHelperJipangeSettingsProductList: false,
+            showJipangeProductsList1: true,
+            showJipangeProductsList2: false,
             selectedDates: new Set(), // Store the selected dates as a set of 'YYYY-MM-DD' strings
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
@@ -3092,6 +3090,45 @@ export default class LandingPg extends Component {
         });
     };
     
+    nextJipangeSettingsProductList = (currList) => {
+        this.setState({
+            transitionJipangeSettingsProductList: true,
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    [`showJipangeProductsList${currList}`]: false,
+                    transitionJipangeSettingsProductList: false,
+                    transitionHelperJipangeSettingsProductList: true
+                })
+            }, 450)
+            setTimeout(() => {
+                this.setState({
+                    [`showJipangeProductsList${currList+1}`]: true,
+                    transitionHelperJipangeSettingsProductList: false
+                })
+            }, 680)
+        })
+    }
+
+    prevJipangeSettingsProductList = (currList) => {
+        this.setState({
+            transitionJipangeSettingsProductList: true,
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    [`showJipangeProductsList${currList}`]: false,
+                    transitionJipangeSettingsProductList: false,
+                    transitionHelperJipangeSettingsProductList: true
+                })
+            }, 450)
+            setTimeout(() => {
+                this.setState({
+                    [`showJipangeProductsList${currList+1}`]: true,
+                    transitionHelperJipangeSettingsProductList: false
+                })
+            }, 680)
+        })
+    }
 
     render () {
 
@@ -4112,7 +4149,7 @@ export default class LandingPg extends Component {
                                                                         <input/>
                                                                     </div>
                                                                 </div>
-                                                                <div className='jipange-settings-selected-date-screen-body-inner-header-categories-carousel'>
+                                                                <div className={`jipange-settings-selected-date-screen-body-inner-header-categories-carousel ${this.state.transitionJipangeSettingsProductList ? 'next' : this.state.transitionHelperJipangeSettingsProductList ? 'transition' : ''}`}>
                                                                     {this.state.showJipangeProductsList1 && 
                                                                         <>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
@@ -4136,7 +4173,7 @@ export default class LandingPg extends Component {
                                                                                 <p>Food Cupboard</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
-                                                                                <img src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                                <img onClick={() => this.nextJipangeSettingsProductList(1)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
                                                                             </div>
                                                                         </>
                                                                     }
