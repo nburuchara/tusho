@@ -2371,7 +2371,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-header-category {
     width: 16.5%;
-    height: 96.5%;
+    height: 92.5%;
     border: 0.05px solid #fff;
     position: relative;
     border-radius: 8px;
@@ -2381,10 +2381,10 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-category img {
-    width: 47.5px;
+    width: 45.5px;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 2.5px;
+    right: 2%;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-category p {
@@ -2392,6 +2392,19 @@ const Styles = styled.div `
     bottom: 1.15rem;
     left: 5%;
     font-size: 65%;
+}
+
+.jipange-settings-selected-date-screen-body-inner-header-prev-category {
+    width: 4%;
+    margin-right: 2.5%;
+    transform: rotate(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jipange-settings-selected-date-screen-body-inner-header-prev-category img {
+    width: 100%;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-next-category {
@@ -2517,6 +2530,8 @@ export default class LandingPg extends Component {
             showJipangeSettingsHome: false,
             showJipangeSettingsSelectedDate: true,
             showJipangeSettingsLoading: false,
+            showJipangeProductsList1: false,
+            showJipangeProductsList2: true,
             selectedDates: new Set(), // Store the selected dates as a set of 'YYYY-MM-DD' strings
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
@@ -4083,29 +4098,63 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 </div>
                                                                 <div className='jipange-settings-selected-date-screen-body-inner-header-categories-carousel'>
-                                                                    <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                        <img src='/assets/images/product-categories/fruits-and-veg.webp'/>
-                                                                        <p>Fruit & Veg</p>
-                                                                    </div>
-                                                                    <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                        <img src='/assets/images/product-categories/organic.webp'/>
-                                                                        <p>Organic</p>
-                                                                    </div>
-                                                                    <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                        <img src='/assets/images/product-categories/meat.webp'/>
-                                                                        <p>Meat</p>
-                                                                    </div>
-                                                                    <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                        <img src='/assets/images/product-categories/milk.webp'/>
-                                                                        <p>Dairy</p>
-                                                                    </div>
-                                                                    <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                        <img src='/assets/images/product-categories/oil.webp'/>
-                                                                        <p>Food Cupboard</p>
-                                                                    </div>
-                                                                    <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
-                                                                        <img src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
-                                                                    </div>
+                                                                    {this.state.showJipangeProductsList1 && 
+                                                                        <>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/fruits-and-veg.webp'/>
+                                                                                <p>Fruit & Veg</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/organic.webp'/>
+                                                                                <p>Organic</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/meat.webp'/>
+                                                                                <p>Meat</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/milk.webp'/>
+                                                                                <p>Dairy</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/oil.webp'/>
+                                                                                <p>Food Cupboard</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
+                                                                                <img src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                            </div>
+                                                                        </>
+                                                                    }
+                                                                    {this.state.showJipangeProductsList2 && 
+                                                                        <>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-prev-category'>
+                                                                                <img src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/fruits-and-veg.webp'/>
+                                                                                <p>Fruit & Veg</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/organic.webp'/>
+                                                                                <p>Organic</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/meat.webp'/>
+                                                                                <p>Meat</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/milk.webp'/>
+                                                                                <p>Dairy</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/oil.webp'/>
+                                                                                <p>Food Cupboard</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
+                                                                                <img src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                            </div>
+                                                                        </>
+                                                                    }
                                                                 </div>
                                                             </div>
                                                             <div className='jipange-settings-selected-date-screen-body-inner-body'>
