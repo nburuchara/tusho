@@ -2415,6 +2415,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-header-prev-category img {
     width: 100%;
+    cursor: pointer;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-next-category {
@@ -2426,6 +2427,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-header-next-category img {
     width: 100%;
+    cursor: pointer;
 }
 
 .jipange-settings-selected-date-screen-body-inner-body {
@@ -3100,13 +3102,13 @@ export default class LandingPg extends Component {
                     transitionJipangeSettingsProductList: false,
                     transitionHelperJipangeSettingsProductList: true
                 })
-            }, 450)
+            }, 500)
             setTimeout(() => {
                 this.setState({
                     [`showJipangeProductsList${currList+1}`]: true,
                     transitionHelperJipangeSettingsProductList: false
                 })
-            }, 680)
+            }, 800)
         })
     }
 
@@ -3120,13 +3122,13 @@ export default class LandingPg extends Component {
                     transitionJipangeSettingsProductList: false,
                     transitionHelperJipangeSettingsProductList: true
                 })
-            },500)
+            }, 350)
             setTimeout(() => {
                 this.setState({
                     [`showJipangeProductsList${currList+1}`]: true,
                     transitionHelperJipangeSettingsProductList: false
                 })
-            }, 800)
+            }, 35)
         })
     }
 
