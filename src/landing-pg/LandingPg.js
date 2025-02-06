@@ -4250,16 +4250,16 @@ export default class LandingPg extends Component {
                                                                                 <p>Stationary</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/beauty.png'/>
+                                                                                <img src='/assets/images/product-categories/beauty.webp'/>
                                                                                 <p>Beauty</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/snacks.webp'/>
-                                                                                <p>Snacks</p>
+                                                                                <img src='/assets/images/product-categories/appliances.webp'/>
+                                                                                <p>Home Appliances</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/bakery.webp'/>
-                                                                                <p>Bakery</p>
+                                                                                <img src='/assets/images/product-categories/alcohol.png'/>
+                                                                                <p>Alcohol</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/bundles.webp'/>
