@@ -2299,7 +2299,7 @@ const Styles = styled.div `
     width: 93.5%;
     // border: 1px solid black;
     height: 100%;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
 .jipange-settings-selected-date-screen-header {
@@ -4232,11 +4232,41 @@ export default class LandingPg extends Component {
                                                                                 <p>Bakery</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/bulk-buy.webp'/>
-                                                                                <p>Bulk Buy</p>
+                                                                                <img src='/assets/images/product-categories/bundles.webp'/>
+                                                                                <p>Bundles</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
                                                                                 <img onClick={() => this.nextJipangeSettingsProductList(3)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                            </div>
+                                                                        </>
+                                                                    }
+                                                                    {this.state.showJipangeProductsList4 && 
+                                                                        <>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-prev-category'>
+                                                                                <img onClick={() => this.prevJipangeSettingsProductList(4)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/stationary.webp'/>
+                                                                                <p>Stationary</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/beverages.webp'/>
+                                                                                <p>Beverages</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/snacks.webp'/>
+                                                                                <p>Snacks</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/bakery.webp'/>
+                                                                                <p>Bakery</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/bundles.webp'/>
+                                                                                <p>Bundles</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
+                                                                                <img onClick={() => this.nextJipangeSettingsProductList(4)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
                                                                             </div>
                                                                         </>
                                                                     }
