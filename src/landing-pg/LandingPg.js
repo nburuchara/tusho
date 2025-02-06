@@ -2251,6 +2251,7 @@ const Styles = styled.div `
     opacity: 0; /* Initially invisible */
     // transform: translateX(-5px); /* Initially position it above */
     transition-property: opacity, transform ; /* Smooth transition */
+    cursor: pointer;
 }
 
 .jipange-settings-selected-date-square:hover {
@@ -2271,11 +2272,13 @@ const Styles = styled.div `
     font-family: poppins;
     margin-left: 5px;
     margin-top: 15px;
+    cursor: pointer;
 }
 
 .jipange-settings-selected-date-square-item-count label {
     font-size: 65%;
     font-weight: bold;
+    cursor: pointer;
 }
 
     // # # JIPANGE LOADING SCREEN
@@ -2304,18 +2307,18 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-header {
     height: 9rem;
-    // border: 1px solid black;
+    border: 1px solid black;
 }
 
 .jipange-settings-selected-date-screen-body {
-    // border: 1px solid black;
+    border: 1px solid black;
     height: 28.5rem;
     display: flex;
     flex-direction: column;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header {
-    // border: 1px solid black;
+    border: 1px solid black;
     height: 7.125rem;
     position: relative;
     display: flex;
@@ -2334,7 +2337,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-header-search-bar-icon {
     width: 7.5%;
-    // border: 1px solid black;
+    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2346,7 +2349,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-header-search-bar {
     width: 92.5%;
-    // border: 1px solid black;
+    border: 1px solid black;
     overflow: hidden;
 }
 
@@ -2367,7 +2370,7 @@ const Styles = styled.div `
     height: 65%;
     display: flex;
     flex-direction: row;
-    // border: 1px solid black;
+    border: 1px solid black;
     transform: translateX(0);
     transition-property: transform;
 }
@@ -2432,7 +2435,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-body-inner-body {
-    // border: 1px solid black;
+    border: 1px solid black;
     flex-grow: 1;
 }
 
