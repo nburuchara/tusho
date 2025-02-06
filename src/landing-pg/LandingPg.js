@@ -4258,13 +4258,43 @@ export default class LandingPg extends Component {
                                                                                 <p>Home Appliances</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/alcohol.png'/>
+                                                                                <img src='/assets/images/product-categories/alcohol.webp'/>
                                                                                 <p>Alcohol</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/bundles.webp'/>
-                                                                                <p>Bundles</p>
+                                                                                <img src='/assets/images/product-categories/pets.webp'/>
+                                                                                <p>Pets</p>
                                                                             </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
+                                                                                <img onClick={() => this.nextJipangeSettingsProductList(4)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                            </div>
+                                                                        </>
+                                                                    }
+                                                                    {this.state.showJipangeProductsList5 && 
+                                                                        <>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-prev-category'>
+                                                                                <img onClick={() => this.prevJipangeSettingsProductList(4)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/decor-flowers.webp'/>
+                                                                                <p>Decor & Flowers</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/services.webp'/>
+                                                                                <p>Services</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/shopping-bags.webp'/>
+                                                                                <p>Shopping Bags</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/kids-toys.webp'/>
+                                                                                <p>Kids & Toys</p>
+                                                                            </div>
+                                                                            {/* <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/kids-toys.webp'/>
+                                                                                <p></p>
+                                                                            </div> */}
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
                                                                                 <img onClick={() => this.nextJipangeSettingsProductList(4)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
                                                                             </div>
