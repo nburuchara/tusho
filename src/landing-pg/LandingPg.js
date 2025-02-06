@@ -4250,8 +4250,8 @@ export default class LandingPg extends Component {
                                                                                 <p>Stationary</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/beverages.webp'/>
-                                                                                <p>Beverages</p>
+                                                                                <img src='/assets/images/product-categories/beauty.png'/>
+                                                                                <p>Beauty</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/snacks.webp'/>
