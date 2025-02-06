@@ -2299,6 +2299,7 @@ const Styles = styled.div `
     width: 93.5%;
     // border: 1px solid black;
     height: 100%;
+    overflow: hidden;
 }
 
 .jipange-settings-selected-date-screen-header {
@@ -3119,17 +3120,16 @@ export default class LandingPg extends Component {
             setTimeout(() => {
                 this.setState({
                     [`showJipangeProductsList${currList}`]: false,
-                    transitionJipangeSettingsProductList: false,
-                    transitionHelperJipangeSettingsProductList: true
-                    
+                    transitionHelperJipangeSettingsProductList: false,
+                    transitionJipangeSettingsProductList: true,
                 })
-            }, 350)
+            }, 500)
             setTimeout(() => {
                 this.setState({
                     [`showJipangeProductsList${currList-1}`]: true,
-                    transitionHelperJipangeSettingsProductList: false
+                    transitionJipangeSettingsProductList: false,
                 })
-            }, 35)
+            }, 800)
         })
     }
 
