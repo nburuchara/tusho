@@ -4198,15 +4198,45 @@ export default class LandingPg extends Component {
                                                                                 <p>Cond. & Spices</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/home-cleaning.png'/>
+                                                                                <img src='/assets/images/product-categories/home-cleaning.webp'/>
                                                                                 <p>Home & Cleaning</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/oil.webp'/>
-                                                                                <p>Food Cupboard</p>
+                                                                                <img src='/assets/images/product-categories/bulk-buy.webp'/>
+                                                                                <p>Bulk Buy</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
-                                                                                <img src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                                <img onClick={() => this.nextJipangeSettingsProductList(2)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                            </div>
+                                                                        </>
+                                                                    }
+                                                                    {this.state.showJipangeProductsList3 && 
+                                                                        <>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-prev-category'>
+                                                                                <img onClick={() => this.prevJipangeSettingsProductList(3)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/baby.webp'/>
+                                                                                <p>Baby Care</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/easy-prep.webp'/>
+                                                                                <p>Easy Prep</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/cond-spices.webp'/>
+                                                                                <p>Cond. & Spices</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/home-cleaning.webp'/>
+                                                                                <p>Home & Cleaning</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                <img src='/assets/images/product-categories/bulk-buy.webp'/>
+                                                                                <p>Bulk Buy</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
+                                                                                <img onClick={() => this.nextJipangeSettingsProductList(3)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
                                                                             </div>
                                                                         </>
                                                                     }
