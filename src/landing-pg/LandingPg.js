@@ -4273,14 +4273,14 @@ export default class LandingPg extends Component {
                                                                     {this.state.showJipangeProductsList5 && 
                                                                         <>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-prev-category'>
-                                                                                <img onClick={() => this.prevJipangeSettingsProductList(4)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                                <img onClick={() => this.prevJipangeSettingsProductList(5)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/decor-flowers.webp'/>
                                                                                 <p>Decor & Flowers</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/services.webp'/>
+                                                                                <img src='/assets/images/product-categories/services2.webp'/>
                                                                                 <p>Services</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
@@ -4288,16 +4288,16 @@ export default class LandingPg extends Component {
                                                                                 <p>Shopping Bags</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/kids-toys.webp'/>
+                                                                                <img src='/assets/images/product-categories/kids-toys.png'/>
                                                                                 <p>Kids & Toys</p>
                                                                             </div>
                                                                             {/* <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/kids-toys.webp'/>
                                                                                 <p></p>
                                                                             </div> */}
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
+                                                                            {/* <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
                                                                                 <img onClick={() => this.nextJipangeSettingsProductList(4)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
-                                                                            </div>
+                                                                            </div> */}
                                                                         </>
                                                                     }
                                                                 </div>
