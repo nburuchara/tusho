@@ -4186,12 +4186,12 @@ export default class LandingPg extends Component {
                                                                                 <img onClick={() => this.prevJipangeSettingsProductList(2)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/fruits-and-veg.webp'/>
-                                                                                <p>Fruit & Veg</p>
+                                                                                <img src='/assets/images/product-categories/baby.webp'/>
+                                                                                <p>Baby Care</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/organic.webp'/>
-                                                                                <p>Organic</p>
+                                                                                <p>Easy Prep</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/meat.webp'/>
