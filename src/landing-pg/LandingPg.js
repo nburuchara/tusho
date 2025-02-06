@@ -4216,20 +4216,20 @@ export default class LandingPg extends Component {
                                                                                 <img onClick={() => this.prevJipangeSettingsProductList(3)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/baby.webp'/>
-                                                                                <p>Baby Care</p>
+                                                                                <img src='/assets/images/product-categories/personal-care.webp'/>
+                                                                                <p>Personal Care</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/easy-prep.webp'/>
-                                                                                <p>Easy Prep</p>
+                                                                                <img src='/assets/images/product-categories/beverages.webp'/>
+                                                                                <p>Beverages</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/cond-spices.webp'/>
-                                                                                <p>Cond. & Spices</p>
+                                                                                <img src='/assets/images/product-categories/snacks.webp'/>
+                                                                                <p>Snacks</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/home-cleaning.webp'/>
-                                                                                <p>Home & Cleaning</p>
+                                                                                <img src='/assets/images/product-categories/bakery.webp'/>
+                                                                                <p>Bakery</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/bulk-buy.webp'/>
