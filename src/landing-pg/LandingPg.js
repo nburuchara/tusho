@@ -2367,7 +2367,7 @@ const Styles = styled.div `
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 65%;
+    height: 63.5%;
     display: flex;
     flex-direction: row;
     // border: 1px solid black;
@@ -2395,7 +2395,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-category img {
-    width: 45.5px;
+    width: 42.5px;
     position: absolute;
     top: 2.5px;
     right: 2%;
@@ -2488,7 +2488,7 @@ const Styles = styled.div `
     color: white;
     font-weight: bold;
     border-radius: 5px;
-    padding: 3.5%;
+    padding: 2.5%;
     cursor: pointer;
     font-size: 100%;
 }
@@ -4381,7 +4381,7 @@ export default class LandingPg extends Component {
                                                                 <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-                                                                            <img src='/assets/images/products/bananas.webp'/>
+                                                                            <img src='/assets/images/products/bananas-product.webp'/>
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
@@ -4394,30 +4394,71 @@ export default class LandingPg extends Component {
 
                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-
+                                                                            <img src='/assets/images/products/oranges-product.webp'/>
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
-
+                                                                            <div    className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                <button>+</button>
+                                                                            </div>
+                                                                            <h5>Ksh 165</h5>
+                                                                            <p>Tushop Fresh Imported Oranges</p>
                                                                         </div>
                                                                     </div>
 
                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-
+                                                                            <img src='/assets/images/products/watermelon-product.webp'/>
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
-
+                                                                            <div    className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                <button>+</button>
+                                                                            </div>
+                                                                            <h5>Ksh 369</h5>
+                                                                            <p>Tushop Fresh Local Watermelon</p>
                                                                         </div>
                                                                     </div>
 
                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-
+                                                                            <img src='/assets/images/products/tomatoes-product.webp'/>
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
-
+                                                                            <div    className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                <button>+</button>
+                                                                            </div>
+                                                                            <h5>Ksh 85</h5>
+                                                                            <p>Tushop Fresh Mixed Size Tomatoes</p>
                                                                         </div>
                                                                     </div>
+                                                                </div>
+                                                                <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                            <img src='/assets/images/products/onions-product.webp'/>
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                <button>+</button>
+                                                                            </div>
+                                                                            <h5>Ksh 98</h5>
+                                                                            <p>Tushop Fresh Red Onions</p>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    {/* <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                            <img src='/assets/images/products/oranges-product.webp'/>
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                            <div    className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                <button>+</button>
+                                                                            </div>
+                                                                            <h5>Ksh 165</h5>
+                                                                            <p>Tushop Fresh Imported Oranges</p>
+                                                                        </div>
+                                                                    </div> */}
+
+                                                                   
                                                                 </div>
                                                             </div>
                                                         </div>
