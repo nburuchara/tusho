@@ -2441,7 +2441,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-body-inner-body-product-row {
-    height: 8.5rem;
+    height: auto;
     // border: 1px solid black;
     width: 100%;
     margin-top: 0.5rem;
@@ -2489,12 +2489,26 @@ const Styles = styled.div `
     font-weight: bold;
     border-radius: 5px;
     padding: 3.5%;
+    cursor: pointer;
+    font-size: 100%;
+}
+
+
+
+.jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text h5 {
+    font-size: 80%;
+    font-family: poppins;
+    margin-top: 3px;
+    margin-bottom: 0px;
 }
 
 .jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text p {
-    font-size: 65%;
-    margin-top: 5px;
+    font-size: 66.5%;
+    margin-top: 0px;
     margin-bottom: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    color: #000;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -4373,6 +4387,7 @@ export default class LandingPg extends Component {
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
                                                                                 <button>+</button>
                                                                             </div>
+                                                                            <h5>Ksh 250</h5>
                                                                             <p>Tushop Fresh Ripe Bananas</p>
                                                                         </div>
                                                                     </div>
