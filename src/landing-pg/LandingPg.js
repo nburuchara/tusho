@@ -2307,18 +2307,18 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-header {
     height: 9rem;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .jipange-settings-selected-date-screen-body {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 28.5rem;
     display: flex;
     flex-direction: column;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 7.125rem;
     position: relative;
     display: flex;
@@ -2337,7 +2337,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-header-search-bar-icon {
     width: 7.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2349,7 +2349,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-header-search-bar {
     width: 92.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     overflow: hidden;
 }
 
@@ -2370,7 +2370,7 @@ const Styles = styled.div `
     height: 65%;
     display: flex;
     flex-direction: row;
-    border: 1px solid black;
+    // border: 1px solid black;
     transform: translateX(0);
     transition-property: transform;
 }
@@ -2435,8 +2435,52 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-body-inner-body {
-    border: 1px solid black;
+    // border: 1px solid black;
     flex-grow: 1;
+    overflow: auto;
+}
+
+.jipange-settings-selected-date-screen-body-inner-body-product-row {
+    height: 8.5rem;
+    // border: 1px solid black;
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jipange-settings-selected-date-screen-body-inner-body-product-row-cell {
+    height: 100%;
+    border: 1px solid black;
+    width: 22.5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic {
+    height: 4.25rem;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic img {
+    width: 80%;
+}
+
+.jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text {
+    flex-grow: 1;
+    // border: 1px solid black;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
+.jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text p {
+    font-size: 65%;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -4291,7 +4335,7 @@ export default class LandingPg extends Component {
                                                                                 <p>Shopping Bags</p>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/kids-toys.png'/>
+                                                                                <img src='/assets/images/product-categories/kids-toys.webp'/>
                                                                                 <p>Kids & Toys</p>
                                                                             </div>
                                                                             {/* <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
@@ -4306,7 +4350,43 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                             </div>
                                                             <div className='jipange-settings-selected-date-screen-body-inner-body'>
+                                                                <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                            <img src='/assets/images/products/bananas.webp'/>
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                            <p>Tushop Fresh Ripe Bananas</p>
+                                                                        </div>
+                                                                    </div>
 
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
