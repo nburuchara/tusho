@@ -2460,7 +2460,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic {
     height: 4.25rem;
-    // border: 1px solid black;
+    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2472,7 +2472,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text {
     flex-grow: 1;
-    // border: 1px solid black;
+    border: 1px solid black;
     padding-left: 2.5%;
     padding-right: 2.5%;
 }
@@ -4356,6 +4356,7 @@ export default class LandingPg extends Component {
                                                                             <img src='/assets/images/products/bananas.webp'/>
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                            <button>+</button>
                                                                             <p>Tushop Fresh Ripe Bananas</p>
                                                                         </div>
                                                                     </div>
