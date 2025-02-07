@@ -2493,7 +2493,55 @@ const Styles = styled.div `
     font-size: 100%;
 }
 
+.jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart {
+    display: flex;
+    justify-content: space-between;
+    height: 1.55rem;
+    border-radius: 8px;
+}
 
+.jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up {
+    width: 28%;
+    // border: 1px solid black;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    background-color: #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 90%;
+    border-top: 1px solid #ff5733;
+    border-bottom: 1px solid #ff5733;
+    border-bottom: 1px solid #ff5733;
+    padding-bottom: 2.5%;
+    cursor: pointer;
+}
+
+.jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count {
+    width: 44%;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down {
+    width: 28%;
+    // border: 1px solid black;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    background-color: #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 90%;
+    border-top: 1px solid #ff5733;
+    border-bottom: 1px solid #ff5733;
+    padding-bottom: 2.5%;
+    cursor: pointer;
+}
 
 .jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text h5 {
     font-size: 80%;
@@ -2626,6 +2674,8 @@ export default class LandingPg extends Component {
             selectedDates: new Set(), // Store the selected dates as a set of 'YYYY-MM-DD' strings
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
+            product1Cat1CartBtn: false,
+            product1Cat1AdjustCartBtn: true,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -4385,7 +4435,16 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
-                                                                                <button>+</button>
+                                                                                {this.state.product1Cat1CartBtn && <button>+</button> }
+                                                                                {this.state.product1Cat1AdjustCartBtn && 
+                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
+
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                    </div> 
+                                                                                }
                                                                             </div>
                                                                             <h5>Ksh 250</h5>
                                                                             <p>Tushop Fresh Ripe Bananas</p>
