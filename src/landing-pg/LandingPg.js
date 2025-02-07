@@ -2523,6 +2523,11 @@ const Styles = styled.div `
     width: 44%;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 85%;
+    font-family: poppins;
 }
 
 .jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down {
@@ -2676,6 +2681,7 @@ export default class LandingPg extends Component {
             currentYear: new Date().getFullYear(),
             product1Cat1CartBtn: false,
             product1Cat1AdjustCartBtn: true,
+            product1Cat1CountBtn: 0,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -4440,7 +4446,7 @@ export default class LandingPg extends Component {
                                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
                                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
                                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
-
+                                                                                            {this.state.product1Cat1CountBtn}
                                                                                         </div>
                                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
                                                                                     </div> 
