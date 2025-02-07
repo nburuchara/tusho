@@ -2554,7 +2554,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text h5 {
-    font-size: 80%;
+    font-size: 75%;
     font-family: poppins;
     margin-top: 3px;
     margin-bottom: 0px;
@@ -2567,6 +2567,14 @@ const Styles = styled.div `
     margin-left: 0px;
     margin-right: 0px;
     color: #000;
+}
+
+.jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-price-details p {
+    color: #5e626a;
+    font-size: 55%;
+    text-decoration: line-through;
+    margin-top: 0.35rem;
+    margin-bottom: 0px;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -4538,6 +4546,7 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-price-details'>
                                                                                 <h5>Ksh 369</h5>
+                                                                                <p>Kshs 399</p>
                                                                             </div>
                                                                             <p>Tushop Fresh Local Watermelon</p>
                                                                         </div>
