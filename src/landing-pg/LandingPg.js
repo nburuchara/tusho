@@ -2679,8 +2679,8 @@ export default class LandingPg extends Component {
             selectedDates: new Set(), // Store the selected dates as a set of 'YYYY-MM-DD' strings
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
-            jipangeProduct1Cat1CartBtn: false,
-            jipangeProduct1Cat1AdjustCartBtn: true,
+            jipangeProduct1Cat1CartBtn: true,
+            jipangeProduct1Cat1AdjustCartBtn: false,
             jipangeProduct1Cat1CountBtn: 0,
 
             //* - SEARCH BAR COMPONENTS - *//
@@ -3268,26 +3268,24 @@ export default class LandingPg extends Component {
         if (itemQty === 0) {
             this.setState({
                 [`jipangeProduct${productNo}Cat${CatNo}CartBtn`]: false,
-                [`jipangeProduct${productNo}Cat${CatNo}AdjustCartBtn`]: true
+                [`jipangeProduct${productNo}Cat${CatNo}AdjustCartBtn`]: true,
             })
-        } else {
-            this.setState((prevState) => ({
-                [`jipangeProduct${productNo}Cat${CatNo}CountBtn`]: prevState[`jipangeProduct${productNo}Cat${CatNo}CountBtn`] + 1,
-            }));
-        }
+        } 
+        this.setState((prevState) => ({
+            [`jipangeProduct${productNo}Cat${CatNo}CountBtn`]: prevState[`jipangeProduct${productNo}Cat${CatNo}CountBtn`] + 1,
+        }));
     }
 
     jipangeItemQtyDecrease = (productNo, CatNo, itemQty) => {
-        if (itemQty >= 2) {
-            this.setState((prevState) => ({
-                [`jipangeProduct${productNo}Cat${CatNo}CountBtn`]: prevState[`jipangeProduct${productNo}Cat${CatNo}CountBtn`] - 1,
-            }));
-        } else if (itemQty === 1) {
+        if (itemQty === 1) {
             this.setState({
                 [`jipangeProduct${productNo}Cat${CatNo}CartBtn`]: true,
                 [`jipangeProduct${productNo}Cat${CatNo}AdjustCartBtn`]: false
             })
         }
+        this.setState((prevState) => ({
+            [`jipangeProduct${productNo}Cat${CatNo}CountBtn`]: prevState[`jipangeProduct${productNo}Cat${CatNo}CountBtn`] - 1,
+        }));
     }
 
     render () {
@@ -4467,7 +4465,7 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
-                                                                                {this.state.jipangeProduct1Cat1CartBtn && <button>+</button> }
+                                                                                {this.state.jipangeProduct1Cat1CartBtn && <button onClick={() => this.jipangeItemQtyIncrease(1, 1, this.state.jipangeProduct1Cat1CountBtn)}>+</button> }
                                                                                 {this.state.jipangeProduct1Cat1AdjustCartBtn && 
                                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
                                                                                         <div
