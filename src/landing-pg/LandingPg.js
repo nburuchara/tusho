@@ -2452,7 +2452,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-body-product-row-cell {
     height: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 22.5%;
     display: flex;
     flex-direction: column;
@@ -2460,7 +2460,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic {
     height: 4.25rem;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2472,9 +2472,23 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text {
     flex-grow: 1;
-    border: 1px solid black;
+    // border: 1px solid black;
     padding-left: 2.5%;
     padding-right: 2.5%;
+}
+
+.jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn {
+    // text-align: right;
+}
+
+.jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text button {
+    width: 100%;
+    border: 1px solid #ff5733;
+    background-color: #ff5733;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 3.5%;
 }
 
 .jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text p {
@@ -4356,7 +4370,9 @@ export default class LandingPg extends Component {
                                                                             <img src='/assets/images/products/bananas.webp'/>
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
-                                                                            <button>+</button>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                <button>+</button>
+                                                                            </div>
                                                                             <p>Tushop Fresh Ripe Bananas</p>
                                                                         </div>
                                                                     </div>
