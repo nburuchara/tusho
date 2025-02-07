@@ -2679,9 +2679,9 @@ export default class LandingPg extends Component {
             selectedDates: new Set(), // Store the selected dates as a set of 'YYYY-MM-DD' strings
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
-            product1Cat1CartBtn: false,
-            product1Cat1AdjustCartBtn: true,
-            product1Cat1CountBtn: 0,
+            jipangeProduct1Cat1CartBtn: false,
+            jipangeProduct1Cat1AdjustCartBtn: true,
+            jipangeProduct1Cat1CountBtn: 0,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -3265,11 +3265,29 @@ export default class LandingPg extends Component {
     }
 
     jipangeItemQtyIncrease = (productNo, CatNo, itemQty) => {
-
+        if (itemQty === 0) {
+            this.setState({
+                [`jipangeProduct${productNo}Cat${CatNo}CartBtn`]: false,
+                [`jipangeProduct${productNo}Cat${CatNo}AdjustCartBtn`]: true
+            })
+        } else {
+            this.setState((prevState) => ({
+                [`jipangeProduct${productNo}Cat${CatNo}CountBtn`]: prevState[`jipangeProduct${productNo}Cat${CatNo}CountBtn`] + 1,
+            }));
+        }
     }
 
-    jipangeItemQtyIncrease = (productNo, CatNo, itemQty) => {
-
+    jipangeItemQtyDecrease = (productNo, CatNo, itemQty) => {
+        if (itemQty >= 2) {
+            this.setState((prevState) => ({
+                [`jipangeProduct${productNo}Cat${CatNo}CountBtn`]: prevState[`jipangeProduct${productNo}Cat${CatNo}CountBtn`] - 1,
+            }));
+        } else if (itemQty === 1) {
+            this.setState({
+                [`jipangeProduct${productNo}Cat${CatNo}CartBtn`]: true,
+                [`jipangeProduct${productNo}Cat${CatNo}AdjustCartBtn`]: false
+            })
+        }
     }
 
     render () {
@@ -4449,17 +4467,17 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
-                                                                                {this.state.product1Cat1CartBtn && <button>+</button> }
-                                                                                {this.state.product1Cat1AdjustCartBtn && 
+                                                                                {this.state.jipangeProduct1Cat1CartBtn && <button>+</button> }
+                                                                                {this.state.jipangeProduct1Cat1AdjustCartBtn && 
                                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
                                                                                         <div
-                                                                                        onClick={() => this.jipangeItemQtyDecrease(1, 1, this.state.product1Cat1CountBtn)}
+                                                                                        onClick={() => this.jipangeItemQtyDecrease(1, 1, this.state.jipangeProduct1Cat1CountBtn)}
                                                                                         className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
                                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
-                                                                                            {this.state.product1Cat1CountBtn}
+                                                                                            {this.state.jipangeProduct1Cat1CountBtn}
                                                                                         </div>
                                                                                         <div
-                                                                                        onClick={() => this.jipangeItemQtyIncrease(1, 1, this.state.product1Cat1CountBtn)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                        onClick={() => this.jipangeItemQtyIncrease(1, 1, this.state.jipangeProduct1Cat1CountBtn)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
                                                                                     </div> 
                                                                                 }
                                                                             </div>
