@@ -2308,14 +2308,41 @@ const Styles = styled.div `
 // # # # JIPANGE SELECTED SCREEN HEADER
 
 .jipange-settings-selected-date-screen-header {
-    height: 9rem;
-    border: 1px solid black;
+    height: 8.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #ccc;
     // border-radius: 8px;
 }
 
-.jipange-settings-selected-date-screen-header-inner-header {
-    height: 1rem;
+.jipange-settings-selected-date-screen-header-inner-header-lining {
+    height: 2.5rem;
     border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-date {
+    width: 40%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-date h4 {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 2.5%;
+    font-family: inter;
+    // text-decoration: underline;
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-options {
+    width: 60%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: right;
 }
 
 // # # # JIPANGE SELECTED SCREEN BODY
@@ -2703,6 +2730,7 @@ export default class LandingPg extends Component {
             selectedDates: new Set(), // Store the selected dates as a set of 'YYYY-MM-DD' strings
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
+            selectedJipangeDate: 'Feb 8 2025',
             jipangeProduct1Cat1CountBtn: 0,
             jipangeProduct2Cat1CountBtn: 0,
             jipangeProduct3Cat1CountBtn: 0,
@@ -4321,8 +4349,13 @@ export default class LandingPg extends Component {
                                                 {this.state.showJipangeSettingsSelectedDate && 
                                                     <div className='jipange-settings-selected-date-screen'>
                                                         <div className='jipange-settings-selected-date-screen-header'>
-                                                            <div className='jipange-settings-selected-date-screen-header-inner-header'>
+                                                            <div className='jipange-settings-selected-date-screen-header-inner-header-lining'>
+                                                                <div className='jipange-settings-selected-date-screen-header-inner-header-lining-date'>
+                                                                    <h4>{this.state.selectedJipangeDate}</h4>
+                                                                </div>
+                                                                <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options'>
 
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div className='jipange-settings-selected-date-screen-body'>
