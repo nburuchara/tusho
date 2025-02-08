@@ -2305,10 +2305,20 @@ const Styles = styled.div `
     // overflow: hidden;
 }
 
+// # # # JIPANGE SELECTED SCREEN HEADER
+
 .jipange-settings-selected-date-screen-header {
     height: 9rem;
-    // border: 1px solid black;
+    border: 1px solid black;
+    // border-radius: 8px;
 }
+
+.jipange-settings-selected-date-screen-header-inner-header {
+    height: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+// # # # JIPANGE SELECTED SCREEN BODY
 
 .jipange-settings-selected-date-screen-body {
     // border: 1px solid black;
@@ -2468,6 +2478,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic img {
     width: 80%;
+    padding-bottom: 0.65rem;
 }
 
 .jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text {
@@ -4310,7 +4321,9 @@ export default class LandingPg extends Component {
                                                 {this.state.showJipangeSettingsSelectedDate && 
                                                     <div className='jipange-settings-selected-date-screen'>
                                                         <div className='jipange-settings-selected-date-screen-header'>
-                                                    
+                                                            <div className='jipange-settings-selected-date-screen-header-inner-header'>
+
+                                                            </div>
                                                         </div>
                                                         <div className='jipange-settings-selected-date-screen-body'>
                                                             <div className='jipange-settings-selected-date-screen-body-inner-header'>
