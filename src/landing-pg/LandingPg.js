@@ -2322,7 +2322,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-date {
-    width: 40%;
+    width: 60%;
     // border: 1px solid black;
     display: flex;
     align-items: center;
@@ -2338,11 +2338,65 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-options {
-    width: 60%;
+    width: 40%;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn {
+    width: 28%;
     // border: 1px solid black;
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: center;
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn p {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 71.5%;
+    display: flex;
+    color: #5e626a;
+    text-decoration: none;
+    transition-property: color;
+    cursor: pointer;
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn p:hover {
+    color: #ff5733;
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn p:hover span {
+    text-decoration: underline;
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn p:hover label {
+    transform: translateX(-5px);
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn label {
+    margin-right: 5%;
+    transform: translateX(0);
+    transition-property: transform;
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn span {
+    text-decoration: none;
+    transition-property: text-decoration;
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn {
+    width: 72%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn button {
+    width: 90%;
+    height: 85%;
 }
 
 // # # # JIPANGE SELECTED SCREEN BODY
@@ -2647,6 +2701,9 @@ const Styles = styled.div `
 .navbar-profile-account-popup-body-left-footer-sign-out-icon img,
 .navbar-profile-account-popup-body-left-footer-sign-out-label p,
 .jipange-settings-calendar-header img,
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn p,
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn label,
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn span,
 .jipange-settings-selected-date-square,
 .jipange-settings-selected-date-screen-body-inner-header-categories-carousel,
  {
@@ -4354,7 +4411,12 @@ export default class LandingPg extends Component {
                                                                     <h4>{this.state.selectedJipangeDate}</h4>
                                                                 </div>
                                                                 <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options'>
-
+                                                                    <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn'>
+                                                                        <p><label>←</label><span>Back</span></p>
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn'>
+                                                                        <button></button>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
