@@ -2391,12 +2391,22 @@ const Styles = styled.div `
     // border: 1px solid black;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn button {
     width: 90%;
-    height: 85%;
+    height: 80%;
+    font-family: inter;
+    font-size: 70%;
+    background-color: #faece9;
+    border: 1px solid #ff5733;
+    border-radius: 6px;
+    color: #ff5733;
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn label {
+
 }
 
 // # # # JIPANGE SELECTED SCREEN BODY
@@ -4415,7 +4425,9 @@ export default class LandingPg extends Component {
                                                                         <p><label>←</label><span>Back</span></p>
                                                                     </div>
                                                                     <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn'>
-                                                                        <button></button>
+                                                                        <button>
+                                                                            <span></span>Schedule Order
+                                                                        </button>
                                                                     </div>
                                                                 </div>
                                                             </div>
