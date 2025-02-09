@@ -4465,7 +4465,7 @@ export default class LandingPg extends Component {
                                                                 <div className={`jipange-settings-selected-date-screen-body-inner-header-categories-carousel ${this.state.transitionJipangeSettingsProductList ? 'next' : this.state.transitionHelperJipangeSettingsProductList ? 'transition' : ''}`}>
                                                                     {this.state.showJipangeProductsList1 && 
                                                                         <>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(234, 116, 3, 0.8) 30%, rgba(234, 116, 3, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/fruits-and-veg.webp'/>
                                                                                 <p>Fruit & Veg</p>
                                                                             </div>
