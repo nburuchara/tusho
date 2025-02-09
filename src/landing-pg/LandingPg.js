@@ -2552,6 +2552,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-body {
     border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     margin-top: 0.5rem;
     flex-grow: 1;
     overflow-y: auto;
@@ -4593,11 +4594,11 @@ export default class LandingPg extends Component {
                                                                                 <img src='/assets/images/product-categories/services2.webp'/>
                                                                                 <p>Services</p>
                                                                             </div>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(243, 143, 78, 0.8) 30%, rgba(243, 143, 78, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/shopping-bags.webp'/>
                                                                                 <p>Shopping Bags</p>
                                                                             </div>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(81, 181, 159, 0.8) 30%, rgba(81, 181, 159, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/kids-toys.webp'/>
                                                                                 <p>Kids & Toys</p>
                                                                             </div>
