@@ -4476,14 +4476,21 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                             </div>
                                                             <div className='jipange-settings-selected-date-screen-header-inner-body'>
-                                                                <div className='jipange-settings-selected-date-screen-header-inner-body-no-items'>
-                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-icon'>
-                                                                        <img src='/assets/icons/home-jipange/cart-no-items-icon2.png'/>
+                                                                {this.state.showJipangeSelectedDateEmptyCart && 
+                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-no-items'>
+                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-icon'>
+                                                                            <img src='/assets/icons/home-jipange/cart-no-items-icon2.png'/>
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-text'>
+                                                                            <p>Add items to your cart</p>
+                                                                        </div>
                                                                     </div>
-                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-text'>
-                                                                        <p>Add items to your cart</p>
+                                                                }
+                                                                {this.state.showJipangeSelectedDateCart && 
+                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-items'>
+
                                                                     </div>
-                                                                </div>
+                                                                }
                                                             </div>
                                                         </div>
                                                         <div className='jipange-settings-selected-date-screen-body'>
