@@ -4469,15 +4469,15 @@ export default class LandingPg extends Component {
                                                                                 <img src='/assets/images/product-categories/fruits-and-veg.webp'/>
                                                                                 <p>Fruit & Veg</p>
                                                                             </div>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(79, 138, 0, 0.8) 30%, rgba(79, 138, 0, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/organic.webp'/>
                                                                                 <p>Organic</p>
                                                                             </div>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(217, 71, 75, 0.8) 30%, rgba(217, 71, 75, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/meat.webp'/>
                                                                                 <p>Meat</p>
                                                                             </div>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(188, 213, 214, 0.8) 30%, rgba(188, 213, 214, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/milk.webp'/>
                                                                                 <p>Dairy</p>
                                                                             </div>
