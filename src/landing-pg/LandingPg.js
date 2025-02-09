@@ -2313,6 +2313,8 @@ const Styles = styled.div `
     border-bottom: 1px solid #ccc;
     // border-radius: 8px;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining {
@@ -2422,6 +2424,11 @@ const Styles = styled.div `
     // border: 1px solid black;
     // margin-right: 5%;
     margin-left: 1%;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body {
+    border: 1px solid black;
+    flex-grow: 1;
 }
 
 // # # # JIPANGE SELECTED SCREEN BODY
@@ -4449,8 +4456,10 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div className=''>
+                                                            <div className='jipange-settings-selected-date-screen-header-inner-body'>
+                                                                <div className=''>
 
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div className='jipange-settings-selected-date-screen-body'>
