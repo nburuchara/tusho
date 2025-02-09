@@ -2308,7 +2308,7 @@ const Styles = styled.div `
 // # # # JIPANGE SELECTED SCREEN HEADER
 
 .jipange-settings-selected-date-screen-header {
-    height: 8.5rem;
+    height: 9.5rem;
     margin-bottom: 0.5rem;
     border-bottom: 1px solid #ccc;
     // border-radius: 8px;
@@ -2407,6 +2407,7 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: space-between;
+    filter: grayscale(100);
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn img {
@@ -2427,7 +2428,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body {
     // border: 1px solid black;
-    height: 28.5rem;
+    height: 27.5rem;
     display: flex;
     flex-direction: column;
 }
@@ -2499,7 +2500,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-category {
-    width: 16.5%;
+    width: 16.25%;
     height: 92.5%;
     border: 0.05px solid #fff;
     position: relative;
@@ -2518,9 +2519,9 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-header-category p {
     position: absolute;
-    bottom: 1.15rem;
-    left: 5%;
-    font-size: 65%;
+    bottom: 1rem;
+    left: 2.5%;
+    font-size: 58.5%;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-prev-category {
@@ -2550,9 +2551,10 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-body-inner-body {
-    // border: 1px solid black;
+    border-top: 1px solid #ccc;
+    margin-top: 0.5rem;
     flex-grow: 1;
-    overflow: auto;
+    overflow-y: auto;
 }
 
 .jipange-settings-selected-date-screen-body-inner-body-product-row {
@@ -4446,6 +4448,9 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <div className=''>
+
+                                                            </div>
                                                         </div>
                                                         <div className='jipange-settings-selected-date-screen-body'>
                                                             <div className='jipange-settings-selected-date-screen-body-inner-header'>
@@ -4734,7 +4739,7 @@ export default class LandingPg extends Component {
                                                                                 }
                                                                             </div>
                                                                             <h5>Ksh 98</h5>
-                                                                            <p>Tushop Fresh Red Onions</p>
+                                                                            <p>Tushop Fresh Red Onions Fresh Red Onions</p>
                                                                         </div>
                                                                     </div>
 
