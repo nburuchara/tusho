@@ -2453,6 +2453,40 @@ const Styles = styled.div `
    font-size: 75%;
 }
 
+.jipange-settings-selected-date-screen-header-inner-body-items {
+    position: relative;
+    height: 100%;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-items-subtotal {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1.8rem;
+    border-top: 1px solid #ff5733;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-items-subtotal-label {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 50%;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-items-subtotal-label h4 {
+    font-family: inter;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 5%;
+    font-size: 80%;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-items-subtotal-value {
+
+}
+
 // # # # JIPANGE SELECTED SCREEN BODY
 
 .jipange-settings-selected-date-screen-body {
@@ -2846,6 +2880,8 @@ export default class LandingPg extends Component {
             jipangeProduct3Cat1CountBtn: 0,
             jipangeProduct4Cat1CountBtn: 0,
             jipangeProduct5Cat1CountBtn: 0,
+            showJipangeSelectedDateCart: true,
+            showJipangeSelectedDateEmptyCart: false,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -4488,8 +4524,15 @@ export default class LandingPg extends Component {
                                                                 }
                                                                 {this.state.showJipangeSelectedDateCart && 
                                                                     <div className='jipange-settings-selected-date-screen-header-inner-body-items'>
+                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal'>
+                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal-label'>
+                                                                                <h4>SUBTOTAL</h4>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal-value'>
 
-                                                                    </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>  
                                                                 }
                                                             </div>
                                                         </div>
