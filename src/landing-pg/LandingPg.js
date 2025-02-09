@@ -2310,7 +2310,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-header {
     height: 9.5rem;
     margin-bottom: 0.5rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ff5733;
     // border-radius: 8px;
     position: relative;
     display: flex;
@@ -2484,7 +2484,18 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-header-inner-body-items-subtotal-value {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 50%;
+}
 
+.jipange-settings-selected-date-screen-header-inner-body-items-subtotal-value h4 {
+    font-family: inter;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 2.5%;
+    font-size: 80%;
 }
 
 // # # # JIPANGE SELECTED SCREEN BODY
@@ -4529,7 +4540,7 @@ export default class LandingPg extends Component {
                                                                                 <h4>SUBTOTAL</h4>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal-value'>
-
+                                                                                <h4>Ksh 650.00</h4>
                                                                             </div>
                                                                         </div>
                                                                     </div>  
