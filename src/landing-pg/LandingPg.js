@@ -2427,8 +2427,30 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-header-inner-body {
-    border: 1px solid black;
+    // border: 1px solid black;
     flex-grow: 1;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-no-items-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-no-items-icon img {
+    width: 25px;
+    margin-top: 2rem;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-no-items-text {
+   text-align: center;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-no-items-text p {
+   margin-left: 0px;
+   margin-top: 5px;
+   margin-bottom: 0px;
+   font-size: 75%;
 }
 
 // # # # JIPANGE SELECTED SCREEN BODY
@@ -2631,16 +2653,14 @@ const Styles = styled.div `
     // border: 1px solid black;
     border-top-right-radius: 6px;
     border-bottom-right-radius: 6px;
-    background-color: #ff5733;
+    background-color: #faece9;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-weight: bold;
+    color: #ff5733;
+    // font-weight: bold;
     font-size: 90%;
-    border-top: 1px solid #ff5733;
-    border-bottom: 1px solid #ff5733;
-    border-bottom: 1px solid #ff5733;
+    border: 1px solid #ff5733;
     padding-bottom: 2.5%;
     cursor: pointer;
 }
@@ -2661,15 +2681,14 @@ const Styles = styled.div `
     // border: 1px solid black;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    background-color: #ff5733;
+    background-color: #faece9;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-weight: bold;
+    color: #ff5733;
+    // font-weight: bold;
     font-size: 90%;
-    border-top: 1px solid #ff5733;
-    border-bottom: 1px solid #ff5733;
+    border: 1px solid #ff5733;
     padding-bottom: 2.5%;
     cursor: pointer;
 }
@@ -4457,8 +4476,13 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                             </div>
                                                             <div className='jipange-settings-selected-date-screen-header-inner-body'>
-                                                                <div className=''>
-
+                                                                <div className='jipange-settings-selected-date-screen-header-inner-body-no-items'>
+                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-icon'>
+                                                                        <img src='/assets/icons/home-jipange/cart-no-items-icon2.png'/>
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-text'>
+                                                                        <p>Add items to your cart</p>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
