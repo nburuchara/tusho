@@ -4686,7 +4686,7 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-price-details'>
                                                                                 <h5>Ksh 369</h5>
-                                                                                <p>Kshs 399</p>
+                                                                                <p>Ksh 399</p>
                                                                             </div>
                                                                             <p>Tushop Fresh Local Watermelon</p>
                                                                         </div>
@@ -4739,7 +4739,7 @@ export default class LandingPg extends Component {
                                                                                 }
                                                                             </div>
                                                                             <h5>Ksh 98</h5>
-                                                                            <p>Tushop Fresh Red Onions Fresh Red Onions</p>
+                                                                            <p>Tushop Fresh Red Onions</p>
                                                                         </div>
                                                                     </div>
 
