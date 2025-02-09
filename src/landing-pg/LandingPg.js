@@ -4481,7 +4481,7 @@ export default class LandingPg extends Component {
                                                                                 <img src='/assets/images/product-categories/milk.webp'/>
                                                                                 <p>Dairy</p>
                                                                             </div>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(240, 227, 184, 0.8) 30%, rgba(240, 227, 184, 0) 70%)'}}  className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/oil.webp'/>
                                                                                 <p>Food Cupboard</p>
                                                                             </div>
@@ -4495,15 +4495,15 @@ export default class LandingPg extends Component {
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-prev-category'>
                                                                                 <img onClick={() => this.prevJipangeSettingsProductList(2)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
                                                                             </div>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(124, 207, 255, 0.8) 30%, rgba(124, 207, 255, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/baby.webp'/>
                                                                                 <p>Baby Care</p>
                                                                             </div>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(246, 199, 43, 0.8) 30%, rgba(246, 199, 43, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/easy-prep.webp'/>
                                                                                 <p>Easy Prep</p>
                                                                             </div>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(243, 143, 78, 0.8) 30%, rgba(243, 143, 78, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                 <img src='/assets/images/product-categories/cond-spices.webp'/>
                                                                                 <p>Cond. & Spices</p>
                                                                             </div>
