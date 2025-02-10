@@ -2453,9 +2453,51 @@ const Styles = styled.div `
    font-size: 75%;
 }
 
-.jipange-settings-selected-date-screen-header-inner-body-items {
-    position: relative;
-    height: 100%;
+
+
+.jipange-settings-selected-date-screen-header-inner-body-items-container {
+    width: 100%;
+    height: 5rem;
+    border: 1px solid black;
+    overflow-y: auto;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-items-list {
+    width: 100%;
+    // border: 1px solid black;
+    flex-grow: 1;
+    
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    // border: 1px solid black;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-item-name {
+    // width: 50%;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-item-name p {
+    margin-bottom: 0px;
+    margin-top: 8px;
+    margin-left: 1.5%;
+    font-size: 75%;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-item-qty {
+    width: 50%;
+    // border: 1px solid black;
+    text-align: right;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-item-qty p {
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-right: 1.5%;
+    margin-top: 8px;
 }
 
 .jipange-settings-selected-date-screen-header-inner-body-items-subtotal {
@@ -2918,6 +2960,16 @@ export default class LandingPg extends Component {
             verifyOTPBtnText: 'Verify OTP',
             OTPInputDisabled: false,
             transferToProfile: false,
+            jipangeProduct1Cat1: 'Tushop Fresh Ripe Bananas',
+            jipangeProduct1Cat1Qty: 0,
+            jipangeProduct2Cat1: 'Tushop Fresh Imported Oranges',
+            jipangeProduct2Cat1Qty: 0,
+            jipangeProduct3Cat1: 'Tushop Fresh Local Watermelon',
+            jipangeProduct3Cat1Qty: 0,
+            jipangeProduct4Cat1: 'Tushop Fresh Mixed Size Tomatoes',
+            jipangeProduct4Cat1Qty: 0,
+            jipangeProduct5Cat1: 'Tushop Fresh Red Onions',
+            jipangeProduct5Cat1Qty: 0,
 
             //* - HOME SCREEN ACCOUNT SETTINGS - *//    
             accountSettingsOpen: true,
@@ -4534,7 +4586,19 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 }
                                                                 {this.state.showJipangeSelectedDateCart && 
-                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-items'>
+                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-items-container'>
+                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-items-list'>
+                                                                            {this.state.jipangeProduct1Cat1Qty == 0 && 
+                                                                                <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                        <p>{this.state.jipangeProduct1Cat1}</p>
+                                                                                    </div>
+                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                        <p>{this.state.jipangeProduct1Cat1Qty}</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            }
+                                                                        </div>
                                                                         <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal'>
                                                                             <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal-label'>
                                                                                 <h4>SUBTOTAL</h4>
