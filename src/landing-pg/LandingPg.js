@@ -2420,6 +2420,7 @@ const Styles = styled.div `
     align-items: center;
     justify-content: space-between;
     filter: grayscale(100);
+    cursor: not-allowed;
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn.non-empty-cart button {
@@ -2435,6 +2436,7 @@ const Styles = styled.div `
     // align-items: center;
     // justify-content: space-between;
     filter: grayscale(0);
+
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn img {
@@ -2449,6 +2451,15 @@ const Styles = styled.div `
     // border: 1px solid black;
     // margin-right: 5%;
     margin-left: 1%;
+    cursor: not-allowed;
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn.non-empty-cart label {
+    width: 87.5%;
+    // border: 1px solid black;
+    // margin-right: 5%;
+    margin-left: 1%;
+    cursor: pointer;
 }
 
 .jipange-settings-selected-date-screen-header-inner-body {
@@ -3587,6 +3598,18 @@ export default class LandingPg extends Component {
         }));
     }
 
+    confirmJipangeOrder = () => {
+        this.setState({
+
+        }, () =>  {
+            setTimeout(() => {
+                this.setState({
+
+                })
+            })
+        })
+    }
+
     render () {
 
         const { searchBarIsClicked, searchInput, isSearchLoading, resultsFound, groupedOptions } = this.state;
@@ -4604,6 +4627,7 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                     <div className={`jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn ${this.state.jipangeSelectedDateTotal > 0 ? 'non-empty-cart' : ''}`}>
                                                                         <button
+                                                                        onClick={() => this.confirmJipangeOrder()}
                                                                         >
                                                                             <img src='/assets/icons/home-jipange/checkmark-icon.png'/>
                                                                             <label>Confirm Order</label>
