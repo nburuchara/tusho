@@ -2442,8 +2442,8 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn img {
     width: 13.5%;
     // border: 1px solid black;
-    margin-left: -1%;
-    // padding-top: 5%;
+    margin-left: 2%;
+    padding-top: 1%;
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn label {
@@ -2460,6 +2460,11 @@ const Styles = styled.div `
     // margin-right: 5%;
     margin-left: 1%;
     cursor: pointer;
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn-active {
+    margin: auto;
+    margin-top: 6px;
 }
 
 .jipange-settings-selected-date-screen-header-inner-body {
@@ -2962,6 +2967,8 @@ export default class LandingPg extends Component {
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             selectedJipangeDate: 'Feb 16 2025',
+            showConfirmJipangeOrderRest: false,
+            showConfirmJipangeOrderActive: true,
             jipangeProduct1Cat1CountBtn: 0,
             jipangeProduct2Cat1CountBtn: 0,
             jipangeProduct3Cat1CountBtn: 0,
@@ -3598,7 +3605,8 @@ export default class LandingPg extends Component {
         }));
     }
 
-    confirmJipangeOrder = () => {
+    confirmJipangeOrder = (basketQty) => {
+        if (basketQty > 0)
         this.setState({
 
         }, () =>  {
@@ -4627,10 +4635,32 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                     <div className={`jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn ${this.state.jipangeSelectedDateTotal > 0 ? 'non-empty-cart' : ''}`}>
                                                                         <button
-                                                                        onClick={() => this.confirmJipangeOrder()}
+                                                                        onClick={() => this.confirmJipangeOrder(this.state.jipangeSelectedDateTotal)}
                                                                         >
-                                                                            <img src='/assets/icons/home-jipange/checkmark-icon.png'/>
-                                                                            <label>Confirm Order</label>
+                                                                            {this.state.showConfirmJipangeOrderRest && 
+                                                                                <>
+                                                                                    <img src='/assets/icons/home-jipange/checkmark-icon.png'/>
+                                                                                    <label>Confirm Order</label>
+                                                                                </>
+                                                                            }
+                                                                            
+                                                                            {this.state.showConfirmJipangeOrderActive &&
+                                                                                <>
+                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn-active'>
+                                                                                        <RotatingLines
+                                                                                        visible={true}
+                                                                                        height="16.5"
+                                                                                        width="16.5"
+                                                                                        strokeColor="#FF5733"
+                                                                                        strokeWidth="3"
+                                                                                        animationDuration="0.75"
+                                                                                        ariaLabel="rotating-lines-loading"
+                                                                                        wrapperStyle={{}}
+                                                                                        wrapperClass=""
+                                                                                        />
+                                                                                    </div>
+                                                                                </>
+                                                                            }
                                                                         </button>
                                                                     </div>
                                                                 </div>
