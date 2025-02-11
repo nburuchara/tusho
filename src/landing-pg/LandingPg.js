@@ -2305,6 +2305,11 @@ const Styles = styled.div `
     // overflow: hidden;
 }
 
+.jipange-settings-selected-date-screen.loading {
+    pointer-events: none;
+    cursor: pointer;
+}
+
 // # # # JIPANGE SELECTED SCREEN HEADER
 
 .jipange-settings-selected-date-screen-header {
@@ -2424,19 +2429,12 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn.non-empty-cart button {
-    // width: 92.5%;
-    // height: 80%;
-    // font-family: inter;
-    // font-size: 75%;
-    // background-color: #faece9;
-    // border: 1px solid #ff5733;
-    // border-radius: 6px;
-    // color: #ff5733;
-    // display: flex;
-    // align-items: center;
-    // justify-content: space-between;
     filter: grayscale(0);
+}
 
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn.active button {
+    filter: grayscale(0);
+    pointer-events: none;
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn img {
@@ -2967,8 +2965,8 @@ export default class LandingPg extends Component {
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             selectedJipangeDate: 'Feb 16 2025',
-            showConfirmJipangeOrderRest: false,
-            showConfirmJipangeOrderActive: true,
+            showConfirmJipangeOrderRest: true,
+            showConfirmJipangeOrderActive: false,
             jipangeProduct1Cat1CountBtn: 0,
             jipangeProduct2Cat1CountBtn: 0,
             jipangeProduct3Cat1CountBtn: 0,
@@ -2976,6 +2974,7 @@ export default class LandingPg extends Component {
             jipangeProduct5Cat1CountBtn: 0,
             showJipangeSelectedDateCart: true,
             showJipangeSelectedDateEmptyCart: false,
+            confirmJipangeOrderClicked: false,
             jipangeSelectedDateTotal: 0,
             jipangeProduct1Cat1: 'Tushop Fresh Ripe Bananas',
             jipangeProduct1Cat1Qty: 0,
@@ -3608,13 +3607,17 @@ export default class LandingPg extends Component {
     confirmJipangeOrder = (basketQty) => {
         if (basketQty > 0)
         this.setState({
-
+            confirmJipangeOrderClicked: true,
+            showConfirmJipangeOrderActive: true,
+            showConfirmJipangeOrderRest: false
         }, () =>  {
             setTimeout(() => {
                 this.setState({
-
+                    confirmJipangeOrderClicked: false,
+                    showConfirmJipangeOrderActive: false,
+                    showConfirmJipangeOrderRest: true
                 })
-            })
+            }, 2500)
         })
     }
 
@@ -4551,7 +4554,7 @@ export default class LandingPg extends Component {
                                                 {this.state.showJipangeSettingsHome && 
                                                     <div className=''>
                                                         <p>Select the dates you want scheduled delivery:</p>
-                                                        <div className="jipange-settings-calendar-container">
+                                                        <div className={`jipange-settings-calendar-container ${this.state.confirmJipangeOrderClicked ? 'loading' : ''}`}>
                                                             <div className={`jipange-settings-calendar-header`}>
                                                                 <img 
                                                                 src='/assets/icons/home-profile/jipange-settings-prev-calendar-icon.png'
@@ -4623,430 +4626,438 @@ export default class LandingPg extends Component {
                                                     </div>
                                                 }
                                                 {this.state.showJipangeSettingsSelectedDate && 
-                                                    <div className='jipange-settings-selected-date-screen'>
-                                                        <div className={`jipange-settings-selected-date-screen-header ${this.state.jipangeSelectedDateTotal > 0 ? 'non-empty-cart' : ''}`}>
-                                                            <div className='jipange-settings-selected-date-screen-header-inner-header-lining'>
-                                                                <div className='jipange-settings-selected-date-screen-header-inner-header-lining-date'>
-                                                                    <label>Your order (delivery for):</label><h4>{this.state.selectedJipangeDate}</h4>
-                                                                </div>
-                                                                <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options'>
-                                                                    <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn'>
-                                                                        <p><label>←</label><span>Back</span></p>
+                                                    <div>
+                                                        {this.state.showJipangeSettingsSelectedDateEdit && 
+                                                            <div></div>
+                                                        }
+                                                        {this.state.showJipangeSettingsSelectedDateComplete && 
+                                                            <div></div>
+                                                        }
+                                                        <div className={`jipange-settings-selected-date-screen ${this.state.confirmJipangeOrderClicked ? 'loading' : ''}`}>
+                                                            <div className={`jipange-settings-selected-date-screen-header ${this.state.jipangeSelectedDateTotal > 0 ? 'non-empty-cart' : ''}`}>
+                                                                <div className='jipange-settings-selected-date-screen-header-inner-header-lining'>
+                                                                    <div className='jipange-settings-selected-date-screen-header-inner-header-lining-date'>
+                                                                        <label>Your order (delivery for):</label><h4>{this.state.selectedJipangeDate}</h4>
                                                                     </div>
-                                                                    <div className={`jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn ${this.state.jipangeSelectedDateTotal > 0 ? 'non-empty-cart' : ''}`}>
-                                                                        <button
-                                                                        onClick={() => this.confirmJipangeOrder(this.state.jipangeSelectedDateTotal)}
-                                                                        >
-                                                                            {this.state.showConfirmJipangeOrderRest && 
-                                                                                <>
-                                                                                    <img src='/assets/icons/home-jipange/checkmark-icon.png'/>
-                                                                                    <label>Confirm Order</label>
-                                                                                </>
-                                                                            }
-                                                                            
-                                                                            {this.state.showConfirmJipangeOrderActive &&
-                                                                                <>
-                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn-active'>
-                                                                                        <RotatingLines
-                                                                                        visible={true}
-                                                                                        height="16.5"
-                                                                                        width="16.5"
-                                                                                        strokeColor="#FF5733"
-                                                                                        strokeWidth="3"
-                                                                                        animationDuration="0.75"
-                                                                                        ariaLabel="rotating-lines-loading"
-                                                                                        wrapperStyle={{}}
-                                                                                        wrapperClass=""
-                                                                                        />
-                                                                                    </div>
-                                                                                </>
-                                                                            }
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div className='jipange-settings-selected-date-screen-header-inner-body'>
-                                                                {this.state.jipangeSelectedDateTotal <= 0 && 
-                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-no-items'>
-                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-icon'>
-                                                                            <img src='/assets/icons/home-jipange/cart-no-items-icon2.png'/>
+                                                                    <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options'>
+                                                                        <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn'>
+                                                                            <p><label>←</label><span>Back</span></p>
                                                                         </div>
-                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-text'>
-                                                                            <p>Add items to your cart</p>
+                                                                        <div className={`jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn ${this.state.jipangeSelectedDateTotal > 0 && !this.state.confirmJipangeOrderClicked ? 'non-empty-cart': ''}`}>
+                                                                            <button
+                                                                            onClick={() => this.confirmJipangeOrder(this.state.jipangeSelectedDateTotal)}
+                                                                            >
+                                                                                {this.state.showConfirmJipangeOrderRest && 
+                                                                                    <>
+                                                                                        <img src='/assets/icons/home-jipange/checkmark-icon.png'/>
+                                                                                        <label>Confirm Order</label>
+                                                                                    </>
+                                                                                }
+                                                                                
+                                                                                {this.state.showConfirmJipangeOrderActive &&
+                                                                                    <>
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn-active'>
+                                                                                            <RotatingLines
+                                                                                            visible={true}
+                                                                                            height="16.5"
+                                                                                            width="16.5"
+                                                                                            strokeColor="#FF5733"
+                                                                                            strokeWidth="3"
+                                                                                            animationDuration="0.75"
+                                                                                            ariaLabel="rotating-lines-loading"
+                                                                                            wrapperStyle={{}}
+                                                                                            wrapperClass=""
+                                                                                            />
+                                                                                        </div>
+                                                                                    </>
+                                                                                }
+                                                                            </button>
                                                                         </div>
-                                                                    </div>
-                                                                }
-                                                                {this.state.jipangeSelectedDateTotal > 0 && 
-                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-items-container'>
-                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-items-list'>
-                                                                            {this.state.jipangeProduct1Cat1Qty !== 0 && 
-                                                                                <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
-                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
-                                                                                        <p>{this.state.jipangeProduct1Cat1} <label>({this.state.jipangeProduct1Cat1Qty})</label></p>
-                                                                                    </div>
-                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
-                                                                                        <p>{this.state.jipangeProduct1Cat1Price}</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            }
-                                                                            {this.state.jipangeProduct2Cat1Qty !== 0 && 
-                                                                                <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
-                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
-                                                                                        <p>{this.state.jipangeProduct2Cat1} <label>({this.state.jipangeProduct2Cat1Qty})</label></p>
-                                                                                    </div>
-                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
-                                                                                        <p>{this.state.jipangeProduct2Cat1Price}</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            }
-                                                                            {this.state.jipangeProduct3Cat1Qty !== 0 && 
-                                                                                <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
-                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
-                                                                                        <p>{this.state.jipangeProduct3Cat1} <label>({this.state.jipangeProduct3Cat1Qty})</label></p>
-                                                                                    </div>
-                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
-                                                                                        <p>{this.state.jipangeProduct3Cat1Price}</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            }
-                                                                            {this.state.jipangeProduct4Cat1Qty !== 0 && 
-                                                                                <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
-                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
-                                                                                        <p>{this.state.jipangeProduct4Cat1} <label>({this.state.jipangeProduct4Cat1Qty})</label></p>
-                                                                                    </div>
-                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
-                                                                                        <p>{this.state.jipangeProduct4Cat1Price}</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            }
-                                                                            {this.state.jipangeProduct5Cat1Qty !== 0 && 
-                                                                                <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
-                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
-                                                                                        <p>{this.state.jipangeProduct5Cat1} <label>({this.state.jipangeProduct5Cat1Qty})</label></p>
-                                                                                    </div>
-                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
-                                                                                        <p>{this.state.jipangeProduct5Cat1Price}</p>
-                                                                                    </div>
-                                                                                </div>
-                                                                            }
-                                                                        </div>
-                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal'>
-                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal-label'>
-                                                                                <h4>SUBTOTAL</h4>
-                                                                            </div>
-                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal-value'>
-                                                                                <h4>Ksh {this.state.jipangeSelectedDateTotal}.00</h4>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>  
-                                                                }
-                                                            </div>
-                                                        </div>
-                                                        <div className='jipange-settings-selected-date-screen-body'>
-                                                            <div className='jipange-settings-selected-date-screen-body-inner-header'>
-                                                                <div className='jipange-settings-selected-date-screen-body-inner-header-search-container'>
-                                                                    <div className='jipange-settings-selected-date-screen-body-inner-header-search-bar-icon'>
-                                                                        <img src='/assets/icons/navbar/search-icon.png'/>
-                                                                    </div>
-                                                                    <div className='jipange-settings-selected-date-screen-body-inner-header-search-bar'>
-                                                                        <input/>
                                                                     </div>
                                                                 </div>
-                                                                <div className={`jipange-settings-selected-date-screen-body-inner-header-categories-carousel ${this.state.transitionJipangeSettingsProductList ? 'next' : this.state.transitionHelperJipangeSettingsProductList ? 'transition' : ''}`}>
-                                                                    {this.state.showJipangeProductsList1 && 
-                                                                        <>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(234, 116, 3, 0.8) 30%, rgba(234, 116, 3, 0) 70%)', border: '1.5px solid #FF5733'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/fruits-and-veg.webp'/>
-                                                                                <p>Fruit & Veg</p>
+                                                                <div className='jipange-settings-selected-date-screen-header-inner-body'>
+                                                                    {this.state.jipangeSelectedDateTotal <= 0 && 
+                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-no-items'>
+                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-icon'>
+                                                                                <img src='/assets/icons/home-jipange/cart-no-items-icon2.png'/>
                                                                             </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(79, 138, 0, 0.8) 30%, rgba(79, 138, 0, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/organic.webp'/>
-                                                                                <p>Organic</p>
+                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-text'>
+                                                                                <p>Add items to your cart</p>
                                                                             </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(217, 71, 75, 0.8) 30%, rgba(217, 71, 75, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/meat.webp'/>
-                                                                                <p>Meat</p>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(188, 213, 214, 0.8) 30%, rgba(188, 213, 214, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/milk.webp'/>
-                                                                                <p>Dairy</p>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(240, 227, 184, 0.8) 30%, rgba(240, 227, 184, 0) 70%)'}}  className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/oil.webp'/>
-                                                                                <p>Food Cupboard</p>
-                                                                            </div>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
-                                                                                <img onClick={() => this.nextJipangeSettingsProductList(1)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
-                                                                            </div>
-                                                                        </>
+                                                                        </div>
                                                                     }
-                                                                    {this.state.showJipangeProductsList2 && 
-                                                                        <>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-prev-category'>
-                                                                                <img onClick={() => this.prevJipangeSettingsProductList(2)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                    {this.state.jipangeSelectedDateTotal > 0 && 
+                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-items-container'>
+                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-items-list'>
+                                                                                {this.state.jipangeProduct1Cat1Qty !== 0 && 
+                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                            <p>{this.state.jipangeProduct1Cat1} <label>({this.state.jipangeProduct1Cat1Qty})</label></p>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                            <p>{this.state.jipangeProduct1Cat1Price}</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                }
+                                                                                {this.state.jipangeProduct2Cat1Qty !== 0 && 
+                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                            <p>{this.state.jipangeProduct2Cat1} <label>({this.state.jipangeProduct2Cat1Qty})</label></p>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                            <p>{this.state.jipangeProduct2Cat1Price}</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                }
+                                                                                {this.state.jipangeProduct3Cat1Qty !== 0 && 
+                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                            <p>{this.state.jipangeProduct3Cat1} <label>({this.state.jipangeProduct3Cat1Qty})</label></p>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                            <p>{this.state.jipangeProduct3Cat1Price}</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                }
+                                                                                {this.state.jipangeProduct4Cat1Qty !== 0 && 
+                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                            <p>{this.state.jipangeProduct4Cat1} <label>({this.state.jipangeProduct4Cat1Qty})</label></p>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                            <p>{this.state.jipangeProduct4Cat1Price}</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                }
+                                                                                {this.state.jipangeProduct5Cat1Qty !== 0 && 
+                                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                            <p>{this.state.jipangeProduct5Cat1} <label>({this.state.jipangeProduct5Cat1Qty})</label></p>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                            <p>{this.state.jipangeProduct5Cat1Price}</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                }
                                                                             </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(124, 207, 255, 0.8) 30%, rgba(124, 207, 255, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/baby.webp'/>
-                                                                                <p>Baby Care</p>
+                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal'>
+                                                                                <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal-label'>
+                                                                                    <h4>SUBTOTAL</h4>
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal-value'>
+                                                                                    <h4>Ksh {this.state.jipangeSelectedDateTotal}.00</h4>
+                                                                                </div>
                                                                             </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(246, 199, 43, 0.8) 30%, rgba(246, 199, 43, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/easy-prep.webp'/>
-                                                                                <p>Easy Prep</p>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(243, 143, 78, 0.8) 30%, rgba(243, 143, 78, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/cond-spices.webp'/>
-                                                                                <p>Cond. & Spices</p>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(73, 203, 171, 0.8) 30%, rgba(73, 203, 171, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/home-cleaning.webp'/>
-                                                                                <p>Home & Cleaning</p>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(253, 233, 203, 0.8) 30%, rgba(253, 233, 203, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/bulk-buy.webp'/>
-                                                                                <p>Bulk Buy</p>
-                                                                            </div>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
-                                                                                <img onClick={() => this.nextJipangeSettingsProductList(2)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
-                                                                            </div>
-                                                                        </>
-                                                                    }
-                                                                    {this.state.showJipangeProductsList3 && 
-                                                                        <>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-prev-category'>
-                                                                                <img onClick={() => this.prevJipangeSettingsProductList(3)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(244, 140, 189, 0.8) 30%, rgba(244, 140, 189, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/personal-care.webp'/>
-                                                                                <p>Personal Care</p>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(225, 93, 102, 0.8) 30%, rgba(225, 93, 102, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/beverages.webp'/>
-                                                                                <p>Beverages</p>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(254, 198, 0, 0.8) 30%, rgba(254, 198, 0, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/snacks.webp'/>
-                                                                                <p>Snacks</p>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(255, 243, 211, 0.8) 30%, rgba(255, 243, 211, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/bakery.webp'/>
-                                                                                <p>Bakery</p>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(253, 143, 80, 0.8) 30%, rgba(253, 143, 80, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/bundles.webp'/>
-                                                                                <p>Bundles</p>
-                                                                            </div>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
-                                                                                <img onClick={() => this.nextJipangeSettingsProductList(3)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
-                                                                            </div>
-                                                                        </>
-                                                                    }
-                                                                    {this.state.showJipangeProductsList4 && 
-                                                                        <>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-prev-category'>
-                                                                                <img onClick={() => this.prevJipangeSettingsProductList(4)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(255, 140, 139, 0.8) 30%, rgba(255, 140, 139, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/stationary.webp'/>
-                                                                                <p>Stationary</p>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(193, 195, 237, 0.8) 30%, rgba(193, 195, 237, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/beauty.webp'/>
-                                                                                <p>Beauty</p>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(205, 205, 205, 0.8) 30%, rgba(205, 205, 205, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/appliances.webp'/>
-                                                                                <p>Home Appliances</p>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(214, 180, 122, 0.8) 30%, rgba(214, 180, 122, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/alcohol.webp'/>
-                                                                                <p>Alcohol</p>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(65, 186, 254, 0.8) 30%, rgba(65, 186, 254, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/pets.webp'/>
-                                                                                <p>Pets</p>
-                                                                            </div>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
-                                                                                <img onClick={() => this.nextJipangeSettingsProductList(4)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
-                                                                            </div>
-                                                                        </>
-                                                                    }
-                                                                    {this.state.showJipangeProductsList5 && 
-                                                                        <>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-header-prev-category'>
-                                                                                <img onClick={() => this.prevJipangeSettingsProductList(5)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(245, 174, 205, 0.8) 30%, rgba(245, 174, 205, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/decor-flowers.webp'/>
-                                                                                <p>Decor & Flowers</p>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(251, 220, 185, 0.8) 30%, rgba(251, 220, 185, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/services2.webp'/>
-                                                                                <p>Services</p>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(243, 143, 78, 0.8) 30%, rgba(243, 143, 78, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/shopping-bags.webp'/>
-                                                                                <p>Shopping Bags</p>
-                                                                            </div>
-                                                                            <div style={{background: 'linear-gradient(to left bottom, rgba(81, 181, 159, 0.8) 30%, rgba(81, 181, 159, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/kids-toys.webp'/>
-                                                                                <p>Kids & Toys</p>
-                                                                            </div>
-                                                                            {/* <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
-                                                                                <img src='/assets/images/product-categories/kids-toys.webp'/>
-                                                                                <p></p>
-                                                                            </div> */}
-                                                                            {/* <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
-                                                                                <img onClick={() => this.nextJipangeSettingsProductList(4)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
-                                                                            </div> */}
-                                                                        </>
+                                                                        </div>  
                                                                     }
                                                                 </div>
                                                             </div>
-                                                            <div className='jipange-settings-selected-date-screen-body-inner-body'>
-                                                                <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
-                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
-                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-                                                                            <img src='/assets/images/products/bananas-product.webp'/>
+                                                            <div className='jipange-settings-selected-date-screen-body'>
+                                                                <div className='jipange-settings-selected-date-screen-body-inner-header'>
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-header-search-container'>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-header-search-bar-icon'>
+                                                                            <img src='/assets/icons/navbar/search-icon.png'/>
                                                                         </div>
-                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
-                                                                                {this.state.jipangeProduct1Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(1, 1, this.state.jipangeProduct1Cat1CountBtn, 250)}>+</button> }
-                                                                                {this.state.jipangeProduct1Cat1CountBtn > 0 && 
-                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
-                                                                                        <div
-                                                                                        onClick={() => this.jipangeItemQtyDecrease(1, 1, this.state.jipangeProduct1Cat1CountBtn, 250)}
-                                                                                        className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
-                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
-                                                                                            {this.state.jipangeProduct1Cat1CountBtn}
-                                                                                        </div>
-                                                                                        <div
-                                                                                        onClick={() => this.jipangeItemQtyIncrease(1, 1, this.state.jipangeProduct1Cat1CountBtn, 250)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
-                                                                                    </div> 
-                                                                                }
-                                                                            </div>
-                                                                            <h5>Ksh 250</h5>
-                                                                            <p>Tushop Fresh Ripe Bananas</p>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-header-search-bar'>
+                                                                            <input/>
                                                                         </div>
                                                                     </div>
-
-                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
-                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-                                                                            <img src='/assets/images/products/oranges-product.webp'/>
-                                                                        </div>
-                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
-                                                                            <div    className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
-                                                                                {this.state.jipangeProduct2Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(2, 1, this.state.jipangeProduct2Cat1CountBtn, 165)}>+</button> }
-                                                                                {this.state.jipangeProduct2Cat1CountBtn > 0 && 
-                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
-                                                                                        <div
-                                                                                        onClick={() => this.jipangeItemQtyDecrease(2, 1, this.state.jipangeProduct2Cat1CountBtn, 165)}
-                                                                                        className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
-                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
-                                                                                            {this.state.jipangeProduct2Cat1CountBtn}
-                                                                                        </div>
-                                                                                        <div
-                                                                                        onClick={() => this.jipangeItemQtyIncrease(2, 1, this.state.jipangeProduct2Cat1CountBtn, 165)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
-                                                                                    </div> 
-                                                                                }
-                                                                            </div>
-                                                                            <h5>Ksh 165</h5>
-                                                                            <p>Tushop Fresh Imported Oranges</p>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
-                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-                                                                            <img src='/assets/images/products/watermelon-product.webp'/>
-                                                                        </div>
-                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
-                                                                            <div    className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
-                                                                                {this.state.jipangeProduct3Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(3, 1, this.state.jipangeProduct3Cat1CountBtn, 369)}>+</button> }
-                                                                                {this.state.jipangeProduct3Cat1CountBtn > 0 && 
-                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
-                                                                                        <div
-                                                                                        onClick={() => this.jipangeItemQtyDecrease(3, 1, this.state.jipangeProduct3Cat1CountBtn, 369)}
-                                                                                        className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
-                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
-                                                                                            {this.state.jipangeProduct3Cat1CountBtn}
-                                                                                        </div>
-                                                                                        <div
-                                                                                        onClick={() => this.jipangeItemQtyIncrease(3, 1, this.state.jipangeProduct3Cat1CountBtn, 369)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
-                                                                                    </div> 
-                                                                                }
-                                                                            </div>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-price-details'>
-                                                                                <h5>Ksh 369</h5>
-                                                                                <p>Ksh 399</p>
-                                                                            </div>
-                                                                            <p>Tushop Fresh Local Watermelon</p>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
-                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-                                                                            <img src='/assets/images/products/tomatoes-product.webp'/>
-                                                                        </div>
-                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
-                                                                            <div    className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
-                                                                                {this.state.jipangeProduct4Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(4, 1, this.state.jipangeProduct4Cat1CountBtn, 85)}>+</button> }
-                                                                                {this.state.jipangeProduct4Cat1CountBtn > 0 && 
-                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
-                                                                                        <div
-                                                                                        onClick={() => this.jipangeItemQtyDecrease(4, 1, this.state.jipangeProduct4Cat1CountBtn, 85)}
-                                                                                        className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
-                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
-                                                                                            {this.state.jipangeProduct4Cat1CountBtn}
-                                                                                        </div>
-                                                                                        <div
-                                                                                        onClick={() => this.jipangeItemQtyIncrease(4, 1, this.state.jipangeProduct4Cat1CountBtn, 85)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
-                                                                                    </div> 
-                                                                                }
-                                                                            </div>
-                                                                            <h5>Ksh 85</h5>
-                                                                            <p>Tushop Fresh Mixed Size Tomatoes</p>
-                                                                        </div>
+                                                                    <div className={`jipange-settings-selected-date-screen-body-inner-header-categories-carousel ${this.state.transitionJipangeSettingsProductList ? 'next' : this.state.transitionHelperJipangeSettingsProductList ? 'transition' : ''}`}>
+                                                                        {this.state.showJipangeProductsList1 && 
+                                                                            <>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(234, 116, 3, 0.8) 30%, rgba(234, 116, 3, 0) 70%)', border: '1.5px solid #FF5733'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/fruits-and-veg.webp'/>
+                                                                                    <p>Fruit & Veg</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(79, 138, 0, 0.8) 30%, rgba(79, 138, 0, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/organic.webp'/>
+                                                                                    <p>Organic</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(217, 71, 75, 0.8) 30%, rgba(217, 71, 75, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/meat.webp'/>
+                                                                                    <p>Meat</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(188, 213, 214, 0.8) 30%, rgba(188, 213, 214, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/milk.webp'/>
+                                                                                    <p>Dairy</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(240, 227, 184, 0.8) 30%, rgba(240, 227, 184, 0) 70%)'}}  className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/oil.webp'/>
+                                                                                    <p>Food Cupboard</p>
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
+                                                                                    <img onClick={() => this.nextJipangeSettingsProductList(1)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                                </div>
+                                                                            </>
+                                                                        }
+                                                                        {this.state.showJipangeProductsList2 && 
+                                                                            <>
+                                                                                <div className='jipange-settings-selected-date-screen-body-inner-header-prev-category'>
+                                                                                    <img onClick={() => this.prevJipangeSettingsProductList(2)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(124, 207, 255, 0.8) 30%, rgba(124, 207, 255, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/baby.webp'/>
+                                                                                    <p>Baby Care</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(246, 199, 43, 0.8) 30%, rgba(246, 199, 43, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/easy-prep.webp'/>
+                                                                                    <p>Easy Prep</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(243, 143, 78, 0.8) 30%, rgba(243, 143, 78, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/cond-spices.webp'/>
+                                                                                    <p>Cond. & Spices</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(73, 203, 171, 0.8) 30%, rgba(73, 203, 171, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/home-cleaning.webp'/>
+                                                                                    <p>Home & Cleaning</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(253, 233, 203, 0.8) 30%, rgba(253, 233, 203, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/bulk-buy.webp'/>
+                                                                                    <p>Bulk Buy</p>
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
+                                                                                    <img onClick={() => this.nextJipangeSettingsProductList(2)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                                </div>
+                                                                            </>
+                                                                        }
+                                                                        {this.state.showJipangeProductsList3 && 
+                                                                            <>
+                                                                                <div className='jipange-settings-selected-date-screen-body-inner-header-prev-category'>
+                                                                                    <img onClick={() => this.prevJipangeSettingsProductList(3)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(244, 140, 189, 0.8) 30%, rgba(244, 140, 189, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/personal-care.webp'/>
+                                                                                    <p>Personal Care</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(225, 93, 102, 0.8) 30%, rgba(225, 93, 102, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/beverages.webp'/>
+                                                                                    <p>Beverages</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(254, 198, 0, 0.8) 30%, rgba(254, 198, 0, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/snacks.webp'/>
+                                                                                    <p>Snacks</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(255, 243, 211, 0.8) 30%, rgba(255, 243, 211, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/bakery.webp'/>
+                                                                                    <p>Bakery</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(253, 143, 80, 0.8) 30%, rgba(253, 143, 80, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/bundles.webp'/>
+                                                                                    <p>Bundles</p>
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
+                                                                                    <img onClick={() => this.nextJipangeSettingsProductList(3)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                                </div>
+                                                                            </>
+                                                                        }
+                                                                        {this.state.showJipangeProductsList4 && 
+                                                                            <>
+                                                                                <div className='jipange-settings-selected-date-screen-body-inner-header-prev-category'>
+                                                                                    <img onClick={() => this.prevJipangeSettingsProductList(4)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(255, 140, 139, 0.8) 30%, rgba(255, 140, 139, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/stationary.webp'/>
+                                                                                    <p>Stationary</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(193, 195, 237, 0.8) 30%, rgba(193, 195, 237, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/beauty.webp'/>
+                                                                                    <p>Beauty</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(205, 205, 205, 0.8) 30%, rgba(205, 205, 205, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/appliances.webp'/>
+                                                                                    <p>Home Appliances</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(214, 180, 122, 0.8) 30%, rgba(214, 180, 122, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/alcohol.webp'/>
+                                                                                    <p>Alcohol</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(65, 186, 254, 0.8) 30%, rgba(65, 186, 254, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/pets.webp'/>
+                                                                                    <p>Pets</p>
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
+                                                                                    <img onClick={() => this.nextJipangeSettingsProductList(4)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                                </div>
+                                                                            </>
+                                                                        }
+                                                                        {this.state.showJipangeProductsList5 && 
+                                                                            <>
+                                                                                <div className='jipange-settings-selected-date-screen-body-inner-header-prev-category'>
+                                                                                    <img onClick={() => this.prevJipangeSettingsProductList(5)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(245, 174, 205, 0.8) 30%, rgba(245, 174, 205, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/decor-flowers.webp'/>
+                                                                                    <p>Decor & Flowers</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(251, 220, 185, 0.8) 30%, rgba(251, 220, 185, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/services2.webp'/>
+                                                                                    <p>Services</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(243, 143, 78, 0.8) 30%, rgba(243, 143, 78, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/shopping-bags.webp'/>
+                                                                                    <p>Shopping Bags</p>
+                                                                                </div>
+                                                                                <div style={{background: 'linear-gradient(to left bottom, rgba(81, 181, 159, 0.8) 30%, rgba(81, 181, 159, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/kids-toys.webp'/>
+                                                                                    <p>Kids & Toys</p>
+                                                                                </div>
+                                                                                {/* <div className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <img src='/assets/images/product-categories/kids-toys.webp'/>
+                                                                                    <p></p>
+                                                                                </div> */}
+                                                                                {/* <div className='jipange-settings-selected-date-screen-body-inner-header-next-category'>
+                                                                                    <img onClick={() => this.nextJipangeSettingsProductList(4)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                                </div> */}
+                                                                            </>
+                                                                        }
                                                                     </div>
                                                                 </div>
-                                                                <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
-                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
-                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-                                                                            <img src='/assets/images/products/onions-product.webp'/>
-                                                                        </div>
-                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
-                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
-                                                                                {this.state.jipangeProduct5Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(5, 1, this.state.jipangeProduct5Cat1CountBtn, 98)}>+</button> }
-                                                                                {this.state.jipangeProduct5Cat1CountBtn > 0 && 
-                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
-                                                                                        <div
-                                                                                        onClick={() => this.jipangeItemQtyDecrease(5, 1, this.state.jipangeProduct5Cat1CountBtn, 98)}
-                                                                                        className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
-                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
-                                                                                            {this.state.jipangeProduct5Cat1CountBtn}
-                                                                                        </div>
-                                                                                        <div
-                                                                                        onClick={() => this.jipangeItemQtyIncrease(5, 1, this.state.jipangeProduct5Cat1CountBtn, 98)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
-                                                                                    </div> 
-                                                                                }
+                                                                <div className='jipange-settings-selected-date-screen-body-inner-body'>
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                                <img src='/assets/images/products/bananas-product.webp'/>
                                                                             </div>
-                                                                            <h5>Ksh 98</h5>
-                                                                            <p>Tushop Fresh Red Onions</p>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                                <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                    {this.state.jipangeProduct1Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(1, 1, this.state.jipangeProduct1Cat1CountBtn, 250)}>+</button> }
+                                                                                    {this.state.jipangeProduct1Cat1CountBtn > 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
+                                                                                            <div
+                                                                                            onClick={() => this.jipangeItemQtyDecrease(1, 1, this.state.jipangeProduct1Cat1CountBtn, 250)}
+                                                                                            className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
+                                                                                                {this.state.jipangeProduct1Cat1CountBtn}
+                                                                                            </div>
+                                                                                            <div
+                                                                                            onClick={() => this.jipangeItemQtyIncrease(1, 1, this.state.jipangeProduct1Cat1CountBtn, 250)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                        </div> 
+                                                                                    }
+                                                                                </div>
+                                                                                <h5>Ksh 250</h5>
+                                                                                <p>Tushop Fresh Ripe Bananas</p>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                                <img src='/assets/images/products/oranges-product.webp'/>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                                <div    className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                    {this.state.jipangeProduct2Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(2, 1, this.state.jipangeProduct2Cat1CountBtn, 165)}>+</button> }
+                                                                                    {this.state.jipangeProduct2Cat1CountBtn > 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
+                                                                                            <div
+                                                                                            onClick={() => this.jipangeItemQtyDecrease(2, 1, this.state.jipangeProduct2Cat1CountBtn, 165)}
+                                                                                            className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
+                                                                                                {this.state.jipangeProduct2Cat1CountBtn}
+                                                                                            </div>
+                                                                                            <div
+                                                                                            onClick={() => this.jipangeItemQtyIncrease(2, 1, this.state.jipangeProduct2Cat1CountBtn, 165)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                        </div> 
+                                                                                    }
+                                                                                </div>
+                                                                                <h5>Ksh 165</h5>
+                                                                                <p>Tushop Fresh Imported Oranges</p>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                                <img src='/assets/images/products/watermelon-product.webp'/>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                                <div    className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                    {this.state.jipangeProduct3Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(3, 1, this.state.jipangeProduct3Cat1CountBtn, 369)}>+</button> }
+                                                                                    {this.state.jipangeProduct3Cat1CountBtn > 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
+                                                                                            <div
+                                                                                            onClick={() => this.jipangeItemQtyDecrease(3, 1, this.state.jipangeProduct3Cat1CountBtn, 369)}
+                                                                                            className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
+                                                                                                {this.state.jipangeProduct3Cat1CountBtn}
+                                                                                            </div>
+                                                                                            <div
+                                                                                            onClick={() => this.jipangeItemQtyIncrease(3, 1, this.state.jipangeProduct3Cat1CountBtn, 369)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                        </div> 
+                                                                                    }
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-price-details'>
+                                                                                    <h5>Ksh 369</h5>
+                                                                                    <p>Ksh 399</p>
+                                                                                </div>
+                                                                                <p>Tushop Fresh Local Watermelon</p>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                                <img src='/assets/images/products/tomatoes-product.webp'/>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                                <div    className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                    {this.state.jipangeProduct4Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(4, 1, this.state.jipangeProduct4Cat1CountBtn, 85)}>+</button> }
+                                                                                    {this.state.jipangeProduct4Cat1CountBtn > 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
+                                                                                            <div
+                                                                                            onClick={() => this.jipangeItemQtyDecrease(4, 1, this.state.jipangeProduct4Cat1CountBtn, 85)}
+                                                                                            className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
+                                                                                                {this.state.jipangeProduct4Cat1CountBtn}
+                                                                                            </div>
+                                                                                            <div
+                                                                                            onClick={() => this.jipangeItemQtyIncrease(4, 1, this.state.jipangeProduct4Cat1CountBtn, 85)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                        </div> 
+                                                                                    }
+                                                                                </div>
+                                                                                <h5>Ksh 85</h5>
+                                                                                <p>Tushop Fresh Mixed Size Tomatoes</p>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
-
-                                                                    {/* <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
-                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-                                                                            <img src='/assets/images/products/oranges-product.webp'/>
-                                                                        </div>
-                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
-                                                                            <div    className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
-                                                                                <button>+</button>
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                                <img src='/assets/images/products/onions-product.webp'/>
                                                                             </div>
-                                                                            <h5>Ksh 165</h5>
-                                                                            <p>Tushop Fresh Imported Oranges</p>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                                <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                    {this.state.jipangeProduct5Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(5, 1, this.state.jipangeProduct5Cat1CountBtn, 98)}>+</button> }
+                                                                                    {this.state.jipangeProduct5Cat1CountBtn > 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
+                                                                                            <div
+                                                                                            onClick={() => this.jipangeItemQtyDecrease(5, 1, this.state.jipangeProduct5Cat1CountBtn, 98)}
+                                                                                            className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
+                                                                                                {this.state.jipangeProduct5Cat1CountBtn}
+                                                                                            </div>
+                                                                                            <div
+                                                                                            onClick={() => this.jipangeItemQtyIncrease(5, 1, this.state.jipangeProduct5Cat1CountBtn, 98)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                        </div> 
+                                                                                    }
+                                                                                </div>
+                                                                                <h5>Ksh 98</h5>
+                                                                                <p>Tushop Fresh Red Onions</p>
+                                                                            </div>
                                                                         </div>
-                                                                    </div> */}
 
-                                                                   
+                                                                        {/* <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                                <img src='/assets/images/products/oranges-product.webp'/>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                                <div    className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                    <button>+</button>
+                                                                                </div>
+                                                                                <h5>Ksh 165</h5>
+                                                                                <p>Tushop Fresh Imported Oranges</p>
+                                                                            </div>
+                                                                        </div> */}
+
+                                                                    
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
