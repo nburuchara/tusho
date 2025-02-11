@@ -2308,6 +2308,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen.loading {
     pointer-events: none;
     cursor: pointer;
+    filter: grayscale(100);
 }
 
 // # # # JIPANGE SELECTED SCREEN HEADER
@@ -2430,6 +2431,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn.non-empty-cart button {
     filter: grayscale(0);
+    cursor: pointer;
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn.active button {
