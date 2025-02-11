@@ -2310,11 +2310,15 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-header {
     height: 9.5rem;
     margin-bottom: 0.5rem;
-    border-bottom: 1px solid #ff5733;
+    border-bottom: 1px solid #ccc;
     // border-radius: 8px;
     position: relative;
     display: flex;
     flex-direction: column;
+}
+
+.jipange-settings-selected-date-screen-header.non-empty-cart {
+    border-bottom: 1px solid #ff5733;
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining {
@@ -2332,11 +2336,17 @@ const Styles = styled.div `
     justify-content: left;
 }
 
+.jipange-settings-selected-date-screen-header-inner-header-lining-date label {
+    font-size: 85%;
+    font-family: poppins; 
+}
+
 .jipange-settings-selected-date-screen-header-inner-header-lining-date h4 {
     margin-bottom: 0px;
     margin-top: 0px;
     margin-left: 2.5%;
     font-family: inter;
+    font-size: 75%;
     // text-decoration: underline;
 }
 
@@ -2453,7 +2463,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-header-inner-body-no-items-icon img {
-    width: 25px;
+    width: 22.5px;
     margin-top: 2rem;
 }
 
@@ -2940,7 +2950,7 @@ export default class LandingPg extends Component {
             selectedDates: new Set(), // Store the selected dates as a set of 'YYYY-MM-DD' strings
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
-            selectedJipangeDate: 'Feb 8 2025',
+            selectedJipangeDate: 'Feb 16 2025',
             jipangeProduct1Cat1CountBtn: 0,
             jipangeProduct2Cat1CountBtn: 0,
             jipangeProduct3Cat1CountBtn: 0,
@@ -3557,7 +3567,8 @@ export default class LandingPg extends Component {
         this.setState((prevState) => ({
             [`jipangeProduct${productNo}Cat${CatNo}CountBtn`]: prevState[`jipangeProduct${productNo}Cat${CatNo}CountBtn`] + 1,
             [`jipangeProduct${productNo}Cat${CatNo}Qty`]: prevState[`jipangeProduct${productNo}Cat${CatNo}Qty`] + 1,
-            [`jipangeProduct${productNo}Cat${CatNo}Price`]: prevState[`jipangeProduct${productNo}Cat${CatNo}Price`] + (price)
+            [`jipangeProduct${productNo}Cat${CatNo}Price`]: prevState[`jipangeProduct${productNo}Cat${CatNo}Price`] + (price),
+            jipangeSelectedDateTotal: this.state.jipangeSelectedDateTotal + price
         }));
     }
 
@@ -3571,7 +3582,8 @@ export default class LandingPg extends Component {
         this.setState((prevState) => ({
             [`jipangeProduct${productNo}Cat${CatNo}CountBtn`]: prevState[`jipangeProduct${productNo}Cat${CatNo}CountBtn`] - 1,
             [`jipangeProduct${productNo}Cat${CatNo}Qty`]: prevState[`jipangeProduct${productNo}Cat${CatNo}Qty`] - 1,
-            [`jipangeProduct${productNo}Cat${CatNo}Price`]: prevState[`jipangeProduct${productNo}Cat${CatNo}Price`] - price
+            [`jipangeProduct${productNo}Cat${CatNo}Price`]: prevState[`jipangeProduct${productNo}Cat${CatNo}Price`] - price,
+            jipangeSelectedDateTotal: this.state.jipangeSelectedDateTotal - price
         }));
     }
 
@@ -3823,14 +3835,14 @@ export default class LandingPg extends Component {
                                     <h4><label>SCHEDULED</label> DELIVERY</h4>
                                     <div className='navbar-options-dropdown-option-selected-container'>
                                         <div className='navbar-options-dropdown-option-jipange'>
-                                            <p>Schedule your deliveries once and get fresh groceries, household essentials and everyday necessities delivered weekly to your doorstep - in just <label>6 easy steps</label>.</p>
+                                            <p>Schedule your deliveries once and get fresh groceries, household essentials and everyday necessities delivered weekly to your doorstep - in just <label>2 easy steps</label>.</p>
                                             <div className='navbar-options-dropdown-option-jipange-steps'>
                                                 <div className='navbar-options-dropdown-option-jipange-step'>
                                                     <div className='navbar-options-dropdown-option-jipange-step-icon'>
                                                         <img src='/assets/icons/navbar/jipange-bullet-1-dropdown-icon.png'/>
                                                     </div>
                                                     <div className='navbar-options-dropdown-option-jipange-step-name'>
-                                                        <p><label>Browse</label></p>
+                                                        <p><label>Schedule </label></p>
                                                     </div>  
                                                 </div>
 
@@ -3839,37 +3851,37 @@ export default class LandingPg extends Component {
                                                         <img src='/assets/icons/navbar/jipange-bullet-2-dropdown-icon.png'/>
                                                     </div>
                                                     <div className='navbar-options-dropdown-option-jipange-step-name'>
-                                                        <p><label>Select</label></p>
+                                                        <p><label>Add to cart</label></p>
                                                     </div>  
                                                 </div>
 
-                                                <div className='navbar-options-dropdown-option-jipange-step'>
+                                                {/* <div className='navbar-options-dropdown-option-jipange-step'>
                                                     <div className='navbar-options-dropdown-option-jipange-step-icon'>
                                                         <img src='/assets/icons/navbar/jipange-bullet-3-dropdown-icon.png'/>
                                                     </div>
                                                     <div className='navbar-options-dropdown-option-jipange-step-name'>
                                                         <p><label>Make a Jipange</label></p>
                                                     </div>  
-                                                </div>
+                                                </div> */}
 
-                                                <div className='navbar-options-dropdown-option-jipange-step'>
+                                                {/* <div className='navbar-options-dropdown-option-jipange-step'>
                                                     <div className='navbar-options-dropdown-option-jipange-step-icon'>
                                                         <img src='/assets/icons/navbar/jipange-bullet-4-dropdown-icon.png'/>
                                                     </div>
                                                     <div className='navbar-options-dropdown-option-jipange-step-name'>
                                                         <p><label>Customize</label></p>
                                                     </div>  
-                                                </div>
+                                                </div> */}
 
-                                                <div className='navbar-options-dropdown-option-jipange-step'>
+                                                {/* <div className='navbar-options-dropdown-option-jipange-step'>
                                                     <div className='navbar-options-dropdown-option-jipange-step-icon'>
                                                         <img src='/assets/icons/navbar/jipange-bullet-5-dropdown-icon.png'/>
                                                     </div>
                                                     <div className='navbar-options-dropdown-option-jipange-step-name'>
                                                         <p><label>Schedule</label></p>
                                                     </div>  
-                                                </div>
-
+                                                </div> */}
+{/* 
                                                 <div className='navbar-options-dropdown-option-jipange-step'>
                                                     <div className='navbar-options-dropdown-option-jipange-step-icon'>
                                                         <img src='/assets/icons/navbar/jipange-bullet-6-dropdown-icon.png'/>
@@ -3877,7 +3889,7 @@ export default class LandingPg extends Component {
                                                     <div className='navbar-options-dropdown-option-jipange-step-name'>
                                                         <p><label>Confirm</label></p>
                                                     </div>  
-                                                </div>
+                                                </div> */}
 
                                                 <button>Sign up</button>
                                                 
@@ -4581,10 +4593,10 @@ export default class LandingPg extends Component {
                                                 }
                                                 {this.state.showJipangeSettingsSelectedDate && 
                                                     <div className='jipange-settings-selected-date-screen'>
-                                                        <div className='jipange-settings-selected-date-screen-header'>
+                                                        <div className={`jipange-settings-selected-date-screen-header ${this.state.jipangeSelectedDateTotal > 0 ? 'non-empty-cart' : ''}`}>
                                                             <div className='jipange-settings-selected-date-screen-header-inner-header-lining'>
                                                                 <div className='jipange-settings-selected-date-screen-header-inner-header-lining-date'>
-                                                                    <h4>{this.state.selectedJipangeDate}</h4>
+                                                                    <label>Your order (delivery for):</label><h4>{this.state.selectedJipangeDate}</h4>
                                                                 </div>
                                                                 <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options'>
                                                                     <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn'>
@@ -4594,13 +4606,13 @@ export default class LandingPg extends Component {
                                                                         <button
                                                                         >
                                                                             <img src='/assets/icons/home-jipange/checkmark-icon.png'/>
-                                                                            <label>Schedule Order</label>
+                                                                            <label>Confirm Order</label>
                                                                         </button>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div className='jipange-settings-selected-date-screen-header-inner-body'>
-                                                                {this.state.showJipangeSelectedDateEmptyCart && 
+                                                                {this.state.jipangeSelectedDateTotal <= 0 && 
                                                                     <div className='jipange-settings-selected-date-screen-header-inner-body-no-items'>
                                                                         <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-icon'>
                                                                             <img src='/assets/icons/home-jipange/cart-no-items-icon2.png'/>
@@ -4610,7 +4622,7 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                     </div>
                                                                 }
-                                                                {this.state.showJipangeSelectedDateCart && 
+                                                                {this.state.jipangeSelectedDateTotal > 0 && 
                                                                     <div className='jipange-settings-selected-date-screen-header-inner-body-items-container'>
                                                                         <div className='jipange-settings-selected-date-screen-header-inner-body-items-list'>
                                                                             {this.state.jipangeProduct1Cat1Qty !== 0 && 
