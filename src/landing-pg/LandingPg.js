@@ -2412,6 +2412,21 @@ const Styles = styled.div `
     filter: grayscale(100);
 }
 
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn.non-empty-cart button {
+    // width: 92.5%;
+    // height: 80%;
+    // font-family: inter;
+    // font-size: 75%;
+    // background-color: #faece9;
+    // border: 1px solid #ff5733;
+    // border-radius: 6px;
+    // color: #ff5733;
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
+    filter: grayscale(0);
+}
+
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn img {
     width: 13.5%;
     // border: 1px solid black;
@@ -2933,6 +2948,7 @@ export default class LandingPg extends Component {
             jipangeProduct5Cat1CountBtn: 0,
             showJipangeSelectedDateCart: true,
             showJipangeSelectedDateEmptyCart: false,
+            jipangeSelectedDateTotal: 0,
             jipangeProduct1Cat1: 'Tushop Fresh Ripe Bananas',
             jipangeProduct1Cat1Qty: 0,
             jipangeProduct1Cat1Price: 0,
@@ -4574,8 +4590,9 @@ export default class LandingPg extends Component {
                                                                     <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn'>
                                                                         <p><label>←</label><span>Back</span></p>
                                                                     </div>
-                                                                    <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn'>
-                                                                        <button>
+                                                                    <div className={`jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn ${this.state.jipangeSelectedDateTotal > 0 ? 'non-empty-cart' : ''}`}>
+                                                                        <button
+                                                                        >
                                                                             <img src='/assets/icons/home-jipange/checkmark-icon.png'/>
                                                                             <label>Schedule Order</label>
                                                                         </button>
@@ -4652,7 +4669,7 @@ export default class LandingPg extends Component {
                                                                                 <h4>SUBTOTAL</h4>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal-value'>
-                                                                                <h4>Ksh 650.00</h4>
+                                                                                <h4>Ksh {this.state.jipangeSelectedDateTotal}.00</h4>
                                                                             </div>
                                                                         </div>
                                                                     </div>  
