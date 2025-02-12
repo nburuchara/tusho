@@ -2326,8 +2326,8 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen.loading {
     pointer-events: none;
-    cursor: pointer;
-    filter: grayscale(100);
+    cursor: not-allowed;
+    // filter: grayscale(100);
 }
 
 // # # # JIPANGE SELECTED SCREEN HEADER
