@@ -2300,7 +2300,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete {
     width: 93.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 18.5rem;
     // overflow: hidden;
 }
@@ -2308,7 +2308,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-complete-header {
     height: 100%;
     margin-bottom: 0.5rem;
-    border-bottom: 1px solid #ccc;
+    // border-bottom: 1px solid #ccc;
     // border-radius: 8px;
     position: relative;
     display: flex;
@@ -2986,8 +2986,8 @@ export default class LandingPg extends Component {
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             selectedJipangeDate: 'Feb 16 2025',
-            showJipangeSettingsSelectedDateComplete: true,
-            showJipangeSettingsSelectedDateEdit: false,
+            showJipangeSettingsSelectedDateComplete: false,
+            showJipangeSettingsSelectedDateEdit: true,
             showConfirmJipangeOrderRest: true,
             showConfirmJipangeOrderActive: false,
             jipangeProduct1Cat1CountBtn: 0,
