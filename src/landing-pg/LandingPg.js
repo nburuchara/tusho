@@ -2229,13 +2229,13 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-dates-grid-empty img {
-    width: 10.5%;
-    margin-top: 1.2rem;
+    width: 31.5px;
+    margin-top: 1.25rem;
 }
 
 .jipange-settings-selected-dates-grid-empty h3 {
     font-weight: normal;
-    font-size: 85%;
+    font-size: 78.5%;
     font-family: poppins;
     color: #5e626a;
 }
@@ -2985,7 +2985,7 @@ export default class LandingPg extends Component {
             selectedDates: new Set(), // Store the selected dates as a set of 'YYYY-MM-DD' strings
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
-            selectedJipangeDate: 'Feb 16 2025',
+            selectedJipangeDate: '',
             showJipangeSettingsSelectedDateComplete: false,
             showJipangeSettingsSelectedDateEdit: true,
             showConfirmJipangeOrderRest: true,
@@ -3643,6 +3643,28 @@ export default class LandingPg extends Component {
             }, 2500)
         })
     }
+
+    jipangeDateScheduleClicked = (dateObject) => {
+        const year = dateObject.getFullYear();
+        const month = dateObject.getMonth() + 1; // getMonth() is zero-based
+        const day = dateObject.getDate();
+    
+        const dateObj = new Date(year, month - 1, day); // Month is zero-indexed
+        const monthName = dateObj.toLocaleString('default', { month: 'short' });
+    
+        this.setState({
+            showJipangeSettingsHome: false,
+            showJipangeSettingsLoading: true,
+            selectedJipangeDate: `${monthName}. ${day} ${year}`
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    showJipangeSettingsLoading: false,
+                    showJipangeSettingsSelectedDate: true
+                })
+            }, 2500)
+        });
+    };
 
     render () {
 
@@ -4632,6 +4654,7 @@ export default class LandingPg extends Component {
                                                                                     <div 
                                                                                         key={dateString} 
                                                                                         className={`jipange-settings-selected-date-square ${this.state.selectedDates.has(dateString) ? "show" : ""}`}
+                                                                                        onClick={() => this.jipangeDateScheduleClicked(dateObject)}
                                                                                     >
                                                                                         <label>{monthName}</label> {/* Month */}
                                                                                         <label>{day}</label> {/* Date */}
