@@ -2975,8 +2975,8 @@ export default class LandingPg extends Component {
             phoneNumberVerified: true,
 
             //* # Jipange
-            showJipangeSettingsHome: false,
-            showJipangeSettingsSelectedDate: true,
+            showJipangeSettingsHome: true,
+            showJipangeSettingsSelectedDate: false,
             showJipangeSettingsLoading: false,
             transitionJipangeSettingsProductList: false,
             transitionHelperJipangeSettingsProductList: false,
@@ -3892,14 +3892,14 @@ export default class LandingPg extends Component {
                                     <h4><label>SCHEDULED</label> DELIVERY</h4>
                                     <div className='navbar-options-dropdown-option-selected-container'>
                                         <div className='navbar-options-dropdown-option-jipange'>
-                                            <p>Schedule your deliveries once and get fresh groceries, household essentials and everyday necessities delivered weekly to your doorstep - in just <label>2 easy steps</label>.</p>
+                                            <p>Schedule your deliveries once and get fresh groceries, household essentials and everyday necessities delivered weekly to your doorstep - in just <label>3 easy steps</label>.</p>
                                             <div className='navbar-options-dropdown-option-jipange-steps'>
                                                 <div className='navbar-options-dropdown-option-jipange-step'>
                                                     <div className='navbar-options-dropdown-option-jipange-step-icon'>
                                                         <img src='/assets/icons/navbar/jipange-bullet-1-dropdown-icon.png'/>
                                                     </div>
                                                     <div className='navbar-options-dropdown-option-jipange-step-name'>
-                                                        <p><label>Schedule </label></p>
+                                                        <p><label>Schedule delivery</label></p>
                                                     </div>  
                                                 </div>
 
@@ -3912,14 +3912,14 @@ export default class LandingPg extends Component {
                                                     </div>  
                                                 </div>
 
-                                                {/* <div className='navbar-options-dropdown-option-jipange-step'>
+                                                <div className='navbar-options-dropdown-option-jipange-step'>
                                                     <div className='navbar-options-dropdown-option-jipange-step-icon'>
                                                         <img src='/assets/icons/navbar/jipange-bullet-3-dropdown-icon.png'/>
                                                     </div>
                                                     <div className='navbar-options-dropdown-option-jipange-step-name'>
-                                                        <p><label>Make a Jipange</label></p>
+                                                        <p><label>Make payment</label></p>
                                                     </div>  
-                                                </div> */}
+                                                </div>
 
                                                 {/* <div className='navbar-options-dropdown-option-jipange-step'>
                                                     <div className='navbar-options-dropdown-option-jipange-step-icon'>
