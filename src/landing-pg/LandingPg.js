@@ -3666,6 +3666,21 @@ export default class LandingPg extends Component {
         });
     };
 
+    backToJipangeScheduleClicked = () => {
+        this.setState({
+            showJipangeSettingsSelectedDate: false,
+            showJipangeSettingsLoading: true,
+            selectedJipangeDate: ''
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    showJipangeSettingsLoading: false,
+                    showJipangeSettingsHome: true
+                })
+            }, 2500)
+        });
+    }
+
     render () {
 
         const { searchBarIsClicked, searchInput, isSearchLoading, resultsFound, groupedOptions } = this.state;
@@ -4682,7 +4697,7 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options'>
                                                                             <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn'>
-                                                                                <p><label>←</label><span>Back</span></p>
+                                                                                <p onClick={this.backToJipangeScheduleClicked}><label>←</label><span>Back</span></p>
                                                                             </div>
                                                                             <div className={`jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn ${this.state.jipangeSelectedDateTotal > 0 && !this.state.confirmJipangeOrderClicked ? 'non-empty-cart': ''}`}>
                                                                                 <button
