@@ -3003,10 +3003,20 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 15rem;
+    height: 16rem;
+    flex-direction: column;
+    padding: 5px;
+}   
+
+.jipange-settings-no-products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16rem;
     flex-direction: column;
     padding: 2px;
-}   
+    border: 1px solid black;
+}
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
@@ -5393,7 +5403,12 @@ export default class LandingPg extends Component {
                                                                         }
                                                                         {this.state.selectedJipangeProductCategory > 1 && 
                                                                             <div className='jipange-settings-no-products'>
+                                                                                <div className='jipange-settings-no-products-icon'>
 
+                                                                                </div>
+                                                                                <div className='jipange-settings-no-products-text'>
+
+                                                                                </div>
                                                                             </div>
                                                                         }
                                                                         {this.state.selectedJipangeProductCategory === 0 && 
