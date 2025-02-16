@@ -155,10 +155,11 @@ const Styles = styled.div `
     margin-top: 10px;
     padding: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    display: block;
 }
 
 .searchResults.empty {
-    opacity: 0;
+    display: none;
     pointer-events: none;
 }
 
