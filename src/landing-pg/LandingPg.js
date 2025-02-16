@@ -2999,6 +2999,14 @@ const Styles = styled.div `
     margin-bottom: 0px;
 }
 
+.jipange-settings-loading-screen-products {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15rem;
+    flex-direction: column;
+}   
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
@@ -5388,11 +5396,11 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                         }
                                                                         {this.state.selectedJipangeProductCategory === 0 && 
-                                                                            <div className='jipange-settings-loading-screen'>
+                                                                            <div className='jipange-settings-loading-screen-products'>
                                                                                 <TailSpin
                                                                                 visible={true}
-                                                                                height="30px"
-                                                                                width="30px"
+                                                                                height="20px"
+                                                                                width="20px"
                                                                                 color="#ff5733"
                                                                                 ariaLabel="tail-spin-loading"
                                                                                 radius="2"
