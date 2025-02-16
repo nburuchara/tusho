@@ -227,7 +227,16 @@ const Styles = styled.div `
     // # # SEARCH RESULTS JIPANGE
 
 .searchResultsJipange {
-
+    z-index: 1;
+    // position: relative;
+    // margin-left: -6%;
+    width: 112%;
+    // border: 1px solid black;
+    border-radius: 8px;
+    background-color: white;
+    margin-top: 10px;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 
@@ -2626,6 +2635,7 @@ const Styles = styled.div `
     height: 7.125rem;
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -2636,7 +2646,8 @@ const Styles = styled.div `
     margin-top: 0rem;
     border-radius: 5px;
     display: flex;
-    justify-content: space-between;
+    flex-direction-column;
+    // justify-content: space-between;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-search-bar-icon {
@@ -2664,6 +2675,11 @@ const Styles = styled.div `
     border: 1px solid transparent;
     outline: none;
     // overflow: hidden;
+}
+
+.jipange-settings-selected-date-screen-body-inner-header-search-bar-results {
+    width: 100%;
+    position: absolute;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-categories-carousel {
@@ -4909,8 +4925,9 @@ export default class LandingPg extends Component {
                                                                                 onChange={this.handleSearchChangeJipange}
                                                                                 />
                                                                             </div>
+                            
                                                                         </div>
-                                                                        <div className=''>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-header-search-bar-results'>
                                                                             {searchInput !== "" && (
                                                                                 <div className={`searchResultsJipange ${this.state.searchBarInputJipange === '' ? 'empty' : ''}`}>
                                                                                     {isSearchLoading && 
