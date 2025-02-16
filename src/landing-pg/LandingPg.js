@@ -3259,6 +3259,82 @@ export default class LandingPg extends Component {
         }, 0); // Set debounce delay to 500ms
     };
 
+    handleSearchChangeJipange = (e) => {
+
+        this.setState({
+            searchBarInputJipange: e.target.value,
+            isSearchLoading: true,
+            clearSearchBtn: true,
+            showTimezones: false
+        });
+        
+        const searchInput = e.target.value.toLowerCase();
+        
+        // Clear previous timeout
+    
+    
+        // Set a new timeout to execute after 500ms
+        this.searchTimeout = setTimeout(() => {
+            if (searchInput.trim() === "") {
+                // Reset filteredOptions and loading state
+                this.setState({
+                    searchedData: "",
+                    searchCloseBtn: false,
+                    filteredOptions: [],
+                    isSearchLoading: false,
+                    resultsFound: false,
+                    clearSearchBtn: false,
+                });
+
+            } else {
+                this.setState({ isSearchLoading: true, searchedData: searchInput, searchCloseBtn: true }, () => {
+                    const filteredOptions = SearchTerms.filter(option => {
+                        const name = option.name.toLowerCase();
+                        const searchWords = searchInput.toLowerCase().split(' '); // Split search input into words
+                        const optionWords = name.split(' '); // Split name into words
+                    
+                        if (searchWords.length === 1) {
+                            // Special case: search input is a single word
+                            const searchWord = searchWords[0];
+                            return optionWords.some(optionWord => optionWord.startsWith(searchWord));
+                        } else {
+                            // Combine search words into a single substring
+                            const searchSubstring = searchWords.join(' ');
+                            return name.includes(searchSubstring);
+                        }
+                    });
+    
+                    const resultsFound = filteredOptions.length > 0; // Check if any results were found
+    
+                    const highlightedOptions = filteredOptions.map(option => ({
+                        ...option,
+                        highlightedName: this.highlightMatchedCharacters(option, searchInput)
+                    }));
+    
+                    const groupedResults = this.groupBy(highlightedOptions, 'category');
+    
+                    // Construct trie for each category
+                    const trieByCategory = {};
+                    Object.entries(groupedResults).forEach(([category, options]) => {
+                        trieByCategory[category] = new Trie();
+                        options.forEach(option => {
+                            trieByCategory[category].insert(option.name.toLowerCase());
+                        });
+                    });
+    
+                    // Update state after search logic is complete
+                    this.setState({
+                        trieByCategory,
+                        groupedOptions: groupedResults,
+                        filteredOptions: highlightedOptions,
+                        isSearchLoading: false, // Hide loading screen
+                        resultsFound: resultsFound
+                    });
+                });
+            }
+        }, 0); // Set debounce delay to 500ms
+    };
+
     highlightMatchedCharacters(option, searchInput, isSearchLoading) {
         const name = option.name.toLowerCase();
         const searchRegex = new RegExp(`\\b${searchInput}`, 'i');
@@ -4828,15 +4904,15 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-body-inner-header-search-bar'>
                                                                                 <input
-                                                                                value={this.state.searchBarInput}
+                                                                                value={this.state.searchBarInputJipange}
                                                                                 placeholder='Search for an item...'
-                                                                                onChange={this.handleSearchChange}
+                                                                                onChange={this.handleSearchChangeJipange}
                                                                                 />
                                                                             </div>
                                                                         </div>
                                                                         <div className=''>
                                                                             {searchInput !== "" && (
-                                                                                <div className={`searchResultsJipange ${this.state.searchBarInput === '' ? 'empty' : ''}`}>
+                                                                                <div className={`searchResultsJipange ${this.state.searchBarInputJipange === '' ? 'empty' : ''}`}>
                                                                                     {isSearchLoading && 
                                                                                         <div>
                                                                                             <p>Loading...</p>
