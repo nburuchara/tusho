@@ -2805,6 +2805,13 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-header-category.selected {
     border: 1.5px solid #FF5733;
+    animation: flashBorder 0.5s ease-in-out 3; /* Runs 3 times, then stops */
+}
+
+@keyframes flashBorder {
+    0% { border-color: #FF5733; }
+    50% { border-color: rgba(255, 87, 51, 0); } /* Transparent border */
+    100% { border-color: #FF5733; }
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-category img {
