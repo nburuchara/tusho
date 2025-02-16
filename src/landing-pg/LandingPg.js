@@ -230,7 +230,7 @@ const Styles = styled.div `
     z-index: 1;
     // position: relative;
     // margin-left: -6%;
-    width: 112%;
+    width: 98%;
     // border: 1px solid black;
     border-radius: 8px;
     background-color: white;
@@ -243,6 +243,83 @@ const Styles = styled.div `
 .searchResultsJipange.empty {
     opacity: 0;
     pointer-events: none;
+}
+
+.searchResultCellJipange {
+    padding: 1%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchResultCellJipange:hover {
+    background-color: #faece9;
+    cursor: pointer;
+}
+
+.searchResultCellJipange:hover .searchResultCellImg img {
+    background-color: #fff;
+}
+
+.searchResultCellJipangeImg {
+    width: 10%;
+}
+
+.searchResultCellJipangeImg img {
+    width: 18.5px;
+    height: 18.5px;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.searchResultCellJipangeDetails {
+    width: 70%;
+    padding-left: 1%;
+}
+
+.searchResultCellJipangeDetails p {
+    font-size: 60% !important;
+    margin-left: 0px !important;
+}
+
+.searchResultCellJipangeLabel {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchResultCellJipangeLabel p {
+    font-size: 50% !important;
+    margin-top: 0px;
+}
+
+.searchResultCellJipange p {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.searchResultCellJipange h5 {
+    margin-top: 1rem;
+    margin-bottom:0px;
+    font-family: poppins;
+    font-weight: normal;
+    color: #5e626a;
+}
+
+.searchResultOptionJipange {
+    // margin-top: 10px;
+    // font-size: 10px;
+}
+
+.searchResultCategoryJipange {
+    font-size: 30%;
+    margin-bottom: 0px;
+    margin-top: 5rem;
 }
 
     // # SEARCH BAR CLEAR SEARCH ICON
@@ -2628,6 +2705,7 @@ const Styles = styled.div `
     height: 27.5rem;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header {
@@ -2635,7 +2713,6 @@ const Styles = styled.div `
     height: 7.125rem;
     position: relative;
     display: flex;
-    flex-direction: column;
     justify-content: center;
 }
 
@@ -2680,6 +2757,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-body-inner-header-search-bar-results {
     width: 100%;
     position: absolute;
+    top: 1.65rem;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-categories-carousel {
@@ -3048,6 +3126,7 @@ export default class LandingPg extends Component {
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
             searchBarInput: '',
+            searchBarInputJipange: '',
 
             //* - HOME SCREEN SHOPPING CART - *//
             homeScreenCartClicked: false,
@@ -3783,6 +3862,12 @@ export default class LandingPg extends Component {
                 })
             }, 2500)
         });
+    }
+    
+    jipangeProductCategoryClicked = () => {
+        this.setState({
+
+        })
     }
 
     render () {
@@ -4927,49 +5012,10 @@ export default class LandingPg extends Component {
                                                                             </div>
                             
                                                                         </div>
-                                                                        <div className='jipange-settings-selected-date-screen-body-inner-header-search-bar-results'>
-                                                                            {searchInput !== "" && (
-                                                                                <div className={`searchResultsJipange ${this.state.searchBarInputJipange === '' ? 'empty' : ''}`}>
-                                                                                    {isSearchLoading && 
-                                                                                        <div>
-                                                                                            <p>Loading...</p>
-                                                                                        </div>
-                                                                                    }
-                                                                                    {!isSearchLoading && resultsFound && 
-                                                                                        Object.entries(groupedOptions).map(([category, options]) => (
-                                                                                            <div style={{borderBottom: "1px solid #ccc", position: "sticky"}} key={category}>
-                                                                                                {options.map(option => (
-                                                                                                    <div 
-                                                                                                    onClick={() => this.searchedTermClicked(category, option, option.page)}
-                                                                                                    className='searchResultCell' 
-                                                                                                    key={option.id}>
-                                                                                                        <div className='searchResultCellImg'>
-                                                                                                            <img src={option.img}/>
-                                                                                                        </div>
-                                                                                                        <div className='searchResultCellDetails'>
-                                                                                                            <p className='searchResultOption'>{option.highlightedName}</p>
-                                                                                                            <p className='searchResultCategory'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null } </p> 
-                                                                                                        </div>
-                                                                                                        <div className='searchResultCellLabel'>
-                                                                                                            <p>[click to add to cart]</p>
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                ))}
-                                                                                            </div>
-                                                                                        ))
-                                                                                    }
-                                                                                    {!isSearchLoading && !resultsFound &&
-                                                                                        <div className='navbar-search-bar-no-results' style={{textAlign: "center"}}>
-                                                                                            <p style={{fontWeight: "bold", marginTop: "4.25%", color: "#FF5733"}}>No results found</p>
-                                                                                        </div>
-                                                                                    }
-                                                                                </div>
-                                                                            )}
-                                                                        </div>
                                                                         <div className={`jipange-settings-selected-date-screen-body-inner-header-categories-carousel ${this.state.transitionJipangeSettingsProductList ? 'next' : this.state.transitionHelperJipangeSettingsProductList ? 'transition' : ''}`}>
                                                                             {this.state.showJipangeProductsList1 && 
                                                                                 <>
-                                                                                    <div style={{background: 'linear-gradient(to left bottom, rgba(234, 116, 3, 0.8) 30%, rgba(234, 116, 3, 0) 70%)', border: '1.5px solid #FF5733'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(1)} style={{background: 'linear-gradient(to left bottom, rgba(234, 116, 3, 0.8) 30%, rgba(234, 116, 3, 0) 70%)', border: `${this.state.jipangeProdCat1Clicked ? '1.5px solid #FF5733' : ''}`}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
                                                                                         <img src='/assets/images/product-categories/fruits-and-veg.webp'/>
                                                                                         <p>Fruit & Veg</p>
                                                                                     </div>
@@ -5114,6 +5160,45 @@ export default class LandingPg extends Component {
                                                                                     </div> */}
                                                                                 </>
                                                                             }
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-date-screen-body-inner-header-search-bar-results'>
+                                                                            {searchInput !== "" && (
+                                                                                <div className={`searchResultsJipange ${this.state.searchBarInputJipange === '' ? 'empty' : ''}`}>
+                                                                                    {isSearchLoading && 
+                                                                                        <div>
+                                                                                            <p>Loading...</p>
+                                                                                        </div>
+                                                                                    }
+                                                                                    {!isSearchLoading && resultsFound && 
+                                                                                        Object.entries(groupedOptions).map(([category, options]) => (
+                                                                                            <div style={{borderBottom: "1px solid #ccc", position: "sticky"}} key={category}>
+                                                                                                {options.map(option => (
+                                                                                                    <div 
+                                                                                                    onClick={() => this.searchedTermClicked(category, option, option.page)}
+                                                                                                    className='searchResultCellJipange' 
+                                                                                                    key={option.id}>
+                                                                                                        <div className='searchResultCellJipangeImg'>
+                                                                                                            <img src={option.img}/>
+                                                                                                        </div>
+                                                                                                        <div className='searchResultCellJipangeDetails'>
+                                                                                                            <p className='searchResultOptionJipange'>{option.highlightedName}</p>
+                                                                                                            <h5 className='searchResultCategoryJipange'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null } </h5> 
+                                                                                                        </div>
+                                                                                                        <div className='searchResultCellJipangeLabel'>
+                                                                                                            {/* <p>[click to add to cart]</p> */}
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                ))}
+                                                                                            </div>
+                                                                                        ))
+                                                                                    }
+                                                                                    {!isSearchLoading && !resultsFound &&
+                                                                                        <div className='navbar-search-bar-no-results' style={{textAlign: "center"}}>
+                                                                                            <p style={{fontWeight: "bold", marginTop: "4.25%", color: "#FF5733"}}>No results found</p>
+                                                                                        </div>
+                                                                                    }
+                                                                                </div>
+                                                                            )}
                                                                         </div>
                                                                     </div>
                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body'>
