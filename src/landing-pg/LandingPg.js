@@ -3005,6 +3005,7 @@ const Styles = styled.div `
     justify-content: center;
     height: 15rem;
     flex-direction: column;
+    padding: 2px;
 }   
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -5399,8 +5400,8 @@ export default class LandingPg extends Component {
                                                                             <div className='jipange-settings-loading-screen-products'>
                                                                                 <TailSpin
                                                                                 visible={true}
-                                                                                height="20px"
-                                                                                width="20px"
+                                                                                height="22.5px"
+                                                                                width="22.5px"
                                                                                 color="#ff5733"
                                                                                 ariaLabel="tail-spin-loading"
                                                                                 radius="2"
