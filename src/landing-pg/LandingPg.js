@@ -3891,7 +3891,13 @@ export default class LandingPg extends Component {
     
     jipangeProductCategoryClicked = (category) => {
         this.setState({
-            selectedJipangeProductCategory: category
+            selectedJipangeProductCategory: 0
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    selectedJipangeProductCategory: category
+                })
+            }, 2500)
         })
     }
 
@@ -5130,23 +5136,23 @@ export default class LandingPg extends Component {
                                                                                     <div className='jipange-settings-selected-date-screen-body-inner-header-prev-category'>
                                                                                         <img onClick={() => this.prevJipangeSettingsProductList(4)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
                                                                                     </div>
-                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(16)} style={{background: 'linear-gradient(to left bottom, rgba(255, 140, 139, 0.8) 30%, rgba(255, 140, 139, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(16)} style={{background: 'linear-gradient(to left bottom, rgba(255, 140, 139, 0.8) 30%, rgba(255, 140, 139, 0) 70%)'}} className={`jipange-settings-selected-date-screen-body-inner-header-category ${this.state.selectedJipangeProductCategory === 16 ? 'selected' : ''}`}>
                                                                                         <img src='/assets/images/product-categories/stationary.webp'/>
                                                                                         <p>Stationary</p>
                                                                                     </div>
-                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(17)} style={{background: 'linear-gradient(to left bottom, rgba(193, 195, 237, 0.8) 30%, rgba(193, 195, 237, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(17)} style={{background: 'linear-gradient(to left bottom, rgba(193, 195, 237, 0.8) 30%, rgba(193, 195, 237, 0) 70%)'}} className={`jipange-settings-selected-date-screen-body-inner-header-category ${this.state.selectedJipangeProductCategory === 17 ? 'selected' : ''}`}>
                                                                                         <img src='/assets/images/product-categories/beauty.webp'/>
                                                                                         <p>Beauty</p>
                                                                                     </div>
-                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(18)} style={{background: 'linear-gradient(to left bottom, rgba(205, 205, 205, 0.8) 30%, rgba(205, 205, 205, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(18)} style={{background: 'linear-gradient(to left bottom, rgba(205, 205, 205, 0.8) 30%, rgba(205, 205, 205, 0) 70%)'}} className={`jipange-settings-selected-date-screen-body-inner-header-category ${this.state.selectedJipangeProductCategory === 18 ? 'selected' : ''}`}>
                                                                                         <img src='/assets/images/product-categories/appliances.webp'/>
                                                                                         <p>Home Appliances</p>
                                                                                     </div>
-                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(19)} style={{background: 'linear-gradient(to left bottom, rgba(214, 180, 122, 0.8) 30%, rgba(214, 180, 122, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(19)} style={{background: 'linear-gradient(to left bottom, rgba(214, 180, 122, 0.8) 30%, rgba(214, 180, 122, 0) 70%)'}} className={`jipange-settings-selected-date-screen-body-inner-header-category ${this.state.selectedJipangeProductCategory === 19 ? 'selected' : ''}`}>
                                                                                         <img src='/assets/images/product-categories/alcohol.webp'/>
                                                                                         <p>Alcohol</p>
                                                                                     </div>
-                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(20)} style={{background: 'linear-gradient(to left bottom, rgba(65, 186, 254, 0.8) 30%, rgba(65, 186, 254, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(20)} style={{background: 'linear-gradient(to left bottom, rgba(65, 186, 254, 0.8) 30%, rgba(65, 186, 254, 0) 70%)'}} className={`jipange-settings-selected-date-screen-body-inner-header-category ${this.state.selectedJipangeProductCategory === 20 ? 'selected' : ''}`}>
                                                                                         <img src='/assets/images/product-categories/pets.webp'/>
                                                                                         <p>Pets</p>
                                                                                     </div>
@@ -5160,19 +5166,19 @@ export default class LandingPg extends Component {
                                                                                     <div className='jipange-settings-selected-date-screen-body-inner-header-prev-category'>
                                                                                         <img onClick={() => this.prevJipangeSettingsProductList(5)} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
                                                                                     </div>
-                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(21)} style={{background: 'linear-gradient(to left bottom, rgba(245, 174, 205, 0.8) 30%, rgba(245, 174, 205, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(21)} style={{background: 'linear-gradient(to left bottom, rgba(245, 174, 205, 0.8) 30%, rgba(245, 174, 205, 0) 70%)'}} className={`jipange-settings-selected-date-screen-body-inner-header-category ${this.state.selectedJipangeProductCategory === 21 ? 'selected' : ''}`}>
                                                                                         <img src='/assets/images/product-categories/decor-flowers.webp'/>
                                                                                         <p>Decor & Flowers</p>
                                                                                     </div>
-                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(22)} style={{background: 'linear-gradient(to left bottom, rgba(251, 220, 185, 0.8) 30%, rgba(251, 220, 185, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(22)} style={{background: 'linear-gradient(to left bottom, rgba(251, 220, 185, 0.8) 30%, rgba(251, 220, 185, 0) 70%)'}} className={`jipange-settings-selected-date-screen-body-inner-header-category ${this.state.selectedJipangeProductCategory === 22 ? 'selected' : ''}`}>
                                                                                         <img src='/assets/images/product-categories/services2.webp'/>
                                                                                         <p>Services</p>
                                                                                     </div>
-                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(23)} style={{background: 'linear-gradient(to left bottom, rgba(243, 143, 78, 0.8) 30%, rgba(243, 143, 78, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(23)} style={{background: 'linear-gradient(to left bottom, rgba(243, 143, 78, 0.8) 30%, rgba(243, 143, 78, 0) 70%)'}} className={`jipange-settings-selected-date-screen-body-inner-header-category ${this.state.selectedJipangeProductCategory === 23 ? 'selected' : ''}`}>
                                                                                         <img src='/assets/images/product-categories/shopping-bags.webp'/>
                                                                                         <p>Shopping Bags</p>
                                                                                     </div>
-                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(24)} style={{background: 'linear-gradient(to left bottom, rgba(81, 181, 159, 0.8) 30%, rgba(81, 181, 159, 0) 70%)'}} className='jipange-settings-selected-date-screen-body-inner-header-category'>
+                                                                                    <div onClick={() => this.jipangeProductCategoryClicked(24)} style={{background: 'linear-gradient(to left bottom, rgba(81, 181, 159, 0.8) 30%, rgba(81, 181, 159, 0) 70%)'}} className={`jipange-settings-selected-date-screen-body-inner-header-category ${this.state.selectedJipangeProductCategory === 24 ? 'selected' : ''}`}>
                                                                                         <img src='/assets/images/product-categories/kids-toys.webp'/>
                                                                                         <p>Kids & Toys</p>
                                                                                     </div>
