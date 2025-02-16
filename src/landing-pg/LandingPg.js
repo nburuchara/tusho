@@ -237,11 +237,12 @@ const Styles = styled.div `
     margin-top: 10px;
     padding: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    display: block;
 }
 
 
 .searchResultsJipange.empty {
-    opacity: 0;
+    display: none;
     pointer-events: none;
 }
 
@@ -3003,7 +3004,7 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 16rem;
+    height: 12.5rem;
     flex-direction: column;
     padding: 5px;
 }   
@@ -3012,10 +3013,22 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 16rem;
+    height: 13.5rem;
     flex-direction: column;
     padding: 2px;
-    border: 1px solid black;
+    // border: 1px solid black;
+}
+
+.jipange-settings-no-products-icon img {
+    width: 25px;
+}
+
+.jipange-settings-no-products-text h5 {
+    margin-top: 8px;
+    font-family: poppins;
+    font-size: 80%;
+    font-weight: normal;
+    color: #5e626a;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -5404,10 +5417,10 @@ export default class LandingPg extends Component {
                                                                         {this.state.selectedJipangeProductCategory > 1 && 
                                                                             <div className='jipange-settings-no-products'>
                                                                                 <div className='jipange-settings-no-products-icon'>
-
+                                                                                    <img src='/assets/icons/home-jipange/empty-crate-icon.png'/>
                                                                                 </div>
                                                                                 <div className='jipange-settings-no-products-text'>
-
+                                                                                    <h5>No items currently available</h5>
                                                                                 </div>
                                                                             </div>
                                                                         }
