@@ -2466,7 +2466,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-date {
     width: 60%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: left;
@@ -2475,15 +2475,22 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-date span {
     background-color: #ffdae0;
-    margin-left: 2.5%;
+    margin-left: 3.5%;
     border-radius: 60%;
-    padding: 5.5px;
-    padding-left: 7.5px;
-    padding-right: 7.5px;
+    padding: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border: 1px solid #ffdae0;
+    transition-property: border;
+    cursor: pointer;
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-date span:hover {
+    border: 1px solid #da5773;
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-date img {
-    width: 20px;
+    width: 15px;
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-date label {
@@ -3078,6 +3085,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-body-left-footer-sign-out-icon img,
 .navbar-profile-account-popup-body-left-footer-sign-out-label p,
 .jipange-settings-calendar-header img,
+.jipange-settings-selected-date-screen-header-inner-header-lining-date span,
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn p,
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn label,
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn span,
