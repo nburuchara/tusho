@@ -2466,10 +2466,24 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-date {
     width: 60%;
-    // border: 1px solid black;
+    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: left;
+    // flex-direction: row;
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-date span {
+    background-color: #ffdae0;
+    margin-left: 2.5%;
+    border-radius: 60%;
+    padding: 5.5px;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+}
+
+.jipange-settings-selected-date-screen-header-inner-header-lining-date img {
+    width: 20px;
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-date label {
@@ -4947,7 +4961,10 @@ export default class LandingPg extends Component {
                                                                 <div className={`jipange-settings-selected-date-screen-header ${this.state.jipangeSelectedDateTotal > 0 ? 'non-empty-cart' : ''}`}>
                                                                     <div className='jipange-settings-selected-date-screen-header-inner-header-lining'>
                                                                         <div className='jipange-settings-selected-date-screen-header-inner-header-lining-date'>
-                                                                            <label>Your order (delivery for):</label><h4>{this.state.selectedJipangeDate}</h4>
+                                                                            <label>Delivery for:</label><h4>{this.state.selectedJipangeDate}</h4>
+                                                                            <span>
+                                                                                <img src='/assets/icons/home-jipange/delete-cart.png'/>
+                                                                            </span>
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options'>
                                                                             <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn'>
