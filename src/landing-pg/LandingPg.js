@@ -3912,6 +3912,19 @@ export default class LandingPg extends Component {
         })
     }
 
+    transitionToJipangeFinalStep = () => {
+        this.setState({
+            showJipangeSettingsSelectedDate: false,
+            showJipangeSettingsLoading: true
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    showJipangeSettingsLoading: false
+                })
+            })
+        })
+    }
+
     jipangeDateScheduleClicked = (dateObject) => {
         const year = dateObject.getFullYear();
         const month = dateObject.getMonth() + 1; // getMonth() is zero-based
