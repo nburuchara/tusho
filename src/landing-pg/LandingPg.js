@@ -2807,7 +2807,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-body-inner-header-category.selected {
     border: 1.5px solid #FF5733;
-    animation: flashBorder 0.5s ease-in-out 3; /* Runs 3 times, then stops */
+    animation: flashBorder 0.5s ease-in-out 5; /* Runs 3 times, then stops */
 }
 
 @keyframes flashBorder {
