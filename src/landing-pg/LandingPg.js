@@ -3896,33 +3896,40 @@ export default class LandingPg extends Component {
     }
 
     confirmJipangeOrder = (basketQty) => {
-        if (basketQty > 0)
+        if (basketQty > 0) {
+            this.setState({
+                confirmJipangeOrderClicked: true,
+                showConfirmJipangeOrderActive: true,
+                showConfirmJipangeOrderRest: false
+            }, () =>  {
+                setTimeout(() => {
+                    this.setState({
+                        confirmJipangeOrderClicked: false,
+                        showConfirmJipangeOrderActive: false,
+                        showConfirmJipangeOrderRest: true
+                    })
+                    this.transitionToJipangeFinalStep()
+                }, 2500)
+            })
+        }
+    }
+
+    transitionToJipangeFinalStep = () => {
         this.setState({
-            confirmJipangeOrderClicked: true,
-            showConfirmJipangeOrderActive: true,
-            showConfirmJipangeOrderRest: false
-        }, () =>  {
+            showJipangeSettingsSelectedDateEdit: false,
+            showJipangeSettingsLoading: true
+        }, () => {
             setTimeout(() => {
                 this.setState({
-                    confirmJipangeOrderClicked: false,
-                    showConfirmJipangeOrderActive: false,
-                    showConfirmJipangeOrderRest: true
+                    showJipangeSettingsLoading: false,
+                    showJipangeSettingsSelectedDateComplete: true
                 })
             }, 2500)
         })
     }
 
-    transitionToJipangeFinalStep = () => {
-        this.setState({
-            showJipangeSettingsSelectedDate: false,
-            showJipangeSettingsLoading: true
-        }, () => {
-            setTimeout(() => {
-                this.setState({
-                    showJipangeSettingsLoading: false
-                })
-            })
-        })
+    backToJipangeOrderSelection = () => {
+        
     }
 
     jipangeDateScheduleClicked = (dateObject) => {
@@ -5503,7 +5510,7 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                             <div className={`jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn ${!this.state.confirmJipangeOrderClicked ? 'non-empty-cart': ''}`}>
                                                                                 <button
-                                                                                onClick={() => this.confirmJipangeOrder(this.state.jipangeSelectedDateTotal)}
+                                                                                onClick={() => this.backToJipangeOrderSelection(this.state.jipangeSelectedDateTotal)}
                                                                                 >
                                                                                     {this.state.showConfirmJipangeOrderRest && 
                                                                                         <>
