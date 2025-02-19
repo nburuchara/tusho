@@ -2580,6 +2580,11 @@ const Styles = styled.div `
     cursor: not-allowed;
 }
 
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn button:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn.non-empty-cart button {
     filter: grayscale(0);
     cursor: pointer;
