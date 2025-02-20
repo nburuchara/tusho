@@ -2628,6 +2628,10 @@ const Styles = styled.div `
     flex-grow: 1;
 }
 
+.jipange-settings-selected-date-screen-header-inner-body.modify-order {
+
+}
+
 .jipange-settings-selected-date-screen-header-inner-body-no-items-icon {
     display: flex;
     align-items: center;
@@ -2653,7 +2657,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-header-inner-body-items-container {
     width: 100%;
     height: 5rem;
-    // border: 1px solid black;
+    border: 1px solid black;
     overflow-y: auto;
 }
 
