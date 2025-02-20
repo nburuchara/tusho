@@ -2628,8 +2628,10 @@ const Styles = styled.div `
     flex-grow: 1;
 }
 
-.jipange-settings-selected-date-screen-header-inner-body.modify-order {
-
+.jipange-settings-selected-date-screen-header-inner-body-modify-order {
+    border-bottom: 1px solid #ff5733;
+    flex-grow: 1;
+    padding-bottom: 3rem;
 }
 
 .jipange-settings-selected-date-screen-header-inner-body-no-items-icon {
@@ -2657,7 +2659,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-header-inner-body-items-container {
     width: 100%;
     height: 5rem;
-    border: 1px solid black;
+    // border: 1px solid black;
     overflow-y: auto;
 }
 
@@ -5544,7 +5546,7 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                         </div> 
                                                                     </div>
-                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body'>
+                                                                    <div className={`jipange-settings-selected-date-screen-header-inner-body-modify-order`}>
                                                                         {this.state.jipangeSelectedDateTotal <= 0 && 
                                                                             <div className='jipange-settings-selected-date-screen-header-inner-body-no-items'>
                                                                                 <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-icon'>
