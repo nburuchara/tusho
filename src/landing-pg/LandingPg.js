@@ -5648,7 +5648,7 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options'>
                                                                             <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn'>
-                                                                                <p><label>←</label><span>Back</span></p>
+                                                                                <p><label>←</label><span>Cancel</span></p>
                                                                             </div>
                                                                             <div className={`jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn ${!this.state.confirmJipangeOrderClicked ? 'non-empty-cart': ''}`}>
                                                                                 <button
