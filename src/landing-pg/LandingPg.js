@@ -2411,19 +2411,28 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete {
     width: 93.5%;
-    // border: 1px solid black;
-    height: 18.5rem;
+    border: 1px solid black;
+    height: 37.5rem;
+    position: relative;
     // overflow: hidden;
 }
 
 .jipange-settings-selected-date-screen-complete-header {
-    height: 100%;
+    height: 50%;
     margin-bottom: 0.5rem;
     // border-bottom: 1px solid #ccc;
     // border-radius: 8px;
     position: relative;
     display: flex;
     flex-direction: column;
+}
+
+.jipange-settings-selected-date-screen-complete-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border: 1px solid black;
+    height: 50%;
 }
 
     // # # JIPANGE SELECTED SCREEN EDIT
@@ -2626,13 +2635,22 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-header-inner-body {
     // border: 1px solid black;
     flex-grow: 1;
+    // max-height: 2rem;
 }
 
 .jipange-settings-selected-date-screen-header-inner-body-modify-order {
     border-bottom: 1px solid #ff5733;
     flex-grow: 1;
-    padding-bottom: 3rem;
+    // padding-bottom: 3rem;
 }
+
+
+.jipange-settings-selected-date-screen-header-inner-body-payment {
+    // border: 1px solid black;
+    // height: 6.5rem;
+    // flex-grow: 1;
+}
+
 
 .jipange-settings-selected-date-screen-header-inner-body-no-items-icon {
     display: flex;
@@ -5621,6 +5639,9 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                             </div>  
                                                                         }
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-payment'>
+
                                                                     </div>
                                                                 </div>
                                                             </div>
