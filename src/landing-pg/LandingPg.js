@@ -2411,7 +2411,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete {
     width: 93.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 37.5rem;
     position: relative;
     // overflow: hidden;
@@ -2492,6 +2492,11 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 img { 
     width: 15px;
     margin-top: 1.25px;
+    filter: grayscale(100%);
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2.selected img {
+    filter: grayscale(0);
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 {
@@ -2500,7 +2505,7 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: left;
-    margin-left: 2.5%;
+    margin-left: 5%;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 p {
@@ -2510,7 +2515,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3.selected p {
-    color: #ff5733;
+    color: #000;
     font-weight: bold;
 }
 
@@ -5730,7 +5735,7 @@ export default class LandingPg extends Component {
                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-header'>
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn'>
-                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1'>
+                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1`}>
                                                                                     <input
                                                                                     type="radio"
                                                                                     value="option1"
@@ -5741,7 +5746,7 @@ export default class LandingPg extends Component {
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2'>
                                                                                     <img src='/assets/icons/home-jipange/card-checkout-icon.png'/>
                                                                                 </div>
-                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedOption === 1 ? 'selected' : ''}`}>
+                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedOption === 'option1' ? 'selected' : ''}`}>
                                                                                     <p>Card</p>
                                                                                 </div>
                                                                             </div>
@@ -5759,7 +5764,7 @@ export default class LandingPg extends Component {
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2'>
 
                                                                                 </div>
-                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3'>
+                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedOption === 'option2' ? 'selected' : ''}`}>
                                                                                     <p>MPESA</p>
                                                                                 </div>
                                                                             </div>
@@ -5777,7 +5782,7 @@ export default class LandingPg extends Component {
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2'>
 
                                                                                 </div>
-                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3'>
+                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedOption === 'option3' ? 'selected' : ''}`}>
                                                                                     <p>Airtel</p>
                                                                                 </div>
                                                                             </div>
