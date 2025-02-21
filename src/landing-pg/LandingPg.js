@@ -2482,7 +2482,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 {
-    width: 25%;
+    width: 15%;
     // border: 1px solid black;
     display: flex;
     align-items: center;
@@ -2491,11 +2491,19 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 img { 
     width: 15px;
+    margin-top: 1.25px;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 {
-    width: 50%;
+    width: 60%;
     // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 p {
+    font-size: 75%;
 }
 
     // # # JIPANGE SELECTED SCREEN EDIT
@@ -5725,7 +5733,7 @@ export default class LandingPg extends Component {
                                                                                     <img src='/assets/icons/home-jipange/card-checkout-icon.png'/>
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3'>
-
+                                                                                    <p>Card</p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -5743,7 +5751,7 @@ export default class LandingPg extends Component {
 
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3'>
-
+                                                                                    <p>MPESA</p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -5761,7 +5769,7 @@ export default class LandingPg extends Component {
 
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3'>
-
+                                                                                    <p>Airtel</p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
