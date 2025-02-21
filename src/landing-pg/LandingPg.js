@@ -3212,9 +3212,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn span,
 .jipange-settings-selected-date-square,
 .jipange-settings-selected-date-screen-body-inner-header-categories-carousel,
-.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn,
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 img,
-.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 p,
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
