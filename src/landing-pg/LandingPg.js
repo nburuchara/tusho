@@ -2436,7 +2436,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header {
-    height: 18.5%;
+    height: 15.5%;
     // border: 1px solid black;
     display: flex;
     justify-content: space-between;
@@ -2454,7 +2454,7 @@ const Styles = styled.div `
     width: 85%;
     border: 1px solid #5e626a;
     display: flex;
-    height: 65%;
+    height: 50%;
     justify-content: space-between;
     border-radius: 8px;
     background-color: #faece9;
@@ -2529,7 +2529,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body {
     border: 1px solid black;
-    height: 81.5%;
+    height: 84.5%;
 }
 
     // # # JIPANGE SELECTED SCREEN EDIT
