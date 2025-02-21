@@ -5817,7 +5817,9 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                     </div>
                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body'>
+                                                                        <div className=''>
 
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
