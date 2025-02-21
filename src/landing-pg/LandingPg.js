@@ -2442,8 +2442,43 @@ const Styles = styled.div `
     justify-content: space-between;
 }
 
-.jipange-settings-selected-date-screen-complete-body-inner-header {
-    
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-option {
+    width: 33%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn {
+    width: 85%;
+    border: 1px solid black;
+    display: flex;
+    height: 65%;
+    justify-content: space-between;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1 {
+    width: 25%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1 input {
+    width: 25%;
+    border: 1px solid black;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 {
+    width: 25%;
+    border: 1px solid black;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 {
+    width: 50%;
+    border: 1px solid black;
 }
 
     // # # JIPANGE SELECTED SCREEN EDIT
@@ -5654,7 +5689,30 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                                 <div className='jipange-settings-selected-date-screen-complete-body'>
                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-header'>
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn'>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1'>
+                                                                                    <input
+                                                                                    type="radio"
+                                                                                    value="option1"
+                                                                                    checked={this.state.selectedOption === "option1"}
+                                                                                    onChange={this.handleOptionChange}
+                                                                                    />
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2'>
 
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3'>
+
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
+
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
+
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
