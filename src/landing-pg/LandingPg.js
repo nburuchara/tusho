@@ -2739,6 +2739,7 @@ const Styles = styled.div `
     border-bottom: 1px solid #ff5733;
     flex-grow: 1;
     // padding-bottom: 3rem;
+    display: flex;
 }
 
 
@@ -2775,6 +2776,13 @@ const Styles = styled.div `
     width: 100%;
     height: 5rem;
     // border: 1px solid black;
+    overflow-y: auto;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-items-container-modify-order {
+    width: 100%;
+    height: 8.5rem;
+    border: 1px solid black;
     overflow-y: auto;
 }
 
@@ -5686,7 +5694,7 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                         }
                                                                         {this.state.jipangeSelectedDateTotal > 0 && 
-                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-items-container'>
+                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-items-container-modify-order'>
                                                                                 <div className='jipange-settings-selected-date-screen-header-inner-body-items-list'>
                                                                                     {this.state.jipangeProduct1Cat1Qty !== 0 && 
                                                                                         <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
