@@ -2452,18 +2452,21 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn {
     width: 85%;
-    border: 1px solid black;
+    border: 1px solid #5e626a;
     display: flex;
     height: 65%;
     justify-content: space-between;
+    border-radius: 8px;
+    background-color: #faece9;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn input {
     width: 25%;
+    border: 1px solid #ff5733;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn input[type="radio"] {
-    transform: scale(1.65); /* Adjust the scale factor as needed */
+    transform: scale(1.5); /* Adjust the scale factor as needed */
     accent-color: #ff5733;
     border: 1px solid #ff5733;
     cursor: pointer;
