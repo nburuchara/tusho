@@ -2462,6 +2462,10 @@ const Styles = styled.div `
     margin-top: 0.15rem;
 }
 
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn:hover {
+    border: 1px solid #ff5733;
+}
+
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn.selected {
     border: 1px solid #ff5733;
 }
@@ -5644,7 +5648,7 @@ export default class LandingPg extends Component {
                                                                 <div className={`jipange-settings-selected-date-screen-complete-header`}>
                                                                     <div className='jipange-settings-selected-date-screen-header-inner-header-lining'>
                                                                         <div className='jipange-settings-selected-date-screen-header-inner-header-lining-date'>
-                                                                            <label>Your order (delivery for):</label><h4>{this.state.selectedJipangeDate}</h4>
+                                                                            <label>Checkout (delivery for):</label><h4>{this.state.selectedJipangeDate}</h4>
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options'>
                                                                             <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn'>
