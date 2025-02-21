@@ -3277,6 +3277,9 @@ export default class LandingPg extends Component {
             jipangeProduct5Cat1: 'Tushop Fresh Red Onions',
             jipangeProduct5Cat1Qty: 0,
             jipangeProduct5Cat1Price: 0,
+            jipangePaymentOption1: true,
+            jipangePaymentOption2: false,
+            jipangePaymentOption3: false,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -4051,6 +4054,10 @@ export default class LandingPg extends Component {
             }, 2500)
         })
     }
+
+    handleOptionChange = (event) => {
+        this.setState({ selectedOption: event.target.value });
+    };
 
     render () {
 
@@ -5694,8 +5701,8 @@ export default class LandingPg extends Component {
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1'>
                                                                                     <input
                                                                                     type="radio"
-                                                                                    value="option1"
-                                                                                    checked={this.state.selectedOption === "option1"}
+                                                                                    value="Card"
+                                                                                    checked={this.state.jipangePaymentOption1 === "Card"}
                                                                                     onChange={this.handleOptionChange}
                                                                                     />
                                                                                 </div>
