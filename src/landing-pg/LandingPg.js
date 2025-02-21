@@ -2444,7 +2444,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-option {
     width: 33%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2463,16 +2463,16 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn input[type="radio"] {
-    transform: scale(1.9); /* Adjust the scale factor as needed */
+    transform: scale(1.65); /* Adjust the scale factor as needed */
     accent-color: #ff5733;
     border: 1px solid #ff5733;
     cursor: pointer;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.15rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1 {
     width: 25%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2480,12 +2480,12 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 {
     width: 25%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 {
     width: 50%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
     // # # JIPANGE SELECTED SCREEN EDIT
@@ -3390,8 +3390,8 @@ export default class LandingPg extends Component {
 
     componentDidMount = () => {
         document.addEventListener('click', this.handleOutsideSearchBarClick);
-        this.loadCartTotal()
-        this.loadCartQty()
+        // this.loadCartTotal()
+        // this.loadCartQty()
     }
 
     componentWillUnmount() {
