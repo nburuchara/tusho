@@ -2459,6 +2459,7 @@ const Styles = styled.div `
     border-radius: 8px;
     background-color: #faece9;
     cursor: pointer;
+    margin-top: 0.15rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn.selected {
@@ -5777,7 +5778,7 @@ export default class LandingPg extends Component {
                                                                                     />
                                                                                 </div>
                                                                                 <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedJipangePaymentOption === 'option2' ? 'selected' : ''}`}>
-
+                                                                                    <img src='/assets/icons/home-jipange/mobile-checkout-icon.png'/>
                                                                                 </div>
                                                                                 <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedJipangePaymentOption === 'option2' ? 'selected' : ''}`}>
                                                                                     <p>MPESA</p>
@@ -5795,7 +5796,7 @@ export default class LandingPg extends Component {
                                                                                     />
                                                                                 </div>
                                                                                 <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedJipangePaymentOption === 'option3' ? 'selected' : ''}`}>
-
+                                                                                    <img src='/assets/icons/home-jipange/mobile-checkout-icon.png'/>
                                                                                 </div>
                                                                                 <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedJipangePaymentOption === 'option3' ? 'selected' : ''}`}>
                                                                                     <p>Airtel</p>
