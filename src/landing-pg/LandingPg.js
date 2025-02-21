@@ -3431,8 +3431,8 @@ export default class LandingPg extends Component {
 
     componentDidMount = () => {
         document.addEventListener('click', this.handleOutsideSearchBarClick);
-        // this.loadCartTotal()
-        // this.loadCartQty()
+        this.loadCartTotal()
+        this.loadCartQty()
     }
 
     componentWillUnmount() {
