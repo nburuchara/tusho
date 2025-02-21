@@ -2500,11 +2500,20 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: left;
+    margin-left: 2.5%;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 p {
     font-size: 75%;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
+
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3.selected p {
+    color: #ff5733;
+    font-weight: bold;
+}
+
 
     // # # JIPANGE SELECTED SCREEN EDIT
 
@@ -5732,7 +5741,7 @@ export default class LandingPg extends Component {
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2'>
                                                                                     <img src='/assets/icons/home-jipange/card-checkout-icon.png'/>
                                                                                 </div>
-                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3'>
+                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedOption === 1 ? 'selected' : ''}`}>
                                                                                     <p>Card</p>
                                                                                 </div>
                                                                             </div>
