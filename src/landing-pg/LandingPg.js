@@ -2431,13 +2431,13 @@ const Styles = styled.div `
     position: absolute;
     bottom: 0;
     width: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 50%;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header {
     height: 18.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     justify-content: space-between;
 }
@@ -2458,7 +2458,7 @@ const Styles = styled.div `
     justify-content: space-between;
     border-radius: 8px;
     background-color: #faece9;
-    transition-property: border;
+    cursor: pointer;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn.selected {
@@ -3324,7 +3324,7 @@ export default class LandingPg extends Component {
             jipangeProduct5Cat1: 'Tushop Fresh Red Onions',
             jipangeProduct5Cat1Qty: 0,
             jipangeProduct5Cat1Price: 0,
-            selectedOption: "option1",
+            selectedJipangePaymentOption: "option1",
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -4100,9 +4100,16 @@ export default class LandingPg extends Component {
         })
     }
 
-    handleOptionChange = (event) => {
-        this.setState({ selectedOption: event.target.value });
+    handleJipangePaymentOptionChange = (event) => {
+        this.setState({ selectedJipangePaymentOption: event.target.value });
     };
+
+    handleJipangePaymentOptionChange2 = (option) => {
+        this.setState({
+            selectedJipangePaymentOption: `option${option}`
+        })
+    }
+
 
     render () {
 
@@ -5742,55 +5749,55 @@ export default class LandingPg extends Component {
                                                                 <div className='jipange-settings-selected-date-screen-complete-body'>
                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-header'>
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
-                                                                            <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.selectedOption === 'option1' ? 'selected' : ''}`}>
+                                                                            <div onClick={() => this.handleJipangePaymentOptionChange2(1)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.selectedJipangePaymentOption === 'option1' ? 'selected' : ''}`}>
                                                                                 <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1`}>
                                                                                     <input
                                                                                     type="radio"
                                                                                     value="option1"
-                                                                                    checked={this.state.selectedOption === "option1"}
-                                                                                    onChange={this.handleOptionChange}
+                                                                                    checked={this.state.selectedJipangePaymentOption === "option1"}
+                                                                                    onChange={this.handleJipangePaymentOptionChange}
                                                                                     />
                                                                                 </div>
-                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedOption === 'option1' ? 'selected' : ''}`}>
+                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedJipangePaymentOption === 'option1' ? 'selected' : ''}`}>
                                                                                     <img src='/assets/icons/home-jipange/card-checkout-icon.png'/>
                                                                                 </div>
-                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedOption === 'option1' ? 'selected' : ''}`}>
+                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedJipangePaymentOption === 'option1' ? 'selected' : ''}`}>
                                                                                     <p>Card</p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
-                                                                            <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.selectedOption === 'option2' ? 'selected' : ''}`}>
+                                                                            <div onClick={() => this.handleJipangePaymentOptionChange2(2)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.selectedJipangePaymentOption === 'option2' ? 'selected' : ''}`}>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1'>
                                                                                     <input
                                                                                     type="radio"
                                                                                     value="option2"
-                                                                                    checked={this.state.selectedOption === "option2"}
-                                                                                    onChange={this.handleOptionChange}
+                                                                                    checked={this.state.selectedJipangePaymentOption === "option2"}
+                                                                                    onChange={this.handleJipangePaymentOptionChange}
                                                                                     />
                                                                                 </div>
-                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedOption === 'option2' ? 'selected' : ''}`}>
+                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedJipangePaymentOption === 'option2' ? 'selected' : ''}`}>
 
                                                                                 </div>
-                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedOption === 'option2' ? 'selected' : ''}`}>
+                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedJipangePaymentOption === 'option2' ? 'selected' : ''}`}>
                                                                                     <p>MPESA</p>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
-                                                                            <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.selectedOption === 'option3' ? 'selected' : ''}`}>
+                                                                            <div onClick={() => this.handleJipangePaymentOptionChange2(3)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.selectedJipangePaymentOption === 'option3' ? 'selected' : ''}`}>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1'>
                                                                                     <input
                                                                                     type="radio"
                                                                                     value="option3"
-                                                                                    checked={this.state.selectedOption === "option3"}
-                                                                                    onChange={this.handleOptionChange}
+                                                                                    checked={this.state.selectedJipangePaymentOption === "option3"}
+                                                                                    onChange={this.handleJipangePaymentOptionChange}
                                                                                     />
                                                                                 </div>
-                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedOption === 'option3' ? 'selected' : ''}`}>
+                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedJipangePaymentOption === 'option3' ? 'selected' : ''}`}>
 
                                                                                 </div>
-                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedOption === 'option3' ? 'selected' : ''}`}>
+                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedJipangePaymentOption === 'option3' ? 'selected' : ''}`}>
                                                                                     <p>Airtel</p>
                                                                                 </div>
                                                                             </div>
