@@ -2458,6 +2458,11 @@ const Styles = styled.div `
     justify-content: space-between;
     border-radius: 8px;
     background-color: #faece9;
+    transition-property: border;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn.selected {
+    border: 1px solid #ff5733;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn input {
@@ -2493,6 +2498,7 @@ const Styles = styled.div `
     width: 15px;
     margin-top: 1.25px;
     filter: grayscale(100%);
+    transition-property: filter;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2.selected img {
@@ -2512,6 +2518,7 @@ const Styles = styled.div `
     font-size: 75%;
     margin-top: 0px;
     margin-bottom: 0px;
+    transition-property: color, font-weight;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3.selected p {
@@ -3205,6 +3212,9 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn span,
 .jipange-settings-selected-date-square,
 .jipange-settings-selected-date-screen-body-inner-header-categories-carousel,
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn,
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 img,
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 p,
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
@@ -5733,7 +5743,7 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                                 <div className='jipange-settings-selected-date-screen-complete-body'>
                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-header'>
-                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
+                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.selectedOption === 'option1' ? 'selected' : ''}`}>
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn'>
                                                                                 <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1`}>
                                                                                     <input
@@ -5743,7 +5753,7 @@ export default class LandingPg extends Component {
                                                                                     onChange={this.handleOptionChange}
                                                                                     />
                                                                                 </div>
-                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2'>
+                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedOption === 'option1' ? 'selected' : ''}`}>
                                                                                     <img src='/assets/icons/home-jipange/card-checkout-icon.png'/>
                                                                                 </div>
                                                                                 <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedOption === 'option1' ? 'selected' : ''}`}>
@@ -5752,7 +5762,7 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
-                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn'>
+                                                                            <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.selectedOption === 'option2' ? 'selected' : ''}`}>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1'>
                                                                                     <input
                                                                                     type="radio"
@@ -5761,7 +5771,7 @@ export default class LandingPg extends Component {
                                                                                     onChange={this.handleOptionChange}
                                                                                     />
                                                                                 </div>
-                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2'>
+                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedOption === 'option2' ? 'selected' : ''}`}>
 
                                                                                 </div>
                                                                                 <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedOption === 'option2' ? 'selected' : ''}`}>
@@ -5770,7 +5780,7 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
-                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn'>
+                                                                            <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.selectedOption === 'option3' ? 'selected' : ''}`}>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1'>
                                                                                     <input
                                                                                     type="radio"
@@ -5779,7 +5789,7 @@ export default class LandingPg extends Component {
                                                                                     onChange={this.handleOptionChange}
                                                                                     />
                                                                                 </div>
-                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2'>
+                                                                                <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedOption === 'option3' ? 'selected' : ''}`}>
 
                                                                                 </div>
                                                                                 <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedOption === 'option3' ? 'selected' : ''}`}>
