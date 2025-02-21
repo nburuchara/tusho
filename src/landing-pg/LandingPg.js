@@ -2418,7 +2418,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-header {
-    height: 50%;
+    height: 35%;
     margin-bottom: 0.5rem;
     // border-bottom: 1px solid #ccc;
     // border-radius: 8px;
@@ -2428,11 +2428,11 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body {
+    height: 65%;
     position: absolute;
     bottom: 0;
     width: 100%;
     // border: 1px solid black;
-    height: 50%;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header {
@@ -2529,7 +2529,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body {
     border: 1px solid black;
-    flex-grow: 1;
+    height: 81.5%;
 }
 
     // # # JIPANGE SELECTED SCREEN EDIT
