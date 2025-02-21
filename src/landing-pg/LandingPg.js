@@ -2435,6 +2435,10 @@ const Styles = styled.div `
     height: 50%;
 }
 
+.jipange-settings-selected-date-screen-complete-body-inner-header {
+    height: 25%;
+}
+
     // # # JIPANGE SELECTED SCREEN EDIT
 
 .jipange-settings-selected-date-screen {
@@ -5640,7 +5644,9 @@ export default class LandingPg extends Component {
                                                                             </div>  
                                                                         }
                                                                     </div>
-                                                                    <div className='jipange-settings-selected-date-screen-header-inner-body-payment'>
+                                                                </div>
+                                                                <div className='jipange-settings-selected-date-screen-complete-body'>
+                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-header'>
 
                                                                     </div>
                                                                 </div>
