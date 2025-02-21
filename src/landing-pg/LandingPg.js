@@ -2527,6 +2527,10 @@ const Styles = styled.div `
     font-weight: bold;
 }
 
+.jipange-settings-selected-date-screen-complete-body-inner-body {
+    border: 1px solid black;
+    flex-grow: 1;
+}
 
     // # # JIPANGE SELECTED SCREEN EDIT
 
@@ -5803,6 +5807,9 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                             </div>
                                                                         </div>
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body'>
+
                                                                     </div>
                                                                 </div>
                                                             </div>
