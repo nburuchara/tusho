@@ -2782,7 +2782,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-header-inner-body-items-container-modify-order {
     width: 100%;
     height: 8.5rem;
-    border: 1px solid black;
+    // border: 1px solid black;
     overflow-y: auto;
 }
 
