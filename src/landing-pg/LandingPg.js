@@ -2460,7 +2460,14 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn input {
     width: 25%;
-    border: 1px solid black;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn input[type="radio"] {
+    transform: scale(1.9); /* Adjust the scale factor as needed */
+    accent-color: #ff5733;
+    border: 1px solid #ff5733;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1 {
