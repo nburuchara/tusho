@@ -2436,7 +2436,14 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header {
-    height: 25%;
+    height: 18.5%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-header {
+    
 }
 
     // # # JIPANGE SELECTED SCREEN EDIT
