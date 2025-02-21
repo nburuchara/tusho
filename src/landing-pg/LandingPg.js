@@ -2454,7 +2454,7 @@ const Styles = styled.div `
     width: 85%;
     border: 1px solid #5e626a;
     display: flex;
-    height: 50%;
+    height: 62.5%;
     justify-content: space-between;
     border-radius: 8px;
     background-color: #faece9;
