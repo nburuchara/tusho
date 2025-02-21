@@ -5743,8 +5743,8 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                                 <div className='jipange-settings-selected-date-screen-complete-body'>
                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-header'>
-                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.selectedOption === 'option1' ? 'selected' : ''}`}>
-                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn'>
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
+                                                                            <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.selectedOption === 'option1' ? 'selected' : ''}`}>
                                                                                 <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1`}>
                                                                                     <input
                                                                                     type="radio"
