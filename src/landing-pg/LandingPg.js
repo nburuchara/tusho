@@ -2484,6 +2484,13 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 {
     width: 25%;
     // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 img { 
+    width: 15px;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 {
@@ -5715,7 +5722,7 @@ export default class LandingPg extends Component {
                                                                                     />
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2'>
-
+                                                                                    <img src='/assets/icons/home-jipange/card-checkout-icon.png'/>
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3'>
 
