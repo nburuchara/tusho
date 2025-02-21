@@ -2458,17 +2458,17 @@ const Styles = styled.div `
     justify-content: space-between;
 }
 
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn input {
+    width: 25%;
+    border: 1px solid black;
+}
+
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1 {
     width: 25%;
     border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1 input {
-    width: 25%;
-    border: 1px solid black;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 {
@@ -3277,9 +3277,7 @@ export default class LandingPg extends Component {
             jipangeProduct5Cat1: 'Tushop Fresh Red Onions',
             jipangeProduct5Cat1Qty: 0,
             jipangeProduct5Cat1Price: 0,
-            jipangePaymentOption1: true,
-            jipangePaymentOption2: false,
-            jipangePaymentOption3: false,
+            selectedOption: "option1",
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -5701,8 +5699,8 @@ export default class LandingPg extends Component {
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1'>
                                                                                     <input
                                                                                     type="radio"
-                                                                                    value="Card"
-                                                                                    checked={this.state.jipangePaymentOption1 === "Card"}
+                                                                                    value="option1"
+                                                                                    checked={this.state.selectedOption === "option1"}
                                                                                     onChange={this.handleOptionChange}
                                                                                     />
                                                                                 </div>
@@ -5715,10 +5713,40 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn'>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1'>
+                                                                                    <input
+                                                                                    type="radio"
+                                                                                    value="option2"
+                                                                                    checked={this.state.selectedOption === "option2"}
+                                                                                    onChange={this.handleOptionChange}
+                                                                                    />
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2'>
 
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3'>
+
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn'>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1'>
+                                                                                    <input
+                                                                                    type="radio"
+                                                                                    value="option3"
+                                                                                    checked={this.state.selectedOption === "option3"}
+                                                                                    onChange={this.handleOptionChange}
+                                                                                    />
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2'>
 
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3'>
+
+                                                                                </div>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
