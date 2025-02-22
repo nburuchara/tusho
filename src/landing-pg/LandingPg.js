@@ -5140,7 +5140,7 @@ export default class LandingPg extends Component {
                                                                 <div className={`jipange-settings-selected-date-screen-header ${this.state.jipangeSelectedDateTotal > 0 ? 'non-empty-cart' : ''}`}>
                                                                     <div className='jipange-settings-selected-date-screen-header-inner-header-lining'>
                                                                         <div className='jipange-settings-selected-date-screen-header-inner-header-lining-date'>
-                                                                            <label>Delivery for:</label><h4>{this.state.selectedJipangeDate}</h4>
+                                                                            <label>Items (delivery for):</label><h4>{this.state.selectedJipangeDate}</h4>
                                                                             <span>
                                                                                 <img src='/assets/icons/home-jipange/delete-cart.png'/>
                                                                             </span>
