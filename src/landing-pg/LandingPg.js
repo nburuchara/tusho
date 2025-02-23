@@ -2649,6 +2649,8 @@ const Styles = styled.div `
     margin-left: 2.5%;
     margin-bottom: 5px;
     font-weight: normal;
+    font-family: poppins;
+    font-size: 80%;
     color: #5e626a;
 }
 
@@ -2658,16 +2660,16 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-send-prompt button {
-    width: 25%;
+    width: 23.5%;
     margin-top: 5px;
     border-radius: 5px;
     border: 1px solid #ff5733;
     background-color: #ff5733;
     color: white;
     font-family: poppins;
-    font-weight: bold;
-    font-size: 75%;
-    padding: 3px;
+    font-size: 70%;
+    padding: 4px;
+    cursor: pointer;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-mpesa {
