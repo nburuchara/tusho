@@ -2813,6 +2813,15 @@ const Styles = styled.div `
     cursor: pointer;
 }   
 
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-payment {
+    border: 1px solid black;
+    height: 100%;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-payment p {
+    
+}
+
 
     // # # JIPANGE SELECTED SCREEN EDIT
 
@@ -3606,8 +3615,8 @@ export default class LandingPg extends Component {
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             selectedJipangeDate: '',
-            showJipangeSettingsSelectedDateComplete: false,
-            showJipangeSettingsSelectedDateEdit: true,
+            showJipangeSettingsSelectedDateComplete: true,
+            showJipangeSettingsSelectedDateEdit: false,
             showConfirmJipangeOrderRest: true,
             showConfirmJipangeOrderActive: false,
             selectedJipangeProductCategory: 1,
@@ -3637,9 +3646,10 @@ export default class LandingPg extends Component {
             jipangeProduct5Cat1Price: 0,
             selectedJipangePaymentOption: "option1",
             showJipangePaymentLoading: false,
-            showJipangeCardPayment: true,
+            showJipangeCardPayment: false,
             showJipangeMpesaPayment: false,
             showJipangeAirtelPayment: false,
+            showJipangeConfirmAddress: true,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -6398,6 +6408,11 @@ export default class LandingPg extends Component {
                                                                                         <button>Confirm Payment</button>
                                                                                     </div>
                                                                                 </div>
+                                                                            </div>
+                                                                        }
+                                                                        {this.state.showJipangeConfirmAddress && 
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-payment'>
+                                                                                <p>Enter your shipping address for this order:</p>
                                                                             </div>
                                                                         }
                                                                     </div>
