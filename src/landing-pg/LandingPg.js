@@ -2454,7 +2454,7 @@ const Styles = styled.div `
     width: 85%;
     border: 1px solid #5e626a;
     display: flex;
-    height: 62.5%;
+    height: 68.5%;
     justify-content: space-between;
     border-radius: 8px;
     background-color: #faece9;
@@ -2532,7 +2532,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 86.5%;
     position: relative;
 }
@@ -2555,9 +2555,10 @@ const Styles = styled.div `
  }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment {
-    // border: 1px solid black;
+    border: 1px solid black;
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field {
@@ -2574,15 +2575,15 @@ const Styles = styled.div `
     border-radius: 5px;
     border: 1px solid #ccc;
     padding: 7.5px;
-    font-size: 90%;
-    font-family: inter;
+    font-size: 80%;
+    font-family: poppins;
 }   
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field h5 {
     font-size: 70%;
     font-family: poppins;
     font-weight: normal;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
     margin-top: 0.15rem;
 }   
 
@@ -2604,19 +2605,19 @@ const Styles = styled.div `
     border-radius: 5px;
     border: 1px solid #ccc;
     padding: 7.5px;
-    font-size: 90%;
-    font-family: inter;
+    font-size: 80%;
+    font-family: poppins;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-address-line {
-    margin-top: 0.5rem;
+    margin-top: 0.6rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-half h5 {
     font-size: 70%;
     font-family: poppins;
     font-weight: normal;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.3rem;
     margin-top: 0.3rem;
 }
 
@@ -2640,6 +2641,24 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment {
 
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-footer {
+    position: absolute;
+    bottom: 0;
+    border: 1px solid black;
+    width: 100%;
+    height: 6.25rem;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-footer-details {
+    height: 60%;
+    border: 1px solid black;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn {
+    height: 40%;
+    border: 1px solid black;
 }
 
     // # # JIPANGE SELECTED SCREEN EDIT
@@ -5992,7 +6011,7 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field'>
                                                                                     <div>
-                                                                                        <h5>Shipping Address</h5>
+                                                                                        <h5>Billing Address</h5>
                                                                                     </div>
                                                                                     <div>
                                                                                         <input
@@ -6003,6 +6022,14 @@ export default class LandingPg extends Component {
                                                                                         <input
                                                                                         placeholder='Address Line 2'
                                                                                         />
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer'>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details'>
+
+                                                                                    </div>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
+
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -6018,9 +6045,6 @@ export default class LandingPg extends Component {
 
                                                                             </div>
                                                                         }
-                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer'>
-
-                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
