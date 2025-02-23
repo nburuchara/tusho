@@ -2549,7 +2549,7 @@ const Styles = styled.div `
     margin-top: 6.5rem;
 }
 
-.jipange-settings-selected-date-screen-complete-body-inner-body-payment-loading p{
+.jipange-settings-selected-date-screen-complete-body-inner-body-payment-loading p {
     margin-left: 0px;
     margin-top: 8px;
  }
@@ -2574,7 +2574,7 @@ const Styles = styled.div `
     border-radius: 5px;
     border: 1px solid #ccc;
     padding: 7.5px;
-    font-size: 100%;
+    font-size: 90%;
     font-family: inter;
 }   
 
@@ -2593,7 +2593,8 @@ const Styles = styled.div `
     // border: 1px solid black;
     height: 3rem;
     margin-left: 2.5%;
-    margin-top: 0.65rem;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
     height: auto;
 }   
 
@@ -2603,8 +2604,12 @@ const Styles = styled.div `
     border-radius: 5px;
     border: 1px solid #ccc;
     padding: 7.5px;
-    font-size: 100%;
+    font-size: 90%;
     font-family: inter;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-address-line {
+    margin-top: 0.5rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-half h5 {
@@ -5982,6 +5987,21 @@ export default class LandingPg extends Component {
                                                                                         <h5>CVV</h5>
                                                                                         <input
                                                                                         placeholder='XXX'
+                                                                                        />
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field'>
+                                                                                    <div>
+                                                                                        <h5>Shipping Address</h5>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <input
+                                                                                        placeholder='Address Line 1'
+                                                                                        />
+                                                                                    </div>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-address-line'>
+                                                                                        <input
+                                                                                        placeholder='Address Line 2'
                                                                                         />
                                                                                     </div>
                                                                                 </div>
