@@ -2555,7 +2555,7 @@ const Styles = styled.div `
  }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment {
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 100%;
     height: 100%;
 }
@@ -2564,21 +2564,23 @@ const Styles = styled.div `
     width: 90%;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
+    // border: 1px solid black;
+    margin-left: 2.5%;
 }   
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field input {
     width: 100%;
     outline: none;
+    border-radius: 3px;
     border: 1px solid #5e626a;
-    padding: 3px;
-    font-size: 80%;
+    padding: 7.5px;
+    font-size: 100%;
 }   
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field h5 {
     font-size: 65%;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    font-weight: normal;
+    margin-bottom: 0.5rem;
 }   
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment {
