@@ -2586,6 +2586,28 @@ const Styles = styled.div `
     margin-top: 0.3rem;
 }   
 
+.jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-half {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    height: 3rem;
+    margin-left: 2.5%;
+    margin-top: 0.5rem;
+}   
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-expiry {
+    width: 50%;
+    display: flex;
+    border: 1px solid black;
+}  
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-cvv {
+    width: 50%;
+    display: flex;
+    border: 1px solid black;
+}   
+
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment {
 
 }
@@ -5926,6 +5948,14 @@ export default class LandingPg extends Component {
                                                                                         <input
                                                                                         placeholder='XXXX XXXX XXXX XXXX'
                                                                                         />
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-half'>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-expiry'>
+
+                                                                                    </div>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-cvv'>
+
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
