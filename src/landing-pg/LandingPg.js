@@ -2562,14 +2562,23 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field {
     width: 90%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
 }   
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field input {
     width: 100%;
+    outline: none;
+    border: 1px solid #5e626a;
+    padding: 3px;
+    font-size: 80%;
 }   
 
-.jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field p {
+.jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field h5 {
     font-size: 65%;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }   
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment {
@@ -5904,7 +5913,14 @@ export default class LandingPg extends Component {
                                                                         }
                                                                         {this.state.showJipangeCardPayment && 
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment'>
-                                                                                
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field'>
+                                                                                    <div>
+                                                                                        <h5>Credit Card Number</h5>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <input/>
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
                                                                         }
                                                                         
