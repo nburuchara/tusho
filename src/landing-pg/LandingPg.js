@@ -2640,7 +2640,37 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details {
     border: 1px solid black;
-    height: 15rem;
+    height: 13rem;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-mpesa {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    // border: 1px solid black;
+    margin-left: 2.5%;
+}   
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-mpesa input {
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 7.5px;
+    font-size: 80%;
+    font-family: poppins;
+}   
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-mpesa h5 {
+    font-size: 70%;
+    font-family: poppins;
+    font-weight: normal;
+    margin-bottom: 0.3rem;
+    margin-top: 0.15rem;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions {
+    
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment {
@@ -6113,7 +6143,29 @@ export default class LandingPg extends Component {
                                                                         {this.state.showJipangeMpesaPayment && 
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment'>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details'>
-
+                                                                                    <p>Enter your mobile number to receive a prompt:</p>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-mpesa'>
+                                                                                        <div>
+                                                                                            <h5>Mobile Number</h5>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <input
+                                                                                            placeholder='0712345678'
+                                                                                            />
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <p>OR follow the instructions below:</p>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions'>
+                                                                                        <ol>
+                                                                                            <p><li>Go to MPESA menu on your phone</li></p>
+                                                                                            <p><li>Select Paybill option</li></p>
+                                                                                            <p><li>Enter Business Number 222222</li></p>
+                                                                                            <p><li>Enter Account Number PXXPWGMR</li></p>
+                                                                                            <p><li>Enter the amount {this.state.jipangeSelectedDateTotal + 99}.00</li></p>
+                                                                                            <p><li>Enter your MPESA PIN and Send</li></p>
+                                                                                            <p><li>You will receive a confirmation SMS from MPESA</li></p>
+                                                                                        </ol>
+                                                                                    </div>
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer'>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details'>
