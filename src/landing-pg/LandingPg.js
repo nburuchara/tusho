@@ -2668,7 +2668,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-1 p {
     margin-left: 2.5%;
-    margin-top: 0px;
+    margin-top: 3px;
     margin-bottom: 5px;
     font-size: 82.5%;
 }
@@ -2698,7 +2698,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn {
-    height: 35%;
+    height: 32.5%;
     // border: 1px solid black;
     margin-top: 1rem;
     margin-left: 2.5%;
@@ -2713,6 +2713,7 @@ const Styles = styled.div `
     border-radius: 8px;
     font-family: poppins;
     font-size: 85%;
+    cursor: pointer;
 }   
 
 
