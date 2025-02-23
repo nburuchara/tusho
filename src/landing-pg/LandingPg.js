@@ -2534,6 +2534,12 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-complete-body-inner-body {
     border: 1px solid black;
     height: 84.5%;
+    position: relative;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-footer {
+    position: absolute;
+
 }
 
     // # # JIPANGE SELECTED SCREEN EDIT
@@ -3312,8 +3318,8 @@ export default class LandingPg extends Component {
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             selectedJipangeDate: '',
-            showJipangeSettingsSelectedDateComplete: false,
-            showJipangeSettingsSelectedDateEdit: true,
+            showJipangeSettingsSelectedDateComplete: true,
+            showJipangeSettingsSelectedDateEdit: false,
             showConfirmJipangeOrderRest: true,
             showConfirmJipangeOrderActive: false,
             selectedJipangeProductCategory: 1,
@@ -5821,7 +5827,7 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                     </div>
                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body'>
-                                                                        <div className=''>
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer'>
 
                                                                         </div>
                                                                     </div>
