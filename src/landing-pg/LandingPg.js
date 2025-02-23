@@ -2633,9 +2633,9 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment {
     width: 100%;
-    height: 99.25%;
+    height: 98.5%;
     position: relative;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 
@@ -4455,21 +4455,27 @@ export default class LandingPg extends Component {
         } else if (this.state.showJipangeMpesaPayment) {
             if  (option === 1 && !this.state.showJipangePaymentLoading) {
                 this.setState({
-                    selectedJipangePaymentOption: `option${option}`
+                    selectedJipangePaymentOption: `option${option}`,
+                    showJipangeMpesaPayment: false,
+                    showJipangePaymentLoading: true
                 }, () => {
                     setTimeout(() => {
                         this.setState({
-
+                            showJipangePaymentLoading: false,
+                            showJipangeCardPayment: true
                         })
                     }, 2500)
                 })
             } else if (option === 3 && !this.state.showJipangePaymentLoading) {
                 this.setState({
-
+                    selectedJipangePaymentOption: `option${option}`,
+                    showJipangeMpesaPayment: false,
+                    showJipangePaymentLoading: true
                 }, () => {
                     setTimeout(() => {
                         this.setState({
-
+                            showJipangePaymentLoading: false,
+                            showJipangeAirtelPayment: true
                         })
                     }, 2500)
                 })
