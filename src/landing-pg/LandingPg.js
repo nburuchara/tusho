@@ -2759,6 +2759,22 @@ const Styles = styled.div `
     // flex-grow: 1;
 }
 
+.jipange-settings-selected-date-screen-header-inner-body-no-items-modify-order {
+    // text-align: center;
+    // border: 1px solid black;
+    width: 100%;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-no-items-icon-modify-order {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-no-items-icon-modify-order img {
+    width: 22.5px;
+    margin-top: 2.9rem;
+}
 
 .jipange-settings-selected-date-screen-header-inner-body-no-items-icon {
     display: flex;
@@ -5694,8 +5710,8 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                     <div className={`jipange-settings-selected-date-screen-header-inner-body-modify-order`}>
                                                                         {this.state.jipangeSelectedDateTotal <= 0 && 
-                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-no-items'>
-                                                                                <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-icon'>
+                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-modify-order'>
+                                                                                <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-icon-modify-order'>
                                                                                     <img src='/assets/icons/home-jipange/cart-no-items-icon2.png'/>
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-text'>
