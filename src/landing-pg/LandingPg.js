@@ -3613,8 +3613,8 @@ export default class LandingPg extends Component {
             jipangeProduct5Cat1Price: 0,
             selectedJipangePaymentOption: "option1",
             showJipangePaymentLoading: false,
-            showJipangeCardPayment: true,
-            showJipangeMpesaPayment: false,
+            showJipangeCardPayment: false,
+            showJipangeMpesaPayment: true,
             showJipangeAirtelPayment: false,
 
             //* - SEARCH BAR COMPONENTS - *//
