@@ -2707,7 +2707,15 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border: 1px solid black;
+}
 
+.jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment-details {
+    // border: 1px solid black;
+    height: auto;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer {
@@ -3582,8 +3590,8 @@ export default class LandingPg extends Component {
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             selectedJipangeDate: '',
-            showJipangeSettingsSelectedDateComplete: false,
-            showJipangeSettingsSelectedDateEdit: true,
+            showJipangeSettingsSelectedDateComplete: true,
+            showJipangeSettingsSelectedDateEdit: false,
             showConfirmJipangeOrderRest: true,
             showConfirmJipangeOrderActive: false,
             selectedJipangeProductCategory: 1,
@@ -3614,8 +3622,8 @@ export default class LandingPg extends Component {
             selectedJipangePaymentOption: "option1",
             showJipangePaymentLoading: false,
             showJipangeCardPayment: false,
-            showJipangeMpesaPayment: true,
-            showJipangeAirtelPayment: false,
+            showJipangeMpesaPayment: false,
+            showJipangeAirtelPayment: true,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -6181,7 +6189,7 @@ export default class LandingPg extends Component {
                                                                                     <h5>Enter your mobile number to receive a prompt:</h5>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-mpesa'>
                                                                                         <div>
-                                                                                            {/* <h5>Mobile Number</h5> */}
+                                                                                            
                                                                                         </div>
                                                                                         <div>
                                                                                             <input
@@ -6230,7 +6238,43 @@ export default class LandingPg extends Component {
                                                                         }
                                                                         {this.state.showJipangeAirtelPayment && 
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment'>
-
+                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details'>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative'>
+                                                                                        <p>Dial <strong>*334#</strong> then follow the steps below:</p>
+                                                                                    </div>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions'>
+                                                                                        <ol>
+                                                                                            <p><li>Select Paybill and Till Payments</li></p>
+                                                                                            <p><li>Select Airtel Paybill</li></p>
+                                                                                            <p><li>Enter Paybill Number 222222</li></p>
+                                                                                            <p><li>Enter Reference Number: PXXPWGMR</li></p>
+                                                                                            <p><li>Enter the amount {this.state.jipangeSelectedDateTotal + 99}.00</li></p>
+                                                                                            <p><li>Enter PIN</li></p>
+                                                                                        </ol>
+                                                                                    </div>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative'>
+                                                                                        <p>Click <strong>complete</strong> on eCitizen when done</p>
+                                                                                    </div>
+                                                                                 </div>
+                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer'>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details'>
+                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-1'>
+                                                                                            <p className=''>Subtotal</p>
+                                                                                            <p>Kshs. {this.state.jipangeSelectedDateTotal}.00</p>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-2'>
+                                                                                            <p className=''>Delivery fee</p>
+                                                                                            <p>Kshs. 99.00</p>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-total'>
+                                                                                            <h4><strong>Total</strong></h4>
+                                                                                            <h4><strong>Kshs. {this.state.jipangeSelectedDateTotal + 99}.00</strong></h4>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
+                                                                                        <button>Confirm Payment</button>
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
                                                                         }
                                                                     </div>
