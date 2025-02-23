@@ -2555,8 +2555,22 @@ const Styles = styled.div `
  }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment {
-    
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
 }
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field {
+    width: 90%;
+}   
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field input {
+    width: 100%;
+}   
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field p {
+    font-size: 65%;
+}   
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment {
 
@@ -3388,6 +3402,10 @@ export default class LandingPg extends Component {
             jipangeProduct5Cat1Qty: 0,
             jipangeProduct5Cat1Price: 0,
             selectedJipangePaymentOption: "option1",
+            showJipangePaymentLoading: false,
+            showJipangeCardPayment: true,
+            showJipangeMpesaPayment: false,
+            showJipangeAirtelPayment: false,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -5867,7 +5885,7 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                     </div>
                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body'>
-                                                                        {this.state.showJipangeCardPaymentLoading && 
+                                                                        {this.state.showJipangePaymentLoading && 
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-payment-loading'>
                                                                                 <TailSpin
                                                                                 visible={true}
@@ -5886,7 +5904,7 @@ export default class LandingPg extends Component {
                                                                         }
                                                                         {this.state.showJipangeCardPayment && 
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment'>
-
+                                                                                
                                                                             </div>
                                                                         }
                                                                         
