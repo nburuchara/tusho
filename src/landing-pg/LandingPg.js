@@ -2638,9 +2638,36 @@ const Styles = styled.div `
     // border: 1px solid black;
 }
 
+
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 13rem;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details h5 {
+    margin-top: 5px;
+    margin-left: 2.5%;
+    margin-bottom: 5px;
+    font-weight: normal;
+    color: #5e626a;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-send-prompt {
+    text-align: right;
+    width: 96%;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-send-prompt button {
+    width: 25%;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ff5733;
+    background-color: #ff5733;
+    color: white;
+    font-family: poppins;
+    font-weight: bold;
+    font-size: 75%;
+    padding: 3px;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-mpesa {
@@ -2666,7 +2693,11 @@ const Styles = styled.div `
     font-family: poppins;
     font-weight: normal;
     margin-bottom: 0.3rem;
-    margin-top: 0.15rem;
+    margin-top: 0.9rem;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative p {
+    margin-top: 2px;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions {
@@ -6143,10 +6174,10 @@ export default class LandingPg extends Component {
                                                                         {this.state.showJipangeMpesaPayment && 
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment'>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details'>
-                                                                                    <p>Enter your mobile number to receive a prompt:</p>
+                                                                                    <h5>Enter your mobile number to receive a prompt:</h5>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-mpesa'>
                                                                                         <div>
-                                                                                            <h5>Mobile Number</h5>
+                                                                                            {/* <h5>Mobile Number</h5> */}
                                                                                         </div>
                                                                                         <div>
                                                                                             <input
@@ -6154,7 +6185,12 @@ export default class LandingPg extends Component {
                                                                                             />
                                                                                         </div>
                                                                                     </div>
-                                                                                    <p>OR follow the instructions below:</p>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-send-prompt'>
+                                                                                        <button>Send Prompt</button>
+                                                                                    </div>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative'>
+                                                                                        <p>OR follow the instructions below:</p>
+                                                                                    </div>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions'>
                                                                                         <ol>
                                                                                             <p><li>Go to MPESA menu on your phone</li></p>
