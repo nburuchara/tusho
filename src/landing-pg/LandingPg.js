@@ -2641,7 +2641,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details {
     // border: 1px solid black;
-    height: 13rem;
+    height: auto;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details h5 {
@@ -2650,7 +2650,7 @@ const Styles = styled.div `
     margin-bottom: 5px;
     font-weight: normal;
     font-family: poppins;
-    font-size: 80%;
+    font-size: 76.5%;
     color: #5e626a;
 }
 
@@ -2699,7 +2699,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative p {
-    margin-top: 2px;
+    margin-top: 0px;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions {
@@ -6191,7 +6191,7 @@ export default class LandingPg extends Component {
                                                                                         <button>Send Prompt</button>
                                                                                     </div>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative'>
-                                                                                        <p>OR follow the instructions below:</p>
+                                                                                        <p><strong>OR</strong>follow the instructions below:</p>
                                                                                     </div>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions'>
                                                                                         <ol>
