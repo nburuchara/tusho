@@ -2532,13 +2532,37 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 84.5%;
     position: relative;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer {
     position: absolute;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-payment-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 6.5rem;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-payment-loading p{
+    margin-left: 0px;
+    margin-top: 8px;
+ }
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-card-payment {
+    
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment {
+
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment {
 
 }
 
@@ -5843,6 +5867,39 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                     </div>
                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body'>
+                                                                        {this.state.showJipangeCardPaymentLoading && 
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-payment-loading'>
+                                                                                <TailSpin
+                                                                                visible={true}
+                                                                                height="30px"
+                                                                                width="30px"
+                                                                                color="#ff5733"
+                                                                                ariaLabel="tail-spin-loading"
+                                                                                radius="2"
+                                                                                wrapperStyle={{}}
+                                                                                wrapperClass=""
+                                                                                />
+                                                                                <div>
+                                                                                    <p>Loading...</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        }
+                                                                        {this.state.showJipangeCardPayment && 
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment'>
+
+                                                                            </div>
+                                                                        }
+                                                                        
+                                                                        {this.state.showJipangeMpesaPayment && 
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment'>
+
+                                                                            </div>
+                                                                        }
+                                                                        {this.state.showJipangeAirtelPayment && 
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment'>
+
+                                                                            </div>
+                                                                        }
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer'>
 
                                                                         </div>
