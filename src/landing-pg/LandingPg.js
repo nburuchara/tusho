@@ -2742,6 +2742,7 @@ const Styles = styled.div `
     margin-top: 3px;
     margin-bottom: 5px;
     font-size: 82.5%;
+    color: #000;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-2 p {
@@ -2749,6 +2750,7 @@ const Styles = styled.div `
     margin-bottom: 5px;
     margin-top: 0px;
     font-size: 82.5%;
+    color: #000;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-total {
@@ -3580,8 +3582,8 @@ export default class LandingPg extends Component {
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             selectedJipangeDate: '',
-            showJipangeSettingsSelectedDateComplete: true,
-            showJipangeSettingsSelectedDateEdit: false,
+            showJipangeSettingsSelectedDateComplete: false,
+            showJipangeSettingsSelectedDateEdit: true,
             showConfirmJipangeOrderRest: true,
             showConfirmJipangeOrderActive: false,
             selectedJipangeProductCategory: 1,
@@ -3611,8 +3613,8 @@ export default class LandingPg extends Component {
             jipangeProduct5Cat1Price: 0,
             selectedJipangePaymentOption: "option1",
             showJipangePaymentLoading: false,
-            showJipangeCardPayment: false,
-            showJipangeMpesaPayment: true,
+            showJipangeCardPayment: true,
+            showJipangeMpesaPayment: false,
             showJipangeAirtelPayment: false,
 
             //* - SEARCH BAR COMPONENTS - *//
@@ -6191,7 +6193,7 @@ export default class LandingPg extends Component {
                                                                                         <button>Send Prompt</button>
                                                                                     </div>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative'>
-                                                                                        <p><strong>OR</strong>follow the instructions below:</p>
+                                                                                        <p><strong>OR</strong> follow the instructions below:</p>
                                                                                     </div>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions'>
                                                                                         <ol>
