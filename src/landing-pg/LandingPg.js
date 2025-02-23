@@ -2712,7 +2712,7 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
     border-radius: 8px;
     font-family: poppins;
-    font-size: 80%;
+    font-size: 85%;
 }   
 
 
@@ -2947,7 +2947,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-header-inner-body-no-items-icon-modify-order img {
     width: 22.5px;
-    margin-top: 2.9rem;
+    margin-top: 2rem;
 }
 
 .jipange-settings-selected-date-screen-header-inner-body-no-items-icon {
@@ -3508,8 +3508,8 @@ export default class LandingPg extends Component {
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             selectedJipangeDate: '',
-            showJipangeSettingsSelectedDateComplete: true,
-            showJipangeSettingsSelectedDateEdit: false,
+            showJipangeSettingsSelectedDateComplete: false,
+            showJipangeSettingsSelectedDateEdit: true,
             showConfirmJipangeOrderRest: true,
             showConfirmJipangeOrderActive: false,
             selectedJipangeProductCategory: 1,
@@ -6083,7 +6083,7 @@ export default class LandingPg extends Component {
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details'>
                                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-1'>
                                                                                             <p className=''>Subtotal</p>
-                                                                                            <p>Kshs. 3500.00</p>
+                                                                                            <p>Kshs. {this.state.jipangeSelectedDateTotal}.00</p>
                                                                                         </div>
                                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-2'>
                                                                                             <p className=''>Delivery fee</p>
@@ -6091,7 +6091,7 @@ export default class LandingPg extends Component {
                                                                                         </div>
                                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-total'>
                                                                                             <h4><strong>Total</strong></h4>
-                                                                                            <h4><strong>Kshs. 3599.00</strong></h4>
+                                                                                            <h4><strong>Kshs. {this.state.jipangeSelectedDateTotal + 99}.00</strong></h4>
                                                                                         </div>
                                                                                     </div>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
