@@ -2711,6 +2711,10 @@ const Styles = styled.div `
     // margin-top: 1.5rem;
 }
 
+.jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative3 p {
+    padding-bottom: 1.25rem;
+}
+
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions {
     
 }
@@ -6281,7 +6285,7 @@ export default class LandingPg extends Component {
                                                                                             <p><li>Enter PIN</li></p>
                                                                                         </ol>
                                                                                     </div>
-                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative'>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative3'>
                                                                                         <p>Click <strong>Confirm Payment</strong> when done</p>
                                                                                     </div>
 
