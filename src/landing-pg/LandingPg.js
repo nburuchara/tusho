@@ -2710,12 +2710,13 @@ const Styles = styled.div `
     width: 100%;
     height: 100%;
     position: relative;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment-details {
-    // border: 1px solid black;
-    height: auto;
+    border: 1px solid black;
+    height: 12rem;
+    padding-top: 0.8rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer {
@@ -6238,7 +6239,7 @@ export default class LandingPg extends Component {
                                                                         }
                                                                         {this.state.showJipangeAirtelPayment && 
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment'>
-                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details'>
+                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment-details'>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative'>
                                                                                         <p>Dial <strong>*334#</strong> then follow the steps below:</p>
                                                                                     </div>
