@@ -2436,7 +2436,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header {
-    height: 13.5%;
+    height: 11.5%;
     // border: 1px solid black;
     display: flex;
     justify-content: space-between;
@@ -2520,7 +2520,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 p {
-    font-size: 75%;
+    font-size: 70%;
     margin-top: 0px;
     margin-bottom: 0px;
     transition-property: color, font-weight;
@@ -2533,12 +2533,8 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body {
     // border: 1px solid black;
-    height: 86.5%;
+    height: 88.5%;
     position: relative;
-}
-
-.jipange-settings-selected-date-screen-complete-body-inner-body-footer {
-    position: absolute;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-payment-loading {
@@ -2555,7 +2551,7 @@ const Styles = styled.div `
  }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment {
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 100%;
     height: 100%;
     position: relative;
@@ -2646,20 +2642,75 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer {
     position: absolute;
     bottom: 0;
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 100%;
     height: 6.25rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-details {
-    height: 60%;
-    border: 1px solid black;
+    height: 55%;
+    // border-bottom: 2.5px solid #ff5733;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-1 {
+    // height: 60%;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-2 {
+    // height: 60%;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-1 p {
+    margin-left: 2.5%;
+    margin-top: 0px;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-2 p {
+    margin-left: 2.5%;
+    margin-top: 0.85rem;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-total {
+    // height: 60%;
+    border-top: 2px solid #ff5733;
+    margin-top: 1.05rem;
+    padding-top: 0.05rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-total h4 {
+    margin-left: 2.5%;
+    margin-top: 0.1rem;
+    font-size: 85%;
+    font-family: poppins;
+    font-weight: normal;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn {
     height: 40%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    margin-top: 1rem;
+    margin-left: 2.5%;
 }
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn button {
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: #ff5733;
+    border: 1px solid #ff5733;
+    border-radius: 8px;
+    font-family: poppins;
+    font-size: 80%;
+}   
+
 
     // # # JIPANGE SELECTED SCREEN EDIT
 
@@ -2926,7 +2977,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-header-inner-body-items-container-modify-order {
     width: 100%;
-    height: 7.5rem;
+    height: 6.5rem;
     border: 1px solid black;
     overflow-y: auto;
 }
@@ -3453,8 +3504,8 @@ export default class LandingPg extends Component {
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             selectedJipangeDate: '',
-            showJipangeSettingsSelectedDateComplete: true,
-            showJipangeSettingsSelectedDateEdit: false,
+            showJipangeSettingsSelectedDateComplete: false,
+            showJipangeSettingsSelectedDateEdit: true,
             showConfirmJipangeOrderRest: true,
             showConfirmJipangeOrderActive: false,
             selectedJipangeProductCategory: 1,
@@ -6026,10 +6077,21 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer'>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details'>
-
+                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-1'>
+                                                                                            <p className=''>Subtotal</p>
+                                                                                            <p>Kshs. 3500.00</p>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-2'>
+                                                                                            <p className=''>Delivery fee</p>
+                                                                                            <p>Kshs. 99.00</p>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-total'>
+                                                                                            <h4><strong>Total</strong></h4>
+                                                                                            <h4><strong>Kshs. 3599.00</strong></h4>
+                                                                                        </div>
                                                                                     </div>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
-
+                                                                                        <button>Make Payment</button>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
