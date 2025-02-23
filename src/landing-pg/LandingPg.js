@@ -4419,11 +4419,84 @@ export default class LandingPg extends Component {
     };
 
     handleJipangePaymentOptionChange2 = (option) => {
-        
+
         this.setState({
-            selectedJipangePaymentOption: `option${option}`
+            
         })
 
+        if (this.state.showJipangeCardPayment) {
+            if  (option === 2 && !this.state.showJipangePaymentLoading) {
+                this.setState({
+                    selectedJipangePaymentOption: `option${option}`,
+                    showJipangeCardPayment: false,
+                    showJipangePaymentLoading: true
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+                            showJipangePaymentLoading: false,
+                            showJipangeMpesaPayment: true
+                        })
+                    }, 2500)
+                })
+            } else if (option === 3 && !this.state.showJipangePaymentLoading) {
+                this.setState({
+                    selectedJipangePaymentOption: `option${option}`,
+                    showJipangeCardPayment: false,
+                    showJipangePaymentLoading: true
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+                            showJipangePaymentLoading: false,
+                            showJipangeAirtelPayment: true
+                        })
+                    }, 2500)
+                })
+            }
+        } else if (this.state.showJipangeMpesaPayment) {
+            if  (option === 1 && !this.state.showJipangePaymentLoading) {
+                this.setState({
+                    selectedJipangePaymentOption: `option${option}`
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+
+                        })
+                    }, 2500)
+                })
+            } else if (option === 3 && !this.state.showJipangePaymentLoading) {
+                this.setState({
+
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+
+                        })
+                    }, 2500)
+                })
+            }
+        } else if (this.state.showJipangeAirtelPayment) {
+            if (option === 1 && !this.state.showJipangePaymentLoading) {
+                this.setState({
+                    selectedJipangePaymentOption: `option${option}`
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+
+                        })
+                    }, 2500)
+                })
+            } else if (option === 2 && !this.state.showJipangePaymentLoading) {
+                this.setState({
+
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+
+                        })
+                    }, 2500)
+                })
+            }
+        }
         
     }
 
