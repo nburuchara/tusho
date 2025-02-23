@@ -2590,22 +2590,43 @@ const Styles = styled.div `
     width: 90%;
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 3rem;
     margin-left: 2.5%;
-    margin-top: 0.5rem;
+    margin-top: 0.65rem;
+    height: auto;
 }   
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-half input {
+    width: 85%;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #5e626a;
+    padding: 7.5px;
+    font-size: 100%;
+    font-family: inter;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-half h5 {
+    font-size: 70%;
+    font-family: poppins;
+    font-weight: normal;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+}
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-expiry {
     width: 50%;
     display: flex;
-    border: 1px solid black;
+    // border: 1px solid black;
+    flex-direction: column;
 }  
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-cvv {
     width: 50%;
     display: flex;
-    border: 1px solid black;
+    // border: 1px solid black;
+    flex-direction: column;
 }   
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment {
@@ -5952,10 +5973,16 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-half'>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-expiry'>
-
+                                                                                        <h5>Expiry</h5>
+                                                                                        <input
+                                                                                        placeholder='MM / YY'
+                                                                                        />
                                                                                     </div>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-cvv'>
-
+                                                                                        <h5>CVV</h5>
+                                                                                        <input
+                                                                                        placeholder='XXX'
+                                                                                        />
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
