@@ -3636,9 +3636,9 @@ export default class LandingPg extends Component {
             jipangeProduct5Cat1Price: 0,
             selectedJipangePaymentOption: "option1",
             showJipangePaymentLoading: false,
-            showJipangeCardPayment: false,
+            showJipangeCardPayment: true,
             showJipangeMpesaPayment: false,
-            showJipangeAirtelPayment: true,
+            showJipangeAirtelPayment: false,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -4419,9 +4419,12 @@ export default class LandingPg extends Component {
     };
 
     handleJipangePaymentOptionChange2 = (option) => {
+        
         this.setState({
             selectedJipangePaymentOption: `option${option}`
         })
+
+        
     }
 
 
