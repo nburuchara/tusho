@@ -2575,12 +2575,15 @@ const Styles = styled.div `
     border: 1px solid #5e626a;
     padding: 7.5px;
     font-size: 100%;
+    font-family: inter;
 }   
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field h5 {
-    font-size: 65%;
+    font-size: 70%;
+    font-family: poppins;
     font-weight: normal;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
 }   
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment {
@@ -5920,7 +5923,9 @@ export default class LandingPg extends Component {
                                                                                         <h5>Credit Card Number</h5>
                                                                                     </div>
                                                                                     <div>
-                                                                                        <input/>
+                                                                                        <input
+                                                                                        placeholder='XXXX XXXX XXXX XXXX'
+                                                                                        />
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
