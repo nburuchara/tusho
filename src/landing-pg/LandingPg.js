@@ -2712,7 +2712,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative3 p {
-    padding-bottom: 1.25rem;
+    padding-bottom: 1rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions {
@@ -2727,10 +2727,9 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment-details {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 14rem;
     padding-top: 1rem;
-    padding-bottom: 1rem;
     overflow-y: auto;
 }
 
