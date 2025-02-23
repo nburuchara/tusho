@@ -2418,7 +2418,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-header {
-    height: 35%;
+    height: 25%;
     margin-bottom: 0.5rem;
     // border-bottom: 1px solid #ccc;
     // border-radius: 8px;
@@ -2428,7 +2428,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body {
-    height: 65%;
+    height: 75%;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -2644,11 +2644,11 @@ const Styles = styled.div `
     bottom: 0;
     // border: 1px solid black;
     width: 100%;
-    height: 6.25rem;
+    height: 9.25rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-details {
-    height: 55%;
+    height: 60%;
     // border-bottom: 2.5px solid #ff5733;
 }
 
@@ -2669,17 +2669,21 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-1 p {
     margin-left: 2.5%;
     margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 82.5%;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-2 p {
     margin-left: 2.5%;
-    margin-top: 0.85rem;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    font-size: 82.5%;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-total {
     // height: 60%;
     border-top: 2px solid #ff5733;
-    margin-top: 1.05rem;
+    margin-top: 3px;
     padding-top: 0.05rem;
     display: flex;
     justify-content: space-between;
@@ -2687,14 +2691,14 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-total h4 {
     margin-left: 2.5%;
-    margin-top: 0.1rem;
-    font-size: 85%;
+    margin-top: 0.3rem;
+    font-size: 95%;
     font-family: poppins;
     font-weight: normal;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn {
-    height: 40%;
+    height: 35%;
     // border: 1px solid black;
     margin-top: 1rem;
     margin-left: 2.5%;
@@ -2978,7 +2982,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-header-inner-body-items-container-modify-order {
     width: 100%;
     height: 6.5rem;
-    border: 1px solid black;
+    // border: 1px solid black;
     overflow-y: auto;
 }
 
@@ -3504,8 +3508,8 @@ export default class LandingPg extends Component {
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             selectedJipangeDate: '',
-            showJipangeSettingsSelectedDateComplete: false,
-            showJipangeSettingsSelectedDateEdit: true,
+            showJipangeSettingsSelectedDateComplete: true,
+            showJipangeSettingsSelectedDateEdit: false,
             showConfirmJipangeOrderRest: true,
             showConfirmJipangeOrderActive: false,
             selectedJipangeProductCategory: 1,
@@ -5947,14 +5951,14 @@ export default class LandingPg extends Component {
                                                                                         </div>
                                                                                     }
                                                                                 </div>
-                                                                                <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal'>
+                                                                                {/* <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal'>
                                                                                     <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal-label'>
                                                                                         <h4>SUBTOTAL</h4>
                                                                                     </div>
                                                                                     <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal-value'>
                                                                                         <h4>Ksh {this.state.jipangeSelectedDateTotal}.00</h4>
                                                                                     </div>
-                                                                                </div>
+                                                                                </div> */}
                                                                             </div>  
                                                                         }
                                                                     </div>
