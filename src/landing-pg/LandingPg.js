@@ -2436,7 +2436,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header {
-    height: 15.5%;
+    height: 13.5%;
     // border: 1px solid black;
     display: flex;
     justify-content: space-between;
@@ -2532,8 +2532,8 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body {
-    // border: 1px solid black;
-    height: 84.5%;
+    border: 1px solid black;
+    height: 86.5%;
     position: relative;
 }
 
@@ -2582,8 +2582,8 @@ const Styles = styled.div `
     font-size: 70%;
     font-family: poppins;
     font-weight: normal;
-    margin-bottom: 0.3rem;
-    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
+    margin-top: 0.15rem;
 }   
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-half {
@@ -2594,7 +2594,7 @@ const Styles = styled.div `
     height: 3rem;
     margin-left: 2.5%;
     margin-top: 0.1rem;
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.25rem;
     height: auto;
 }   
 
@@ -2616,7 +2616,7 @@ const Styles = styled.div `
     font-size: 70%;
     font-family: poppins;
     font-weight: normal;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
     margin-top: 0.3rem;
 }
 
@@ -2907,8 +2907,8 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-header-inner-body-items-container-modify-order {
     width: 100%;
-    height: 8.5rem;
-    // border: 1px solid black;
+    height: 7.5rem;
+    border: 1px solid black;
     overflow-y: auto;
 }
 
