@@ -2571,8 +2571,8 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field input {
     width: 100%;
     outline: none;
-    border-radius: 3px;
-    border: 1px solid #5e626a;
+    border-radius: 5px;
+    border: 1px solid #ccc;
     padding: 7.5px;
     font-size: 100%;
     font-family: inter;
@@ -2600,8 +2600,8 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-half input {
     width: 85%;
     outline: none;
-    border-radius: 3px;
-    border: 1px solid #5e626a;
+    border-radius: 5px;
+    border: 1px solid #ccc;
     padding: 7.5px;
     font-size: 100%;
     font-family: inter;
