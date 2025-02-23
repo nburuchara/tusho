@@ -4483,21 +4483,27 @@ export default class LandingPg extends Component {
         } else if (this.state.showJipangeAirtelPayment) {
             if (option === 1 && !this.state.showJipangePaymentLoading) {
                 this.setState({
-                    selectedJipangePaymentOption: `option${option}`
+                    selectedJipangePaymentOption: `option${option}`,
+                    showJipangeAirtelPayment: false,
+                    showJipangePaymentLoading: true
                 }, () => {
                     setTimeout(() => {
                         this.setState({
-
+                            showJipangePaymentLoading: false,
+                            showJipangeCardPayment: true
                         })
                     }, 2500)
                 })
             } else if (option === 2 && !this.state.showJipangePaymentLoading) {
                 this.setState({
-
+                    selectedJipangePaymentOption: `option${option}`,
+                    showJipangeAirtelPayment: false,
+                    showJipangePaymentLoading: true
                 }, () => {
                     setTimeout(() => {
                         this.setState({
-
+                            showJipangePaymentLoading: false,
+                            showJipangeMpesaPayment: true
                         })
                     }, 2500)
                 })
