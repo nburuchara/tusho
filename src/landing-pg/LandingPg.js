@@ -2702,6 +2702,15 @@ const Styles = styled.div `
     margin-top: 0px;
 }
 
+.jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative2 {
+    margin-top: 1.5rem;
+    border-top: 1px solid #ccc;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative2 p {
+    // margin-top: 1.5rem;
+}
+
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions {
     
 }
@@ -2715,8 +2724,9 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment-details {
     border: 1px solid black;
-    height: 12rem;
-    padding-top: 0.8rem;
+    height: 14rem;
+    padding-top: 1rem;
+    overflow-y: auto;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer {
@@ -6254,9 +6264,28 @@ export default class LandingPg extends Component {
                                                                                         </ol>
                                                                                     </div>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative'>
-                                                                                        <p>Click <strong>complete</strong> on eCitizen when done</p>
+                                                                                        <p>Click <strong>Confirm Payment</strong> on payment when done</p>
                                                                                     </div>
+
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative2'>
+                                                                                    <p><strong>OR</strong> Make payments via MY Airtel APP</p>
+                                                                                    </div>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions'>
+                                                                                        <ol>
+                                                                                            <p><li>Select Paybill</li></p>
+                                                                                            <p><li>Select Shopping Payment</li></p>
+                                                                                            <p><li>Select tuShop</li></p>
+                                                                                            <p><li>Enter Reference Number: PXXPWGMR</li></p>
+                                                                                            <p><li>Enter the amount {this.state.jipangeSelectedDateTotal + 99}.00</li></p>
+                                                                                            <p><li>Enter PIN</li></p>
+                                                                                        </ol>
+                                                                                    </div>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative'>
+                                                                                        <p>Click <strong>Confirm Payment</strong> on eCitizen when done</p>
+                                                                                    </div>
+
                                                                                  </div>
+                                                                            
                                                                                  <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer'>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details'>
                                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-1'>
