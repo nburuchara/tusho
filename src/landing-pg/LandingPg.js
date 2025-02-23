@@ -2726,6 +2726,7 @@ const Styles = styled.div `
     border: 1px solid black;
     height: 14rem;
     padding-top: 1rem;
+    padding-bottom: 1rem;
     overflow-y: auto;
 }
 
@@ -6281,7 +6282,7 @@ export default class LandingPg extends Component {
                                                                                         </ol>
                                                                                     </div>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative'>
-                                                                                        <p>Click <strong>Confirm Payment</strong> on eCitizen when done</p>
+                                                                                        <p>Click <strong>Confirm Payment</strong> when done</p>
                                                                                     </div>
 
                                                                                  </div>
