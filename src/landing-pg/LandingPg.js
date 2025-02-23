@@ -2542,7 +2542,7 @@ const Styles = styled.div `
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 6.5rem;
+    margin-top: 7.5rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-payment-loading p {
@@ -2632,7 +2632,15 @@ const Styles = styled.div `
 }   
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    // border: 1px solid black;
+}
 
+.jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details {
+    border: 1px solid black;
+    height: 15rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment {
@@ -3509,8 +3517,8 @@ export default class LandingPg extends Component {
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             selectedJipangeDate: '',
-            showJipangeSettingsSelectedDateComplete: false,
-            showJipangeSettingsSelectedDateEdit: true,
+            showJipangeSettingsSelectedDateComplete: true,
+            showJipangeSettingsSelectedDateEdit: false,
             showConfirmJipangeOrderRest: true,
             showConfirmJipangeOrderActive: false,
             selectedJipangeProductCategory: 1,
@@ -3540,8 +3548,8 @@ export default class LandingPg extends Component {
             jipangeProduct5Cat1Price: 0,
             selectedJipangePaymentOption: "option1",
             showJipangePaymentLoading: false,
-            showJipangeCardPayment: true,
-            showJipangeMpesaPayment: false,
+            showJipangeCardPayment: false,
+            showJipangeMpesaPayment: true,
             showJipangeAirtelPayment: false,
 
             //* - SEARCH BAR COMPONENTS - *//
@@ -6104,7 +6112,28 @@ export default class LandingPg extends Component {
                                                                         
                                                                         {this.state.showJipangeMpesaPayment && 
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment'>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details'>
 
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer'>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details'>
+                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-1'>
+                                                                                            <p className=''>Subtotal</p>
+                                                                                            <p>Kshs. {this.state.jipangeSelectedDateTotal}.00</p>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-2'>
+                                                                                            <p className=''>Delivery fee</p>
+                                                                                            <p>Kshs. 99.00</p>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-total'>
+                                                                                            <h4><strong>Total</strong></h4>
+                                                                                            <h4><strong>Kshs. {this.state.jipangeSelectedDateTotal + 99}.00</strong></h4>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
+                                                                                        <button>Confirm Payment</button>
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
                                                                         }
                                                                         {this.state.showJipangeAirtelPayment && 
