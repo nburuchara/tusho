@@ -2641,6 +2641,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details {
     // border: 1px solid black;
+    border-bottom: 1px solid #ccc;
     height: auto;
 }
 
@@ -2716,7 +2717,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions {
-    
+    padding-bottom: 0.25rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment {
@@ -2727,7 +2728,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment-details {
-    // border: 1px solid black;
+    border-bottom: 1px solid #ccc;
     height: 14rem;
     padding-top: 1rem;
     overflow-y: auto;
@@ -3605,8 +3606,8 @@ export default class LandingPg extends Component {
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             selectedJipangeDate: '',
-            showJipangeSettingsSelectedDateComplete: true,
-            showJipangeSettingsSelectedDateEdit: false,
+            showJipangeSettingsSelectedDateComplete: false,
+            showJipangeSettingsSelectedDateEdit: true,
             showConfirmJipangeOrderRest: true,
             showConfirmJipangeOrderActive: false,
             selectedJipangeProductCategory: 1,
