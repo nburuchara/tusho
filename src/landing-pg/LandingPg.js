@@ -2730,7 +2730,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment-details {
     border-bottom: 1px solid #ccc;
     height: 15.25rem;
-    padding-top: 0rem;
+    padding-top: 0.3rem;
     overflow-y: auto;
 }
 
