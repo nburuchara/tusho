@@ -2822,6 +2822,18 @@ const Styles = styled.div `
     
 }
 
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent h5 {
+    margin-left: 3.5%;
+    font-family: raleway;
+    font-size: 70%;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select {
+    border: 1px solid black;
+    width: 90%;
+}
+ 
+
 
     // # # JIPANGE SELECTED SCREEN EDIT
 
@@ -6413,6 +6425,12 @@ export default class LandingPg extends Component {
                                                                         {this.state.showJipangeConfirmAddress && 
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-payment'>
                                                                                 <p>Enter your shipping address for this order:</p>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent'>
+                                                                                    <h5>Recently Used:</h5>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select'>
+
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
                                                                         }
                                                                     </div>
