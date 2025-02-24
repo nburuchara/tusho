@@ -2842,10 +2842,29 @@ const Styles = styled.div `
     justify-content: space-between;
     height: 3.5rem;
     border-radius: 8px;
-    border: 1px solid #ff5733;
-    background-color: #faece9;
+    border: 1px solid #5e626a;
+    background-color: #f2f2f2;
 }
  
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-radio {
+    width: 15%;
+    border-right: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-radio img {
+    width: 30px;
+    filter: grayscale(100%);
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-details {
+    width: 85%;
+    // border-left: 1px solid black;
+}
+
 
 
     // # # JIPANGE SELECTED SCREEN EDIT
@@ -6441,7 +6460,12 @@ export default class LandingPg extends Component {
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent'>
                                                                                     <h5>Recently Used:</h5>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select'>
+                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-radio'>
+                                                                                            <img src='/assets/icons/home-jipange/home-address-icon.png'/>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-details'>
 
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
