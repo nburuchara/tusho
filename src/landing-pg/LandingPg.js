@@ -2819,11 +2819,17 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-payment p {
-    
+    margin-left: 2.5%;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent {
+
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent h5 {
-    margin-left: 3.5%;
+    margin-left: 2.5%;
+    margin-bottom: 1rem;
+    margin-top: 1.25rem;
     font-family: raleway;
     font-size: 70%;
 }
@@ -2831,6 +2837,13 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select {
     border: 1px solid black;
     width: 90%;
+    margin-left: 2.5%;
+    display: flex;
+    justify-content: space-between;
+    height: 3.5rem;
+    border-radius: 8px;
+    border: 1px solid #ff5733;
+    background-color: #faece9;
 }
  
 
