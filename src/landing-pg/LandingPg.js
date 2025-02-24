@@ -2720,6 +2720,10 @@ const Styles = styled.div `
     padding-bottom: 0.25rem;
 }
 
+.jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions2 {
+    // padding-bottom: 0.25rem;
+}
+
 .jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment {
     width: 100%;
     height: 100%;
@@ -3659,8 +3663,8 @@ export default class LandingPg extends Component {
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             selectedJipangeDate: '',
-            showJipangeSettingsSelectedDateComplete: true,
-            showJipangeSettingsSelectedDateEdit: false,
+            showJipangeSettingsSelectedDateComplete: false,
+            showJipangeSettingsSelectedDateEdit: true,
             showConfirmJipangeOrderRest: true,
             showConfirmJipangeOrderActive: false,
             selectedJipangeProductCategory: 1,
@@ -3690,10 +3694,10 @@ export default class LandingPg extends Component {
             jipangeProduct5Cat1Price: 0,
             selectedJipangePaymentOption: "option1",
             showJipangePaymentLoading: false,
-            showJipangeCardPayment: false,
+            showJipangeCardPayment: true,
             showJipangeMpesaPayment: false,
             showJipangeAirtelPayment: false,
-            showJipangeConfirmAddress: true,
+            showJipangeConfirmAddress: false,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -6417,7 +6421,7 @@ export default class LandingPg extends Component {
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative2'>
                                                                                     <p><strong>OR</strong> Make payments via MY Airtel APP</p>
                                                                                     </div>
-                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions'>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions2'>
                                                                                         <ol>
                                                                                             <p><li>Select Paybill</li></p>
                                                                                             <p><li>Select Shopping Payment</li></p>
