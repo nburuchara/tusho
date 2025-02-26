@@ -3759,6 +3759,7 @@ export default class LandingPg extends Component {
             showJipangeSettingsHome: true,
             showJipangeSettingsSelectedDate: false,
             showJipangeSettingsLoading: false,
+            showConfirmedJipangeOrders: true,
             transitionJipangeSettingsProductList: false,
             transitionHelperJipangeSettingsProductList: false,
             showJipangeProductsList1: true,
@@ -5704,7 +5705,11 @@ export default class LandingPg extends Component {
                                                                 })}
                                                             </div>
                                                         </div>
-                                                        
+                                                        {this.state.showConfirmedJipangeOrders && 
+                                                            <div className=''>
+                                                                <p>Confirmed Orders</p>
+                                                            </div>
+                                                        }
                                                         <div className='jipange-settings-selected-dates-container'>
                                                             <p>Select a date to add grocery items:</p>
                                                             <div className=''>
