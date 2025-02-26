@@ -2182,6 +2182,12 @@ const Styles = styled.div `
     margin-bottom: 0.2rem;
 }
 
+.navbar-profile-account-label-loading-popup-settings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
     // # SAVE PROFILE INFORMATION
 
 .navbar-profile-account-popup-account-save-profile-btn {
@@ -3814,6 +3820,8 @@ export default class LandingPg extends Component {
             phoneNumberVerified: true,
             accountSettingsSaveBtnTxt: false,
             accountSettingsSaveBtnLoading: true,
+            showFirstNameAccountSettingsLabel: false,
+            showFirstNameAccountSettingsLoading: true,
 
             //* # Jipange
             showJipangeSettingsHome: true,
@@ -5765,7 +5773,30 @@ export default class LandingPg extends Component {
                                                                     <p>First name</p>
                                                                 </div>
                                                                 <div className='navbar-profile-account-popup-account-info-first-name-header-priority'>
-                                                                    <span>REQUIRED</span>
+                                                                    <span>
+                                                                        {this.state.showFirstNameAccountSettingsLabel && 
+                                                                            <>
+                                                                                REQUIRED
+                                                                            </>
+                                                                        }
+                                                                        {this.state.showFirstNameAccountSettingsLoading && 
+                                                                            <div className='navbar-profile-account-label-loading-popup-settings'>
+                                                                                <TailSpin
+                                                                                visible={true}
+                                                                                height="3px"
+                                                                                width="3px"
+                                                                                color="#ff5733"
+                                                                                ariaLabel="tail-spin-loading"
+                                                                                radius="2"
+                                                                                wrapperStyle={{}}
+                                                                                wrapperClass=""
+                                                                                />
+                                                                                {/* <div>
+                                                                                    <p>Loading...</p>
+                                                                                </div> */}
+                                                                            </div>
+                                                                        }
+                                                                    </span>
                                                                 </div>
                                                             </div>
                                                             <input/>
