@@ -2398,6 +2398,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-square.show-confirmed {
     opacity: 1;
     background-color: #ff5733;
+    border: 1px solid #ff5733;
     color: white;
  }
 
@@ -3817,6 +3818,7 @@ export default class LandingPg extends Component {
             jipangeProduct5Cat1: 'Tushop Fresh Red Onions',
             jipangeProduct5Cat1Qty: 0,
             jipangeProduct5Cat1Price: 0,
+            totalJipangeOrderQty: 0,
             selectedJipangePaymentOption: "option1",
             showJipangePaymentLoading: false,
             showJipangeCardPayment: true,
@@ -4720,13 +4722,15 @@ export default class LandingPg extends Component {
         this.saveJipangeOrder()
         this.setState({
             completeJipangeBtnLoading: true,
-            completeJipangeBtnTxt: false
+            completeJipangeBtnTxt: false,
+            totalJipangeOrderQty: this.state.jipangeProduct1Cat1Qty + this.state.jipangeProduct2Cat1Qty + this.state.jipangeProduct3Cat1Qty + this.state.jipangeProduct4Cat1Qty + this.state.jipangeProduct5Cat1Qty
         }, () => {
             setTimeout(() => {
                 this.setState({
                     completeJipangeBtnLoading: false,
                     completeJipangeBtnTxt: true
                 })
+                this.jipangeTransitionBackToHome()
             }, 2500)
         })
     }
@@ -4789,7 +4793,6 @@ export default class LandingPg extends Component {
                     showJipangeCardPayment: true,
                     showJipangeSettingsSelectedDateComplete: false,
                     showJipangeSettingsSelectedDateEdit: true,
-
                 })
             }, 2500)
         })
@@ -5795,7 +5798,7 @@ export default class LandingPg extends Component {
                                                                                         <label>{monthName}</label> {/* Month */}
                                                                                         <label>{day}</label> {/* Date */}
                                                                                         <div className='jipange-settings-selected-date-square-item-count'>
-                                                                                            <label>0 items</label>
+                                                                                            <label>{this.state.totalJipangeOrderQty === 0 ? 0 : this.state.totalJipangeOrderQty} items</label>
                                                                                         </div>
                                                                                     </div>
                                                                                 );
