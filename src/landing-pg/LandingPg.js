@@ -2220,6 +2220,11 @@ const Styles = styled.div `
     color: #5e626a;
 }
 
+.jipange-settings-calendar-parent-container {
+    border: 1px solid black;
+    height: 37.25rem;
+}
+
 .jipange-settings-calendar-container {
     max-width: 93.5%;
     margin: 20px auto;
@@ -3750,8 +3755,8 @@ export default class LandingPg extends Component {
             phoneNumberVerified: true,
 
             //* # Jipange
-            showJipangeSettingsHome: false,
-            showJipangeSettingsSelectedDate: true,
+            showJipangeSettingsHome: true,
+            showJipangeSettingsSelectedDate: false,
             showJipangeSettingsLoading: false,
             transitionJipangeSettingsProductList: false,
             transitionHelperJipangeSettingsProductList: false,
@@ -5667,7 +5672,7 @@ export default class LandingPg extends Component {
                                         {this.state.showJipangeSettings && 
                                             <div className='navbar-profile-account-popup-jipange-settings'>
                                                 {this.state.showJipangeSettingsHome && 
-                                                    <div className=''>
+                                                    <div className='jipange-settings-calendar-parent-container'>
                                                         <p>Select the dates you want scheduled delivery:</p>
                                                         <div className={`jipange-settings-calendar-container ${this.state.confirmJipangeOrderClicked ? 'loading' : ''}`}>
                                                             <div className={`jipange-settings-calendar-header`}>
