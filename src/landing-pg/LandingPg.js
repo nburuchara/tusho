@@ -3824,6 +3824,8 @@ export default class LandingPg extends Component {
             showFirstNameAccountSettingsLoading: true,
             showLasttNameAccountSettingsLabel: false,
             showLastNameAccountSettingsLoading: true,
+            accountSettingsEmailUnerifiedLabel: false,
+            accountSettingsEmailVerifiedLabel: true,
             showEmailAccountSettingsLabel: false,
             showEmailAccountSettingsLoading: true,
 
@@ -5846,7 +5848,7 @@ export default class LandingPg extends Component {
                                                                 <div className='navbar-profile-account-popup-account-info-first-name-header-label'>
                                                                     <p>Email</p>
                                                                 </div>
-                                                                {this.state.accountSettingsEmailVerifiedLabel && 
+                                                                {this.state.accountSettingsEmailUnverifiedLabel && 
                                                                     <div className='navbar-profile-account-popup-account-info-first-name-header-priority'>
                                                                         <span>
                                                                             {this.state.showEmailAccountSettingsLabel && 
@@ -5872,6 +5874,11 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                             }
                                                                         </span>
+                                                                    </div>
+                                                                }
+                                                                {this.state.accountSettingsEmailVerifiedLabel && 
+                                                                    <div className={`navbar-profile-account-popup-account-info-first-name-header-priority ${this.state.phoneNumberVerified ? 'success' : ''}`}>
+                                                                        <span>✓</span>
                                                                     </div>
                                                                 }
                                                             </div>
