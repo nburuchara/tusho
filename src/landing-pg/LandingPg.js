@@ -6552,7 +6552,7 @@ export default class LandingPg extends Component {
                                                                                 <p>Enter your shipping address for this order:</p>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent'>
                                                                                     <h5>Recently Used (selected by default):</h5>
-                                                                                    <div className={`jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select ${this.state.jipangeManualAddressLine1 !== '' ? 'manual-selected' : ''}`}>
+                                                                                    <div className={`jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select ${this.state.jipangeManualAddressLine1 !== '' || this.state.jipangeManualAddressLine2 !== '' ? 'manual-selected' : ''}`}>
                                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-radio'>
                                                                                             <img src='/assets/icons/home-jipange/home-address-icon.png'/>
                                                                                         </div>
@@ -6597,7 +6597,10 @@ export default class LandingPg extends Component {
                                                                                 </div>
 
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer'>
-                                                                                    <button>Complete Jipange</button>
+                                                                                    <button>
+                                                                                        {this.state.completeJipange}
+                                                                                        Complete Jipange
+                                                                                    </button>
                                                                                 </div>
                                                                             </div>
                                                                         }
