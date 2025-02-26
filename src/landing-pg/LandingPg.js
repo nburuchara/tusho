@@ -2001,6 +2001,13 @@ const Styles = styled.div `
     color: #5e626a;
 }
 
+.navbar-profile-account-popup-account-info-profile-pic-img label {
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
+    text-decoration-thickness: 2px;
+    text-decoration-style: wavy;
+}
+
 .profile-pic-container {
     width: 45%;
     border: 2px solid #ccc;
@@ -2165,7 +2172,7 @@ const Styles = styled.div `
     align-items: space-between;
     font-family: poppins;
     font-size: 75%;
-    margin-bottom: 3.5px;
+    margin-bottom: 4.5px;
     color: #5e626a;
 }
 
@@ -3831,6 +3838,9 @@ export default class LandingPg extends Component {
 
             //* # Profile
             accountSetupComplete: false,
+            accountSettingFirstName: '',
+            accountSettingLastName: '',
+            accountSettingEmail: '',
             phoneNumberVerified: true,
             accountSettingsFirstNameUnverifiedLabel: true,
             accountSettingsFirstNameVerifiedLabel: false,
@@ -4926,13 +4936,29 @@ export default class LandingPg extends Component {
     saveAccountSettingsClicked = () => {
         this.setState({
             accountSettingsSaveBtnTxt: false,
-            accountSettingsSaveBtnLoading: true
+            accountSettingsSaveBtnLoading: true,
+            showFirstNameAccountSettingsLabel: false,
+            showFirstNameAccountSettingsLoading: true,
+            showLastNameAccountSettingsLabel: false,
+            showLastNameAccountSettingsLoading: true,
+            showEmailAccountSettingsLabel: false,
+            showEmailAccountSettingsLoading: true,
         }, () => {
             setTimeout(() => {
                 this.setState({
                     accountSettingsSaveBtnLoading: false,
                     accountSettingsSaveBtnTxt: true
                 })
+                if (this.state.accountSettingFirstName !== '') {
+                    this.setState({ })
+                }
+
+                if (this.state.accountSettingLastName !== '') {
+                    this.setState({  })
+                }
+                if (this.state.accountSettingEmail !== '') {
+                    this.setState({  })
+                }
             }, 2500)
         })
     }
@@ -5791,7 +5817,7 @@ export default class LandingPg extends Component {
                                             <div className='navbar-profile-account-popup-account-info'>
                                                 <div className='navbar-profile-account-popup-account-info-profile-pic'>
                                                     <div className='navbar-profile-account-popup-account-info-profile-pic-img'>
-                                                        <p>Profile picture</p>
+                                                        <p><label>Profile picture</label></p>
                                                         <div className="profile-pic-container">
                                                             <img src='/assets/icons/home-profile/signed-in-profile-placeholder2.png'/>
                                                         </div>
@@ -5837,7 +5863,12 @@ export default class LandingPg extends Component {
                                                                     </span>
                                                                 </div>
                                                             </div>
-                                                            <input/>
+                                                            <input
+                                                            id='accountSettingFirstName'
+                                                            placeholder='John Appleseed'
+                                                            value={this.state.accountSettingFirstName}
+                                                            onChange={this.handleSearchStandardInput}
+                                                            />
                                                         </div>
                                                         <div className='navbar-profile-account-popup-account-info-last-name'>
                                                             <div className='navbar-profile-account-popup-account-info-first-name-header'>
