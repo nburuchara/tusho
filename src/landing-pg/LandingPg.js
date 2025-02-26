@@ -2818,7 +2818,7 @@ const Styles = styled.div `
 }   
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-payment {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 100%;
 }
 
@@ -2882,7 +2882,7 @@ const Styles = styled.div `
     margin-bottom: 0.1rem;
     font-size: 68%;
     margin-right: 2.5%;
-    color: #5e626a;
+    color: #000;
 }
 
     // # # JIPANGE SELECTED SCREEN EDIT
