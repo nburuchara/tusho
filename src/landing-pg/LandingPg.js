@@ -4775,7 +4775,17 @@ export default class LandingPg extends Component {
     }
     
     jipangeTransitionBackToHome = () => {
-        
+        this.setState({
+            showJipangeSettingsSelectedDate: false,
+            showJipangeSettingsLoading: true,
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    showJipangeSettingsLoading: false,
+                    
+                })
+            }, 2500)
+        })
     }
 
     render () {
