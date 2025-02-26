@@ -2932,6 +2932,12 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer-complete-btn-loading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
     // # # JIPANGE SELECTED SCREEN EDIT
 
 .jipange-settings-selected-date-screen {
@@ -3771,6 +3777,8 @@ export default class LandingPg extends Component {
             jipangeManualAddressLine1: '',
             jipangeManualAddressLine2: '',
             currentJipangePaid: true,
+            completeJipangeBtnLoading: true,
+            completeJipangeBtnTxt: false,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -6598,8 +6606,28 @@ export default class LandingPg extends Component {
 
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer'>
                                                                                     <button>
-                                                                                        {this.state.completeJipange}
-                                                                                        Complete Jipange
+                                                                                        {this.state.completeJipangeBtnTxt && 
+                                                                                            <>
+                                                                                                Complete Jipange
+                                                                                            </>
+                                                                                        }
+                                                                                        {this.state.completeJipangeBtnLoading && 
+                                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer-complete-btn-loading'>
+                                                                                                <TailSpin
+                                                                                                visible={true}
+                                                                                                height="20px"
+                                                                                                width="20px"
+                                                                                                color="#fff"
+                                                                                                ariaLabel="tail-spin-loading"
+                                                                                                radius="2"
+                                                                                                wrapperStyle={{}}
+                                                                                                wrapperClass=""
+                                                                                                />
+                                                                                                {/* <div>
+                                                                                                    <p>Loading...</p>
+                                                                                                </div> */}
+                                                                                            </div>
+                                                                                        }
                                                                                     </button>
                                                                                 </div>
                                                                             </div>
