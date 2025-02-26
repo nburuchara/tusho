@@ -2127,8 +2127,8 @@ const Styles = styled.div `
     position: absolute;
     bottom: 0.5rem;
     right: 15%;
-    background-color: #ffdae0;
-    color: #da5773;
+    background-color: #faece9;
+    color: #ff5733;
     padding: 3%;
     padding-left: 8%;
     padding-right: 8%;
