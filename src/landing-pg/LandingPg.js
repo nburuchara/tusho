@@ -5865,7 +5865,7 @@ export default class LandingPg extends Component {
                                                             </div>
                                                             <input
                                                             id='accountSettingFirstName'
-                                                            placeholder='John Appleseed'
+                                                            placeholder='John'
                                                             value={this.state.accountSettingFirstName}
                                                             onChange={this.handleSearchStandardInput}
                                                             />
@@ -5909,7 +5909,12 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 }
                                                             </div>
-                                                            <input/>
+                                                            <input
+                                                            id='accountSettingLastName'
+                                                            placeholder='Appleseed'
+                                                            value={this.state.accountSettingLastName}
+                                                            onChange={this.handleSearchStandardInput}
+                                                            />
                                                         </div>
                                                     </div>
                                                     <div className='navbar-profile-account-popup-account-dual-inputs'>
@@ -5952,7 +5957,12 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 }
                                                             </div>
-                                                            <input/>
+                                                            <input
+                                                            id='accountSettingFirstName'
+                                                            placeholder='johnappleseed@mail.com'
+                                                            value={this.state.accountSettingFirstName}
+                                                            onChange={this.handleSearchStandardInput}
+                                                            />
                                                         </div>
                                                         <div className='navbar-profile-account-popup-account-info-last-name'>
                                                             <div className='navbar-profile-account-popup-account-info-first-name-header'>
