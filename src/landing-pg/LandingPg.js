@@ -3676,6 +3676,21 @@ const Styles = styled.div `
     height: 37.65rem;
 }
 
+    // # LOADING SCREEN SETTINGS
+
+.navbar-profile-loading-popup-settings {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.navbar-profile-loading-popup-settings p {
+    font-family: poppins;
+    color: #5e626a;
+}
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
@@ -3778,9 +3793,10 @@ export default class LandingPg extends Component {
 
             //* - USER ACCOUNT STATUS - *//
             userSignedIn: true,
-            showAccountInformation: true,
+            showAccountInformation: false,
             showJipangeSettings: false,
             showPamojaSettings: false,
+            showSettingsPageLoading: true,
 
             //* # Profile
             accountSetupComplete: false,
@@ -3878,7 +3894,7 @@ export default class LandingPg extends Component {
 
             //* - HOME SCREEN ACCOUNT SETTINGS - *//    
             accountSettingsOpen: true,
-            currentMenuOption: null,
+            currentMenuOption: 1,
             showAccountSetupIncompleteHeader: true,
             accountMenuOption1Selected: true,
             accountMenuOption2Selected: false,
@@ -4400,8 +4416,12 @@ export default class LandingPg extends Component {
     }
 
     menuOptionClicked = (option) => {
-        this.setState({
-
+        this.setState((prevState) => {
+            return {
+                [`accountMenuOption${prevState.currentMenuOption}Selected`]: false,
+                [`accountMenuOption${option}Selected`]: true,
+                currentMenuOption: option
+            }
         })
     }
 
@@ -5617,7 +5637,7 @@ export default class LandingPg extends Component {
                                         </div>
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption1Selected ? 'selected' : ''}`}></div>
                                     </div>
-                                    <div className={`navbar-profile-account-popup-body-left-settings-option-cell ${this.state.accountMenuOption2Selected ? 'selected' : ''}`}>
+                                    <div onClick={() => this.menuOptionClicked(2)} className={`navbar-profile-account-popup-body-left-settings-option-cell ${this.state.accountMenuOption2Selected ? 'selected' : ''}`}>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
                                             <img src='/assets/icons/home-profile/edit-jipange-option-icon.png'/>
                                         </div>
@@ -5635,14 +5655,14 @@ export default class LandingPg extends Component {
                                         </div>
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption3Selected ? 'selected' : ''}`}></div>
                                     </div> */}
-                                    <div className='navbar-profile-account-popup-body-left-settings-option-cell'>
+                                    <div onClick={() => this.menuOptionClicked(3)} className={`navbar-profile-account-popup-body-left-settings-option-cell ${this.state.accountMenuOption3Selected ? 'selected' : ''}`}>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
                                             <img src='/assets/icons/home-profile/edit-location-option-icon.png'/>
                                         </div>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
                                             <p>Delivery Info</p>
                                         </div>
-                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-selected'>
+                                        <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption3Selected ? 'selected' : ''}`}>
 
                                         </div>
                                     </div>
@@ -6899,6 +6919,23 @@ export default class LandingPg extends Component {
                                             <div className='navbar-profile-account-popup-pamoja-settings'>
                                                 <div className=''>
 
+                                                </div>
+                                            </div>
+                                        }
+                                        {this.state.showSettingsPageLoading && 
+                                            <div className='navbar-profile-loading-popup-settings'>
+                                                <TailSpin
+                                                visible={true}
+                                                height="50px"
+                                                width="50px"
+                                                color="#ff5733"
+                                                ariaLabel="tail-spin-loading"
+                                                radius="2"
+                                                wrapperStyle={{}}
+                                                wrapperClass=""
+                                                />
+                                                <div>
+                                                    <p>Loading...</p>
                                                 </div>
                                             </div>
                                         }
