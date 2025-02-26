@@ -3778,11 +3778,11 @@ export default class LandingPg extends Component {
             showJipangeMpesaPayment: false,
             showJipangeAirtelPayment: false,
             showJipangeConfirmAddress: false,
-            makeJipangePaymentCardDefault: false,
+            makeJipangePaymentCardDefault: true,
             makeJipangePaymentCardLoading: false,
-            makeJipangePaymentMpesaDefault: false,
+            makeJipangePaymentMpesaDefault: true,
             makeJipangePaymentMpesaLoading: false,
-            makeJipangePaymentAirtelDefault: false,
+            makeJipangePaymentAirtelDefault: true,
             makeJipangePaymentAirtelLoading: false,
             jipangeManualAddressLine1: '',
             jipangeManualAddressLine2: '',
@@ -4683,7 +4683,35 @@ export default class LandingPg extends Component {
     }
 
     jipangeHandlePaymentConfirmed = (paymentType) => {
-        
+        this.setState({
+            [`makeJipangePayment${paymentType}Default`]: false,
+            [`makeJipangePayment${paymentType}Loading`]: true
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    [`makeJipangePayment${paymentType}Default`]: true,
+            [`makeJipangePayment${paymentType}Loading`]: false
+                })
+            }, 2500)
+            setTimeout(() => {
+                this.jipangeTransitionToShippingAddress()
+            }, 2000)
+        })
+    }
+
+    jipangeTransitionToShippingAddress = () => {
+        this.setState({
+            showJipangePaymentLoading: true,
+            showJipangeCardPayment: false,
+            showJipangeAirtelPayment: false,
+            showJipangeMpesaPayment: false
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    showJipangePaymentLoading: false,
+                })
+            }, 2500)
+        })
     }
 
     render () {
@@ -6464,7 +6492,7 @@ export default class LandingPg extends Component {
                                                                                     </div>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
                                                                                         <button
-                                                                                        onClick={() => this.jipangeHandlePaymentConfirmed('card')}
+                                                                                        onClick={() => this.jipangeHandlePaymentConfirmed('Card')}
                                                                                         >
                                                                                             {this.state.makeJipangePaymentCardDefault && 
                                                                                                 <>
@@ -6540,7 +6568,7 @@ export default class LandingPg extends Component {
                                                                                     </div>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
                                                                                         <button
-                                                                                        onClick={() => this.jipangeHandlePaymentConfirmed('mpesa')}
+                                                                                        onClick={() => this.jipangeHandlePaymentConfirmed('Mpesa')}
                                                                                         >
                                                                                             {this.state.makeJipangePaymentMpesaDefault && 
                                                                                                 <>
@@ -6623,7 +6651,7 @@ export default class LandingPg extends Component {
                                                                                     </div>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
                                                                                         <button
-                                                                                        onClick={() => this.jipangeHandlePaymentConfirmed('airtel')}
+                                                                                        onClick={() => this.jipangeHandlePaymentConfirmed('Airtel')}
                                                                                         >
                                                                                             {this.state.makeJipangePaymentAirtelDefault && 
                                                                                                 <>
