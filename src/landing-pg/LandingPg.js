@@ -2210,6 +2210,9 @@ const Styles = styled.div `
 .account-settings-save-btn-loading-screen {
     margin-top: 0px;
     margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
     // # JIPANGE SETTINGS
@@ -5825,8 +5828,8 @@ export default class LandingPg extends Component {
                                                             <div className='account-settings-save-btn-loading-screen'>
                                                                 <TailSpin
                                                                 visible={true}
-                                                                height="22.5px"
-                                                                width="22.5px"
+                                                                height="20px"
+                                                                width="20px"
                                                                 color="#fff"
                                                                 ariaLabel="tail-spin-loading"
                                                                 radius="2"
