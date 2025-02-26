@@ -3056,6 +3056,10 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn.order-purchased p {
+    pointer-events: none;
+}
+
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn p:hover {
     color: #ff5733;
 }
@@ -6248,11 +6252,12 @@ export default class LandingPg extends Component {
                                                                             <label>Checkout (delivery for):</label><h4>{this.state.selectedJipangeDate}</h4>
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options'>
-                                                                            <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn'>
+                                                                            <div className={`jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn ${this.state.currentJipangePaid ? 'order-purchased' :''}`}>
                                                                                 <p><label>←</label><span>Cancel</span></p>
                                                                             </div>
                                                                             <div className={`jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn ${!this.state.confirmJipangeOrderClicked ? 'non-empty-cart': ''}`}>
                                                                                 <button
+                                                                                disabled={this.state.currentJipangePaid}
                                                                                 onClick={() => this.backToJipangeOrderSelection(this.state.jipangeSelectedDateTotal)}
                                                                                 >
                                                                                     {this.state.showConfirmJipangeOrderRest && 
