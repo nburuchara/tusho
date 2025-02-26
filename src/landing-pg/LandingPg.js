@@ -3804,6 +3804,8 @@ export default class LandingPg extends Component {
             //* # Profile
             accountSetupComplete: false,
             phoneNumberVerified: true,
+            accountSettingsSaveBtnTxt: false,
+            accountSettingsSaveBtnLoading: true,
 
             //* # Jipange
             showJipangeSettingsHome: true,
@@ -5808,7 +5810,30 @@ export default class LandingPg extends Component {
                                                     </div>
                                                 </div>
                                                 <div className='navbar-profile-account-popup-account-save-profile-btn'>
-                                                    <button>Save</button>
+                                                    <button>
+                                                        {this.state.accountSettingsSaveBtnTxt && 
+                                                            <>
+                                                                Save
+                                                            </>
+                                                        }
+                                                        {this.state.accountSettingsSaveBtnLoading && 
+                                                            <div className='jipange-settings-loading-screen-products'>
+                                                                <TailSpin
+                                                                visible={true}
+                                                                height="22.5px"
+                                                                width="22.5px"
+                                                                color="#ff5733"
+                                                                ariaLabel="tail-spin-loading"
+                                                                radius="2"
+                                                                wrapperStyle={{}}
+                                                                wrapperClass=""
+                                                                />
+                                                                {/* <div>
+                                                                    <p>Loading...</p>
+                                                                </div> */}
+                                                            </div>
+                                                        }
+                                                    </button>
                                                 </div>
                                             </div>
                                         }
