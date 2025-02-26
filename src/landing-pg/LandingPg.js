@@ -2832,28 +2832,29 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent h5 {
     margin-left: 2.5%;
-    margin-bottom: 1rem;
+    margin-right: 2.5%;
+    margin-bottom: 0.5rem;
     margin-top: 1.25rem;
     font-family: raleway;
     font-size: 70%;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select {
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 90%;
     margin-left: 2.5%;
     display: flex;
     justify-content: space-between;
     height: 3.5rem;
     border-radius: 8px;
-    border: 1px solid #5e626a;
-    background-color: #f2f2f2;
+    border: 1px solid #ff5733;
+    background-color: #faece9;
 }
  
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-radio {
     width: 15%;
-    border-right: 1px solid black;
+    // border-right: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2861,7 +2862,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-radio img {
     width: 30px;
-    filter: grayscale(100%);
+    // filter: grayscale(100%);
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-details {
@@ -2869,7 +2870,20 @@ const Styles = styled.div `
     // border-left: 1px solid black;
 }
 
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-details h5 {
+    margin-top: 0.25rem;
+    margin-bottom: 0.1rem;
+    text-decoration: underline;
+    color: #ff5733;
+}
 
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-details p {
+    margin-top: 0px;
+    margin-bottom: 0.1rem;
+    font-size: 68%;
+    margin-right: 2.5%;
+    color: #5e626a;
+}
 
     // # # JIPANGE SELECTED SCREEN EDIT
 
@@ -3663,8 +3677,8 @@ export default class LandingPg extends Component {
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             selectedJipangeDate: '',
-            showJipangeSettingsSelectedDateComplete: false,
-            showJipangeSettingsSelectedDateEdit: true,
+            showJipangeSettingsSelectedDateComplete: true,
+            showJipangeSettingsSelectedDateEdit: false,
             showConfirmJipangeOrderRest: true,
             showConfirmJipangeOrderActive: false,
             selectedJipangeProductCategory: 1,
@@ -3694,10 +3708,10 @@ export default class LandingPg extends Component {
             jipangeProduct5Cat1Price: 0,
             selectedJipangePaymentOption: "option1",
             showJipangePaymentLoading: false,
-            showJipangeCardPayment: true,
+            showJipangeCardPayment: false,
             showJipangeMpesaPayment: false,
             showJipangeAirtelPayment: false,
-            showJipangeConfirmAddress: false,
+            showJipangeConfirmAddress: true,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -6468,7 +6482,8 @@ export default class LandingPg extends Component {
                                                                                             <img src='/assets/icons/home-jipange/home-address-icon.png'/>
                                                                                         </div>
                                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-details'>
-
+                                                                                            <h5>Home address</h5>
+                                                                                            <p>Sunshine Villas - Hse No. 3, Spring Valley, Lower Kabete, Nairobi</p>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
