@@ -2443,7 +2443,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-square label {
     font-size: 75%;
     font-family: poppins;
-    margin-left: 5px;
+    margin-left: 3.5px;
     margin-top: 15px;
     cursor: pointer;
 }
@@ -2452,6 +2452,11 @@ const Styles = styled.div `
     font-size: 65%;
     font-weight: bold;
     cursor: pointer;
+}
+
+.jipange-settings-selected-date-square-item-count span {
+    font-size: 10px;
+    margin-left: 3.5px;
 }
 
     // # # JIPANGE LOADING SCREEN
@@ -6127,7 +6132,7 @@ export default class LandingPg extends Component {
                                                                                     >
                                                                                         <label>{monthName}</label> {/* Month */}
                                                                                         <label>{day}</label> {/* Date */}
-                                                                                        <div className='jipange-settings-selected-date-square-item-count'>
+                                                                                        <div className='jipange-settings-selected-date-square-item-count'><span>{(this.state.selectedDates.has(dateString) && this.state.confirmedJipangeDates.has(dateString)) ? '◉' : ''}</span>
                                                                                             <label>{this.state.totalJipangeOrderQty === 0 ? 0 : this.state.totalJipangeOrderQty} items</label>
                                                                                         </div>
                                                                                     </div>
