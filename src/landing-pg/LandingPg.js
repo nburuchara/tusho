@@ -2395,6 +2395,12 @@ const Styles = styled.div `
     // transform: translateX(0); /* Slide to normal position */
 }
 
+.jipange-settings-selected-date-square.show-confirmed {
+    opacity: 1;
+    background-color: #ff5733;
+    color: white;
+ }
+
 .jipange-settings-selected-date-square label {
     font-size: 75%;
     font-family: poppins;
@@ -5761,7 +5767,7 @@ export default class LandingPg extends Component {
                                                                                 return (
                                                                                     <div 
                                                                                         key={dateString} 
-                                                                                        className={`jipange-settings-selected-date-square ${this.state.selectedDates.has(dateString) ? "show" : ""}`}
+                                                                                        className={`jipange-settings-selected-date-square ${this.state.selectedDates.has(dateString) && !this.state.confirmedJipangeDates.has(dateString) ? "show" : this.state.selectedDates.has(dateString) && this.state.confirmedJipangeDates.has(dateString) ? "show-confirmed" : ""}`}
                                                                                         onClick={() => this.jipangeDateScheduleClicked(dateObject, dateString)}
                                                                                     >
                                                                                         <label>{monthName}</label> {/* Month */}
