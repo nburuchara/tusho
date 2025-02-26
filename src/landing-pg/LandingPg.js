@@ -4954,6 +4954,11 @@ export default class LandingPg extends Component {
                         accountSettingsFirstNameUnverifiedLabel: false,
                         accountSettingsFirstNameVerifiedLabel: true
                     })
+                } else {
+                    this.setState({
+                        showFirstNameAccountSettingsLabel: true,
+                        showFirstNameAccountSettingsLoading: false,
+                    })
                 }
 
                 if (this.state.accountSettingLastName !== '') {
@@ -4961,13 +4966,25 @@ export default class LandingPg extends Component {
                         accountSettingsLastNameUnverifiedLabel: false,
                         accountSettingsLastNameVerifiedLabel: true
                      })
+                } else {
+                    this.setState({
+                        showLastNameAccountSettingsLabel: true,
+                        showLastNameAccountSettingsLoading: false,
+                    })
                 }
+
                 if (this.state.accountSettingEmail !== '') {
                     this.setState({ 
                         accountSettingsEmailUnverifiedLabel: false,
                         accountSettingsEmailVerifiedLabel: true
                      })
+                } else {
+                    this.setState({
+                        showEmailAccountSettingsLabel: true,
+                        showEmailAccountSettingsLoading: false,
+                    })
                 }
+
             }, 2500)
         })
     }
