@@ -2226,6 +2226,10 @@ const Styles = styled.div `
     overflow-y: auto;
 }
 
+jipange-settings-home-confirmed-orders-list {
+    border: 1.5px solid #5e626a;
+}
+
 .jipange-settings-calendar-container {
     max-width: 93.5%;
     margin: 20px auto;
@@ -5676,8 +5680,11 @@ export default class LandingPg extends Component {
                                                 {this.state.showJipangeSettingsHome && 
                                                     <div className='jipange-settings-calendar-parent-container'>
                                                         {this.state.showConfirmedJipangeOrders && 
-                                                            <div className=''>
+                                                            <div className='jipange-settings-home-confirmed-orders-container'>
                                                                 <p>Confirmed Orders</p>
+                                                                <div className='jipange-settings-home-confirmed-orders-list'>
+
+                                                                </div>
                                                             </div>
                                                         }
                                                         <p>Select the dates you want scheduled delivery:</p>
