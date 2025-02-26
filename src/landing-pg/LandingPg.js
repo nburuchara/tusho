@@ -2843,7 +2843,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent label {
-    color: red;
+    color: black
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select {
