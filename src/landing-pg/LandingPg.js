@@ -2117,6 +2117,13 @@ const Styles = styled.div `
     // border: 1px solid black;
 }
 
+.navbar-profile-account-popup-account-info-first-name-header-label label {
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
+    text-decoration-thickness: 2.5px;
+    text-decoration-style: wavy;
+}
+
 .navbar-profile-account-popup-account-info-first-name-header-priority {
     width: 50%;
     // border: 1px solid black;
@@ -5780,7 +5787,7 @@ export default class LandingPg extends Component {
                                                         <div className='navbar-profile-account-popup-account-info-first-name'>
                                                             <div className='navbar-profile-account-popup-account-info-first-name-header'>
                                                                 <div className='navbar-profile-account-popup-account-info-first-name-header-label'>
-                                                                    <p>First name</p>
+                                                                    <p><label>First name</label></p>
                                                                 </div>
                                                                 <div className='navbar-profile-account-popup-account-info-first-name-header-priority'>
                                                                     <span>
@@ -5814,7 +5821,7 @@ export default class LandingPg extends Component {
                                                         <div className='navbar-profile-account-popup-account-info-last-name'>
                                                             <div className='navbar-profile-account-popup-account-info-first-name-header'>
                                                                 <div className='navbar-profile-account-popup-account-info-first-name-header-label'>
-                                                                    <p>Last name</p>
+                                                                    <p><label>Last name</label></p>
                                                                 </div>
                                                                 {this.state.accountSettingsLastNameUnverifiedLabel && 
                                                                     <div className='navbar-profile-account-popup-account-info-first-name-header-priority'>
@@ -5857,7 +5864,7 @@ export default class LandingPg extends Component {
                                                         <div className='navbar-profile-account-popup-account-info-first-name'>
                                                             <div className='navbar-profile-account-popup-account-info-first-name-header'>
                                                                 <div className='navbar-profile-account-popup-account-info-first-name-header-label'>
-                                                                    <p>Email</p>
+                                                                    <p><label>Email</label></p>
                                                                 </div>
                                                                 {this.state.accountSettingsEmailUnverifiedLabel && 
                                                                     <div className='navbar-profile-account-popup-account-info-first-name-header-priority'>
@@ -5898,7 +5905,7 @@ export default class LandingPg extends Component {
                                                         <div className='navbar-profile-account-popup-account-info-last-name'>
                                                             <div className='navbar-profile-account-popup-account-info-first-name-header'>
                                                                 <div className='navbar-profile-account-popup-account-info-first-name-header-label'>
-                                                                    <p>Phone no.</p>
+                                                                    <p><label>Phone no.</label></p>
                                                                 </div>
                                                                 <div className={`navbar-profile-account-popup-account-info-first-name-header-priority ${this.state.phoneNumberVerified ? 'success' : ''}`}>
                                                                     <span>✓</span>
