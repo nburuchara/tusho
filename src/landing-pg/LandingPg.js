@@ -2169,6 +2169,13 @@ const Styles = styled.div `
     color: #5e626a;
 }
 
+.navbar-profile-account-popup-account-single-input label {
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
+    text-decoration-thickness: 2px;
+    text-decoration-style: wavy;
+}
+
 .navbar-profile-account-popup-account-single-input h5 {
     font-size: 70%;
     margin-top: 0px;
@@ -5931,11 +5938,11 @@ export default class LandingPg extends Component {
                                                     <div className='navbar-profile-account-popup-account-single-input'>
                                                         <p>What are three grocery items you just can't live without? 😍</p>
                                                         <h5>We might surprise gift you one of your favorite items! 🍫</h5>
-                                                        <p>Item #1</p>
+                                                        <p><label>Item #1</label></p>
                                                         <input/>
-                                                        <p>Item #2</p>
+                                                        <p><label>Item #2</label></p>
                                                         <input/>
-                                                        <p>Item #3</p>
+                                                        <p><label>Item #3</label></p>
                                                         <input/>
                                                     </div>
                                                 </div>
