@@ -3774,13 +3774,19 @@ export default class LandingPg extends Component {
             jipangeProduct5Cat1Price: 0,
             selectedJipangePaymentOption: "option1",
             showJipangePaymentLoading: false,
-            showJipangeCardPayment: false,
+            showJipangeCardPayment: true,
             showJipangeMpesaPayment: false,
             showJipangeAirtelPayment: false,
-            showJipangeConfirmAddress: true,
+            showJipangeConfirmAddress: false,
+            makeJipangePaymentCardDefault: false,
+            makeJipangePaymentCardLoading: false,
+            makeJipangePaymentMpesaDefault: false,
+            makeJipangePaymentMpesaLoading: false,
+            makeJipangePaymentAirtelDefault: false,
+            makeJipangePaymentAirtelLoading: false,
             jipangeManualAddressLine1: '',
             jipangeManualAddressLine2: '',
-            currentJipangePaid: true,
+            currentJipangePaid: false,
             completeJipangeBtnLoading: false,
             completeJipangeBtnTxt: true,
 
@@ -4676,6 +4682,9 @@ export default class LandingPg extends Component {
         })
     }
 
+    jipangeHandlePaymentConfirmed = (paymentType) => {
+        
+    }
 
     render () {
 
@@ -6454,7 +6463,29 @@ export default class LandingPg extends Component {
                                                                                         </div>
                                                                                     </div>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
-                                                                                        <button>Make Payment</button>
+                                                                                        <button
+                                                                                        onClick={() => this.jipangeHandlePaymentConfirmed('card')}
+                                                                                        >
+                                                                                            {this.state.makeJipangePaymentCardDefault && 
+                                                                                                <>
+                                                                                                    Make Payment
+                                                                                                </>
+                                                                                            }
+                                                                                            {this.state.makeJipangePaymentCardLoading && 
+                                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer-complete-btn-loading'>
+                                                                                                    <TailSpin
+                                                                                                    visible={true}
+                                                                                                    height="20px"
+                                                                                                    width="20px"
+                                                                                                    color="#fff"
+                                                                                                    ariaLabel="tail-spin-loading"
+                                                                                                    radius="2"
+                                                                                                    wrapperStyle={{}}
+                                                                                                    wrapperClass=""
+                                                                                                    />
+                                                                                                </div>
+                                                                                            }
+                                                                                        </button>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -6508,11 +6539,34 @@ export default class LandingPg extends Component {
                                                                                         </div>
                                                                                     </div>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
-                                                                                        <button>Confirm Payment</button>
+                                                                                        <button
+                                                                                        onClick={() => this.jipangeHandlePaymentConfirmed('mpesa')}
+                                                                                        >
+                                                                                            {this.state.makeJipangePaymentMpesaDefault && 
+                                                                                                <>
+                                                                                                    Confirm Payment
+                                                                                                </>
+                                                                                            }
+                                                                                            {this.state.makeJipangePaymentMpesaLoading && 
+                                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer-complete-btn-loading'>
+                                                                                                    <TailSpin
+                                                                                                    visible={true}
+                                                                                                    height="20px"
+                                                                                                    width="20px"
+                                                                                                    color="#fff"
+                                                                                                    ariaLabel="tail-spin-loading"
+                                                                                                    radius="2"
+                                                                                                    wrapperStyle={{}}
+                                                                                                    wrapperClass=""
+                                                                                                    />
+                                                                                                </div>
+                                                                                            }
+                                                                                        </button>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         }
+
                                                                         {this.state.showJipangeAirtelPayment && 
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment'>
                                                                                  <div className='jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment-details'>
@@ -6568,7 +6622,29 @@ export default class LandingPg extends Component {
                                                                                         </div>
                                                                                     </div>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
-                                                                                        <button>Confirm Payment</button>
+                                                                                        <button
+                                                                                        onClick={() => this.jipangeHandlePaymentConfirmed('airtel')}
+                                                                                        >
+                                                                                            {this.state.makeJipangePaymentAirtelDefault && 
+                                                                                                <>
+                                                                                                    Confirm Payment
+                                                                                                </>
+                                                                                            }
+                                                                                            {this.state.makeJipangePaymentAirtelLoading && 
+                                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer-complete-btn-loading'>
+                                                                                                    <TailSpin
+                                                                                                    visible={true}
+                                                                                                    height="20px"
+                                                                                                    width="20px"
+                                                                                                    color="#fff"
+                                                                                                    ariaLabel="tail-spin-loading"
+                                                                                                    radius="2"
+                                                                                                    wrapperStyle={{}}
+                                                                                                    wrapperClass=""
+                                                                                                    />
+                                                                                                </div>
+                                                                                            }
+                                                                                        </button>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
