@@ -2474,6 +2474,7 @@ const Styles = styled.div `
     border: 1px solid #5e626a;
     background-color: #f2f2f2;
     pointer-events: none;
+    cursor: not-allowed;
     filter: grayscale(100%);
 }
 
@@ -3117,9 +3118,10 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
-.jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn.non-empty-cart button {
+.jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn.disabled button {
     filter: grayscale(100%);
     pointer-events: none;
+    cursor: not-allowed;
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn.active button {
@@ -6260,7 +6262,7 @@ export default class LandingPg extends Component {
                                                                             <div className={`jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn ${this.state.currentJipangePaid ? 'order-purchased' :''}`}>
                                                                                 <p><label>←</label><span>Cancel</span></p>
                                                                             </div>
-                                                                            <div className={`jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn ${!this.state.confirmJipangeOrderClicked ? 'non-empty-cart': this.state.currentJipangePaid ? 'disabled' : ''}`}>
+                                                                            <div className={`jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn ${!this.state.confirmJipangeOrderClicked && !this.state.currentJipangePaid ? 'non-empty-cart' : !this.state.confirmJipangeOrderClicked && this.state.currentJipangePaid ? 'disabled' : ''}`}>
                                                                                 <button
                                                                                 disabled={this.state.currentJipangePaid}
                                                                                 onClick={() => this.backToJipangeOrderSelection(this.state.jipangeSelectedDateTotal)}
