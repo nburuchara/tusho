@@ -2842,6 +2842,10 @@ const Styles = styled.div `
     color: #5e626a;
 }
 
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent label {
+    color: red;
+}
+
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select {
     // border: 1px solid black;
     width: 90%;
@@ -4659,7 +4663,17 @@ export default class LandingPg extends Component {
     }
 
     completeJipangeBtnClicked = () => {
-        
+        this.setState({
+            completeJipangeBtnLoading: true,
+            completeJipangeBtnTxt: false
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    completeJipangeBtnLoading: false,
+                    completeJipangeBtnTxt: true
+                })
+            }, 2500)
+        })
     }
 
 
@@ -6563,7 +6577,7 @@ export default class LandingPg extends Component {
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-payment'>
                                                                                 <p>Enter your shipping address for this order:</p>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent'>
-                                                                                    <h5>Recently Used (selected by default):</h5>
+                                                                                    <h5>Recently Used (<label>selected by default</label>):</h5>
                                                                                     <div className={`jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select ${this.state.jipangeManualAddressLine1 !== '' || this.state.jipangeManualAddressLine2 !== '' ? 'manual-selected' : ''}`}>
                                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-radio'>
                                                                                             <img src='/assets/icons/home-jipange/home-address-icon.png'/>
@@ -6621,8 +6635,8 @@ export default class LandingPg extends Component {
                                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer-complete-btn-loading'>
                                                                                                 <TailSpin
                                                                                                 visible={true}
-                                                                                                height="18px"
-                                                                                                width="18px"
+                                                                                                height="20px"
+                                                                                                width="20px"
                                                                                                 color="#fff"
                                                                                                 ariaLabel="tail-spin-loading"
                                                                                                 radius="2"
