@@ -2207,6 +2207,11 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+.account-settings-save-btn-loading-screen {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
     // # JIPANGE SETTINGS
 
 .navbar-profile-account-popup-jipange-settings {
@@ -5817,12 +5822,12 @@ export default class LandingPg extends Component {
                                                             </>
                                                         }
                                                         {this.state.accountSettingsSaveBtnLoading && 
-                                                            <div className='jipange-settings-loading-screen-products'>
+                                                            <div className='account-settings-save-btn-loading-screen'>
                                                                 <TailSpin
                                                                 visible={true}
                                                                 height="22.5px"
                                                                 width="22.5px"
-                                                                color="#ff5733"
+                                                                color="#fff"
                                                                 ariaLabel="tail-spin-loading"
                                                                 radius="2"
                                                                 wrapperStyle={{}}
