@@ -2221,13 +2221,21 @@ const Styles = styled.div `
 }
 
 .jipange-settings-calendar-parent-container {
-    border: 1px solid black;
-    height: 37.65rem;
-    overflow-y: auto;
+    // border: 1px solid black;
+    // height: 37.65rem;
+    // overflow-y: auto;
 }
 
-jipange-settings-home-confirmed-orders-list {
+.jipange-settings-calendar-parent-container p {
+    
+}
+
+.jipange-settings-home-confirmed-orders-list {
+    margin-top: 1.25rem;
+    height: 3rem;
     border: 1.5px solid #5e626a;
+    width: 97.5%;
+    margin-left: 2.5%;
 }
 
 .jipange-settings-calendar-container {
@@ -3763,7 +3771,7 @@ export default class LandingPg extends Component {
             showJipangeSettingsHome: true,
             showJipangeSettingsSelectedDate: false,
             showJipangeSettingsLoading: false,
-            showConfirmedJipangeOrders: true,
+            // showConfirmedJipangeOrders: true,
             transitionJipangeSettingsProductList: false,
             transitionHelperJipangeSettingsProductList: false,
             showJipangeProductsList1: true,
@@ -5679,14 +5687,14 @@ export default class LandingPg extends Component {
                                             <div className='navbar-profile-account-popup-jipange-settings'>
                                                 {this.state.showJipangeSettingsHome && 
                                                     <div className='jipange-settings-calendar-parent-container'>
-                                                        {this.state.showConfirmedJipangeOrders && 
+                                                        {/* {this.state.showConfirmedJipangeOrders && 
                                                             <div className='jipange-settings-home-confirmed-orders-container'>
-                                                                <p>Confirmed Orders</p>
+                                                                <p>Confirmed Orders:</p>
                                                                 <div className='jipange-settings-home-confirmed-orders-list'>
-
+                                                                    
                                                                 </div>
                                                             </div>
-                                                        }
+                                                        } */}
                                                         <p>Select the dates you want scheduled delivery:</p>
                                                         <div className={`jipange-settings-calendar-container ${this.state.confirmJipangeOrderClicked ? 'loading' : ''}`}>
                                                             <div className={`jipange-settings-calendar-header`}>
