@@ -3777,8 +3777,10 @@ export default class LandingPg extends Component {
             showJipangeProductsList1: true,
             showJipangeProductsList2: false,
             selectedDates: new Set(), // Store the selected dates as a set of 'YYYY-MM-DD' strings
+            confirmedJipangeDates: new Set(),
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
+            currentJipangeDateString: '',
             selectedJipangeDate: '',
             showJipangeSettingsSelectedDateComplete: false,
             showJipangeSettingsSelectedDateEdit: true,
@@ -4440,7 +4442,7 @@ export default class LandingPg extends Component {
             } else {
                 newSelectedDates.add(selectedDate);
             }
-            return { selectedDates: newSelectedDates };
+            return { selectedDates: newSelectedDates};
         });
     };
     
@@ -4552,7 +4554,8 @@ export default class LandingPg extends Component {
         
     }
 
-    jipangeDateScheduleClicked = (dateObject) => {
+    jipangeDateScheduleClicked = (dateObject, dateString) => {
+
         const year = dateObject.getFullYear();
         const month = dateObject.getMonth() + 1; // getMonth() is zero-based
         const day = dateObject.getDate();
@@ -4563,7 +4566,8 @@ export default class LandingPg extends Component {
         this.setState({
             showJipangeSettingsHome: false,
             showJipangeSettingsLoading: true,
-            selectedJipangeDate: `${monthName}. ${day} ${year}`
+            selectedJipangeDate: `${monthName}. ${day} ${year}`,
+            currentJipangeDateString: dateString
         }, () => {
             setTimeout(() => {
                 this.setState({
@@ -4752,6 +4756,13 @@ export default class LandingPg extends Component {
                     showJipangeConfirmAddress: true,
                 })
             }, 2500)
+        })
+    }
+
+    saveJipangeOrder = () => {
+        const newConfirmedJipangeDate = new Set()
+        this.setState({
+
         })
     }
 
@@ -5750,7 +5761,7 @@ export default class LandingPg extends Component {
                                                                                     <div 
                                                                                         key={dateString} 
                                                                                         className={`jipange-settings-selected-date-square ${this.state.selectedDates.has(dateString) ? "show" : ""}`}
-                                                                                        onClick={() => this.jipangeDateScheduleClicked(dateObject)}
+                                                                                        onClick={() => this.jipangeDateScheduleClicked(dateObject, dateString)}
                                                                                     >
                                                                                         <label>{monthName}</label> {/* Month */}
                                                                                         <label>{day}</label> {/* Date */}
