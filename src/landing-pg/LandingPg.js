@@ -4760,9 +4760,10 @@ export default class LandingPg extends Component {
     }
 
     saveJipangeOrder = () => {
-        const newConfirmedJipangeDate = new Set()
-        this.setState({
-
+        this.setState((prevState) => {
+            const newConfirmedJipangeDates = new Set(prevState.selectedDates)
+            newConfirmedJipangeDates.add(this.state.currentJipangeDateString)
+            return { confirmedJipangeDates: newConfirmedJipangeDates };
         })
     }
 
