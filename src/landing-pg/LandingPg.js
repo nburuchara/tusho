@@ -6133,7 +6133,7 @@ export default class LandingPg extends Component {
                                                                                         <label>{monthName}</label> {/* Month */}
                                                                                         <label>{day}</label> {/* Date */}
                                                                                         <div className='jipange-settings-selected-date-square-item-count'><span>{(this.state.selectedDates.has(dateString) && this.state.confirmedJipangeDates.has(dateString)) ? '◉' : ''}</span>
-                                                                                            <label>{this.state.totalJipangeOrderQty === 0 ? 0 : this.state.totalJipangeOrderQty} items</label>
+                                                                                            <label>{this.state.totalJipangeOrderQty === 0 ? 0 : this.state.totalJipangeOrderQty} item(s)</label>
                                                                                         </div>
                                                                                     </div>
                                                                                 );
