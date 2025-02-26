@@ -4782,7 +4782,14 @@ export default class LandingPg extends Component {
             setTimeout(() => {
                 this.setState({
                     showJipangeSettingsLoading: false,
-                    
+                    showJipangeSettingsHome: true,
+                    currentJipangePaid: false,
+                    disableJipangePaymentBtns: false,
+                    showJipangeConfirmAddress: false,
+                    showJipangeCardPayment: true,
+                    showJipangeSettingsSelectedDateComplete: false,
+                    showJipangeSettingsSelectedDateEdit: true,
+
                 })
             }, 2500)
         })
