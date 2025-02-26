@@ -2818,8 +2818,9 @@ const Styles = styled.div `
 }   
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-payment {
-    // border: 1px solid black;
+    border: 1px solid black;
     height: 100%;
+    position: relative;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-payment p {
@@ -2884,6 +2885,17 @@ const Styles = styled.div `
     margin-right: 2.5%;
     color: #000;
 }
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-enter h4 {
+    margin-left: 3%;
+    font-weight: normal;
+    font-size: 80%;
+    font-family: poppins;
+    color: #5e626a;
+    margin-bottom: 0.5rem;
+}
+
+.
 
     // # # JIPANGE SELECTED SCREEN EDIT
 
@@ -6484,6 +6496,33 @@ export default class LandingPg extends Component {
                                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-details'>
                                                                                             <h5>Home address</h5>
                                                                                             <p>Sunshine Villas - Hse No. 3, Spring Valley, Lower Kabete, Nairobi</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter'>
+                                                                                    <h4>or enter an address:</h4>
+
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form'>
+                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field'>
+                                                                                            <div>
+                                                                                                <h5>Address Line 1</h5>
+                                                                                            </div>
+                                                                                            <div>
+                                                                                                <input
+                                                                                                placeholder='Marula Lane 23C, Lavington'
+                                                                                                />
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field'>
+                                                                                            <div>
+                                                                                                <h5>Address Line 2</h5>
+                                                                                            </div>
+                                                                                            <div>
+                                                                                                <input
+                                                                                                placeholder='City (e.g. Nairobi)'
+                                                                                                />
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
