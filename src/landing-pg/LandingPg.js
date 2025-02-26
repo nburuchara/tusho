@@ -3665,6 +3665,14 @@ const Styles = styled.div `
     color: #5e626a;
 }
 
+    // # PAMOJA SETTINGS
+
+.navbar-profile-account-popup-pamoja-settings {
+    margin-left: 6.5%;
+    border: 1px solid black;
+    height: 37.65rem;
+}
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
@@ -3768,7 +3776,8 @@ export default class LandingPg extends Component {
             //* - USER ACCOUNT STATUS - *//
             userSignedIn: true,
             showAccountInformation: false,
-            showJipangeSettings: true,
+            showJipangeSettings: false,
+            showPamojaSettings: true,
 
             //* # Profile
             accountSetupComplete: false,
@@ -3868,8 +3877,8 @@ export default class LandingPg extends Component {
             accountSettingsOpen: true,
             showAccountSetupIncompleteHeader: true,
             accountMenuOption1Selected: false,
-            accountMenuOption2Selected: true,
-            accountMenuOption3Selected: false,
+            accountMenuOption2Selected: false,
+            accountMenuOption3Selected: true,
             accountMenuOption4Selected: false,
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
@@ -5576,6 +5585,11 @@ export default class LandingPg extends Component {
                                                 <h1>My Jipange</h1>
                                             </div>
                                         }
+                                        {this.state.showPamojaSettings && 
+                                            <div className='navbar-profile-account-popup-header-account-setup-incomplete'>
+                                                <h1>My Pamoja</h1>
+                                            </div>
+                                        }
                                     </div>
                                     <div className='navbar-profile-account-popup-header-right-close'>
                                         <img src='/assets/icons/navbar/clear-search-icon-color.png'/>
@@ -5602,16 +5616,14 @@ export default class LandingPg extends Component {
                                         </div>
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption2Selected ? 'selected' : ''}`}></div>
                                     </div>
-                                    <div className='navbar-profile-account-popup-body-left-settings-option-cell'>
+                                    <div className={`navbar-profile-account-popup-body-left-settings-option-cell ${this.state.accountMenuOption3Selected ? 'selected' : ''}`}>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
                                             <img src='/assets/icons/home-profile/edit-pamoja-option-icon.png'/>
                                         </div>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
                                             <p>Pamoja</p>
                                         </div>
-                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-selected'>
-
-                                        </div>
+                                        <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption3Selected ? 'selected' : ''}`}></div>
                                     </div>
                                     <div className='navbar-profile-account-popup-body-left-settings-option-cell'>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
@@ -6871,6 +6883,11 @@ export default class LandingPg extends Component {
                                                         </div>
                                                     </div>
                                                 }
+                                            </div>
+                                        }
+                                        {this.state.showPamojaSettings && 
+                                            <div className='navbar-profile-account-popup-pamoja-settings'>
+
                                             </div>
                                         }
                                     </div>
