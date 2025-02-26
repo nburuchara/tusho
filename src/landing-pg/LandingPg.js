@@ -2470,6 +2470,13 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
 }
 
+.jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn.disabled {
+    border: 1px solid #5e626a;
+    background-color: #f2f2f2;
+    pointer-events: none;
+    filter: grayscale(100%);
+}
+
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn input {
     width: 25%;
     border: 1px solid #ff5733;
@@ -3743,8 +3750,8 @@ export default class LandingPg extends Component {
             currentMonth: new Date().getMonth(),
             currentYear: new Date().getFullYear(),
             selectedJipangeDate: '',
-            showJipangeSettingsSelectedDateComplete: true,
-            showJipangeSettingsSelectedDateEdit: false,
+            showJipangeSettingsSelectedDateComplete: false,
+            showJipangeSettingsSelectedDateEdit: true,
             showConfirmJipangeOrderRest: true,
             showConfirmJipangeOrderActive: false,
             selectedJipangeProductCategory: 1,
@@ -3778,6 +3785,7 @@ export default class LandingPg extends Component {
             showJipangeMpesaPayment: false,
             showJipangeAirtelPayment: false,
             showJipangeConfirmAddress: false,
+            disableJipangePaymentBtns: false,
             makeJipangePaymentCardDefault: true,
             makeJipangePaymentCardLoading: false,
             makeJipangePaymentMpesaDefault: true,
@@ -4704,11 +4712,14 @@ export default class LandingPg extends Component {
             showJipangePaymentLoading: true,
             showJipangeCardPayment: false,
             showJipangeAirtelPayment: false,
-            showJipangeMpesaPayment: false
+            showJipangeMpesaPayment: false,
+            disableJipangePaymentBtns: true,
+            currentJipangePaid: true
         }, () => {
             setTimeout(() => {
                 this.setState({
                     showJipangePaymentLoading: false,
+                    showJipangeConfirmAddress: true,
                 })
             }, 2500)
         })
@@ -6362,7 +6373,7 @@ export default class LandingPg extends Component {
                                                                 <div className='jipange-settings-selected-date-screen-complete-body'>
                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-header'>
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
-                                                                            <div onClick={() => this.handleJipangePaymentOptionChange2(1)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.selectedJipangePaymentOption === 'option1' ? 'selected' : ''}`}>
+                                                                            <div onClick={() => this.handleJipangePaymentOptionChange2(1)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.disableJipangePaymentBtns === false && this.state.selectedJipangePaymentOption === 'option1' ? 'selected' : this.state.disableJipangePaymentBtns === true ? 'disabled' : ''}`}>
                                                                                 <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1`}>
                                                                                     <input
                                                                                     type="radio"
@@ -6380,7 +6391,7 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
-                                                                            <div onClick={() => this.handleJipangePaymentOptionChange2(2)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.selectedJipangePaymentOption === 'option2' ? 'selected' : ''}`}>
+                                                                            <div onClick={() => this.handleJipangePaymentOptionChange2(2)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.disableJipangePaymentBtns === false && this.state.selectedJipangePaymentOption === 'option2' ? 'selected' : this.state.disableJipangePaymentBtns === true ? 'disabled' : ''}`}>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1'>
                                                                                     <input
                                                                                     type="radio"
@@ -6398,7 +6409,7 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                         </div>
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
-                                                                            <div onClick={() => this.handleJipangePaymentOptionChange2(3)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.selectedJipangePaymentOption === 'option3' ? 'selected' : ''}`}>
+                                                                            <div onClick={() => this.handleJipangePaymentOptionChange2(3)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.disableJipangePaymentBtns === false && this.state.selectedJipangePaymentOption === 'option3' ? 'selected' : this.state.disableJipangePaymentBtns === true ? 'disabled' : ''}`}>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1'>
                                                                                     <input
                                                                                     type="radio"
