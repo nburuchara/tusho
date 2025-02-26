@@ -2120,7 +2120,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-account-info-first-name-header-label label {
     text-decoration: underline;
     text-decoration-color: #FF5733;
-    text-decoration-thickness: 1.85px;
+    text-decoration-thickness: 1.75px;
     text-decoration-style: wavy;
 }
 
@@ -4916,6 +4916,20 @@ export default class LandingPg extends Component {
         })
     }
 
+    saveAccountSettingsClicked = () => {
+        this.setState({
+            accountSettingsSaveBtnTxt: false,
+            accountSettingsSaveBtnLoading: true
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    accountSettingsSaveBtnLoading: false,
+                    accountSettingsSaveBtnTxt: true
+                })
+            }, 2500)
+        })
+    }
+
     render () {
 
         const { searchBarIsClicked, searchInput, isSearchLoading, resultsFound, groupedOptions } = this.state;
@@ -5926,7 +5940,9 @@ export default class LandingPg extends Component {
                                                     </div>
                                                 </div>
                                                 <div className='navbar-profile-account-popup-account-save-profile-btn'>
-                                                    <button>
+                                                    <button
+                                                    onClick={this.saveAccountSettingsClicked}
+                                                    >
                                                         {this.state.accountSettingsSaveBtnTxt && 
                                                             <>
                                                                 Save
