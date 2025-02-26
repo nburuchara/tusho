@@ -3795,10 +3795,11 @@ export default class LandingPg extends Component {
 
             //* - USER ACCOUNT STATUS - *//
             userSignedIn: true,
-            showAccountInformation: false,
+            showAccountInformation: true,
             showJipangeSettings: false,
             showPamojaSettings: false,
-            showSettingsPageLoading: true,
+            showDeliveryInfoSettings: false,
+            showSettingsPageLoading: false,
 
             //* # Profile
             accountSetupComplete: false,
@@ -4418,35 +4419,51 @@ export default class LandingPg extends Component {
     }
 
     menuOptionClicked = (option) => {
+        let prevMenuOption = "";
+        let newMenuOption = "";
+
         this.setState((prevState) => {
-
-            let prevMenuOption = "";
-            let newMenuOption = "";
-
-
             switch (prevState.currentMenuOption) {
                 case 1:
-                    prevMenuOption = "";
+                    prevMenuOption = "showAccountInformation";
                     break;
                 case 2:
-                    prevMenuOption = "You were in Settings.";
+                    prevMenuOption = "showJipangeSettings";
                     break;
                 case 3:
-                    prevMenuOption = "You were in Dashboard.";
+                    prevMenuOption = "showDeliveryInfoSettings";
                     break;
                 default:
-                    prevMenuOption = "Navigating to a new section.";
+                    prevMenuOption = "showAccountInformation";
+            }
+
+            switch (option) {
+                case 1:
+                    newMenuOption = "showAccountInformation";
+                    break;
+                case 2:
+                    newMenuOption = "showJipangeSettings";
+                    break;
+                case 3:
+                    newMenuOption = "showDeliveryInfoSettings";
+                    break;
+                default:
+                    newMenuOption = "showAccountInformation";
             }
 
             return {
                 [`accountMenuOption${prevState.currentMenuOption}Selected`]: false,
                 [`accountMenuOption${option}Selected`]: true,
-                currentMenuOption: option
+                currentMenuOption: option,
+                [`${prevMenuOption}`]: false,
+                showSettingsPageLoading: true
+
             }
         }, () => {
             setTimeout(() => {
                 this.setState({
-
+                    showSettingsPageLoading: false,
+                    [`${newMenuOption}`]: true
                 })
             }, 2500)
         })
