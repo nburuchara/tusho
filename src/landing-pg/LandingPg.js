@@ -5846,32 +5846,34 @@ export default class LandingPg extends Component {
                                                                 <div className='navbar-profile-account-popup-account-info-first-name-header-label'>
                                                                     <p>Email</p>
                                                                 </div>
-                                                                <div className='navbar-profile-account-popup-account-info-first-name-header-priority'>
-                                                                    <span>
-                                                                        {this.state.showEmailAccountSettingsLabel && 
-                                                                            <>
-                                                                                REQUIRED
-                                                                            </>
-                                                                        }
-                                                                        {this.state.showEmailAccountSettingsLoading && 
-                                                                            <div className='navbar-profile-account-label-loading-popup-settings'>
-                                                                                <TailSpin
-                                                                                visible={true}
-                                                                                height="12px"
-                                                                                width="12px"
-                                                                                color="#ff5733"
-                                                                                ariaLabel="tail-spin-loading"
-                                                                                radius="1.5"
-                                                                                wrapperStyle={{}}
-                                                                                wrapperClass=""
-                                                                                />
-                                                                                {/* <div>
-                                                                                    <p>Loading...</p>
-                                                                                </div> */}
-                                                                            </div>
-                                                                        }
-                                                                    </span>
-                                                                </div>
+                                                                {this.state.accountSettingsEmailVerifiedLabel && 
+                                                                    <div className='navbar-profile-account-popup-account-info-first-name-header-priority'>
+                                                                        <span>
+                                                                            {this.state.showEmailAccountSettingsLabel && 
+                                                                                <>
+                                                                                    REQUIRED
+                                                                                </>
+                                                                            }
+                                                                            {this.state.showEmailAccountSettingsLoading && 
+                                                                                <div className='navbar-profile-account-label-loading-popup-settings'>
+                                                                                    <TailSpin
+                                                                                    visible={true}
+                                                                                    height="12px"
+                                                                                    width="12px"
+                                                                                    color="#ff5733"
+                                                                                    ariaLabel="tail-spin-loading"
+                                                                                    radius="1.5"
+                                                                                    wrapperStyle={{}}
+                                                                                    wrapperClass=""
+                                                                                    />
+                                                                                    {/* <div>
+                                                                                        <p>Loading...</p>
+                                                                                    </div> */}
+                                                                                </div>
+                                                                            }
+                                                                        </span>
+                                                                    </div>
+                                                                }
                                                             </div>
                                                             <input/>
                                                         </div>
