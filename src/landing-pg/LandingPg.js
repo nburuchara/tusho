@@ -3683,12 +3683,14 @@ const Styles = styled.div `
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 13.5rem;
 }
 
 
 .navbar-profile-loading-popup-settings p {
     font-family: poppins;
     color: #5e626a;
+    font-size: 80%;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -4417,11 +4419,36 @@ export default class LandingPg extends Component {
 
     menuOptionClicked = (option) => {
         this.setState((prevState) => {
+
+            let prevMenuOption = "";
+            let newMenuOption = "";
+
+
+            switch (prevState.currentMenuOption) {
+                case 1:
+                    prevMenuOption = "";
+                    break;
+                case 2:
+                    prevMenuOption = "You were in Settings.";
+                    break;
+                case 3:
+                    prevMenuOption = "You were in Dashboard.";
+                    break;
+                default:
+                    prevMenuOption = "Navigating to a new section.";
+            }
+
             return {
                 [`accountMenuOption${prevState.currentMenuOption}Selected`]: false,
                 [`accountMenuOption${option}Selected`]: true,
                 currentMenuOption: option
             }
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+
+                })
+            }, 2500)
         })
     }
 
@@ -6926,8 +6953,8 @@ export default class LandingPg extends Component {
                                             <div className='navbar-profile-loading-popup-settings'>
                                                 <TailSpin
                                                 visible={true}
-                                                height="50px"
-                                                width="50px"
+                                                height="35px"
+                                                width="35px"
                                                 color="#ff5733"
                                                 ariaLabel="tail-spin-loading"
                                                 radius="2"
