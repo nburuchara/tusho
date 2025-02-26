@@ -6322,7 +6322,7 @@ export default class LandingPg extends Component {
                                                                         </div> 
                                                                     </div>
                                                                     <div className={`jipange-settings-selected-date-screen-header-inner-body-modify-order`}>
-                                                                        {this.state.jipangeSelectedDateTotal <= 0 && !this.state.currentJipangePaid &&
+                                                                        {this.state.jipangeSelectedDateTotal <= 0 &&
                                                                             <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-modify-order'>
                                                                                 <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-icon-modify-order'>
                                                                                     <img src='/assets/icons/home-jipange/cart-no-items-icon2.png'/>
@@ -6332,7 +6332,7 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                             </div>
                                                                         }
-                                                                        {this.state.jipangeSelectedDateTotal <= 0 && this.state.currentJipangePaid && 
+                                                                        {this.state.jipangeSelectedDateTotal > 0 && this.state.currentJipangePaid && 
                                                                             <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-modify-order'>
                                                                                 <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-icon-modify-order'>
                                                                                     <img src='/assets/icons/home-jipange/shopping-bag-icon.png'/>
@@ -6342,7 +6342,7 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                             </div>
                                                                         }
-                                                                        {this.state.jipangeSelectedDateTotal > 0 && 
+                                                                        {this.state.jipangeSelectedDateTotal > 0 && !this.state.currentJipangePaid && 
                                                                             <div className='jipange-settings-selected-date-screen-header-inner-body-items-container-modify-order'>
                                                                                 <div className='jipange-settings-selected-date-screen-header-inner-body-items-list'>
                                                                                     {this.state.jipangeProduct1Cat1Qty !== 0 && 
