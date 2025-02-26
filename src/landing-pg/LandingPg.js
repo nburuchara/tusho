@@ -5675,6 +5675,11 @@ export default class LandingPg extends Component {
                                             <div className='navbar-profile-account-popup-jipange-settings'>
                                                 {this.state.showJipangeSettingsHome && 
                                                     <div className='jipange-settings-calendar-parent-container'>
+                                                        {this.state.showConfirmedJipangeOrders && 
+                                                            <div className=''>
+                                                                <p>Confirmed Orders</p>
+                                                            </div>
+                                                        }
                                                         <p>Select the dates you want scheduled delivery:</p>
                                                         <div className={`jipange-settings-calendar-container ${this.state.confirmJipangeOrderClicked ? 'loading' : ''}`}>
                                                             <div className={`jipange-settings-calendar-header`}>
@@ -5705,11 +5710,6 @@ export default class LandingPg extends Component {
                                                                 })}
                                                             </div>
                                                         </div>
-                                                        {this.state.showConfirmedJipangeOrders && 
-                                                            <div className=''>
-                                                                <p>Confirmed Orders</p>
-                                                            </div>
-                                                        }
                                                         <div className='jipange-settings-selected-dates-container'>
                                                             <p>Select a date to add grocery items:</p>
                                                             <div className=''>
