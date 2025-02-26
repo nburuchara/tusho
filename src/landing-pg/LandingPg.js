@@ -2895,6 +2895,18 @@ const Styles = styled.div `
     margin-bottom: 0.5rem;
 }
 
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form {
+
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20%;
+    border: 1px solid black;
+}
+
 .
 
     // # # JIPANGE SELECTED SCREEN EDIT
@@ -6525,6 +6537,10 @@ export default class LandingPg extends Component {
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
+                                                                                </div>
+
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer'>
+                                                                                    <button>Complete Jipange</button>
                                                                                 </div>
                                                                             </div>
                                                                         }
