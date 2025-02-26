@@ -3822,6 +3822,10 @@ export default class LandingPg extends Component {
             accountSettingsSaveBtnLoading: true,
             showFirstNameAccountSettingsLabel: false,
             showFirstNameAccountSettingsLoading: true,
+            showLasttNameAccountSettingsLabel: false,
+            showLastNameAccountSettingsLoading: true,
+            showEmailAccountSettingsLabel: false,
+            showEmailAccountSettingsLoading: true,
 
             //* # Jipange
             showJipangeSettingsHome: true,
@@ -5783,11 +5787,11 @@ export default class LandingPg extends Component {
                                                                             <div className='navbar-profile-account-label-loading-popup-settings'>
                                                                                 <TailSpin
                                                                                 visible={true}
-                                                                                height="3px"
-                                                                                width="3px"
+                                                                                height="12px"
+                                                                                width="12px"
                                                                                 color="#ff5733"
                                                                                 ariaLabel="tail-spin-loading"
-                                                                                radius="2"
+                                                                                radius="1.5"
                                                                                 wrapperStyle={{}}
                                                                                 wrapperClass=""
                                                                                 />
@@ -5807,7 +5811,30 @@ export default class LandingPg extends Component {
                                                                     <p>Last name</p>
                                                                 </div>
                                                                 <div className='navbar-profile-account-popup-account-info-first-name-header-priority'>
-                                                                    <span>REQUIRED</span>
+                                                                    <span>
+                                                                        {this.state.showLastNameAccountSettingsLabel && 
+                                                                            <>
+                                                                                REQUIRED
+                                                                            </>
+                                                                        }
+                                                                        {this.state.showLastNameAccountSettingsLoading && 
+                                                                            <div className='navbar-profile-account-label-loading-popup-settings'>
+                                                                                <TailSpin
+                                                                                visible={true}
+                                                                                height="12px"
+                                                                                width="12px"
+                                                                                color="#ff5733"
+                                                                                ariaLabel="tail-spin-loading"
+                                                                                radius="1.5"
+                                                                                wrapperStyle={{}}
+                                                                                wrapperClass=""
+                                                                                />
+                                                                                {/* <div>
+                                                                                    <p>Loading...</p>
+                                                                                </div> */}
+                                                                            </div>
+                                                                        }
+                                                                    </span>
                                                                 </div>
                                                             </div>
                                                             <input/>
@@ -5820,7 +5847,30 @@ export default class LandingPg extends Component {
                                                                     <p>Email</p>
                                                                 </div>
                                                                 <div className='navbar-profile-account-popup-account-info-first-name-header-priority'>
-                                                                    <span>REQUIRED</span>
+                                                                    <span>
+                                                                        {this.state.showEmailAccountSettingsLabel && 
+                                                                            <>
+                                                                                REQUIRED
+                                                                            </>
+                                                                        }
+                                                                        {this.state.showEmailAccountSettingsLoading && 
+                                                                            <div className='navbar-profile-account-label-loading-popup-settings'>
+                                                                                <TailSpin
+                                                                                visible={true}
+                                                                                height="12px"
+                                                                                width="12px"
+                                                                                color="#ff5733"
+                                                                                ariaLabel="tail-spin-loading"
+                                                                                radius="1.5"
+                                                                                wrapperStyle={{}}
+                                                                                wrapperClass=""
+                                                                                />
+                                                                                {/* <div>
+                                                                                    <p>Loading...</p>
+                                                                                </div> */}
+                                                                            </div>
+                                                                        }
+                                                                    </span>
                                                                 </div>
                                                             </div>
                                                             <input/>
