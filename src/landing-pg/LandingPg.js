@@ -4950,14 +4950,23 @@ export default class LandingPg extends Component {
                     accountSettingsSaveBtnTxt: true
                 })
                 if (this.state.accountSettingFirstName !== '') {
-                    this.setState({ })
+                    this.setState({ 
+                        accountSettingsFirstNameUnverifiedLabel: false,
+                        accountSettingsFirstNameVerifiedLabel: true
+                    })
                 }
 
                 if (this.state.accountSettingLastName !== '') {
-                    this.setState({  })
+                    this.setState({ 
+                        accountSettingsLastNameUnverifiedLabel: false,
+                        accountSettingsLastNameVerifiedLabel: true
+                     })
                 }
                 if (this.state.accountSettingEmail !== '') {
-                    this.setState({  })
+                    this.setState({ 
+                        accountSettingsEmailUnverifiedLabel: false,
+                        accountSettingsEmailVerifiedLabel: true
+                     })
                 }
             }, 2500)
         })
@@ -5836,32 +5845,39 @@ export default class LandingPg extends Component {
                                                                 <div className='navbar-profile-account-popup-account-info-first-name-header-label'>
                                                                     <p><label>First name</label></p>
                                                                 </div>
-                                                                <div className='navbar-profile-account-popup-account-info-first-name-header-priority'>
-                                                                    <span>
-                                                                        {this.state.showFirstNameAccountSettingsLabel && 
-                                                                            <>
-                                                                                REQUIRED
-                                                                            </>
-                                                                        }
-                                                                        {this.state.showFirstNameAccountSettingsLoading && 
-                                                                            <div className='navbar-profile-account-label-loading-popup-settings'>
-                                                                                <TailSpin
-                                                                                visible={true}
-                                                                                height="12px"
-                                                                                width="12px"
-                                                                                color="#ff5733"
-                                                                                ariaLabel="tail-spin-loading"
-                                                                                radius="1.5"
-                                                                                wrapperStyle={{}}
-                                                                                wrapperClass=""
-                                                                                />
-                                                                                {/* <div>
-                                                                                    <p>Loading...</p>
-                                                                                </div> */}
-                                                                            </div>
-                                                                        }
-                                                                    </span>
-                                                                </div>
+                                                                {this.state.accountSettingsFirstNameUnverifiedLabel && 
+                                                                    <div className='navbar-profile-account-popup-account-info-first-name-header-priority'>
+                                                                        <span>
+                                                                            {this.state.showFirstNameAccountSettingsLabel && 
+                                                                                <>
+                                                                                    REQUIRED
+                                                                                </>
+                                                                            }
+                                                                            {this.state.showFirstNameAccountSettingsLoading && 
+                                                                                <div className='navbar-profile-account-label-loading-popup-settings'>
+                                                                                    <TailSpin
+                                                                                    visible={true}
+                                                                                    height="12px"
+                                                                                    width="12px"
+                                                                                    color="#ff5733"
+                                                                                    ariaLabel="tail-spin-loading"
+                                                                                    radius="1.5"
+                                                                                    wrapperStyle={{}}
+                                                                                    wrapperClass=""
+                                                                                    />
+                                                                                    {/* <div>
+                                                                                        <p>Loading...</p>
+                                                                                    </div> */}
+                                                                                </div>
+                                                                            }
+                                                                        </span>
+                                                                    </div>
+                                                                }
+                                                                {this.state.accountSettingsFirstNameVerifiedLabel && 
+                                                                    <div className={`navbar-profile-account-popup-account-info-first-name-header-priority ${this.state.phoneNumberVerified ? 'success' : ''}`}>
+                                                                        <span>✓</span>
+                                                                    </div>
+                                                                }
                                                             </div>
                                                             <input
                                                             id='accountSettingFirstName'
@@ -5958,9 +5974,9 @@ export default class LandingPg extends Component {
                                                                 }
                                                             </div>
                                                             <input
-                                                            id='accountSettingFirstName'
+                                                            id='accountSettingEmail'
                                                             placeholder='johnappleseed@mail.com'
-                                                            value={this.state.accountSettingFirstName}
+                                                            value={this.state.accountSettingEmail}
                                                             onChange={this.handleSearchStandardInput}
                                                             />
                                                         </div>
@@ -5980,11 +5996,17 @@ export default class LandingPg extends Component {
                                                         <p>What are three grocery items you just can't live without? 😍</p>
                                                         <h5>We might surprise gift you one of your favorite items! 🍫</h5>
                                                         <p><label>Item #1</label></p>
-                                                        <input/>
+                                                        <input
+                                                        placeholder='Dairy Fresh Strawberry'
+                                                        />
                                                         <p><label>Item #2</label></p>
-                                                        <input/>
+                                                        <input
+                                                        placeholder='Coca Cola Haribos'
+                                                        />
                                                         <p><label>Item #3</label></p>
-                                                        <input/>
+                                                        <input
+                                                        placeholder='Kellogs Cornflakes'
+                                                        />
                                                     </div>
                                                 </div>
                                                 <div className='navbar-profile-account-popup-account-save-profile-btn'>
