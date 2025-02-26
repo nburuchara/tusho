@@ -4717,6 +4717,7 @@ export default class LandingPg extends Component {
     }
 
     completeJipangeBtnClicked = () => {
+        this.saveJipangeOrder()
         this.setState({
             completeJipangeBtnLoading: true,
             completeJipangeBtnTxt: false
@@ -4771,6 +4772,10 @@ export default class LandingPg extends Component {
             newConfirmedJipangeDates.add(this.state.currentJipangeDateString)
             return { confirmedJipangeDates: newConfirmedJipangeDates };
         })
+    }
+    
+    jipangeTransitionBackToHome = () => {
+        
     }
 
     render () {
