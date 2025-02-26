@@ -2818,7 +2818,7 @@ const Styles = styled.div `
 }   
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-payment {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 100%;
     position: relative;
 }
@@ -2905,9 +2905,22 @@ const Styles = styled.div `
     width: 100%;
     height: 20%;
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: right;
 }
 
-.
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer button {
+    background-color: #ff5733;
+    border: 1px solid #ff5733;
+    padding: 10px;
+    width: 40%;
+    color: white;
+    font-family: poppins;
+    // font-weight: bold;
+    border-radius: 8px;
+    margin-right: 2.5%;
+}
 
     // # # JIPANGE SELECTED SCREEN EDIT
 
@@ -6500,7 +6513,7 @@ export default class LandingPg extends Component {
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-payment'>
                                                                                 <p>Enter your shipping address for this order:</p>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent'>
-                                                                                    <h5>Recently Used:</h5>
+                                                                                    <h5>Recently Used (selected by default):</h5>
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select'>
                                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-radio'>
                                                                                             <img src='/assets/icons/home-jipange/home-address-icon.png'/>
