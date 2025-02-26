@@ -2912,7 +2912,7 @@ const Styles = styled.div `
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 35%;
+    height: 28%;
     // border: 1px solid black;
     display: flex;
     align-items: center;
@@ -3186,6 +3186,15 @@ const Styles = styled.div `
    margin-top: 5px;
    margin-bottom: 0px;
    font-size: 75%;
+}
+
+.jipange-settings-selected-date-screen-header-inner-body-no-items-text h5 {
+    margin-left: 0px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    font-size: 75%;
+    font-family: poppins;
+    color: #ff5733;
 }
 
 .jipange-settings-selected-date-screen-header-inner-body-items-container {
@@ -3761,6 +3770,7 @@ export default class LandingPg extends Component {
             showJipangeConfirmAddress: true,
             jipangeManualAddressLine1: '',
             jipangeManualAddressLine2: '',
+            currentJipangePaid: true,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -6200,13 +6210,23 @@ export default class LandingPg extends Component {
                                                                         </div> 
                                                                     </div>
                                                                     <div className={`jipange-settings-selected-date-screen-header-inner-body-modify-order`}>
-                                                                        {this.state.jipangeSelectedDateTotal <= 0 && 
+                                                                        {this.state.jipangeSelectedDateTotal <= 0 && !this.state.currentJipangePaid &&
                                                                             <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-modify-order'>
                                                                                 <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-icon-modify-order'>
                                                                                     <img src='/assets/icons/home-jipange/cart-no-items-icon2.png'/>
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-text'>
                                                                                     <p>Add items to your cart</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        }
+                                                                        {this.state.jipangeSelectedDateTotal <= 0 && this.state.currentJipangePaid && 
+                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-modify-order'>
+                                                                                <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-icon-modify-order'>
+                                                                                    <img src='/assets/icons/home-jipange/shopping-bag-icon.png'/>
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-header-inner-body-no-items-text'>
+                                                                                    <h5>Jipange Confirmed</h5>
                                                                                 </div>
                                                                             </div>
                                                                         }
