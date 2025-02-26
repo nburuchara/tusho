@@ -2935,7 +2935,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer-complete-btn-loading {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
     // # # JIPANGE SELECTED SCREEN EDIT
@@ -3777,8 +3777,8 @@ export default class LandingPg extends Component {
             jipangeManualAddressLine1: '',
             jipangeManualAddressLine2: '',
             currentJipangePaid: true,
-            completeJipangeBtnLoading: true,
-            completeJipangeBtnTxt: false,
+            completeJipangeBtnLoading: false,
+            completeJipangeBtnTxt: true,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -4656,6 +4656,10 @@ export default class LandingPg extends Component {
         this.setState({
             [event.target.id] : event.target.value,
         })
+    }
+
+    completeJipangeBtnClicked = () => {
+        
     }
 
 
@@ -6605,7 +6609,9 @@ export default class LandingPg extends Component {
                                                                                 </div>
 
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer'>
-                                                                                    <button>
+                                                                                    <button
+                                                                                    onClick={this.completeJipangeBtnClicked}
+                                                                                    >
                                                                                         {this.state.completeJipangeBtnTxt && 
                                                                                             <>
                                                                                                 Complete Jipange
@@ -6615,8 +6621,8 @@ export default class LandingPg extends Component {
                                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer-complete-btn-loading'>
                                                                                                 <TailSpin
                                                                                                 visible={true}
-                                                                                                height="20px"
-                                                                                                width="20px"
+                                                                                                height="18px"
+                                                                                                width="18px"
                                                                                                 color="#fff"
                                                                                                 ariaLabel="tail-spin-loading"
                                                                                                 radius="2"
