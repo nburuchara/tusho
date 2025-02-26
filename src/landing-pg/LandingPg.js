@@ -2120,7 +2120,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-account-info-first-name-header-label label {
     text-decoration: underline;
     text-decoration-color: #FF5733;
-    text-decoration-thickness: 2.5px;
+    text-decoration-thickness: 1.85px;
     text-decoration-style: wavy;
 }
 
