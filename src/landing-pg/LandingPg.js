@@ -2836,8 +2836,10 @@ const Styles = styled.div `
     margin-right: 2.5%;
     margin-bottom: 0.5rem;
     margin-top: 1.25rem;
-    font-family: raleway;
+    font-family: poppins;
     font-size: 70%;
+    // font-weight: normal;
+    color: #5e626a;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select {
@@ -2849,9 +2851,16 @@ const Styles = styled.div `
     height: 3.5rem;
     border-radius: 8px;
     border: 1px solid #ff5733;
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-color: #faece9;
 }
- 
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select.manual-selected {
+    background-color: #f2f2f2;
+    filter: grayscale(100%);
+    pointer-events: none;
+}
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-radio {
     width: 15%;
@@ -2903,7 +2912,7 @@ const Styles = styled.div `
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 20%;
+    height: 35%;
     // border: 1px solid black;
     display: flex;
     align-items: center;
@@ -2920,6 +2929,7 @@ const Styles = styled.div `
     // font-weight: bold;
     border-radius: 8px;
     margin-right: 2.5%;
+    cursor: pointer;
 }
 
     // # # JIPANGE SELECTED SCREEN EDIT
@@ -3749,6 +3759,8 @@ export default class LandingPg extends Component {
             showJipangeMpesaPayment: false,
             showJipangeAirtelPayment: false,
             showJipangeConfirmAddress: true,
+            jipangeManualAddressLine1: '',
+            jipangeManualAddressLine2: '',
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -4620,6 +4632,12 @@ export default class LandingPg extends Component {
             }
         }
         
+    }
+
+    handleSearchStandardInput = (event) => {
+        this.setState({
+            [event.target.id] : event.target.value,
+        })
     }
 
 
@@ -6514,7 +6532,7 @@ export default class LandingPg extends Component {
                                                                                 <p>Enter your shipping address for this order:</p>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent'>
                                                                                     <h5>Recently Used (selected by default):</h5>
-                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select'>
+                                                                                    <div className={`jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select ${this.state.jipangeManualAddressLine1 !== '' ? 'manual-selected' : ''}`}>
                                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-radio'>
                                                                                             <img src='/assets/icons/home-jipange/home-address-icon.png'/>
                                                                                         </div>
@@ -6535,7 +6553,10 @@ export default class LandingPg extends Component {
                                                                                             </div>
                                                                                             <div>
                                                                                                 <input
+                                                                                                id='jipangeManualAddressLine1'
                                                                                                 placeholder='Marula Lane 23C, Lavington'
+                                                                                                value={this.state.jipangeManualAddressLine1}
+                                                                                                onChange={this.handleSearchStandardInput}
                                                                                                 />
                                                                                             </div>
                                                                                         </div>
@@ -6545,7 +6566,10 @@ export default class LandingPg extends Component {
                                                                                             </div>
                                                                                             <div>
                                                                                                 <input
+                                                                                                id='jipangeManualAddressLine2'
                                                                                                 placeholder='City (e.g. Nairobi)'
+                                                                                                value={this.state.jipangeManualAddressLine2}
+                                                                                                onChange={this.handleSearchStandardInput}
                                                                                                 />
                                                                                             </div>
                                                                                         </div>
