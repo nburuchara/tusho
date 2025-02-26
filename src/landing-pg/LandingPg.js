@@ -2222,7 +2222,8 @@ const Styles = styled.div `
 
 .jipange-settings-calendar-parent-container {
     border: 1px solid black;
-    height: 37.25rem;
+    height: 37.65rem;
+    overflow-y: auto;
 }
 
 .jipange-settings-calendar-container {
