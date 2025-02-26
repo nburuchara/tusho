@@ -3818,16 +3818,20 @@ export default class LandingPg extends Component {
             //* # Profile
             accountSetupComplete: false,
             phoneNumberVerified: true,
-            accountSettingsSaveBtnTxt: false,
-            accountSettingsSaveBtnLoading: true,
+            accountSettingsLastNameUnverifiedLabel: true,
+            accountSettingsLastNameVerifiedLabel: false,
             showFirstNameAccountSettingsLabel: false,
             showFirstNameAccountSettingsLoading: true,
-            showLasttNameAccountSettingsLabel: false,
+            accountSettingsLastNameUnverifiedLabel: true,
+            accountSettingsLastNameVerifiedLabel: false,
+            showLastNameAccountSettingsLabel: false,
             showLastNameAccountSettingsLoading: true,
-            accountSettingsEmailUnerifiedLabel: false,
-            accountSettingsEmailVerifiedLabel: true,
+            accountSettingsEmailUnverifiedLabel: true,
+            accountSettingsEmailVerifiedLabel: false,
             showEmailAccountSettingsLabel: false,
             showEmailAccountSettingsLoading: true,
+            accountSettingsSaveBtnTxt: false,
+            accountSettingsSaveBtnLoading: true,
 
             //* # Jipange
             showJipangeSettingsHome: true,
@@ -5812,32 +5816,39 @@ export default class LandingPg extends Component {
                                                                 <div className='navbar-profile-account-popup-account-info-first-name-header-label'>
                                                                     <p>Last name</p>
                                                                 </div>
-                                                                <div className='navbar-profile-account-popup-account-info-first-name-header-priority'>
-                                                                    <span>
-                                                                        {this.state.showLastNameAccountSettingsLabel && 
-                                                                            <>
-                                                                                REQUIRED
-                                                                            </>
-                                                                        }
-                                                                        {this.state.showLastNameAccountSettingsLoading && 
-                                                                            <div className='navbar-profile-account-label-loading-popup-settings'>
-                                                                                <TailSpin
-                                                                                visible={true}
-                                                                                height="12px"
-                                                                                width="12px"
-                                                                                color="#ff5733"
-                                                                                ariaLabel="tail-spin-loading"
-                                                                                radius="1.5"
-                                                                                wrapperStyle={{}}
-                                                                                wrapperClass=""
-                                                                                />
-                                                                                {/* <div>
-                                                                                    <p>Loading...</p>
-                                                                                </div> */}
-                                                                            </div>
-                                                                        }
-                                                                    </span>
-                                                                </div>
+                                                                {this.state.accountSettingsLastNameUnverifiedLabel && 
+                                                                    <div className='navbar-profile-account-popup-account-info-first-name-header-priority'>
+                                                                        <span>
+                                                                            {this.state.showLastNameAccountSettingsLabel && 
+                                                                                <>
+                                                                                    REQUIRED
+                                                                                </>
+                                                                            }
+                                                                            {this.state.showLastNameAccountSettingsLoading && 
+                                                                                <div className='navbar-profile-account-label-loading-popup-settings'>
+                                                                                    <TailSpin
+                                                                                    visible={true}
+                                                                                    height="12px"
+                                                                                    width="12px"
+                                                                                    color="#ff5733"
+                                                                                    ariaLabel="tail-spin-loading"
+                                                                                    radius="1.5"
+                                                                                    wrapperStyle={{}}
+                                                                                    wrapperClass=""
+                                                                                    />
+                                                                                    {/* <div>
+                                                                                        <p>Loading...</p>
+                                                                                    </div> */}
+                                                                                </div>
+                                                                            }
+                                                                        </span>
+                                                                    </div>
+                                                                }
+                                                                {this.state.accountSettingsLastNameVerifiedLabel && 
+                                                                    <div className={`navbar-profile-account-popup-account-info-first-name-header-priority ${this.state.phoneNumberVerified ? 'success' : ''}`}>
+                                                                        <span>✓</span>
+                                                                    </div>
+                                                                }
                                                             </div>
                                                             <input/>
                                                         </div>
