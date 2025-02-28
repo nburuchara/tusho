@@ -3751,7 +3751,7 @@ const Styles = styled.div `
     margin-left: 0px;
     margin-top: 0px;
     padding-top: 5px;
-    font-size: 70%;
+    font-size: 72.5%;
     color: black;
 }
 
