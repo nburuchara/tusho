@@ -3838,21 +3838,21 @@ const Styles = styled.div `
     right: 0;
     width: 45%;
     height: 80%;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
     border-radius: 8px;
     margin-right: 4.5%;
     z-index: 2;
-    background-color: white;
     flex-direction: column; 
 }
 
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1 {
     height: 50%;
-    border-bottom: 1px solid #ccc;
+    border: 1px solid #ccc;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     display: flex;
+    background-color: white;
     justify-content: space-between;
 }
 
@@ -3862,11 +3862,29 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
 }
 
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-icon {
+    width: 15%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-icon img {
+    width: 18px;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-text {
+    width: 85%;
+}
+
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2 {
     height: 50%;
-    // border: 1px solid black;
+    border: 1px solid #ccc;
+    border-top: 1px solid transparent;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
+    background-color: white;
     display: flex;
     justify-content: space-between;
 }
@@ -7442,10 +7460,20 @@ export default class LandingPg extends Component {
                                                             <p>Sunshine Villas - Hse. 2b, Spring Valley, Lower Kabete, Nairobi</p>
                                                             <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings'>
                                                                 <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1'>
+                                                                    <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-icon'>
+                                                                        <img src='/assets/icons/home-delivery-info/delete-icon.png'/>
+                                                                    </div>
+                                                                    <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-text'>
 
+                                                                    </div>
                                                                 </div>
                                                                 <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2'>
+                                                                    <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-icon'>
 
+                                                                    </div>
+                                                                    <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-text'>
+
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
