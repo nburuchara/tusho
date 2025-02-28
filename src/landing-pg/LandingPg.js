@@ -4006,6 +4006,10 @@ export default class LandingPg extends Component {
             completeJipangeBtnLoading: false,
             completeJipangeBtnTxt: true,
 
+            //* # DELIVERY INFO *//
+            checked: false,
+            text: "",
+
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
             searchBarInput: '',
@@ -5073,6 +5077,14 @@ export default class LandingPg extends Component {
             }, 2500)
         })
     }
+
+    handleCheckboxClick = () => {
+        this.setState((prevState) => ({ checked: !prevState.checked }));
+    };
+
+    handleTextChange = (event) => {
+        this.setState({ text: event.target.value });
+    };
 
     render () {
 
@@ -7328,7 +7340,22 @@ export default class LandingPg extends Component {
                                                                 <h3>Home</h3>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select'>
-
+                                                                <div
+                                                                onClick={this.handleCheckboxClick}
+                                                                style={{
+                                                                    width: "24px",
+                                                                    height: "24px",
+                                                                    border: "2px solid black",
+                                                                    display: "flex",
+                                                                    alignItems: "center",
+                                                                    justifyContent: "center",
+                                                                    cursor: "pointer",
+                                                                    fontSize: "18px",
+                                                                    userSelect: "none",
+                                                                }}
+                                                                >
+                                                                    <strong>{this.state.checked ? "✓" : ""}</strong>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
