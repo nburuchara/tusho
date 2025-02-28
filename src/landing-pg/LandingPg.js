@@ -3727,7 +3727,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-delivery-info-settings-header {
-    height: 20%;
+    height: 50%;
     // border: 1px solid black;
 }
 
@@ -3741,7 +3741,9 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-delivery-info-settings-body {
     // border: 1px solid black;
-    height: 80%;
+    border-top: 1px solid #5e626a;
+    height: 50%;
+    overflow-y: auto;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container {
@@ -7488,13 +7490,28 @@ export default class LandingPg extends Component {
                                                         </div>
                                                         <div>
                                                             <input
-                                                            id='jipangeManualAddressLine1'
+                                                            id='deliveryInfoAddressLine1'
                                                             placeholder='Marula Lane 23C, Lavington'
-                                                            value={this.state.jipangeManualAddressLine1}
+                                                            value={this.state.deliveryInfoAddressLine1}
                                                             onChange={this.handleSearchStandardInput}
                                                             />
                                                         </div>
                                                     </div>
+
+                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field'>
+                                                        <div>
+                                                            <h5>Address Line 1</h5>
+                                                        </div>
+                                                        <div>
+                                                            <input
+                                                            id='deliverInfoAddressLine2'
+                                                            placeholder='Marula Lane 23C, Lavington'
+                                                            value={this.state.deliverInfoAddressLine2}
+                                                            onChange={this.handleSearchStandardInput}
+                                                            />
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                                 <div className='navbar-profile-account-popup-delivery-info-settings-body'>
                                                     <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container'>
