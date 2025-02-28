@@ -3759,7 +3759,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-delivery-info-settings-header-address-types-btns {
     position: absolute;
     bottom: 0;
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 100%;
     height: 65%;
     display: flex;
@@ -3767,16 +3767,21 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-delivery-info-settings-header-address-types-btn {
-    width: 25%;
-    border: 1px solid black;
+    width: 20%;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
  }
 
  .navbar-profile-account-popup-delivery-info-settings-header-address-types-btn button {
-    width: 95%;
-    height: 95%;
+    width: 90%;
+    height: 70%;
+    border-radius: 8px;
+    border: 1px solid #5e626a;
+    font-family: poppins;
+    color: #5e626a;
+    font-size: 75%;
  }
 
 
