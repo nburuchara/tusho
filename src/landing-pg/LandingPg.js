@@ -3753,7 +3753,6 @@ const Styles = styled.div `
     border-radius: 8px;
     background-color: #faece9;
     border: 1px solid #ff5733;
-    filter: grayscale(100%);
     display: flex;
     flex-direction: column;
 }
@@ -3826,12 +3825,50 @@ const Styles = styled.div `
 }
 
 
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body {
+    border: 1px solid black;
+    flex-grow: 1;
+    position: relative;
+    z-index: 1;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0;
+    width: 45%;
+    height: 80%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 4.5%;
+    z-index: 2;
+    background-color: white;
+    flex-direction: column; 
+}
+
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1 {
+    height: 50%;
+    // border: 1px solid black;
+    background-color: blue;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2 {
+    height: 50%;
+    // border: 1px solid black;
+    background-color: red;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body p {
     margin-left: 5.5%;
     margin-right: 2.5%;
     margin-top: 0px;
     margin-bottom: 5px;
-    color: #ff5733;
+    color: #5e626a;
     font-family: poppins;
     font-size: 86.5%;
 }
@@ -7389,6 +7426,14 @@ export default class LandingPg extends Component {
                                                         </div>
                                                         <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body'>
                                                             <p>Sunshine Villas - Hse. 2b, Spring Valley, Lower Kabete, Nairobi</p>
+                                                            <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings'>
+                                                                <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1'>
+
+                                                                </div>
+                                                                <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2'>
+
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
