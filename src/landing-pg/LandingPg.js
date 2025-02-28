@@ -3849,18 +3849,32 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1 {
     height: 50%;
-    // border: 1px solid black;
-    background-color: blue;
+    border-bottom: 1px solid #ccc;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1:hover {
+    background-color: #faece9;
+    cursor: pointer;
+    border: 1px solid #ff5733;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2 {
     height: 50%;
     // border: 1px solid black;
-    background-color: red;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2:hover {
+    background-color: #faece9;
+    cursor: pointer;
+    border: 1px solid #ff5733;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body p {
