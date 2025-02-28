@@ -3731,6 +3731,19 @@ const Styles = styled.div `
     border: 1px solid black;
 }
 
+.navbar-profile-account-popup-delivery-info-settings-header p {
+    margin-left: 2.5%;
+    margin-bottom: 8px;
+    color: #5e626a;
+    font-family: poppins;
+    font-size: 80%;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body {
+    border: 1px solid black;
+    height: 80%;
+}
+
     // # LOADING SCREEN SETTINGS
 
 .navbar-profile-loading-popup-settings {
@@ -7252,6 +7265,9 @@ export default class LandingPg extends Component {
                                                             />
                                                         </div>
                                                     </div>
+                                                </div>
+                                                <div className='navbar-profile-account-popup-delivery-info-settings-body'>
+
                                                 </div>
                                             </div>
                                         }
