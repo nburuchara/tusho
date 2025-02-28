@@ -3716,6 +3716,20 @@ const Styles = styled.div `
     height: 37.65rem;
 }
 
+    // # DELIVERY INFO SETTINGS
+
+.navbar-profile-account-popup-delivery-info-settings {
+    margin-left: 6.5%;
+    border: 1px solid black;
+    height: 37.65rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-header {
+    
+}
+
     // # LOADING SCREEN SETTINGS
 
 .navbar-profile-loading-popup-settings {
@@ -3835,10 +3849,10 @@ export default class LandingPg extends Component {
 
             //* - USER ACCOUNT STATUS - *//
             userSignedIn: true,
-            showAccountInformation: true,
+            showAccountInformation: false,
             showJipangeSettings: false,
             showPamojaSettings: false,
-            showDeliveryInfoSettings: false,
+            showDeliveryInfoSettings: true,
             showSettingsPageLoading: false,
 
             //* # Profile
@@ -3956,9 +3970,9 @@ export default class LandingPg extends Component {
             accountSettingsOpen: true,
             currentMenuOption: 1,
             showAccountSetupIncompleteHeader: true,
-            accountMenuOption1Selected: true,
+            accountMenuOption1Selected: false,
             accountMenuOption2Selected: false,
-            accountMenuOption3Selected: false,
+            accountMenuOption3Selected: true,
             accountMenuOption4Selected: false,
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
@@ -5777,6 +5791,11 @@ export default class LandingPg extends Component {
                                                 <h1>My Pamoja</h1>
                                             </div>
                                         }
+                                        {this.state.showDeliveryInfoSettings && 
+                                            <div className='navbar-profile-account-popup-header-account-setup-incomplete'>
+                                                <h1>My Delivery Info</h1>
+                                            </div>
+                                        }
                                     </div>
                                     <div className='navbar-profile-account-popup-header-right-close'>
                                         <img src='/assets/icons/navbar/clear-search-icon-color.png'/>
@@ -6104,7 +6123,7 @@ export default class LandingPg extends Component {
                                                             </div>
                                                         </div>
                                                         <div className='jipange-settings-selected-dates-container'>
-                                                            <p>Select a date to add grocery items:</p>
+                                                            <p>Select a jipange to add grocery items:</p>
                                                             <div className=''>
                                                                 {this.state.selectedDates.size < 1 ? 
                                                                     (   
@@ -7212,6 +7231,13 @@ export default class LandingPg extends Component {
                                             <div className='navbar-profile-account-popup-pamoja-settings'>
                                                 <div className=''>
 
+                                                </div>
+                                            </div>
+                                        }
+                                        {this.state.showDeliveryInfoSettings && 
+                                            <div className='navbar-profile-account-popup-delivery-info-settings'>
+                                                <div className='navbar-profile-account-popup-delivery-info-settings-header'>
+                                                    <p>Enter your delivery address:</p>
                                                 </div>
                                             </div>
                                         }
