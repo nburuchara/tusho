@@ -3909,11 +3909,27 @@ const Styles = styled.div `
     right: 0;
     width: 18px;
     height: 18px;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
     border-radius: 8px;
-    margin-right: 4.5%;
-    z-index: 2;
-    // flex-direction: column;
+    margin-right: 5.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.three-dots {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+    cursor: pointer;
+}
+
+.three-dots span {
+    width: 3px;
+    height: 3px;
+    background-color: black;
+    border-radius: 50%;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings {
@@ -3971,6 +3987,57 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-text h5 {
+    color: #5e626a;
+    font-weight: normal;
+    font-size: 80%;
+    margin-top: 1.5px;
+    margin-bottom: 0px;
+    margin-left: 10%;
+    font-family: poppins;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-5 {
+    height: 50%;
+    border: 1px solid #ccc;
+    // border-top-right-radius: 8px;
+    // border-top-left-radius: 8px;
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-5:hover {
+    background-color: #faece9;
+    cursor: pointer;
+    border: 1px solid #ff5733;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-5:hover .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-5-text h5 {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #ff5733;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-5-icon {
+    width: 20%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-5-icon img {
+    width: 11.5px;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-5-text {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-5-text h5 {
     color: #5e626a;
     font-weight: normal;
     font-size: 80%;
@@ -5332,6 +5399,15 @@ export default class LandingPg extends Component {
                 [`deliveryInfoAddressType${prevState.currentDeliveryInfoAddressType}`]: false,
                 currentDeliveryInfoAddressType: option,
                 [`deliveryInfoAddressType${option}`]: true
+            }
+        })
+    }
+
+    deliveryInfoHomeAddressOptionsClicked = () => {
+        this.setState((prevState) => {
+            return {
+                showDeliveryInfoOption1Settings: !prevState.showDeliveryInfoOption1Settings,
+                showDeliveryInfoOption1SettingsBtn: !prevState.showDeliveryInfoOption1SettingsBtn,
             }
         })
     }
@@ -7652,19 +7728,33 @@ export default class LandingPg extends Component {
                                                                             <h5>Delete</h5>
                                                                         </div>
                                                                     </div>
-                                                                    <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2'>
+                                                                    <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-5'>
+                                                                        <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-5-icon'>
+                                                                        <img src='/assets/icons/home-delivery-info/edit-icon.png'/>
+                                                                        </div>
+                                                                        <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-5-text'>
+                                                                            <h5>Edit</h5>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div 
+                                                                    onClick={this.deliveryInfoHomeAddressOptionsClicked}
+                                                                    className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2'>
                                                                         <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-icon'>
-                                                                            <img src='/assets/icons/home-delivery-info/edit-icon.png'/>
+                                                                            <img src='/assets/icons/home-delivery-info/close-icon.png'/>
                                                                         </div>
                                                                         <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-text'>
-                                                                            <h5>Edit</h5>
+                                                                            <h5>Close</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             }
-                                                            {!this.state.showDeliveryInfoOptionSettingsBtn && 
+                                                            {!this.state.showDeliveryInfoOption1SettingsBtn && 
                                                                 <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-btn'>
-
+                                                                    <div onClick={this.deliveryInfoHomeAddressOptionsClicked} className="three-dots">
+                                                                        <span></span>
+                                                                        <span></span>
+                                                                        <span></span>
+                                                                    </div>
                                                                 </div>
                                                             }
                                                         </div>
