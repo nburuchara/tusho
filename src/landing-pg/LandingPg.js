@@ -3810,6 +3810,10 @@ const Styles = styled.div `
     cursor: pointer;
     font-size: 18px;
     user-select: none;
+    border: 1px solid #5e626a;
+    border-radius: 5px;
+    color: white;
+    background-color: #ff5733;
 }
 
     // # LOADING SCREEN SETTINGS
@@ -4023,8 +4027,8 @@ export default class LandingPg extends Component {
             completeJipangeBtnTxt: true,
 
             //* # DELIVERY INFO *//
-            checked: false,
-            text: "",
+            deliveryInfoDefaultAddressSelected: false,
+            deliveryInfoDefaultAddressText: "",
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -5094,11 +5098,11 @@ export default class LandingPg extends Component {
         })
     }
 
-    handleCheckboxClick = () => {
-        this.setState((prevState) => ({ checked: !prevState.checked }));
+    deliveryInfoDefaultAddressCheckboxClick = () => {
+        this.setState((prevState) => ({ deliveryInfoDefaultAddressSelected: !prevState.deliveryInfoDefaultAddressSelected }));
     };
 
-    handleTextChange = (event) => {
+    deliveryInfoDefaultAddressTextChange = (event) => {
         this.setState({ text: event.target.value });
     };
 
@@ -7357,9 +7361,9 @@ export default class LandingPg extends Component {
                                                             </div>
                                                             <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select'>
                                                                 <div
-                                                                className='navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select-checkbox'
-                                                                onClick={this.handleCheckboxClick}>
-                                                                    <strong>{this.state.checked ? "✓" : ""}</strong>
+                                                                className={`navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select-checkbox ${this.state.deliveryInfoDefaultAddressSelected}`}
+                                                                onClick={this.deliveryInfoDefaultAddressCheckboxClick}>
+                                                                    <strong>{this.state.deliveryInfoDefaultAddressSelected ? "✓" : ""}</strong>
                                                                 </div>
                                                             </div>
                                                         </div>
