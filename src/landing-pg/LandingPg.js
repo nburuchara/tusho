@@ -3775,7 +3775,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-header-icon img {
-    width: 26.5px;
+    width: 20.5px;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-header-title {
@@ -3787,11 +3787,12 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-header-title h3 {
-    font-weight: normal;
-    font-size: 110%;
+    // font-weight: normal;
+    text-decoration: underline;
+    font-size: 105%;
     font-family: poppins;
     color: #ff5733;
-    margin-top: 5px;
+    margin-top: 1.5px;
     margin-bottom: 0px;
     margin-left: 3%;
 }
@@ -3805,14 +3806,14 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select-checkbox {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
     border: 2px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 14.5px;
     user-select: none;
     border: 1px solid #5e626a;
     border-radius: 5px;
@@ -3845,7 +3846,7 @@ const Styles = styled.div `
     margin-bottom: 5px;
     color: #000;
     font-family: poppins;
-    font-size: 90.5%;
+    font-size: 82.5%;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings {
@@ -3853,7 +3854,7 @@ const Styles = styled.div `
     bottom: 0.7rem;
     right: 0;
     width: 35%;
-    height: 80%;
+    height: 120%;
     // border: 1px solid #ccc;
     border-radius: 8px;
     margin-right: 4.5%;
@@ -3892,7 +3893,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-icon img {
-    width: 13.5px;
+    width: 11.5px;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-text {
@@ -3944,7 +3945,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-icon img {
-    width: 13.5px;
+    width: 11.5px;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-text {
@@ -7483,7 +7484,7 @@ export default class LandingPg extends Component {
                                         {this.state.showDeliveryInfoSettings && 
                                             <div className='navbar-profile-account-popup-delivery-info-settings'>
                                                 <div className='navbar-profile-account-popup-delivery-info-settings-header'>
-                                                    <p>Enter your delivery address:</p>
+                                                    <p>Add a new delivery address:</p>
                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field'>
                                                         <div>
                                                             <h5>Address Line 1</h5>
@@ -7500,7 +7501,7 @@ export default class LandingPg extends Component {
 
                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field'>
                                                         <div>
-                                                            <h5>Address Line 1</h5>
+                                                            <h5>Address Line 2</h5>
                                                         </div>
                                                         <div>
                                                             <input
