@@ -3895,7 +3895,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body p {
     margin-left: 5.5%;
-    margin-right: 2.5%;
+    margin-right: 6.5%;
     margin-top: 0px;
     margin-bottom: 5px;
     color: #000;
@@ -3911,7 +3911,7 @@ const Styles = styled.div `
     height: 18px;
     // border: 1px solid #ccc;
     border-radius: 8px;
-    margin-right: 5.5%;
+    margin-right: 5.6%;
     display: flex;
     align-items: center;
     justify-content: center;
