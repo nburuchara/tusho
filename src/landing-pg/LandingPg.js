@@ -3720,7 +3720,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-delivery-info-settings {
     margin-left: 6.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 37.65rem;
     display: flex;
     flex-direction: column;
@@ -3733,17 +3733,26 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-delivery-info-settings-header p {
     margin-left: 2.5%;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     color: #5e626a;
     font-family: poppins;
     font-size: 80%;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-header-address-types {
-    border: 1px solid black;
+    // border: 1px solid black;
+    border-top: 1px solid #5e626a;
     width: 95%;
     margin-left: 2.5%;
-    height: 16.5%;
+    height: 20.5%;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-header-address-types p {
+    margin-left: 0px;
+    margin-top: 0px;
+    padding-top: 5px;
+    font-size: 70%;
+    color: black;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body {
@@ -7494,7 +7503,7 @@ export default class LandingPg extends Component {
                                                 <div className='navbar-profile-account-popup-delivery-info-settings-header'>
                                                     <p>Add a new delivery address:</p>
                                                     <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types'>
-
+                                                        <p>Select an address type:</p>
                                                     </div>
                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field'>
                                                         <div>
