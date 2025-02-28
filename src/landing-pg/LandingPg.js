@@ -3782,7 +3782,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-header-icon img {
-    width: 20.5px;
+    width: 21.5px;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-header-title {
@@ -3801,7 +3801,7 @@ const Styles = styled.div `
     color: #ff5733;
     margin-top: 1.5px;
     margin-bottom: 0px;
-    margin-left: 3%;
+    margin-left: 0.5%;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select {
