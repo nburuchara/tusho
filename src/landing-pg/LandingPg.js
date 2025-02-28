@@ -3813,7 +3813,13 @@ const Styles = styled.div `
     border: 1px solid #5e626a;
     border-radius: 5px;
     color: white;
+    background-color: transparent;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select-checkbox.checked {
+    color: white;
     background-color: #ff5733;
+    border: 1px solid #ff5733;
 }
 
     // # LOADING SCREEN SETTINGS
@@ -7361,7 +7367,7 @@ export default class LandingPg extends Component {
                                                             </div>
                                                             <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select'>
                                                                 <div
-                                                                className={`navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select-checkbox ${this.state.deliveryInfoDefaultAddressSelected}`}
+                                                                className={`navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select-checkbox ${this.state.deliveryInfoDefaultAddressSelected ? 'checked' : ''}`}
                                                                 onClick={this.deliveryInfoDefaultAddressCheckboxClick}>
                                                                     <strong>{this.state.deliveryInfoDefaultAddressSelected ? "✓" : ""}</strong>
                                                                 </div>
