@@ -3751,6 +3751,48 @@ const Styles = styled.div `
     margin-left: 2.5%;
     margin-top: 2.5%; 
     border-radius: 8px;
+    background-color: #faece9;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-header {
+    height: 40%;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-header-icon {
+    width: 15%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-header-icon img {
+    width: 23.5px;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-header-title {
+    width: 70%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-header-title h4 {
+    font-weight: normal;
+    font-family: poppins;
+    color: #ff5733;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 3%;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select {
+    width: 15%;
+    // border: 1px solid black;
 }
 
     // # LOADING SCREEN SETTINGS
@@ -7277,7 +7319,17 @@ export default class LandingPg extends Component {
                                                 </div>
                                                 <div className='navbar-profile-account-popup-delivery-info-settings-body'>
                                                     <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container'>
+                                                        <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-header'>
+                                                            <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-header-icon'>
+                                                                <img src='/assets/icons/home-delivery-info/home-icon.png'/>
+                                                            </div>
+                                                            <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-header-title'>
+                                                                <h4>Home</h4>
+                                                            </div>
+                                                            <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select'>
 
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
