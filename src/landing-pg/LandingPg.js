@@ -3790,7 +3790,6 @@ const Styles = styled.div `
    color: #ff5733;
 }
 
-
 .navbar-profile-account-popup-delivery-info-settings-body {
     // border: 1px solid black;
     border-top: 1px solid #5e626a;
@@ -5006,7 +5005,7 @@ export default class LandingPg extends Component {
     }
 
     backToJipangeOrderSelection = () => {
-        
+ 
     }
 
     jipangeDateScheduleClicked = (dateObject, dateString) => {
@@ -5308,6 +5307,14 @@ export default class LandingPg extends Component {
     deliveryInfoDefaultAddressTextChange = (event) => {
         this.setState({ text: event.target.value });
     };
+
+    deliveryInfoAddressTypeClicked = (option) => {
+        this.setState((prevState) => {
+            return {
+                
+            }
+        })
+    }
 
     render () {
 
@@ -7543,16 +7550,24 @@ export default class LandingPg extends Component {
                                                         <p>Select an address type:</p>
                                                         <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btns'>
                                                             <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btn'>
-                                                                <button>Home</button>
+                                                                <button
+                                                                onClick={() => this.deliveryInfoAddressTypeClicked(1)}
+                                                                >Home</button>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btn'>
-                                                                <button>Office</button>
+                                                                <button
+                                                                onClick={() => this.deliveryInfoAddressTypeClicked(2)}
+                                                                >Office</button>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btn'>
-                                                                <button>Friend</button>
+                                                                <button
+                                                                onClick={() => this.deliveryInfoAddressTypeClicked(3)}
+                                                                >Friend</button>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btn'>
-                                                                <button>Other</button>
+                                                                <button
+                                                                onClick={() => this.deliveryInfoAddressTypeClicked(4)}
+                                                                >Other</button>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btn'>
 
