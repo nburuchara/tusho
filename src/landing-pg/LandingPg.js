@@ -3760,7 +3760,24 @@ const Styles = styled.div `
     position: absolute;
     bottom: 0;
     border: 1px solid black;
+    width: 100%;
+    height: 65%;
+    display: flex;
+    justify-content: space-between;
 }
+
+.navbar-profile-account-popup-delivery-info-settings-header-address-types-btn {
+    width: 25%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .navbar-profile-account-popup-delivery-info-settings-header-address-types-btn button {
+    width: 95%;
+ }
+
 
 .navbar-profile-account-popup-delivery-info-settings-body {
     // border: 1px solid black;
@@ -7512,7 +7529,21 @@ export default class LandingPg extends Component {
                                                     <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types'>
                                                         <p>Select an address type:</p>
                                                         <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btns'>
-                                                            
+                                                            <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btn'>
+                                                                <button>Home</button>
+                                                            </div>
+                                                            <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btn'>
+                                                                <button>Office</button>
+                                                            </div>
+                                                            <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btn'>
+
+                                                            </div>
+                                                            <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btn'>
+
+                                                            </div>
+                                                            <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btn'>
+
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field'>
