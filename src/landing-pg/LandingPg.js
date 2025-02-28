@@ -3773,7 +3773,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-header-icon img {
-    width: 23.5px;
+    width: 26.5px;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-header-title {
@@ -3786,10 +3786,10 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-header-title h3 {
     font-weight: normal;
-    font-size: 100%;
+    font-size: 110%;
     font-family: poppins;
     color: #ff5733;
-    margin-top: 0px;
+    margin-top: 5px;
     margin-bottom: 0px;
     margin-left: 3%;
 }
@@ -3841,9 +3841,9 @@ const Styles = styled.div `
     margin-right: 2.5%;
     margin-top: 0px;
     margin-bottom: 5px;
-    color: #5e626a;
+    color: #000;
     font-family: poppins;
-    font-size: 83.5%;
+    font-size: 90.5%;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings {
