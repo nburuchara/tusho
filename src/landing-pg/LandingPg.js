@@ -3842,10 +3842,10 @@ const Styles = styled.div `
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-header-title h3 {
     // font-weight: normal;
     text-decoration: underline;
-    font-size: 100%;
+    font-size: 80%;
     font-family: poppins;
     color: #ff5733;
-    margin-top: 1.5px;
+    margin-top: 2.5px;
     margin-bottom: 0px;
     margin-left: 0.5%;
 }
@@ -3901,6 +3901,19 @@ const Styles = styled.div `
     color: #000;
     font-family: poppins;
     font-size: 76.5%;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-btn {
+    position: absolute;
+    bottom: 0.7rem;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-right: 4.5%;
+    z-index: 2;
+    // flex-direction: column;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings {
@@ -7649,8 +7662,8 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 </div>
                                                             }
-                                                            {this.state.showDeliveryInfoOptionSettingsBtn && 
-                                                                <div className=''>
+                                                            {!this.state.showDeliveryInfoOptionSettingsBtn && 
+                                                                <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-btn'>
 
                                                                 </div>
                                                             }
