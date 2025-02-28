@@ -3752,6 +3752,7 @@ const Styles = styled.div `
     margin-top: 2.5%; 
     border-radius: 8px;
     background-color: #faece9;
+    border: 1px solid #ff5733;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-header {
@@ -3794,6 +3795,21 @@ const Styles = styled.div `
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select {
     width: 15%;
     // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select-checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
 }
 
     // # LOADING SCREEN SETTINGS
@@ -7341,19 +7357,8 @@ export default class LandingPg extends Component {
                                                             </div>
                                                             <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select'>
                                                                 <div
-                                                                onClick={this.handleCheckboxClick}
-                                                                style={{
-                                                                    width: "24px",
-                                                                    height: "24px",
-                                                                    border: "2px solid black",
-                                                                    display: "flex",
-                                                                    alignItems: "center",
-                                                                    justifyContent: "center",
-                                                                    cursor: "pointer",
-                                                                    fontSize: "18px",
-                                                                    userSelect: "none",
-                                                                }}
-                                                                >
+                                                                className='navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select-checkbox'
+                                                                onClick={this.handleCheckboxClick}>
                                                                     <strong>{this.state.checked ? "✓" : ""}</strong>
                                                                 </div>
                                                             </div>
