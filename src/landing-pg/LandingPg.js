@@ -3728,7 +3728,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-delivery-info-settings-header {
     height: 20%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-header p {
@@ -3740,7 +3740,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 80%;
 }
 
@@ -3818,6 +3818,10 @@ const Styles = styled.div `
     background-color: transparent;
 }
 
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select-checkbox:hover {
+    border: 1px solid #ff5733;
+}
+
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select-checkbox.checked {
     color: white;
     background-color: #ff5733;
@@ -3832,6 +3836,16 @@ const Styles = styled.div `
     z-index: 1;
 }
 
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body p {
+    margin-left: 5.5%;
+    margin-right: 2.5%;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    color: #5e626a;
+    font-family: poppins;
+    font-size: 83.5%;
+}
+
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings {
     position: absolute;
     bottom: 0.7rem;
@@ -3844,7 +3858,6 @@ const Styles = styled.div `
     z-index: 2;
     flex-direction: column; 
 }
-
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1 {
     height: 50%;
@@ -3947,16 +3960,6 @@ const Styles = styled.div `
     margin-bottom: 0px;
     margin-left: 10%;
     font-family: poppins;
-}
-
-.navbar-profile-account-popup-delivery-info-settings-body-address-container-body p {
-    margin-left: 5.5%;
-    margin-right: 2.5%;
-    margin-top: 0px;
-    margin-bottom: 5px;
-    color: #5e626a;
-    font-family: poppins;
-    font-size: 86.5%;
 }
 
     // # LOADING SCREEN SETTINGS
@@ -7512,24 +7515,31 @@ export default class LandingPg extends Component {
                                                         </div>
                                                         <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body'>
                                                             <p>Sunshine Villas - Hse. 2b, Spring Valley, Lower Kabete, Nairobi</p>
-                                                            <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings'>
-                                                                <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1'>
-                                                                    <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-icon'>
-                                                                        <img src='/assets/icons/home-delivery-info/delete-icon.png'/>
+                                                            {this.state.showDeliveryInfoOption1Settings && 
+                                                                <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings'>
+                                                                    <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1'>
+                                                                        <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-icon'>
+                                                                            <img src='/assets/icons/home-delivery-info/delete-icon.png'/>
+                                                                        </div>
+                                                                        <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-text'>
+                                                                            <h5>Delete</h5>
+                                                                        </div>
                                                                     </div>
-                                                                    <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-text'>
-                                                                        <h5>Delete</h5>
+                                                                    <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2'>
+                                                                        <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-icon'>
+                                                                            <img src='/assets/icons/home-delivery-info/edit-icon.png'/>
+                                                                        </div>
+                                                                        <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-text'>
+                                                                            <h5>Edit</h5>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                                <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2'>
-                                                                    <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-icon'>
-                                                                        <img src='/assets/icons/home-delivery-info/edit-icon.png'/>
-                                                                    </div>
-                                                                    <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-text'>
-                                                                        <h5>Edit</h5>
-                                                                    </div>
+                                                            }
+                                                            {this.state.showDeliveryInfoOptionSettingsBtn && 
+                                                                <div className=''>
+
                                                                 </div>
-                                                            </div>
+                                                            }
                                                         </div>
                                                     </div>
                                                 </div>
