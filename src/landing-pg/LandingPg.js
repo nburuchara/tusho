@@ -5313,6 +5313,12 @@ export default class LandingPg extends Component {
             return {
                 
             }
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    
+                })
+            }, 0)
         })
     }
 
