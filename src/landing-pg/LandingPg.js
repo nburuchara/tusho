@@ -3815,6 +3815,7 @@ const Styles = styled.div `
     cursor: pointer;
     font-size: 14.5px;
     user-select: none;
+    margin-top: 2px;
     border: 1px solid #5e626a;
     border-radius: 5px;
     color: white;
@@ -3846,7 +3847,7 @@ const Styles = styled.div `
     margin-bottom: 5px;
     color: #000;
     font-family: poppins;
-    font-size: 82.5%;
+    font-size: 76.5%;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings {
