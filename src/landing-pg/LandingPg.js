@@ -3826,7 +3826,7 @@ const Styles = styled.div `
 
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body {
-    border: 1px solid black;
+    // border: 1px solid black;
     flex-grow: 1;
     position: relative;
     z-index: 1;
@@ -3836,7 +3836,7 @@ const Styles = styled.div `
     position: absolute;
     bottom: 0.5rem;
     right: 0;
-    width: 45%;
+    width: 35%;
     height: 80%;
     // border: 1px solid #ccc;
     border-radius: 8px;
@@ -3862,8 +3862,14 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
 }
 
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1:hover .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-text h5 {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #ff5733;
+}
+
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-icon {
-    width: 15%;
+    width: 20%;
     // border: 1px solid black;
     display: flex;
     align-items: center;
@@ -3871,11 +3877,24 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-icon img {
-    width: 18px;
+    width: 13.5px;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-text {
-    width: 85%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-text h5 {
+    color: #5e626a;
+    font-weight: normal;
+    font-size: 80%;
+    margin-top: 1.5px;
+    margin-bottom: 0px;
+    margin-left: 10%;
+    font-family: poppins;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2 {
@@ -7464,14 +7483,14 @@ export default class LandingPg extends Component {
                                                                         <img src='/assets/icons/home-delivery-info/delete-icon.png'/>
                                                                     </div>
                                                                     <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-text'>
-
+                                                                        <h5>Delete</h5>
                                                                     </div>
                                                                 </div>
                                                                 <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2'>
-                                                                    <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-icon'>
+                                                                    <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-icon'>
 
                                                                     </div>
-                                                                    <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-text'>
+                                                                    <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-text'>
 
                                                                     </div>
                                                                 </div>
