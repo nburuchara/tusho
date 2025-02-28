@@ -3914,6 +3914,41 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
 }
 
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2:hover .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-text h5 {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #ff5733;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-icon {
+    width: 20%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-icon img {
+    width: 13.5px;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-text {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-text h5 {
+    color: #5e626a;
+    font-weight: normal;
+    font-size: 80%;
+    margin-top: 1.5px;
+    margin-bottom: 0px;
+    margin-left: 10%;
+    font-family: poppins;
+}
+
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body p {
     margin-left: 5.5%;
     margin-right: 2.5%;
@@ -7488,10 +7523,10 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                                 <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2'>
                                                                     <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-icon'>
-
+                                                                        <img src='/assets/icons/home-delivery-info/edit-icon.png'/>
                                                                     </div>
                                                                     <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-text'>
-
+                                                                        <h5>Edit</h5>
                                                                     </div>
                                                                 </div>
                                                             </div>
