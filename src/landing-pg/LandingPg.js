@@ -3776,6 +3776,7 @@ const Styles = styled.div `
 
  .navbar-profile-account-popup-delivery-info-settings-header-address-types-btn button {
     width: 95%;
+    height: 95%;
  }
 
 
@@ -7536,10 +7537,10 @@ export default class LandingPg extends Component {
                                                                 <button>Office</button>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btn'>
-
+                                                                <button>Friend</button>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btn'>
-
+                                                                <button>Other</button>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btn'>
 
