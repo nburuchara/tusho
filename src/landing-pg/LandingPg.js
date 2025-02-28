@@ -3781,8 +3781,9 @@ const Styles = styled.div `
     justify-content: left;
 }
 
-.navbar-profile-account-popup-delivery-info-settings-body-address-container-header-title h4 {
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-header-title h3 {
     font-weight: normal;
+    font-size: 100%;
     font-family: poppins;
     color: #ff5733;
     margin-top: 0px;
@@ -7324,7 +7325,7 @@ export default class LandingPg extends Component {
                                                                 <img src='/assets/icons/home-delivery-info/home-icon.png'/>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-header-title'>
-                                                                <h4>Home</h4>
+                                                                <h3>Home</h3>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-header-select'>
 
