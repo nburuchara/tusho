@@ -3739,6 +3739,13 @@ const Styles = styled.div `
     font-size: 80%;
 }
 
+.navbar-profile-account-popup-delivery-info-settings-header-address-types {
+    border: 1px solid black;
+    width: 95%;
+    margin-left: 2.5%;
+    height: 16.5%;
+}
+
 .navbar-profile-account-popup-delivery-info-settings-body {
     // border: 1px solid black;
     border-top: 1px solid #5e626a;
@@ -7486,6 +7493,9 @@ export default class LandingPg extends Component {
                                             <div className='navbar-profile-account-popup-delivery-info-settings'>
                                                 <div className='navbar-profile-account-popup-delivery-info-settings-header'>
                                                     <p>Add a new delivery address:</p>
+                                                    <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types'>
+
+                                                    </div>
                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field'>
                                                         <div>
                                                             <h5>Address Line 1</h5>
