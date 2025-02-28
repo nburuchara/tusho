@@ -3777,7 +3777,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-delivery-info-settings-header-address-types-btn button {
     width: 90%;
     height: 70%;
-    border-radius: 8px;
+    border-radius: 5.5px;
     border: 1px solid #5e626a;
     font-family: poppins;
     color: #5e626a;
@@ -5311,7 +5311,7 @@ export default class LandingPg extends Component {
     deliveryInfoAddressTypeClicked = (option) => {
         this.setState((prevState) => {
             return {
-                
+
             }
         }, () => {
             setTimeout(() => {
@@ -7555,22 +7555,22 @@ export default class LandingPg extends Component {
                                                     <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types'>
                                                         <p>Select an address type:</p>
                                                         <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btns'>
-                                                            <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btn'>
+                                                            <div className={`navbar-profile-account-popup-delivery-info-settings-header-address-types-btn ${this.state.deliveryInfoAddressType1 ? 'selected' : ''}`}>
                                                                 <button
                                                                 onClick={() => this.deliveryInfoAddressTypeClicked(1)}
                                                                 >Home</button>
                                                             </div>
-                                                            <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btn'>
+                                                            <div className={`navbar-profile-account-popup-delivery-info-settings-header-address-types-btn ${this.state.deliveryInfoAddressType2 ? 'selected' : ''}`}>
                                                                 <button
                                                                 onClick={() => this.deliveryInfoAddressTypeClicked(2)}
                                                                 >Office</button>
                                                             </div>
-                                                            <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btn'>
+                                                            <div className={`navbar-profile-account-popup-delivery-info-settings-header-address-types-btn ${this.state.deliveryInfoAddressType3 ? 'selected' : ''}`}>
                                                                 <button
                                                                 onClick={() => this.deliveryInfoAddressTypeClicked(3)}
                                                                 >Friend</button>
                                                             </div>
-                                                            <div className='navbar-profile-account-popup-delivery-info-settings-header-address-types-btn'>
+                                                            <div className={`navbar-profile-account-popup-delivery-info-settings-header-address-types-btn ${this.state.deliveryInfoAddressType4 ? 'selected' : ''}`}>
                                                                 <button
                                                                 onClick={() => this.deliveryInfoAddressTypeClicked(4)}
                                                                 >Other</button>
