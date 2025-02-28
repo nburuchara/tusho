@@ -3834,7 +3834,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings {
     position: absolute;
-    bottom: 0.5rem;
+    bottom: 0.7rem;
     right: 0;
     width: 35%;
     height: 80%;
