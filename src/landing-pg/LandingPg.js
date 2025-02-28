@@ -3796,7 +3796,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-header-title h3 {
     // font-weight: normal;
     text-decoration: underline;
-    font-size: 105%;
+    font-size: 100%;
     font-family: poppins;
     color: #ff5733;
     margin-top: 1.5px;
