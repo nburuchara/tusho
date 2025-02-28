@@ -3727,7 +3727,8 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-delivery-info-settings-header {
-    
+    height: 20%;
+    border: 1px solid black;
 }
 
     // # LOADING SCREEN SETTINGS
@@ -7238,6 +7239,19 @@ export default class LandingPg extends Component {
                                             <div className='navbar-profile-account-popup-delivery-info-settings'>
                                                 <div className='navbar-profile-account-popup-delivery-info-settings-header'>
                                                     <p>Enter your delivery address:</p>
+                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field'>
+                                                        <div>
+                                                            <h5>Address Line 1</h5>
+                                                        </div>
+                                                        <div>
+                                                            <input
+                                                            id='jipangeManualAddressLine1'
+                                                            placeholder='Marula Lane 23C, Lavington'
+                                                            value={this.state.jipangeManualAddressLine1}
+                                                            onChange={this.handleSearchStandardInput}
+                                                            />
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         }
