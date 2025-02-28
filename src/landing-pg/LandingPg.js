@@ -3772,9 +3772,9 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: left;
- }
+}
 
- .navbar-profile-account-popup-delivery-info-settings-header-address-types-btn button {
+.navbar-profile-account-popup-delivery-info-settings-header-address-types-btn button {
     width: 90%;
     height: 70%;
     border-radius: 8px;
@@ -3782,7 +3782,13 @@ const Styles = styled.div `
     font-family: poppins;
     color: #5e626a;
     font-size: 75%;
- }
+}
+
+.navbar-profile-account-popup-delivery-info-settings-header-address-types-btn.selected button {
+   background-color: #faece9;
+   border: 1px solid #ff5733;
+   color: #ff5733;
+}
 
 
 .navbar-profile-account-popup-delivery-info-settings-body {
@@ -3790,6 +3796,7 @@ const Styles = styled.div `
     border-top: 1px solid #5e626a;
     height: 50%;
     overflow-y: auto;
+    width: 97.5%;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container {
