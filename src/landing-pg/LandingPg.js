@@ -3782,6 +3782,7 @@ const Styles = styled.div `
     font-family: poppins;
     color: #5e626a;
     font-size: 75%;
+    cursor: pointer;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-header-address-types-btn.selected button {
@@ -4231,6 +4232,10 @@ export default class LandingPg extends Component {
             //* # DELIVERY INFO *//
             deliveryInfoDefaultAddressSelected: false,
             deliveryInfoDefaultAddressText: "",
+            deliveryInfoAddressType1: false,
+            deliveryInfoAddressType2: false,
+            deliveryInfoAddressType3: false,
+            deliveryInfoAddressType4: false,
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -5311,14 +5316,10 @@ export default class LandingPg extends Component {
     deliveryInfoAddressTypeClicked = (option) => {
         this.setState((prevState) => {
             return {
-
+                [`deliveryInfoAddressType${prevState.currentDeliveryInfoAddressType}`]: false,
+                currentDeliveryInfoAddressType: option,
+                [`deliveryInfoAddressType${option}`]: true
             }
-        }, () => {
-            setTimeout(() => {
-                this.setState({
-                    
-                })
-            }, 0)
         })
     }
 
