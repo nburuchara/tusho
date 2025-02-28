@@ -3923,12 +3923,18 @@ const Styles = styled.div `
     align-items: center;
     gap: 2px;
     cursor: pointer;
+    filter: grayscale(100%);
+}
+
+
+.three-dots:hover {
+    filter: grayscale(0);
 }
 
 .three-dots span {
     width: 3px;
     height: 3px;
-    background-color: black;
+    background-color: #ff5733;
     border-radius: 50%;
 }
 
@@ -3958,7 +3964,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1:hover {
     background-color: #faece9;
     cursor: pointer;
-    border: 1px solid #ff5733;
+    // border: 1px solid #ff5733;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1:hover .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-text h5 {
@@ -3999,6 +4005,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-5 {
     height: 50%;
     border: 1px solid #ccc;
+    border-top: transparent;
     // border-top-right-radius: 8px;
     // border-top-left-radius: 8px;
     display: flex;
@@ -4009,7 +4016,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-5:hover {
     background-color: #faece9;
     cursor: pointer;
-    border: 1px solid #ff5733;
+    // border: 1px solid #ff5733;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-5:hover .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-5-text h5 {
@@ -4061,7 +4068,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2:hover {
     background-color: #faece9;
     cursor: pointer;
-    border: 1px solid #ff5733;
+    // border: 1px solid #ff5733;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2:hover .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-text h5 {
