@@ -3753,6 +3753,9 @@ const Styles = styled.div `
     border-radius: 8px;
     background-color: #faece9;
     border: 1px solid #ff5733;
+    filter: grayscale(100%);
+    display: flex;
+    flex-direction: column;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-header {
@@ -3820,6 +3823,17 @@ const Styles = styled.div `
     color: white;
     background-color: #ff5733;
     border: 1px solid #ff5733;
+}
+
+
+.navbar-profile-account-popup-delivery-info-settings-body-address-container-body p {
+    margin-left: 5.5%;
+    margin-right: 2.5%;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    color: #ff5733;
+    font-family: poppins;
+    font-size: 86.5%;
 }
 
     // # LOADING SCREEN SETTINGS
@@ -7372,6 +7386,9 @@ export default class LandingPg extends Component {
                                                                     <strong>{this.state.deliveryInfoDefaultAddressSelected ? "✓" : ""}</strong>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                        <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body'>
+                                                            <p>Sunshine Villas - Hse. 2b, Spring Valley, Lower Kabete, Nairobi</p>
                                                         </div>
                                                     </div>
                                                 </div>
