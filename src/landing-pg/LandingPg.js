@@ -3911,7 +3911,7 @@ const Styles = styled.div `
     height: 18px;
     // border: 1px solid #ccc;
     border-radius: 8px;
-    margin-right: 5.6%;
+    margin-right: 5.5%;
     display: flex;
     align-items: center;
     justify-content: center;
