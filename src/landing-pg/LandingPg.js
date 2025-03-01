@@ -7684,7 +7684,7 @@ export default class LandingPg extends Component {
                                                         <div>
                                                             <input
                                                             id='deliveryInfoAddressLine1'
-                                                            placeholder='Marula Lane 23C, Lavington'
+                                                            placeholder='Street (e.g. Marula Lane 23C, Lavington)'
                                                             value={this.state.deliveryInfoAddressLine1}
                                                             onChange={this.handleSearchStandardInput}
                                                             />
@@ -7698,7 +7698,7 @@ export default class LandingPg extends Component {
                                                         <div>
                                                             <input
                                                             id='deliverInfoAddressLine2'
-                                                            placeholder='Marula Lane 23C, Lavington'
+                                                            placeholder='City (e.g. Nairobi)'
                                                             value={this.state.deliverInfoAddressLine2}
                                                             onChange={this.handleSearchStandardInput}
                                                             />
