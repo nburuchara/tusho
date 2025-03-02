@@ -4821,9 +4821,9 @@ export default class LandingPg extends Component {
     }
 
     openHomeProfileOptionsClicked = () => {
-        this.setState({
-            accountOptionsDropdownClicked: true
-        })
+        this.setState((prevState) => ({
+            accountOptionsDropdownClicked: !prevState.accountOptionsDropdownClicked,
+        }))
     }
 
     hideHomeCartClicked = () => {
@@ -5603,6 +5603,9 @@ export default class LandingPg extends Component {
                             </div>
                         </div>
                     </div>
+
+                        {/* - - - Home Dropdown - - - */}
+
                     <div className={`navbar-options-dropdown ${this.state.dropdownMenuDisplayed ? 'clicked' : ''}`}>
                         <div className='navbar-options-dropdown-left'>
                             <h5 className='navbar-options-dropdown-left-header'>Save up to 16% on your weekly shopping!</h5>
@@ -5850,7 +5853,7 @@ export default class LandingPg extends Component {
                         </div>
                     </div>
 
-                        {/* - - - Checkout - - - */}
+                        {/* - - - Checkout Sidepane - - - */}
 
                     <div className={`navbar-options-checkout-home ${this.state.homeScreenCartClicked ? 'clicked' : ''}`}>
                         <div className='navbar-options-checkout-home-header'>
@@ -6069,7 +6072,7 @@ export default class LandingPg extends Component {
                         </div>
                     </div>
 
-                   
+                        {/* - - - Profile Dropdown - - - */}
 
                     <div className={`navbar-profile-dropdown ${this.state.accountOptionsDropdownClicked ? 'selected' : ''}`}>
                         <div className={`navbar-profile-dropdown-header ${this.state.OTPVerifySuccess ? this.state.transferToProfile ? 'profile-loading' : this.state.userSignedIn ? 'signed-in' : 'success' : ''}`}>
@@ -6269,9 +6272,9 @@ export default class LandingPg extends Component {
                         </div>
                     </div>
 
-
-                    {this.state.showProfileAccountSettings &&
-                        <div className='navbar-profile-account-popup'>
+                        {/* - - -  - - - */}
+                    
+                    <div className='navbar-profile-account-popup'>
                             <div className='navbar-profile-account-popup-header'>
                                 <div className='navbar-profile-account-popup-header-left'>
                                     <div className='navbar-profile-account-popup-header-left-search-bar-container'>
@@ -7909,8 +7912,8 @@ export default class LandingPg extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    }
+                    </div>
+                    
                 </div>
                 
             </Styles>
