@@ -3813,6 +3813,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-delivery-info-settings-header-body-header-title p {
     margin-bottom: 0px;
+    font-size: 80.5%;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-header-save-address-btn button {
@@ -6254,7 +6255,7 @@ export default class LandingPg extends Component {
                                 <div className='navbar-profile-account-popup-body-left'>
                                     <div onClick={() => this.menuOptionClicked(1)} className={`navbar-profile-account-popup-body-left-settings-option-cell ${this.state.accountMenuOption1Selected ? 'selected' : ''}`}>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
-                                            <img src='/assets/icons/home-profile/edit-profile-option-icon.png'/>
+                                            <img src='/assets/icons/home-profile/edit-profile-option-icon2.png'/>
                                         </div>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
                                             <p>Profile</p>
