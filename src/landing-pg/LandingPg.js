@@ -1827,7 +1827,7 @@ const Styles = styled.div `
     font-size: 79.5%;
     padding-top: 2.5px;
     color: #ff5733;
-    font-weight: bold;
+    // font-weight: bold;
     text-decoration: underline;
     transition-property: text-decoration;
 }
@@ -5455,7 +5455,7 @@ export default class LandingPg extends Component {
                         showEmailAccountSettingsLoading: false,
                     })
                 }
-                if (this.state.accountSettingFirstName === '' && this.state.accountSettingEmail === '' && this.state.accountSettingLastName) {
+                if (this.state.accountSettingFirstName !== '' && this.state.accountSettingEmail !== '' && this.state.accountSettingLastName !== '') {
                     this.setState({
                         accountSetupComplete: true
                     })
