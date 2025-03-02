@@ -5536,6 +5536,8 @@ export default class LandingPg extends Component {
                 <div onClick={this.hideNonOverlayElements} className={`overlay ${this.state.homeScreenCartClicked || this.state.accountSettingsOpen ? 'active' : ''}`}></div>
                 <div className='fullPage'>
 
+                        {/* - - - - - NAVBAR & NAVBAR OPTIONS - - - - - */}
+
                         {/* - - - Navbar - - - */}
 
                     <div className='navbar'>
@@ -7925,6 +7927,14 @@ export default class LandingPg extends Component {
                                     </div>
                                 </div>
                             </div>
+                    </div>
+
+                        {/* - - - - - HOMEPAGE - - - - - */}                
+                                    
+                        {/* - - - Homepage - - - */}
+
+                    <div className=''>
+
                     </div>
                     
                 </div>
