@@ -3801,6 +3801,15 @@ const Styles = styled.div `
     // border: 1px solid black;
 }
 
+.navbar-profile-account-popup-delivery-info-settings-header-body-header-title {
+    position: absolute;
+    bottom: 0.25em;
+    left: 0%;
+    // width: 25%;
+    // height: 10%;
+    border: 1px solid black;
+}
+
 .navbar-profile-account-popup-delivery-info-settings-header-save-address-btn button {
     width: 100%;
     height: 100%;
@@ -3817,8 +3826,9 @@ const Styles = styled.div `
     // border: 1px solid black;
     border-top: 1px solid #5e626a;
     height: 50%;
+    margin-left: 3.5%;
     overflow-y: auto;
-    width: 97.5%;
+    width: 94.5%;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container {
@@ -7729,6 +7739,10 @@ export default class LandingPg extends Component {
 
                                                     <div className='navbar-profile-account-popup-delivery-info-settings-header-save-address-btn'>
                                                         <button>Save Address</button>
+                                                    </div>
+
+                                                    <div className='navbar-profile-account-popup-delivery-info-settings-header-body-header-title'>
+
                                                     </div>
 
                                                 </div>
