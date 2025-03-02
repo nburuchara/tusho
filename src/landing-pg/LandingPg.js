@@ -4202,11 +4202,16 @@ const Styles = styled.div `
     margin-top: 13.5rem;
 }
 
-
 .navbar-profile-loading-popup-settings p {
     font-family: poppins;
     color: #5e626a;
     font-size: 80%;
+}
+
+//! - - Homepage Elements - - !//
+
+.homepage-header {
+    border: 1px solid black;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -7933,8 +7938,8 @@ export default class LandingPg extends Component {
                                     
                         {/* - - - Homepage - - - */}
 
-                    <div className=''>
-
+                    <div className='homepage-header'>
+                        
                     </div>
                     
                 </div>
