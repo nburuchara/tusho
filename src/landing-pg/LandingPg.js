@@ -3729,6 +3729,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-delivery-info-settings-header {
     height: 50%;
     // border: 1px solid black;
+    position: relative;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-header p {
@@ -3789,6 +3790,18 @@ const Styles = styled.div `
    background-color: #faece9;
    border: 1px solid #ff5733;
    color: #ff5733;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-header-save-address-btn {
+    position: absolute;
+    bottom: 0.5rem;;
+    right: 0;
+    width: 25%;
+    border: 1px solid black;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-header-save-address-btn button {
+
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body {
@@ -3940,19 +3953,19 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings {
     position: absolute;
-    bottom: 0.7rem;
+    bottom: 1.55rem;
     right: 0;
     width: 35%;
     height: 120%;
     // border: 1px solid #ccc;
     border-radius: 8px;
     margin-right: 4.5%;
-    z-index: 2;
-    flex-direction: column; 
+    z-index: 5;
+    flex-direction: column;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1 {
-    height: 50%;
+    height: 43%;
     border: 1px solid #ccc;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
@@ -3995,7 +4008,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-text h5 {
     color: #5e626a;
     font-weight: normal;
-    font-size: 80%;
+    font-size: 72.5%;
     margin-top: 1.5px;
     margin-bottom: 0px;
     margin-left: 10%;
@@ -4003,7 +4016,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-5 {
-    height: 50%;
+    height: 43%;
     border: 1px solid #ccc;
     border-top: transparent;
     // border-top-right-radius: 8px;
@@ -4047,7 +4060,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1-5-text h5 {
     color: #5e626a;
     font-weight: normal;
-    font-size: 80%;
+    font-size: 72.5%;
     margin-top: 1.5px;
     margin-bottom: 0px;
     margin-left: 10%;
@@ -4055,7 +4068,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2 {
-    height: 50%;
+    height: 43%;
     border: 1px solid #ccc;
     border-top: 1px solid transparent;
     border-bottom-right-radius: 8px;
@@ -4099,7 +4112,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-2-text h5 {
     color: #5e626a;
     font-weight: normal;
-    font-size: 80%;
+    font-size: 72.5%;
     margin-top: 1.5px;
     margin-bottom: 0px;
     margin-left: 10%;
@@ -7703,6 +7716,10 @@ export default class LandingPg extends Component {
                                                             onChange={this.handleSearchStandardInput}
                                                             />
                                                         </div>
+                                                    </div>
+
+                                                    <div className='navbar-profile-account-popup-delivery-info-settings-header-save-address-btn'>
+                                                        <button></button>
                                                     </div>
 
                                                 </div>
