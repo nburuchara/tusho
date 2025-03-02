@@ -1822,6 +1822,16 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+.navbar-profile-account-popup-body-left-settings-option-cell:hover .navbar-profile-account-popup-body-left-settings-option-cell-label p {
+    font-family: poppins;
+    font-size: 79.5%;
+    padding-top: 2.5px;
+    color: #ff5733;
+    font-weight: bold;
+    text-decoration: underline;
+    transition-property: font-weight, text-decoration;
+}
+
 .navbar-profile-account-popup-body-left-settings-option-cell.selected {
     background-color: #faece9;
 }
@@ -1832,6 +1842,16 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    filter: grayscale(100%);
+}
+
+.navbar-profile-account-popup-body-left-settings-option-cell-icon.selected { 
+    width: 20%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: grayscale(0);
 }
 
 .navbar-profile-account-popup-body-left-settings-option-cell-icon img { 
@@ -1851,6 +1871,15 @@ const Styles = styled.div `
     font-size: 79.5%;
     padding-top: 2.5px;
     color: #5e626a;
+}
+
+.navbar-profile-account-popup-body-left-settings-option-cell-label.selected p { 
+    font-family: poppins;
+    font-size: 79.5%;
+    padding-top: 2.5px;
+    color: #ff5733;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .navbar-profile-account-popup-body-left-settings-option-cell-selected { 
@@ -4189,6 +4218,7 @@ const Styles = styled.div `
 .navbar-profile-dropdown-body-signed-in-options-cell-label p,
 .navbar-profile-account-popup-header-right-close img,
 .navbar-profile-account-popup-body-left-settings-option-cell,
+.navbar-profile-account-popup-body-left-settings-option-cell-label p,
 .navbar-profile-account-popup-body-left-footer-sign-out,
 .navbar-profile-account-popup-body-left-footer-sign-out-icon img,
 .navbar-profile-account-popup-body-left-footer-sign-out-label p,
@@ -6254,10 +6284,10 @@ export default class LandingPg extends Component {
                             <div className='navbar-profile-account-popup-body'>
                                 <div className='navbar-profile-account-popup-body-left'>
                                     <div onClick={() => this.menuOptionClicked(1)} className={`navbar-profile-account-popup-body-left-settings-option-cell ${this.state.accountMenuOption1Selected ? 'selected' : ''}`}>
-                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
+                                        <div className={`navbar-profile-account-popup-body-left-settings-option-cell-icon ${this.state.accountMenuOption1Selected ? 'selected' : ''}`}>
                                             <img src='/assets/icons/home-profile/edit-profile-option-icon2.png'/>
                                         </div>
-                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
+                                        <div className={`navbar-profile-account-popup-body-left-settings-option-cell-label ${this.state.accountMenuOption1Selected ? 'selected' : ''}`}>
                                             <p>Profile</p>
                                         </div>
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption1Selected ? 'selected' : ''}`}></div>
