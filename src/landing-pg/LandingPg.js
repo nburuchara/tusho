@@ -3794,14 +3794,23 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-delivery-info-settings-header-save-address-btn {
     position: absolute;
-    bottom: 0.5rem;;
-    right: 0;
+    bottom: 1.5rem;;
+    right: 4%;
     width: 25%;
-    border: 1px solid black;
+    height: 10%;
+    // border: 1px solid black;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-header-save-address-btn button {
-
+    width: 100%;
+    height: 100%;
+    background-color: #ff5733;
+    color: white;
+    font-family: poppins;
+    font-size: 72.5%;
+    border: 1px solid #ff5733;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body {
@@ -7719,7 +7728,7 @@ export default class LandingPg extends Component {
                                                     </div>
 
                                                     <div className='navbar-profile-account-popup-delivery-info-settings-header-save-address-btn'>
-                                                        <button></button>
+                                                        <button>Save Address</button>
                                                     </div>
 
                                                 </div>
