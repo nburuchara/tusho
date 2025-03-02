@@ -2134,7 +2134,8 @@ const Styles = styled.div `
     outline: none;
     border: 1px solid #bdbdbd;
     border-radius: 5px;
-    font-family: inter;
+    font-family: poppins;
+    font-size: 80%;
 }
 
 .navbar-profile-account-popup-account-info-first-name {
@@ -2228,8 +2229,9 @@ const Styles = styled.div `
     outline: none;
     border: 1px solid #bdbdbd;
     border-radius: 5px;
-    font-family: inter;
+    font-family: poppins;
     margin-bottom: 0.2rem;
+    font-size: 80%;
 }
 
 .navbar-profile-account-label-loading-popup-settings {
@@ -6514,7 +6516,12 @@ export default class LandingPg extends Component {
                                                                     <span>✓</span>
                                                                 </div>
                                                             </div>
-                                                            <input/>
+                                                            <input
+                                                            id='accountSettingNumber'
+                                                            placeholder=''
+                                                            value={this.state.accountSettingNumber}
+                                                            onChange={this.handleSearchStandardInput}
+                                                            />
                                                         </div>
                                                     </div>
                                                     <div className='navbar-profile-account-popup-account-single-input'>
