@@ -29,8 +29,9 @@ const Styles = styled.div `
 
 .fullPage {
     width: 98%;
-    height: 100vh;
+    height: 86.5vh;
     margin: auto;
+    position: relative;
 }
 
     // - - NAVBAR - - //
@@ -4212,6 +4213,11 @@ const Styles = styled.div `
 
 .homepage-header {
     border: 1px solid black;
+    position: absolute;
+    top: 5rem;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
