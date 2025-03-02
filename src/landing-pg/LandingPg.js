@@ -1693,13 +1693,22 @@ const Styles = styled.div `
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-40%, -50%);
     background-color: white;
     height: 45rem;
     width: 50%;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    border: 1px solid black;
+    opacity: 0;
+    pointer-events: none;
+    transition-property: transform, opacity;
+}
+
+.navbar-profile-account-popup.selected {
+    transform: translate(-50%, -50%);
+    opacity: 1;
 }
 
 .navbar-profile-account-popup-header {
@@ -4227,6 +4236,7 @@ const Styles = styled.div `
 .navbar-profile-dropdown-body-signed-in-options-cell,
 .navbar-profile-dropdown-body-signed-in-options-cell-img img,
 .navbar-profile-dropdown-body-signed-in-options-cell-label p,
+.navbar-profile-account-popup,
 .navbar-profile-account-popup-header-right-close img,
 .navbar-profile-account-popup-body-left-settings-option-cell,
 .navbar-profile-account-popup-body-left-settings-option-cell-label p,
