@@ -1693,14 +1693,13 @@ const Styles = styled.div `
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-40%, -50%);
+    transform: translate(-45%, -50%);
     background-color: white;
     height: 45rem;
     width: 50%;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     opacity: 0;
     pointer-events: none;
     transition-property: transform, opacity;
@@ -1708,6 +1707,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup.selected {
     transform: translate(-50%, -50%);
+    pointer-events: auto;
     opacity: 1;
 }
 
@@ -6284,7 +6284,7 @@ export default class LandingPg extends Component {
 
                         {/* - - - Account Popup - - - */}
                     
-                    <div className='navbar-profile-account-popup'>
+                    <div className={`navbar-profile-account-popup ${this.state.accountSettingsOpen ? 'selected' : ''}`}>
                             <div className='navbar-profile-account-popup-header'>
                                 <div className='navbar-profile-account-popup-header-left'>
                                     <div className='navbar-profile-account-popup-header-left-search-bar-container'>
