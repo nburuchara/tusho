@@ -1829,7 +1829,7 @@ const Styles = styled.div `
     color: #ff5733;
     font-weight: bold;
     text-decoration: underline;
-    transition-property: font-weight, text-decoration;
+    transition-property: text-decoration;
 }
 
 .navbar-profile-account-popup-body-left-settings-option-cell.selected {
@@ -6293,10 +6293,10 @@ export default class LandingPg extends Component {
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption1Selected ? 'selected' : ''}`}></div>
                                     </div>
                                     <div onClick={() => this.menuOptionClicked(2)} className={`navbar-profile-account-popup-body-left-settings-option-cell ${this.state.accountMenuOption2Selected ? 'selected' : ''}`}>
-                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
-                                            <img src='/assets/icons/home-profile/edit-jipange-option-icon.png'/>
+                                        <div className={`navbar-profile-account-popup-body-left-settings-option-cell-icon ${this.state.accountMenuOption2Selected ? 'selected' : ''}`}>
+                                            <img src='/assets/icons/home-profile/edit-jipange-option-icon2.png'/>
                                         </div>
-                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
+                                        <div className={`navbar-profile-account-popup-body-left-settings-option-cell-label ${this.state.accountMenuOption2Selected ? 'selected' : ''}`}>
                                             <p>Jipange</p>
                                         </div>
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption2Selected ? 'selected' : ''}`}></div>
@@ -7800,7 +7800,7 @@ export default class LandingPg extends Component {
                                                             </div>
                                                         </div>
                                                         <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body'>
-                                                            <p>Sunshine Villas - Hse. 2b, Spring Valley, Lower Kabete, Nairobi</p>
+                                                            <p>Sunshine Villas - Hse. 3, Spring Valley, Lower Kabete, Nairobi</p>
                                                             {this.state.showDeliveryInfoOption1Settings && 
                                                                 <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings'>
                                                                     <div className='navbar-profile-account-popup-delivery-info-settings-body-address-container-body-settings-option-1'>
