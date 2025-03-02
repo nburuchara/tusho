@@ -5535,6 +5535,9 @@ export default class LandingPg extends Component {
             <Styles>
                 <div onClick={this.hideNonOverlayElements} className={`overlay ${this.state.homeScreenCartClicked || this.state.accountSettingsOpen ? 'active' : ''}`}></div>
                 <div className='fullPage'>
+
+                        {/* - - - Navbar - - - */}
+
                     <div className='navbar'>
                         <div className={`navbar-options-icon ${this.state.dropdownMenuDisplayed ? 'clicked' : ''}`}>
                             <img onClick={this.navbarMenuClicked} src='./assets/icons/navbar/menu-icon.png'/>
