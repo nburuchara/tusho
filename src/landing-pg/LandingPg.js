@@ -6090,8 +6090,13 @@ export default class LandingPg extends Component {
                                         </div>
                                     </div>
                                     <div className='navbar-profile-dropdown-header-signed-in-details'>
-                                        <h4><label>@</label>0717230621</h4>
-                                        <p>Complete account setup</p>
+                                        {!this.state.accountSetupComplete && 
+                                            <>
+                                                <h4><label>@</label>0712506286</h4>
+                                                <p>Complete account setup</p>
+                                            </>
+                                        }
+                                        
                                     </div>
                                 </div>
                             }
