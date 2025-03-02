@@ -3803,11 +3803,16 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-delivery-info-settings-header-body-header-title {
     position: absolute;
-    bottom: 0.25em;
+    bottom: 0.5rem;
     left: 0%;
-    // width: 25%;
+    margin-left: 3.5%;
+    width: 50%;
     // height: 10%;
-    border: 1px solid black;
+    // border: 1px solid black;
+}
+
+.navbar-profile-account-popup-delivery-info-settings-header-body-header-title p {
+    margin-bottom: 0px;
 }
 
 .navbar-profile-account-popup-delivery-info-settings-header-save-address-btn button {
@@ -7742,7 +7747,7 @@ export default class LandingPg extends Component {
                                                     </div>
 
                                                     <div className='navbar-profile-account-popup-delivery-info-settings-header-body-header-title'>
-
+                                                        <p>Select a default delivery address:</p>
                                                     </div>
 
                                                 </div>
