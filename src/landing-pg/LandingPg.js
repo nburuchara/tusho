@@ -429,6 +429,7 @@ const Styles = styled.div `
     width: 18px;
     margin-right: 35px;
     margin: auto;
+    cursor: pointer;
  }
 
     // - NAVBAR OPTIONS DROPDOWN - //
