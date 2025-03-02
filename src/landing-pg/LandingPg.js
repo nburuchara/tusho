@@ -5455,6 +5455,11 @@ export default class LandingPg extends Component {
                         showEmailAccountSettingsLoading: false,
                     })
                 }
+                if (this.state.accountSettingFirstName === '' && this.state.accountSettingEmail === '' && this.state.accountSettingLastName) {
+                    this.setState({
+                        accountSetupComplete: true
+                    })
+                }
 
             }, 2500)
         })
@@ -6311,10 +6316,10 @@ export default class LandingPg extends Component {
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption3Selected ? 'selected' : ''}`}></div>
                                     </div> */}
                                     <div onClick={() => this.menuOptionClicked(3)} className={`navbar-profile-account-popup-body-left-settings-option-cell ${this.state.accountMenuOption3Selected ? 'selected' : ''}`}>
-                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
-                                            <img src='/assets/icons/home-profile/edit-location-option-icon.png'/>
+                                        <div className={`navbar-profile-account-popup-body-left-settings-option-cell-icon ${this.state.accountMenuOption3Selected ? 'selected' : ''}`}>
+                                            <img src='/assets/icons/home-profile/edit-location-option-icon2.png'/>
                                         </div>
-                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
+                                        <div className={`navbar-profile-account-popup-body-left-settings-option-cell-label ${this.state.accountMenuOption3Selected ? 'selected' : ''}`}>
                                             <p>Delivery Info</p>
                                         </div>
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption3Selected ? 'selected' : ''}`}>
