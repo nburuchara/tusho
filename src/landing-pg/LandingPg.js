@@ -1271,7 +1271,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-dropdown.selected {
-    transform: translate(5%);
+    transform: translate(0);
     opacity: 1;
     pointer-events: auto;
 }
@@ -4216,6 +4216,7 @@ const Styles = styled.div `
 .navbar-options-icon,
 .navbar-options-checkout-home-header-icon img,
 .navbar-options-checkout-home,
+.navbar-profile-dropdown,
 .navbar-profile-dropdown-header,
 .navbar-profile-dropdown-header-signed-in,
 .navbar-profile-dropdown-header-signed-in-img img,
