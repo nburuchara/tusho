@@ -6072,7 +6072,7 @@ export default class LandingPg extends Component {
                         </div>
                     </div>
 
-                        {/* - - - Profile Dropdown - - - */}
+                        {/* - - - Account Dropdown - - - */}
 
                     <div className={`navbar-profile-dropdown ${this.state.accountOptionsDropdownClicked ? 'selected' : ''}`}>
                         <div className={`navbar-profile-dropdown-header ${this.state.OTPVerifySuccess ? this.state.transferToProfile ? 'profile-loading' : this.state.userSignedIn ? 'signed-in' : 'success' : ''}`}>
@@ -6272,7 +6272,7 @@ export default class LandingPg extends Component {
                         </div>
                     </div>
 
-                        {/* - - -  - - - */}
+                        {/* - - - Account Popup - - - */}
                     
                     <div className='navbar-profile-account-popup'>
                             <div className='navbar-profile-account-popup-header'>
