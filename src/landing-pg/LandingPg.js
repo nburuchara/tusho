@@ -5011,7 +5011,7 @@ export default class LandingPg extends Component {
     }
 
     accountSettingsClicked = () => {
-        if (!this.state.accountSetupComplete) {
+        if (true) {
             this.setState({
                 showProfileAccountSettings: true,
                 accountSettingsOpen: true
@@ -5834,6 +5834,8 @@ export default class LandingPg extends Component {
                         </div>
                     </div>
 
+                        {/* - - - Checkout - - - */}
+
                     <div className={`navbar-options-checkout-home ${this.state.homeScreenCartClicked ? 'clicked' : ''}`}>
                         <div className='navbar-options-checkout-home-header'>
                                 <div className='navbar-options-checkout-home-header-details'>
@@ -6094,6 +6096,12 @@ export default class LandingPg extends Component {
                                             <>
                                                 <h4><label>@</label>0712506286</h4>
                                                 <p>Complete account setup</p>
+                                            </>
+                                        }
+                                        {this.state.accountSetupComplete && 
+                                            <>
+                                                <h4><span></span>{this.state.accountSettingFirstName} {this.state.accountSettingLastName}</h4>
+                                                <p>Account Information</p>
                                             </>
                                         }
                                         
