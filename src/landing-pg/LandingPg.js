@@ -3803,7 +3803,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-delivery-info-settings-header-body-header-title {
     position: absolute;
-    bottom: 0.5rem;
+    bottom: 0.4rem;
     left: 0%;
     margin-left: 3.5%;
     width: 50%;
@@ -4262,10 +4262,10 @@ export default class LandingPg extends Component {
 
             //* - USER ACCOUNT STATUS - *//
             userSignedIn: true,
-            showAccountInformation: false,
+            showAccountInformation: true,
             showJipangeSettings: false,
             showPamojaSettings: false,
-            showDeliveryInfoSettings: true,
+            showDeliveryInfoSettings: false,
             showSettingsPageLoading: false,
 
             //* # Profile
@@ -4391,9 +4391,9 @@ export default class LandingPg extends Component {
             accountSettingsOpen: true,
             currentMenuOption: 1,
             showAccountSetupIncompleteHeader: true,
-            accountMenuOption1Selected: false,
+            accountMenuOption1Selected: true,
             accountMenuOption2Selected: false,
-            accountMenuOption3Selected: true,
+            accountMenuOption3Selected: false,
             accountMenuOption4Selected: false,
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
