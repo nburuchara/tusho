@@ -1248,13 +1248,11 @@ const Styles = styled.div `
     // - - NAVBAR PROFILE DROPDOWN - - //
 
 .navbar-profile-dropdown {
-    z-index: 0;
     width: 20.5%;
     position: absolute;
     border: 1px solid #ccc;
     height: auto;
     margin-right: 1%;
-    // opacity: 0;
     top: 0;
     right: 0;
     margin-top: 90px;
@@ -1265,8 +1263,17 @@ const Styles = styled.div `
     display: flex;
     justify-content: right;
     // cursor: pointer;
-    // padding-bottom: 11.5px;
     z-index: 1;
+    transform: translate(5%);
+    opacity: 0;
+    pointer-events: none;
+    transition-property: transform, opacity.
+}
+
+.navbar-profile-dropdown.selected {
+    transform: translate(5%);
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .navbar-profile-dropdown-header {
@@ -4403,10 +4410,11 @@ export default class LandingPg extends Component {
             homeScreenCartClicked: false,
 
             //* - HOME SCREEN PROFILE COMPONENTS - *//
+            accountOptionsDropdownClicked: false,
             showProfileDropdownHeaderDefault: true,
             showProfileDropdownHeaderLoading: false,
             showProfileDropdownHeaderSuccess: false,
-            showProfileAccountSettings: true,
+            showProfileAccountSettings: false,
             showHomeProfileOTPLoading: false,
             showHomeProfileEnterOTP: true,
             showHomeProfileVerifyOTP: false,
@@ -4421,7 +4429,7 @@ export default class LandingPg extends Component {
             transferToProfile: false,
 
             //* - HOME SCREEN ACCOUNT SETTINGS - *//    
-            accountSettingsOpen: true,
+            accountSettingsOpen: false,
             currentMenuOption: 1,
             showAccountSetupIncompleteHeader: true,
             accountMenuOption1Selected: true,
@@ -4807,6 +4815,12 @@ export default class LandingPg extends Component {
     openHomeShoppingCartClicked = () => {
         this.setState({
             homeScreenCartClicked: true
+        })
+    }
+
+    openHomeProfileOptionsClicked = () => {
+        this.setState({
+            accountOptionsDropdownClicked: true
         })
     }
 
@@ -5583,7 +5597,7 @@ export default class LandingPg extends Component {
                                 <div className="navbar-shopping-cart-badge">8</div>
                             </div>
                             <div className='navbar-profile-btn'>
-                                <img src='/assets/icons/navbar/profile-btn-icon.png'/>
+                                <img onClick={this.openHomeProfileOptionsClicked} src='/assets/icons/navbar/profile-btn-icon.png'/>
                             </div>
                         </div>
                     </div>
@@ -6053,7 +6067,9 @@ export default class LandingPg extends Component {
                         </div>
                     </div>
 
-                    <div className='navbar-profile-dropdown'>
+                   
+
+                    <div className={`navbar-profile-dropdown ${this.state.accountOptionsDropdownClicked ? 'selected' : ''}`}>
                         <div className={`navbar-profile-dropdown-header ${this.state.OTPVerifySuccess ? this.state.transferToProfile ? 'profile-loading' : this.state.userSignedIn ? 'signed-in' : 'success' : ''}`}>
                             {!this.state.userSignedIn && 
                                 <div className='navbar-profile-dropdown-header-signed-out'>
@@ -6212,7 +6228,7 @@ export default class LandingPg extends Component {
                             }
                             {this.state.userSignedIn && 
                                 <div className='navbar-profile-dropdown-body-signed-in'>
-                                     <div className='navbar-profile-dropdown-body-signed-in-options-container'>
+                                    <div className='navbar-profile-dropdown-body-signed-in-options-container'>
                                         <div className='navbar-profile-dropdown-body-signed-in-options-cell'>
                                             <div className='navbar-profile-dropdown-body-signed-in-options-cell-img'>
                                                 <img src='/assets/icons/home-profile/orders-dropdown-icon2.png'/>
@@ -6250,6 +6266,7 @@ export default class LandingPg extends Component {
                             }
                         </div>
                     </div>
+
 
                     {this.state.showProfileAccountSettings &&
                         <div className='navbar-profile-account-popup'>
