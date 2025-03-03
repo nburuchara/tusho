@@ -4314,6 +4314,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-left {
     width: 55%;
     // border: 1px solid white;
+    position: relative;
 }
 
 .homepage-header-inner-body-poster-left h1 {
@@ -8086,6 +8087,9 @@ export default class LandingPg extends Component {
                                 <div className='homepage-header-inner-body-poster'>
                                     <div className='homepage-header-inner-body-poster-left'>
                                         <h1>Save <span>up to 16%</span> on your weekly shopping from the comfort of home</h1>
+                                        <div className=''>
+                                            <h3 style={{color: "white", marginLeft: "4%", fontFamily: 'raleway'}}>The <span>very best</span> deals for your online grocery shopping</h3>
+                                        </div>
                                     </div>
                                     <div className='homepage-header-inner-body-poster-right'>
                                         
