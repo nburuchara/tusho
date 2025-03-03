@@ -4224,7 +4224,7 @@ const Styles = styled.div `
 
 
 .homepage-header {
-    height: 42.5rem;
+    height: 35.5rem;
     border: 1px solid black;
 } 
 
@@ -4290,6 +4290,11 @@ const Styles = styled.div `
     font-family: poppins;
     font-size: 95%;
     color: #20313a; 
+}
+
+.homepage-header-inner-body {
+    height: 91.5%;
+    border: 1px solid black;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -8035,6 +8040,9 @@ export default class LandingPg extends Component {
                                         <h4>FAQs</h4>
                                     </div>
                                 </div>
+                            </div>
+                            <div className='homepage-header-inner-body'>
+
                             </div>
                         </div>
                     </div>
