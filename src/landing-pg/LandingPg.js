@@ -4318,9 +4318,9 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left h1 {
     color: white;
-    font-family: poppins;
+    font-family: raleway;
     font-weight: bolder;
-    font-size: 53.5px;
+    font-size: 62.5px;
     margin-left: 4%;
     margin-right: 2.5%;
 }
@@ -4328,8 +4328,9 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-left span {
     text-decoration: underline;
     text-decoration-color: #FF5733;
-    text-decoration-thickness: 6px;
+    text-decoration-thickness: 5px;
     text-decoration-style: wavy;
+    text-underline-offset: 8px;
 }
 
 .homepage-header-inner-body-poster-right {
@@ -8084,7 +8085,7 @@ export default class LandingPg extends Component {
                             <div className='homepage-header-inner-body'>
                                 <div className='homepage-header-inner-body-poster'>
                                     <div className='homepage-header-inner-body-poster-left'>
-                                        <h1>Save <span>16%</span> on your weekly shopping - from the comfort of home.</h1>
+                                        <h1>Save <span>up to 16%</span> on your weekly shopping from the comfort of home</h1>
                                     </div>
                                     <div className='homepage-header-inner-body-poster-right'>
                                         
