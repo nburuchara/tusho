@@ -4337,6 +4337,21 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right {
     width: 45%;
     border-left: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.homepage-header-inner-body-poster-right-left-section {
+    
+}
+
+.homepage-header-inner-body-poster-right-right-section {
+
+}
+
+.homepage-header-inner-body-poster-right img {
+    width: 48.25%;
+    // border-left: 1px solid white;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -8092,7 +8107,7 @@ export default class LandingPg extends Component {
                                         </div>
                                     </div>
                                     <div className='homepage-header-inner-body-poster-right'>
-                                        
+                                        <img src='/assets/images/home-main-header/header-poster-img-2.jpg'/>
                                     </div>
                                 </div>
                             </div>
