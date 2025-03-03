@@ -4257,10 +4257,31 @@ const Styles = styled.div `
     color: #20313a; 
 }
 
+
+.homepage-header-inner-header-left-option span {
+    margin-left: 5%;
+}
+
+.homepage-header-inner-header-left-option img {
+    width: 13.5px;
+    margin-top: 0.25rem;
+}
+
 .homepage-header-inner-header-right {
     width: 50%;
     border: 1px solid black;
+    text-align: right;
+    display: flex;
+    flex-direction: row;
 }
+
+.homepage-header-inner-header-right-option {
+    width: 20%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
@@ -7991,14 +8012,16 @@ export default class LandingPg extends Component {
                             <div className='homepage-header-inner-header'>
                                 <div className='homepage-header-inner-header-left'>
                                     <div className='homepage-header-inner-header-left-option'>
-                                        <h4>Products</h4><span><img/></span>
+                                        <h4>Products</h4><span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
                                     <div className='homepage-header-inner-header-left-option'>
 
                                     </div>
                                 </div>
                                 <div className='homepage-header-inner-header-right'>
+                                    <div className='homepage-header-inner-header-right-option'>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
