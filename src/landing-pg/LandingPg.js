@@ -1257,7 +1257,7 @@ const Styles = styled.div `
     border: 1px solid #ccc;
     height: auto;
     margin-right: 1%;
-    top: 0;
+    top: -1.75rem;
     right: 0;
     margin-top: 90px;
     flex-direction: column;
@@ -4251,7 +4251,10 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-header-left-option h4 {
-
+    // font-weight: normal;
+    font-family: poppins;
+    font-size: 95%;
+    color: #20313a; 
 }
 
 .homepage-header-inner-header-right {
@@ -7988,7 +7991,7 @@ export default class LandingPg extends Component {
                             <div className='homepage-header-inner-header'>
                                 <div className='homepage-header-inner-header-left'>
                                     <div className='homepage-header-inner-header-left-option'>
-                                        <h4>Products</h4>
+                                        <h4>Products</h4><span><img/></span>
                                     </div>
                                     <div className='homepage-header-inner-header-left-option'>
 
