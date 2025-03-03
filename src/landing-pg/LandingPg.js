@@ -4250,8 +4250,8 @@ const Styles = styled.div `
     justify-content: center;
 }
 
-.homepage-header-inner-header-left-option p {
-    
+.homepage-header-inner-header-left-option h4 {
+
 }
 
 .homepage-header-inner-header-right {
@@ -7988,7 +7988,7 @@ export default class LandingPg extends Component {
                             <div className='homepage-header-inner-header'>
                                 <div className='homepage-header-inner-header-left'>
                                     <div className='homepage-header-inner-header-left-option'>
-
+                                        <h4>Products</h4>
                                     </div>
                                     <div className='homepage-header-inner-header-left-option'>
 
