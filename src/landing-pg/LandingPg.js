@@ -4224,7 +4224,7 @@ const Styles = styled.div `
 
 
 .homepage-header {
-    height: 95%;
+    height: 42.5rem;
     border: 1px solid black;
 } 
 
@@ -4235,7 +4235,29 @@ const Styles = styled.div `
     justify-content: space-between;
 }
 
+.homepage-header-inner-header-left {
+    width: 50%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
 
+.homepage-header-inner-header-left-option {
+    width: 20%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-header-left-option p {
+    
+}
+
+.homepage-header-inner-header-right {
+    width: 50%;
+    border: 1px solid black;
+}
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
@@ -7964,7 +7986,17 @@ export default class LandingPg extends Component {
                     <div className='homepage-fullscreen'>
                         <div className='homepage-header'>
                             <div className='homepage-header-inner-header'>
+                                <div className='homepage-header-inner-header-left'>
+                                    <div className='homepage-header-inner-header-left-option'>
 
+                                    </div>
+                                    <div className='homepage-header-inner-header-left-option'>
+
+                                    </div>
+                                </div>
+                                <div className='homepage-header-inner-header-right'>
+
+                                </div>
                             </div>
                         </div>
                     </div>
