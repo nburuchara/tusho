@@ -382,6 +382,7 @@ const Styles = styled.div `
     padding-right: 1%;
     position: relative; /* Add position relative to position the badge */
     padding: 0; /* Adjust padding to avoid misalignment */
+    cursor: pointer;
 }
 
 .navbar-shopping-cart img {
@@ -424,6 +425,7 @@ const Styles = styled.div `
     padding-right: 1%;
     position: relative; /* Add position relative to position the badge */
     padding: 0; /* Adjust padding to avoid misalignment */
+    cursor: pointer;
 }
 
 .navbar-profile-btn img {
@@ -4211,7 +4213,7 @@ const Styles = styled.div `
 
 //! - - Homepage Elements - - !//
 
-.homepage-header {
+.homepage-fullscreen {
     border: 1px solid black;
     position: absolute;
     top: 5rem;
@@ -4219,6 +4221,21 @@ const Styles = styled.div `
     z-index: -1;
     height: 100%;
 }
+
+
+.homepage-header {
+    height: 95%;
+    border: 1px solid black;
+} 
+
+.homepage-header-inner-header {
+    height: 8.5%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
@@ -7944,8 +7961,12 @@ export default class LandingPg extends Component {
                                     
                         {/* - - - Homepage - - - */}
 
-                    <div className='homepage-header'>
-                        
+                    <div className='homepage-fullscreen'>
+                        <div className='homepage-header'>
+                            <div className='homepage-header-inner-header'>
+
+                            </div>
+                        </div>
                     </div>
                     
                 </div>
