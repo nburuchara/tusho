@@ -4214,7 +4214,7 @@ const Styles = styled.div `
 //! - - Homepage Elements - - !//
 
 .homepage-fullscreen {
-    border: 1px solid black;
+    // border: 1px solid black;
     position: absolute;
     top: 5rem;
     width: 100%;
@@ -4225,26 +4225,26 @@ const Styles = styled.div `
 
 .homepage-header {
     height: 35.5rem;
-    border: 1px solid black;
+    // border: 1px solid black;
 } 
 
 .homepage-header-inner-header {
     height: 8.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     justify-content: space-between;
 }
 
 .homepage-header-inner-header-left {
     width: 50%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     flex-direction: row;
 }
 
 .homepage-header-inner-header-left-option {
     width: 20%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4269,7 +4269,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-header-right {
     width: 50%;
-    border: 1px solid black;
+    // border: 1px solid black;
     margin: right;
     display: flex;
     flex-direction: row;
@@ -4278,7 +4278,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-header-right-option {
     width: 20%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4294,7 +4294,47 @@ const Styles = styled.div `
 
 .homepage-header-inner-body {
     height: 91.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster {
+    border: 1px solid #20313a;
+    width: 100%;
+    border-radius: 25px;
+    height: 90%;
+    margin-top: 0.65%;
+    background-color: #20313a;
+    display: flex;
+    justify-content: space-between;
+}
+
+.homepage-header-inner-body-poster-left {
+    width: 55%;
+    // border: 1px solid white;
+}
+
+.homepage-header-inner-body-poster-left h1 {
+    color: white;
+    font-family: poppins;
+    font-weight: bolder;
+    font-size: 53.5px;
+    margin-left: 4%;
+    margin-right: 2.5%;
+}
+
+.homepage-header-inner-body-poster-left span {
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
+    text-decoration-thickness: 6px;
+    text-decoration-style: wavy;
+}
+
+.homepage-header-inner-body-poster-right {
+    width: 45%;
+    border-left: 1px solid white;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -8042,7 +8082,14 @@ export default class LandingPg extends Component {
                                 </div>
                             </div>
                             <div className='homepage-header-inner-body'>
-
+                                <div className='homepage-header-inner-body-poster'>
+                                    <div className='homepage-header-inner-body-poster-left'>
+                                        <h1>Save <span>16%</span> on your weekly shopping - from the comfort of home.</h1>
+                                    </div>
+                                    <div className='homepage-header-inner-body-poster-right'>
+                                        
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
