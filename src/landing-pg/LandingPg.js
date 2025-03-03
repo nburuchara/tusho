@@ -4270,9 +4270,10 @@ const Styles = styled.div `
 .homepage-header-inner-header-right {
     width: 50%;
     border: 1px solid black;
-    text-align: right;
+    margin: right;
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
 }
 
 .homepage-header-inner-header-right-option {
@@ -4281,7 +4282,15 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-}   
+    // height: 100%;
+} 
+
+.homepage-header-inner-header-right-option h4 {
+    // font-weight: normal;
+    font-family: poppins;
+    font-size: 95%;
+    color: #20313a; 
+}
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
@@ -8020,7 +8029,10 @@ export default class LandingPg extends Component {
                                 </div>
                                 <div className='homepage-header-inner-header-right'>
                                     <div className='homepage-header-inner-header-right-option'>
-
+                                        
+                                    </div>
+                                    <div className='homepage-header-inner-header-right-option'>
+                                        <h4>FAQs</h4>
                                     </div>
                                 </div>
                             </div>
