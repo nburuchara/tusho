@@ -4357,7 +4357,18 @@ const Styles = styled.div `
     left: 4%;
     border: 1px solid white;
     height: 25%;
-    width: 65%;
+    width: 72.5%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    z-index: 5;
+}
+
+.homepage-header-inner-body-poster-left-cta input {
+    // height: 40%;
+    font-size: 18px;
+    width: 35%;
+    pointer-events: auto;
 }
 
 .homepage-header-inner-body-poster-left-decor {
@@ -8177,7 +8188,12 @@ export default class LandingPg extends Component {
                                         </div>
 
                                         <div className='homepage-header-inner-body-poster-left-cta'>
-
+                                            <input
+                                            id='homepageRegisteringNumber'
+                                            placeholder='Enter your number'
+                                            value={this.state.homepageRegisteringNumber}
+                                            onChange={this.handleSearchStandardInput}
+                                            />
                                         </div>
 
                                         <div className='homepage-header-inner-body-poster-left-decor'>
