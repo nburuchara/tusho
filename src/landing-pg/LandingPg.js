@@ -1266,7 +1266,7 @@ const Styles = styled.div `
     margin-right: 1%;
     top: -1.75rem;
     right: 0;
-    margin-top: 90px;
+    margin-top: 100px;
     flex-direction: column;
     background-color: #f3f5f7;
     border-radius: 8px;
@@ -4513,7 +4513,23 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header {
-    height: 25%;
+    height: 15%;
+    border: 1px solid black;
+    position: relative;
+}
+
+.homepage-body-inner-header h1 {
+    font-family: poppins;
+    color: #ff5733;
+    font-weight: bolder;
+    margin-top: 5px;
+}
+
+.homepage-body-inner-header-options {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 55%;
     border: 1px solid black;
 }
 
@@ -8307,7 +8323,10 @@ export default class LandingPg extends Component {
 
                         <div className='homepage-body'>
                             <div className='homepage-body-inner-header'>
+                                <h1>Shop Now</h1>
+                                <div className='homepage-body-inner-header-options'>
 
+                                </div>
                             </div>
                         </div>
                     </div>
