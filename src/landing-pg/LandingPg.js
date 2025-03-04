@@ -4548,6 +4548,7 @@ const Styles = styled.div `
     padding-top: 2.5px;
     padding-bottom: 2.5px;
     border-radius: 8px;
+    margin-right: 20px;
 }
 
 .homepage-body-inner-header-option h4 {
@@ -4557,6 +4558,7 @@ const Styles = styled.div `
     color: #20313a;
     font-family: poppins;
     font-size: 85%;
+    font-weight: normal;
 }
 
 .homepage-body-inner-header-option img {
@@ -8358,6 +8360,10 @@ export default class LandingPg extends Component {
                                 <div className='homepage-body-inner-header-options'>
                                     <div className='homepage-body-inner-header-option'>
                                         <h4>All Categories</h4>
+                                        <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
+                                    </div>
+                                    <div className='homepage-body-inner-header-option'>
+                                        <h4>Price</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
                                 </div>
