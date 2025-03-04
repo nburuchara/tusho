@@ -4221,7 +4221,7 @@ const Styles = styled.div `
 //! - - Homepage Elements - - !//
 
 .homepage-fullscreen {
-    border: 1px solid black;
+    // border: 1px solid black;
     position: absolute;
     top: 0rem;
     padding-top: 6rem;
@@ -4234,7 +4234,7 @@ const Styles = styled.div `
 
 .homepage-header {
     height: 35.5rem;
-    border: 1px solid black;
+    // border: 1px solid black;
 } 
 
 .homepage-header-inner-header {
@@ -4508,8 +4508,13 @@ const Styles = styled.div `
     // - - HOMEPAGE BODY - - //
 
 .homepage-body {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 50rem;
+}
+
+.homepage-body-inner-header {
+    height: 25%;
+    border: 1px solid black;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -8301,7 +8306,9 @@ export default class LandingPg extends Component {
                         </div>
 
                         <div className='homepage-body'>
-                            
+                            <div className='homepage-body-inner-header'>
+
+                            </div>
                         </div>
                     </div>
                     
