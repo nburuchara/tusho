@@ -4356,7 +4356,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-left-decor img {
-    width: 200px;
+    width: 180px;
 }
 
 .homepage-header-inner-body-poster-right {
