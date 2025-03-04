@@ -4514,7 +4514,7 @@ const Styles = styled.div `
 
 .homepage-body-inner-header {
     height: 15%;
-    border: 1px solid black;
+    // border: 1px solid black;
     position: relative;
 }
 
@@ -4530,7 +4530,38 @@ const Styles = styled.div `
     bottom: 0;
     width: 100%;
     height: 55%;
+    // border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.homepage-body-inner-header-option {
+    width: auto;
     border: 1px solid black;
+    height: 42.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    border-radius: 8px;
+}
+
+.homepage-body-inner-header-option h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    color: #20313a;
+    font-family: poppins;
+    font-size: 85%;
+}
+
+.homepage-body-inner-header-option img {
+    width: 13.5px;
+    margin-top: 0.28rem;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -8325,7 +8356,10 @@ export default class LandingPg extends Component {
                             <div className='homepage-body-inner-header'>
                                 <h1>Shop Now</h1>
                                 <div className='homepage-body-inner-header-options'>
-
+                                    <div className='homepage-body-inner-header-option'>
+                                        <h4>All Categories</h4>
+                                        <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
