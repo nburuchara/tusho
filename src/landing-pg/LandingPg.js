@@ -4393,7 +4393,14 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-left-cta-right button {
-
+    background-color: #ff5733;
+    border: 1px solid #ff5733;
+    border-radius: 8px;
+    width: 45%;
+    height: 45%;
+    font-size: 85%;
+    color: white;
+    font-family: poppins;
 }
 
 .homepage-header-inner-body-poster-left-decor {
@@ -8222,7 +8229,7 @@ export default class LandingPg extends Component {
                                                 />
                                             </div>
                                             <div className='homepage-header-inner-body-poster-left-cta-right'>
-
+                                                <button>Sign Up <span>→</span></button>
                                             </div>
                                         </div>
 
