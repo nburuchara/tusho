@@ -4341,13 +4341,22 @@ const Styles = styled.div `
     margin-left: 4%;
 }
 
-
 .homepage-header-inner-body-poster-left-subheading span {
     text-decoration: underline;
     text-decoration-color: #FF5733;
     text-decoration-thickness: 3px;
     text-decoration-style: wavy;
     text-underline-offset: 8px;
+}
+
+.homepage-header-inner-body-poster-left-decor {
+    position: absolute;
+    bottom: 0;
+    right: -1.5rem;
+}
+
+.homepage-header-inner-body-poster-left-decor img {
+    width: 200px;
 }
 
 .homepage-header-inner-body-poster-right {
