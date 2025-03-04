@@ -4358,7 +4358,7 @@ const Styles = styled.div `
     position: absolute;
     bottom: 1.5rem;
     left: 4%;
-    border: 1px solid white;
+    // border: 1px solid white;
     height: 25%;
     width: 72.5%;
     display: flex;
@@ -4376,7 +4376,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left-cta-left input {
     height: 45%;
-    font-size: 16.5px;
+    font-size: 13.5px;
     width: 100%;
     pointer-events: auto;
     font-family: poppins;
@@ -4400,10 +4400,39 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
     border-radius: 8px;
     width: 55%;
-    height: 45%;
-    font-size: 85%;
+    padding-right: 12%;
+    height: 49%;
+    font-size: 90%;
     color: white;
     font-family: poppins;
+    position: relative;
+    margin-right: 5%;
+    cursor: pointer;
+}
+
+.homepage-header-inner-body-poster-left-cta-right button label {
+    text-decoration: underline;
+    text-decoration-color: white;
+    text-decoration-thickness: 1.65px;
+    text-decoration-style: wavy;
+    text-underline-offset: 4px;
+    cursor: pointer;
+}
+
+.homepage-header-inner-body-poster-left-cta-right button:hover label {
+    text-decoration-style: solid;
+}
+
+.homepage-header-inner-body-poster-left-cta-right button span {
+    // margin-left: 0px;
+    position: absolute;
+    right: 22.5%;
+    transition: right 0.3s ease;
+    margin-top: 1px;
+}
+
+.homepage-header-inner-body-poster-left-cta-right button:hover span {
+    right: 17.5%;
 }
 
 .homepage-header-inner-body-poster-left-decor {
@@ -8232,7 +8261,7 @@ export default class LandingPg extends Component {
                                                 />
                                             </div>
                                             <div className='homepage-header-inner-body-poster-left-cta-right'>
-                                                <button>Sign Up <span>→</span></button>
+                                                <button><label>Sign Up</label> <span>→</span></button>
                                             </div>
                                         </div>
 
