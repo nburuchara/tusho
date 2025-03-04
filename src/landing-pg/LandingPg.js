@@ -4390,13 +4390,16 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-left-cta-right {
     width: 50%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
 }
 
 .homepage-header-inner-body-poster-left-cta-right button {
     background-color: #ff5733;
     border: 1px solid #ff5733;
     border-radius: 8px;
-    width: 45%;
+    width: 55%;
     height: 45%;
     font-size: 85%;
     color: white;
