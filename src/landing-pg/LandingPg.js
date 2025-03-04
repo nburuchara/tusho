@@ -32,15 +32,19 @@ const Styles = styled.div `
     height: 86.5vh;
     margin: auto;
     position: relative;
+    padding-top: 15px;
+    background-color: transparent;
 }
 
     // - - NAVBAR - - //
 
 .navbar {
+    position: relative;
+    z-index: 1;
     width: 100%;
     background-color: #FF5733;
     height: 70px;
-    margin-top: 15px;
+    // margin-top: 15px;
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
@@ -4217,17 +4221,20 @@ const Styles = styled.div `
 //! - - Homepage Elements - - !//
 
 .homepage-fullscreen {
-    // border: 1px solid black;
+    border: 1px solid black;
     position: absolute;
-    top: 5rem;
+    top: 0rem;
+    padding-top: 6rem;
+    // margin-top: 1rem;
     width: 100%;
     z-index: 0;
     height: 100%;
+    overflow-y: auto;
 }
 
 .homepage-header {
     height: 35.5rem;
-    // border: 1px solid black;
+    border: 1px solid black;
 } 
 
 .homepage-header-inner-header {
@@ -4498,6 +4505,12 @@ const Styles = styled.div `
     border-left: 5px solid white;
 }
 
+    // - - HOMEPAGE BODY - - //
+
+.homepage-body {
+    border: 1px solid black;
+    height: 50rem;
+}
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
@@ -8224,6 +8237,7 @@ export default class LandingPg extends Component {
                         {/* - - - Homepage - - - */}
 
                     <div className='homepage-fullscreen'>
+
                         <div className='homepage-header'>
                             <div className='homepage-header-inner-header'>
                                 <div className='homepage-header-inner-header-left'>
@@ -8284,6 +8298,10 @@ export default class LandingPg extends Component {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div className='homepage-body'>
+                            
                         </div>
                     </div>
                     
