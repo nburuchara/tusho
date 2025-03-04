@@ -4366,11 +4366,34 @@ const Styles = styled.div `
     justify-content: left;
 }
 
-.homepage-header-inner-body-poster-left-cta input {
-    // height: 40%;
-    font-size: 18px;
-    width: 35%;
+.homepage-header-inner-body-poster-left-cta-left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-left-cta-left input {
+    height: 45%;
+    font-size: 16.5px;
+    width: 100%;
     pointer-events: auto;
+    font-family: poppins;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+.homepage-header-inner-body-poster-left-cta-right {
+    width: 50%;
+    height: 100%;
+}
+
+.homepage-header-inner-body-poster-left-cta-right button {
+
 }
 
 .homepage-header-inner-body-poster-left-decor {
@@ -8190,12 +8213,17 @@ export default class LandingPg extends Component {
                                         </div>
 
                                         <div className='homepage-header-inner-body-poster-left-cta'>
-                                            <input
-                                            id='homepageRegisteringNumber'
-                                            placeholder='Enter your number'
-                                            value={this.state.homepageRegisteringNumber}
-                                            onChange={this.handleSearchStandardInput}
-                                            />
+                                            <div className='homepage-header-inner-body-poster-left-cta-left'>
+                                                <input
+                                                id='homepageRegisteringNumber'
+                                                placeholder='Enter your number'
+                                                value={this.state.homepageRegisteringNumber}
+                                                onChange={this.handleSearchStandardInput}
+                                                />
+                                            </div>
+                                            <div className='homepage-header-inner-body-poster-left-cta-right'>
+
+                                            </div>
                                         </div>
 
                                         <div className='homepage-header-inner-body-poster-left-decor'>
