@@ -8155,6 +8155,9 @@ export default class LandingPg extends Component {
                                         <div className='homepage-header-inner-body-poster-left-subheading'>
                                             <h3>The <span>very best</span> deals for your online grocery shopping</h3>
                                         </div>
+                                        <div className='homepage-header-inner-body-poster-left-decor'>
+                                            <img src='/assets/icons/home-main-header/header-icon-1.png'/>
+                                        </div>
                                     </div>
                                     <div className='homepage-header-inner-body-poster-right'>
                                         <div className='homepage-header-inner-body-poster-right-left-section'>
