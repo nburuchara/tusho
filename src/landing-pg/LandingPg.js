@@ -4326,6 +4326,13 @@ const Styles = styled.div `
     margin-right: 2.5%;
 }
 
+.homepage-header-inner-body-poster-left-subheading h3 {
+    color: white;
+    font-family: raleway;
+    font-weight: bolder;
+    margin-left: 4%;
+}
+
 .homepage-header-inner-body-poster-left span {
     text-decoration: underline;
     text-decoration-color: #FF5733;
@@ -4348,6 +4355,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-left-section img {
     width: 100%;
     height: 100%;
+    border-left: 3.5px solid white;
 }
 
 .homepage-header-inner-body-poster-right-right-section {
@@ -4368,6 +4376,7 @@ const Styles = styled.div `
     width: 110%;
     height: 100%;
     // border-top-right-radius: 24px;
+    border-left: 3.5px solid white;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom {
@@ -4381,6 +4390,8 @@ const Styles = styled.div `
     width: 100%;
     height: 100%;
     // border-top-right-radius: 25px;
+    border-top: 3.5px solid white;
+    border-left: 3.5px solid white;
 }
 
 
@@ -8132,8 +8143,8 @@ export default class LandingPg extends Component {
                                 <div className='homepage-header-inner-body-poster'>
                                     <div className='homepage-header-inner-body-poster-left'>
                                         <h1>Save <span>up to 16%</span> on your weekly shopping from the comfort of home</h1>
-                                        <div className=''>
-                                            <h3 style={{color: "white", marginLeft: "4%", fontFamily: 'raleway'}}>The <span>very best</span> deals for your online grocery shopping</h3>
+                                        <div className='homepage-header-inner-body-poster-left-subheading'>
+                                            <h3>The <span>very best</span> deals for your online grocery shopping</h3>
                                         </div>
                                     </div>
                                     <div className='homepage-header-inner-body-poster-right'>
