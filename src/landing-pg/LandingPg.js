@@ -4352,19 +4352,34 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section {
     width: 50%;
-    border: 1px solid white;
+    // border: 1px solid white;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top {
     height: 50%;
-    border: 1px solid white;
+    // border: 1px solid white;
+    overflow: hidden;
+    border-top-right-radius: 25px;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top img {
+    width: 110%;
+    height: 100%;
+    // border-top-right-radius: 25px;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom {
     height: 50%;
     border: 1px solid white;
+}
+
+.homepage-header-inner-body-poster-right-right-section-bottom img {
+    width: 110%;
+    height: 100%;
+    // border-top-right-radius: 25px;
 }
 
 
@@ -8126,7 +8141,7 @@ export default class LandingPg extends Component {
                                         </div>
                                         <div className='homepage-header-inner-body-poster-right-right-section'>
                                             <div className='homepage-header-inner-body-poster-right-right-section-top'>
-
+                                                <img src='/assets/images/home-main-header/header-poster-img-1.jpg'/>
                                             </div>
                                             <div className='homepage-header-inner-body-poster-right-right-section-bottom'>
 
