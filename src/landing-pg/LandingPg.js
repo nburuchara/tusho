@@ -4357,6 +4357,16 @@ const Styles = styled.div `
     flex-direction: column;
 }
 
+.homepage-header-inner-body-poster-right-right-section-top {
+    height: 50%;
+    border: 1px solid white;
+}
+
+.homepage-header-inner-body-poster-right-right-section-bottom {
+    height: 50%;
+    border: 1px solid white;
+}
+
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
