@@ -4305,7 +4305,7 @@ const Styles = styled.div `
     width: 100%;
     border-radius: 25px;
     height: 90%;
-    margin-top: 0.65%;
+    margin-top: 0.55%;
     background-color: #20313a;
     display: flex;
     justify-content: space-between;
