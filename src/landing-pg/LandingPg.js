@@ -4301,7 +4301,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster {
-    border: 1px solid #20313a;
+    border: 1px solid white;
     width: 100%;
     border-radius: 25px;
     height: 90%;
@@ -4336,7 +4336,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right {
     width: 45%;
-    border-left: 1px solid white;
+    // border-left: 1px solid white;
     display: flex;
     justify-content: space-between;
 }
@@ -4355,7 +4355,6 @@ const Styles = styled.div `
     // border: 1px solid white;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top {
@@ -4368,16 +4367,18 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top img {
     width: 110%;
     height: 100%;
-    // border-top-right-radius: 25px;
+    // border-top-right-radius: 24px;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom {
     height: 50%;
-    border: 1px solid white;
+    // border: 1px solid white;
+    overflow: hidden;
+    border-bottom-right-radius: 24px;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom img {
-    width: 110%;
+    width: 100%;
     height: 100%;
     // border-top-right-radius: 25px;
 }
@@ -8137,14 +8138,14 @@ export default class LandingPg extends Component {
                                     </div>
                                     <div className='homepage-header-inner-body-poster-right'>
                                         <div className='homepage-header-inner-body-poster-right-left-section'>
-                                            <img src='/assets/images/home-main-header/header-poster-img-2.jpg'/>
+                                            <img src='/assets/images/home-main-header/header-poster-img-2.webp'/>
                                         </div>
                                         <div className='homepage-header-inner-body-poster-right-right-section'>
                                             <div className='homepage-header-inner-body-poster-right-right-section-top'>
-                                                <img src='/assets/images/home-main-header/header-poster-img-1.jpg'/>
+                                                <img src='/assets/images/home-main-header/header-poster-img-1.webp'/>
                                             </div>
                                             <div className='homepage-header-inner-body-poster-right-right-section-bottom'>
-
+                                                <img src='/assets/images/home-main-header/header-poster-img-3.webp'/>
                                             </div>
                                         </div>
                                     </div>
