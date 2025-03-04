@@ -4324,6 +4324,7 @@ const Styles = styled.div `
     font-size: 62.5px;
     margin-left: 4%;
     margin-right: 2.5%;
+    margin-bottom: 15px;
 }
 
 .homepage-header-inner-body-poster-left span {
@@ -4339,6 +4340,7 @@ const Styles = styled.div `
     font-family: raleway;
     font-weight: bolder;
     margin-left: 4%;
+    margin-top: 6px;
 }
 
 .homepage-header-inner-body-poster-left-subheading span {
@@ -4347,6 +4349,15 @@ const Styles = styled.div `
     text-decoration-thickness: 3px;
     text-decoration-style: wavy;
     text-underline-offset: 8px;
+}
+
+.homepage-header-inner-body-poster-left-cta {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 4%;
+    border: 1px solid white;
+    height: 25%;
+    width: 65%;
 }
 
 .homepage-header-inner-body-poster-left-decor {
@@ -8164,6 +8175,11 @@ export default class LandingPg extends Component {
                                         <div className='homepage-header-inner-body-poster-left-subheading'>
                                             <h3>The <span>very best</span> deals for your online grocery shopping</h3>
                                         </div>
+
+                                        <div className='homepage-header-inner-body-poster-left-cta'>
+
+                                        </div>
+
                                         <div className='homepage-header-inner-body-poster-left-decor'>
                                             <img src='/assets/icons/home-main-header/header-icon-1.png'/>
                                         </div>
