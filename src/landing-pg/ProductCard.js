@@ -162,9 +162,9 @@ class ProductCard extends Component {
                         <h3 className="product-name">{product.name}</h3>
                         <p className="product-rating"><span>★</span> ({product.rating})</p>
                         <div></div>
-                        <button className={`add-to-cart ${product.qty > 0 ? 'non-empty' : ''}`}>
+                        <button onClick={product.qty === 0 ? () => onQtyChange(product.id, 1) : null} className={`add-to-cart ${product.qty > 0 ? 'non-empty' : ''}`}>
                             {product.qty === 0 &&
-                                <div onClick={() => onQtyChange(product.id, 1)}>
+                                <div>
                                 Add to Cart
                                 </div>
                             }

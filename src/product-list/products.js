@@ -57,7 +57,7 @@ const products = [
         rating: 4.9,
         image: "/assets/images/products/digestives-product.webp",
         promo: true,
-        qty: 1
+        qty: 0
     },
     {
         id: 7,
