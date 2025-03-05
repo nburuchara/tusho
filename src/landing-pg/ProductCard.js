@@ -48,6 +48,7 @@ const Styles = styled.div `
     font-size: 1rem;
     font-weight: bold;
     color: #ff5733;
+    text-align: left;
 }
 
 .product-rating {
