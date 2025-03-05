@@ -71,6 +71,10 @@ const Styles = styled.div `
     margin-bottom: 2.5px;
 }
 
+.product-rating span {
+    color: #ff5733;
+}
+
 .add-to-cart {
     background-color: #ff5733;
     color: white;
@@ -102,7 +106,7 @@ class ProductCard extends Component {
                     <div className="product-card-inner-body">
                         <p className="product-price">Ksh. {product.price.toFixed(2)}</p>
                         <h3 className="product-name">{product.name}</h3>
-                        <p className="product-rating">⭐ ({product.rating})</p>
+                        <p className="product-rating"><span>★</span> ({product.rating})</p>
                         <button className="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
