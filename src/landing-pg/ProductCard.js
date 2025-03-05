@@ -40,8 +40,14 @@ const Styles = styled.div `
 }
 
 .product-name {
-    font-size: 1.2rem;
-    margin: 10px 0;
+    font-size: 0.8rem;
+    font-family: raleway;
+    margin-left: 6.5%;
+    margin-right: 6.5%;
+    text-align: left;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    color: #5e626a;
 }
 
 .product-price {
@@ -52,7 +58,7 @@ const Styles = styled.div `
     text-align: left;
     margin-left: 6.5%;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 
 .product-rating {

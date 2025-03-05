@@ -1,7 +1,7 @@
 const products = [
     {
         id: 1,
-        name: "Fresh Apples",
+        name: "Minute Maid: Mango Pulpy Juice (400ml)",
         category: "fruits",
         price: 4.99,
         rating: 4.5,
