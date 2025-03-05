@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import styled from 'styled-components'; 
 import { ColorRing, RotatingLines, TailSpin } from 'react-loader-spinner'
+import products from '../product-list/products'; 
+import ProductCard from './ProductCard';
 
 //? - - FILES - - //
 import SearchTerms from '../search-terms/SearchTerms'
@@ -465,6 +467,7 @@ const Styles = styled.div `
     transform: translateX(5%);
     opacity: 1;
     pointer-events: auto;
+    cursor: pointer;
     transition-property: transform, opacity;
 }
 
@@ -4557,13 +4560,42 @@ const Styles = styled.div `
     margin-right: 10px;
     color: #20313a;
     font-family: poppins;
-    font-size: 85%;
-    font-weight: normal;
+    font-size: 80%;
+    // font-weight: normal;
 }
 
 .homepage-body-inner-header-option img {
     width: 13.5px;
-    margin-top: 0.28rem;
+    margin-top: 0.32rem;
+}
+
+.grocery-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Promo Row */
+.promo-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Main Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -4665,8 +4697,8 @@ class Trie {
 
 export default class LandingPg extends Component {
 
-    constructor () {
-        super()
+    constructor (props) {
+        super(props)
         this.state = {
 
             //* - USER ACCOUNT STATUS - *//
@@ -4862,6 +4894,14 @@ export default class LandingPg extends Component {
             item8CartPrice: 1149,
             item8CartTotal: 0,
             minimumItem8QtyColor: '#bbb',
+
+            //* - - HOMESCREEN PRODUCTS GRID DISPLAY - - *//
+
+            filter: {
+                category: "all",
+                price: "all",
+                rating: "all"
+            }
 
         }
 
@@ -5877,6 +5917,26 @@ export default class LandingPg extends Component {
         })
     }
 
+    mainPageProductsHandleFilterChange = (type, value) => {
+        this.setState((prevState) => ({
+            filter: {
+                ...prevState.filter,
+                [type]: value
+            }
+        }));
+    };
+
+    mainPageProductsFilterProducts = () => {
+        const { filter } = this.state;
+        // const { products } = products;
+
+        return products.filter((product) => {
+            return (filter.category === "all" || product.category === filter.category) &&
+                   (filter.price === "all" || product.price <= filter.price) &&
+                   (filter.rating === "all" || product.rating >= filter.rating);
+        });
+    };
+
     render () {
 
         const { searchBarIsClicked, searchInput, isSearchLoading, resultsFound, groupedOptions } = this.state;
@@ -5887,6 +5947,8 @@ export default class LandingPg extends Component {
         ];
         const today = new Date();
         const isCurrentMonth = today.getMonth() === currentMonth && today.getFullYear() === currentYear;
+        const filteredProducts = this.mainPageProductsFilterProducts();
+        // const { products } = products;
 
         return (
             <Styles>
@@ -8358,15 +8420,65 @@ export default class LandingPg extends Component {
                             <div className='homepage-body-inner-header'>
                                 <h1>Shop Now</h1>
                                 <div className='homepage-body-inner-header-options'>
-                                    <div className='homepage-body-inner-header-option'>
+                                    <div className={`homepage-body-inner-header-option ${this.state.homeShoppingSelector1 ? 'selected' : ''}`}>
                                         <h4>All Categories</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
-                                    <div className='homepage-body-inner-header-option'>
+                                    <div className={`homepage-body-inner-header-option ${this.state.homeShoppingSelector2 ? 'selected' : ''}`}>
                                         <h4>Price</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
+                                    <div className={`homepage-body-inner-header-option ${this.state.homeShoppingSelector3 ? 'selected' : ''}`}>
+                                        <h4>Review</h4>
+                                        <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
+                                    </div>
+                                    <div className={`homepage-body-inner-header-option ${this.state.homeShoppingSelector4 ? 'selected' : ''}`}>
+                                        <h4>Brands</h4>
+                                        <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
+                                    </div>
                                 </div>
+                            </div>
+
+                            <div className='homepage-body-inner-body'>
+                                
+                                <div className="grocery-container">
+                                
+                                    <div className="promo-row">
+                                        {products.filter(p => p.promo).map((promoProduct) => (
+                                            <ProductCard key={promoProduct.id} product={promoProduct} />
+                                        ))}
+                                    </div>
+
+                                    
+                                    <div className="filters">
+                                        <select onChange={(e) => this.mainPageProductsHandleFilterChange("category", e.target.value)}>
+                                            <option value="all">All Categories</option>
+                                            <option value="fruits">Fruits</option>
+                                            <option value="vegetables">Vegetables</option>
+                                        </select>
+
+                                        <select onChange={(e) => this.mainPageProductsHandleFilterChange("price", Number(e.target.value))}>
+                                            <option value="all">Any Price</option>
+                                            <option value="10">Under $10</option>
+                                            <option value="20">Under $20</option>
+                                        </select>
+
+                                        <select onChange={(e) => this.mainPageProductsHandleFilterChange("rating", Number(e.target.value))}>
+                                            <option value="all">Any Rating</option>
+                                            <option value="4">4+ Stars</option>
+                                            <option value="5">5 Stars</option>
+                                        </select>
+                                    </div>
+
+                                  
+                                    <div className="product-grid">
+                                        {filteredProducts.map((product) => (
+                                            <ProductCard key={product.id} product={product} />
+                                        ))}
+                                    </div> 
+
+                                </div> 
+                                
                             </div>
                         </div>
                     </div>
