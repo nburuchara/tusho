@@ -77,6 +77,7 @@ const Styles = styled.div `
 
 .add-to-cart {
     background-color: #ff5733;
+    border: 1px solid #ff5733;
     font-family: poppins;
     font-size: 80%;
     color: white;
@@ -90,8 +91,52 @@ const Styles = styled.div `
     padding: 10px;
 }
 
+.add-to-cart.non-empty {
+    border: 1px solid #ff5733;
+    background-color: #faece9;
+    padding: 0px;
+}
+
 .add-to-cart:hover {
     background-color: #e64a2e;
+}
+
+.add-to-cart.non-empty:hover {
+    background-color: transparent;
+}
+
+.add-to-cart-non-empty {
+    display: flex;
+    justify-content: space-between;
+    // padding: 10px 15px;
+    font-weight: bold;
+}
+
+.add-to-cart-non-empty-decrease {
+    width: 25%;
+    // border: 1px solid black;
+    background-color: #ff5733;
+    border: 1px solid #ff5733;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 8px;
+    color: white;
+}
+
+.add-to-cart-non-empty-value {
+    width: 50%;
+    // border: 1px solid black;
+    padding: 8px;
+}
+
+.add-to-cart-non-empty-increase {
+    width: 25%;
+    border: 1px solid #ff5733;
+    background-color: #ff5733;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 8px;
+    color: white;
 }
 
 
@@ -111,7 +156,27 @@ class ProductCard extends Component {
                         <p className="product-price">Ksh. {product.price.toFixed(2)}</p>
                         <h3 className="product-name">{product.name}</h3>
                         <p className="product-rating"><span>★</span> ({product.rating})</p>
-                        <button className="add-to-cart">Add to Cart</button>
+                        <div></div>
+                        <button className={`add-to-cart ${product.qty === 0 ? 'non-empty' : ''}`}>
+                            {product.qty !== 0 &&
+                                <>
+                                Add to Cart
+                                </>
+                            }
+                            {product.qty === 0 && 
+                                <div className="add-to-cart-non-empty">  
+                                    <div className="add-to-cart-non-empty-decrease">
+                                        -
+                                    </div>
+                                    <div className="add-to-cart-non-empty-value">
+
+                                    </div>
+                                    <div className="add-to-cart-non-empty-increase">
+                                        +
+                                    </div>
+                                </div>
+                            }
+                        </button>
                     </div>
                 </div>
             </Styles>

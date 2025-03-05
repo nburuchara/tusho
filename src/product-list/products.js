@@ -6,7 +6,8 @@ const products = [
         price: 450.00,
         rating: 4.5,
         image: "assets/images/products/min-maid-product.webp",
-        promo: true
+        promo: true,
+        qty: 0
     },
     {
         id: 2,
@@ -15,7 +16,8 @@ const products = [
         price: 260.00,
         rating: 4.7,
         image: "/assets/images/products/mac-coffee-product.webp",
-        promo: false
+        promo: false,
+        qty: 0
     },
     {
         id: 3,
@@ -24,7 +26,8 @@ const products = [
         price: 3.49,
         rating: 4.3,
         image: "/assets/images/products/bband-product.png",
-        promo: false
+        promo: false,
+        qty: 0
     },
     {
         id: 4,
@@ -33,7 +36,8 @@ const products = [
         price: 5.99,
         rating: 4.8,
         image: "/assets/images/products/brookside-milk-product.webp",
-        promo: true
+        promo: true,
+        qty: 0
     },
     {
         id: 5,
@@ -42,7 +46,8 @@ const products = [
         price: 2.49,
         rating: 4.6,
         image: "/assets/images/products/brookside-milk-powder-product.webp",
-        promo: false
+        promo: false,
+        qty: 0
     },
     {
         id: 6,
@@ -51,7 +56,8 @@ const products = [
         price: 6.99,
         rating: 4.9,
         image: "/assets/images/products/digestives-product.webp",
-        promo: true
+        promo: true,
+        qty: 1
     },
     {
         id: 7,
@@ -60,7 +66,8 @@ const products = [
         price: 12.99,
         rating: 4.7,
         image: "/assets/images/products/mumias-sugar-product.webp",
-        promo: false
+        promo: false,
+        qty: 0
     },
     {
         id: 8,
@@ -69,7 +76,8 @@ const products = [
         price: 3.99,
         rating: 4.4,
         image: "/assets/images/products/rinsun-oil-product.webp",
-        promo: false
+        promo: false,
+        qty: 0
     }
 ];
 
