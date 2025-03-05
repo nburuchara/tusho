@@ -3,7 +3,7 @@ const products = [
         id: 1,
         name: "Minute Maid: Mango Pulpy Juice (400ml)",
         category: "fruits",
-        price: 4.99,
+        price: 450.00,
         rating: 4.5,
         image: "assets/images/products/min-maid-product.webp",
         promo: true
@@ -12,7 +12,7 @@ const products = [
         id: 2,
         name: "MacCoffee Classic (200g)",
         category: "fruits",
-        price: 2.99,
+        price: 260.00,
         rating: 4.7,
         image: "/assets/images/products/mac-coffee-product.webp",
         promo: false

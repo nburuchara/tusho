@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Styles = styled.div `
 
 .product-card {
-    border: 1px solid black;
+    // border: 1px solid black;
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -18,11 +18,11 @@ const Styles = styled.div `
 
 .product-card-inner-header {
     height: 150px;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .product-card-inner-body {
-    border: 1px solid black;
+    // border: 1px solid black;
     flex-grow: 1;
 }
 
@@ -42,8 +42,8 @@ const Styles = styled.div `
 .product-name {
     font-size: 0.885rem;
     font-family: raleway;
-    margin-left: 6.5%;
-    margin-right: 6.5%;
+    margin-left: 3.5%;
+    margin-right: 3.5%;
     text-align: left;
     margin-top: 0px;
     margin-bottom: 5px;
@@ -56,7 +56,7 @@ const Styles = styled.div `
     font-weight: bold;
     color: #000;
     text-align: left;
-    margin-left: 6.5%;
+    margin-left: 3.5%;
     margin-top: 5px;
     margin-bottom: 0px;
 }
