@@ -4236,7 +4236,7 @@ const Styles = styled.div `
 }
 
 .homepage-header {
-    height: 35.5rem;
+    height: 33.5rem;
     // border: 1px solid black;
 } 
 
@@ -4511,14 +4511,15 @@ const Styles = styled.div `
     // - - HOMEPAGE BODY - - //
 
 .homepage-body {
-    // border: 1px solid black;
+    border: 1px solid black;
     height: 50rem;
 }
 
 .homepage-body-inner-header {
     height: 15%;
-    // border: 1px solid black;
+    border: 1px solid black;
     position: relative;
+    margin-top: -2rem;
 }
 
 .homepage-body-inner-header h1 {
@@ -4578,6 +4579,7 @@ const Styles = styled.div `
     flex-direction: column;
     max-width: 100%;
     padding: 20px;
+    border: 1px solid black;
 }
 
 /* Promo Row */
@@ -4601,6 +4603,7 @@ const Styles = styled.div `
 
 /* Main Product Grid */
 .product-grid {
+    border: 1px solid black;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
