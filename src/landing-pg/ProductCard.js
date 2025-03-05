@@ -14,6 +14,8 @@ const Styles = styled.div `
     transition: transform 0.2s ease-in-out;
     display: flex;
     flex-direction: column;
+    height: 290px;
+    position: relative;
 }
 
 .product-card-inner-header {
@@ -41,9 +43,10 @@ const Styles = styled.div `
 
 .product-name {
     font-size: 0.885rem;
-    font-family: raleway;
-    margin-left: 3.5%;
-    margin-right: 3.5%;
+    font-weight: normal;
+    font-family: poppins;
+    // margin-left: 0.5%;
+    // margin-right: 0.5%;
     text-align: left;
     margin-top: 0px;
     margin-bottom: 5px;
@@ -56,12 +59,15 @@ const Styles = styled.div `
     font-weight: bold;
     color: #20313a;
     text-align: left;
-    margin-left: 3.5%;
+    // margin-left: 0.5%;
     margin-top: 5px;
     margin-bottom: 0px;
 }
 
 .product-rating {
+    position: absolute;
+    bottom: 3.7rem;
+    right: 5%;
     font-size: 0.75rem;
     font-family: poppins;
     font-weight: bold;
@@ -76,6 +82,9 @@ const Styles = styled.div `
 }
 
 .add-to-cart {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
     background-color: #ff5733;
     border: 1px solid #ff5733;
     font-family: poppins;
@@ -87,7 +96,7 @@ const Styles = styled.div `
     cursor: pointer;
     margin-top: 10px;
     transition: background 0.2s;
-    width: 95%;
+    width: 90%;
     padding: 10px;
 }
 
