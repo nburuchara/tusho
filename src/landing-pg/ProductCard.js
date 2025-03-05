@@ -93,7 +93,7 @@ const Styles = styled.div `
 
 .add-to-cart.non-empty {
     border: 1px solid #ff5733;
-    background-color: #faece9;
+    background-color: white;
     padding: 0px;
     color: black;
     font-family: poppins;
@@ -118,12 +118,13 @@ const Styles = styled.div `
 .add-to-cart-non-empty-decrease {
     width: 25%;
     // border: 1px solid black;
-    background-color: #ff5733;
-    border: 1px solid #ff5733;
+    background-color: #faece9;
+    border: 1px solid #faece9;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
     padding: 8px;
-    color: white;
+    color: #ff5733;
+    border-right: 1px solid #ff5733;
 }
 
 .add-to-cart-non-empty-value {
@@ -135,12 +136,13 @@ const Styles = styled.div `
 
 .add-to-cart-non-empty-increase {
     width: 25%;
-    border: 1px solid #ff5733;
-    background-color: #ff5733;
+    border: 1px solid #faece9;
+    background-color: #faece9;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     padding: 8px;
-    color: white;
+    color: #ff5733;
+    border-left: 1px solid #ff5733;
 }
 
 
