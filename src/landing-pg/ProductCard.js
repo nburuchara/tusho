@@ -45,7 +45,8 @@ const Styles = styled.div `
 }
 
 .product-price {
-    font-size: 1.05rem;
+    font-size: 1rem;
+    font-family: poppins;
     font-weight: bold;
     color: #000;
     text-align: left;
