@@ -5,12 +5,25 @@ import styled from "styled-components";
 const Styles = styled.div `
 
 .product-card {
+    border: 1px solid black;
     background: white;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 15px;
     text-align: center;
     transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card-inner-header {
+    height: 150px;
+    border: 1px solid black;
+}
+
+.product-card-inner-body {
+    border: 1px solid black;
+    flex-grow: 1;
 }
 
 .product-card:hover {
@@ -67,11 +80,15 @@ class ProductCard extends Component {
         return (
             <Styles>
                 <div className="product-card">
-                    <img src={product.image} alt={product.name} className="product-image" />
-                    <h3 className="product-name">{product.name}</h3>
-                    <p className="product-price">${product.price.toFixed(2)}</p>
-                    <p className="product-rating">⭐ {product.rating} / 5</p>
-                    <button className="add-to-cart">Add to Cart</button>
+                    <div className="product-card-inner-header">
+                        <img src={product.image} alt={product.name} className="product-image" />
+                    </div>
+                    <div className="product-card-inner-body">
+                        <p className="product-price">${product.price.toFixed(2)}</p>
+                        <h3 className="product-name">{product.name}</h3>
+                        <p className="product-rating">⭐ {product.rating} / 5</p>
+                        <button className="add-to-cart">Add to Cart</button>
+                    </div>
                 </div>
             </Styles>
         );
