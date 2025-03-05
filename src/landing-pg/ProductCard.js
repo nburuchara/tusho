@@ -95,6 +95,8 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
     background-color: #faece9;
     padding: 0px;
+    color: black;
+    font-family: poppins;
 }
 
 .add-to-cart:hover {
@@ -102,6 +104,7 @@ const Styles = styled.div `
 }
 
 .add-to-cart.non-empty:hover {
+    color: #000;
     background-color: transparent;
 }
 
@@ -120,7 +123,7 @@ const Styles = styled.div `
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     padding: 8px;
-    color: white;
+    color: #faece9;
 }
 
 .add-to-cart-non-empty-value {
@@ -136,7 +139,7 @@ const Styles = styled.div `
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     padding: 8px;
-    color: white;
+    color: #faece9;
 }
 
 
@@ -169,7 +172,7 @@ class ProductCard extends Component {
                                         -
                                     </div>
                                     <div className="add-to-cart-non-empty-value">
-
+                                        <label>{product.qty}</label>
                                     </div>
                                     <div className="add-to-cart-non-empty-increase">
                                         +
