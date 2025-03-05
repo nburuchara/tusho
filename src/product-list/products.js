@@ -10,7 +10,7 @@ const products = [
     },
     {
         id: 2,
-        name: "Organic Bananas",
+        name: "MacCoffee Classic (200g)",
         category: "fruits",
         price: 2.99,
         rating: 4.7,

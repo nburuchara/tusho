@@ -40,7 +40,7 @@ const Styles = styled.div `
 }
 
 .product-name {
-    font-size: 0.8rem;
+    font-size: 0.885rem;
     font-family: raleway;
     margin-left: 6.5%;
     margin-right: 6.5%;
