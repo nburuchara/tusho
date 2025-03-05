@@ -62,8 +62,13 @@ const Styles = styled.div `
 }
 
 .product-rating {
-    font-size: 0.9rem;
-    color: #ffaa00;
+    font-size: 0.75rem;
+    font-family: poppins;
+    font-weight: bold;
+    color: #ff5733;
+    text-align: right;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
 }
 
 .add-to-cart {
@@ -97,7 +102,7 @@ class ProductCard extends Component {
                     <div className="product-card-inner-body">
                         <p className="product-price">Ksh. {product.price.toFixed(2)}</p>
                         <h3 className="product-name">{product.name}</h3>
-                        <p className="product-rating">⭐ {product.rating} / 5</p>
+                        <p className="product-rating">⭐ ({product.rating})</p>
                         <button className="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
