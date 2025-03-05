@@ -4425,7 +4425,7 @@ const Styles = styled.div `
     text-decoration-color: white;
     text-decoration-thickness: 1.65px;
     text-decoration-style: wavy;
-    text-underline-offset: 4px;
+    text-underline-offset: 5px;
     cursor: pointer;
 }
 
@@ -4511,15 +4511,15 @@ const Styles = styled.div `
     // - - HOMEPAGE BODY - - //
 
 .homepage-body {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 50rem;
 }
 
 .homepage-body-inner-header {
     height: 15%;
-    border: 1px solid black;
+    // border: 1px solid black;
     position: relative;
-    margin-top: -2rem;
+    margin-top: -2.25rem;
 }
 
 .homepage-body-inner-header h1 {
@@ -4579,7 +4579,7 @@ const Styles = styled.div `
     flex-direction: column;
     max-width: 100%;
     padding: 20px;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 /* Promo Row */
@@ -4603,7 +4603,8 @@ const Styles = styled.div `
 
 /* Main Product Grid */
 .product-grid {
-    border: 1px solid black;
+    padding: 0px;
+    // border: 1px solid black;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
