@@ -4535,7 +4535,7 @@ const Styles = styled.div `
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 55%;
+    height: 60%;
     // border: 1px solid black;
     display: flex;
     flex-direction: row;
