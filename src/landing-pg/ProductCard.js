@@ -54,7 +54,7 @@ const Styles = styled.div `
     font-size: 1rem;
     font-family: poppins;
     font-weight: bold;
-    color: #000;
+    color: #20313a;
     text-align: left;
     margin-left: 3.5%;
     margin-top: 5px;
