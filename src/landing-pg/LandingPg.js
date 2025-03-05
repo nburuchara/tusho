@@ -4236,7 +4236,7 @@ const Styles = styled.div `
 }
 
 .homepage-header {
-    height: 33.5rem;
+    height: 35.5rem;
     // border: 1px solid black;
 } 
 
@@ -4579,6 +4579,7 @@ const Styles = styled.div `
     flex-direction: column;
     max-width: 100%;
     padding: 20px;
+    margin-top: -1.5rem;
     // border: 1px solid black;
 }
 
