@@ -4517,7 +4517,7 @@ const Styles = styled.div `
 
 .homepage-body-inner-header {
     height: 15%;
-    border: 1px solid black;
+    // border: 1px solid black;
     position: relative;
 }
 
@@ -4535,12 +4535,12 @@ const Styles = styled.div `
     bottom: 0;
     width: 100%;
     height: 55%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 1.25%;
-    padding-right: 1.25%;
+    padding-left: 1.05%;
+    padding-right: 1.05%;
 }
 
 .homepage-body-inner-header-option {
