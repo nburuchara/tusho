@@ -4517,7 +4517,7 @@ const Styles = styled.div `
 
 .homepage-body-inner-header {
     height: 15%;
-    // border: 1px solid black;
+    border: 1px solid black;
     position: relative;
 }
 
@@ -4526,6 +4526,8 @@ const Styles = styled.div `
     color: #ff5733;
     font-weight: bolder;
     margin-top: 5px;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
 }
 
 .homepage-body-inner-header-options {
@@ -4533,10 +4535,12 @@ const Styles = styled.div `
     bottom: 0;
     width: 100%;
     height: 55%;
-    // border: 1px solid black;
+    border: 1px solid black;
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding-left: 1.25%;
+    padding-right: 1.25%;
 }
 
 .homepage-body-inner-header-option {
