@@ -77,6 +77,8 @@ const Styles = styled.div `
 
 .add-to-cart {
     background-color: #ff5733;
+    font-family: poppins;
+    font-size: 80%;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -84,6 +86,8 @@ const Styles = styled.div `
     cursor: pointer;
     margin-top: 10px;
     transition: background 0.2s;
+    width: 95%;
+    padding: 10px;
 }
 
 .add-to-cart:hover {

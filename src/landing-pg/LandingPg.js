@@ -4233,6 +4233,7 @@ const Styles = styled.div `
     z-index: 0;
     height: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .homepage-header {
