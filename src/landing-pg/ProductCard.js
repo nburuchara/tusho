@@ -123,13 +123,14 @@ const Styles = styled.div `
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     padding: 8px;
-    color: #faece9;
+    color: white;
 }
 
 .add-to-cart-non-empty-value {
     width: 50%;
     // border: 1px solid black;
     padding: 8px;
+    color: #000;
 }
 
 .add-to-cart-non-empty-increase {
@@ -139,7 +140,7 @@ const Styles = styled.div `
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     padding: 8px;
-    color: #faece9;
+    color: white;
 }
 
 
