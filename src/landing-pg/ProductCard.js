@@ -120,8 +120,8 @@ const Styles = styled.div `
     // border: 1px solid black;
     background-color: #ff5733;
     border: 1px solid #ff5733;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
     padding: 8px;
     color: white;
 }
@@ -137,8 +137,8 @@ const Styles = styled.div `
     width: 25%;
     border: 1px solid #ff5733;
     background-color: #ff5733;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
     padding: 8px;
     color: white;
 }
@@ -148,7 +148,8 @@ const Styles = styled.div `
 
 class ProductCard extends Component {
     render() {
-        const { product } = this.props;
+        const { product, onQtyChange } = this.props;
+      
 
         return (
             <Styles>
@@ -161,21 +162,21 @@ class ProductCard extends Component {
                         <h3 className="product-name">{product.name}</h3>
                         <p className="product-rating"><span>★</span> ({product.rating})</p>
                         <div></div>
-                        <button className={`add-to-cart ${product.qty === 0 ? 'non-empty' : ''}`}>
-                            {product.qty !== 0 &&
-                                <>
+                        <button className={`add-to-cart ${product.qty > 0 ? 'non-empty' : ''}`}>
+                            {product.qty === 0 &&
+                                <span onClick={() => onQtyChange(product.id, 1)}>
                                 Add to Cart
-                                </>
+                                </span>
                             }
-                            {product.qty === 0 && 
+                            {product.qty > 0 && 
                                 <div className="add-to-cart-non-empty">  
-                                    <div className="add-to-cart-non-empty-decrease">
+                                    <div onClick={() => onQtyChange(product.id, -1)} className="add-to-cart-non-empty-decrease">
                                         -
                                     </div>
                                     <div className="add-to-cart-non-empty-value">
                                         <label>{product.qty}</label>
                                     </div>
-                                    <div className="add-to-cart-non-empty-increase">
+                                    <div onClick={() => onQtyChange(product.id, 1)} className="add-to-cart-non-empty-increase">
                                         +
                                     </div>
                                 </div>

@@ -4915,7 +4915,8 @@ export default class LandingPg extends Component {
                 category: "all",
                 price: "all",
                 rating: "all"
-            }
+            },
+            products: products
 
         }
 
@@ -5950,6 +5951,16 @@ export default class LandingPg extends Component {
                    (filter.rating === "all" || product.rating >= filter.rating);
         });
     };
+
+    mainPageProductsHandleQtyChange = (productId, change) => {
+        this.setState((prevState) => ({
+            products: prevState.products.map((product) =>
+                product.id === productId
+                    ? { ...product, qty: Math.max(0, product.qty + change) }
+                    : product
+            )
+        }))
+    }
 
     render () {
 
@@ -8486,7 +8497,11 @@ export default class LandingPg extends Component {
                                   
                                     <div className="product-grid">
                                         {filteredProducts.map((product) => (
-                                            <ProductCard key={product.id} product={product} />
+                                            <ProductCard 
+                                            key={product.id} 
+                                            product={product} 
+                                            onQtyChange={this.mainPageProductsHandleQtyChange}
+                                            />
                                         ))}
                                     </div> 
 
