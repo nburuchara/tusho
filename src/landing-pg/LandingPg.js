@@ -5948,7 +5948,6 @@ export default class LandingPg extends Component {
         const today = new Date();
         const isCurrentMonth = today.getMonth() === currentMonth && today.getFullYear() === currentYear;
         const filteredProducts = this.mainPageProductsFilterProducts();
-        // const { products } = products;
 
         return (
             <Styles>
@@ -8444,9 +8443,9 @@ export default class LandingPg extends Component {
                                 <div className="grocery-container">
                                 
                                     <div className="promo-row">
-                                        {products.filter(p => p.promo).map((promoProduct) => (
+                                        {/* {products.filter(p => p.promo).map((promoProduct) => (
                                             <ProductCard key={promoProduct.id} product={promoProduct} />
-                                        ))}
+                                        ))} */}
                                     </div>
 
                                     
