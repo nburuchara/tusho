@@ -5942,7 +5942,7 @@ export default class LandingPg extends Component {
     };
 
     mainPageProductsFilterProducts = () => {
-        const { filter } = this.state;
+        const { filter, products } = this.state;
         // const { products } = products;
 
         return products.filter((product) => {
