@@ -4572,7 +4572,7 @@ const Styles = styled.div `
 .grocery-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    max-width: 100%;
     padding: 20px;
 }
 
