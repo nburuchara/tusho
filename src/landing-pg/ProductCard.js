@@ -18,6 +18,25 @@ const Styles = styled.div `
     position: relative;
 }
 
+.product-card-inner-margin {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 50%;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: #b4e4ec;
+    border: 1px solid #b4e4ec;
+    cursor: pointer;
+}
+
+.product-card-inner-margin p {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-size: 80%;
+    font-family: poppins;
+}
+
 .product-card-inner-header {
     height: 150px;
     // border: 1px solid black;
@@ -165,6 +184,9 @@ class ProductCard extends Component {
         return (
             <Styles>
                 <div className="product-card">
+                    <div className="product-card-inner-margin">
+                        <p>+ Jipange</p>
+                    </div>
                     <div className="product-card-inner-header">
                         <img src={product.image} alt={product.name} className="product-image" />
                     </div>
