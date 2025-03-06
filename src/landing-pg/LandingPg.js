@@ -4591,6 +4591,14 @@ const Styles = styled.div `
     z-index: 2;
     background-color: white;
     overflow-y: auto;
+    transform: translateY(-15.5rem);
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+.homepage-body-inner-header-option-dropdown-option-1.selected {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .homepage-body-inner-header-option-dropdown-option-2 {
@@ -4656,6 +4664,7 @@ const Styles = styled.div `
     align-items: flex-start;
     padding-left: 1.05%;
     padding-right: 1.05%;
+    overflow: hidden;
 }
 
 .grocery-container {
@@ -4737,6 +4746,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-square,
 .jipange-settings-selected-date-screen-body-inner-header-categories-carousel,
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 img,
+.homepage-body-inner-header-option-dropdown-option-1,
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
@@ -6054,6 +6064,10 @@ export default class LandingPg extends Component {
             )
         }));
     };
+
+    mainPageProductsFilterOptionClicked = (option) => {
+        
+    }
 
     render () {
 
@@ -8537,7 +8551,7 @@ export default class LandingPg extends Component {
                             <div className='homepage-body-inner-header'>
                                 <h1>Shop Now</h1>
                                 <div className='homepage-body-inner-header-options'>
-                                    <div className={`homepage-body-inner-header-option ${this.state.homeShoppingSelector1 ? 'selected' : ''}`}>
+                                    <div onClick={() => this.mainPageProductsFilterOptionClicked(1)} className={`homepage-body-inner-header-option ${this.state.homeShoppingSelector1 ? 'selected' : ''}`}>
                                         <h4>All Categories</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
