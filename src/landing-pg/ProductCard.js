@@ -18,16 +18,56 @@ const Styles = styled.div `
     position: relative;
 }
 
+.product-card-inner-jipange-menu {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    width: 72.5%;
+    border: 1px solid black;
+    height: 10rem;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.product-card-inner-jipange-menu-option {
+    height: 22.5%;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-card-inner-jipange-menu-option-select {
+    width: 25%;
+    border: 1px solid black;
+}
+
+.product-card-inner-jipange-menu-option-name {
+    width: 75%;
+    border: 1px solid black;
+}
+
 .product-card-inner-margin {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
-    width: 50%;
-    border: 1px solid black;
+    width: auto;
+    border: 1px solid #ff5733;
     border-radius: 6px;
-    background-color: #b4e4ec;
-    border: 1px solid #b4e4ec;
+    background-color: #faece9;
+    border: 1px solid #faece9;
     cursor: pointer;
+    padding: 6.5px;
+    padding-left: 8.5px;
+    padding-right: 8.5px;
+}
+
+.product-card-inner-margin:hover {
+    border: 1px solid #ff5733;
+    transform: scale(1.05);
+}
+
+.product-card-inner-margin img {
+    width: 15px;
 }
 
 .product-card-inner-margin p {
@@ -184,8 +224,24 @@ class ProductCard extends Component {
         return (
             <Styles>
                 <div className="product-card">
+                    <div className="product-card-inner-jipange-menu">
+                        <div className="product-card-inner-jipange-menu-option">
+                            <div className="product-card-inner-jipange-menu-option-select">
+                            <input
+                            type="radio"
+                            name="group1"
+                            value="option1"
+                            checked={this.state.selectedOption === "option1"}
+                            onChange={this.handleChange}
+                            />
+                            </div>
+                            <div className="product-card-inner-jipange-menu-option-name">
+
+                            </div>
+                        </div>
+                    </div>
                     <div className="product-card-inner-margin">
-                        <p>+ Jipange</p>
+                        <img src="/assets/icons/home-profile/edit-jipange-option-icon2.png"/>
                     </div>
                     <div className="product-card-inner-header">
                         <img src={product.image} alt={product.name} className="product-image" />
