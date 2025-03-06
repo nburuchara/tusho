@@ -4537,7 +4537,7 @@ const Styles = styled.div `
     bottom: 0;
     width: 100%;
     height: 60%;
-    // border: 1px solid black;
+    border: 1px solid black;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -4577,6 +4577,15 @@ const Styles = styled.div `
 
 .homepage-body-inner-header-option-dropdown {
     border: 1px solid black;
+}
+
+.homepage-body-inner-body {
+    border: 1px solid black;
+}
+
+.homepage-body-inner-body-inner-header {
+    border: 1px solid black;
+    height: 25%;
 }
 
 .grocery-container {
@@ -8481,7 +8490,9 @@ export default class LandingPg extends Component {
                             </div>
 
                             <div className='homepage-body-inner-body'>
-                                
+                                <div className='homepage-body-inner-body-inner-header'>
+
+                                </div>
                                 <div className="grocery-container">
                                 
                                     <div className="promo-row">
