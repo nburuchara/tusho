@@ -67,7 +67,10 @@ const Styles = styled.div `
 
 .product-card-inner-jipange-menu-option-select input {
     margin-top: 0.2rem;
-    background-color: #ff5733;
+}
+
+.product-card-inner-jipange-menu-option-select input[type="checkbox"] {
+    accent-color: #ff5733; 
 }
 
 .product-card-inner-jipange-menu-option-name {
