@@ -4595,7 +4595,7 @@ const Styles = styled.div `
     z-index: 2;
     background-color: white;
     overflow-y: auto;
-    transform: translateY(-1.5rem);
+    transform: translateY(-0.5rem);
     opacity: 0;
     transition-property: transform, opacity;
 }
@@ -4686,7 +4686,7 @@ const Styles = styled.div `
 
 .homepage-body-inner-body-inner-header {
     // border: 1px solid black;
-    height: 0.5rem;
+    height: 0rem;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -8619,13 +8619,13 @@ export default class LandingPg extends Component {
                                     <div className={`homepage-body-inner-header-option-dropdown-option-1 ${this.state.homepagePrdouctsFilter1 ? 'selected' : ''}`}>
 
                                     </div>
-                                    <div className='homepage-body-inner-header-option-dropdown-option-2'>
+                                    <div className={`homepage-body-inner-header-option-dropdown-option-2 ${this.state.homepagePrdouctsFilter2 ? 'selected' : ''}`}>
 
                                     </div>
-                                    <div className='homepage-body-inner-header-option-dropdown-option-3'>
+                                    <div className={`homepage-body-inner-header-option-dropdown-option-3 ${this.state.homepagePrdouctsFilter3 ? 'selected' : ''}`}>
 
                                     </div>
-                                    <div className='homepage-body-inner-header-option-dropdown-option-4'>
+                                    <div className={`homepage-body-inner-header-option-dropdown-option-4 ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
 
                                     </div>
                                 </div>
