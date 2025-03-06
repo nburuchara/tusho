@@ -83,7 +83,7 @@ const Styles = styled.div `
     margin-bottom: 0px;
     margin-left: 5%;
     font-family: poppins;
-    font-size: 80%;
+    font-size: 75%;
     font-weight: bold;
     color: #ff5733;
 }
