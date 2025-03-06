@@ -4576,7 +4576,7 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-option-1 {
-    width: 8.5rem;
+    width: 8.3rem;
     border: 1px solid black;
     height: 15rem;
     display: flex;
@@ -4616,6 +4616,9 @@ const Styles = styled.div `
     z-index: 2;
     background-color: white;
     overflow-y: auto;
+    transform: translateY(-5rem);
+    opacity: 0;
+    transition-property: transform, opacity;
 }
 
 .homepage-body-inner-header-option-dropdown-option-3 {
@@ -5009,7 +5012,12 @@ export default class LandingPg extends Component {
                 price: "all",
                 rating: "all"
             },
-            products: products
+            products: products,
+            homepageProductsCurrentFilter: 0,
+            homepagePrdouctsFilter1: false,
+            homepagePrdouctsFilter2: false,
+            homepagePrdouctsFilter3: false,
+            homepagePrdouctsFilter4: false,
 
         }
 
@@ -6066,7 +6074,17 @@ export default class LandingPg extends Component {
     };
 
     mainPageProductsFilterOptionClicked = (option) => {
-        
+        this.setState((prevState) => ({
+            [`homeShoppingSelector${option}`]: true
+        }))
+
+        for (let i = 0; i < 4; i++) {
+            if (option !== i) {
+                this.setState({
+                    [`homeShoppingSelector${i}`]: false
+                })
+            }
+        }
     }
 
     render () {
@@ -8572,7 +8590,7 @@ export default class LandingPg extends Component {
 
                             <div className='homepage-body-inner-body'>
                                 <div className='homepage-body-inner-body-inner-header'>
-                                    <div className='homepage-body-inner-header-option-dropdown-option-1'>
+                                    <div className={`homepage-body-inner-header-option-dropdown-option-1 ${this.state.homeMainPagePrdouctsFilter1 ? 'selected' : ''}`}>
 
                                     </div>
                                     <div className='homepage-body-inner-header-option-dropdown-option-2'>
