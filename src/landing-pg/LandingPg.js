@@ -4609,7 +4609,23 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-option-3 {
-    width: 5.5%;
+    width: 6%;
+    border: 1px solid black;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    border-radius: 8px;
+    z-index: 2;
+    background-color: white;
+}
+
+.homepage-body-inner-header-option-dropdown-option-4 {
+    width: 6%;
     border: 1px solid black;
     height: 10rem;
     display: flex;
