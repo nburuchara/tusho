@@ -4518,7 +4518,7 @@ const Styles = styled.div `
 
 .homepage-body-inner-header {
     height: 15%;
-    // border: 1px solid black;
+    border: 1px solid black;
     position: relative;
     margin-top: -2.25rem;
 }
@@ -4575,6 +4575,10 @@ const Styles = styled.div `
     margin-top: 0.32rem;
 }
 
+.homepage-body-inner-header-option-dropdown {
+    border: 1px solid black;
+}
+
 .grocery-container {
     display: flex;
     flex-direction: column;
@@ -4599,7 +4603,7 @@ const Styles = styled.div `
     margin-bottom: 20px;
 }
 
-.filters select {
+.filters option {
     background-color: white;
 }
 
@@ -8471,6 +8475,9 @@ export default class LandingPg extends Component {
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
                                 </div>
+                                <div className='homepage-body-inner-header-option-dropdown'>
+
+                                </div>
                             </div>
 
                             <div className='homepage-body-inner-body'>
@@ -8484,7 +8491,7 @@ export default class LandingPg extends Component {
                                     </div>
 
                                     
-                                    {/* <div className="filters">
+                                    <div className="filters">
                                         <select onChange={(e) => this.mainPageProductsHandleFilterChange("category", e.target.value)}>
                                             <option value="all">All Categories</option>
                                             <option value="fruits">Fruits</option>
@@ -8502,7 +8509,7 @@ export default class LandingPg extends Component {
                                             <option value="4">4+ Stars</option>
                                             <option value="5">5 Stars</option>
                                         </select>
-                                    </div> */}
+                                    </div>
 
                                   
                                     <div className="product-grid">
