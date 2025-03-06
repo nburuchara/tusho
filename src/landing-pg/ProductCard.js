@@ -30,10 +30,12 @@ const Styles = styled.div `
     background-color: #faece9;
     opacity: 0;
     transform: translateX(-10px);
+    transition-property: opacity, transform;
 }
 
 .product-card-inner-jipange-menu.selected {
-    
+    transform: translateX(0);
+    opacity: 1;
 }
 
 .product-card-inner-jipange-menu-option {
@@ -86,6 +88,18 @@ const Styles = styled.div `
     padding: 6.5px;
     padding-left: 8.5px;
     padding-right: 8.5px;
+}
+
+.blue-dot {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 8px;
+    height: 8px;
+    background-color: #ff5733;
+    border-radius: 50%;
+    border: 1.5px solid white;
+    // box-shadow: 0px 0px 3px rgba(0, 0, 255, 0.5);
 }
 
 .product-card-inner-margin:hover {
@@ -240,6 +254,11 @@ const Styles = styled.div `
     border-left: 1px solid #ff5733;
 }
 
+.product-card-inner-jipange-menu,
+{
+    transition-duration: var(--def-transition-duration);
+    transition-timing-function: ease-in-out;
+}
 
 `
 
@@ -284,6 +303,7 @@ class ProductCard extends Component {
                    
                     {/* } */}
                     <div onClick={this.handleJipangeMenuClicked} className="product-card-inner-margin">
+                        {product.jipangeSelected && <div className="blue-dot"></div>}
                         <img src="/assets/icons/home-profile/edit-jipange-option-icon2.png"/>
                     </div>
                     <div className="product-card-inner-header">
