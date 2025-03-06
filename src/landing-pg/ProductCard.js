@@ -223,34 +223,43 @@ class ProductCard extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            selectedOption: "option1"
+            showJipangeMenu: false
         }
     }
 
+    handleJipangeMenuClicked = () => {
+        this.setState((prevState) => ({
+            showJipangeMenu: !prevState.showJipangeMenu
+        }))
+    }
+
     render() {
-        const { product, onQtyChange } = this.props;
+        const { product, onQtyChange, onJipangeSelected } = this.props;
       
 
         return (
             <Styles>
                 <div className="product-card">
-                    <div className="product-card-inner-jipange-menu">
-                        <div className="product-card-inner-jipange-menu-option">
-                            <div className="product-card-inner-jipange-menu-option-select">
-                            <input
-                            type="radio"
-                            name="group1"
-                            value="option1"
-                            checked={this.state.selectedOption === "option1"}
-                            onChange={this.handleChange}
-                            />
-                            </div>
-                            <div className="product-card-inner-jipange-menu-option-name">
+                    {/* {product.jipangeSelected &&  */}
+                    {this.state.showJipangeMenu && 
+                        <div className="product-card-inner-jipange-menu">
+                            <div className="product-card-inner-jipange-menu-option">
+                                <div className="product-card-inner-jipange-menu-option-select">
+                                    <input
+                                    type="radio"
+                                    name={`jipange-${product.id}`} // Ensure each product has a unique radio group
+                                    checked={product.jipangeSelected}
+                                    onChange={() => onJipangeSelected(product.id)} // Remove handleChange since selection is managed at the Grocery Grid level
+                                    />
+                                </div>
+                                <div className="product-card-inner-jipange-menu-option-name">
 
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="product-card-inner-margin">
+                    } 
+                    {/* } */}
+                    <div onClick={this.handleJipangeMenuClicked} className="product-card-inner-margin">
                         <img src="/assets/icons/home-profile/edit-jipange-option-icon2.png"/>
                     </div>
                     <div className="product-card-inner-header">

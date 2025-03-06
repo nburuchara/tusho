@@ -5962,6 +5962,16 @@ export default class LandingPg extends Component {
         }))
     }
 
+    mainPageProductsHandleJipangeSelected = (productId) => {
+        this.setState((prevState) => ({
+            products: prevState.products.map((product) =>
+                product.id === productId
+                    ? { ...product, jipangeSelected: !prevState.jipangeSelected } // Correctly toggles at the product level
+                    : product
+            )
+        }));
+    };
+
     render () {
 
         const { searchBarIsClicked, searchInput, isSearchLoading, resultsFound, groupedOptions } = this.state;
@@ -8501,6 +8511,7 @@ export default class LandingPg extends Component {
                                             key={product.id} 
                                             product={product} 
                                             onQtyChange={this.mainPageProductsHandleQtyChange}
+                                            onJipangeSelected={this.mainPageProductsHandleJipangeSelected}
                                             />
                                         ))}
                                     </div> 

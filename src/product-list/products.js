@@ -7,7 +7,9 @@ const products = [
         rating: 4.5,
         image: "assets/images/products/min-maid-product.webp",
         promo: true,
-        qty: 0
+        qty: 0,
+        jipangeSelected: true,
+        jipanges: []
     },
     {
         id: 2,
@@ -17,7 +19,9 @@ const products = [
         rating: 4.7,
         image: "/assets/images/products/mac-coffee-product.webp",
         promo: false,
-        qty: 0
+        qty: 0,
+        jipangeSelected: false,
+        jipanges: []
     },
     {
         id: 3,
@@ -27,7 +31,9 @@ const products = [
         rating: 4.3,
         image: "/assets/images/products/bband-product.png",
         promo: false,
-        qty: 0
+        qty: 0,
+        jipangeSelected: false,
+        jipanges: []
     },
     {
         id: 4,
@@ -37,7 +43,9 @@ const products = [
         rating: 4.8,
         image: "/assets/images/products/brookside-milk-product.webp",
         promo: true,
-        qty: 0
+        qty: 0,
+        jipangeSelected: false,
+        jipanges: []
     },
     {
         id: 5,
@@ -47,7 +55,9 @@ const products = [
         rating: 4.6,
         image: "/assets/images/products/brookside-milk-powder-product.webp",
         promo: false,
-        qty: 0
+        qty: 0,
+        jipangeSelected: false,
+        jipanges: []
     },
     {
         id: 6,
@@ -57,7 +67,9 @@ const products = [
         rating: 4.9,
         image: "/assets/images/products/digestives-product.webp",
         promo: true,
-        qty: 0
+        qty: 0,
+        jipangeSelected: false,
+        jipanges: []
     },
     {
         id: 7,
@@ -67,7 +79,9 @@ const products = [
         rating: 4.7,
         image: "/assets/images/products/mumias-sugar-product.webp",
         promo: false,
-        qty: 0
+        qty: 0,
+        jipangeSelected: false,
+        jipanges: []
     },
     {
         id: 8,
@@ -77,7 +91,9 @@ const products = [
         rating: 4.4,
         image: "/assets/images/products/rinsun-oil-product.webp",
         promo: false,
-        qty: 0
+        qty: 0,
+        jipangeSelected: false,
+        jipanges: []
     }
 ];
 
