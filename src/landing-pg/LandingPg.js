@@ -4577,6 +4577,24 @@ const Styles = styled.div `
 
 .homepage-body-inner-header-option-dropdown {
     border: 1px solid black;
+    position: absolute;
+    bottom: -5px;
+    width: 100%;
+}
+
+.homepage-body-inner-header-option-dropdown-option {
+    width: auto;
+    border: 1px solid black;
+    height: 42.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    border-radius: 8px;
+    margin-right: 20px;
 }
 
 .homepage-body-inner-body {
@@ -4585,7 +4603,12 @@ const Styles = styled.div `
 
 .homepage-body-inner-body-inner-header {
     border: 1px solid black;
-    height: 25%;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-left: 1.05%;
+    padding-right: 1.05%;
 }
 
 .grocery-container {
@@ -8485,7 +8508,18 @@ export default class LandingPg extends Component {
                                     </div>
                                 </div>
                                 <div className='homepage-body-inner-header-option-dropdown'>
+                                    <div className='homepage-body-inner-header-option-dropdown-option'>
 
+                                    </div>
+                                    <div className='homepage-body-inner-header-option-dropdown-option'>
+
+                                    </div>
+                                    <div className='homepage-body-inner-header-option-dropdown-option'>
+
+                                    </div>
+                                    <div className='homepage-body-inner-header-option-dropdown-option'>
+
+                                    </div>
                                 </div>
                             </div>
 
@@ -8502,7 +8536,7 @@ export default class LandingPg extends Component {
                                     </div>
 
                                     
-                                    <div className="filters">
+                                    {/* <div className="filters">
                                         <select onChange={(e) => this.mainPageProductsHandleFilterChange("category", e.target.value)}>
                                             <option value="all">All Categories</option>
                                             <option value="fruits">Fruits</option>
@@ -8520,7 +8554,7 @@ export default class LandingPg extends Component {
                                             <option value="4">4+ Stars</option>
                                             <option value="5">5 Stars</option>
                                         </select>
-                                    </div>
+                                    </div> */}
 
                                   
                                     <div className="product-grid">
