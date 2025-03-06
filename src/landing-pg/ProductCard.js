@@ -16,6 +16,7 @@ const Styles = styled.div `
     flex-direction: column;
     height: 290px;
     position: relative;
+    overflow: hidden;
 }
 
 .product-card-inner-jipange-menu {
@@ -23,30 +24,53 @@ const Styles = styled.div `
     top: 0.5rem;
     left: 0.5rem;
     width: 72.5%;
-    border: 1px solid black;
+    border: 1px solid #ff5733;
     height: 10rem;
     border-radius: 6px;
-    background-color: white;
+    background-color: #faece9;
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.product-card-inner-jipange-menu.selected {
+    
 }
 
 .product-card-inner-jipange-menu-option {
     height: 22.5%;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #ff5733;
     display: flex;
     justify-content: space-between;
 }
 
 .product-card-inner-jipange-menu-option-select {
     width: 25%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.product-card-inner-jipange-menu-option-select input {
+    margin-top: 0px;
+}
+
 .product-card-inner-jipange-menu-option-name {
     width: 75%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.product-card-inner-jipange-menu-option-name p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 5%;
+    font-family: poppins;
+    font-size: 80%;
+    font-weight: bold;
+    color: #ff5733;
 }
 
 .product-card-inner-margin {
@@ -241,23 +265,23 @@ class ProductCard extends Component {
             <Styles>
                 <div className="product-card">
                     {/* {product.jipangeSelected &&  */}
-                    {this.state.showJipangeMenu && 
-                        <div className="product-card-inner-jipange-menu">
-                            <div className="product-card-inner-jipange-menu-option">
-                                <div className="product-card-inner-jipange-menu-option-select">
-                                    <input
-                                    type="radio"
-                                    name={`jipange-${product.id}`} // Ensure each product has a unique radio group
-                                    checked={product.jipangeSelected}
-                                    onChange={() => onJipangeSelected(product.id)} // Remove handleChange since selection is managed at the Grocery Grid level
-                                    />
-                                </div>
-                                <div className="product-card-inner-jipange-menu-option-name">
-
-                                </div>
+                   
+                    <div className={`product-card-inner-jipange-menu ${this.state.showJipangeMenu ? 'selected' : ''}`}>
+                        <div className="product-card-inner-jipange-menu-option">
+                            <div className="product-card-inner-jipange-menu-option-select">
+                                <input
+                                type="radio"
+                                name={`jipange-${product.id}`} // Ensure each product has a unique radio group
+                                checked={product.jipangeSelected}
+                                onChange={() => onJipangeSelected(product.id)} // Remove handleChange since selection is managed at the Grocery Grid level
+                                />
+                            </div>
+                            <div className="product-card-inner-jipange-menu-option-name">
+                                <p>Mar. 10th</p>
                             </div>
                         </div>
-                    } 
+                    </div>
+                   
                     {/* } */}
                     <div onClick={this.handleJipangeMenuClicked} className="product-card-inner-margin">
                         <img src="/assets/icons/home-profile/edit-jipange-option-icon2.png"/>

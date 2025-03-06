@@ -8,7 +8,7 @@ const products = [
         image: "assets/images/products/min-maid-product.webp",
         promo: true,
         qty: 0,
-        jipangeSelected: true,
+        jipangeSelected: false,
         jipanges: []
     },
     {
