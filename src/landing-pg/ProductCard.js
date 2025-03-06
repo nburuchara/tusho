@@ -301,11 +301,12 @@ class ProductCard extends Component {
                         </div>
                     </div>
                    
-                    {/* } */}
-                    <div onClick={this.handleJipangeMenuClicked} className="product-card-inner-margin">
-                        {product.jipangeSelected && <div className="blue-dot"></div>}
-                        <img src="/assets/icons/home-profile/edit-jipange-option-icon2.png"/>
-                    </div>
+                    {product.qty > 0 && 
+                        <div onClick={this.handleJipangeMenuClicked} className="product-card-inner-margin">
+                            {product.jipangeSelected && <div className="blue-dot"></div>}
+                            <img src="/assets/icons/home-profile/edit-jipange-option-icon2.png"/>
+                        </div>
+                    }
                     <div className="product-card-inner-header">
                         <img src={product.image} alt={product.name} className="product-image" />
                     </div>
