@@ -4616,9 +4616,14 @@ const Styles = styled.div `
     z-index: 2;
     background-color: white;
     overflow-y: auto;
-    transform: translateY(-5rem);
+    transform: translateY(-10.5rem);
     opacity: 0;
     transition-property: transform, opacity;
+}
+
+.homepage-body-inner-header-option-dropdown-option-2.selected {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .homepage-body-inner-header-option-dropdown-option-3 {
@@ -4636,10 +4641,18 @@ const Styles = styled.div `
     z-index: 2;
     background-color: white;
     overflow-y: auto;
+    transform: translateY(-10.5rem);
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+.homepage-body-inner-header-option-dropdown-option-3.selected {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .homepage-body-inner-header-option-dropdown-option-4 {
-    width: 6%;
+    width: 5.5rem;
     border: 1px solid black;
     height: 10rem;
     display: flex;
@@ -4653,6 +4666,14 @@ const Styles = styled.div `
     z-index: 2;
     background-color: white;
     overflow-y: auto;
+    transform: translateY(-10.5rem);
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+.homepage-body-inner-header-option-dropdown-option-4.selected {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .homepage-body-inner-body {
@@ -8569,19 +8590,19 @@ export default class LandingPg extends Component {
                             <div className='homepage-body-inner-header'>
                                 <h1>Shop Now</h1>
                                 <div className='homepage-body-inner-header-options'>
-                                    <div onClick={() => this.mainPageProductsFilterOptionClicked(1)} className={`homepage-body-inner-header-option ${this.state.homeShoppingSelector1 ? 'selected' : ''}`}>
+                                    <div onClick={() => this.mainPageProductsFilterOptionClicked(1)} className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter1 ? 'selected' : ''}`}>
                                         <h4>All Categories</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
-                                    <div className={`homepage-body-inner-header-option ${this.state.homeShoppingSelector2 ? 'selected' : ''}`}>
+                                    <div className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter2 ? 'selected' : ''}`}>
                                         <h4>Price</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
-                                    <div className={`homepage-body-inner-header-option ${this.state.homeShoppingSelector3 ? 'selected' : ''}`}>
+                                    <div className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter3 ? 'selected' : ''}`}>
                                         <h4>Review</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
-                                    <div className={`homepage-body-inner-header-option ${this.state.homeShoppingSelector4 ? 'selected' : ''}`}>
+                                    <div className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
                                         <h4>Brands</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
@@ -8590,7 +8611,7 @@ export default class LandingPg extends Component {
 
                             <div className='homepage-body-inner-body'>
                                 <div className='homepage-body-inner-body-inner-header'>
-                                    <div className={`homepage-body-inner-header-option-dropdown-option-1 ${this.state.homeMainPagePrdouctsFilter1 ? 'selected' : ''}`}>
+                                    <div className={`homepage-body-inner-header-option-dropdown-option-1 ${this.state.homepagePrdouctsFilter1 ? 'selected' : ''}`}>
 
                                     </div>
                                     <div className='homepage-body-inner-header-option-dropdown-option-2'>
