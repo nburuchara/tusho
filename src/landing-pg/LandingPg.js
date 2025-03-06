@@ -4575,17 +4575,10 @@ const Styles = styled.div `
     margin-top: 0.32rem;
 }
 
-.homepage-body-inner-header-option-dropdown {
+.homepage-body-inner-header-option-dropdown-option-1 {
+    width: 9.5%;
     border: 1px solid black;
-    position: absolute;
-    bottom: -5px;
-    width: 100%;
-}
-
-.homepage-body-inner-header-option-dropdown-option {
-    width: auto;
-    border: 1px solid black;
-    height: 42.5%;
+    height: 10rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -4594,7 +4587,41 @@ const Styles = styled.div `
     padding-top: 2.5px;
     padding-bottom: 2.5px;
     border-radius: 8px;
-    margin-right: 20px;
+    // margin-right: 20px;
+    z-index: 2;
+    background-color: white;
+}
+
+.homepage-body-inner-header-option-dropdown-option-2 {
+    width: 5.5%;
+    border: 1px solid black;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    border-radius: 8px;
+    z-index: 2;
+    background-color: white;
+}
+
+.homepage-body-inner-header-option-dropdown-option-3 {
+    width: 5.5%;
+    border: 1px solid black;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    border-radius: 8px;
+    z-index: 2;
+    background-color: white;
 }
 
 .homepage-body-inner-body {
@@ -8507,25 +8534,22 @@ export default class LandingPg extends Component {
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
                                 </div>
-                                <div className='homepage-body-inner-header-option-dropdown'>
-                                    <div className='homepage-body-inner-header-option-dropdown-option'>
-
-                                    </div>
-                                    <div className='homepage-body-inner-header-option-dropdown-option'>
-
-                                    </div>
-                                    <div className='homepage-body-inner-header-option-dropdown-option'>
-
-                                    </div>
-                                    <div className='homepage-body-inner-header-option-dropdown-option'>
-
-                                    </div>
-                                </div>
                             </div>
 
                             <div className='homepage-body-inner-body'>
                                 <div className='homepage-body-inner-body-inner-header'>
+                                    <div className='homepage-body-inner-header-option-dropdown-option-1'>
 
+                                    </div>
+                                    <div className='homepage-body-inner-header-option-dropdown-option-2'>
+
+                                    </div>
+                                    <div className='homepage-body-inner-header-option-dropdown-option-3'>
+
+                                    </div>
+                                    <div className='homepage-body-inner-header-option-dropdown-option-4'>
+
+                                    </div>
                                 </div>
                                 <div className="grocery-container">
                                 
