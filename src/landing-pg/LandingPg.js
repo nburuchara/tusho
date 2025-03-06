@@ -4576,9 +4576,9 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-option-1 {
-    width: 9.5%;
+    width: 8.5rem;
     border: 1px solid black;
-    height: 10rem;
+    height: 15rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -4593,7 +4593,7 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-option-2 {
-    width: 5.5%;
+    width: 4.65rem;
     border: 1px solid black;
     height: 10rem;
     display: flex;
@@ -4609,7 +4609,7 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-option-3 {
-    width: 6%;
+    width: 5.5rem;
     border: 1px solid black;
     height: 10rem;
     display: flex;
