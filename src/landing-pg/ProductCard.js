@@ -66,7 +66,7 @@ const Styles = styled.div `
 }
 
 .product-card-inner-jipange-menu-option-select input {
-    margin-top: 0px;
+    margin-top: 0.2rem;
     background-color: #ff5733;
 }
 
@@ -298,12 +298,12 @@ class ProductCard extends Component {
                 <div className="product-card">
                     {/* {product.jipangeSelected &&  */}
                    
-                    <div className={`product-card-inner-jipange-menu ${this.state.showJipangeMenu ? 'selected' : ''}`}>
+                    <div className={`product-card-inner-jipange-menu ${this.state.showJipangeMenu && product.qty > 0 ? 'selected' : ''}`}>
                         <div className="jipange-menu-label">My Jipange Plans</div>
                         <div className="product-card-inner-jipange-menu-option">
                             <div className="product-card-inner-jipange-menu-option-select">
                                 <input
-                                type="radio"
+                                type="checkbox"
                                 name={`jipange-${product.id}`} // Ensure each product has a unique radio group
                                 checked={product.jipangeSelected}
                                 onChange={() => onJipangeSelected(product.id)} // Remove handleChange since selection is managed at the Grocery Grid level
