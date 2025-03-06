@@ -5966,7 +5966,7 @@ export default class LandingPg extends Component {
         this.setState((prevState) => ({
             products: prevState.products.map((product) =>
                 product.id === productId
-                    ? { ...product, jipangeSelected: !prevState.jipangeSelected } // Correctly toggles at the product level
+                    ? { ...product, jipangeSelected: !product.jipangeSelected } // Correctly toggles at the product level
                     : product
             )
         }));

@@ -38,6 +38,18 @@ const Styles = styled.div `
     opacity: 1;
 }
 
+.jipange-menu-label {
+    position: absolute;
+    top: -5px;  /* Moves it above the border */
+    left: 35%;
+    transform: translateX(-50%); /* Centers it */
+    background-color: #faece9; /* Matches the div’s background */
+    padding: 0 1px; /* Gives some space around the text */
+    font-size: 10px;
+    font-weight: bold;
+    color: #ff5733;
+}
+
 .product-card-inner-jipange-menu-option {
     height: 22.5%;
     border-bottom: 1px solid #ff5733;
@@ -55,6 +67,7 @@ const Styles = styled.div `
 
 .product-card-inner-jipange-menu-option-select input {
     margin-top: 0px;
+    background-color: #ff5733;
 }
 
 .product-card-inner-jipange-menu-option-name {
@@ -286,6 +299,7 @@ class ProductCard extends Component {
                     {/* {product.jipangeSelected &&  */}
                    
                     <div className={`product-card-inner-jipange-menu ${this.state.showJipangeMenu ? 'selected' : ''}`}>
+                        <div className="jipange-menu-label">My Jipange Plans</div>
                         <div className="product-card-inner-jipange-menu-option">
                             <div className="product-card-inner-jipange-menu-option-select">
                                 <input
