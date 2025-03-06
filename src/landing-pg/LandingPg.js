@@ -4518,7 +4518,7 @@ const Styles = styled.div `
 
 .homepage-body-inner-header {
     height: 15%;
-    border: 1px solid black;
+    // border: 1px solid black;
     position: relative;
     margin-top: -2.25rem;
     z-index: 3;
@@ -4538,7 +4538,7 @@ const Styles = styled.div `
     bottom: 0;
     width: 100%;
     height: 60%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -4559,6 +4559,7 @@ const Styles = styled.div `
     padding-bottom: 2.5px;
     border-radius: 8px;
     margin-right: 20px;
+    cursor: pointer;
 }
 
 .homepage-body-inner-header-option h4 {
@@ -4569,11 +4570,13 @@ const Styles = styled.div `
     font-family: poppins;
     font-size: 80%;
     // font-weight: normal;
+    cursor: pointer;
 }
 
 .homepage-body-inner-header-option img {
     width: 13.5px;
     margin-top: 0.32rem;
+    cursor: pointer;
 }
 
 .homepage-body-inner-header-option-dropdown-option-1 {
@@ -4592,7 +4595,7 @@ const Styles = styled.div `
     z-index: 2;
     background-color: white;
     overflow-y: auto;
-    transform: translateY(-2rem);
+    transform: translateY(-1.5rem);
     opacity: 0;
     transition-property: transform, opacity;
 }
@@ -4617,7 +4620,7 @@ const Styles = styled.div `
     z-index: 2;
     background-color: white;
     overflow-y: auto;
-    transform: translateY(-2rem);
+    transform: translateY(-1.5rem);
     opacity: 0;
     transition-property: transform, opacity;
 }
@@ -4642,7 +4645,7 @@ const Styles = styled.div `
     z-index: 2;
     background-color: white;
     overflow-y: auto;
-    transform: translateY(-2rem);
+    transform: translateY(-1.5rem);
     opacity: 0;
     transition-property: transform, opacity;
 }
@@ -4667,7 +4670,7 @@ const Styles = styled.div `
     z-index: 2;
     background-color: white;
     overflow-y: auto;
-    transform: translateY(-2rem);
+    transform: translateY(-1.5rem);
     opacity: 0;
     transition-property: transform, opacity;
 }
@@ -4678,12 +4681,12 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-body {
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .homepage-body-inner-body-inner-header {
-    border: 1px solid black;
-    height: 2rem;
+    // border: 1px solid black;
+    height: 0.5rem;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -6098,7 +6101,7 @@ export default class LandingPg extends Component {
 
     mainPageProductsFilterOptionClicked = (option) => {
         this.setState((prevState) => ({
-            [`homepagePrdouctsFilter${option}`]: true
+            [`homepagePrdouctsFilter${option}`]: !prevState[`homepagePrdouctsFilter${option}`]
         }))
 
         for (let i = 0; i < 4; i++) {
