@@ -4521,6 +4521,7 @@ const Styles = styled.div `
     border: 1px solid black;
     position: relative;
     margin-top: -2.25rem;
+    z-index: 3;
 }
 
 .homepage-body-inner-header h1 {
@@ -4591,7 +4592,7 @@ const Styles = styled.div `
     z-index: 2;
     background-color: white;
     overflow-y: auto;
-    transform: translateY(-15.5rem);
+    transform: translateY(-2rem);
     opacity: 0;
     transition-property: transform, opacity;
 }
@@ -4616,7 +4617,7 @@ const Styles = styled.div `
     z-index: 2;
     background-color: white;
     overflow-y: auto;
-    transform: translateY(-10.5rem);
+    transform: translateY(-2rem);
     opacity: 0;
     transition-property: transform, opacity;
 }
@@ -4641,7 +4642,7 @@ const Styles = styled.div `
     z-index: 2;
     background-color: white;
     overflow-y: auto;
-    transform: translateY(-10.5rem);
+    transform: translateY(-2rem);
     opacity: 0;
     transition-property: transform, opacity;
 }
@@ -4666,7 +4667,7 @@ const Styles = styled.div `
     z-index: 2;
     background-color: white;
     overflow-y: auto;
-    transform: translateY(-10.5rem);
+    transform: translateY(-2rem);
     opacity: 0;
     transition-property: transform, opacity;
 }
@@ -4688,7 +4689,8 @@ const Styles = styled.div `
     align-items: flex-start;
     padding-left: 1.05%;
     padding-right: 1.05%;
-    overflow: hidden;
+    // overflow: hidden;
+    // z-index: 0;
 }
 
 .grocery-container {
@@ -6096,13 +6098,13 @@ export default class LandingPg extends Component {
 
     mainPageProductsFilterOptionClicked = (option) => {
         this.setState((prevState) => ({
-            [`homeShoppingSelector${option}`]: true
+            [`homepagePrdouctsFilter${option}`]: true
         }))
 
         for (let i = 0; i < 4; i++) {
             if (option !== i) {
                 this.setState({
-                    [`homeShoppingSelector${i}`]: false
+                    [`homepagePrdouctsFilter${i}`]: false
                 })
             }
         }
