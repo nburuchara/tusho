@@ -4590,6 +4590,7 @@ const Styles = styled.div `
     // margin-right: 20px;
     z-index: 2;
     background-color: white;
+    overflow-y: auto;
 }
 
 .homepage-body-inner-header-option-dropdown-option-2 {
@@ -4606,6 +4607,7 @@ const Styles = styled.div `
     border-radius: 8px;
     z-index: 2;
     background-color: white;
+    overflow-y: auto;
 }
 
 .homepage-body-inner-header-option-dropdown-option-3 {
@@ -4622,6 +4624,7 @@ const Styles = styled.div `
     border-radius: 8px;
     z-index: 2;
     background-color: white;
+    overflow-y: auto;
 }
 
 .homepage-body-inner-header-option-dropdown-option-4 {
@@ -4638,6 +4641,7 @@ const Styles = styled.div `
     border-radius: 8px;
     z-index: 2;
     background-color: white;
+    overflow-y: auto;
 }
 
 .homepage-body-inner-body {
