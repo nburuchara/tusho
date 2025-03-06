@@ -39,6 +39,9 @@ const Styles = styled.div `
 .product-card-inner-jipange-menu-option-select {
     width: 25%;
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .product-card-inner-jipange-menu-option-name {
@@ -217,6 +220,13 @@ const Styles = styled.div `
 `
 
 class ProductCard extends Component {
+    constructor (props) {
+        super(props)
+        this.state = {
+            selectedOption: "option1"
+        }
+    }
+
     render() {
         const { product, onQtyChange } = this.props;
       
