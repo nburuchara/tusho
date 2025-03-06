@@ -4776,6 +4776,9 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-body-inner-header-categories-carousel,
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 img,
 .homepage-body-inner-header-option-dropdown-option-1,
+.homepage-body-inner-header-option-dropdown-option-2,
+.homepage-body-inner-header-option-dropdown-option-3,
+.homepage-body-inner-header-option-dropdown-option-4,
  {
     transition-duration: var(--def-transition-duration);
     transition-timing-function: ease-in-out;
@@ -6104,7 +6107,7 @@ export default class LandingPg extends Component {
             [`homepagePrdouctsFilter${option}`]: !prevState[`homepagePrdouctsFilter${option}`]
         }))
 
-        for (let i = 0; i < 4; i++) {
+        for (let i = 1; i <= 4; i++) {
             if (option !== i) {
                 this.setState({
                     [`homepagePrdouctsFilter${i}`]: false
@@ -8599,15 +8602,15 @@ export default class LandingPg extends Component {
                                         <h4>All Categories</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
-                                    <div className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter2 ? 'selected' : ''}`}>
+                                    <div onClick={() => this.mainPageProductsFilterOptionClicked(2)} className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter2 ? 'selected' : ''}`}>
                                         <h4>Price</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
-                                    <div className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter3 ? 'selected' : ''}`}>
+                                    <div onClick={() => this.mainPageProductsFilterOptionClicked(3)} className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter3 ? 'selected' : ''}`}>
                                         <h4>Review</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
-                                    <div className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
+                                    <div onClick={() => this.mainPageProductsFilterOptionClicked(4)} className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
                                         <h4>Brands</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
