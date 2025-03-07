@@ -4632,8 +4632,6 @@ const Styles = styled.div `
     display: flex;
     flex-direction: column;
     padding: 0px;
-    padding-top: 2.5px;
-    padding-bottom: 2.5px;
     border-radius: 8px;
     background-color: white;
     overflow-y: auto;
