@@ -4697,7 +4697,7 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-filter-option label {
-    font-size: 72.5%;
+    font-size: 70%;
     font-family: poppins;
     margin-left: 5%;
     // paddin: 5rem;
@@ -8665,7 +8665,7 @@ export default class LandingPg extends Component {
                                                 className={`homepage-body-inner-header-option-dropdown-filter-option ${this.state.selectedFilters.price === price ? 'selected' : ''}`}
                                                 onClick={() => this.mainPageProductsHandleFilterChange("price", price)}
                                             >
-                                                {price === "All" ? "All Prices" : `Up to Ksh. ${price}`}
+                                                <label>{price === "All" ? "All Prices" : `Up to Ksh. ${price}`}</label>
                                             </div>
                                         ))}
                                     </div>
@@ -8676,7 +8676,7 @@ export default class LandingPg extends Component {
                                                 className={`homepage-body-inner-header-option-dropdown-filter-option ${this.state.selectedFilters.rating === rating ? 'selected' : ''}`}
                                                 onClick={() => this.mainPageProductsHandleFilterChange("rating", rating)}
                                             >
-                                                {rating === "All" ? "All Ratings" : `${rating} Stars & Up`}
+                                                <label>{rating === "All" ? "All Ratings" : `${rating} Stars & Up`}</label>
                                             </div>
                                         ))}
                                     </div>
