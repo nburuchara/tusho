@@ -1197,7 +1197,7 @@ const Styles = styled.div `
 }
 
 .navbar-options-checkout-home-footer-header-label h5 {
-    margin-left: 7%;
+    margin-left: 8%;
     margin-top: 5px;
     font-family: poppins;
     font-weight: normal;
@@ -6193,29 +6193,58 @@ export default class LandingPg extends Component {
     };
 
     removeFromCart = (productId) => {
-        this.setState((prevState) => ({
-            cart: prevState.cart.filter((item) => item.id !== productId)
-        }));
+        this.setState((prevState) => {
+            const updatedCart = prevState.cart.filter((item) => item.id !== productId);
+    
+            const updatedProducts = prevState.products.map((product) =>
+                product.id === productId ? { ...product, qty: 0 } : product
+            );
+    
+            return {
+                cart: updatedCart,
+                products: updatedProducts
+            };
+        });
     };
 
     increaseItemQty = (productId) => {
-        this.setState((prevState) => ({
-            cart: prevState.cart.map((item) =>
+        this.setState((prevState) => {
+            const updatedCart = prevState.cart.map((item) =>
                 item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
-            )
-        }));
+            );
+    
+            const updatedProducts = prevState.products.map((product) =>
+                product.id === productId ? { ...product, qty: product.qty + 1 } : product
+            );
+    
+            return {
+                cart: updatedCart,
+                products: updatedProducts
+            };
+        });
     };
     
     decreaseItemQty = (productId) => {
-        this.setState((prevState) => ({
-            cart: prevState.cart
+        this.setState((prevState) => {
+            const updatedCart = prevState.cart
                 .map((item) =>
                     item.id === productId && item.quantity > 1
                         ? { ...item, quantity: item.quantity - 1 }
                         : item
                 )
-                .filter((item) => item.quantity > 0) // Remove items with 0 quantity
-        }));
+                .filter((item) => item.quantity > 0); // Remove from cart if 0
+    
+            const updatedProducts = prevState.products.map((product) =>
+                product.id === productId && product.qty > 0
+                    ? { ...product, qty: product.qty - 1 }
+                    : product
+            );
+    
+            return {
+                cart: updatedCart,
+                products: updatedProducts
+            };
+        });
     };
 
     render () {
@@ -6614,11 +6643,11 @@ export default class LandingPg extends Component {
                             <div className='navbar-options-checkout-home-footer-header'>
                                 <div className='navbar-options-checkout-home-footer-header-label'>
                                     <h3>Subtotal</h3>
-                                    <h5>Left to FREE shipping:</h5>
+                                    <h5>Shipping:</h5>
                                 </div>
                                 <div className='navbar-options-checkout-home-footer-header-price'>
                                     <h3 className=''>KES {this.state.totalCartPrice}.00</h3>
-                                    <h5>KES 1550</h5>
+                                    <h5>Ksh. 99</h5>
                                 </div>
                             </div>
                             <div className='navbar-options-checkout-home-footer-footer'>

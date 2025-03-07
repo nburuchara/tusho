@@ -197,6 +197,36 @@ const Styles = styled.div `
     color: #ff5733;
 }
 
+@keyframes shimmer {
+    0% { background-position: -200px 0; }
+    100% { background-position: 200px 0; }
+}
+
+.loading-skeleton {
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+}
+
+.image-skeleton {
+    width: 120px;
+    height: 150px;
+    margin: auto;
+}
+
+.text-skeleton {
+    width: 100%;
+    height: 16px;
+    margin-top: 1rem;
+    // margin: 8px auto;
+}
+
+.text-skeleton.short {
+    width: 60%;
+}
+
+
 .add-to-cart {
     position: absolute;
     bottom: 5%;
@@ -282,7 +312,8 @@ class ProductCard extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            showJipangeMenu: false
+            showJipangeMenu: false,
+            productsLoading: true
         }
     }
 
@@ -325,13 +356,26 @@ class ProductCard extends Component {
                         </div>
                     }
                     <div className="product-card-inner-header">
-                        <img src={product.image} alt={product.name} className="product-image" />
+                        {this.state.productsLoading ? (
+                            <div className="loading-skeleton image-skeleton"></div>
+                        ) : (
+                            <img src={product.image} alt={product.name} className="product-image" />
+                        )}
                     </div>
                     <div className="product-card-inner-body">
-                        <p className="product-price">Ksh. {product.price.toFixed(2)}</p>
-                        <h3 className="product-name">{product.name}</h3>
-                        <p className="product-rating"><span>★</span> ({product.rating})</p>
-                        <div></div>
+                        {this.state.productsLoading ? (
+                            <>
+                                <div className="loading-skeleton text-skeleton"></div>
+                                <div className="loading-skeleton text-skeleton short"></div>
+                            </>
+                        ) : (
+                            <>
+                                <p className="product-price">Ksh. {product.price.toFixed(2)}</p>
+                                <h3 className="product-name">{product.name}</h3>
+                                <p className="product-rating"><span>★</span> ({product.rating})</p>
+                            </>
+                        )}
+                        {/* <div></div> */}
                         <button onClick={product.qty === 0 ? () => onQtyChange(product.id, 1) : null} className={`add-to-cart ${product.qty > 0 ? 'non-empty' : ''}`}>
                             {product.qty === 0 &&
                                 <div>
