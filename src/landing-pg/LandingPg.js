@@ -4697,7 +4697,7 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-filter-option label {
-    font-size: 88.5%;
+    font-size: 85%;
     font-family: poppins;
     margin-left: 5%;
     // paddin: 5rem;
