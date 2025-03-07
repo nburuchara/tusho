@@ -4584,8 +4584,7 @@ const Styles = styled.div `
     border: 1px solid white;
     height: 15rem;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 2.5px;
@@ -4682,6 +4681,10 @@ const Styles = styled.div `
     opacity: 1;
     z-index: 2;
     border: 1px solid black;
+}
+
+.homepage-body-inner-header-option-dropdown-filter-option {
+    
 }
 
 .homepage-body-inner-body {
@@ -5040,11 +5043,14 @@ export default class LandingPg extends Component {
 
             //* - - HOMESCREEN PRODUCTS GRID DISPLAY - - *//
 
-            filter: {
+            selectedFilters: {
                 category: "all",
                 price: "all",
                 rating: "all"
             },
+            categoryOptions: ["all", "Fruits & Vegetables", "Dairy Products", "Bakery"],
+            priceOptions: ["all", 500, 1000, 1500], // Example price thresholds
+            ratingOptions: ["all", 2, 3, 4, 5], // Example minimum ratings
             products: products,
             homepageProductsCurrentFilter: 0,
             homepagePrdouctsFilter1: false,
@@ -6066,32 +6072,22 @@ export default class LandingPg extends Component {
         })
     }
 
-    mainPageProductsHandleFilterChange = (type) => {
-        // this.setState((prevState) => {
-        //     const options = filterOptions[type]; // Get options for the selected type
-        //     const currentValue = prevState.filter[type]; // Current filter value
-        //     let nextIndex = options.indexOf(currentValue) + 1; // Find next option
-    
-        //     if (nextIndex >= options.length) {
-        //         nextIndex = 0; // Reset if at the last option
-        //     }
-    
-        //     return {
-        //         filter: {
-        //             ...prevState.filter,
-        //             [type]: options[nextIndex] // Set next filter option
-        //         }
-        //     };
-        // });
+    mainPageProductsHandleFilterChange = (type, value) => {
+        this.setState((prevState) => ({
+            selectedFilters: {
+                ...prevState.selectedFilters,
+                [type]: prevState.selectedFilters[type] === value ? "all" : value // Toggle selection
+            }
+        }));
     };
 
     mainPageProductsFilterProducts = () => {
-        const { filter, products } = this.state;
+        const { selectedFilters, products } = this.state;
     
         return products.filter((product) => {
-            return (filter.category === "all" || product.category === filter.category) &&
-                   (filter.price === "all" || product.price <= filter.price) &&
-                   (filter.rating === "all" || product.rating >= filter.rating);
+            return (selectedFilters.category === "all" || product.category === selectedFilters.category) &&
+                   (selectedFilters.price === "all" || product.price <= selectedFilters.price) &&
+                   (selectedFilters.rating === "all" || product.rating >= selectedFilters.rating);
         });
     };
 
@@ -8634,11 +8630,15 @@ export default class LandingPg extends Component {
                             <div className='homepage-body-inner-body'>
                                 <div className='homepage-body-inner-body-inner-header'>
                                     <div className={`homepage-body-inner-header-option-dropdown-option-1 ${this.state.homepagePrdouctsFilter1 ? 'selected' : ''}`}>
-                                    {/* {Object.keys(filterOptions).map((filterType) => (
-                                        <button key={filterType} onClick={() => this.mainPageProductsHandleFilterChange(filterType)}>
-                                            {filterType}: {this.state.filter[filterType]}
-                                        </button>
-                                    ))} */}
+                                        {this.state.categoryOptions.map((category) => (
+                                            <div 
+                                                key={category}
+                                                className={`homepage-body-inner-header-option-dropdown-filter-option ${this.state.selectedFilters.category === category ? 'selected' : ''}`}
+                                                onClick={() => this.mainPageProductsHandleFilterChange("category", category)}
+                                            >
+                                                {category}
+                                            </div>
+                                        ))}
                                     </div>
                                     <div className={`homepage-body-inner-header-option-dropdown-option-2 ${this.state.homepagePrdouctsFilter2 ? 'selected' : ''}`}>
 
