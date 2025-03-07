@@ -4971,6 +4971,7 @@ export default class LandingPg extends Component {
 
             //* - HOME SCREEN SHOPPING CART - *//
             homeScreenCartClicked: false,
+            cart: [],
 
             //* - HOME SCREEN PROFILE COMPONENTS - *//
             accountOptionsDropdownClicked: false,
@@ -5087,8 +5088,8 @@ export default class LandingPg extends Component {
 
     componentDidMount = () => {
         document.addEventListener('click', this.handleOutsideSearchBarClick);
-        this.loadCartTotal()
-        this.loadCartQty()
+        // this.loadCartTotal()
+        // this.loadCartQty()
     }
 
     componentWillUnmount() {
@@ -6108,14 +6109,42 @@ export default class LandingPg extends Component {
     };
 
     mainPageProductsHandleQtyChange = (productId, change) => {
-        this.setState((prevState) => ({
-            products: prevState.products.map((product) =>
+        this.setState((prevState) => {
+            // Update the products list (for UI)
+            const updatedProducts = prevState.products.map((product) =>
                 product.id === productId
                     ? { ...product, qty: Math.max(0, product.qty + change) }
                     : product
-            )
-        }))
-    }
+            );
+    
+            // Find the product being updated
+            const updatedProduct = updatedProducts.find((product) => product.id === productId);
+    
+            // Update the cart list (for checkout)
+            let updatedCart = prevState.cart;
+            const existingCartItem = prevState.cart.find((item) => item.id === productId);
+    
+            if (existingCartItem) {
+                if (updatedProduct.qty > 0) {
+                    // Update quantity in cart
+                    updatedCart = prevState.cart.map((item) =>
+                        item.id === productId ? { ...item, quantity: updatedProduct.qty } : item
+                    );
+                } else {
+                    // Remove from cart if qty is 0
+                    updatedCart = prevState.cart.filter((item) => item.id !== productId);
+                }
+            } else if (updatedProduct.qty > 0) {
+                // Add to cart if it's a new product
+                updatedCart = [...prevState.cart, { ...updatedProduct, quantity: updatedProduct.qty }];
+            }
+    
+            return {
+                products: updatedProducts,
+                cart: updatedCart
+            };
+        });
+    };
 
     mainPageProductsHandleJipangeSelected = (productId) => {
         this.setState((prevState) => ({
@@ -6140,6 +6169,54 @@ export default class LandingPg extends Component {
             }
         }
     }
+
+    addToCart = (product) => {
+        this.setState((prevState) => {
+            const existingItem = prevState.cart.find((item) => item.id === product.id);
+    
+            if (existingItem) {
+                // If the item is already in the cart, increase its quantity
+                return {
+                    cart: prevState.cart.map((item) =>
+                        item.id === product.id
+                            ? { ...item, quantity: item.quantity + 1 }
+                            : item
+                    )
+                };
+            } else {
+                // If it's a new item, add it to the cart with quantity 1
+                return {
+                    cart: [...prevState.cart, { ...product, quantity: 1 }]
+                };
+            }
+        });
+    };
+
+    removeFromCart = (productId) => {
+        this.setState((prevState) => ({
+            cart: prevState.cart.filter((item) => item.id !== productId)
+        }));
+    };
+
+    increaseItemQty = (productId) => {
+        this.setState((prevState) => ({
+            cart: prevState.cart.map((item) =>
+                item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
+            )
+        }));
+    };
+    
+    decreaseItemQty = (productId) => {
+        this.setState((prevState) => ({
+            cart: prevState.cart
+                .map((item) =>
+                    item.id === productId && item.quantity > 1
+                        ? { ...item, quantity: item.quantity - 1 }
+                        : item
+                )
+                .filter((item) => item.quantity > 0) // Remove items with 0 quantity
+        }));
+    };
 
     render () {
 
@@ -6234,7 +6311,7 @@ export default class LandingPg extends Component {
                         <div className='navbar-shopping-cart-area'>
                             <div className='navbar-shopping-cart'>
                                 <img onClick={this.openHomeShoppingCartClicked} src='/assets/icons/navbar/cart-icon.png'/>
-                                <div className="navbar-shopping-cart-badge">8</div>
+                                <div className="navbar-shopping-cart-badge">{this.state.cart.length}</div>
                             </div>
                             <div className='navbar-profile-btn'>
                                 <img onClick={this.openHomeProfileOptionsClicked} src='/assets/icons/navbar/profile-btn-icon.png'/>
@@ -6503,190 +6580,35 @@ export default class LandingPg extends Component {
                                 </div>
                             </div>
                         <div className='navbar-options-checkout-home-body'>
-                            <div className='navbar-options-checkout-home-item-cell'>
-                                <div className='navbar-options-checkout-home-item-cell-icon'>
-                                    <img src='/assets/images/products/brookside-milk-powder-product.webp'/>
-                                    <p>remove</p>
-                                </div>  
-                                <div className='navbar-options-checkout-home-item-cell-details'>
-                                    <p>Brookside Full Cream Milk Powder Tin (900g)</p>
-                                </div>
-                                <div className='navbar-options-checkout-home-item-cell-qty'>
-                                    <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
-                                        <div onClick={() => this.decreaseItemQty(1, this.state.item1CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
-                                            <p style={{color: this.state.minimumItem1QtyColor}}>-</p>
+                            {this.state.cart.length === 0 ? (
+                                <p>Your cart is empty</p>
+                            ) : (
+                                this.state.cart.map((item) => (
+                                    <div key={item.id} className="navbar-options-checkout-home-item-cell">
+                                        <div className="navbar-options-checkout-home-item-cell-icon">
+                                            <img src={item.image} alt={item.name} />
+                                            <p onClick={() => this.removeFromCart(item.id)}>remove</p>
                                         </div>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-                                            <p>{this.state.item1CartQty}</p>
+                                        <div className="navbar-options-checkout-home-item-cell-details">
+                                            <p>{item.name}</p>
                                         </div>
-                                        <div onClick={() => this.increaseItemQty(1, this.state.item1CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
-                                            <p>+</p>
-                                        </div>
-                                    </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES {this.state.item1CartPrice}.00</p>
-                                </div>
-                            </div>
-                            <div className='navbar-options-checkout-home-item-cell'>
-                                <div className='navbar-options-checkout-home-item-cell-icon'>
-                                    <img src='/assets/images/products/min-maid-product.webp'/>
-                                    <p>remove</p>
-                                </div>  
-                                <div className='navbar-options-checkout-home-item-cell-details'>
-                                    <p>Minute Maid: Mango Pulpy Juice (400ml)</p>
-                                </div>
-                                <div className='navbar-options-checkout-home-item-cell-qty'>
-                                    <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
-                                        <div  onClick={() => this.decreaseItemQty(2, this.state.item2CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
-                                            <p style={{color: this.state.minimumItem2QtyColor}}>-</p>
-                                        </div>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-                                            <p>{this.state.item2CartQty}</p>
-                                        </div>
-                                        <div  onClick={() => this.increaseItemQty(2, this.state.item2CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
-                                            <p>+</p>
+                                        <div className="navbar-options-checkout-home-item-cell-qty">
+                                            <div className="navbar-options-checkout-home-item-cell-qty-toggle">
+                                                <div onClick={() => this.decreaseItemQty(item.id)} className="navbar-options-checkout-home-item-cell-qty-toggle-left">
+                                                    <p>-</p>
+                                                </div>
+                                                <div className="navbar-options-checkout-home-item-cell-qty-toggle-center">
+                                                    <p>{item.quantity}</p>
+                                                </div>
+                                                <div onClick={() => this.increaseItemQty(item.id)} className="navbar-options-checkout-home-item-cell-qty-toggle-right">
+                                                    <p>+</p>
+                                                </div>
+                                            </div>
+                                            <p className="navbar-options-checkout-home-item-cell-qty-item-price">KES {item.price * item.quantity}.00</p>
                                         </div>
                                     </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES {this.state.item2CartPrice}.00</p>
-                                </div>
-                            </div>
-                            <div className='navbar-options-checkout-home-item-cell'>
-                                <div className='navbar-options-checkout-home-item-cell-icon'>
-                                    <img src='/assets/images/products/mac-coffee-product.webp'/>
-                                    <p>remove</p>
-                                </div>  
-                                <div className='navbar-options-checkout-home-item-cell-details'>
-                                    <p>MacCoffee Classic (200g)</p>
-                                </div>
-                                <div className='navbar-options-checkout-home-item-cell-qty'>
-                                    <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
-                                        <div onClick={() => this.decreaseItemQty(3, this.state.item3CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
-                                            <p style={{color: this.state.minimumItem3QtyColor}}>-</p>
-                                        </div>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-                                            <p>{this.state.item3CartQty}</p>
-                                        </div>
-                                        <div onClick={() => this.increaseItemQty(3, this.state.item3CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
-                                            <p>+</p>
-                                        </div>
-                                    </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES {this.state.item3CartPrice}.00</p>
-                                </div>
-                            </div>
-                            <div className='navbar-options-checkout-home-item-cell'>
-                                <div className='navbar-options-checkout-home-item-cell-icon'>
-                                    <img src='/assets/images/products/bband-product.png'/>
-                                    <p>remove</p>
-                                </div>  
-                                <div className='navbar-options-checkout-home-item-cell-details'>
-                                    <p>Blueband Original (250g)</p>
-                                </div>
-                                <div className='navbar-options-checkout-home-item-cell-qty'>
-                                    <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
-                                        <div onClick={() => this.decreaseItemQty(4, this.state.item4CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
-                                            <p style={{color: this.state.minimumItem4QtyColor}}>-</p>
-                                        </div>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-                                            <p>{this.state.item4CartQty}</p>
-                                        </div>
-                                        <div onClick={() => this.increaseItemQty(4, this.state.item4CartQty)}  className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
-                                            <p>+</p>
-                                        </div>
-                                    </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES {this.state.item4CartPrice}.00</p>
-                                </div>
-                            </div>
-                            <div className='navbar-options-checkout-home-item-cell'>
-                                <div className='navbar-options-checkout-home-item-cell-icon'>
-                                    <img src='/assets/images/products/brookside-milk-product.webp'/>
-                                    <p>remove</p>
-                                </div>  
-                                <div className='navbar-options-checkout-home-item-cell-details'>
-                                    <p>Brookside Whole Milk 1L Long Life</p>
-                                </div>
-                                <div className='navbar-options-checkout-home-item-cell-qty'>
-                                    <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
-                                        <div onClick={() => this.decreaseItemQty(5, this.state.item5CartQty)}  className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
-                                            <p style={{color: this.state.minimumItem5QtyColor}}>-</p>
-                                        </div>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-                                            <p>{this.state.item5CartQty}</p>
-                                        </div>
-                                        <div onClick={() => this.increaseItemQty(5, this.state.item5CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
-                                            <p>+</p>
-                                        </div>
-                                    </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES {this.state.item5CartPrice}.00</p>
-                                </div>
-                            </div>
-                            <div className='navbar-options-checkout-home-item-cell'>
-                                <div className='navbar-options-checkout-home-item-cell-icon'>
-                                    <img src='/assets/images/products/digestives-product.webp'/>
-                                    <p>remove</p>
-                                </div>  
-                                <div className='navbar-options-checkout-home-item-cell-details'>
-                                    <p>McVities Digestive Biscuits (400g)</p>
-                                </div>
-                                <div className='navbar-options-checkout-home-item-cell-qty'>
-                                    <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
-                                        <div onClick={() => this.decreaseItemQty(6, this.state.item6CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
-                                            <p style={{color: this.state.minimumItem6QtyColor}}>-</p>
-                                        </div>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-                                            <p>{this.state.item6CartQty}</p>
-                                        </div>
-                                        <div onClick={() => this.increaseItemQty(6, this.state.item6CartQty)}  className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
-                                            <p>+</p>
-                                        </div>
-                                    </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES {this.state.item6CartPrice}.00</p>
-                                </div>
-                            </div>
-                            <div className='navbar-options-checkout-home-item-cell'>
-                                <div className='navbar-options-checkout-home-item-cell-icon'>
-                                    <img src='/assets/images/products/mumias-sugar-product.webp'/>
-                                    <p>remove</p>
-                                </div>  
-                                <div className='navbar-options-checkout-home-item-cell-details'>
-                                    <p>Mumias Sugar White (2kg)</p>
-                                </div>
-                                <div className='navbar-options-checkout-home-item-cell-qty'>
-                                    <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
-                                        <div onClick={() => this.decreaseItemQty(7, this.state.item7CartQty)}  className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
-                                            <p style={{color: this.state.minimumItem7QtyColor}}>-</p>
-                                        </div>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-                                            <p>{this.state.item7CartQty}</p>
-                                        </div>
-                                        <div onClick={() => this.increaseItemQty(7, this.state.item7CartQty)}  className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
-                                            <p>+</p>
-                                        </div>
-                                    </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES {this.state.item7CartPrice}.00</p>
-                                </div>
-                            </div>
-                            <div className='navbar-options-checkout-home-item-cell'>
-                                <div className='navbar-options-checkout-home-item-cell-icon'>
-                                    <img src='/assets/images/products/rinsun-oil-product.webp'/>
-                                    <p>remove</p>
-                                </div>  
-                                <div className='navbar-options-checkout-home-item-cell-details'>
-                                    <p>Rinsun 100% Sunflower Oil (3L)</p>
-                                </div>
-                                <div className='navbar-options-checkout-home-item-cell-qty'>
-                                    <div className='navbar-options-checkout-home-item-cell-qty-toggle'>
-                                        <div onClick={() => this.decreaseItemQty(8, this.state.item8CartQty)}  className='navbar-options-checkout-home-item-cell-qty-toggle-left'>
-                                            <p style={{color: this.state.minimumItem8QtyColor}}>-</p>
-                                        </div>
-                                        <div className='navbar-options-checkout-home-item-cell-qty-toggle-center'>
-                                            <p>{this.state.item8CartQty}</p>
-                                        </div>
-                                        <div onClick={() => this.increaseItemQty(8, this.state.item8CartQty)} className='navbar-options-checkout-home-item-cell-qty-toggle-right'>
-                                            <p>+</p>
-                                        </div>
-                                    </div>
-                                    <p className='navbar-options-checkout-home-item-cell-qty-item-price'>KES {this.state.item8CartPrice}.00</p>
-                                </div>
-                            </div>
+                                ))
+                            )}
                         </div>
                         <div className='navbar-options-checkout-home-footer'>
                             <div className='navbar-options-checkout-home-footer-header'>
