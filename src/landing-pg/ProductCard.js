@@ -313,7 +313,6 @@ class ProductCard extends Component {
         super(props)
         this.state = {
             showJipangeMenu: false,
-            productsLoading: true
         }
     }
 
@@ -324,7 +323,7 @@ class ProductCard extends Component {
     }
 
     render() {
-        const { product, onQtyChange, onJipangeSelected } = this.props;
+        const { product, onQtyChange, onJipangeSelected, productsLoading } = this.props;
       
 
         return (
@@ -356,14 +355,14 @@ class ProductCard extends Component {
                         </div>
                     }
                     <div className="product-card-inner-header">
-                        {this.state.productsLoading ? (
+                        {productsLoading ? (
                             <div className="loading-skeleton image-skeleton"></div>
                         ) : (
                             <img src={product.image} alt={product.name} className="product-image" />
                         )}
                     </div>
                     <div className="product-card-inner-body">
-                        {this.state.productsLoading ? (
+                        {productsLoading ? (
                             <>
                                 <div className="loading-skeleton text-skeleton"></div>
                                 <div className="loading-skeleton text-skeleton short"></div>

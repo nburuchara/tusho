@@ -5061,7 +5061,7 @@ export default class LandingPg extends Component {
             //* - - HOMESCREEN PRODUCTS GRID DISPLAY - - *//
 
             products: products,
-            productsLoading: true,
+            productsLoading: false,
             selectedFilters: {
                 category: "All",
                 price: "All",
@@ -5096,7 +5096,7 @@ export default class LandingPg extends Component {
         }, () => {
             setTimeout(() => {
                 this.setState({ productsLoading: false }); // Replace with real API call
-            }, 2000);
+            }, 5000);
         })
         
     }
