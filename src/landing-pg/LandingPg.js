@@ -4604,7 +4604,7 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-option-2 {
-    width: 4.65rem;
+    width: 6.5rem;
     border: 1px solid white;
     height: 10rem;
     display: flex;
@@ -4623,18 +4623,17 @@ const Styles = styled.div `
     transform: translateY(0);
     opacity: 1;
     z-index: 2;
-    border: 1px solid black;
+    border: 1px solid #ff5733;
 }
 
 .homepage-body-inner-header-option-dropdown-option-3 {
-    width: 5.5rem;
+    width: 7.35rem;
     border: 1px solid white;
     height: 10rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0px;
     padding-top: 2.5px;
     padding-bottom: 2.5px;
     border-radius: 8px;
@@ -4649,20 +4648,17 @@ const Styles = styled.div `
     transform: translateY(0);
     opacity: 1;
     z-index: 2;
-    border: 1px solid black;
+    border: 1px solid #ff5733;
 }
 
 .homepage-body-inner-header-option-dropdown-option-4 {
-    width: 5.5rem;
+    width: 7.35rem;
     border: 1px solid white;
     height: 10rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 2.5px;
-    padding-bottom: 2.5px;
+    padding: 0px;
     border-radius: 8px;
     background-color: white;
     overflow-y: auto;
@@ -4675,7 +4671,7 @@ const Styles = styled.div `
     transform: translateY(0);
     opacity: 1;
     z-index: 2;
-    border: 1px solid black;
+    border: 1px solid #ff5733;
 }
 
 .homepage-body-inner-header-option-dropdown-filter-option {
@@ -4685,10 +4681,21 @@ const Styles = styled.div `
     padding-top: 0.45rem;
     padding-bottom: 0.45rem;
     // padding: 0px;
+    cursor: pointer;
+}
+
+.homepage-body-inner-header-option-dropdown-filter-option:hover {
+    background-color: #faece9;
 }
 
 .homepage-body-inner-header-option-dropdown-filter-option.selected {
     background-color: #faece9;
+}
+
+.homepage-body-inner-header-option-dropdown-filter-option.selected label {
+    color: #ff5733;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .homepage-body-inner-header-option-dropdown-filter-option label {
@@ -4697,6 +4704,7 @@ const Styles = styled.div `
     margin-left: 5%;
     // paddin: 5rem;
     // margin-bottom: 5rem;
+    cursor: pointer;
 }
 
 .homepage-body-inner-body {
