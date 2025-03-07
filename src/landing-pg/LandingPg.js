@@ -4591,7 +4591,7 @@ const Styles = styled.div `
     padding-bottom: 2.5px;
     border-radius: 8px;
     // margin-right: 20px;
-    background-color: white;
+    background-color: #f3f5f7;
     overflow-y: auto;
     transform: translateY(-0.5rem);
     opacity: 0;
@@ -4602,7 +4602,7 @@ const Styles = styled.div `
     transform: translateY(0);
     opacity: 1;
     z-index: 2;
-    border: 1px solid black;
+    border: 1px solid #ccc;
 }
 
 .homepage-body-inner-header-option-dropdown-option-2 {
@@ -4684,7 +4684,16 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-filter-option {
-    
+    // height: 1.5rem;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+
+.homepage-body-inner-header-option-dropdown-filter-option label {
+    font-size: 70%;
+    font-family: poppins;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
 }
 
 .homepage-body-inner-body {
@@ -8636,7 +8645,7 @@ export default class LandingPg extends Component {
                                                 className={`homepage-body-inner-header-option-dropdown-filter-option ${this.state.selectedFilters.category === category ? 'selected' : ''}`}
                                                 onClick={() => this.mainPageProductsHandleFilterChange("category", category)}
                                             >
-                                                {category}
+                                                <label>{category}</label>
                                             </div>
                                         ))}
                                     </div>
