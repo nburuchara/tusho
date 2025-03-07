@@ -6067,22 +6067,22 @@ export default class LandingPg extends Component {
     }
 
     mainPageProductsHandleFilterChange = (type) => {
-        this.setState((prevState) => {
-            const options = filterOptions[type]; // Get options for the selected type
-            const currentValue = prevState.filter[type]; // Current filter value
-            let nextIndex = options.indexOf(currentValue) + 1; // Find next option
+        // this.setState((prevState) => {
+        //     const options = filterOptions[type]; // Get options for the selected type
+        //     const currentValue = prevState.filter[type]; // Current filter value
+        //     let nextIndex = options.indexOf(currentValue) + 1; // Find next option
     
-            if (nextIndex >= options.length) {
-                nextIndex = 0; // Reset if at the last option
-            }
+        //     if (nextIndex >= options.length) {
+        //         nextIndex = 0; // Reset if at the last option
+        //     }
     
-            return {
-                filter: {
-                    ...prevState.filter,
-                    [type]: options[nextIndex] // Set next filter option
-                }
-            };
-        });
+        //     return {
+        //         filter: {
+        //             ...prevState.filter,
+        //             [type]: options[nextIndex] // Set next filter option
+        //         }
+        //     };
+        // });
     };
 
     mainPageProductsFilterProducts = () => {
@@ -6140,7 +6140,7 @@ export default class LandingPg extends Component {
         const today = new Date();
         const isCurrentMonth = today.getMonth() === currentMonth && today.getFullYear() === currentYear;
         const filteredProducts = this.mainPageProductsFilterProducts();
-        
+
 
         return (
             <Styles>
@@ -8634,11 +8634,11 @@ export default class LandingPg extends Component {
                             <div className='homepage-body-inner-body'>
                                 <div className='homepage-body-inner-body-inner-header'>
                                     <div className={`homepage-body-inner-header-option-dropdown-option-1 ${this.state.homepagePrdouctsFilter1 ? 'selected' : ''}`}>
-                                    {Object.keys(filterOptions).map((filterType) => (
+                                    {/* {Object.keys(filterOptions).map((filterType) => (
                                         <button key={filterType} onClick={() => this.mainPageProductsHandleFilterChange(filterType)}>
                                             {filterType}: {this.state.filter[filterType]}
                                         </button>
-                                    ))}
+                                    ))} */}
                                     </div>
                                     <div className={`homepage-body-inner-header-option-dropdown-option-2 ${this.state.homepagePrdouctsFilter2 ? 'selected' : ''}`}>
 
