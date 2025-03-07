@@ -4580,9 +4580,9 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-option-1 {
-    width: 18.2rem;
+    width: 21.2rem;
     border: 1px solid white;
-    height: 15rem;
+    height: 16.5rem;
     display: flex;
     flex-direction: column;
     padding-left: 0px;
@@ -4609,7 +4609,7 @@ const Styles = styled.div `
     height: 10rem;
     display: flex;
     flex-direction: column;
-    margin-left: -8.2rem;
+    margin-left: -11.2rem;
     padding: 0px;
     border-radius: 8px;
     background-color: white;
@@ -4697,7 +4697,7 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-filter-option label {
-    font-size: 85%;
+    font-size: 88.5%;
     font-family: poppins;
     margin-left: 5%;
     // paddin: 5rem;
