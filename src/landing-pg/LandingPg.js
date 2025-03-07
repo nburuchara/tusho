@@ -5060,6 +5060,8 @@ export default class LandingPg extends Component {
 
             //* - - HOMESCREEN PRODUCTS GRID DISPLAY - - *//
 
+            products: products,
+            productsLoading: true,
             selectedFilters: {
                 category: "All",
                 price: "All",
@@ -5068,7 +5070,6 @@ export default class LandingPg extends Component {
             categoryOptions: ["All", "Fruits & Vegetables", "Dairy Products", "Bakery"],
             priceOptions: ["All", 500, 1000, 1500], // Example price thresholds
             ratingOptions: ["All", 2, 3, 4, 5], // Example minimum ratings
-            products: products,
             homepageProductsCurrentFilter: 0,
             homepagePrdouctsFilter1: false,
             homepagePrdouctsFilter2: false,
@@ -5090,6 +5091,14 @@ export default class LandingPg extends Component {
         document.addEventListener('click', this.handleOutsideSearchBarClick);
         // this.loadCartTotal()
         // this.loadCartQty()
+        this.setState({
+            productsLoading: true
+        }, () => {
+            setTimeout(() => {
+                this.setState({ productsLoading: false }); // Replace with real API call
+            }, 2000);
+        })
+        
     }
 
     componentWillUnmount() {
@@ -8668,6 +8677,7 @@ export default class LandingPg extends Component {
                                             <ProductCard 
                                             key={product.id} 
                                             product={product} 
+                                            productsLoading={this.state.productsLoading}
                                             onQtyChange={this.mainPageProductsHandleQtyChange}
                                             onJipangeSelected={this.mainPageProductsHandleJipangeSelected}
                                             />
