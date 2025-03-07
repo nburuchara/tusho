@@ -38,7 +38,7 @@ const products = [
     {
         id: 4,
         name: "Brookside Whole Milk 1L Long Life",
-        category: "vegetables",
+        category: "Dairy Products",
         price: 156.00,
         rating: 4.8,
         image: "/assets/images/products/brookside-milk-product.webp",
@@ -50,7 +50,7 @@ const products = [
     {
         id: 5,
         name: "Brookside Full Cream Milk Powder Tin (500g)",
-        category: "dairy",
+        category: "Dairy Products",
         price: 1198.00,
         rating: 4.6,
         image: "/assets/images/products/brookside-milk-powder-product.webp",
