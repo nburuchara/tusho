@@ -4608,11 +4608,10 @@ const Styles = styled.div `
     border: 1px solid white;
     height: 10rem;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     padding: 0px;
     border-radius: 8px;
-    background-color: #f3f5f7;
+    background-color: white;
     overflow-y: auto;
     transform: translateY(-1.5rem);
     opacity: 0;
@@ -4631,8 +4630,7 @@ const Styles = styled.div `
     border: 1px solid white;
     height: 10rem;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     padding: 0px;
     padding-top: 2.5px;
     padding-bottom: 2.5px;
@@ -8661,10 +8659,26 @@ export default class LandingPg extends Component {
                                         ))}
                                     </div>
                                     <div className={`homepage-body-inner-header-option-dropdown-option-2 ${this.state.homepagePrdouctsFilter2 ? 'selected' : ''}`}>
-
+                                        {this.state.priceOptions.map((price) => (
+                                            <div 
+                                                key={price}
+                                                className={`homepage-body-inner-header-option-dropdown-filter-option ${this.state.selectedFilters.price === price ? 'selected' : ''}`}
+                                                onClick={() => this.mainPageProductsHandleFilterChange("price", price)}
+                                            >
+                                                {price === "All" ? "All Prices" : `Up to Ksh. ${price}`}
+                                            </div>
+                                        ))}
                                     </div>
                                     <div className={`homepage-body-inner-header-option-dropdown-option-3 ${this.state.homepagePrdouctsFilter3 ? 'selected' : ''}`}>
-
+                                        {this.state.ratingOptions.map((rating) => (
+                                            <div 
+                                                key={rating}
+                                                className={`homepage-body-inner-header-option-dropdown-filter-option ${this.state.selectedFilters.rating === rating ? 'selected' : ''}`}
+                                                onClick={() => this.mainPageProductsHandleFilterChange("rating", rating)}
+                                            >
+                                                {rating === "All" ? "All Ratings" : `${rating} Stars & Up`}
+                                            </div>
+                                        ))}
                                     </div>
                                     <div className={`homepage-body-inner-header-option-dropdown-option-4 ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
 
