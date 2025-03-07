@@ -4580,18 +4580,16 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-option-1 {
-    width: 8.3rem;
+    width: 10.2rem;
     border: 1px solid white;
     height: 15rem;
     display: flex;
     flex-direction: column;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 2.5px;
-    padding-bottom: 2.5px;
+    padding-left: 0px;
+    padding-right: 0px;
     border-radius: 8px;
     // margin-right: 20px;
-    background-color: #f3f5f7;
+    background-color: white;
     overflow-y: auto;
     transform: translateY(-0.5rem);
     opacity: 0;
@@ -4602,7 +4600,7 @@ const Styles = styled.div `
     transform: translateY(0);
     opacity: 1;
     z-index: 2;
-    border: 1px solid #ccc;
+    border: 1px solid #ff5733;
 }
 
 .homepage-body-inner-header-option-dropdown-option-2 {
@@ -4612,12 +4610,9 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 2.5px;
-    padding-bottom: 2.5px;
+    padding: 0px;
     border-radius: 8px;
-    background-color: white;
+    background-color: #f3f5f7;
     overflow-y: auto;
     transform: translateY(-1.5rem);
     opacity: 0;
@@ -4685,15 +4680,23 @@ const Styles = styled.div `
 
 .homepage-body-inner-header-option-dropdown-filter-option {
     // height: 1.5rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 0.5px solid #ff5733;
     width: 100%;
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
+    // padding: 0px;
+}
+
+.homepage-body-inner-header-option-dropdown-filter-option.selected {
+    background-color: #faece9;
 }
 
 .homepage-body-inner-header-option-dropdown-filter-option label {
-    font-size: 70%;
+    font-size: 72.5%;
     font-family: poppins;
-    margin-top: 0.3rem;
-    margin-bottom: 0.3rem;
+    margin-left: 5%;
+    // paddin: 5rem;
+    // margin-bottom: 5rem;
 }
 
 .homepage-body-inner-body {
@@ -5053,13 +5056,13 @@ export default class LandingPg extends Component {
             //* - - HOMESCREEN PRODUCTS GRID DISPLAY - - *//
 
             selectedFilters: {
-                category: "all",
-                price: "all",
-                rating: "all"
+                category: "All",
+                price: "All",
+                rating: "All"
             },
-            categoryOptions: ["all", "Fruits & Vegetables", "Dairy Products", "Bakery"],
-            priceOptions: ["all", 500, 1000, 1500], // Example price thresholds
-            ratingOptions: ["all", 2, 3, 4, 5], // Example minimum ratings
+            categoryOptions: ["All", "Fruits & Vegetables", "Dairy Products", "Bakery"],
+            priceOptions: ["All", 500, 1000, 1500], // Example price thresholds
+            ratingOptions: ["All", 2, 3, 4, 5], // Example minimum ratings
             products: products,
             homepageProductsCurrentFilter: 0,
             homepagePrdouctsFilter1: false,
@@ -6085,7 +6088,7 @@ export default class LandingPg extends Component {
         this.setState((prevState) => ({
             selectedFilters: {
                 ...prevState.selectedFilters,
-                [type]: prevState.selectedFilters[type] === value ? "all" : value // Toggle selection
+                [type]: prevState.selectedFilters[type] === value ? "All" : value // Toggle selection
             }
         }));
     };
@@ -6094,9 +6097,9 @@ export default class LandingPg extends Component {
         const { selectedFilters, products } = this.state;
     
         return products.filter((product) => {
-            return (selectedFilters.category === "all" || product.category === selectedFilters.category) &&
-                   (selectedFilters.price === "all" || product.price <= selectedFilters.price) &&
-                   (selectedFilters.rating === "all" || product.rating >= selectedFilters.rating);
+            return (selectedFilters.category === "All" || product.category === selectedFilters.category) &&
+                   (selectedFilters.price === "All" || product.price <= selectedFilters.price) &&
+                   (selectedFilters.rating === "All" || product.rating >= selectedFilters.rating);
         });
     };
 
