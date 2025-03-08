@@ -5069,7 +5069,7 @@ export default class LandingPg extends Component {
                 price: "All",
                 rating: "All"
             },
-            categoryOptions: ["All", "Fruits & Vegetables", "Dairy Products", "Bakery"],
+            categoryOptions: ["All", "Fruits & Vegetables", "Organic", "Meat", "Dairy", "Food Cupboard", "Baby Care", "Easy Prep", "Condiments & Spices", "Home & Cleaning", "Bulk Buy", "Personal Care", "Beverages", "Snacks", "Bakery", "Bundles", "Stationary", "Home Appliances", "Alcohol", "Pets", "Decor & Flowers", "Services", "Shopping Bags", "Kids & Toys",],
             priceOptions: ["All", 500, 1000, 1500], // Example price thresholds
             ratingOptions: ["All", 2, 3, 4, 5], // Example minimum ratings
             homepageProductsCurrentFilter: 0,
