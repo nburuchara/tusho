@@ -6212,6 +6212,7 @@ export default class LandingPg extends Component {
     };
 
     mainPageProductsFilterOptionClicked = (option) => {
+      
         this.setState((prevState) => ({
             [`homepagePrdouctsFilter${option}`]: !prevState[`homepagePrdouctsFilter${option}`]
         }))
