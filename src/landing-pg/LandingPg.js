@@ -4548,7 +4548,7 @@ const Styles = styled.div `
 
 .homepage-body-inner-header-option {
     width: auto;
-    border: 1px solid black;
+    border: 1px solid #ccc;
     height: 42.5%;
     display: flex;
     align-items: center;
@@ -4566,7 +4566,7 @@ const Styles = styled.div `
     margin-top: 0px;
     margin-bottom: 0px;
     margin-right: 10px;
-    color: #20313a;
+    color: #5e626a;
     font-family: poppins;
     font-size: 80%;
     // font-weight: normal;
@@ -8614,7 +8614,7 @@ export default class LandingPg extends Component {
                                                 className={`homepage-body-inner-header-option-dropdown-filter-option ${this.state.selectedFilters.category === category ? 'selected' : ''}`}
                                                 onClick={() => this.mainPageProductsHandleFilterChange("category", category)}
                                             >
-                                                <label>{category}</label>
+                                                <label>{category === "All" ? "All Categories" : `${category}`}</label>
                                             </div>
                                         ))}
                                     </div>
