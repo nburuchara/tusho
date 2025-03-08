@@ -365,6 +365,8 @@ class ProductCard extends Component {
                         {productsLoading ? (
                             <>
                                 <div className="loading-skeleton text-skeleton"></div>
+                                <div className="loading-skeleton text-skeleton"></div>
+                                <div className="loading-skeleton text-skeleton"></div>
                                 <div className="loading-skeleton text-skeleton short"></div>
                             </>
                         ) : (
@@ -375,26 +377,31 @@ class ProductCard extends Component {
                             </>
                         )}
                         {/* <div></div> */}
-                        <button onClick={product.qty === 0 ? () => onQtyChange(product.id, 1) : null} className={`add-to-cart ${product.qty > 0 ? 'non-empty' : ''}`}>
-                            {product.qty === 0 &&
-                                <div>
-                                Add to Cart
-                                </div>
-                            }
-                            {product.qty > 0 && 
-                                <div className="add-to-cart-non-empty">  
-                                    <div onClick={() => onQtyChange(product.id, -1)} className="add-to-cart-non-empty-decrease">
-                                        -
+                        {productsLoading ?  
+                        (
+                            <></>
+                        ) : (
+                            <button onClick={product.qty === 0 ? () => onQtyChange(product.id, 1) : null} className={`add-to-cart ${product.qty > 0 ? 'non-empty' : ''}`}>
+                                {product.qty === 0 &&
+                                    <div>
+                                    Add to Cart
                                     </div>
-                                    <div className="add-to-cart-non-empty-value">
-                                        <label>{product.qty}</label>
+                                }
+                                {product.qty > 0 && 
+                                    <div className="add-to-cart-non-empty">  
+                                        <div onClick={() => onQtyChange(product.id, -1)} className="add-to-cart-non-empty-decrease">
+                                            -
+                                        </div>
+                                        <div className="add-to-cart-non-empty-value">
+                                            <label>{product.qty}</label>
+                                        </div>
+                                        <div onClick={() => onQtyChange(product.id, 1)} className="add-to-cart-non-empty-increase">
+                                            +
+                                        </div>
                                     </div>
-                                    <div onClick={() => onQtyChange(product.id, 1)} className="add-to-cart-non-empty-increase">
-                                        +
-                                    </div>
-                                </div>
-                            }
-                        </button>
+                                }
+                            </button>
+                        )}
                     </div>
                 </div>
             </Styles>
