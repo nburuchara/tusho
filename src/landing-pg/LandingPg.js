@@ -5084,7 +5084,7 @@ export default class LandingPg extends Component {
                 price: "All",
                 rating: "All"
             },
-            categoryOptions: ["All", "Fruits & Vegetables", "Organic", "Meat", "Dairy", "Food Cupboard", "Baby Care", "Easy Prep", "Condiments & Spices", "Home & Cleaning", "Bulk Buy", "Personal Care", "Beverages", "Snacks", "Bakery", "Bundles", "Stationary", "Home Appliances", "Alcohol", "Pets", "Decor & Flowers", "Services", "Shopping Bags", "Kids & Toys",],
+            categoryOptions: ["All Categories", "Fruits & Vegetables", "Organic", "Meat", "Dairy", "Food Cupboard", "Baby Care", "Easy Prep", "Condiments & Spices", "Home & Cleaning", "Bulk Buy", "Personal Care", "Beverages", "Snacks", "Bakery", "Bundles", "Stationary", "Home Appliances", "Alcohol", "Pets", "Decor & Flowers", "Services", "Shopping Bags", "Kids & Toys",],
             priceOptions: ["All", 500, 1000, 1500], // Example price thresholds
             ratingOptions: ["All", 2, 3, 4, 5], // Example minimum ratings
             homepageProductsCurrentFilter: 0,
@@ -5092,6 +5092,9 @@ export default class LandingPg extends Component {
             homepagePrdouctsFilter2: false,
             homepagePrdouctsFilter3: false,
             homepagePrdouctsFilter4: false,
+            homepageCurrentCategoryFilter: 'All Categories',
+            homepageCurrentPriceFilter: 'Price',
+            homepageCurrentRatingFilter: 'Rating',
 
         }
 
@@ -6120,8 +6123,25 @@ export default class LandingPg extends Component {
             selectedFilters: {
                 ...prevState.selectedFilters,
                 [type]: prevState.selectedFilters[type] === value ? "All" : value // Toggle selection
-            }
+            },
         }));
+        if (type === 'category') {
+            this.setState({ homepageCurrentCategoryFilter: value })
+        } else if (type === 'price') {
+            if (typeof(value) === 'string') {
+                this.setState({ homepageCurrentPriceFilter: `${value}` })
+            } else {
+                this.setState({ homepageCurrentPriceFilter: `Up to ${value}` })
+            }
+        } else if (type === 'rating') {
+            this.setState({ homepageCurrentRatingFilter: `${value} Stars & Up` })
+        }
+
+        for (let i = 1; i <= 4; i++) {
+            this.setState({
+                [`homepagePrdouctsFilter${i}`]: false
+            })
+        }
     };
 
     mainPageProductsFilterProducts = () => {
@@ -8602,15 +8622,15 @@ export default class LandingPg extends Component {
                                 <h1>Shop Now</h1>
                                 <div className='homepage-body-inner-header-options'>
                                     <div onClick={() => this.mainPageProductsFilterOptionClicked(1)} className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter1 ? 'selected' : ''}`}>
-                                        <h4>All Categories</h4>
+                                        <h4>{this.state.homepageCurrentCategoryFilter}</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
                                     <div onClick={() => this.mainPageProductsFilterOptionClicked(2)} className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter2 ? 'selected' : ''}`}>
-                                        <h4>Price</h4>
+                                        <h4>{this.state.homepageCurrentPriceFilter}</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
                                     <div onClick={() => this.mainPageProductsFilterOptionClicked(3)} className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter3 ? 'selected' : ''}`}>
-                                        <h4>Review</h4>
+                                        <h4>{this.state.homepageCurrentRatingFilter}</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
                                     <div onClick={() => this.mainPageProductsFilterOptionClicked(4)} className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
