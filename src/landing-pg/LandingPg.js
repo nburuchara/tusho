@@ -4562,6 +4562,14 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+.homepage-body-inner-header-option:hover {
+    border: 1px solid #ff5733;
+}
+
+.homepage-body-inner-header-option.selected {
+    border: 1px solid #ff5733;
+}
+
 .homepage-body-inner-header-option h4 {
     margin-top: 0px;
     margin-bottom: 0px;
