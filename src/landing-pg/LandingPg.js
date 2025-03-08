@@ -4585,6 +4585,12 @@ const Styles = styled.div `
     width: 13.5px;
     margin-top: 0.32rem;
     cursor: pointer;
+    transform: rotate(0deg);
+    transition-property: transform
+}
+
+.homepage-body-inner-header-option.selected img {
+    transform: rotate(180deg);
 }
 
 .homepage-body-inner-header-option-dropdown-option-1 {
@@ -4808,6 +4814,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-square,
 .jipange-settings-selected-date-screen-body-inner-header-categories-carousel,
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 img,
+.homepage-body-inner-header-option img,
 .homepage-body-inner-header-option-dropdown-option-1,
 .homepage-body-inner-header-option-dropdown-option-2,
 .homepage-body-inner-header-option-dropdown-option-3,
