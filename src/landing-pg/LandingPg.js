@@ -4591,7 +4591,7 @@ const Styles = styled.div `
     // margin-right: 20px;
     background-color: white;
     overflow-y: auto;
-    transform: translateY(-0.5rem);
+    transform: translateY(-1.5rem);
     opacity: 0;
     transition-property: transform, opacity;
 }
