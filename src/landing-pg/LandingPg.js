@@ -6126,15 +6126,24 @@ export default class LandingPg extends Component {
             },
         }));
         if (type === 'category') {
-            this.setState({ homepageCurrentCategoryFilter: value })
+            if (value === 'All') {
+                this.setState({ homepageCurrentCategoryFilter: `${value} Categories` })
+            } else {
+                this.setState({ homepageCurrentCategoryFilter: value })
+            }
         } else if (type === 'price') {
             if (typeof(value) === 'string') {
-                this.setState({ homepageCurrentPriceFilter: `${value}` })
+                this.setState({ homepageCurrentPriceFilter: `${value} Prices` })
             } else {
                 this.setState({ homepageCurrentPriceFilter: `Up to ${value}` })
             }
         } else if (type === 'rating') {
-            this.setState({ homepageCurrentRatingFilter: `${value} Stars & Up` })
+            if (typeof(value) === 'string') {
+                this.setState({ homepageCurrentRatingFilter: `${value} Ratings` })
+            } else {
+                this.setState({ homepageCurrentRatingFilter: `${value} Stars & Up` })
+            }
+            
         }
 
         for (let i = 1; i <= 4; i++) {
