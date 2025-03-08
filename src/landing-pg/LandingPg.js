@@ -4580,7 +4580,7 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-option-1 {
-    width: 21.2rem;
+    width: 18.2rem;
     border: 1px solid white;
     height: 16.5rem;
     display: flex;
@@ -4609,7 +4609,7 @@ const Styles = styled.div `
     height: 10rem;
     display: flex;
     flex-direction: column;
-    margin-left: -11.2rem;
+    margin-left: -8.2rem;
     padding: 0px;
     border-radius: 8px;
     background-color: white;
