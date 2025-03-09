@@ -7315,15 +7315,17 @@ export default class LandingPg extends Component {
                                                                                 const monthName = dateObject.toLocaleString('default', { month: 'short' });
 
                                                                                 return (
-                                                                                    <div 
-                                                                                        key={dateString} 
-                                                                                        className={`jipange-settings-selected-date-square ${this.state.selectedDates.has(dateString) && !this.state.confirmedJipangeDates.has(dateString) ? "show" : this.state.selectedDates.has(dateString) && this.state.confirmedJipangeDates.has(dateString) ? "show-confirmed" : ""}`}
-                                                                                        onClick={() => this.jipangeDateScheduleClicked(dateObject, dateString)}
-                                                                                    >
-                                                                                        <label>{monthName}</label> {/* Month */}
-                                                                                        <label>{day}</label> {/* Date */}
-                                                                                        <div className='jipange-settings-selected-date-square-item-count'><span>{(this.state.selectedDates.has(dateString) && this.state.confirmedJipangeDates.has(dateString)) ? '◉' : ''}</span>
-                                                                                            <label>{this.state.totalJipangeOrderQty === 0 ? 0 : this.state.totalJipangeOrderQty} items</label>
+                                                                                    <div className=''>
+                                                                                        <div 
+                                                                                            key={dateString} 
+                                                                                            className={`jipange-settings-selected-date-square ${this.state.selectedDates.has(dateString) && !this.state.confirmedJipangeDates.has(dateString) ? "show" : this.state.selectedDates.has(dateString) && this.state.confirmedJipangeDates.has(dateString) ? "show-confirmed" : ""}`}
+                                                                                            onClick={() => this.jipangeDateScheduleClicked(dateObject, dateString)}
+                                                                                        >
+                                                                                            <label>{monthName}</label> {/* Month */}
+                                                                                            <label>{day}</label> {/* Date */}
+                                                                                            <div className='jipange-settings-selected-date-square-item-count'><span>{(this.state.selectedDates.has(dateString) && this.state.confirmedJipangeDates.has(dateString)) ? '◉' : ''}</span>
+                                                                                                <label>{this.state.totalJipangeOrderQty === 0 ? 0 : this.state.totalJipangeOrderQty} items</label>
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 );
