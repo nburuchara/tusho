@@ -149,7 +149,7 @@ const Styles = styled.div `
 }
 
 .product-image {
-    width: 120px;
+    width: 150px;
     height: 150px;
     // border: 1px solid black;
     max-height: 150px;

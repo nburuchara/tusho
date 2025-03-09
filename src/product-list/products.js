@@ -13,6 +13,18 @@ const products = [
     },
     {
         id: 2,
+        name: "Tushop Fresh Imported Oranges",
+        category: "Fruits & Vegetables",
+        price: 165.00,
+        rating: 4.8,
+        image: "/assets/images/products/oranges-product.webp",
+        promo: false,
+        qty: 0,
+        jipangeSelected: false,
+        jipanges: []
+    },
+    {
+        id: 3,
         name: "MacCoffee Classic (200g)",
         category: "fruits",
         price: 1350.00,
@@ -24,7 +36,7 @@ const products = [
         jipanges: []
     },
     {
-        id: 3,
+        id: 4,
         name: "Blueband Original (250g)",
         category: "vegetables",
         price: 148.00,
@@ -36,7 +48,7 @@ const products = [
         jipanges: []
     },
     {
-        id: 4,
+        id: 5,
         name: "Brookside Whole Milk 1L Long Life",
         category: "Dairy Products",
         price: 156.00,
@@ -48,7 +60,20 @@ const products = [
         jipanges: []
     },
     {
-        id: 5,
+        id: 6,
+        name: "Tushop Fresh Local Watermelon",
+        category: "Dairy Products",
+        price: 369.00,
+        oldPrice: 369.00,
+        rating: 4.6,
+        image: "/assets/images/products/watermelon-product.webp",
+        promo: true,
+        qty: 0,
+        jipangeSelected: false,
+        jipanges: []
+    },
+    {
+        id: 7,
         name: "Brookside Full Cream Milk Powder Tin (500g)",
         category: "Dairy Products",
         price: 1198.00,
@@ -60,7 +85,7 @@ const products = [
         jipanges: []
     },
     {
-        id: 6,
+        id: 8,
         name: "McVities Digestive Biscuits (400g)",
         category: "dairy",
         price: 339.00,
@@ -72,7 +97,19 @@ const products = [
         jipanges: []
     },
     {
-        id: 7,
+        id: 9,
+        name: "Tushop Fresh Mixed Size Tomatoes",
+        category: "dairy",
+        price: 85.00,
+        rating: 4.8,
+        image: "/assets/images/products/tomatoes-product.webp",
+        promo: true,
+        qty: 0,
+        jipangeSelected: false,
+        jipanges: []
+    },
+    {
+        id: 10,
         name: "Mumias Sugar White (2kg)",
         category: "snacks",
         price: 278.00,
@@ -84,7 +121,19 @@ const products = [
         jipanges: []
     },
     {
-        id: 8,
+        id: 11,
+        name: "Tushop Fresh Red Onions",
+        category: "snacks",
+        price: 98.00,
+        rating: 4.9,
+        image: "/assets/images/products/onions-product.webp",
+        promo: false,
+        qty: 0,
+        jipangeSelected: false,
+        jipanges: []
+    },
+    {
+        id: 12,
         name: "Rinsun 100% Sunflower Oil (3L)",
         category: "snacks",
         price: 1149.00,
@@ -94,7 +143,19 @@ const products = [
         qty: 0,
         jipangeSelected: false,
         jipanges: []
-    }
+    },
+    {
+        id: 13,
+        name: "Tushop Fresh Ripe Bananas",
+        category: "Fruits & Vegetables",
+        price: 250.00,
+        rating: 4.9,
+        image: "/assets/images/products/bananas-product.webp",
+        promo: false,
+        qty: 0,
+        jipangeSelected: false,
+        jipanges: []
+    },
 ];
 
 export default products;
