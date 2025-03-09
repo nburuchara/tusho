@@ -8039,37 +8039,6 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                         }
 
-                                                                        {this.state.selectedJipangeProductCategory === 13 && 
-                                                                            <div className=''>
-                                                                                <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
-                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
-                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-                                                                                            <img src='/assets/images/products/digestives-product.webp'/>
-                                                                                        </div>
-                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
-                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
-                                                                                                {this.state.jipangeProduct1Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(1, 1, this.state.jipangeProduct1Cat1CountBtn, 250)}>+</button> }
-                                                                                                {this.state.jipangeProduct1Cat1CountBtn > 0 && 
-                                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
-                                                                                                        <div
-                                                                                                        onClick={() => this.jipangeItemQtyDecrease(1, 1, this.state.jipangeProduct1Cat1CountBtn, 250)}
-                                                                                                        className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
-                                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
-                                                                                                            {this.state.jipangeProduct1Cat1CountBtn}
-                                                                                                        </div>
-                                                                                                        <div
-                                                                                                        onClick={() => this.jipangeItemQtyIncrease(1, 1, this.state.jipangeProduct1Cat1CountBtn, 250)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
-                                                                                                    </div> 
-                                                                                                }
-                                                                                            </div>
-                                                                                            <h5>Ksh 339</h5>
-                                                                                            <p>McVities Digestive Biscuits (400g)</p>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>         
-                                                                            </div>
-                                                                        }
-
                                                                         {this.state.selectedJipangeProductCategory === 5 && 
                                                                             <div className=''>
                                                                                 <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
@@ -8152,7 +8121,70 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                             </div>
                                                                         }
-                                                                        {this.state.selectedJipangeProductCategory > 1 && this.state.selectedJipangeProductCategory !== 5 && this.state.selectedJipangeProductCategory !== 4 && this.state.selectedJipangeProductCategory !== 2 && 
+
+                                                                        {this.state.selectedJipangeProductCategory === 12 && 
+                                                                            <div className=''>
+                                                                                <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
+                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                                            <img src='assets/images/products/min-maid-product.webp'/>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                                {this.state.jipangeProduct1Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(1, 1, this.state.jipangeProduct1Cat1CountBtn, 250)}>+</button> }
+                                                                                                {this.state.jipangeProduct1Cat1CountBtn > 0 && 
+                                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyDecrease(1, 1, this.state.jipangeProduct1Cat1CountBtn, 250)}
+                                                                                                        className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
+                                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
+                                                                                                            {this.state.jipangeProduct1Cat1CountBtn}
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyIncrease(1, 1, this.state.jipangeProduct1Cat1CountBtn, 250)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                                    </div> 
+                                                                                                }
+                                                                                            </div>
+                                                                                            <h5>Ksh 75</h5>
+                                                                                            <p>Minute Maid: Mango Pulpy Juice (400ml)</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>         
+                                                                            </div>
+                                                                        }
+
+                                                                        {this.state.selectedJipangeProductCategory === 13 && 
+                                                                            <div className=''>
+                                                                                <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
+                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                                            <img src='/assets/images/products/digestives-product.webp'/>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                                {this.state.jipangeProduct1Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(1, 1, this.state.jipangeProduct1Cat1CountBtn, 250)}>+</button> }
+                                                                                                {this.state.jipangeProduct1Cat1CountBtn > 0 && 
+                                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyDecrease(1, 1, this.state.jipangeProduct1Cat1CountBtn, 250)}
+                                                                                                        className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
+                                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
+                                                                                                            {this.state.jipangeProduct1Cat1CountBtn}
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyIncrease(1, 1, this.state.jipangeProduct1Cat1CountBtn, 250)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                                    </div> 
+                                                                                                }
+                                                                                            </div>
+                                                                                            <h5>Ksh 339</h5>
+                                                                                            <p>McVities Digestive Biscuits (400g)</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>         
+                                                                            </div>
+                                                                        }
+
+                                                                        {this.state.selectedJipangeProductCategory > 1 && this.state.selectedJipangeProductCategory !== 5 && this.state.selectedJipangeProductCategory !== 4 && this.state.selectedJipangeProductCategory !== 2 && this.state.selectedJipangeProductCategory !== 12 && this.state.selectedJipangeProductCategory !== 13 && 
                                                                             <div className='jipange-settings-no-products'>
                                                                                 <div className='jipange-settings-no-products-icon'>
                                                                                     <img src='/assets/icons/home-jipange/empty-crate-icon.png'/>
