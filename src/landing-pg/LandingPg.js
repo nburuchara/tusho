@@ -1726,14 +1726,14 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-header {
     height: 5rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #20313a;
     display: flex;
     justify-content: space-between;
 }
 
 .navbar-profile-account-popup-header-left {
     width: 30%;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid #20313a;
     border-top-left-radius: 8px;
     position: relative;
     display: flex;
@@ -1834,7 +1834,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-body-left {
-    border-right: 1px solid #ccc;
+    border-right: 1px solid #20313a;
     width: 30%;
     height: 100%;
     position: relative;
@@ -6003,7 +6003,7 @@ export default class LandingPg extends Component {
         this.setState({
             completeJipangeBtnLoading: true,
             completeJipangeBtnTxt: false,
-            totalJipangeOrderQty: this.state.jipangeProduct1Cat1Qty + this.state.jipangeProduct2Cat1Qty + this.state.jipangeProduct3Cat1Qty + this.state.jipangeProduct4Cat1Qty + this.state.jipangeProduct5Cat1Qty
+            totalJipangeOrderQty: this.state.jipangeProduct1Cat1Qty + this.state.jipangeProduct2Cat1Qty + this.state.jipangeProduct3Cat1Qty + this.state.jipangeProduct4Cat1Qty + this.state.jipangeProduct5Cat1Qty + this.state.jipangeProduct1Cat4Qty + this.state.jipangeProduct2Cat4Qty + this.state.jipangeProduct1Cat5Qty + this.state.jipangeProduct2Cat5Qty + this.state.jipangeProduct3Cat5Qty + this.state.jipangeProduct4Cat5Qty + this.state.jipangeProduct1Cat12Qty + this.state.jipangeProduct1Cat13Qty
         }, () => {
             setTimeout(() => {
                 this.setState({
