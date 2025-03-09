@@ -2504,14 +2504,15 @@ const Styles = styled.div `
 .jipange-settings-selected-date-square h5 {
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 12px;
+    font-size: 5px;
 }
 
 .jipange-settings-selected-date-square label {
-    font-size: 12px;
+    font-size: 10px;
     font-family: poppins;
     margin-left: 3.5px;
-    margin-top: 3px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     cursor: pointer;
 }
 
