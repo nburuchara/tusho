@@ -2467,9 +2467,14 @@ const Styles = styled.div `
     color: #5e626a;
 }
 
+.jipange-settings-selected-dates-grid-option h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 .jipange-settings-selected-date-square {
     width: 88.5%;
-    height: 40px;
+    height: 50px;
     display: inline-block;
     border: 1px solid  #ff5733;
     border-radius: 8px;
@@ -2499,20 +2504,13 @@ const Styles = styled.div `
     background-color: #ff5733;
     border: 1px solid #ff5733;
     color: white;
-}
-
-.jipange-settings-selected-date-square h5 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    font-size: 5px;
-}
+ }
 
 .jipange-settings-selected-date-square label {
-    font-size: 10px;
+    font-size: 75%;
     font-family: poppins;
     margin-left: 3.5px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 15px;
     cursor: pointer;
 }
 
