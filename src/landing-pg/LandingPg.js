@@ -1738,6 +1738,7 @@ const Styles = styled.div `
     position: relative;
     display: flex;
     justify-content: center;
+    background-color: #20313a;
 }
 
 .navbar-profile-account-popup-header-left-search-bar-container {
@@ -1747,8 +1748,9 @@ const Styles = styled.div `
     height: 1.8rem;
     display: flex;
     justify-content: space-between;
-    border: 1px solid #ccc;
+    border: 1px solid white;
     border-radius: 6px;
+    background-color: white;
 }
 
 .navbar-profile-account-popup-header-left-search-bar-icon {
