@@ -2467,11 +2467,6 @@ const Styles = styled.div `
     color: #5e626a;
 }
 
-.jipange-settings-selected-dates-grid-option h5 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
 .jipange-settings-selected-date-square {
     width: 88.5%;
     height: 50px;
@@ -2484,6 +2479,8 @@ const Styles = styled.div `
     // transform: translateX(-5px); /* Initially position it above */
     transition-property: opacity, transform ; /* Smooth transition */
     cursor: pointer;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 .jipange-settings-selected-date-square:hover {
@@ -2504,13 +2501,20 @@ const Styles = styled.div `
     background-color: #ff5733;
     border: 1px solid #ff5733;
     color: white;
- }
+}
+
+.jipange-settings-selected-date-square h5 {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    font-size: 10px;
+    margin-left: 3.5px;
+}
 
 .jipange-settings-selected-date-square label {
     font-size: 75%;
     font-family: poppins;
     margin-left: 3.5px;
-    margin-top: 15px;
+    margin-top: 0px;
     cursor: pointer;
 }
 
@@ -2521,6 +2525,10 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-square-item-count span {
+    font-size: 10px;
+}
+
+.jipange-settings-selected-date-square-item-count.show span {
     font-size: 10px;
     margin-left: 3.5px;
 }
@@ -7329,7 +7337,7 @@ export default class LandingPg extends Component {
                                                                                             <h5>{(this.state.selectedDates.has(dateString) && this.state.confirmedJipangeDates.has(dateString)) ? 'Scheduled' : ''}</h5>
                                                                                             <label>{monthName}</label> {/* Month */}
                                                                                             <label>{day}</label> {/* Date */}
-                                                                                            <div className='jipange-settings-selected-date-square-item-count'><span>{(this.state.selectedDates.has(dateString) && this.state.confirmedJipangeDates.has(dateString)) ? '◉' : ''}</span>
+                                                                                            <div className={`jipange-settings-selected-date-square-item-count ${(this.state.selectedDates.has(dateString) && this.state.confirmedJipangeDates.has(dateString)) ? 'show' : ''}`}><span>{(this.state.selectedDates.has(dateString) && this.state.confirmedJipangeDates.has(dateString)) ? '◉' : ''}</span>
                                                                                                 <label>{this.state.totalJipangeOrderQty === 0 ? 0 : this.state.totalJipangeOrderQty} items</label>
                                                                                             </div>
                                                                                         </div>
