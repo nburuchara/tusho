@@ -4981,18 +4981,24 @@ export default class LandingPg extends Component {
             jipangeProduct2Cat4: 'Brookside Full Cream Milk Powder Tin (500g)',
             jipangeProduct2Cat4Qty: 0,
             jipangeProduct2Cat4Price: 0,
-            jipangeProduct1Cat5: 'Brookside Full Cream Milk Powder Tin (500g)',
+            jipangeProduct1Cat5: 'Blueband Original (250g)',
             jipangeProduct1Cat5Qty: 0,
             jipangeProduct1Cat5Price: 0,
-            jipangeProduct2Cat5: 'Brookside Full Cream Milk Powder Tin (500g)',
+            jipangeProduct2Cat5: 'Mumias Sugar White (2kg)',
             jipangeProduct2Cat5Qty: 0,
             jipangeProduct2Cat5Price: 0,
-            jipangeProduct3Cat5: 'Brookside Full Cream Milk Powder Tin (500g)',
+            jipangeProduct3Cat5: 'MacCoffee Classic (200g)',
             jipangeProduct3Cat5Qty: 0,
             jipangeProduct3Cat5Price: 0,
-            jipangeProduct4Cat5: 'Brookside Full Cream Milk Powder Tin (500g)',
+            jipangeProduct4Cat5: 'Rinsun 100% Sunflower Oil (3L)',
             jipangeProduct4Cat5Qty: 0,
             jipangeProduct4Cat5Price: 0,
+            jipangeProduct1Cat12: 'Minute Maid: Mango Pulpy Juice (400ml)',
+            jipangeProduct1Cat12Qty: 0,
+            jipangeProduct1Cat12Price: 0,
+            jipangeProduct1Cat13: 'McVities Digestive Biscuits (400g)',
+            jipangeProduct1Cat13Qty: 0,
+            jipangeProduct1Cat13Price: 0,
             totalJipangeOrderQty: 0,
             selectedJipangePaymentOption: "option1",
             showJipangePaymentLoading: false,
@@ -7490,6 +7496,91 @@ export default class LandingPg extends Component {
                                                                                             </div>
                                                                                         </div>
                                                                                     }
+
+                                                                                    {this.state.jipangeProduct1Cat4Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct1Cat4} <label>({this.state.jipangeProduct1Cat4Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct1Cat4Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+                                                                                    {this.state.jipangeProduct2Cat4Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct2Cat4} <label>({this.state.jipangeProduct2Cat4Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct2Cat4Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+
+                                                                                    {this.state.jipangeProduct1Cat5Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct1Cat5} <label>({this.state.jipangeProduct1Cat5Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct1Cat5Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+                                                                                    {this.state.jipangeProduct2Cat5Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct2Cat5} <label>({this.state.jipangeProduct2Cat5Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct2Cat5Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+                                                                                    {this.state.jipangeProduct3Cat5Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct3Cat5} <label>({this.state.jipangeProduct3Cat5Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct3Cat5Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+                                                                                    {this.state.jipangeProduct4Cat5Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct4Cat5} <label>({this.state.jipangeProduct4Cat5Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct4Cat5Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+                                                                                    
+                                                                                    {this.state.jipangeProduct1Cat12Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct1Cat12} <label>({this.state.jipangeProduct1Cat12Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct1Cat12Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+
+                                                                                    {this.state.jipangeProduct1Cat13Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct1Cat13} <label>({this.state.jipangeProduct1Cat13Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct1Cat13Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal'>
                                                                                     <div className='jipange-settings-selected-date-screen-header-inner-body-items-subtotal-label'>
@@ -8019,7 +8110,7 @@ export default class LandingPg extends Component {
                                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
                                                                                             <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
                                                                                                 {this.state.jipangeProduct1Cat4CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(1, 4, this.state.jipangeProduct1Cat4CountBtn, 156)}>+</button> }
-                                                                                                {this.state.jipangeProduct1Cat1CountBtn > 0 && 
+                                                                                                {this.state.jipangeProduct1Cat4CountBtn > 0 && 
                                                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
                                                                                                         <div
                                                                                                         onClick={() => this.jipangeItemQtyDecrease(1, 4, this.state.jipangeProduct1Cat4CountBtn, 156)}
@@ -8383,6 +8474,90 @@ export default class LandingPg extends Component {
                                                                                             </div>
                                                                                             <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
                                                                                                 <p>{this.state.jipangeProduct5Cat1Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+
+{this.state.jipangeProduct1Cat4Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct1Cat4} <label>({this.state.jipangeProduct1Cat4Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct1Cat4Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+                                                                                    {this.state.jipangeProduct2Cat4Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct2Cat4} <label>({this.state.jipangeProduct2Cat4Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct2Cat4Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+
+                                                                                    {this.state.jipangeProduct1Cat5Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct1Cat5} <label>({this.state.jipangeProduct1Cat5Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct1Cat5Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+                                                                                    {this.state.jipangeProduct2Cat5Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct2Cat5} <label>({this.state.jipangeProduct2Cat5Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct2Cat5Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+                                                                                    {this.state.jipangeProduct3Cat5Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct3Cat5} <label>({this.state.jipangeProduct3Cat5Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct3Cat5Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+                                                                                    {this.state.jipangeProduct4Cat5Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct4Cat5} <label>({this.state.jipangeProduct4Cat5Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct4Cat5Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+                                                                                    
+                                                                                    {this.state.jipangeProduct1Cat12Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct1Cat12} <label>({this.state.jipangeProduct1Cat12Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct1Cat12Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+
+                                                                                    {this.state.jipangeProduct1Cat13Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct1Cat13} <label>({this.state.jipangeProduct1Cat13Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct1Cat13Price}</p>
                                                                                             </div>
                                                                                         </div>
                                                                                     }
