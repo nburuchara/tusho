@@ -2499,7 +2499,13 @@ const Styles = styled.div `
     background-color: #ff5733;
     border: 1px solid #ff5733;
     color: white;
- }
+}
+
+.jipange-settings-selected-date-square h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 65%;
+}
 
 .jipange-settings-selected-date-square label {
     font-size: 75%;
@@ -7315,12 +7321,13 @@ export default class LandingPg extends Component {
                                                                                 const monthName = dateObject.toLocaleString('default', { month: 'short' });
 
                                                                                 return (
-                                                                                    <div className=''>
+                                                                                    <div className='jipange-settings-selected-dates-grid-option'>
                                                                                         <div 
                                                                                             key={dateString} 
                                                                                             className={`jipange-settings-selected-date-square ${this.state.selectedDates.has(dateString) && !this.state.confirmedJipangeDates.has(dateString) ? "show" : this.state.selectedDates.has(dateString) && this.state.confirmedJipangeDates.has(dateString) ? "show-confirmed" : ""}`}
                                                                                             onClick={() => this.jipangeDateScheduleClicked(dateObject, dateString)}
                                                                                         >
+                                                                                            <h5>{(this.state.selectedDates.has(dateString) && this.state.confirmedJipangeDates.has(dateString)) ? 'Scheduled' : ''}</h5>
                                                                                             <label>{monthName}</label> {/* Month */}
                                                                                             <label>{day}</label> {/* Date */}
                                                                                             <div className='jipange-settings-selected-date-square-item-count'><span>{(this.state.selectedDates.has(dateString) && this.state.confirmedJipangeDates.has(dateString)) ? '◉' : ''}</span>
