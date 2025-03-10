@@ -407,9 +407,9 @@ const Styles = styled.div `
     right: -10px;
     width: 19px; /* Badge width */
     height: 19px; /* Badge height */
-    background-color: white;
-    border: 1.5px solid #FF5733;
-    color: #FF5733;
+    background-color: #20313a;
+    border: 2px solid #FF5733;
+    color: #FFf;
     font-size: 11.5px;
     font-weight: bold;
     display: flex;
@@ -6708,7 +6708,7 @@ export default class LandingPg extends Component {
                     <div className={`navbar-options-checkout-home ${this.state.homeScreenCartClicked ? 'clicked' : ''}`}>
                         <div className='navbar-options-checkout-home-header'>
                                 <div className='navbar-options-checkout-home-header-details'>
-                                    <p>Your cart has (<label>{this.state.totalCartItems}</label>) <span>items</span></p>
+                                    <p>Your cart has (<label>{this.state.cart.length}</label>) <span>items</span></p>
                                 </div>
                                 <div className='navbar-options-checkout-home-header-icon'>
                                     <img onClick={this.hideHomeCartClicked} src='/assets/icons/navbar/clear-search-icon-color.png'/>
