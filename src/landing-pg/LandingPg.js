@@ -1733,7 +1733,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-header-left {
     width: 30%;
-    border-right: 1px solid #20313a;
+    border-right: 0.5px solid #ff5733;
     border-top-left-radius: 8px;
     position: relative;
     display: flex;
@@ -1783,11 +1783,13 @@ const Styles = styled.div `
     border-top-right-radius: 8px;
     display: flex;
     justify-content: space-between;
+    background-color: #20313a;
 }
 
 .navbar-profile-account-popup-header-right-label {
     width: 85%;
     // border: 1.5px solid #ccc;
+    color: white;
 }
 
 .navbar-profile-account-popup-header-right-close {
@@ -1834,7 +1836,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-body-left {
-    border-right: 1px solid #20313a;
+    border-right: 1px solid #ccc;
     width: 30%;
     height: 100%;
     position: relative;
@@ -2074,8 +2076,8 @@ const Styles = styled.div `
     border: 2px solid #ccc;
     border-radius: 50%;
     padding: 11.5px;
-    background-color: #f6f8fa;
-    background-image: url('/assets/icons/home-profile/profile-img-bg.png'); /* Set your background image */
+    background-color: #20313a;
+    // background-image: url('/assets/icons/home-profile/profile-img-bg.png'); /* Set your background image */
     background-size: cover;
     background-position: center;
     display: flex; /* Helps center the image */
