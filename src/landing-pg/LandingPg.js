@@ -389,12 +389,19 @@ const Styles = styled.div `
     position: relative; /* Add position relative to position the badge */
     padding: 0; /* Adjust padding to avoid misalignment */
     cursor: pointer;
+    border: 1px solid white;
+}
+
+.navbar-shopping-cart:hover {
+    border: 1px solid #20313a;
+    cursor: pointer;
 }
 
 .navbar-shopping-cart img {
     width: 18px;
     margin-right: 35px;
     margin: auto;
+    cursor: pointer;
  }
 
  .navbar-shopping-cart img:hover {
@@ -431,6 +438,12 @@ const Styles = styled.div `
     padding-right: 1%;
     position: relative; /* Add position relative to position the badge */
     padding: 0; /* Adjust padding to avoid misalignment */
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.navbar-profile-btn:hover {
+    border: 1px solid #20313a;
     cursor: pointer;
 }
 
@@ -6444,11 +6457,11 @@ export default class LandingPg extends Component {
                             </div>
                         </div>
                         <div className='navbar-shopping-cart-area'>
-                            <div className='navbar-shopping-cart'>
+                            <div onClick={this.openHomeShoppingCartClicked} className='navbar-shopping-cart'>
                                 <img onClick={this.openHomeShoppingCartClicked} src='/assets/icons/navbar/cart-icon.png'/>
                                 <div className="navbar-shopping-cart-badge">{this.state.cart.length}</div>
                             </div>
-                            <div className='navbar-profile-btn'>
+                            <div onClick={this.openHomeProfileOptionsClicked} className='navbar-profile-btn'>
                                 <img onClick={this.openHomeProfileOptionsClicked} src='/assets/icons/navbar/profile-btn-icon.png'/>
                             </div>
                         </div>
