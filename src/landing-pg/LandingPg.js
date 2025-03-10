@@ -6462,7 +6462,7 @@ export default class LandingPg extends Component {
                                 <div className="navbar-shopping-cart-badge">{this.state.cart.length}</div>
                             </div>
                             <div onClick={this.openHomeProfileOptionsClicked} className='navbar-profile-btn'>
-                                <img onClick={this.openHomeProfileOptionsClicked} src='/assets/icons/navbar/profile-btn-icon.png'/>
+                                <img src='/assets/icons/navbar/profile-btn-icon.png'/>
                             </div>
                         </div>
                     </div>
