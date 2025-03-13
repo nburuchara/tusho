@@ -6235,7 +6235,13 @@ export default class LandingPg extends Component {
                     ...Object.fromEntries([...Array(4)].map((_, i) => [`homepagePrdouctsFilter${i + 1}`, false])) // Reset other filters
                 };
             });
-        }, 500); // 0.5s delay for smoother UX without long lag
+
+            // Reset newlyLoadedProducts after 1s so skeleton disappears
+            setTimeout(() => {
+                this.setState({ newlyLoadedProducts: [] });
+            }, 1000);
+
+        }, 500); // 0.5s delay before applying filter
     };
 
     mainPageProductsFilterProducts = () => {

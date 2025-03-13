@@ -2,7 +2,7 @@ const products = [
     {
         id: 1,
         name: "Minute Maid: Mango Pulpy Juice (400ml)",
-        category: "fruits",
+        category: "Beverages",
         price: 75.00,
         rating: 4.5,
         image: "assets/images/products/min-maid-product.webp",
@@ -26,7 +26,7 @@ const products = [
     {
         id: 3,
         name: "MacCoffee Classic (200g)",
-        category: "fruits",
+        category: "Food Cupboard",
         price: 1350.00,
         rating: 4.7,
         image: "/assets/images/products/mac-coffee-product.webp",
@@ -38,7 +38,7 @@ const products = [
     {
         id: 4,
         name: "Blueband Original (250g)",
-        category: "vegetables",
+        category: "Food Cupboard",
         price: 148.00,
         rating: 4.3,
         image: "/assets/images/products/bband-product.png",
@@ -53,7 +53,7 @@ const products = [
     {
         id: 5,
         name: "Brookside Whole Milk 1L Long Life",
-        category: "Dairy Products",
+        category: "Dairy",
         price: 156.00,
         rating: 4.8,
         image: "/assets/images/products/brookside-milk-product.webp",
@@ -68,7 +68,7 @@ const products = [
     {
         id: 6,
         name: "Tushop Fresh Local Watermelon",
-        category: "Dairy Products",
+        category: "Fruits & Vegetables",
         price: 369.00,
         oldPrice: 369.00,
         rating: 4.6,
@@ -81,7 +81,7 @@ const products = [
     {
         id: 7,
         name: "Brookside Full Cream Milk Powder Tin (500g)",
-        category: "Dairy Products",
+        category: "Dairy",
         price: 1198.00,
         rating: 4.6,
         image: "/assets/images/products/brookside-milk-powder-product.webp",
@@ -93,7 +93,7 @@ const products = [
     {
         id: 8,
         name: "McVities Digestive Biscuits (400g)",
-        category: "dairy",
+        category: "Snacks",
         price: 339.00,
         rating: 4.9,
         image: "/assets/images/products/digestives-product.webp",
@@ -106,7 +106,7 @@ const products = [
     {
         id: 9,
         name: "Tushop Fresh Mixed Size Tomatoes",
-        category: "dairy",
+        category: "Fruits & Vegetables",
         price: 85.00,
         rating: 4.8,
         image: "/assets/images/products/tomatoes-product.webp",
@@ -118,7 +118,7 @@ const products = [
     {
         id: 10,
         name: "Mumias Sugar White (2kg)",
-        category: "snacks",
+        category: "Food Cupboard",
         price: 278.00,
         rating: 4.7,
         image: "/assets/images/products/mumias-sugar-product.webp",
@@ -133,7 +133,7 @@ const products = [
     {
         id: 11,
         name: "Tushop Fresh Red Onions",
-        category: "snacks",
+        category: "Fruits & Vegetables",
         price: 98.00,
         rating: 4.9,
         image: "/assets/images/products/onions-product.webp",
@@ -145,7 +145,7 @@ const products = [
     {
         id: 12,
         name: "Rinsun 100% Sunflower Oil (3L)",
-        category: "snacks",
+        category: "Food Cupboard",
         price: 1149.00,
         rating: 4.4,
         image: "/assets/images/products/rinsun-oil-product.webp",
