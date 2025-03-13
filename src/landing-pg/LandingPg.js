@@ -5171,6 +5171,7 @@ export default class LandingPg extends Component {
             products: products,
             visibleCount: 6, // Initial number of items to render
             filteredProductCount: 0,
+            newlyLoadedProducts: [],
             productsLoading: false,
             loadingMore: false,
             selectedFilters: {
@@ -6440,16 +6441,29 @@ export default class LandingPg extends Component {
     };
     
     loadMoreItems = () => {
-        if (this.state.loadingMore) return; // Prevent multiple calls
+        if (this.state.loadingMore) return;
     
         this.setState({ loadingMore: true });
     
+        // Simulate fetching new items (replace with actual API call)
         setTimeout(() => {
-            this.setState((prevState) => ({
-                visibleCount: prevState.visibleCount + 6, // Load 6 more items
-                loadingMore: false // Hide spinner after loading
-            }));
-        }, 1500); // Simulate fetching delay
+            const { products, visibleCount } = this.state;
+            const newVisibleCount = visibleCount + 6; // Load 6 more items
+    
+            // Identify newly loaded products
+            const newlyLoadedProducts = products.slice(visibleCount, newVisibleCount).map(p => p.id);
+    
+            this.setState({
+                visibleCount: newVisibleCount,
+                newlyLoadedProducts,
+                loadingMore: false,
+            });
+    
+            // Remove loading skeleton for these items after a short delay
+            setTimeout(() => {
+                this.setState({ newlyLoadedProducts: [] });
+            }, 2000); // Adjust delay as needed
+        }, 1500);
     };
 
     render () {
@@ -9404,7 +9418,7 @@ export default class LandingPg extends Component {
                                             <ProductCard 
                                                 key={product.id} 
                                                 product={product} 
-                                                productsLoading={this.state.productsLoading}
+                                                productsLoading={this.state.newlyLoadedProducts.includes(product.id)}
                                                 onQtyChange={this.mainPageProductsHandleQtyChange}
                                                 onJipangeSelected={this.mainPageProductsHandleJipangeSelected}
                                             />
