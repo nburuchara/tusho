@@ -4821,6 +4821,16 @@ const Styles = styled.div `
     gap: 15px;
 }
 
+.loading-products-spinner {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 8px;
+    color: #333;
+    font-family: poppins;
+}
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
@@ -5159,7 +5169,9 @@ export default class LandingPg extends Component {
             //* - - HOMESCREEN PRODUCTS GRID DISPLAY - - *//
 
             products: products,
+            visibleCount: 6, // Initial number of items to render
             productsLoading: false,
+            loadingMore: false,
             selectedFilters: {
                 category: "All",
                 price: "All",
@@ -5190,21 +5202,21 @@ export default class LandingPg extends Component {
 
     componentDidMount = () => {
         document.addEventListener('click', this.handleOutsideSearchBarClick);
+        window.addEventListener("scroll", this.handleScroll);
         // this.loadCartTotal()
         // this.loadCartQty()
-        this.setState({
-            productsLoading: true
-        }, () => {
+        this.setState({ productsLoading: true }, () => {
             setTimeout(() => {
-                this.setState({ productsLoading: false }); // Replace with real API call
-            }, 5000);
-        })
+                this.setState({ productsLoading: false });
+            }, 5000); // Skeleton loader for 5s
+        });
         
     }
 
     componentWillUnmount() {
         // Remove the click event listener to prevent memory leaks
         document.removeEventListener('click', this.handleOutsideSearchBarClick);
+        window.removeEventListener("scroll", this.handleScroll);
         clearInterval(this.timer); // Clear the timer when the component unmounts
     }
 
@@ -6410,6 +6422,28 @@ export default class LandingPg extends Component {
                 products: updatedProducts
             };
         });
+    };
+
+    handleScroll = () => {
+        if (
+            window.innerHeight + window.scrollY >= document.body.offsetHeight - 100 &&
+            !this.state.loadingMore
+        ) {
+            this.loadMoreItems();
+        }
+    };
+    
+    loadMoreItems = () => {
+        if (this.state.loadingMore) return; // Prevent multiple calls
+    
+        this.setState({ loadingMore: true });
+    
+        setTimeout(() => {
+            this.setState((prevState) => ({
+                visibleCount: prevState.visibleCount + 6, // Load 6 more items
+                loadingMore: false // Hide spinner after loading
+            }));
+        }, 1500); // Simulate fetching delay
     };
 
     render () {
@@ -9382,16 +9416,23 @@ export default class LandingPg extends Component {
 
                                   
                                     <div className="product-grid">
-                                        {filteredProducts.map((product) => (
+                                        {filteredProducts.slice(0, this.state.visibleCount).map((product) => (
                                             <ProductCard 
-                                            key={product.id} 
-                                            product={product} 
-                                            productsLoading={this.state.productsLoading}
-                                            onQtyChange={this.mainPageProductsHandleQtyChange}
-                                            onJipangeSelected={this.mainPageProductsHandleJipangeSelected}
+                                                key={product.id} 
+                                                product={product} 
+                                                productsLoading={this.state.productsLoading}
+                                                onQtyChange={this.mainPageProductsHandleQtyChange}
+                                                onJipangeSelected={this.mainPageProductsHandleJipangeSelected}
                                             />
                                         ))}
-                                    </div> 
+                                    </div>
+
+                                    {/* Show spinner when loading more items */}
+                                    {this.state.loadingMore && (
+                                        <div className="loading-products-spinner">
+                                            Loading more products...
+                                        </div>
+                                    )}
 
                                 </div> 
                                 
