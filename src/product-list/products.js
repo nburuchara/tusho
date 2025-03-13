@@ -100,7 +100,8 @@ const products = [
         promo: true,
         qty: 0,
         jipangeSelected: false,
-        jipanges: []
+        jipanges: [],
+        jipangeDate: 'Mar 21'
     },
     {
         id: 9,

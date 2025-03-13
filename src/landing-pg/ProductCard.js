@@ -71,6 +71,7 @@ const Styles = styled.div `
 
 .product-card-inner-jipange-menu-option-select input[type="checkbox"] {
     accent-color: #ff5733; 
+    cursor: pointer;
 }
 
 .product-card-inner-jipange-menu-option-name {

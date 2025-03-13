@@ -6739,6 +6739,7 @@ export default class LandingPg extends Component {
                                         </div>
                                         <div className="navbar-options-checkout-home-item-cell-details">
                                             <p>{item.name}</p>
+                                            <h5>{}</h5>
                                         </div>
                                         <div className="navbar-options-checkout-home-item-cell-qty">
                                             <div className="navbar-options-checkout-home-item-cell-qty-toggle">
