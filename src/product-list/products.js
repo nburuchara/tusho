@@ -44,6 +44,9 @@ const products = [
         image: "/assets/images/products/bband-product.png",
         promo: false,
         qty: 0,
+        pamojaItem: true,
+        pamojaCurrentSelected: 9,
+        pamojaCurrentTotal: 30,
         jipangeSelected: false,
         jipanges: []
     },
@@ -56,6 +59,9 @@ const products = [
         image: "/assets/images/products/brookside-milk-product.webp",
         promo: true,
         qty: 0,
+        pamojaItem: true,
+        pamojaCurrentSelected: 16,
+        pamojaCurrentTotal: 20,
         jipangeSelected: false,
         jipanges: []
     },
@@ -117,6 +123,9 @@ const products = [
         image: "/assets/images/products/mumias-sugar-product.webp",
         promo: false,
         qty: 0,
+        pamojaItem: true,
+        pamojaCurrentSelected: 12,
+        pamojaCurrentTotal: 40,
         jipangeSelected: false,
         jipanges: []
     },
