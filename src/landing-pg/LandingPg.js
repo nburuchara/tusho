@@ -1053,6 +1053,14 @@ const Styles = styled.div `
     // border: 1px solid black;
 }
 
+.navbar-options-checkout-home-body-empty-cart {
+    margin-left: 5%;
+    font-family: poppins;
+    font-size: 90%;
+    font-weight: bold;
+    color: #ff5733;
+}
+
 .navbar-options-checkout-home-item-cell {
     height: auto;
     // border: 1px solid black;
@@ -6824,7 +6832,7 @@ export default class LandingPg extends Component {
                             </div>
                         <div className='navbar-options-checkout-home-body'>
                             {this.state.cart.length === 0 ? (
-                                <p>Your cart is empty</p>
+                                <p className='navbar-options-checkout-home-body-empty-cart'>Your cart is empty</p>
                             ) : (
                                 this.state.cart.map((item) => (
                                     <div key={item.id} className="navbar-options-checkout-home-item-cell">
