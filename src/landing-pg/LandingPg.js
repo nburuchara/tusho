@@ -6246,7 +6246,12 @@ export default class LandingPg extends Component {
                 if (updatedProduct.qty > 0) {
                     // Update quantity in cart
                     updatedCart = prevState.cart.map((item) =>
-                        item.id === productId ? { ...item, quantity: updatedProduct.qty } : item
+                        item.id === productId ? { 
+                            ...item, 
+                            quantity: updatedProduct.qty,
+                            jipangeSelected: updatedProduct.jipangeSelected, 
+                            jipangeDate: updatedProduct.jipangeDate
+                         } : item
                     );
                 } else {
                     // Remove from cart if qty is 0
@@ -6254,7 +6259,12 @@ export default class LandingPg extends Component {
                 }
             } else if (updatedProduct.qty > 0) {
                 // Add to cart if it's a new product
-                updatedCart = [...prevState.cart, { ...updatedProduct, quantity: updatedProduct.qty }];
+                updatedCart = [...prevState.cart, { 
+                    ...updatedProduct, 
+                    quantity: updatedProduct.qty,
+                    jipangeSelected: updatedProduct.jipangeSelected, 
+                    jipangeDate: updatedProduct.jipangeDate
+                 }];
             }
     
             return {
@@ -6265,13 +6275,28 @@ export default class LandingPg extends Component {
     };
 
     mainPageProductsHandleJipangeSelected = (productId) => {
-        this.setState((prevState) => ({
-            products: prevState.products.map((product) =>
+        this.setState((prevState) => {
+            // Update jipangeSelected in the products list
+            const updatedProducts = prevState.products.map((product) =>
                 product.id === productId
-                    ? { ...product, jipangeSelected: !product.jipangeSelected } // Correctly toggles at the product level
+                    ? { ...product, jipangeSelected: !product.jipangeSelected }
                     : product
-            )
-        }));
+            );
+    
+            // Also update jipangeSelected in the cart if the product exists there
+            const updatedCart = prevState.cart.map((item) =>
+                item.id === productId
+                    ? { ...item, jipangeSelected: !item.jipangeSelected }
+                    : item
+            );
+    
+            return {
+                products: updatedProducts,
+                cart: updatedCart // Ensure cart reflects changes
+            };
+        }, () => {
+            console.log(this.state.products, this.state.cart); // Verify changes
+        });
     };
 
     mainPageProductsFilterOptionClicked = (option) => {
@@ -6739,7 +6764,7 @@ export default class LandingPg extends Component {
                                         </div>
                                         <div className="navbar-options-checkout-home-item-cell-details">
                                             <p>{item.name}</p>
-                                            <h5>{}</h5>
+                                            <h5>{item.jipangeSelected ? `Jipange: ${item.jipangeDate}` : ''}</h5>
                                         </div>
                                         <div className="navbar-options-checkout-home-item-cell-qty">
                                             <div className="navbar-options-checkout-home-item-cell-qty-toggle">
