@@ -1103,6 +1103,23 @@ const Styles = styled.div `
     font-family: poppins;
 }
 
+.navbar-options-checkout-home-item-cell-details button {
+    background-color: #ff5733;
+    border: 1px solid #ff5733;
+    width: 85%;
+    border-radius: 8px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.navbar-options-checkout-home-item-cell-details h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-family: poppins;
+    font-size: 80%;
+}
+
 .navbar-options-checkout-home-item-cell-qty {
     width: 27.5%;
     // border: 1px solid black;
@@ -6764,7 +6781,7 @@ export default class LandingPg extends Component {
                                         </div>
                                         <div className="navbar-options-checkout-home-item-cell-details">
                                             <p>{item.name}</p>
-                                            <h5>{item.jipangeSelected ? `Jipange: ${item.jipangeDate}` : ''}</h5>
+                                            <button><h5>{item.jipangeSelected ? `Jipange: ${item.jipangeDate}` : ''}</h5></button>
                                         </div>
                                         <div className="navbar-options-checkout-home-item-cell-qty">
                                             <div className="navbar-options-checkout-home-item-cell-qty-toggle">
