@@ -6284,10 +6284,13 @@ export default class LandingPg extends Component {
                     jipangeDate: updatedProduct.jipangeDate
                  }];
             }
+
+            const totalCartPrice = updatedCart.reduce((total, item) => total + item.price * item.quantity, 0);
     
             return {
                 products: updatedProducts,
-                cart: updatedCart
+                cart: updatedCart,
+                totalCartPrice
             };
         });
     };
