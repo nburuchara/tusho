@@ -4800,6 +4800,7 @@ const Styles = styled.div `
 
 .dial-button.active {
     left: 21.5px;  /* Slide to the right */
+    background-color: #ff5733;
 }
 
 .homepage-body-inner-body {
