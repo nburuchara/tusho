@@ -6212,38 +6212,30 @@ export default class LandingPg extends Component {
     }
 
     mainPageProductsHandleFilterChange = (type, value) => {
-        this.setState((prevState) => ({
-            selectedFilters: {
-                ...prevState.selectedFilters,
-                [type]: prevState.selectedFilters[type] === value ? "All" : value // Toggle selection
-            },
-        }));
-        if (type === 'category') {
-            if (value === 'All') {
-                this.setState({ homepageCurrentCategoryFilter: `${value} Categories` })
-            } else {
-                this.setState({ homepageCurrentCategoryFilter: value })
-            }
-        } else if (type === 'price') {
-            if (typeof(value) === 'string') {
-                this.setState({ homepageCurrentPriceFilter: `${value} Prices` })
-            } else {
-                this.setState({ homepageCurrentPriceFilter: `Up to ${value}` })
-            }
-        } else if (type === 'rating') {
-            if (typeof(value) === 'string') {
-                this.setState({ homepageCurrentRatingFilter: `${value} Ratings` })
-            } else {
-                this.setState({ homepageCurrentRatingFilter: `${value} Stars & Up` })
-            }
-            
-        }
+        // Set loading state immediately
+        this.setState({ productsLoading: true });
 
-        for (let i = 1; i <= 4; i++) {
-            this.setState({
-                [`homepagePrdouctsFilter${i}`]: false
-            })
-        }
+        setTimeout(() => {
+            this.setState((prevState) => {
+                const newFilters = {
+                    ...prevState.selectedFilters,
+                    [type]: prevState.selectedFilters[type] === value ? "All" : value // Toggle selection
+                };
+
+                const filteredProducts = this.mainPageProductsFilterProducts(newFilters);
+                const newlyLoadedProductIds = filteredProducts.map(product => product.id); // Track newly loaded products
+
+                return {
+                    selectedFilters: newFilters,
+                    newlyLoadedProducts: newlyLoadedProductIds, // Only store new items for skeleton effect
+                    productsLoading: false, // Turn off global loading
+                    homepageCurrentCategoryFilter: type === 'category' ? (value === 'All' ? `${value} Categories` : value) : prevState.homepageCurrentCategoryFilter,
+                    homepageCurrentPriceFilter: type === 'price' ? (typeof value === 'string' ? `${value} Prices` : `Up to ${value}`) : prevState.homepageCurrentPriceFilter,
+                    homepageCurrentRatingFilter: type === 'rating' ? (typeof value === 'string' ? `${value} Ratings` : `${value} Stars & Up`) : prevState.homepageCurrentRatingFilter,
+                    ...Object.fromEntries([...Array(4)].map((_, i) => [`homepagePrdouctsFilter${i + 1}`, false])) // Reset other filters
+                };
+            });
+        }, 500); // 0.5s delay for smoother UX without long lag
     };
 
     mainPageProductsFilterProducts = () => {
@@ -6333,18 +6325,15 @@ export default class LandingPg extends Component {
     };
 
     mainPageProductsFilterOptionClicked = (option) => {
-      
-        this.setState((prevState) => ({
-            [`homepagePrdouctsFilter${option}`]: !prevState[`homepagePrdouctsFilter${option}`]
-        }))
-
-        for (let i = 1; i <= 4; i++) {
-            if (option !== i) {
-                this.setState({
-                    [`homepagePrdouctsFilter${i}`]: false
-                })
+        this.setState((prevState) => {
+            let newState = {};
+        
+            for (let i = 1; i <= 4; i++) {
+                newState[`homepagePrdouctsFilter${i}`] = i === option ? !prevState[`homepagePrdouctsFilter${option}`] : false;
             }
-        }
+        
+            return newState;
+        });
     }
 
     addToCart = (product) => {
@@ -9418,7 +9407,8 @@ export default class LandingPg extends Component {
                                             <ProductCard 
                                                 key={product.id} 
                                                 product={product} 
-                                                productsLoading={this.state.newlyLoadedProducts.includes(product.id)}
+                                                newlyLoadedProducts={this.state.newlyLoadedProducts} 
+                                                productsLoading={this.state.productsLoading || this.state.newlyLoadedProducts.includes(product.id)}
                                                 onQtyChange={this.mainPageProductsHandleQtyChange}
                                                 onJipangeSelected={this.mainPageProductsHandleJipangeSelected}
                                             />

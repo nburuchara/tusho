@@ -324,7 +324,7 @@ class ProductCard extends Component {
     }
 
     render() {
-        const { product, onQtyChange, onJipangeSelected, productsLoading } = this.props;
+        const { product, onQtyChange, onJipangeSelected, productsLoading, newlyLoadedProducts } = this.props;
       
 
         return (
@@ -363,7 +363,7 @@ class ProductCard extends Component {
                         )}
                     </div>
                     <div className="product-card-inner-body">
-                        {productsLoading ? (
+                        {productsLoading || newlyLoadedProducts.includes(product.id) ? (
                             <>
                                 <div className="loading-skeleton text-skeleton"></div>
                                 <div className="loading-skeleton text-skeleton"></div>
