@@ -4824,9 +4824,9 @@ const Styles = styled.div `
 .loading-products-spinner {
     text-align: center;
     padding: 20px;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
-    margin-top: 8px;
+    margin-top: 10px;
     color: #333;
     font-family: poppins;
 }
@@ -5170,6 +5170,7 @@ export default class LandingPg extends Component {
 
             products: products,
             visibleCount: 6, // Initial number of items to render
+            filteredProductCount: 0,
             productsLoading: false,
             loadingMore: false,
             selectedFilters: {
@@ -5202,39 +5203,37 @@ export default class LandingPg extends Component {
 
     componentDidMount = () => {
         document.addEventListener('click', this.handleOutsideSearchBarClick);
-        window.addEventListener("scroll", this.handleScroll);
-        // this.loadCartTotal()
-        // this.loadCartQty()
+        this.scrollContainer = document.getElementById("scrollable-container"); // Reference the container
+        if (this.scrollContainer) {
+            this.scrollContainer.addEventListener("scroll", this.handleScroll);
+        }
+        this.updateFilteredProductCount();
         this.setState({ productsLoading: true }, () => {
             setTimeout(() => {
                 this.setState({ productsLoading: false });
             }, 5000); // Skeleton loader for 5s
         });
-        
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (prevState.products !== this.state.products || prevState.selectedFilters !== this.state.selectedFilters) {
+            this.updateFilteredProductCount();
+        }
     }
 
     componentWillUnmount() {
         // Remove the click event listener to prevent memory leaks
         document.removeEventListener('click', this.handleOutsideSearchBarClick);
-        window.removeEventListener("scroll", this.handleScroll);
+        if (this.scrollContainer) {
+            this.scrollContainer.removeEventListener("scroll", this.handleScroll);
+        }
         clearInterval(this.timer); // Clear the timer when the component unmounts
     }
 
-    loadCartTotal = () => {
-        let total = this.state.item1CartPrice + this.state.item2CartPrice + this.state.item3CartPrice + this.state.item4CartPrice + this.state.item5CartPrice + this.state.item6CartPrice + this.state.item7CartPrice + this.state.item8CartPrice 
-
-        this.setState({
-            totalCartPrice: total
-        })
-    }
-
-    loadCartQty = () => {
-        let total = this.state.item1CartQty + this.state.item2CartQty + this.state.item3CartQty + this.state.item4CartQty + this.state.item5CartQty + this.state.item6CartQty + this.state.item7CartQty + this.state.item8CartQty 
-
-        this.setState({
-            totalCartItems: total
-        })
-    }
+    updateFilteredProductCount = () => {
+        const filteredProducts = this.mainPageProductsFilterProducts();
+        this.setState({ filteredProductCount: filteredProducts.length });
+    };
 
     searchBarClicked = () => {
         this.setState({
@@ -6425,10 +6424,17 @@ export default class LandingPg extends Component {
     };
 
     handleScroll = () => {
-        if (
-            window.innerHeight + window.scrollY >= document.body.offsetHeight - 100 &&
-            !this.state.loadingMore
-        ) {
+        if (!this.scrollContainer || this.state.loadingMore) return;
+    
+        const { scrollTop, scrollHeight, clientHeight } = this.scrollContainer;
+    
+        // Check if we've reached the bottom
+        if (scrollTop + clientHeight >= scrollHeight - 50) {
+            // ✅ Stop loading if all items are already loaded
+            if (this.state.visibleCount >= this.state.filteredProductCount) {
+                return;
+            }
+    
             this.loadMoreItems();
         }
     };
@@ -9259,7 +9265,7 @@ export default class LandingPg extends Component {
                                     
                         {/* - - - Homepage - - - */}
 
-                    <div className='homepage-fullscreen'>
+                    <div id="scrollable-container" className='homepage-fullscreen'>
 
                         <div className='homepage-header'>
                             <div className='homepage-header-inner-header'>
@@ -9393,28 +9399,6 @@ export default class LandingPg extends Component {
                                         ))} */}
                                     </div>
 
-                                    
-                                    {/* <div className="filters">
-                                        <select onChange={(e) => this.mainPageProductsHandleFilterChange("category", e.target.value)}>
-                                            <option value="all">All Categories</option>
-                                            <option value="fruits">Fruits</option>
-                                            <option value="vegetables">Vegetables</option>
-                                        </select>
-
-                                        <select onChange={(e) => this.mainPageProductsHandleFilterChange("price", Number(e.target.value))}>
-                                            <option value="all">Any Price</option>
-                                            <option value="10">Under $10</option>
-                                            <option value="20">Under $20</option>
-                                        </select>
-
-                                        <select onChange={(e) => this.mainPageProductsHandleFilterChange("rating", Number(e.target.value))}>
-                                            <option value="all">Any Rating</option>
-                                            <option value="4">4+ Stars</option>
-                                            <option value="5">5 Stars</option>
-                                        </select>
-                                    </div> */}
-
-                                  
                                     <div className="product-grid">
                                         {filteredProducts.slice(0, this.state.visibleCount).map((product) => (
                                             <ProductCard 
