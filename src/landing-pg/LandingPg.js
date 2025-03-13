@@ -4595,12 +4595,12 @@ const Styles = styled.div `
     bottom: 0;
     width: 100%;
     height: 60%;
-    // border: 1px solid black;
+    border: 1px solid black;
     display: flex;
     flex-direction: row;
     align-items: center;
     padding-left: 1.05%;
-    padding-right: 1.05%;
+    // padding-right: 1.05%;
 }
 
 .homepage-body-inner-header-option {
@@ -9363,7 +9363,7 @@ export default class LandingPg extends Component {
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
                                     <div onClick={() => this.mainPageProductsFilterOptionClicked(4)} className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
-                                        <h4>Brands</h4>
+                                        <h4>Shop Pamoja</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
                                 </div>
