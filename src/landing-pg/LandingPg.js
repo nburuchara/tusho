@@ -4595,12 +4595,12 @@ const Styles = styled.div `
     bottom: 0;
     width: 100%;
     height: 60%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     flex-direction: row;
     align-items: center;
     padding-left: 1.05%;
-    // padding-right: 1.05%;
+    padding-right: 1.05%;
 }
 
 .homepage-body-inner-header-option {
@@ -4774,6 +4774,32 @@ const Styles = styled.div `
     // paddin: 5rem;
     // margin-bottom: 5rem;
     cursor: pointer;
+}
+
+.dial-container {
+    width: 30px;  /* Container width */
+    height: 15px;
+    background-color: #ddd;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.dial-button {
+    width: 14px;
+    height: 14px;
+    background-color: #888;
+    border-radius: 50%;
+    position: absolute;
+    left: 5px;  /* Start position */
+    transition: left 0.3s ease;
+}
+
+.dial-button.active {
+    left: 21.5px;  /* Slide to the right */
 }
 
 .homepage-body-inner-body {
@@ -5187,6 +5213,7 @@ export default class LandingPg extends Component {
                 price: "All",
                 rating: "All"
             },
+            active: false,
             categoryOptions: ["All", "Fruits & Vegetables", "Organic", "Meat", "Dairy", "Food Cupboard", "Baby Care", "Easy Prep", "Condiments & Spices", "Home & Cleaning", "Bulk Buy", "Personal Care", "Beverages", "Snacks", "Bakery", "Bundles", "Stationary", "Home Appliances", "Alcohol", "Pets", "Decor & Flowers", "Services", "Shopping Bags", "Kids & Toys",],
             priceOptions: ["All", 500, 1000, 1500], // Example price thresholds
             ratingOptions: ["All", 2, 3, 4, 5], // Example minimum ratings
@@ -6467,6 +6494,10 @@ export default class LandingPg extends Component {
                 this.setState({ newlyLoadedProducts: [] });
             }, 2000); // Adjust delay as needed
         }, 1500);
+    };
+
+    toggleDial = () => {
+        this.setState((prevState) => ({ active: !prevState.active }));
     };
 
     render () {
@@ -9364,7 +9395,9 @@ export default class LandingPg extends Component {
                                     </div>
                                     <div onClick={() => this.mainPageProductsFilterOptionClicked(4)} className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
                                         <h4>Shop Pamoja</h4>
-                                        <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
+                                        <div className="dial-container" onClick={this.toggleDial}>
+                                            <div className={`dial-button ${this.state.active ? "active" : ""}`}></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
