@@ -343,7 +343,7 @@ class ProductCard extends Component {
                                 />
                             </div>
                             <div className="product-card-inner-jipange-menu-option-name">
-                                <p>Mar. 10th</p>
+                                <p>Mar. 21</p>
                             </div>
                         </div>
                     </div>
