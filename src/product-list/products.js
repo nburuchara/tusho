@@ -68,7 +68,7 @@ const products = [
     {
         id: 6,
         name: "Tushop Fresh Local Watermelon",
-        category: "Fruits & Vegetables",
+        category: "Fruits & Vegetables" || "Organic",
         price: 369.00,
         oldPrice: 369.00,
         rating: 4.6,

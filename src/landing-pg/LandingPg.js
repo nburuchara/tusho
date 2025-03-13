@@ -6220,36 +6220,36 @@ export default class LandingPg extends Component {
     }
 
     mainPageProductsHandleFilterChange = (type, value) => {
-        // Set loading state immediately
-        this.setState({ productsLoading: true });
-
-        setTimeout(() => {
-            this.setState((prevState) => {
-                const newFilters = {
-                    ...prevState.selectedFilters,
-                    [type]: prevState.selectedFilters[type] === value ? "All" : value // Toggle selection
-                };
-
-                const filteredProducts = this.mainPageProductsFilterProducts(newFilters);
-                const newlyLoadedProductIds = filteredProducts.map(product => product.id); // Track newly loaded products
-
-                return {
-                    selectedFilters: newFilters,
-                    newlyLoadedProducts: newlyLoadedProductIds, // Only store new items for skeleton effect
-                    productsLoading: false, // Turn off global loading
-                    homepageCurrentCategoryFilter: type === 'category' ? (value === 'All' ? `${value} Categories` : value) : prevState.homepageCurrentCategoryFilter,
-                    homepageCurrentPriceFilter: type === 'price' ? (typeof value === 'string' ? `${value} Prices` : `Up to ${value}`) : prevState.homepageCurrentPriceFilter,
-                    homepageCurrentRatingFilter: type === 'rating' ? (typeof value === 'string' ? `${value} Ratings` : `${value} Stars & Up`) : prevState.homepageCurrentRatingFilter,
-                    ...Object.fromEntries([...Array(4)].map((_, i) => [`homepagePrdouctsFilter${i + 1}`, false])) // Reset other filters
-                };
-            });
-
-            // Reset newlyLoadedProducts after 1s so skeleton disappears
+        // Clear newly loaded items immediately & start loading state
+        this.setState({ productsLoading: true, newlyLoadedProducts: [] }, () => {
             setTimeout(() => {
-                this.setState({ newlyLoadedProducts: [] });
-            }, 1000);
-
-        }, 500); // 0.5s delay before applying filter
+                this.setState((prevState) => {
+                    const newFilters = {
+                        ...prevState.selectedFilters,
+                        [type]: prevState.selectedFilters[type] === value ? "All" : value // Toggle selection
+                    };
+    
+                    const filteredProducts = this.mainPageProductsFilterProducts(newFilters);
+                    const newlyLoadedProductIds = filteredProducts.map(product => product.id); // Store only new items for skeleton effect
+    
+                    return {
+                        selectedFilters: newFilters,
+                        newlyLoadedProducts: newlyLoadedProductIds, // Show skeletons for new products
+                        productsLoading: false, // Turn off global loading
+                        homepageCurrentCategoryFilter: type === 'category' ? (value === 'All' ? `${value} Categories` : value) : prevState.homepageCurrentCategoryFilter,
+                        homepageCurrentPriceFilter: type === 'price' ? (typeof value === 'string' ? `${value} Prices` : `Up to ${value}`) : prevState.homepageCurrentPriceFilter,
+                        homepageCurrentRatingFilter: type === 'rating' ? (typeof value === 'string' ? `${value} Ratings` : `${value} Stars & Up`) : prevState.homepageCurrentRatingFilter,
+                        ...Object.fromEntries([...Array(4)].map((_, i) => [`homepagePrdouctsFilter${i + 1}`, false])) // Reset other filters
+                    };
+                });
+    
+                // Reset newlyLoadedProducts after 1s so skeleton disappears
+                setTimeout(() => {
+                    this.setState({ newlyLoadedProducts: [] });
+                }, 1000);
+    
+            }, 300); // 0.3s delay before applying filter (adjust as needed)
+        });
     };
 
     mainPageProductsFilterProducts = () => {
@@ -7067,7 +7067,7 @@ export default class LandingPg extends Component {
                                                 <img src='/assets/icons/home-profile/pamoja-dropdown-icon.png'/>
                                             </div>
                                             <div className='navbar-profile-dropdown-body-signed-in-options-cell-label'>
-                                                <p>Order Pamoja</p>
+                                                <p>Shop Pamoja</p>
                                             </div>
                                         </div>
                                         <div className='navbar-profile-dropdown-body-signed-in-options-cell'>
