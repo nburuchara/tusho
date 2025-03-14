@@ -237,7 +237,7 @@ const Styles = styled.div `
     font-weight: bold;
     font-family: poppins;
     font-size: 85%;
-    border: 1px solid transparent;
+    border: 0.5px solid transparent;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     background-color: #ff5733;
@@ -258,7 +258,7 @@ const Styles = styled.div `
     font-weight: bold;
     font-family: poppins;
     font-size: 85%;
-    border: 1px solid transparent;
+    border: 0.5px solid transparent;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     background-color: #ff5733;
