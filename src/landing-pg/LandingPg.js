@@ -5279,7 +5279,7 @@ export default class LandingPg extends Component {
             homepagePrdouctsFilter2: false,
             homepagePrdouctsFilter3: false,
             homepagePrdouctsFilter4: false,
-            homepageCurrentCategoryFilter: 'All Categories',
+            homepageCurrentCategoryFilter: 'All Products',
             homepageCurrentPriceFilter: 'Price',
             homepageCurrentRatingFilter: 'Rating',
 
@@ -6425,11 +6425,8 @@ export default class LandingPg extends Component {
     mainPageProductsFilterOptionClicked = (option) => {
         if (option === 4) {
             this.toggleDial();
-            this.setState(() => ({
-                homepagePrdouctsFilter1: false,
-                homepagePrdouctsFilter2: false,
-                homepagePrdouctsFilter3: false,
-                homepagePrdouctsFilter4: true, // Ensure it's set to true when selected
+            this.setState((prevState) => ({
+                homepagePrdouctsFilter4: !prevState.homepagePrdouctsFilter4, // Ensure it's set to true when selected
             }));
         } else {
             this.setState((prevState) => {
@@ -9481,7 +9478,7 @@ export default class LandingPg extends Component {
                                                 className={`homepage-body-inner-header-option-dropdown-filter-option ${this.state.selectedFilters.category === category ? 'selected' : ''}`}
                                                 onClick={() => this.mainPageProductsHandleFilterChange("category", category)}
                                             >
-                                                <label>{category === "All" ? "All Categories" : `${category}`}</label>
+                                                <label>{category === "All" ? "All Products" : `${category}`}</label>
                                             </div>
                                         ))}
                                     </div>
