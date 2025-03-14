@@ -6666,13 +6666,13 @@ export default class LandingPg extends Component {
                                                                     }
                                                                     {option.qty > 0 &&
                                                                         <div className='searchResultCellLabelNonZeroQty'>
-                                                                            <div className=''>
+                                                                            <div className='searchResultCellLabelNonZeroQtyChange'>
 
                                                                             </div>
-                                                                            <div className=''>
+                                                                            <div className='searchResultCellLabelNonZeroQtyValue'>
 
                                                                             </div>
-                                                                            <div className=''>
+                                                                            <div className='searchResultCellLabelNonZeroQtyChange'>
 
                                                                             </div>
                                                                         </div>
