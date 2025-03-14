@@ -4639,12 +4639,14 @@ const Styles = styled.div `
     // - - HOMEPAGE BODY - - //
 
 .homepage-body {
-    // border: 1px solid black;
-    height: 50rem;
+    border: 1px solid black;
+    height: 35rem;
+    overflow: hidden;
+    padding-top: 2rem;
 }
 
 .homepage-body-inner-header {
-    height: 15%;
+    height: 17.5%;
     // border: 1px solid black;
     position: relative;
     margin-top: -2.25rem;
@@ -4930,7 +4932,8 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-body {
-    // border: 1px solid black;
+    border: 1px solid blue;
+    overflow: auto;
 }
 
 .homepage-body-inner-body-inner-header {
@@ -4960,6 +4963,8 @@ const Styles = styled.div `
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 10px;
     margin-bottom: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
 }
 
 /* Filters */
