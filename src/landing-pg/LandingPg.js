@@ -230,6 +230,11 @@ const Styles = styled.div `
 .searchResultCellLabelNonZeroQtyChange {
     width: 30%;
     // border: 1px solid black;
+    color: #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
 .searchResultCellLabelNonZeroQtyValue {
@@ -237,6 +242,7 @@ const Styles = styled.div `
     // border: 1px solid black;
     border-left: 1px solid #ff5733;
     border-right: 1px solid #ff5733;
+    background-color: white;
 }
 
 .searchResultCell p {
@@ -6671,13 +6677,13 @@ export default class LandingPg extends Component {
                                                                     {option.qty > 0 &&
                                                                         <div className='searchResultCellLabelNonZeroQty'>
                                                                             <div className='searchResultCellLabelNonZeroQtyChange'>
-
+                                                                                -
                                                                             </div>
                                                                             <div className='searchResultCellLabelNonZeroQtyValue'>
 
                                                                             </div>
                                                                             <div className='searchResultCellLabelNonZeroQtyChange'>
-
+                                                                                +
                                                                             </div>
                                                                         </div>
                                                                     }
