@@ -4639,14 +4639,12 @@ const Styles = styled.div `
     // - - HOMEPAGE BODY - - //
 
 .homepage-body {
-    border: 1px solid black;
-    height: 35rem;
-    overflow: hidden;
-    padding-top: 2rem;
+    // border: 1px solid black;
+    height: 50rem;
 }
 
 .homepage-body-inner-header {
-    height: 17.5%;
+    height: 15%;
     // border: 1px solid black;
     position: relative;
     margin-top: -2.25rem;
@@ -4932,8 +4930,7 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-body {
-    border: 1px solid blue;
-    overflow: auto;
+    // border: 1px solid black;
 }
 
 .homepage-body-inner-body-inner-header {
@@ -4954,7 +4951,7 @@ const Styles = styled.div `
     max-width: 100%;
     padding: 20px;
     margin-top: -1.5rem;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 /* Promo Row */
@@ -4963,8 +4960,6 @@ const Styles = styled.div `
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 10px;
     margin-bottom: 20px;
-    flex-grow: 1;
-    overflow-y: auto;
 }
 
 /* Filters */
@@ -4981,7 +4976,7 @@ const Styles = styled.div `
 /* Main Product Grid */
 .product-grid {
     padding: 0px;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
@@ -6431,15 +6426,17 @@ export default class LandingPg extends Component {
                 updatedCart = [...prevState.cart, { ...updatedProduct, quantity: updatedProduct.qty }];
             }
     
-            // 🔹 Update groupedOptions for search results
-            const updatedGroupedOptions = Object.fromEntries(
-                Object.entries(prevState.groupedOptions).map(([category, options]) => [
-                    category,
-                    options.map(option =>
-                        option.id === productId ? { ...option, qty: updatedProduct.qty } : option
-                    )
-                ])
-            );
+            // 🔹 Check if groupedOptions exists before updating
+            const updatedGroupedOptions = prevState.groupedOptions
+                ? Object.fromEntries(
+                    Object.entries(prevState.groupedOptions).map(([category, options]) => [
+                        category,
+                        options.map(option =>
+                            option.id === productId ? { ...option, qty: updatedProduct.qty } : option
+                        )
+                    ])
+                )
+                : null; // Keep it null if it doesn't exist
     
             const totalCartPrice = updatedCart.reduce((total, item) => total + item.price * item.quantity, 0);
     
@@ -6447,7 +6444,7 @@ export default class LandingPg extends Component {
                 products: updatedProducts,
                 cart: updatedCart,
                 totalCartPrice,
-                groupedOptions: updatedGroupedOptions, // 🔹 Ensures search results update instantly
+                groupedOptions: updatedGroupedOptions, // 🔹 Ensures search results update instantly if available
             };
         });
     };
