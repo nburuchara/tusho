@@ -5377,23 +5377,21 @@ export default class LandingPg extends Component {
     }
 
     handleSearchChange = (e) => {
-
         this.setState({
             searchBarInput: e.target.value,
             isSearchLoading: true,
             clearSearchBtn: true,
             showTimezones: false
         });
-        
+    
         const searchInput = e.target.value.toLowerCase();
-        
+    
         // Clear previous timeout
+        clearTimeout(this.searchTimeout);
     
-    
-        // Set a new timeout to execute after 500ms
+        // Set a new timeout to execute after 500ms (debounce)
         this.searchTimeout = setTimeout(() => {
             if (searchInput.trim() === "") {
-                // Reset filteredOptions and loading state
                 this.setState({
                     searchedData: "",
                     searchCloseBtn: false,
@@ -5402,33 +5400,33 @@ export default class LandingPg extends Component {
                     resultsFound: false,
                     clearSearchBtn: false,
                 });
-
             } else {
                 this.setState({ isSearchLoading: true, searchedData: searchInput, searchCloseBtn: true }, () => {
-                    const filteredOptions = SearchTerms.filter(option => {
+                    let filteredOptions = SearchTerms.filter(option => {
                         const name = option.name.toLowerCase();
-                        const searchWords = searchInput.toLowerCase().split(' '); // Split search input into words
-                        const optionWords = name.split(' '); // Split name into words
-                    
+                        const searchWords = searchInput.toLowerCase().split(" ");
+                        const optionWords = name.split(" ");
+    
                         if (searchWords.length === 1) {
-                            // Special case: search input is a single word
-                            const searchWord = searchWords[0];
-                            return optionWords.some(optionWord => optionWord.startsWith(searchWord));
+                            return optionWords.some(optionWord => optionWord.startsWith(searchWords[0]));
                         } else {
-                            // Combine search words into a single substring
-                            const searchSubstring = searchWords.join(' ');
-                            return name.includes(searchSubstring);
+                            return name.includes(searchWords.join(" "));
                         }
                     });
     
-                    const resultsFound = filteredOptions.length > 0; // Check if any results were found
+                    const resultsFound = filteredOptions.length > 0;
     
-                    const highlightedOptions = filteredOptions.map(option => ({
-                        ...option,
-                        highlightedName: this.highlightMatchedCharacters(option, searchInput)
-                    }));
+                    // 🔹 Update `qty` for search results based on cart
+                    const updatedOptions = filteredOptions.map(option => {
+                        const cartItem = this.state.cart.find(item => item.id === option.id);
+                        return {
+                            ...option,
+                            qty: cartItem ? cartItem.qty : 0, // Use cart qty if exists, otherwise default to 0
+                            highlightedName: this.highlightMatchedCharacters(option, searchInput),
+                        };
+                    });
     
-                    const groupedResults = this.groupBy(highlightedOptions, 'category');
+                    const groupedResults = this.groupBy(updatedOptions, "category");
     
                     // Construct trie for each category
                     const trieByCategory = {};
@@ -5439,17 +5437,17 @@ export default class LandingPg extends Component {
                         });
                     });
     
-                    // Update state after search logic is complete
+                    // 🔹 Update state with updated search results (with cart quantities)
                     this.setState({
                         trieByCategory,
                         groupedOptions: groupedResults,
-                        filteredOptions: highlightedOptions,
-                        isSearchLoading: false, // Hide loading screen
-                        resultsFound: resultsFound
+                        filteredOptions: updatedOptions, // Updated search results
+                        isSearchLoading: false,
+                        resultsFound: resultsFound,
                     });
                 });
             }
-        }, 0); // Set debounce delay to 500ms
+        }, 500); // Adjust debounce delay as needed
     };
 
     handleSearchChangeJipange = (e) => {
@@ -6658,7 +6656,7 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                                 <div className='searchResultCellDetails'>
                                                                     <p className='searchResultOption'>{option.highlightedName} • <label><>KES</> {option.price}</label> </p>
-                                                                    <p className='searchResultCategory'><strong>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null }</strong></p> 
+                                                                    <p className='searchResultCategory'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null }</p> 
                                                                 </div>
                                                                 <div className='searchResultCellLabel'>
                                                                     {option.qty === 0 && 
