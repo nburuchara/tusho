@@ -5657,31 +5657,6 @@ export default class LandingPg extends Component {
         }, 0)
     }
 
-    // decreaseItemQty = (item, itemQty) => {
-    //     if (itemQty > 1 && itemQty !== 2) {
-    //       this.setState((prevState) => ({
-    //         [`item${item}CartQty`]: prevState[`item${item}CartQty`] - 1,
-    //         [`minimumItem${item}QtyColor`]: "#000"
-    //       }));
-    //     } else if (itemQty === 2) {
-    //         this.setState((prevState) => ({
-    //             [`item${item}CartQty`]: prevState[`item${item}CartQty`] - 1,
-    //             [`minimumItem${item}QtyColor`]: "#bbb"
-    //           }));
-    //     }
-    // };
-
-    // increaseItemQty = (item, itemQty) => {
-    //     if (itemQty === 1) {
-    //         this.setState({
-    //             [`minimumItem${item}QtyColor`]: "#000"
-    //         })
-    //     }
-    //     this.setState((prevState) => ({
-    //         [`item${item}CartQty`]: prevState[`item${item}CartQty`] + 1,
-    //     }));
-    // }
-
     openHomeShoppingCartClicked = () => {
         this.setState({
             homeScreenCartClicked: true
@@ -6547,46 +6522,6 @@ export default class LandingPg extends Component {
     
             const updatedProducts = prevState.products.map((product) =>
                 product.id === productId ? { ...product, qty: 0 } : product
-            );
-    
-            return {
-                cart: updatedCart,
-                products: updatedProducts
-            };
-        });
-    };
-
-    increaseItemQty = (productId) => {
-        this.setState((prevState) => {
-            const updatedCart = prevState.cart.map((item) =>
-                item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
-            );
-    
-            const updatedProducts = prevState.products.map((product) =>
-                product.id === productId ? { ...product, qty: product.qty + 1 } : product
-            );
-    
-            return {
-                cart: updatedCart,
-                products: updatedProducts
-            };
-        });
-    };
-    
-    decreaseItemQty = (productId) => {
-        this.setState((prevState) => {
-            const updatedCart = prevState.cart
-                .map((item) =>
-                    item.id === productId && item.quantity > 1
-                        ? { ...item, quantity: item.quantity - 1 }
-                        : item
-                )
-                .filter((item) => item.quantity > 0); // Remove from cart if 0
-    
-            const updatedProducts = prevState.products.map((product) =>
-                product.id === productId && product.qty > 0
-                    ? { ...product, qty: product.qty - 1 }
-                    : product
             );
     
             return {
