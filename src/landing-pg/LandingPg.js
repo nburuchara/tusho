@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import styled from 'styled-components'; 
 import { ColorRing, RotatingLines, TailSpin } from 'react-loader-spinner'
-import products from '../product-list/products'; 
 import ProductCard from './ProductCard';
 
 //? - - FILES - - //
-import SearchTerms from '../search-terms/SearchTerms'
+import SearchTerms from '../product-list/products'
+import products from '../product-list/products'; 
 
 const Styles = styled.div `
 
@@ -189,7 +189,8 @@ const Styles = styled.div `
 }
 
 .searchResultCellImg {
-    width: 10%;
+    width: 45px;
+    height: 45px;
 }
 
 .searchResultCellImg img {
@@ -6627,7 +6628,7 @@ export default class LandingPg extends Component {
                                                             className='searchResultCell' 
                                                             key={option.id}>
                                                                 <div className='searchResultCellImg'>
-                                                                    <img src={option.img}/>
+                                                                    <img src={option.image}/>
                                                                 </div>
                                                                 <div className='searchResultCellDetails'>
                                                                     <p className='searchResultOption'>{option.highlightedName}</p>
