@@ -4604,7 +4604,7 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option {
-    width: auto;
+    width: 11.5rem;
     border: 1px solid #ccc;
     height: 42.5%;
     display: flex;
@@ -4727,12 +4727,12 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-option-2 {
-    width: 11.5rem;
+    width: 15.5rem;
     border: 1px solid white;
     height: 10rem;
     display: flex;
     flex-direction: column;
-    margin-left: -8.2rem;
+    margin-left: -3.5rem;
     padding: 0px;
     border-radius: 8px;
     background-color: white;
@@ -4750,12 +4750,12 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-option-3 {
-    width: 9.35rem;
+    width: 13.5rem;
     border: 1px solid white;
     height: 10rem;
     display: flex;
     flex-direction: column;
-    margin-left: -5rem;
+    margin-left: -1rem;
     padding: 0px;
     border-radius: 8px;
     background-color: white;
