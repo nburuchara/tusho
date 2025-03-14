@@ -5237,6 +5237,7 @@ export default class LandingPg extends Component {
             searchBarIsClicked: false,
             searchBarInput: '',
             searchBarInputJipange: '',
+            filteredOptions: [],
 
             //* - HOME SCREEN SHOPPING CART - *//
             homeScreenCartClicked: false,
@@ -5465,7 +5466,7 @@ export default class LandingPg extends Component {
     
                     // 🔹 Update `qty` for search results based on cart
                     const updatedOptions = filteredOptions.map(option => {
-                        const cartItem = this.state.cart.find(item => item.id === option.id);
+                        const cartItem = this.state.products.find(item => item.id === option.id);
                         return {
                             ...option,
                             qty: cartItem ? cartItem.qty : 0, // Use cart qty if exists, otherwise default to 0
@@ -6420,51 +6421,40 @@ export default class LandingPg extends Component {
 
     mainPageProductsHandleQtyChange = (productId, change) => {
         this.setState((prevState) => {
-            // Update the products list (for UI)
+            // Update products list (for UI)
             const updatedProducts = prevState.products.map((product) =>
                 product.id === productId
                     ? { ...product, qty: Math.max(0, product.qty + change) }
                     : product
             );
     
-            // Find the product being updated
+            // Find updated product
             const updatedProduct = updatedProducts.find((product) => product.id === productId);
     
-            // Update the cart list (for checkout)
+            // Update the cart
             let updatedCart = prevState.cart;
             const existingCartItem = prevState.cart.find((item) => item.id === productId);
     
             if (existingCartItem) {
                 if (updatedProduct.qty > 0) {
-                    // Update quantity in cart
                     updatedCart = prevState.cart.map((item) =>
-                        item.id === productId ? { 
-                            ...item, 
-                            quantity: updatedProduct.qty,
-                            jipangeSelected: updatedProduct.jipangeSelected, 
-                            jipangeDate: updatedProduct.jipangeDate
-                         } : item
+                        item.id === productId
+                            ? { ...item, quantity: updatedProduct.qty }
+                            : item
                     );
                 } else {
-                    // Remove from cart if qty is 0
                     updatedCart = prevState.cart.filter((item) => item.id !== productId);
                 }
             } else if (updatedProduct.qty > 0) {
-                // Add to cart if it's a new product
-                updatedCart = [...prevState.cart, { 
-                    ...updatedProduct, 
-                    quantity: updatedProduct.qty,
-                    jipangeSelected: updatedProduct.jipangeSelected, 
-                    jipangeDate: updatedProduct.jipangeDate
-                 }];
+                updatedCart = [...prevState.cart, { ...updatedProduct, quantity: updatedProduct.qty }];
             }
-
+    
             const totalCartPrice = updatedCart.reduce((total, item) => total + item.price * item.quantity, 0);
     
             return {
                 products: updatedProducts,
                 cart: updatedCart,
-                totalCartPrice
+                totalCartPrice,
             };
         });
     };
@@ -6711,13 +6701,13 @@ export default class LandingPg extends Component {
                                                                     }
                                                                     {option.qty > 0 &&
                                                                         <div className='searchResultCellLabelNonZeroQty'>
-                                                                            <div className='searchResultCellLabelNonZeroQtyChangeLeft'>
+                                                                            <div onClick={() => this.decreaseItemQty(option.id)} className='searchResultCellLabelNonZeroQtyChangeLeft'>
                                                                                 -
                                                                             </div>
                                                                             <div className='searchResultCellLabelNonZeroQtyValue'>
                                                                                 <label>{option.qty}</label>
                                                                             </div>
-                                                                            <div className='searchResultCellLabelNonZeroQtyChangeRight'>
+                                                                            <div onClick={() => this.increaseItemQty(option.id)} className='searchResultCellLabelNonZeroQtyChangeRight'>
                                                                                 +
                                                                             </div>
                                                                         </div>
