@@ -227,7 +227,7 @@ const Styles = styled.div `
     border-radius: 6px;
 }
 
-.searchResultCellLabelNonZeroQtyChange {
+.searchResultCellLabelNonZeroQtyChangeLeft {
     width: 30%;
     // border: 1px solid black;
     color: #ff5733;
@@ -237,6 +237,36 @@ const Styles = styled.div `
     font-weight: bold;
     font-family: poppins;
     font-size: 85%;
+    border: 1px solid transparent;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #ff5733;
+    color: white;
+}
+
+.searchResultCellLabelNonZeroQtyChangeLeft:hover {
+    border: 0.5px solid white;
+}
+
+.searchResultCellLabelNonZeroQtyChangeRight {
+    width: 30%;
+    // border: 1px solid black;
+    color: #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: poppins;
+    font-size: 85%;
+    border: 1px solid transparent;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #ff5733;
+    color: white;
+}
+
+.searchResultCellLabelNonZeroQtyChangeRight:hover {
+    border: 0.5px solid white;
 }
 
 .searchResultCellLabelNonZeroQtyValue {
@@ -245,6 +275,9 @@ const Styles = styled.div `
     border-left: 1px solid #ff5733;
     border-right: 1px solid #ff5733;
     background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .searchResultCell p {
@@ -6678,13 +6711,13 @@ export default class LandingPg extends Component {
                                                                     }
                                                                     {option.qty > 0 &&
                                                                         <div className='searchResultCellLabelNonZeroQty'>
-                                                                            <div className='searchResultCellLabelNonZeroQtyChange'>
+                                                                            <div className='searchResultCellLabelNonZeroQtyChangeLeft'>
                                                                                 -
                                                                             </div>
                                                                             <div className='searchResultCellLabelNonZeroQtyValue'>
-
+                                                                                <label>{option.qty}</label>
                                                                             </div>
-                                                                            <div className='searchResultCellLabelNonZeroQtyChange'>
+                                                                            <div className='searchResultCellLabelNonZeroQtyChangeRight'>
                                                                                 +
                                                                             </div>
                                                                         </div>
