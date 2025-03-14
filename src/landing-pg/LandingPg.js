@@ -4951,7 +4951,7 @@ const Styles = styled.div `
     max-width: 100%;
     padding: 20px;
     margin-top: -1.5rem;
-    // border: 1px solid black;
+    border: 1px solid black;
 }
 
 /* Promo Row */
@@ -4976,7 +4976,7 @@ const Styles = styled.div `
 /* Main Product Grid */
 .product-grid {
     padding: 0px;
-    // border: 1px solid black;
+    border: 1px solid black;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
