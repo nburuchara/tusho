@@ -4650,6 +4650,58 @@ const Styles = styled.div `
     transform: rotate(180deg);
 }
 
+.homepage-body-inner-header-option-pamoja {
+    width: auto;
+    border: 1px solid #ccc;
+    height: 42.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
+    border-radius: 8px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.homepage-body-inner-header-option-pamoja:hover {
+    border: 1px solid #ff5733;
+}
+
+.homepage-body-inner-header-option-pamoja.selected {
+    border: 1px solid #ff5733;
+    background-color: #ff5733;
+}
+
+.homepage-body-inner-header-option-pamoja h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    color: #5e626a;
+    font-family: poppins;
+    font-size: 80%;
+    // font-weight: normal;
+    cursor: pointer;
+}
+
+.homepage-body-inner-header-option-pamoja.selected h4 {
+    color: white;
+}
+
+.homepage-body-inner-header-option-pamoja img {
+    width: 13.5px;
+    margin-top: 0.32rem;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition-property: transform
+}
+
+.homepage-body-inner-header-option-pamoja.selected img {
+    transform: rotate(180deg);
+}
+
 .homepage-body-inner-header-option-dropdown-option-1 {
     width: 18.2rem;
     border: 1px solid white;
@@ -9394,7 +9446,7 @@ export default class LandingPg extends Component {
                                         <h4>{this.state.homepageCurrentRatingFilter}</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
-                                    <div onClick={() => this.mainPageProductsFilterOptionClicked(4)} className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
+                                    <div onClick={() => this.mainPageProductsFilterOptionClicked(4)} className={`homepage-body-inner-header-option-pamoja ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
                                         <h4>Shop Pamoja</h4>
                                         <div className="dial-container" onClick={this.toggleDial}>
                                             <div className={`dial-button ${this.state.active ? "active" : ""}`}></div>
