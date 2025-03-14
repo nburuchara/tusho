@@ -4773,12 +4773,12 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-option-4 {
-    width: 9.35rem;
+    width: 20.35rem;
     border: 1px solid white;
     height: 10rem;
     display: flex;
     flex-direction: column;
-    margin-left: -1rem;
+    margin-left: -0.8rem;
     padding: 0px;
     border-radius: 8px;
     background-color: white;
@@ -9498,7 +9498,9 @@ export default class LandingPg extends Component {
                                         ))}
                                     </div>
                                     <div className={`homepage-body-inner-header-option-dropdown-option-4 ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
+                                        <div className='homepage-body-inner-header-option-dropdown-option-4-header'>
 
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="grocery-container">
