@@ -235,6 +235,8 @@ const Styles = styled.div `
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    font-family: poppins;
+    font-size: 85%;
 }
 
 .searchResultCellLabelNonZeroQtyValue {
