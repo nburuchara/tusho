@@ -6449,12 +6449,23 @@ export default class LandingPg extends Component {
                 updatedCart = [...prevState.cart, { ...updatedProduct, quantity: updatedProduct.qty }];
             }
     
+            // 🔹 Update groupedOptions for search results
+            const updatedGroupedOptions = Object.fromEntries(
+                Object.entries(prevState.groupedOptions).map(([category, options]) => [
+                    category,
+                    options.map(option =>
+                        option.id === productId ? { ...option, qty: updatedProduct.qty } : option
+                    )
+                ])
+            );
+    
             const totalCartPrice = updatedCart.reduce((total, item) => total + item.price * item.quantity, 0);
     
             return {
                 products: updatedProducts,
                 cart: updatedCart,
                 totalCartPrice,
+                groupedOptions: updatedGroupedOptions, // 🔹 Ensures search results update instantly
             };
         });
     };
@@ -6545,23 +6556,37 @@ export default class LandingPg extends Component {
 
     increaseItemQty = (productId) => {
         this.setState((prevState) => {
+            // Update cart
             const updatedCart = prevState.cart.map((item) =>
                 item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
             );
     
+            // Update products
             const updatedProducts = prevState.products.map((product) =>
                 product.id === productId ? { ...product, qty: product.qty + 1 } : product
             );
     
+            // 🔹 Update groupedOptions (search results)
+            const updatedGroupedOptions = Object.fromEntries(
+                Object.entries(prevState.groupedOptions).map(([category, options]) => [
+                    category,
+                    options.map(option =>
+                        option.id === productId ? { ...option, qty: option.qty + 1 } : option
+                    )
+                ])
+            );
+    
             return {
                 cart: updatedCart,
-                products: updatedProducts
+                products: updatedProducts,
+                groupedOptions: updatedGroupedOptions // 🔹 Ensure search results update immediately
             };
         });
     };
     
     decreaseItemQty = (productId) => {
         this.setState((prevState) => {
+            // Update cart
             const updatedCart = prevState.cart
                 .map((item) =>
                     item.id === productId && item.quantity > 1
@@ -6570,15 +6595,29 @@ export default class LandingPg extends Component {
                 )
                 .filter((item) => item.quantity > 0); // Remove from cart if 0
     
+            // Update products
             const updatedProducts = prevState.products.map((product) =>
                 product.id === productId && product.qty > 0
                     ? { ...product, qty: product.qty - 1 }
                     : product
             );
     
+            // 🔹 Update groupedOptions for search results
+            const updatedGroupedOptions = Object.fromEntries(
+                Object.entries(prevState.groupedOptions).map(([category, options]) => [
+                    category,
+                    options.map(option =>
+                        option.id === productId && option.qty > 0
+                            ? { ...option, qty: option.qty - 1 }
+                            : option
+                    )
+                ])
+            );
+    
             return {
                 cart: updatedCart,
-                products: updatedProducts
+                products: updatedProducts,
+                groupedOptions: updatedGroupedOptions, // 🔹 Ensures search results update instantly
             };
         });
     };
