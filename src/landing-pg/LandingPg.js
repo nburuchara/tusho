@@ -6761,13 +6761,13 @@ export default class LandingPg extends Component {
                                                                     }
                                                                     {option.qty > 0 &&
                                                                         <div className='searchResultCellLabelNonZeroQty'>
-                                                                            <div onClick={() => this.decreaseItemQty(option.id)} className='searchResultCellLabelNonZeroQtyChangeLeft'>
+                                                                            <div onClick={() => this.mainPageProductsHandleQtyChange(option.id, -1)} className='searchResultCellLabelNonZeroQtyChangeLeft'>
                                                                                 -
                                                                             </div>
                                                                             <div className='searchResultCellLabelNonZeroQtyValue'>
                                                                                 <label>{option.qty}</label>
                                                                             </div>
-                                                                            <div onClick={() => this.increaseItemQty(option.id)} className='searchResultCellLabelNonZeroQtyChangeRight'>
+                                                                            <div onClick={() => this.mainPageProductsHandleQtyChange(option.id, 1)} className='searchResultCellLabelNonZeroQtyChangeRight'>
                                                                                 +
                                                                             </div>
                                                                         </div>
