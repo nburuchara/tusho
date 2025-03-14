@@ -218,6 +218,21 @@ const Styles = styled.div `
     font-size: 20%;
 }
 
+.searchResultCellLabelNonZeroQty {
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchResultCellLabelNonZeroQtyChange {
+    width: 25%;
+    border: 1px solid black;
+}
+
+.searchResultCellLabelNonZeroQtyValue {
+    width: 50%;
+    border: 1px solid black;
+}
+
 .searchResultCell p {
     margin-top: 2.5px;
     margin-bottom: 3px;
@@ -6646,7 +6661,22 @@ export default class LandingPg extends Component {
                                                                     <p className='searchResultCategory'><strong>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null }</strong></p> 
                                                                 </div>
                                                                 <div className='searchResultCellLabel'>
-                                                                    <p>[click to add to cart]</p>
+                                                                    {option.qty === 0 && 
+                                                                        <p>[click to add to cart]</p>
+                                                                    }
+                                                                    {option.qty > 0 &&
+                                                                        <div className='searchResultCellLabelNonZeroQty'>
+                                                                            <div className=''>
+
+                                                                            </div>
+                                                                            <div className=''>
+
+                                                                            </div>
+                                                                            <div className=''>
+
+                                                                            </div>
+                                                                        </div>
+                                                                    }
                                                                 </div>
                                                             </div>
                                                         ))}
