@@ -221,6 +221,7 @@ const Styles = styled.div `
 .searchResultCell p {
     margin-top: 5px;
     margin-bottom: 3px;
+    font-family: poppins;
 }
 
 .searchResultOption {
@@ -232,6 +233,10 @@ const Styles = styled.div `
     margin-bottom: 0px;
 }
 
+.searchResultCategory span {
+    font-weight: bold;
+    color: #ff5733;
+}
 
     // # # SEARCH RESULTS JIPANGE
 
@@ -5539,6 +5544,10 @@ export default class LandingPg extends Component {
         })
     }
 
+    mainSearchBarSearchedTermClicked = (category, option) => {
+
+    }
+
     navbarMenuClicked = () => {
         if (this.state.dropdownMenuDisplayed === false) {
             this.setState({ 
@@ -6624,7 +6633,7 @@ export default class LandingPg extends Component {
                                                     <div style={{borderBottom: "1px solid #ccc", position: "sticky"}} key={category}>
                                                         {options.map(option => (
                                                             <div 
-                                                            onClick={() => this.searchedTermClicked(category, option, option.page)}
+                                                            onClick={() => this.mainSearchBarSearchedTermClicked(category, option)}
                                                             className='searchResultCell' 
                                                             key={option.id}>
                                                                 <div className='searchResultCellImg'>
@@ -6632,7 +6641,7 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                                 <div className='searchResultCellDetails'>
                                                                     <p className='searchResultOption'>{option.highlightedName}</p>
-                                                                    <p className='searchResultCategory'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null } </p> 
+                                                                    <p className='searchResultCategory'><span>KES {option.price}</span> {category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null } </p> 
                                                                 </div>
                                                                 <div className='searchResultCellLabel'>
                                                                     <p>[click to add to cart]</p>
