@@ -6424,17 +6424,27 @@ export default class LandingPg extends Component {
 
     mainPageProductsFilterOptionClicked = (option) => {
         if (option === 4) {
-            this.toggleDial()
+            this.toggleDial();
+            this.setState(() => ({
+                homepagePrdouctsFilter1: false,
+                homepagePrdouctsFilter2: false,
+                homepagePrdouctsFilter3: false,
+                homepagePrdouctsFilter4: true, // Ensure it's set to true when selected
+            }));
+        } else {
+            this.setState((prevState) => {
+                let newState = {};
+    
+                for (let i = 1; i <= 3; i++) { // Loop through options 1-3
+                    newState[`homepagePrdouctsFilter${i}`] = i === option ? !prevState[`homepagePrdouctsFilter${option}`] : false;
+                }
+    
+                // Keep homepageProductsFilter4 as it is (not affected when other options are clicked)
+                newState[`homepagePrdouctsFilter4`] = prevState[`homepagePrdouctsFilter4`];
+    
+                return newState;
+            });
         }
-        this.setState((prevState) => {
-            let newState = {};
-        
-            for (let i = 1; i <= 4; i++) {
-                newState[`homepagePrdouctsFilter${i}`] = i === option ? !prevState[`homepagePrdouctsFilter${option}`] : false;
-            }
-        
-            return newState;
-        });
     }
 
     addToCart = (product) => {
