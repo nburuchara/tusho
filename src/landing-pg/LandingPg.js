@@ -5609,8 +5609,8 @@ export default class LandingPg extends Component {
 
     mainSearchBarSearchedTermClicked = (category, option) => {
         if (option.qty === 0) {
-            this.increaseItemQty(option.id);
-        }
+            this.mainPageProductsHandleQtyChange(option.id, 1)
+        } 
     }
 
     navbarMenuClicked = () => {
@@ -6558,87 +6558,40 @@ export default class LandingPg extends Component {
 
     increaseItemQty = (productId) => {
         this.setState((prevState) => {
-            // Update products
+            const updatedCart = prevState.cart.map((item) =>
+                item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
+            );
+    
             const updatedProducts = prevState.products.map((product) =>
                 product.id === productId ? { ...product, qty: product.qty + 1 } : product
             );
     
-            // Find updated product
-            const updatedProduct = updatedProducts.find((product) => product.id === productId);
-    
-            // Update the cart
-            let updatedCart = prevState.cart;
-            const existingCartItem = prevState.cart.find((item) => item.id === productId);
-    
-            if (existingCartItem) {
-                updatedCart = prevState.cart.map((item) =>
-                    item.id === productId ? { ...item, quantity: updatedProduct.qty } : item
-                );
-            } else {
-                updatedCart = [...prevState.cart, { ...updatedProduct, quantity: updatedProduct.qty }];
-            }
-    
-            // 🔹 Update groupedOptions for search results
-            const updatedGroupedOptions = Object.fromEntries(
-                Object.entries(prevState.groupedOptions).map(([category, options]) => [
-                    category,
-                    options.map(option =>
-                        option.id === productId ? { ...option, qty: updatedProduct.qty } : option
-                    )
-                ])
-            );
-    
-            const totalCartPrice = updatedCart.reduce((total, item) => total + item.price * item.quantity, 0);
-    
             return {
-                products: updatedProducts,
-                cart: updatedCart, // 🔹 Now updates cart correctly
-                totalCartPrice,
-                groupedOptions: updatedGroupedOptions,
+                cart: updatedCart,
+                products: updatedProducts
             };
         });
     };
     
     decreaseItemQty = (productId) => {
         this.setState((prevState) => {
-            // Update products
+            const updatedCart = prevState.cart
+                .map((item) =>
+                    item.id === productId && item.quantity > 1
+                        ? { ...item, quantity: item.quantity - 1 }
+                        : item
+                )
+                .filter((item) => item.quantity > 0); // Remove from cart if 0
+    
             const updatedProducts = prevState.products.map((product) =>
                 product.id === productId && product.qty > 0
                     ? { ...product, qty: product.qty - 1 }
                     : product
             );
     
-            // Find updated product
-            const updatedProduct = updatedProducts.find((product) => product.id === productId);
-    
-            // Update the cart
-            let updatedCart = prevState.cart
-                .map((item) =>
-                    item.id === productId && item.quantity > 1
-                        ? { ...item, quantity: item.quantity - 1 }
-                        : item
-                )
-                .filter((item) => item.quantity > 0); // Remove if 0
-    
-            // 🔹 Update groupedOptions for search results
-            const updatedGroupedOptions = Object.fromEntries(
-                Object.entries(prevState.groupedOptions).map(([category, options]) => [
-                    category,
-                    options.map(option =>
-                        option.id === productId && option.qty > 0
-                            ? { ...option, qty: option.qty - 1 }
-                            : option
-                    )
-                ])
-            );
-    
-            const totalCartPrice = updatedCart.reduce((total, item) => total + item.price * item.quantity, 0);
-    
             return {
-                products: updatedProducts,
-                cart: updatedCart, // 🔹 Now updates cart correctly
-                totalCartPrice,
-                groupedOptions: updatedGroupedOptions,
+                cart: updatedCart,
+                products: updatedProducts
             };
         });
     };
@@ -7081,13 +7034,13 @@ export default class LandingPg extends Component {
                                         </div>
                                         <div className="navbar-options-checkout-home-item-cell-qty">
                                             <div className="navbar-options-checkout-home-item-cell-qty-toggle">
-                                                <div onClick={() => this.decreaseItemQty(item.id)} className="navbar-options-checkout-home-item-cell-qty-toggle-left">
+                                                <div onClick={() => this.mainPageProductsHandleQtyChange(item.id, -1)} className="navbar-options-checkout-home-item-cell-qty-toggle-left">
                                                     <p>-</p>
                                                 </div>
                                                 <div className="navbar-options-checkout-home-item-cell-qty-toggle-center">
                                                     <p>{item.quantity}</p>
                                                 </div>
-                                                <div onClick={() => this.increaseItemQty(item.id)} className="navbar-options-checkout-home-item-cell-qty-toggle-right">
+                                                <div onClick={() => this.mainPageProductsHandleQtyChange(item.id, 1)} className="navbar-options-checkout-home-item-cell-qty-toggle-right">
                                                     <p>+</p>
                                                 </div>
                                             </div>
