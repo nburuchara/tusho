@@ -222,6 +222,7 @@ const Styles = styled.div `
     margin-top: 2.5px;
     margin-bottom: 3px;
     font-family: poppins;
+    margin-left: 2.5%;
 }
 
 .searchResultOption {
