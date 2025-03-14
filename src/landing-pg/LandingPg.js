@@ -219,21 +219,24 @@ const Styles = styled.div `
 }
 
 .searchResultCellLabelNonZeroQty {
-    border: 1px solid black;
+    border: 1px solid #ff5733;
     width: 100%;
-    height: 100%;
+    height: 2rem;
     display: flex;
     justify-content: space-between;
+    border-radius: 6px;
 }
 
 .searchResultCellLabelNonZeroQtyChange {
     width: 30%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .searchResultCellLabelNonZeroQtyValue {
     width: 40%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    border-left: 1px solid #ff5733;
+    border-right: 1px solid #ff5733;
 }
 
 .searchResultCell p {
