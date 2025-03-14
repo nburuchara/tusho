@@ -219,23 +219,24 @@ const Styles = styled.div `
 }
 
 .searchResultCell p {
-    margin-top: 5px;
+    margin-top: 3px;
     margin-bottom: 3px;
     font-family: poppins;
 }
 
 .searchResultOption {
     // margin-top: 10px;
+    font-size: 85%;
+}
+
+.searchResultOption label {
+    font-weight: bold;
+    color: #ff5733;
 }
 
 .searchResultCategory {
-    font-size: 80%;
+    font-size: 75%;
     margin-bottom: 0px;
-}
-
-.searchResultCategory span {
-    font-weight: bold;
-    color: #ff5733;
 }
 
     // # # SEARCH RESULTS JIPANGE
@@ -6640,8 +6641,8 @@ export default class LandingPg extends Component {
                                                                     <img src={option.image}/>
                                                                 </div>
                                                                 <div className='searchResultCellDetails'>
-                                                                    <p className='searchResultOption'>{option.highlightedName}</p>
-                                                                    <p className='searchResultCategory'><span>KES {option.price}</span> {category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null } </p> 
+                                                                    <p className='searchResultOption'>{option.highlightedName} • <label><>KES</> {option.price}</label> </p>
+                                                                    <p className='searchResultCategory'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null }</p> 
                                                                 </div>
                                                                 <div className='searchResultCellLabel'>
                                                                     <p>[click to add to cart]</p>
