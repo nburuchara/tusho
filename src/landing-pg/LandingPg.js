@@ -278,7 +278,7 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 85%;
+    font-size: 70%;
     font-family: poppins;
     font-weight: bold;
 }
