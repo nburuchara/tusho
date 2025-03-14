@@ -219,17 +219,20 @@ const Styles = styled.div `
 }
 
 .searchResultCellLabelNonZeroQty {
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
 }
 
 .searchResultCellLabelNonZeroQtyChange {
-    width: 25%;
+    width: 30%;
     border: 1px solid black;
 }
 
 .searchResultCellLabelNonZeroQtyValue {
-    width: 50%;
+    width: 40%;
     border: 1px solid black;
 }
 
