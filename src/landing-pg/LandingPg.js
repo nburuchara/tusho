@@ -220,8 +220,8 @@ const Styles = styled.div `
 
 .searchResultCellLabelNonZeroQty {
     border: 1px solid #ff5733;
-    width: 100%;
-    height: 2rem;
+    width: 70%;
+    height: 1.5rem;
     display: flex;
     justify-content: space-between;
     border-radius: 6px;
@@ -236,7 +236,7 @@ const Styles = styled.div `
     justify-content: center;
     font-weight: bold;
     font-family: poppins;
-    font-size: 85%;
+    font-size: 80%;
     border: 0.5px solid transparent;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -257,7 +257,7 @@ const Styles = styled.div `
     justify-content: center;
     font-weight: bold;
     font-family: poppins;
-    font-size: 85%;
+    font-size: 80%;
     border: 0.5px solid transparent;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -278,6 +278,9 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 85%;
+    font-family: poppins;
+    font-weight: bold;
 }
 
 .searchResultCell p {
