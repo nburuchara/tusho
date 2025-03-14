@@ -5608,7 +5608,9 @@ export default class LandingPg extends Component {
     }
 
     mainSearchBarSearchedTermClicked = (category, option) => {
-
+        if (option.qty === 0) {
+            this.increaseItemQty(option.id);
+        }
     }
 
     navbarMenuClicked = () => {
@@ -5655,30 +5657,30 @@ export default class LandingPg extends Component {
         }, 0)
     }
 
-    decreaseItemQty = (item, itemQty) => {
-        if (itemQty > 1 && itemQty !== 2) {
-          this.setState((prevState) => ({
-            [`item${item}CartQty`]: prevState[`item${item}CartQty`] - 1,
-            [`minimumItem${item}QtyColor`]: "#000"
-          }));
-        } else if (itemQty === 2) {
-            this.setState((prevState) => ({
-                [`item${item}CartQty`]: prevState[`item${item}CartQty`] - 1,
-                [`minimumItem${item}QtyColor`]: "#bbb"
-              }));
-        }
-    };
+    // decreaseItemQty = (item, itemQty) => {
+    //     if (itemQty > 1 && itemQty !== 2) {
+    //       this.setState((prevState) => ({
+    //         [`item${item}CartQty`]: prevState[`item${item}CartQty`] - 1,
+    //         [`minimumItem${item}QtyColor`]: "#000"
+    //       }));
+    //     } else if (itemQty === 2) {
+    //         this.setState((prevState) => ({
+    //             [`item${item}CartQty`]: prevState[`item${item}CartQty`] - 1,
+    //             [`minimumItem${item}QtyColor`]: "#bbb"
+    //           }));
+    //     }
+    // };
 
-    increaseItemQty = (item, itemQty) => {
-        if (itemQty === 1) {
-            this.setState({
-                [`minimumItem${item}QtyColor`]: "#000"
-            })
-        }
-        this.setState((prevState) => ({
-            [`item${item}CartQty`]: prevState[`item${item}CartQty`] + 1,
-        }));
-    }
+    // increaseItemQty = (item, itemQty) => {
+    //     if (itemQty === 1) {
+    //         this.setState({
+    //             [`minimumItem${item}QtyColor`]: "#000"
+    //         })
+    //     }
+    //     this.setState((prevState) => ({
+    //         [`item${item}CartQty`]: prevState[`item${item}CartQty`] + 1,
+    //     }));
+    // }
 
     openHomeShoppingCartClicked = () => {
         this.setState({
@@ -6556,51 +6558,67 @@ export default class LandingPg extends Component {
 
     increaseItemQty = (productId) => {
         this.setState((prevState) => {
-            // Update cart
-            const updatedCart = prevState.cart.map((item) =>
-                item.id === productId ? { ...item, quantity: item.quantity + 1 } : item
-            );
-    
             // Update products
             const updatedProducts = prevState.products.map((product) =>
                 product.id === productId ? { ...product, qty: product.qty + 1 } : product
             );
     
-            // 🔹 Update groupedOptions (search results)
+            // Find updated product
+            const updatedProduct = updatedProducts.find((product) => product.id === productId);
+    
+            // Update the cart
+            let updatedCart = prevState.cart;
+            const existingCartItem = prevState.cart.find((item) => item.id === productId);
+    
+            if (existingCartItem) {
+                updatedCart = prevState.cart.map((item) =>
+                    item.id === productId ? { ...item, quantity: updatedProduct.qty } : item
+                );
+            } else {
+                updatedCart = [...prevState.cart, { ...updatedProduct, quantity: updatedProduct.qty }];
+            }
+    
+            // 🔹 Update groupedOptions for search results
             const updatedGroupedOptions = Object.fromEntries(
                 Object.entries(prevState.groupedOptions).map(([category, options]) => [
                     category,
                     options.map(option =>
-                        option.id === productId ? { ...option, qty: option.qty + 1 } : option
+                        option.id === productId ? { ...option, qty: updatedProduct.qty } : option
                     )
                 ])
             );
     
+            const totalCartPrice = updatedCart.reduce((total, item) => total + item.price * item.quantity, 0);
+    
             return {
-                cart: updatedCart,
                 products: updatedProducts,
-                groupedOptions: updatedGroupedOptions // 🔹 Ensure search results update immediately
+                cart: updatedCart, // 🔹 Now updates cart correctly
+                totalCartPrice,
+                groupedOptions: updatedGroupedOptions,
             };
         });
     };
     
     decreaseItemQty = (productId) => {
         this.setState((prevState) => {
-            // Update cart
-            const updatedCart = prevState.cart
-                .map((item) =>
-                    item.id === productId && item.quantity > 1
-                        ? { ...item, quantity: item.quantity - 1 }
-                        : item
-                )
-                .filter((item) => item.quantity > 0); // Remove from cart if 0
-    
             // Update products
             const updatedProducts = prevState.products.map((product) =>
                 product.id === productId && product.qty > 0
                     ? { ...product, qty: product.qty - 1 }
                     : product
             );
+    
+            // Find updated product
+            const updatedProduct = updatedProducts.find((product) => product.id === productId);
+    
+            // Update the cart
+            let updatedCart = prevState.cart
+                .map((item) =>
+                    item.id === productId && item.quantity > 1
+                        ? { ...item, quantity: item.quantity - 1 }
+                        : item
+                )
+                .filter((item) => item.quantity > 0); // Remove if 0
     
             // 🔹 Update groupedOptions for search results
             const updatedGroupedOptions = Object.fromEntries(
@@ -6614,10 +6632,13 @@ export default class LandingPg extends Component {
                 ])
             );
     
+            const totalCartPrice = updatedCart.reduce((total, item) => total + item.price * item.quantity, 0);
+    
             return {
-                cart: updatedCart,
                 products: updatedProducts,
-                groupedOptions: updatedGroupedOptions, // 🔹 Ensures search results update instantly
+                cart: updatedCart, // 🔹 Now updates cart correctly
+                totalCartPrice,
+                groupedOptions: updatedGroupedOptions,
             };
         });
     };
