@@ -6624,7 +6624,7 @@ export default class LandingPg extends Component {
                                     {searchInput !== "" && (
                                         <div className={`searchResults ${this.state.searchBarInput === '' ? 'empty' : ''}`}>
                                             {isSearchLoading && 
-                                                <div>
+                                                <div className='searchResultsLoading'>
                                                     <p>Loading...</p>
                                                 </div>
                                             }
