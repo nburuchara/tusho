@@ -4831,13 +4831,17 @@ const Styles = styled.div `
 .dial-container {
     width: 30px;  /* Container width */
     height: 15px;
-    background-color: #ddd;
+    background-color: #d3d3d3;
     border-radius: 25px;
     display: flex;
     align-items: center;
     padding: 5px;
     position: relative;
     transition: background-color 0.3s ease;
+}
+
+.dial-container.active {
+    background-color: white;
 }
 
 .dial-button {
@@ -6419,6 +6423,9 @@ export default class LandingPg extends Component {
     };
 
     mainPageProductsFilterOptionClicked = (option) => {
+        if (option === 4) {
+            this.toggleDial()
+        }
         this.setState((prevState) => {
             let newState = {};
         
@@ -9448,7 +9455,7 @@ export default class LandingPg extends Component {
                                     </div>
                                     <div onClick={() => this.mainPageProductsFilterOptionClicked(4)} className={`homepage-body-inner-header-option-pamoja ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
                                         <h4>Shop Pamoja</h4>
-                                        <div className="dial-container" onClick={this.toggleDial}>
+                                        <div className={`dial-container ${this.state.active ? "active" : ""}`}>
                                             <div className={`dial-button ${this.state.active ? "active" : ""}`}></div>
                                         </div>
                                     </div>
