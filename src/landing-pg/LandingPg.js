@@ -9485,7 +9485,7 @@ export default class LandingPg extends Component {
                                         }
                                         {this.state.showMyOrdersSettings && 
                                             <div className='navbar-profile-account-popup-my-orders-settings'>
-                                                <div className='navbar-profile-account-popup-delivery-info-settings-header'>
+                                                <div className='navbar-profile-account-popup-my-orders-settings-header'>
                                                     <p>My Orders:</p>
                                                 </div>
                                             </div>
