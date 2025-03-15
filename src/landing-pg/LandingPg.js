@@ -1409,7 +1409,7 @@ const Styles = styled.div `
     margin-right: 1%;
     top: -1.75rem;
     right: 0;
-    margin-top: 100px;
+    margin-top: 105px;
     flex-direction: column;
     background-color: #f3f5f7;
     border-radius: 8px;
