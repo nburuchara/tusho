@@ -2158,15 +2158,14 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-body-left-footer-delete {
    background-color: #20313a;
-   color: #ff5733;
+//    color: #ff5733;
 }
 
 .navbar-profile-account-popup-body-left-footer-delete p {
-   color: #ff5733;
+   color: white;
    font-family: inter;
    font-size: 85%;
    font-weight: bold;
-//    padding-top: 2.5px;
 }
 
 
