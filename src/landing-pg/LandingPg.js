@@ -4955,6 +4955,7 @@ const Styles = styled.div `
     padding: 20px;
     margin-top: -1.5rem;
     // border: 1px solid black;
+    padding-bottom: 5px;
 }
 
 /* Promo Row */
@@ -5366,15 +5367,30 @@ export default class LandingPg extends Component {
         this.searchBarRef = React.createRef();
 
         this.inputs = []; // To store input element references
+
+        //* - SCROLL PAST FILTERS - *//
+        this.sentinelRef = React.createRef();
+        this.observer = null;
+        this.elementRef = React.createRef();
     }
 
     componentDidMount = () => {
-        document.addEventListener('click', this.handleOutsideSearchBarClick);
-        this.scrollContainer = document.getElementById("scrollable-container"); // Reference the container
-        if (this.scrollContainer) {
-            this.scrollContainer.addEventListener("scroll", this.handleScroll);
+        document.addEventListener("click", this.handleOutsideSearchBarClick);
+
+        // ✅ Intersection Observer for infinite scrolling
+        this.observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !this.state.loadingMore) {
+                    this.loadMoreItems();
+                }
+            },
+            { root: document.getElementById("scrollable-container"), threshold: 0.1 }
+        );
+
+        if (this.sentinelRef.current) {
+            this.observer.observe(this.sentinelRef.current);
         }
-        this.updateFilteredProductCount();
+
         this.setState({ productsLoading: true }, () => {
             setTimeout(() => {
                 this.setState({ productsLoading: false });
@@ -5389,12 +5405,11 @@ export default class LandingPg extends Component {
     }
 
     componentWillUnmount() {
-        // Remove the click event listener to prevent memory leaks
-        document.removeEventListener('click', this.handleOutsideSearchBarClick);
-        if (this.scrollContainer) {
-            this.scrollContainer.removeEventListener("scroll", this.handleScroll);
+        document.removeEventListener("click", this.handleOutsideSearchBarClick);
+
+        if (this.observer) {
+            this.observer.disconnect();
         }
-        clearInterval(this.timer); // Clear the timer when the component unmounts
     }
 
     updateFilteredProductCount = () => {
@@ -6557,13 +6572,11 @@ export default class LandingPg extends Component {
     
         this.setState({ loadingMore: true });
     
-        // Simulate fetching new items (replace with actual API call)
         setTimeout(() => {
             const { products, visibleCount } = this.state;
             const newVisibleCount = visibleCount + 6; // Load 6 more items
     
-            // Identify newly loaded products
-            const newlyLoadedProducts = products.slice(visibleCount, newVisibleCount).map(p => p.id);
+            const newlyLoadedProducts = products.slice(visibleCount, newVisibleCount).map((p) => p.id);
     
             this.setState({
                 visibleCount: newVisibleCount,
@@ -6571,10 +6584,9 @@ export default class LandingPg extends Component {
                 loadingMore: false,
             });
     
-            // Remove loading skeleton for these items after a short delay
             setTimeout(() => {
                 this.setState({ newlyLoadedProducts: [] });
-            }, 2000); // Adjust delay as needed
+            }, 2000);
         }, 1500);
     };
 
@@ -9411,7 +9423,6 @@ export default class LandingPg extends Component {
                         {/* - - - Homepage - - - */}
 
                     <div id="scrollable-container" className='homepage-fullscreen'>
-
                         <div className='homepage-header'>
                             <div className='homepage-header-inner-header'>
                                 <div className='homepage-header-inner-header-left'>
@@ -9477,7 +9488,7 @@ export default class LandingPg extends Component {
                         <div className='homepage-body'>
                             <div className='homepage-body-inner-header'>
                                 <h1>Shop Now</h1>
-                                <div className='homepage-body-inner-header-options'>
+                                <div ref={this.elementRef} className='homepage-body-inner-header-options'>
                                     <div onClick={() => this.mainPageProductsFilterOptionClicked(1)} className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter1 ? 'selected' : ''}`}>
                                         <h4>{this.state.homepageCurrentCategoryFilter}</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
@@ -9567,7 +9578,7 @@ export default class LandingPg extends Component {
                                             Loading more products...
                                         </div>
                                     )}
-
+                                    <div ref={this.sentinelRef} className="scroll-sentinel"></div> {/* 🔹 Observer target */}
                                 </div> 
                                 
                             </div>
