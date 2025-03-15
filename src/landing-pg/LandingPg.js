@@ -53,10 +53,11 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    visibility: hidden;
 }
 
-.scroll-to-page-top button {
-
+.scroll-to-page-top.show {
+    visibility: visible;
 }
 
     // - - NAVBAR - - //
@@ -5124,6 +5125,8 @@ export default class LandingPg extends Component {
     constructor (props) {
         super(props)
         this.state = {
+            //* - FULL PAGE ELEMENTS - *//
+            displayScrollUpBtn: false,
 
             //* - USER ACCOUNT STATUS - *//
             userSignedIn: true,
@@ -9622,7 +9625,7 @@ export default class LandingPg extends Component {
                         </div>
                     </div>
                     
-                    <div className='scroll-to-page-top'>↑</div>
+                    <div className={`scroll-to-page-top ${this.state.displayScrollUpBtn ? 'show' : ''}`}>↑</div>
 
                 </div>
                 
