@@ -4386,6 +4386,15 @@ const Styles = styled.div `
     font-size: 80%;
 }
 
+.navbar-profile-account-popup-my-orders-settings-header-filters {
+    // border: 1px solid black;
+    border-top: 1px solid #5e626a;
+    width: 95%;
+    margin-left: 2.5%;
+    height: 20.5%;
+    position: relative;
+}
+
     // # LOADING SCREEN SETTINGS
 
 .navbar-profile-loading-popup-settings {
@@ -9487,6 +9496,9 @@ export default class LandingPg extends Component {
                                             <div className='navbar-profile-account-popup-my-orders-settings'>
                                                 <div className='navbar-profile-account-popup-my-orders-settings-header'>
                                                     <p>My Orders:</p>
+                                                    <div className='navbar-profile-account-popup-my-orders-settings-header-filters'>
+
+                                                    </div>
                                                 </div>
                                             </div>
                                         }
