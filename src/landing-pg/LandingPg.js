@@ -4475,7 +4475,7 @@ const Styles = styled.div `
     justify-content: center;
     background-color: #faece9;
     border: 1px solid #ff5733;
-    border-radius: 6px;
+    border-radius: 8px;
 }
 
 .homepage-header-inner-header-left-option h4 {
