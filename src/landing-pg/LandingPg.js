@@ -38,6 +38,12 @@ const Styles = styled.div `
     background-color: transparent;
 }
 
+.scroll-to-page-top {
+    position: absolute;
+    bottom: -4.5rem;
+    right: 0;
+}
+
     // - - NAVBAR - - //
 
 .navbar {
@@ -9580,11 +9586,14 @@ export default class LandingPg extends Component {
                                         </div>
                                     )}
                                 </div> 
-                                
                             </div>
                         </div>
                     </div>
                     
+                    <div className='scroll-to-page-top'>
+                        <button>Scroll</button>
+                    </div>
+
                 </div>
                 
             </Styles>
