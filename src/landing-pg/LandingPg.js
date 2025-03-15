@@ -2157,13 +2157,12 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-body-left-footer-delete {
-   background-color: #ee362a;
-   color: white;
-   font-family: inter;
+   background-color: #20313a;
+   color: #ff5733;
 }
 
 .navbar-profile-account-popup-body-left-footer-delete p {
-   color: white;
+   color: #ff5733;
    font-family: inter;
    font-size: 85%;
    padding-top: 2.5px;
@@ -4366,7 +4365,11 @@ const Styles = styled.div `
     // # MY ORDERS SCREEN SETTINGS
 
 .navbar-profile-account-popup-my-orders-settings {
-    
+    margin-left: 6.5%;
+    border: 1px solid black;
+    height: 37.65rem;
+    display: flex;
+    flex-direction: column;
 }
 
     // # LOADING SCREEN SETTINGS
