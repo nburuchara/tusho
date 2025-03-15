@@ -42,15 +42,20 @@ const Styles = styled.div `
     position: absolute;
     bottom: -4.5rem;
     right: 0;
-}
-
-.scroll-to-page-top button {
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     padding: 5px;
     border: 1px solid #ff5733;
     background-color: #ff5733;
     color: white;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-to-page-top button {
 
 }
 
@@ -9617,9 +9622,7 @@ export default class LandingPg extends Component {
                         </div>
                     </div>
                     
-                    <div className='scroll-to-page-top'>
-                        <button>↑</button>
-                    </div>
+                    <div className='scroll-to-page-top'>↑</div>
 
                 </div>
                 
