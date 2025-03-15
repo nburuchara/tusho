@@ -7353,15 +7353,6 @@ export default class LandingPg extends Component {
                                         </div>
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption2Selected ? 'selected' : ''}`}></div>
                                     </div>
-                                    {/* <div className={`navbar-profile-account-popup-body-left-settings-option-cell ${this.state.accountMenuOption3Selected ? 'selected' : ''}`}>
-                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
-                                            <img src='/assets/icons/home-profile/edit-pamoja-option-icon.png'/>
-                                        </div>
-                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
-                                            <p>Pamoja</p>
-                                        </div>
-                                        <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption3Selected ? 'selected' : ''}`}></div>
-                                    </div> */}
                                     <div onClick={() => this.menuOptionClicked(3)} className={`navbar-profile-account-popup-body-left-settings-option-cell ${this.state.accountMenuOption3Selected ? 'selected' : ''}`}>
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-icon ${this.state.accountMenuOption3Selected ? 'selected' : ''}`}>
                                             <img src='/assets/icons/home-profile/edit-location-option-icon2.png'/>
@@ -7372,6 +7363,15 @@ export default class LandingPg extends Component {
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption3Selected ? 'selected' : ''}`}>
 
                                         </div>
+                                    </div>
+                                    <div onClick={() => this.menuOptionClicked(4)} className={`navbar-profile-account-popup-body-left-settings-option-cell ${this.state.accountMenuOption4Selected ? 'selected' : ''}`}>
+                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
+                                            <img src='/assets/icons/home-profile/edit-pamoja-option-icon.png'/>
+                                        </div>
+                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
+                                            <p>My Orders</p>
+                                        </div>
+                                        <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption4Selected ? 'selected' : ''}`}></div>
                                     </div>
                                     <div className='navbar-profile-account-popup-body-left-footer'>
                                         <div className='navbar-profile-account-popup-body-left-footer-sign-out'>
@@ -9452,6 +9452,11 @@ export default class LandingPg extends Component {
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </div>
+                                        }
+                                        {this.state.showMyOrdersSettings && 
+                                            <div className=''>
+
                                             </div>
                                         }
                                         {this.state.showSettingsPageLoading && 
