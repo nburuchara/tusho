@@ -9570,6 +9570,7 @@ export default class LandingPg extends Component {
                                                 onJipangeSelected={this.mainPageProductsHandleJipangeSelected}
                                             />
                                         ))}
+                                        <div ref={this.sentinelRef} className="scroll-sentinel"></div> {/* 🔹 Observer target */}
                                     </div>
 
                                     {/* Show spinner when loading more items */}
@@ -9578,7 +9579,6 @@ export default class LandingPg extends Component {
                                             Loading more products...
                                         </div>
                                     )}
-                                    <div ref={this.sentinelRef} className="scroll-sentinel"></div> {/* 🔹 Observer target */}
                                 </div> 
                                 
                             </div>
