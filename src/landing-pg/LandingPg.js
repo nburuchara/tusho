@@ -4372,13 +4372,13 @@ const Styles = styled.div `
     flex-direction: column;
 }
 
-.navbar-profile-account-popup-my-orders-settings-header {
-    height: 50%;
-    // border: 1px solid black;
+.navbar-profile-account-popup-my-orders-settings-container {
+    height: 100%;
+    border: 1px solid black;
     position: relative;
 }
 
-.navbar-profile-account-popup-my-orders-settings-header p {
+.navbar-profile-account-popup-my-orders-settings-container p {
     margin-left: 2.5%;
     margin-bottom: 5px;
     color: #5e626a;
@@ -9494,7 +9494,7 @@ export default class LandingPg extends Component {
                                         }
                                         {this.state.showMyOrdersSettings && 
                                             <div className='navbar-profile-account-popup-my-orders-settings'>
-                                                <div className='navbar-profile-account-popup-my-orders-settings-header'>
+                                                <div className={`navbar-profile-account-popup-my-orders-settings-container ${this.state.jipangeMyOrders}`}>
                                                     <p>My Orders:</p>
                                                     <div className='navbar-profile-account-popup-my-orders-settings-header-filters'>
 
