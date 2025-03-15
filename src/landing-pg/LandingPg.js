@@ -44,6 +44,16 @@ const Styles = styled.div `
     right: 0;
 }
 
+.scroll-to-page-top button {
+    border-radius: 50%;
+    padding: 5px;
+    border: 1px solid #ff5733;
+    background-color: #ff5733;
+    color: white;
+    font-weight: bold;
+
+}
+
     // - - NAVBAR - - //
 
 .navbar {
@@ -9608,7 +9618,7 @@ export default class LandingPg extends Component {
                     </div>
                     
                     <div className='scroll-to-page-top'>
-                        <button>Scroll</button>
+                        <button>↑</button>
                     </div>
 
                 </div>
