@@ -4363,6 +4363,12 @@ const Styles = styled.div `
     font-family: poppins;
 }
 
+    // # MY ORDERS SCREEN SETTINGS
+
+.navbar-profile-account-popup-my-orders-settings {
+    
+}
+
     // # LOADING SCREEN SETTINGS
 
 .navbar-profile-loading-popup-settings {
@@ -7374,7 +7380,7 @@ export default class LandingPg extends Component {
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-icon ${this.state.accountMenuOption4Selected ? 'selected' : ''}`}>
                                             <img src='/assets/icons/home-profile/edit-my-orders-option-icon.png'/>
                                         </div>
-                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
+                                        <div className={`navbar-profile-account-popup-body-left-settings-option-cell-label ${this.state.accountMenuOption4Selected ? 'selected' : ''}`}>
                                             <p>My Orders</p>
                                         </div>
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption4Selected ? 'selected' : ''}`}></div>
@@ -9461,7 +9467,7 @@ export default class LandingPg extends Component {
                                             </div>
                                         }
                                         {this.state.showMyOrdersSettings && 
-                                            <div className=''>
+                                            <div className='navbar-profile-account-popup-my-orders-settings'>
 
                                             </div>
                                         }
