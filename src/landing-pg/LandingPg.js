@@ -5403,6 +5403,8 @@ export default class LandingPg extends Component {
                 if (!entry.isIntersecting) {
                     console.log("Element is out of view!");
                     alert("Element scrolled out of view!");
+                } else {
+                    //* If filters are in view
                 }
             },
             { threshold: 0 }
