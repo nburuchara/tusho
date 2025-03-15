@@ -57,6 +57,7 @@ const Styles = styled.div `
     transform: translateX(5px);
     opacity: 0;
     transition-property: transform, opacity;
+    cursor: pointer;
 }
 
 .scroll-to-page-top.show {
@@ -5463,7 +5464,7 @@ export default class LandingPg extends Component {
     }
 
     handleScrollToElement = () => {
-        const element = document.getElementById("homepage-body");
+        const element = document.getElementById("homepage-header");
         if (element) {
             element.scrollIntoView({ behavior: "smooth", block: "start" });
         }
@@ -9480,7 +9481,7 @@ export default class LandingPg extends Component {
                         {/* - - - Homepage - - - */}
 
                     <div id="scrollable-container" className='homepage-fullscreen'>
-                        <div className='homepage-header'>
+                        <div id='homepage-header' className='homepage-header'>
                             <div className='homepage-header-inner-header'>
                                 <div className='homepage-header-inner-header-left'>
                                     <div className='homepage-header-inner-header-left-option'>
@@ -9542,7 +9543,7 @@ export default class LandingPg extends Component {
                             </div>
                         </div>
 
-                        <div id='homepage-body' className='homepage-body'>
+                        <div className='homepage-body'>
                             <div className='homepage-body-inner-header'>
                                 <h1>Shop Now</h1>
                                 <div ref={this.elementRef} className='homepage-body-inner-header-options'>
