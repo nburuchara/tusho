@@ -5384,7 +5384,7 @@ export default class LandingPg extends Component {
         document.addEventListener("click", this.handleOutsideSearchBarClick);
 
         // ✅ Intersection Observer for infinite scrolling
-        this.observer = new IntersectionObserver(
+        this.scrollObserver = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting && !this.state.loadingMore) {
                     this.loadMoreItems();
@@ -5394,7 +5394,22 @@ export default class LandingPg extends Component {
         );
 
         if (this.sentinelRef.current) {
-            this.observer.observe(this.sentinelRef.current);
+            this.scrollObserver.observe(this.sentinelRef.current);
+        }
+
+        // ✅ Intersection Observer for detecting when an element is out of view
+        this.viewObserver = new IntersectionObserver(
+            ([entry]) => {
+                if (!entry.isIntersecting) {
+                    console.log("Element is out of view!");
+                    alert("Element scrolled out of view!");
+                }
+            },
+            { threshold: 0 }
+        );
+
+        if (this.elementRef.current) {
+            this.viewObserver.observe(this.elementRef.current);
         }
 
         this.setState({ productsLoading: true }, () => {
@@ -5413,9 +5428,9 @@ export default class LandingPg extends Component {
     componentWillUnmount() {
         document.removeEventListener("click", this.handleOutsideSearchBarClick);
 
-        if (this.observer) {
-            this.observer.disconnect();
-        }
+            // ✅ Cleanup observers
+        if (this.scrollObserver) this.scrollObserver.disconnect();
+        if (this.viewObserver) this.viewObserver.disconnect();
     }
 
     updateFilteredProductCount = () => {
