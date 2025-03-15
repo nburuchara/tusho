@@ -2165,7 +2165,8 @@ const Styles = styled.div `
    color: #ff5733;
    font-family: inter;
    font-size: 85%;
-   padding-top: 2.5px;
+   font-weight: bold;
+//    padding-top: 2.5px;
 }
 
 
