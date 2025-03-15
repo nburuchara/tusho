@@ -5893,6 +5893,9 @@ export default class LandingPg extends Component {
                 case 3:
                     prevMenuOption = "showDeliveryInfoSettings";
                     break;
+                case 4:
+                    prevMenuOption = "showMyOrdersSettings";
+                    break;
                 default:
                     prevMenuOption = "showAccountInformation";
             }
@@ -5906,6 +5909,9 @@ export default class LandingPg extends Component {
                     break;
                 case 3:
                     newMenuOption = "showDeliveryInfoSettings";
+                    break;
+                case 4:
+                    newMenuOption = "showMyOrdersSettings";
                     break;
                 default:
                     newMenuOption = "showAccountInformation";
@@ -7365,8 +7371,8 @@ export default class LandingPg extends Component {
                                         </div>
                                     </div>
                                     <div onClick={() => this.menuOptionClicked(4)} className={`navbar-profile-account-popup-body-left-settings-option-cell ${this.state.accountMenuOption4Selected ? 'selected' : ''}`}>
-                                        <div className='navbar-profile-account-popup-body-left-settings-option-cell-icon'>
-                                            <img src='/assets/icons/home-profile/edit-pamoja-option-icon.png'/>
+                                        <div className={`navbar-profile-account-popup-body-left-settings-option-cell-icon ${this.state.accountMenuOption4Selected ? 'selected' : ''}`}>
+                                            <img src='/assets/icons/home-profile/edit-my-orders-option-icon.png'/>
                                         </div>
                                         <div className='navbar-profile-account-popup-body-left-settings-option-cell-label'>
                                             <p>My Orders</p>
