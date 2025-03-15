@@ -6373,7 +6373,7 @@ export default class LandingPg extends Component {
                         selectedFilters: newFilters,
                         newlyLoadedProducts: newlyLoadedProductIds, // Show skeletons for new products
                         productsLoading: false, // Turn off global loading
-                        homepageCurrentCategoryFilter: type === 'category' ? (value === 'All' ? `${value} Categories` : value) : prevState.homepageCurrentCategoryFilter,
+                        homepageCurrentCategoryFilter: type === 'category' ? (value === 'All' ? `${value} Products` : value) : prevState.homepageCurrentCategoryFilter,
                         homepageCurrentPriceFilter: type === 'price' ? (typeof value === 'string' ? `${value} Prices` : `Up to ${value}`) : prevState.homepageCurrentPriceFilter,
                         homepageCurrentRatingFilter: type === 'rating' ? (typeof value === 'string' ? `${value} Ratings` : `${value} Stars & Up`) : prevState.homepageCurrentRatingFilter,
                         ...Object.fromEntries([...Array(3)].map((_, i) => [`homepagePrdouctsFilter${i + 1}`, false])) // Reset other filters
