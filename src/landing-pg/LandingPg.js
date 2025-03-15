@@ -4372,6 +4372,20 @@ const Styles = styled.div `
     flex-direction: column;
 }
 
+.navbar-profile-account-popup-my-orders-settings-header {
+    height: 50%;
+    // border: 1px solid black;
+    position: relative;
+}
+
+.navbar-profile-account-popup-my-orders-settings-header p {
+    margin-left: 2.5%;
+    margin-bottom: 5px;
+    color: #5e626a;
+    font-family: poppins;
+    font-size: 80%;
+}
+
     // # LOADING SCREEN SETTINGS
 
 .navbar-profile-loading-popup-settings {
@@ -9471,7 +9485,9 @@ export default class LandingPg extends Component {
                                         }
                                         {this.state.showMyOrdersSettings && 
                                             <div className='navbar-profile-account-popup-my-orders-settings'>
-
+                                                <div className='navbar-profile-account-popup-delivery-info-settings-header'>
+                                                    <p>My Orders:</p>
+                                                </div>
                                             </div>
                                         }
                                         {this.state.showSettingsPageLoading && 
