@@ -4467,7 +4467,7 @@ const Styles = styled.div `
     flex-direction: row;
 }
 
-.homepage-header-inner-header-left.show {
+.homepage-header-inner-header-left.hide {
     width: 50%;
     // border: 1px solid black;
     display: flex;
@@ -9582,20 +9582,19 @@ export default class LandingPg extends Component {
                     <div id="scrollable-container" className='homepage-fullscreen'>
                         <div id='homepage-header' className='homepage-header'>
                             <div className='homepage-header-inner-header'>
-                                {this.state.homepageNewUpdatesHide && 
-                                     <div className='homepage-header-inner-header-left'>
-                                        <div className='homepage-header-inner-header-left-option'>
-                                            <h4>🔥 New <label>(2)</label></h4><span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
-                                        </div>
-                                        {/* <div className='homepage-header-inner-header-left-option'>
-                                            <h4>What's New?</h4>
-                                        </div> */}
+                                <div className={`homepage-header-inner-header-left ${this.state.homepageNewUpdatesShow ? 'hide' : ''}`}>
+                                    <div className='homepage-header-inner-header-left-option'>
+                                        <h4>🔥 New <label>(2)</label></h4><span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
-                                }
-                                <div className={`homepage-header-inner-header-left ${this.state.homepageNewUpdatesHide ? '' : ''}`}>
+                                    {/* <div className='homepage-header-inner-header-left-option'>
+                                        <h4>What's New?</h4>
+                                    </div> */}
+                                </div>
+
+                                <div className={`homepage-header-inner-header-left-update-display ${this.state.homepageNewUpdatesShow ? 'show' : ''}`}>
 
                                 </div>
-                                <div className='homepage-header-inner-header-right'>
+                                <div className={`homepage-header-inner-header-right ${this.state.homepageNewUpdatesShow ? '' : ''}`}>
                                     <div className='homepage-header-inner-header-right-option'>
                                         
                                     </div>
