@@ -4468,18 +4468,25 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-header-left-option {
-    width: 20%;
-    // border: 1px solid black;
+    width: 25%;
+    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #faece9;
+    border: 1px solid #ff5733;
+    border-radius: 6px;
 }
 
 .homepage-header-inner-header-left-option h4 {
-    // font-weight: normal;
+    font-weight: normal;
     font-family: poppins;
     font-size: 95%;
-    color: #20313a; 
+    color: #ff5733;
+}
+
+.homepage-header-inner-header-left-option label {
+    font-weight: bold;
 }
 
 
@@ -9564,11 +9571,11 @@ export default class LandingPg extends Component {
                             <div className='homepage-header-inner-header'>
                                 <div className='homepage-header-inner-header-left'>
                                     <div className='homepage-header-inner-header-left-option'>
-                                        <h4>What's New <label>(2)</label></h4><span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
+                                        <h4>🔥 New <label>(2)</label></h4><span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
-                                    <div className='homepage-header-inner-header-left-option'>
-                                        {/* <h4>What's New?</h4> */}
-                                    </div>
+                                    {/* <div className='homepage-header-inner-header-left-option'>
+                                        <h4>What's New?</h4>
+                                    </div> */}
                                 </div>
                                 <div className='homepage-header-inner-header-right'>
                                     <div className='homepage-header-inner-header-right-option'>
