@@ -4468,7 +4468,16 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-header-left.hide {
-    width: 50%;
+    width: 0%;
+    border: 1px solid transparent;
+    display: flex;
+    flex-direction: row;
+    visibility: hidden;
+    // pointer-events: none;
+}
+
+.homepage-header-inner-header-left-update-display {
+    width: 60%;
     // border: 1px solid black;
     display: flex;
     flex-direction: row;
@@ -5334,7 +5343,7 @@ export default class LandingPg extends Component {
             completeJipangeBtnLoading: false,
             completeJipangeBtnTxt: true,
 
-            //* # DELIVERY INFO *//
+            //* # Delivery Info *//
             deliveryInfoDefaultAddressSelected: false,
             deliveryInfoDefaultAddressText: "",
             deliveryInfoAddressType1: false,
@@ -5436,6 +5445,10 @@ export default class LandingPg extends Component {
             item8CartPrice: 1149,
             item8CartTotal: 0,
             minimumItem8QtyColor: '#bbb',
+            
+            //* - - HOMESCREEN MAIN PAGE - - *//
+
+            homepageNewUpdatesShow: true,
 
             //* - - HOMESCREEN PRODUCTS GRID DISPLAY - - *//
 
@@ -9594,7 +9607,7 @@ export default class LandingPg extends Component {
                                 <div className={`homepage-header-inner-header-left-update-display ${this.state.homepageNewUpdatesShow ? 'show' : ''}`}>
 
                                 </div>
-                                <div className={`homepage-header-inner-header-right ${this.state.homepageNewUpdatesShow ? '' : ''}`}>
+                                <div className={`homepage-header-inner-header-right ${this.state.homepageNewUpdatesShow ? 'hide' : ''}`}>
                                     <div className='homepage-header-inner-header-right-option'>
                                         
                                     </div>
