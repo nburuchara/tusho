@@ -4366,7 +4366,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-my-orders-settings {
     margin-left: 6.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 37.65rem;
     display: flex;
     flex-direction: column;
@@ -4374,8 +4374,14 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-my-orders-settings-container {
     height: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     position: relative;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container p {
@@ -4386,13 +4392,29 @@ const Styles = styled.div `
     font-size: 80%;
 }
 
-.navbar-profile-account-popup-my-orders-settings-header-filters {
-    // border: 1px solid black;
+.navbar-profile-account-popup-my-orders-settings-container-content {
+    // bord/er: 1px solid black;
     border-top: 1px solid #5e626a;
     width: 95%;
     margin-left: 2.5%;
     height: 20.5%;
     position: relative;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-empty img {
+    width: 30px;
+    height: 30px;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-empty p {
+    margin-left: 0px;
 }
 
     // # LOADING SCREEN SETTINGS
@@ -7365,6 +7387,11 @@ export default class LandingPg extends Component {
                                                 <h1>My Delivery Info</h1>
                                             </div>
                                         }
+                                        {this.state.showMyOrdersSettings && 
+                                            <div className='navbar-profile-account-popup-header-account-setup-incomplete'>
+                                                <h1>My Orders</h1>
+                                            </div>
+                                        }
                                     </div>
                                     <div className='navbar-profile-account-popup-header-right-close'>
                                         <img src='/assets/icons/navbar/clear-search-icon-color.png'/>
@@ -9494,10 +9521,14 @@ export default class LandingPg extends Component {
                                         }
                                         {this.state.showMyOrdersSettings && 
                                             <div className='navbar-profile-account-popup-my-orders-settings'>
-                                                <div className={`navbar-profile-account-popup-my-orders-settings-container ${this.state.jipangeMyOrders}`}>
+                                                <div className={`navbar-profile-account-popup-my-orders-settings-container ${this.state.jipangeMyOrdersEmpty ? 'empty' : ''}`}>
                                                     <p>My Orders:</p>
-                                                    <div className='navbar-profile-account-popup-my-orders-settings-header-filters'>
-
+                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content'>
+                                                        
+                                                    </div>
+                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-empty'>
+                                                        <img src='/assets/icons/home-my-orders/no-orders-icon.png'/>
+                                                        <p>No orders yet</p>
                                                     </div>
                                                 </div>
                                             </div>
