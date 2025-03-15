@@ -54,10 +54,15 @@ const Styles = styled.div `
     align-items: center;
     justify-content: center;
     visibility: hidden;
+    transform: translateX(5px);
+    opacity: 0;
+    transition-property: transform, opacity;
 }
 
 .scroll-to-page-top.show {
     visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
 }
 
     // - - NAVBAR - - //
@@ -5022,6 +5027,7 @@ const Styles = styled.div `
 
 .navbar-search-bar,
 // .searchResultCellImg img,
+.scroll-to-page-top,
 .navbar-options-dropdown-left-menu-options-cell,
 .navbar-options-dropdown-left-menu-options-cell-icon img,
 .navbar-options-dropdown-left-menu-options-cell-details p,
@@ -5419,10 +5425,13 @@ export default class LandingPg extends Component {
         this.viewObserver = new IntersectionObserver(
             ([entry]) => {
                 if (!entry.isIntersecting) {
-                    console.log("Element is out of view!");
-                    alert("Element scrolled out of view!");
+                    if (!this.state.displayScrollUpBtn) {
+                        this.setState({ displayScrollUpBtn: true });
+                    }
                 } else {
-                    //* If filters are in view
+                    if (this.state.displayScrollUpBtn) {
+                        this.setState({ displayScrollUpBtn: false });
+                    }
                 }
             },
             { threshold: 0 }
