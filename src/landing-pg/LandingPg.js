@@ -9564,7 +9564,7 @@ export default class LandingPg extends Component {
                             <div className='homepage-header-inner-header'>
                                 <div className='homepage-header-inner-header-left'>
                                     <div className='homepage-header-inner-header-left-option'>
-                                        <h4>Products</h4><span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
+                                        <h4>What's New</h4><span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
                                     <div className='homepage-header-inner-header-left-option'>
                                         {/* <h4>What's New?</h4> */}
