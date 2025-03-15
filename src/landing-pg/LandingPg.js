@@ -5462,6 +5462,13 @@ export default class LandingPg extends Component {
         if (this.viewObserver) this.viewObserver.disconnect();
     }
 
+    handleScrollToElement = () => {
+        const element = document.getElementById("homepage-body");
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+    };
+
     updateFilteredProductCount = () => {
         const filteredProducts = this.mainPageProductsFilterProducts();
         this.setState({ filteredProductCount: filteredProducts.length });
@@ -9535,7 +9542,7 @@ export default class LandingPg extends Component {
                             </div>
                         </div>
 
-                        <div className='homepage-body'>
+                        <div id='homepage-body' className='homepage-body'>
                             <div className='homepage-body-inner-header'>
                                 <h1>Shop Now</h1>
                                 <div ref={this.elementRef} className='homepage-body-inner-header-options'>
@@ -9634,7 +9641,7 @@ export default class LandingPg extends Component {
                         </div>
                     </div>
                     
-                    <div className={`scroll-to-page-top ${this.state.displayScrollUpBtn ? 'show' : ''}`}>↑</div>
+                    <div onClick={this.handleScrollToElement} className={`scroll-to-page-top ${this.state.displayScrollUpBtn ? 'show' : ''}`}>↑</div>
 
                 </div>
                 
