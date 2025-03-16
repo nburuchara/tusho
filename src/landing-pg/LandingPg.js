@@ -5560,9 +5560,9 @@ export default class LandingPg extends Component {
                 price: "All",
                 rating: "All",
                 brand: "All",
-                pamoja: "All"
+                // pamoja: false
             },
-            active: false,
+            shopPamojaActive: false,
             categoryOptions: ["All", "Fruits & Vegetables", "Organic", "Meat", "Dairy", "Food Cupboard", "Baby Care", "Easy Prep", "Condiments & Spices", "Home & Cleaning", "Bulk Buy", "Personal Care", "Beverages", "Snacks", "Bakery", "Bundles", "Stationary", "Home Appliances", "Alcohol", "Pets", "Decor & Flowers", "Services", "Shopping Bags", "Kids & Toys",],
             priceOptions: ["All", 500, 1000, 1500], // Example price thresholds
             ratingOptions: ["All", 2, 3, 4, 5], // Example minimum ratings
@@ -6671,7 +6671,8 @@ export default class LandingPg extends Component {
                 this.setState((prevState) => {
                     const newFilters = {
                         ...prevState.selectedFilters,
-                        [type]: prevState.selectedFilters[type] === value ? "All" : value // Toggle selection
+                        [type]: type === 'pamoja' ? !prevState.selectedFilters.pamoja :  // Toggle 'pamoja'
+                            (prevState.selectedFilters[type] === value ? "All" : value) // Toggle other filters
                     };
     
                     const filteredProducts = this.mainPageProductsFilterProducts(newFilters);
@@ -6685,7 +6686,7 @@ export default class LandingPg extends Component {
                         homepageCurrentPriceFilter: type === 'price' ? (typeof value === 'string' ? `${value} Prices` : `Up to ${value}`) : prevState.homepageCurrentPriceFilter,
                         homepageCurrentRatingFilter: type === 'rating' ? (typeof value === 'string' ? `${value} Ratings` : `${value} Stars & Up`) : prevState.homepageCurrentRatingFilter,
                         homepageCurrentBrandFilter: type === 'brand' ? (typeof value === 'string' ? `${value} Brands` : `${value}`) : prevState.homepageCurrentBrandFilter,
-                        homepageCurrentPamojaFilter: type === 'pamoja' ? (value === true ? "Shop Pamoja" : "All") : prevState.homepageCurrentPamojaFilter,
+                        homepagePrdouctsFilter5: type === 'pamoja' ? !prevState.homepagePrdouctsFilter5 : prevState.homepagePrdouctsFilter5,
                         ...Object.fromEntries([...Array(4)].map((_, i) => [`homepagePrdouctsFilter${i + 1}`, false])) // Reset other filters
                     };
                 });
@@ -6707,7 +6708,7 @@ export default class LandingPg extends Component {
                    (selectedFilters.price === "All" || product.price <= selectedFilters.price) &&
                    (selectedFilters.rating === "All" || product.rating <= selectedFilters.rating) &&
                    (selectedFilters.brand === "All" || product.brand === selectedFilters.brand) && 
-                   (selectedFilters.pamoja === "All" || product.pamoja === this.state.homepagePrdouctsFilter5);
+                   (selectedFilters.pamoja === true ? product.pamoja === true : true);
         });
     };
 
@@ -6795,7 +6796,7 @@ export default class LandingPg extends Component {
             this.setState((prevState) => ({
                 homepagePrdouctsFilter5: !prevState.homepagePrdouctsFilter5, // Ensure it's set to true when selected
             }), () => {
-                this.mainPageProductsHandleFilterChange('pamoja', !this.state.homepagePrdouctsFilter5);
+                this.mainPageProductsHandleFilterChange('pamoja', this.state.homepagePrdouctsFilter5);
             });
         } else {
             this.setState((prevState) => {
@@ -6890,7 +6891,7 @@ export default class LandingPg extends Component {
     };
 
     toggleDial = () => {
-        this.setState((prevState) => ({ active: !prevState.active }));
+        this.setState((prevState) => ({ shopPamojaActive: !prevState.shopPamojaActive }));
     };
 
     render () {
@@ -9845,10 +9846,10 @@ export default class LandingPg extends Component {
                                     </div>
 
                                     {/* Last dropdown positioned on the far right */}
-                                    <div onClick={() => this.mainPageProductsFilterOptionClicked(5)} className={`homepage-body-inner-header-option-pamoja ${this.state.homepagePrdouctsFilter5 ? 'selected' : ''}`}>
+                                    <div onClick={() => this.mainPageProductsFilterOptionClicked(5)} className={`homepage-body-inner-header-option-pamoja ${this.state.shopPamojaActive ? 'selected' : ''}`}>
                                         <h4>Shop Pamoja</h4>
-                                        <div className={`dial-container ${this.state.active ? "active" : ""}`}>
-                                            <div className={`dial-button ${this.state.active ? "active" : ""}`}></div>
+                                        <div className={`dial-container ${this.state.shopPamojaActive ? "active" : ""}`}>
+                                            <div className={`dial-button ${this.state.shopPamojaActive ? "active" : ""}`}></div>
                                         </div>
                                     </div>
                                 </div>
