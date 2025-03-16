@@ -5203,7 +5203,7 @@ const Styles = styled.div `
     width: 100%;
     height: 100%;
     grid-column: 1 / -1; /* Ensure it spans the full width of the grid */
-    min-height: 350px; /* Ensures enough height for centering */
+    min-height: 390px; /* Ensures enough height for centering */
 }
 
 .no-results-message h3 {
@@ -5215,6 +5215,7 @@ const Styles = styled.div `
 .no-results-message p {
     color: #5e626a;
     font-family: poppins;
+    font-size: 85%;
 }
 
 .no-results-message img {
