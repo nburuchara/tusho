@@ -4487,44 +4487,53 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-header-left-update-display-left-child {
-    width: 10%;
+    width: 0%;
     height: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .homepage-header-inner-header-left-update-display-right-child {
-    width: 90%;
+    width: 100%;
     height: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .homepage-header-inner-header-left-update-display-announcement-container {
     width: 100%;
+    height: 100%;
     overflow: hidden;
-    white-space: nowrap;
-    background: #222;
-    color: white;
-    padding: 10px;
+    background-color: #faece9;
+    border-top: 1px solid #FF5733;
+    border-bottom: 1px solid #FF5733;
+    color: #ff5733;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
     position: relative;
 } 
 
 .homepage-header-inner-header-left-update-display-announcement-track {
-    display: inline-block;
+    display: flex;
+    gap: 30px;
     white-space: nowrap;
+    position: absolute;
+    will-change: transform;
     animation: scrollAnnouncements 15s linear infinite;
 }
 
-.homepage-header-inner-header-left-update-display-announcement-track span {
-    display: inline-block;
-    padding: 0 30px;
+.homepage-header-inner-header-left-update-display-announcement-wrapper {
+    display: flex;
+    gap: 30px;
 }
+
 
 @keyframes scrollAnnouncements {
     from {
-        transform: translateX(100%);
+        transform: translateX(100%); /* Start fully off-screen */
     }
     to {
-        transform: translateX(-100%);
+        transform: translateX(-100%); /* Move completely left */
     }
 }
 
@@ -9655,11 +9664,13 @@ export default class LandingPg extends Component {
                                     </div>
                                     <div className='homepage-header-inner-header-left-update-display-right-child'>
                                         <div class="homepage-header-inner-header-left-update-display-announcement-container">
-                                            <div class="homepage-header-inner-header-left-update-display-announcement-track">
-                                                <span>📢 Announcement 1</span>
-                                                <span>🚀 Announcement 2</span>
-                                                <span>🔥 Announcement 3</span>
-                                                <span>🎉 Announcement 4</span>
+                                            <div class="homepage-header-inner-header-left-update-display-announcement-track" id="homepage-header-inner-header-left-update-display-announcement-track">
+                                                <div class="homepage-header-inner-header-left-update-display-announcement-wrapper">
+                                                    <span>📢 Announcement 1</span>
+                                                    <span>🚀 Announcement 2</span>
+                                                    <span>🔥 Announcement 3</span>
+                                                    <span>🎉 Announcement 4</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
