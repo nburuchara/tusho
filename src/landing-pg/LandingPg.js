@@ -5534,20 +5534,24 @@ export default class LandingPg extends Component {
             selectedFilters: {
                 category: "All",
                 price: "All",
-                rating: "All"
+                rating: "All",
+                brand: "All"
             },
             active: false,
             categoryOptions: ["All", "Fruits & Vegetables", "Organic", "Meat", "Dairy", "Food Cupboard", "Baby Care", "Easy Prep", "Condiments & Spices", "Home & Cleaning", "Bulk Buy", "Personal Care", "Beverages", "Snacks", "Bakery", "Bundles", "Stationary", "Home Appliances", "Alcohol", "Pets", "Decor & Flowers", "Services", "Shopping Bags", "Kids & Toys",],
             priceOptions: ["All", 500, 1000, 1500], // Example price thresholds
             ratingOptions: ["All", 2, 3, 4, 5], // Example minimum ratings
+            brandOptions: ["All", 'Ajab', 'Amaize', 'Daima', 'Kabras', 'Weetabix', 'Mount Kenya', 'Rina', 'Sunlight', 'Soko', 'Toilex', 'Ketepa Pride', 'Everfresh', 'Raha Havagara', 'Velvex', 'Festive', 'Peptang', 'Poshy', 'Exe', 'Vaseline', 'Toss', 'Molfix', 'Blueband', 'Geisha', 'Tropical Heat', 'Brookside', 'Prestige', 'Daawat', 'Santa Lucia', 'Santa Maria', 'Downy', 'Royco', 'Kericho Gold', 'Kings', 'Sunrice', 'Msafi', 'Delmonte', 'Green Forest', 'Nivea', 'Amara', 'Butter Fly', 'Amana', 'Kara', 'Morning Fresh', 'Pick \'n\' Peel', ''], // Example minimum ratings
             homepageProductsCurrentFilter: 0,
             homepagePrdouctsFilter1: false,
             homepagePrdouctsFilter2: false,
             homepagePrdouctsFilter3: false,
             homepagePrdouctsFilter4: false,
+            homepagePrdouctsFilter5: false,
             homepageCurrentCategoryFilter: 'All Products',
             homepageCurrentPriceFilter: 'Price',
             homepageCurrentRatingFilter: 'Rating',
+            homepageCurrentBrandFilter: 'Brand',
 
         }
 
@@ -6654,7 +6658,8 @@ export default class LandingPg extends Component {
                         homepageCurrentCategoryFilter: type === 'category' ? (value === 'All' ? `${value} Products` : value) : prevState.homepageCurrentCategoryFilter,
                         homepageCurrentPriceFilter: type === 'price' ? (typeof value === 'string' ? `${value} Prices` : `Up to ${value}`) : prevState.homepageCurrentPriceFilter,
                         homepageCurrentRatingFilter: type === 'rating' ? (typeof value === 'string' ? `${value} Ratings` : `${value} Stars & Up`) : prevState.homepageCurrentRatingFilter,
-                        ...Object.fromEntries([...Array(3)].map((_, i) => [`homepagePrdouctsFilter${i + 1}`, false])) // Reset other filters
+                        homepageCurrentBrandFilter: type === 'brand' ? (typeof value === 'string' ? `${value} Brand` : `${value}`) : prevState.homepageCurrentBrandFilter,
+                        ...Object.fromEntries([...Array(4)].map((_, i) => [`homepagePrdouctsFilter${i + 1}`, false])) // Reset other filters
                     };
                 });
     
@@ -6673,7 +6678,8 @@ export default class LandingPg extends Component {
         return products.filter((product) => {
             return (selectedFilters.category === "All" || product.category === selectedFilters.category) &&
                    (selectedFilters.price === "All" || product.price <= selectedFilters.price) &&
-                   (selectedFilters.rating === "All" || product.rating >= selectedFilters.rating);
+                   (selectedFilters.rating === "All" || product.rating <= selectedFilters.rating) &&
+                   (selectedFilters.brand === "All" || product.brand === selectedFilters.brand);
         });
     };
 
@@ -9853,10 +9859,16 @@ export default class LandingPg extends Component {
                                             </div>
                                         ))}
                                     </div>
-                                    <div className={`homepage-body-inner-header-option-dropdown-option-4 ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
-                                        <div className='homepage-body-inner-header-option-dropdown-option-4-header'>
-
-                                        </div>
+                                    <div className={`homepage-body-inner-header-option-dropdown-option-3 ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
+                                        {this.state.brandOptions.map((brand) => (
+                                            <div 
+                                                key={brand}
+                                                className={`homepage-body-inner-header-option-dropdown-filter-option ${this.state.selectedFilters.brand === brand ? 'selected' : ''}`}
+                                                onClick={() => this.mainPageProductsHandleFilterChange("brand", brand)}
+                                            >
+                                                <label>{brand === "All" ? "All Brands" : `${brand}`}</label>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                                 <div className="grocery-container">
