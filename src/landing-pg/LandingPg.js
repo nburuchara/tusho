@@ -5186,7 +5186,7 @@ const Styles = styled.div `
 /* Main Product Grid */
 .product-grid {
     padding: 0px;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
@@ -5204,6 +5204,11 @@ const Styles = styled.div `
     height: 100%;
     grid-column: 1 / -1; /* Ensure it spans the full width of the grid */
     min-height: 300px; /* Ensures enough height for centering */
+}
+
+.no-results-message img {
+    width: 50px;
+    height: 50px;
 }
 
 .loading-products-spinner {
@@ -9938,6 +9943,7 @@ export default class LandingPg extends Component {
                                             ))
                                         ) : (
                                             <div className="no-results-message">
+                                                <img src='/assets/icons/home-main-body/no-results-icon.png'/>
                                                 <h3>No products found</h3>
                                                 <p>Try adjusting your filters.</p>
                                             </div>
