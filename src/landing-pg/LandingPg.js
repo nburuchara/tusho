@@ -5209,6 +5209,7 @@ const Styles = styled.div `
 .no-results-message h3 {
     color: #5e626a;
     font-family: poppins;
+    margin-bottom: 0px;
 }
 
 .no-results-message p {
