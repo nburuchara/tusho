@@ -5186,10 +5186,24 @@ const Styles = styled.div `
 /* Main Product Grid */
 .product-grid {
     padding: 0px;
-    // border: 1px solid black;
+    border: 1px solid black;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
+    text-align: center;
+}
+
+.no-results-message {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    grid-column: 1 / -1; /* Ensure it spans the full width of the grid */
+    min-height: 300px; /* Ensures enough height for centering */
 }
 
 .loading-products-spinner {
