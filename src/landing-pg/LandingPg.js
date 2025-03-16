@@ -9711,7 +9711,7 @@ export default class LandingPg extends Component {
 
                                     </div>
                                     <div className='homepage-header-inner-header-left-update-display-right-child'>
-                                        <div onMouseEnter={this.handleAnnouncementBarMouseEnter} onMouseLeave={this.handleAnnouncementBarMouseLeave} className="homepage-header-inner-header-left-update-display-announcement-container">
+                                        <div onMouseEnter={this.handleAnnouncementBarMouseEnter} onMouseLeave={this.handleAnnouncementBarMouseLeave} onClick={this.handleAnnouncementBarMouseEnter} className="homepage-header-inner-header-left-update-display-announcement-container">
                                             <div ref={this.marqueeRef} className={`homepage-header-inner-header-left-update-display-announcement-track ${this.state.announcementBarIsPaused ? "paused" : ""}`} id="homepage-header-inner-header-left-update-display-announcement-track">
                                                 <div className="homepage-header-inner-header-left-update-display-announcement-wrapper">
                                                     <span><strong>{this.state.dateTime} • </strong>You've made it half way through the week! Keep going mama (or papa)! 🚀</span>
