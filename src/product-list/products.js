@@ -29,6 +29,7 @@ const products = [
         category: "Food Cupboard",
         price: 1350.00,
         rating: 4.7,
+        brand: 'MacCoffee',
         image: "/assets/images/products/mac-coffee-product.webp",
         promo: false,
         qty: 0,
