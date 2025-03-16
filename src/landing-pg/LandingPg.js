@@ -4863,16 +4863,16 @@ const Styles = styled.div `
 /* Push last button to far right */
 .homepage-body-inner-header-option-pamoja {
     margin-left: auto; /* Pushes this element to the right */
-    width: 11.5rem;
+    width: 16.5rem;
     border: 1px solid #ccc;
     height: 42.5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 15px;
+    padding: 10px;
     border-radius: 8px;
     cursor: pointer;
-    gap: 5px;
+    // gap: 5px;
 }
 
 .homepage-body-inner-header-option:hover {
