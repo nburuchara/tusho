@@ -6685,7 +6685,7 @@ export default class LandingPg extends Component {
                         homepageCurrentCategoryFilter: type === 'category' ? (value === 'All' ? `${value} Products` : value) : prevState.homepageCurrentCategoryFilter,
                         homepageCurrentPriceFilter: type === 'price' ? (typeof value === 'string' ? `${value} Prices` : `Up to ${value}`) : prevState.homepageCurrentPriceFilter,
                         homepageCurrentRatingFilter: type === 'rating' ? (typeof value === 'string' ? `${value} Ratings` : `${value} Stars & Up`) : prevState.homepageCurrentRatingFilter,
-                        homepageCurrentBrandFilter: type === 'brand' ? (typeof value === 'string' ? `${value} Brands` : `${value}`) : prevState.homepageCurrentBrandFilter,
+                        homepageCurrentBrandFilter: type === 'brand' ? (value === 'All' ? `${value} Brands` : `${value}`) : prevState.homepageCurrentBrandFilter,
                         homepagePrdouctsFilter5: type === 'pamoja' ? !prevState.homepagePrdouctsFilter5 : prevState.homepagePrdouctsFilter5,
                         ...Object.fromEntries([...Array(4)].map((_, i) => [`homepagePrdouctsFilter${i + 1}`, false])) // Reset other filters
                     };
@@ -9911,16 +9911,23 @@ export default class LandingPg extends Component {
                                     </div>
 
                                     <div className="product-grid">
-                                        {filteredProducts.slice(0, this.state.visibleCount).map((product) => (
-                                            <ProductCard 
-                                            key={product.id} 
-                                            product={product} 
-                                            newlyLoadedProducts={this.state.newlyLoadedProducts} 
-                                            productsLoading={this.state.productsLoading || this.state.newlyLoadedProducts.includes(product.id)}
-                                            onQtyChange={this.mainPageProductsHandleQtyChange}
-                                            onJipangeSelected={this.mainPageProductsHandleJipangeSelected}
-                                            />
-                                        ))}
+                                        {filteredProducts.length > 0 ? (
+                                            filteredProducts.slice(0, this.state.visibleCount).map((product) => (
+                                                <ProductCard 
+                                                    key={product.id} 
+                                                    product={product} 
+                                                    newlyLoadedProducts={this.state.newlyLoadedProducts} 
+                                                    productsLoading={this.state.productsLoading || this.state.newlyLoadedProducts.includes(product.id)}
+                                                    onQtyChange={this.mainPageProductsHandleQtyChange}
+                                                    onJipangeSelected={this.mainPageProductsHandleJipangeSelected}
+                                                />
+                                            ))
+                                        ) : (
+                                            <div className="no-results-message">
+                                                <h3>No products found</h3>
+                                                <p>Try adjusting your filters.</p>
+                                            </div>
+                                        )}
                                         <div ref={this.sentinelRef} className="scroll-sentinel"></div> {/* 🔹 Observer target */}
                                     </div>
 
