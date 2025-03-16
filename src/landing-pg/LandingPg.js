@@ -4476,11 +4476,13 @@ const Styles = styled.div `
     // pointer-events: none;
 }
 
-.homepage-header-inner-header-left-update-display {
-    width: 60%;
-    // border: 1px solid black;
+.homepage-header-inner-header-left-update-display.show {
+    width: 100%;
+    border-top: 1px solid #FF5733;
+    border-bottom: 1px solid #FF5733;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: left;
 }
 
 .homepage-header-inner-header-left-option {
@@ -9736,12 +9738,12 @@ export default class LandingPg extends Component {
                                     <div className="product-grid">
                                         {filteredProducts.slice(0, this.state.visibleCount).map((product) => (
                                             <ProductCard 
-                                                key={product.id} 
-                                                product={product} 
-                                                newlyLoadedProducts={this.state.newlyLoadedProducts} 
-                                                productsLoading={this.state.productsLoading || this.state.newlyLoadedProducts.includes(product.id)}
-                                                onQtyChange={this.mainPageProductsHandleQtyChange}
-                                                onJipangeSelected={this.mainPageProductsHandleJipangeSelected}
+                                            key={product.id} 
+                                            product={product} 
+                                            newlyLoadedProducts={this.state.newlyLoadedProducts} 
+                                            productsLoading={this.state.productsLoading || this.state.newlyLoadedProducts.includes(product.id)}
+                                            onQtyChange={this.mainPageProductsHandleQtyChange}
+                                            onJipangeSelected={this.mainPageProductsHandleJipangeSelected}
                                             />
                                         ))}
                                         <div ref={this.sentinelRef} className="scroll-sentinel"></div> {/* 🔹 Observer target */}
