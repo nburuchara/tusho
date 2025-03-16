@@ -4480,9 +4480,52 @@ const Styles = styled.div `
     width: 100%;
     border-top: 1px solid #FF5733;
     border-bottom: 1px solid #FF5733;
+    background-color: #faece9;
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: space-between;
+}
+
+.homepage-header-inner-header-left-update-display-left-child {
+    width: 10%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.homepage-header-inner-header-left-update-display-right-child {
+    width: 90%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.homepage-header-inner-header-left-update-display-announcement-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background: #222;
+    color: white;
+    padding: 10px;
+    position: relative;
+} 
+
+.homepage-header-inner-header-left-update-display-announcement-track {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollAnnouncements 15s linear infinite;
+}
+
+.homepage-header-inner-header-left-update-display-announcement-track span {
+    display: inline-block;
+    padding: 0 30px;
+}
+
+@keyframes scrollAnnouncements {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
 
 .homepage-header-inner-header-left-option {
@@ -9607,7 +9650,19 @@ export default class LandingPg extends Component {
                                 </div>
 
                                 <div className={`homepage-header-inner-header-left-update-display ${this.state.homepageNewUpdatesShow ? 'show' : ''}`}>
+                                    <div className='homepage-header-inner-header-left-update-display-left-child'>
 
+                                    </div>
+                                    <div className='homepage-header-inner-header-left-update-display-right-child'>
+                                        <div class="homepage-header-inner-header-left-update-display-announcement-container">
+                                            <div class="homepage-header-inner-header-left-update-display-announcement-track">
+                                                <span>📢 Announcement 1</span>
+                                                <span>🚀 Announcement 2</span>
+                                                <span>🔥 Announcement 3</span>
+                                                <span>🎉 Announcement 4</span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className={`homepage-header-inner-header-right ${this.state.homepageNewUpdatesShow ? 'hide' : ''}`}>
                                     <div className='homepage-header-inner-header-right-option'>
