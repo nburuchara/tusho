@@ -5027,6 +5027,29 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
 }
 
+.homepage-body-inner-header-option-dropdown-option-35 {
+    width: 18.2rem;
+    border: 1px solid white;
+    height: 16.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: -1rem;
+    padding: 0px;
+    border-radius: 8px;
+    background-color: white;
+    overflow-y: auto;
+    transform: translateY(-1.5rem);
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+.homepage-body-inner-header-option-dropdown-option-35.selected {
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 2;
+    border: 1px solid #ff5733;
+}
+
 .homepage-body-inner-header-option-dropdown-option-4 {
     width: 20.35rem;
     border: 1px solid white;
@@ -9809,7 +9832,7 @@ export default class LandingPg extends Component {
                                     </div>
                                     
                                     {/* New identical dropdown in place of the last one */}
-                                    <div onClick={() => this.mainPageProductsFilterOptionClicked(4)} className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter3 ? 'selected' : ''}`}>
+                                    <div onClick={() => this.mainPageProductsFilterOptionClicked(4)} className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
                                         <h4>{this.state.homepageCurrentBrandFilter}</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
@@ -9859,7 +9882,7 @@ export default class LandingPg extends Component {
                                             </div>
                                         ))}
                                     </div>
-                                    <div className={`homepage-body-inner-header-option-dropdown-option-3 ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
+                                    <div className={`homepage-body-inner-header-option-dropdown-option-35 ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
                                         {this.state.brandOptions.map((brand) => (
                                             <div 
                                                 key={brand}
