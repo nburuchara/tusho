@@ -9,7 +9,7 @@ const products = [
         promo: true,
         qty: 0,
         jipangeSelected: false,
-        jipanges: []
+        jipanges: [],
     },
     {
         id: 2,

@@ -6807,6 +6807,28 @@ export default class LandingPg extends Component {
         }
     }
 
+    mainPageProductsFilterOptionClickedPamoja = (option) => {
+        if (option === 5) {
+            this.toggleDial();
+            this.setState((prevState) => ({
+                homepagePrdouctsFilter5: !prevState.homepagePrdouctsFilter5, // Ensure it's set to true when selected
+            }));
+        } else {
+            this.setState((prevState) => {
+                let newState = {};
+    
+                for (let i = 1; i <= 4; i++) { // Loop through options 1-3
+                    newState[`homepagePrdouctsFilter${i}`] = i === option ? !prevState[`homepagePrdouctsFilter${option}`] : false;
+                }
+    
+                // Keep homepageProductsFilter4 as it is (not affected when other options are clicked)
+                newState[`homepagePrdouctsFilter5`] = prevState[`homepagePrdouctsFilter5`];
+    
+                return newState;
+            });
+        }
+    }
+
     addToCart = (product) => {
         this.setState((prevState) => {
             const existingItem = prevState.cart.find((item) => item.id === product.id);
@@ -9839,7 +9861,7 @@ export default class LandingPg extends Component {
                                     </div>
 
                                     {/* Last dropdown positioned on the far right */}
-                                    <div onClick={() => this.mainPageProductsFilterOptionClicked(5)} className={`homepage-body-inner-header-option-pamoja ${this.state.homepagePrdouctsFilter5 ? 'selected' : ''}`}>
+                                    <div onClick={() => this.mainPageProductsFilterOptionClickedPamoja(5)} className={`homepage-body-inner-header-option-pamoja ${this.state.homepagePrdouctsFilter5 ? 'selected' : ''}`}>
                                         <h4>Shop Pamoja</h4>
                                         <div className={`dial-container ${this.state.active ? "active" : ""}`}>
                                             <div className={`dial-button ${this.state.active ? "active" : ""}`}></div>
