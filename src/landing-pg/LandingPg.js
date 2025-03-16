@@ -1217,6 +1217,8 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
     width: 65%;
     padding: 2px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     border-radius: 8px;
     margin-left: 5%;
     margin-right: 5%;
@@ -7313,7 +7315,7 @@ export default class LandingPg extends Component {
                                         </div>
                                         <div className="navbar-options-checkout-home-item-cell-details">
                                             <p>{item.name}</p>
-                                            {item.jipangeSelected ? (<button><h5>Jipange: {item.jipangeDate}</h5></button>): null}
+                                            {item.jipangeSelected ? (<button><h5><span>✓ </span>Jipange: {item.jipangeDate}</h5></button>): null}
                                         </div>
                                         <div className="navbar-options-checkout-home-item-cell-qty">
                                             <div className="navbar-options-checkout-home-item-cell-qty-toggle">

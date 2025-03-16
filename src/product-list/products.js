@@ -12,6 +12,7 @@ const products = [
         pamoja: false,
         jipangeSelected: false,
         jipanges: [],
+        jipangeDate: 'Mar 21'
     },
     {
         id: 2,
@@ -25,7 +26,8 @@ const products = [
         qty: 0,
         pamoja: false,
         jipangeSelected: false,
-        jipanges: []
+        jipanges: [],
+        jipangeDate: 'Mar 21'
     },
     {
         id: 3,
@@ -39,7 +41,8 @@ const products = [
         qty: 0,
         pamoja: false,
         jipangeSelected: false,
-        jipanges: []
+        jipanges: [],
+        jipangeDate: 'Mar 21'
     },
     {
         id: 4,
@@ -55,7 +58,8 @@ const products = [
         pamojaCurrentSelected: 9,
         pamojaCurrentTotal: 30,
         jipangeSelected: false,
-        jipanges: []
+        jipanges: [],
+        jipangeDate: 'Mar 21'
     },
     {
         id: 5,
@@ -71,7 +75,8 @@ const products = [
         pamojaCurrentSelected: 16,
         pamojaCurrentTotal: 20,
         jipangeSelected: false,
-        jipanges: []
+        jipanges: [],
+        jipangeDate: 'Mar 21'
     },
     {
         id: 6,
@@ -86,7 +91,8 @@ const products = [
         qty: 0,
         pamoja: false,
         jipangeSelected: false,
-        jipanges: []
+        jipanges: [],
+        jipangeDate: 'Mar 21'
     },
     {
         id: 7,
@@ -100,7 +106,8 @@ const products = [
         qty: 0,
         pamoja: false,
         jipangeSelected: false,
-        jipanges: []
+        jipanges: [],
+        jipangeDate: 'Mar 21'
     },
     {
         id: 8,
@@ -129,7 +136,8 @@ const products = [
         qty: 0,
         pamoja: false,
         jipangeSelected: false,
-        jipanges: []
+        jipanges: [],
+        jipangeDate: 'Mar 21'
     },
     {
         id: 10,
@@ -145,7 +153,8 @@ const products = [
         pamojaCurrentSelected: 12,
         pamojaCurrentTotal: 40,
         jipangeSelected: false,
-        jipanges: []
+        jipanges: [],
+        jipangeDate: 'Mar 21'
     },
     {
         id: 11,
@@ -159,7 +168,8 @@ const products = [
         qty: 0,
         pamoja: false,
         jipangeSelected: false,
-        jipanges: []
+        jipanges: [],
+        jipangeDate: 'Mar 21'
     },
     {
         id: 12,
@@ -173,7 +183,8 @@ const products = [
         qty: 0,
         pamoja: false,
         jipangeSelected: false,
-        jipanges: []
+        jipanges: [],
+        jipangeDate: 'Mar 21'
     },
     {
         id: 13,
@@ -187,7 +198,8 @@ const products = [
         qty: 0,
         pamoja: false,
         jipangeSelected: false,
-        jipanges: []
+        jipanges: [],
+        jipangeDate: 'Mar 21'
     },
 ];
 
