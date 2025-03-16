@@ -5507,6 +5507,7 @@ export default class LandingPg extends Component {
 
             homepageNewUpdatesShow: true,
             dateTime: this.getFormattedDate(),
+            announcementBarIsPaused: false,
 
             //* - - HOMESCREEN PRODUCTS GRID DISPLAY - - *//
 
@@ -5545,7 +5546,7 @@ export default class LandingPg extends Component {
         this.inputs = []; // To store input element references
 
         //* - ANNOUNCEMENT BAR REFERENCE - *//
-        
+        this.announcementBarRef = React.createRef();
 
         //* - PRODUCT SCROLL REFERENCE - *//
         this.sentinelRef = React.createRef();
@@ -5637,6 +5638,14 @@ export default class LandingPg extends Component {
         }).toLowerCase().replace(" ", ""); // Convert to lowercase "pm" and remove space
 
         return `${date} ${time}`;
+    };
+
+    handleAnnouncementBarMouseEnter = () => {
+        this.setState({ announcementBarIsPaused: true });
+    };
+
+    handleAnnouncementBarMouseLeave = () => {
+        this.setState({ announcementBarIsPaused: false });
     };
 
     handleScrollToElement = () => {
@@ -9698,9 +9707,9 @@ export default class LandingPg extends Component {
 
                                     </div>
                                     <div className='homepage-header-inner-header-left-update-display-right-child'>
-                                        <div class="homepage-header-inner-header-left-update-display-announcement-container">
-                                            <div class="homepage-header-inner-header-left-update-display-announcement-track" id="homepage-header-inner-header-left-update-display-announcement-track">
-                                                <div class="homepage-header-inner-header-left-update-display-announcement-wrapper">
+                                        <div onMouseEnter={this.handleAnnouncementBarMouseEnter} onMouseLeave={this.handleAnnouncementBarMouseLeave} className="homepage-header-inner-header-left-update-display-announcement-container">
+                                            <div ref={this.marqueeRef} className="homepage-header-inner-header-left-update-display-announcement-track" id="homepage-header-inner-header-left-update-display-announcement-track">
+                                                <div className="homepage-header-inner-header-left-update-display-announcement-wrapper">
                                                     <span><strong>{this.state.dateTime} • </strong>You've made it half way through the week! Keep going mama (or papa)! 🚀</span>
                                                     <span><strong>OFFER(S) -  15% off</strong> Dairy Fresh Strawberry (offer ends <strong>today at 5:00pm</strong>) <strong>• 10% off</strong> Rinsun 250ml Oil (offer ends <strong>22/03/25 at 1:30pm</strong>) <strong>• 20% off </strong> Afia Multi-Vitamin Fruit Drink (1 litre) (offer ends <strong>31/03/25 at 2:30pm</strong>) <strong>• 20% off </strong> Afia Apple & Ginger Boost Fruit Drink (380ml) (offer ends <strong>31/03/25 at 2:30pm</strong>)</span>
                                                     <span><strong>IMPROVEMENTS TO YOUR SHOPPING EXPERIENCE - </strong>We fixed the shopping cart closing suddenly issue, and we added Airtel Money as a payment option!</span>
