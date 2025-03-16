@@ -4840,12 +4840,12 @@ const Styles = styled.div `
     bottom: 0;
     width: 100%;
     height: 60%;
-    // border: 1px solid black;
+    border: 1px solid black;
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding-left: 1.05%;
-    padding-right: 1.05%;
+    padding: 0 1.05%;
+    gap: 20px; /* Better spacing between items */
 }
 
 .homepage-body-inner-header-option {
@@ -4855,12 +4855,22 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 2.5px;
-    padding-bottom: 2.5px;
+    padding: 5px 15px;
     border-radius: 8px;
-    margin-right: 20px;
+    cursor: pointer;
+}
+
+/* Push last button to far right */
+.homepage-body-inner-header-option-pamoja {
+    margin-left: auto; /* Pushes this element to the right */
+    width: 11.5rem;
+    border: 1px solid #ccc;
+    height: 42.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px;
+    border-radius: 8px;
     cursor: pointer;
 }
 
@@ -6746,21 +6756,21 @@ export default class LandingPg extends Component {
     };
 
     mainPageProductsFilterOptionClicked = (option) => {
-        if (option === 4) {
+        if (option === 5) {
             this.toggleDial();
             this.setState((prevState) => ({
-                homepagePrdouctsFilter4: !prevState.homepagePrdouctsFilter4, // Ensure it's set to true when selected
+                homepagePrdouctsFilter5: !prevState.homepagePrdouctsFilter5, // Ensure it's set to true when selected
             }));
         } else {
             this.setState((prevState) => {
                 let newState = {};
     
-                for (let i = 1; i <= 3; i++) { // Loop through options 1-3
+                for (let i = 1; i <= 4; i++) { // Loop through options 1-3
                     newState[`homepagePrdouctsFilter${i}`] = i === option ? !prevState[`homepagePrdouctsFilter${option}`] : false;
                 }
     
                 // Keep homepageProductsFilter4 as it is (not affected when other options are clicked)
-                newState[`homepagePrdouctsFilter4`] = prevState[`homepagePrdouctsFilter4`];
+                newState[`homepagePrdouctsFilter5`] = prevState[`homepagePrdouctsFilter5`];
     
                 return newState;
             });
@@ -9791,7 +9801,15 @@ export default class LandingPg extends Component {
                                         <h4>{this.state.homepageCurrentRatingFilter}</h4>
                                         <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
-                                    <div onClick={() => this.mainPageProductsFilterOptionClicked(4)} className={`homepage-body-inner-header-option-pamoja ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
+                                    
+                                    {/* New identical dropdown in place of the last one */}
+                                    <div onClick={() => this.mainPageProductsFilterOptionClicked(4)} className={`homepage-body-inner-header-option ${this.state.homepagePrdouctsFilter3 ? 'selected' : ''}`}>
+                                        <h4>{this.state.homepageCurrentBrandFilter}</h4>
+                                        <span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
+                                    </div>
+
+                                    {/* Last dropdown positioned on the far right */}
+                                    <div onClick={() => this.mainPageProductsFilterOptionClicked(5)} className={`homepage-body-inner-header-option-pamoja ${this.state.homepagePrdouctsFilter5 ? 'selected' : ''}`}>
                                         <h4>Shop Pamoja</h4>
                                         <div className={`dial-container ${this.state.active ? "active" : ""}`}>
                                             <div className={`dial-button ${this.state.active ? "active" : ""}`}></div>
