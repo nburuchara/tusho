@@ -43,8 +43,13 @@ const Styles = styled.div `
     top: -5px;  /* Moves it above the border */
     left: 35%;
     transform: translateX(-50%); /* Centers it */
-    background-color: #faece9; /* Matches the div’s background */
+    background-color: white; /* Matches the div’s background */
     padding: 0 1px; /* Gives some space around the text */
+    padding-left: 2.5px;
+    padding-right: 2.5px;
+    padding-bottom: 1.5px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
     font-size: 10px;
     font-weight: bold;
     color: #ff5733;
