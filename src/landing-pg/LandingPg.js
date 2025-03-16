@@ -5203,7 +5203,7 @@ const Styles = styled.div `
     width: 100%;
     height: 100%;
     grid-column: 1 / -1; /* Ensure it spans the full width of the grid */
-    min-height: 300px; /* Ensures enough height for centering */
+    min-height: 350px; /* Ensures enough height for centering */
 }
 
 .no-results-message h3 {
