@@ -5193,13 +5193,12 @@ const Styles = styled.div `
 }
 
 .loading-products-spinner {
-    text-align: center;
-    padding: 20px;
-    font-size: 15px;
-    font-weight: bold;
-    margin-top: 10px;
-    color: #333;
-    font-family: poppins;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -5576,7 +5575,7 @@ export default class LandingPg extends Component {
             homepageCurrentCategoryFilter: 'All Products',
             homepageCurrentPriceFilter: 'Price',
             homepageCurrentRatingFilter: 'Rating',
-            homepageCurrentBrandFilter: 'Brand',
+            homepageCurrentBrandFilter: 'Brands',
 
         }
 
@@ -6683,7 +6682,7 @@ export default class LandingPg extends Component {
                         homepageCurrentCategoryFilter: type === 'category' ? (value === 'All' ? `${value} Products` : value) : prevState.homepageCurrentCategoryFilter,
                         homepageCurrentPriceFilter: type === 'price' ? (typeof value === 'string' ? `${value} Prices` : `Up to ${value}`) : prevState.homepageCurrentPriceFilter,
                         homepageCurrentRatingFilter: type === 'rating' ? (typeof value === 'string' ? `${value} Ratings` : `${value} Stars & Up`) : prevState.homepageCurrentRatingFilter,
-                        homepageCurrentBrandFilter: type === 'brand' ? (typeof value === 'string' ? `${value} Brand` : `${value}`) : prevState.homepageCurrentBrandFilter,
+                        homepageCurrentBrandFilter: type === 'brand' ? (typeof value === 'string' ? `${value} Brands` : `${value}`) : prevState.homepageCurrentBrandFilter,
                         ...Object.fromEntries([...Array(4)].map((_, i) => [`homepagePrdouctsFilter${i + 1}`, false])) // Reset other filters
                     };
                 });
@@ -9921,7 +9920,19 @@ export default class LandingPg extends Component {
                                     {/* Show spinner when loading more items */}
                                     {this.state.loadingMore && (
                                         <div className="loading-products-spinner">
-                                            Loading more products...
+                                            <TailSpin
+                                            visible={true}
+                                            height="35px"
+                                            width="35px"
+                                            color="#ff5733"
+                                            ariaLabel="tail-spin-loading"
+                                            radius="2"
+                                            wrapperStyle={{}}
+                                            wrapperClass=""
+                                            />
+                                            <div>
+                                                {/* <p>Loading...</p> */}
+                                            </div>
                                         </div>
                                     )}
                                 </div> 
