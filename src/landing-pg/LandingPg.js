@@ -5194,7 +5194,7 @@ const Styles = styled.div `
 }
 
 .no-results-message {
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -5204,6 +5204,16 @@ const Styles = styled.div `
     height: 100%;
     grid-column: 1 / -1; /* Ensure it spans the full width of the grid */
     min-height: 300px; /* Ensures enough height for centering */
+}
+
+.no-results-message h3 {
+    color: #5e626a;
+    font-family: poppins;
+}
+
+.no-results-message p {
+    color: #5e626a;
+    font-family: poppins;
 }
 
 .no-results-message img {
