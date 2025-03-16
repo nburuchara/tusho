@@ -4520,6 +4520,10 @@ const Styles = styled.div `
     animation: scrollAnnouncements 45s linear infinite;
 }
 
+.homepage-header-inner-header-left-update-display-announcement-track.paused {
+    animation-play-state: paused;
+}
+
 .homepage-header-inner-header-left-update-display-announcement-wrapper {
     display: flex;
     gap: 30px;
@@ -9708,11 +9712,11 @@ export default class LandingPg extends Component {
                                     </div>
                                     <div className='homepage-header-inner-header-left-update-display-right-child'>
                                         <div onMouseEnter={this.handleAnnouncementBarMouseEnter} onMouseLeave={this.handleAnnouncementBarMouseLeave} className="homepage-header-inner-header-left-update-display-announcement-container">
-                                            <div ref={this.marqueeRef} className="homepage-header-inner-header-left-update-display-announcement-track" id="homepage-header-inner-header-left-update-display-announcement-track">
+                                            <div ref={this.marqueeRef} className={`homepage-header-inner-header-left-update-display-announcement-track ${this.state.announcementBarIsPaused ? "paused" : ""}`} id="homepage-header-inner-header-left-update-display-announcement-track">
                                                 <div className="homepage-header-inner-header-left-update-display-announcement-wrapper">
                                                     <span><strong>{this.state.dateTime} • </strong>You've made it half way through the week! Keep going mama (or papa)! 🚀</span>
                                                     <span><strong>OFFER(S) -  15% off</strong> Dairy Fresh Strawberry (offer ends <strong>today at 5:00pm</strong>) <strong>• 10% off</strong> Rinsun 250ml Oil (offer ends <strong>22/03/25 at 1:30pm</strong>) <strong>• 20% off </strong> Afia Multi-Vitamin Fruit Drink (1 litre) (offer ends <strong>31/03/25 at 2:30pm</strong>) <strong>• 20% off </strong> Afia Apple & Ginger Boost Fruit Drink (380ml) (offer ends <strong>31/03/25 at 2:30pm</strong>)</span>
-                                                    <span><strong>IMPROVEMENTS TO YOUR SHOPPING EXPERIENCE - </strong>We fixed the shopping cart closing suddenly issue, and we added Airtel Money as a payment option!</span>
+                                                    <span><strong>IMPROVEMENTS TO YOUR SHOPPING EXPERIENCE - </strong>We fixed the shopping cart closing suddenly issue, and we added <strong>Airtel Money</strong> as a payment option!</span>
                                                     {/* <span>🎉 Announcement 4</span> */}
                                                 </div>
                                             </div>
