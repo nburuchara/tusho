@@ -4503,8 +4503,6 @@ const Styles = styled.div `
     height: 100%;
     overflow: hidden;
     background-color: #faece9;
-    border-top: 1px solid #FF5733;
-    border-bottom: 1px solid #FF5733;
     color: #ff5733;
     padding: 0px;
     display: flex;
@@ -5503,6 +5501,7 @@ export default class LandingPg extends Component {
             //* - - HOMESCREEN MAIN PAGE - - *//
 
             homepageNewUpdatesShow: true,
+            dateTime: this.getFormattedDate(),
 
             //* - - HOMESCREEN PRODUCTS GRID DISPLAY - - *//
 
@@ -5563,6 +5562,11 @@ export default class LandingPg extends Component {
             this.scrollObserver.observe(this.sentinelRef.current);
         }
 
+        // Update the time every minute
+        this.timer = setInterval(() => {
+            this.setState({ dateTime: this.getFormattedDate() });
+        }, 60000);
+
         // ✅ Intersection Observer for detecting when an element is out of view
         this.viewObserver = new IntersectionObserver(
             ([entry]) => {
@@ -5602,7 +5606,30 @@ export default class LandingPg extends Component {
             // ✅ Cleanup observers
         if (this.scrollObserver) this.scrollObserver.disconnect();
         if (this.viewObserver) this.viewObserver.disconnect();
+
+        // Clear interval when component unmounts
+        clearInterval(this.timer);
     }
+
+    getFormattedDate = () => {
+        const now = new Date();
+
+        // Format date
+        const date = now.toLocaleDateString("en-US", {
+            weekday: "long", // Sunday
+            month: "short",   // Mar
+            day: "numeric"    // 16
+        });
+
+        // Format time
+        const time = now.toLocaleTimeString("en-US", {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true
+        }).toLowerCase().replace(" ", ""); // Convert to lowercase "pm" and remove space
+
+        return `${date} ${time}`;
+    };
 
     handleScrollToElement = () => {
         const element = document.getElementById("homepage-header");
@@ -9666,8 +9693,8 @@ export default class LandingPg extends Component {
                                         <div class="homepage-header-inner-header-left-update-display-announcement-container">
                                             <div class="homepage-header-inner-header-left-update-display-announcement-track" id="homepage-header-inner-header-left-update-display-announcement-track">
                                                 <div class="homepage-header-inner-header-left-update-display-announcement-wrapper">
-                                                    <span>📢 Announcement 1</span>
-                                                    <span>🚀 Announcement 2</span>
+                                                    <span><label><strong></strong></label>You've made it half way through the week! Keep going mama (or papa)! 🚀</span>
+                                                    <span> Announcement 2</span>
                                                     <span>🔥 Announcement 3</span>
                                                     <span>🎉 Announcement 4</span>
                                                 </div>
