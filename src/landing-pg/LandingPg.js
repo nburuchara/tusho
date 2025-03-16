@@ -4838,7 +4838,7 @@ const Styles = styled.div `
 .homepage-body-inner-header-options {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 99%;
     height: 60%;
     // border: 1px solid black;
     display: flex;
@@ -4872,6 +4872,7 @@ const Styles = styled.div `
     padding: 5px 15px;
     border-radius: 8px;
     cursor: pointer;
+    gap: 5px;
 }
 
 .homepage-body-inner-header-option:hover {
@@ -5248,6 +5249,7 @@ const Styles = styled.div `
 .homepage-body-inner-header-option-dropdown-option-1,
 .homepage-body-inner-header-option-dropdown-option-2,
 .homepage-body-inner-header-option-dropdown-option-3,
+.homepage-body-inner-header-option-dropdown-option-35,
 .homepage-body-inner-header-option-dropdown-option-4,
  {
     transition-duration: var(--def-transition-duration);
