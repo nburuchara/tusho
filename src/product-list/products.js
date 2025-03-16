@@ -8,6 +8,7 @@ const products = [
         image: "assets/images/products/min-maid-product.webp",
         promo: true,
         qty: 0,
+        pamoja: false,
         jipangeSelected: false,
         jipanges: [],
     },
@@ -20,6 +21,7 @@ const products = [
         image: "/assets/images/products/oranges-product.webp",
         promo: false,
         qty: 0,
+        pamoja: false,
         jipangeSelected: false,
         jipanges: []
     },
@@ -33,6 +35,7 @@ const products = [
         image: "/assets/images/products/mac-coffee-product.webp",
         promo: false,
         qty: 0,
+        pamoja: false,
         jipangeSelected: false,
         jipanges: []
     },
@@ -45,7 +48,7 @@ const products = [
         image: "/assets/images/products/bband-product.png",
         promo: false,
         qty: 0,
-        pamojaItem: true,
+        pamoja: true,
         pamojaCurrentSelected: 9,
         pamojaCurrentTotal: 30,
         jipangeSelected: false,
@@ -61,7 +64,7 @@ const products = [
         image: "/assets/images/products/brookside-milk-product.webp",
         promo: true,
         qty: 0,
-        pamojaItem: true,
+        pamoja: true,
         pamojaCurrentSelected: 16,
         pamojaCurrentTotal: 20,
         jipangeSelected: false,
@@ -77,6 +80,7 @@ const products = [
         image: "/assets/images/products/watermelon-product.webp",
         promo: true,
         qty: 0,
+        pamoja: false,
         jipangeSelected: false,
         jipanges: []
     },
@@ -90,6 +94,7 @@ const products = [
         image: "/assets/images/products/brookside-milk-powder-product.webp",
         promo: false,
         qty: 0,
+        pamoja: false,
         jipangeSelected: false,
         jipanges: []
     },
@@ -102,6 +107,7 @@ const products = [
         image: "/assets/images/products/digestives-product.webp",
         promo: true,
         qty: 0,
+        pamoja: false,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'Mar 21'
@@ -115,6 +121,7 @@ const products = [
         image: "/assets/images/products/tomatoes-product.webp",
         promo: true,
         qty: 0,
+        pamoja: false,
         jipangeSelected: false,
         jipanges: []
     },
@@ -127,7 +134,7 @@ const products = [
         image: "/assets/images/products/mumias-sugar-product.webp",
         promo: false,
         qty: 0,
-        pamojaItem: true,
+        pamoja: true,
         pamojaCurrentSelected: 12,
         pamojaCurrentTotal: 40,
         jipangeSelected: false,
@@ -142,6 +149,7 @@ const products = [
         image: "/assets/images/products/onions-product.webp",
         promo: false,
         qty: 0,
+        pamoja: false,
         jipangeSelected: false,
         jipanges: []
     },
@@ -154,6 +162,7 @@ const products = [
         image: "/assets/images/products/rinsun-oil-product.webp",
         promo: false,
         qty: 0,
+        pamoja: false,
         jipangeSelected: false,
         jipanges: []
     },
@@ -166,6 +175,7 @@ const products = [
         image: "/assets/images/products/bananas-product.webp",
         promo: false,
         qty: 0,
+        pamoja: false,
         jipangeSelected: false,
         jipanges: []
     },
