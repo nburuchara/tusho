@@ -4517,12 +4517,17 @@ const Styles = styled.div `
     white-space: nowrap;
     position: absolute;
     will-change: transform;
-    animation: scrollAnnouncements 15s linear infinite;
+    animation: scrollAnnouncements 30s linear infinite;
 }
 
 .homepage-header-inner-header-left-update-display-announcement-wrapper {
     display: flex;
     gap: 30px;
+}
+
+.homepage-header-inner-header-left-update-display-announcement-wrapper span {
+    font-family: poppins;
+    font-size: 85%;
 }
 
 
@@ -9693,8 +9698,8 @@ export default class LandingPg extends Component {
                                         <div class="homepage-header-inner-header-left-update-display-announcement-container">
                                             <div class="homepage-header-inner-header-left-update-display-announcement-track" id="homepage-header-inner-header-left-update-display-announcement-track">
                                                 <div class="homepage-header-inner-header-left-update-display-announcement-wrapper">
-                                                    <span><label><strong></strong></label>You've made it half way through the week! Keep going mama (or papa)! 🚀</span>
-                                                    <span> Announcement 2</span>
+                                                    <span><label><strong>{this.state.dateTime} • </strong></label>You've made it half way through the week! Keep going mama (or papa)! 🚀</span>
+                                                    <span><label><strong>OFFER(S) -  15% off</strong> Dairy Fresh Strawberry (offer ends <strong>today at 5:00pm</strong>) <strong>• 10% off</strong> Rinsun 250ml Oil (offer ends <strong>22/03/25 at 1:30pm)</strong></label> </span>
                                                     <span>🔥 Announcement 3</span>
                                                     <span>🎉 Announcement 4</span>
                                                 </div>
