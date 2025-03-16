@@ -4517,7 +4517,7 @@ const Styles = styled.div `
     white-space: nowrap;
     position: absolute;
     will-change: transform;
-    animation: scrollAnnouncements 30s linear infinite;
+    animation: scrollAnnouncements 45s linear infinite;
 }
 
 .homepage-header-inner-header-left-update-display-announcement-wrapper {
@@ -9699,8 +9699,8 @@ export default class LandingPg extends Component {
                                             <div class="homepage-header-inner-header-left-update-display-announcement-track" id="homepage-header-inner-header-left-update-display-announcement-track">
                                                 <div class="homepage-header-inner-header-left-update-display-announcement-wrapper">
                                                     <span><strong>{this.state.dateTime} • </strong>You've made it half way through the week! Keep going mama (or papa)! 🚀</span>
-                                                    <span><strong>OFFER(S) -  15% off</strong> Dairy Fresh Strawberry (offer ends <strong>today at 5:00pm</strong>) <strong>• 10% off</strong> Rinsun 250ml Oil (offer ends <strong>22/03/25 at 1:30pm</strong>) <strong>• 20% off </strong> Afia Multi-Vitamin Fruit Drink (1 litre) (offer ends <strong>31/03/25 at 2:30pm</strong>)</span>
-                                                    <span>🔥 Announcement 3</span>
+                                                    <span><strong>OFFER(S) -  15% off</strong> Dairy Fresh Strawberry (offer ends <strong>today at 5:00pm</strong>) <strong>• 10% off</strong> Rinsun 250ml Oil (offer ends <strong>22/03/25 at 1:30pm</strong>) <strong>• 20% off </strong> Afia Multi-Vitamin Fruit Drink (1 litre) (offer ends <strong>31/03/25 at 2:30pm</strong>) <strong>• 20% off </strong> Afia Apple & Ginger Boost Fruit Drink (380ml) (offer ends <strong>31/03/25 at 2:30pm</strong>)</span>
+                                                    <span><strong>IMPROVEMENTS TO YOUR SHOPPING EXPERIENCE - We fixed the shopping cart closing suddenly issue, and we added Airtel Money as a payment option!</strong></span>
                                                     <span>🎉 Announcement 4</span>
                                                 </div>
                                             </div>
