@@ -469,8 +469,8 @@ const Styles = styled.div `
 }
 
 .searchResultCellAccount {
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
 }
 
 .searchResultCellAccount:hover .searchResultCellImg img {
