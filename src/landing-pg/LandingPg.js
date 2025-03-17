@@ -447,12 +447,12 @@ const Styles = styled.div `
     z-index: 1;
     // position: relative;
     // margin-left: -6%;
-    width: 98%;
+    width: 100%;
     // border: 1px solid black;
     border-radius: 8px;
     background-color: white;
     // margin-top: 10px;
-    padding: 5px;
+    padding: 0px;
     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     display: block;
     overflow-y: auto;
@@ -2101,6 +2101,7 @@ const Styles = styled.div `
     height: 30rem;
     background-color: white;
     z-index: 3;
+    overflow: hidden;
  }
 
 .navbar-profile-account-popup-body-left-settings-option-cell {
