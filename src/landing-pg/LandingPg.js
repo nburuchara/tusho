@@ -2001,9 +2001,10 @@ const Styles = styled.div `
     height: 1.8rem;
     display: flex;
     justify-content: space-between;
-    border: 1px solid #ff5733;
+    border: 1px solid white;
     border-radius: 6px;
     background-color: white;
+    display:
 }
 
 .navbar-profile-account-popup-header-left-search-bar-icon {
@@ -2093,17 +2094,25 @@ const Styles = styled.div `
     width: 30%;
     height: 100%;
     position: relative;
+    overflow: hidden;
 }
 
 .navbar-profile-account-popup-body-search-bar-results {
     width: 100%;
     position: absolute;
     top: 0;
-    border: 1px solid #ff5733;
+    border-right: 1px solid #ff5733;
     height: 30rem;
     background-color: white;
     z-index: 3;
     overflow: hidden;
+    transform: translateY(-35rem);
+    visibility: hidden;
+ }
+
+ .navbar-profile-account-popup-body-search-bar-results.display {
+    transform: translateY(0);
+    visibility: visible;
  }
 
 .navbar-profile-account-popup-body-left-settings-option-cell {
@@ -5386,6 +5395,7 @@ const Styles = styled.div `
 .navbar-profile-dropdown-body-signed-in-options-cell-label p,
 .navbar-profile-account-popup,
 .navbar-profile-account-popup-header-right-close img,
+.navbar-profile-account-popup-body-search-bar-results
 .navbar-profile-account-popup-body-left-settings-option-cell,
 .navbar-profile-account-popup-body-left-settings-option-cell-label p,
 .navbar-profile-account-popup-body-left-footer-sign-out,
