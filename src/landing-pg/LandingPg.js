@@ -449,7 +449,7 @@ const Styles = styled.div `
     // margin-left: -6%;
     width: 100%;
     // border: 1px solid black;
-    border-radius: 8px;
+    // border-radius: 8px;
     background-color: white;
     // margin-top: 10px;
     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
@@ -466,6 +466,11 @@ const Styles = styled.div `
 .searchResultCellAccount:hover {
     background-color: #faece9;
     cursor: pointer;
+}
+
+.searchResultCellAccount {
+    padding-top: 2px;
+    padding-bottom: 2px;
 }
 
 .searchResultCellAccount:hover .searchResultCellImg img {
@@ -495,11 +500,11 @@ const Styles = styled.div `
     margin-left: 10%;
     margin-bottom: 0px;
     margin-right: 10%;
-    padding-top: 0.35rem;
+    margin-top: 0px;
 }
 
 .searchResultCellAccountLabel {
-    width: 20%;
+    width: 0%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -510,29 +515,17 @@ const Styles = styled.div `
     margin-top: 0px;
 }
 
-.searchResultCellAccount p {
-    margin-top: 0px;
-    margin-bottom: 5px;
-}
-
-.searchResultCellAccount h5 {
-    margin-top: 0rem;
-    margin-bottom:0px;
-    font-family: poppins;
-    font-weight: normal;
-    color: #5e626a;
-}
-
 .searchResultOptionAccount {
     // font-size: 10px;
 }
 
 .searchResultCategoryAccount {
     font-size: 40%;
+    font-family: poppins;
     margin-top: 2.5px;
     margin-left: 10%;
     margin-right: 10%;
-    padding-bottom: 0.35rem;
+    margin-bottom: 0.35rem;
 }
 
 .navbar-search-bar-no-results-account {
