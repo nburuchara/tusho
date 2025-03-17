@@ -538,10 +538,10 @@ const Styles = styled.div `
 }
 
 .searchResultCategoryAccount {
-    font-size: 30%;
+    font-size: 40%;
     margin-top: 3.5px;
     margin-bottom: 0px;
-    margin-left: 5%;
+    margin-left: 10%;
     margin-right: 5%;
 }
 
