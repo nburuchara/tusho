@@ -473,6 +473,14 @@ const Styles = styled.div `
     border-bottom: 0.5px solid transparent;
 }
 
+.searchResultAccountLoading {
+    margin-top: -5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .searchResultCellAccountContainer {
     position: sticky;
     border-bottom: 1px solid #ccc;
@@ -7832,8 +7840,19 @@ export default class LandingPg extends Component {
                                         {searchInput !== "" && (
                                             <div className={`searchResultAccount ${this.state.searchBarInputAccountPopup === '' ? 'empty' : ''}`}>
                                                 {isSearchLoading && 
-                                                    <div>
-                                                        <p>Loading...</p>
+                                                    <div className='searchResultAccountLoading'>
+                                                        <RotatingLines
+                                                            visible={true}
+                                                            height="22.5"
+                                                            width="22.5"
+                                                            strokeColor="#ff5733"
+                                                            strokeWidth="3"
+                                                            animationDuration="0.75"
+                                                            ariaLabel="rotating-lines-loading"
+                                                            wrapperStyle={{}}
+                                                            wrapperClass=""
+                                                            />
+                                                            <p>Loading...</p>
                                                     </div>
                                                 }
                                                 {!isSearchLoading && resultsFound && 
@@ -7858,17 +7877,7 @@ export default class LandingPg extends Component {
                                                 }
                                                 {!isSearchLoading && !resultsFound &&
                                                     <div className='navbar-search-bar-no-results-account' style={{textAlign: "center"}}>
-                                                        <RotatingLines
-                                                        visible={true}
-                                                        height="23.5"
-                                                        width="23.5"
-                                                        strokeColor="#FF5733"
-                                                        strokeWidth="3"
-                                                        animationDuration="0.75"
-                                                        ariaLabel="rotating-lines-loading"
-                                                        wrapperStyle={{}}
-                                                        wrapperClass=""
-                                                        />
+                                                        <p style={{fontWeight: "bold", color: "#FF5733"}}>No results found</p>
                                                     </div>
                                                 }
                                             </div>
