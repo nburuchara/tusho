@@ -466,11 +466,26 @@ const Styles = styled.div `
 .searchResultCellAccount:hover {
     background-color: #faece9;
     cursor: pointer;
+    border-bottom: 0.5px solid #ff5733;
+}
+
+.searchResultCellAccount:hover .searchResultCellAccountContainer {
+    border-bottom: 0.5px solid transparent;
+}
+
+.searchResultCellAccountContainer {
+    position: sticky;
+    border-bottom: 1px solid #ccc;
 }
 
 .searchResultCellAccount {
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+    // border-bottom: 1px solid #
+}
+
+.searchResultCellAccount {
+   height: 100;
 }
 
 .searchResultCellAccount:hover .searchResultCellImg img {
@@ -478,7 +493,7 @@ const Styles = styled.div `
 }
 
 .searchResultCellAccountImg {
-    width: 10%;
+    // width: 10%;
 }
 
 .searchResultCellAccountImg img {
@@ -500,7 +515,7 @@ const Styles = styled.div `
     margin-left: 10%;
     margin-bottom: 0px;
     margin-right: 10%;
-    margin-top: 0px;
+    margin-top: 0.5rem;
 }
 
 .searchResultCellAccountLabel {
@@ -525,7 +540,7 @@ const Styles = styled.div `
     margin-top: 2.5px;
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.5rem;
 }
 
 .navbar-search-bar-no-results-account {
@@ -7812,7 +7827,7 @@ export default class LandingPg extends Component {
                                                 }
                                                 {!isSearchLoading && resultsFound && 
                                                     Object.entries(groupedOptions).map(([category, options]) => (
-                                                        <div style={{borderBottom: "1px solid #ccc", position: "sticky"}} key={category}>
+                                                        <div className='searchResultCellAccountContainer' key={category}>
                                                             {options.map(option => (
                                                                 <div 
                                                                 onClick={() => this.searchedTermClicked(category, option, option.page)}
