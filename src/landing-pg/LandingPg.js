@@ -502,7 +502,10 @@ const Styles = styled.div `
 
 .searchResultCellAccountDetails p {
     font-size: 60% !important;
-    margin-left: 0px !important;
+    margin-left: 5% !important;
+    margin-top: 5px;
+    margin-bottom: 0px !important;
+    margin-right: 5%;
 }
 
 .searchResultCellAccountLabel {
@@ -531,14 +534,15 @@ const Styles = styled.div `
 }
 
 .searchResultOptionAccount {
-    // margin-top: 10px;
     // font-size: 10px;
 }
 
 .searchResultCategoryAccount {
     font-size: 30%;
+    margin-top: 3.5px;
     margin-bottom: 0px;
-    margin-top: 5rem;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .navbar-search-bar-no-results-account {
