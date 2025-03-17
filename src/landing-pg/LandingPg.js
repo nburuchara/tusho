@@ -441,6 +441,115 @@ const Styles = styled.div `
     font-size: 70% !important;
 }
 
+    // # # SEARCH RESULTS ACCOUNT POPUP
+
+.searchResultAccount {
+    z-index: 1;
+    // position: relative;
+    // margin-left: -6%;
+    width: 98%;
+    // border: 1px solid black;
+    border-radius: 8px;
+    background-color: white;
+    // margin-top: 10px;
+    padding: 5px;
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    display: block;
+    overflow-y: auto;
+}
+
+
+.searchResultAccount.empty {
+    display: none;
+    pointer-events: none;
+}
+
+.searchResultsAccount {
+    padding: 1%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchResultCellAccount:hover {
+    background-color: #faece9;
+    cursor: pointer;
+}
+
+.searchResultCellAccount:hover .searchResultCellImg img {
+    background-color: #fff;
+}
+
+.searchResultCellAccountImg {
+    width: 10%;
+}
+
+.searchResultCellAccountImg img {
+    width: 18.5px;
+    height: 18.5px;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.searchResultCellAccountDetails {
+    width: 100%;
+    padding-left: 1%;
+}
+
+.searchResultCellAccountDetails p {
+    font-size: 60% !important;
+    margin-left: 0px !important;
+}
+
+.searchResultCellAccountLabel {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchResultCellAccountLabel p {
+    font-size: 50% !important;
+    margin-top: 0px;
+}
+
+.searchResultCellAccount p {
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+.searchResultCellAccount h5 {
+    margin-top: 1rem;
+    margin-bottom:0px;
+    font-family: poppins;
+    font-weight: normal;
+    color: #5e626a;
+}
+
+.searchResultOptionAccount {
+    // margin-top: 10px;
+    // font-size: 10px;
+}
+
+.searchResultCategoryAccount {
+    font-size: 30%;
+    margin-bottom: 0px;
+    margin-top: 5rem;
+}
+
+.navbar-search-bar-no-results-account {
+    height: 1.85rem;
+}
+
+.navbar-search-bar-no-results-account p {
+    margin-top: 5px;
+    font-size: 70% !important;
+}
+
     // # SEARCH BAR CLEAR SEARCH ICON
 
 .navbar-search-bar-clear-btn {
@@ -1890,7 +1999,7 @@ const Styles = styled.div `
     height: 1.8rem;
     display: flex;
     justify-content: space-between;
-    border: 1px solid white;
+    border: 1px solid #ff5733;
     border-radius: 6px;
     background-color: white;
 }
@@ -1983,6 +2092,16 @@ const Styles = styled.div `
     height: 100%;
     position: relative;
 }
+
+.navbar-profile-account-popup-body-search-bar-results {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    border: 1px solid #ff5733;
+    height: 30rem;
+    background-color: white;
+    z-index: 3;
+ }
 
 .navbar-profile-account-popup-body-left-settings-option-cell {
     height: 3rem;
@@ -5483,6 +5602,7 @@ export default class LandingPg extends Component {
             searchBarIsClicked: false,
             searchBarInput: '',
             searchBarInputJipange: '',
+            searchBarInputAccountPopup: '',
             filteredOptions: [],
 
             //* - HOME SCREEN SHOPPING CART - *//
@@ -5844,16 +5964,15 @@ export default class LandingPg extends Component {
             clearSearchBtn: true,
             showTimezones: false
         });
-        
+    
         const searchInput = e.target.value.toLowerCase();
-        
+    
         // Clear previous timeout
+        clearTimeout(this.searchTimeout);
     
-    
-        // Set a new timeout to execute after 500ms
+        // Set a new timeout to execute after 500ms (debounce)
         this.searchTimeout = setTimeout(() => {
             if (searchInput.trim() === "") {
-                // Reset filteredOptions and loading state
                 this.setState({
                     searchedData: "",
                     searchCloseBtn: false,
@@ -5862,33 +5981,33 @@ export default class LandingPg extends Component {
                     resultsFound: false,
                     clearSearchBtn: false,
                 });
-
             } else {
                 this.setState({ isSearchLoading: true, searchedData: searchInput, searchCloseBtn: true }, () => {
-                    const filteredOptions = SearchTerms.filter(option => {
+                    let filteredOptions = SearchTerms.filter(option => {
                         const name = option.name.toLowerCase();
-                        const searchWords = searchInput.toLowerCase().split(' '); // Split search input into words
-                        const optionWords = name.split(' '); // Split name into words
-                    
+                        const searchWords = searchInput.toLowerCase().split(" ");
+                        const optionWords = name.split(" ");
+    
                         if (searchWords.length === 1) {
-                            // Special case: search input is a single word
-                            const searchWord = searchWords[0];
-                            return optionWords.some(optionWord => optionWord.startsWith(searchWord));
+                            return optionWords.some(optionWord => optionWord.startsWith(searchWords[0]));
                         } else {
-                            // Combine search words into a single substring
-                            const searchSubstring = searchWords.join(' ');
-                            return name.includes(searchSubstring);
+                            return name.includes(searchWords.join(" "));
                         }
                     });
     
-                    const resultsFound = filteredOptions.length > 0; // Check if any results were found
+                    const resultsFound = filteredOptions.length > 0;
     
-                    const highlightedOptions = filteredOptions.map(option => ({
-                        ...option,
-                        highlightedName: this.highlightMatchedCharacters(option, searchInput)
-                    }));
+                    // 🔹 Update `qty` for search results based on cart
+                    const updatedOptions = filteredOptions.map(option => {
+                        const cartItem = this.state.products.find(item => item.id === option.id);
+                        return {
+                            ...option,
+                            qty: cartItem ? cartItem.qty : 0, // Use cart qty if exists, otherwise default to 0
+                            highlightedName: this.highlightMatchedCharacters(option, searchInput),
+                        };
+                    });
     
-                    const groupedResults = this.groupBy(highlightedOptions, 'category');
+                    const groupedResults = this.groupBy(updatedOptions, "category");
     
                     // Construct trie for each category
                     const trieByCategory = {};
@@ -5899,17 +6018,92 @@ export default class LandingPg extends Component {
                         });
                     });
     
-                    // Update state after search logic is complete
+                    // 🔹 Update state with updated search results (with cart quantities)
                     this.setState({
                         trieByCategory,
                         groupedOptions: groupedResults,
-                        filteredOptions: highlightedOptions,
-                        isSearchLoading: false, // Hide loading screen
-                        resultsFound: resultsFound
+                        filteredOptions: updatedOptions, // Updated search results
+                        isSearchLoading: false,
+                        resultsFound: resultsFound,
                     });
                 });
             }
-        }, 0); // Set debounce delay to 500ms
+        }, 500); // Adjust debounce delay as needed
+    };
+
+    handleSearchChangeAccount = (e) => {
+
+        this.setState({
+            searchBarInputAccountPopup: e.target.value,
+            isSearchLoading: true,
+            clearSearchBtn: true,
+            showTimezones: false
+        });
+    
+        const searchInput = e.target.value.toLowerCase();
+    
+        // Clear previous timeout
+        clearTimeout(this.searchTimeout);
+    
+        // Set a new timeout to execute after 500ms (debounce)
+        this.searchTimeout = setTimeout(() => {
+            if (searchInput.trim() === "") {
+                this.setState({
+                    searchedData: "",
+                    searchCloseBtn: false,
+                    filteredOptions: [],
+                    isSearchLoading: false,
+                    resultsFound: false,
+                    clearSearchBtn: false,
+                });
+            } else {
+                this.setState({ isSearchLoading: true, searchedData: searchInput, searchCloseBtn: true }, () => {
+                    let filteredOptions = SearchTerms.filter(option => {
+                        const name = option.name.toLowerCase();
+                        const searchWords = searchInput.toLowerCase().split(" ");
+                        const optionWords = name.split(" ");
+    
+                        if (searchWords.length === 1) {
+                            return optionWords.some(optionWord => optionWord.startsWith(searchWords[0]));
+                        } else {
+                            return name.includes(searchWords.join(" "));
+                        }
+                    });
+    
+                    const resultsFound = filteredOptions.length > 0;
+    
+                    // 🔹 Update `qty` for search results based on cart
+                    const updatedOptions = filteredOptions.map(option => {
+                        const cartItem = this.state.products.find(item => item.id === option.id);
+                        return {
+                            ...option,
+                            qty: cartItem ? cartItem.qty : 0, // Use cart qty if exists, otherwise default to 0
+                            highlightedName: this.highlightMatchedCharacters(option, searchInput),
+                        };
+                    });
+    
+                    const groupedResults = this.groupBy(updatedOptions, "category");
+    
+                    // Construct trie for each category
+                    const trieByCategory = {};
+                    Object.entries(groupedResults).forEach(([category, options]) => {
+                        trieByCategory[category] = new Trie();
+                        options.forEach(option => {
+                            trieByCategory[category].insert(option.name.toLowerCase());
+                        });
+                    });
+    
+                    // 🔹 Update state with updated search results (with cart quantities)
+                    this.setState({
+                        trieByCategory,
+                        groupedOptions: groupedResults,
+                        filteredOptions: updatedOptions, // Updated search results
+                        isSearchLoading: false,
+                        resultsFound: resultsFound,
+                    });
+                });
+            }
+        }, 500); // Adjust debounce delay as needed
     };
 
     highlightMatchedCharacters(option, searchInput, isSearchLoading) {
@@ -7567,7 +7761,11 @@ export default class LandingPg extends Component {
                                             <img src='/assets/icons/navbar/search-icon.png'/>
                                         </div>
                                         <div className='navbar-profile-account-popup-header-left-search-bar'>
-                                            <input/>
+                                            <input
+                                            value={this.state.searchBarInputAccountPopup}
+                                            placeholder='Search for an item...'
+                                            onChange={this.handleSearchChangeAccount}
+                                            />
                                         </div>
                                     </div>
                                 </div>
@@ -7614,7 +7812,44 @@ export default class LandingPg extends Component {
                                 </div>
                             </div>
                             <div className='navbar-profile-account-popup-body'>
+                            
                                 <div className='navbar-profile-account-popup-body-left'>
+                                    <div className='navbar-profile-account-popup-body-search-bar-results'>
+                                        {searchInput !== "" && (
+                                            <div className={`searchResultAccount ${this.state.searchBarInputAccountPopup === '' ? 'empty' : ''}`}>
+                                                {isSearchLoading && 
+                                                    <div>
+                                                        <p>Loading...</p>
+                                                    </div>
+                                                }
+                                                {!isSearchLoading && resultsFound && 
+                                                    Object.entries(groupedOptions).map(([category, options]) => (
+                                                        <div style={{borderBottom: "1px solid #ccc", position: "sticky"}} key={category}>
+                                                            {options.map(option => (
+                                                                <div 
+                                                                onClick={() => this.searchedTermClicked(category, option, option.page)}
+                                                                className='searchResultCellAccount' 
+                                                                key={option.id}>
+                                                                    <div className='searchResultCellAccountDetails'>
+                                                                        <p className='searchResultOptionAccount'>{option.highlightedName}</p>
+                                                                        <h5 className='searchResultCategoryAccount'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null } </h5> 
+                                                                    </div>
+                                                                    <div className='searchResultCellAccountLabel'>
+                                                                        {/* <p>[click to add to cart]</p> */}
+                                                                    </div>
+                                                                </div>
+                                                            ))}
+                                                        </div>
+                                                    ))
+                                                }
+                                                {!isSearchLoading && !resultsFound &&
+                                                    <div className='navbar-search-bar-no-results-account' style={{textAlign: "center"}}>
+                                                        <p style={{fontWeight: "bold", color: "#FF5733"}}>No results found</p>
+                                                    </div>
+                                                }
+                                            </div>
+                                        )}
+                                    </div>
                                     <div onClick={() => this.menuOptionClicked(1)} className={`navbar-profile-account-popup-body-left-settings-option-cell ${this.state.accountMenuOption1Selected ? 'selected' : ''}`}>
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-icon ${this.state.accountMenuOption1Selected ? 'selected' : ''}`}>
                                             <img src='/assets/icons/home-profile/edit-profile-option-icon2.png'/>
@@ -8374,7 +8609,7 @@ export default class LandingPg extends Component {
                                                                                                     className='searchResultCellJipange' 
                                                                                                     key={option.id}>
                                                                                                         <div className='searchResultCellJipangeImg'>
-                                                                                                            <img src={option.img}/>
+                                                                                                            <img src={option.image}/>
                                                                                                         </div>
                                                                                                         <div className='searchResultCellJipangeDetails'>
                                                                                                             <p className='searchResultOptionJipange'>{option.highlightedName}</p>
@@ -9794,7 +10029,7 @@ export default class LandingPg extends Component {
                                         <div onMouseEnter={this.handleAnnouncementBarMouseEnter} onMouseLeave={this.handleAnnouncementBarMouseLeave} onClick={this.handleAnnouncementBarMouseEnter} className="homepage-header-inner-header-left-update-display-announcement-container">
                                             <div ref={this.marqueeRef} className={`homepage-header-inner-header-left-update-display-announcement-track ${this.state.announcementBarIsPaused ? "paused" : ""}`} id="homepage-header-inner-header-left-update-display-announcement-track">
                                                 <div className="homepage-header-inner-header-left-update-display-announcement-wrapper">
-                                                    <span><strong>{this.state.dateTime} • </strong>You've made it half way through the week! Keep going mama (or papa)! 🚀</span>
+                                                    <span><strong>{this.state.dateTime} • </strong>We're shocked it's already Monday again too 🤔, guess we gotta just power through! 👊🏾</span>
                                                     <span><strong>OFFER(S) -  15% off</strong> Dairy Fresh Strawberry (offer ends <strong>today at 5:00pm</strong>) <strong>• 10% off</strong> Rinsun 250ml Oil (offer ends <strong>22/03/25 at 1:30pm</strong>) <strong>• 20% off </strong> Afia Multi-Vitamin Fruit Drink (1 litre) (offer ends <strong>31/03/25 at 2:30pm</strong>) <strong>• 20% off </strong> Afia Apple & Ginger Boost Fruit Drink (380ml) (offer ends <strong>31/03/25 at 2:30pm</strong>)</span>
                                                     <span><strong>IMPROVEMENTS TO YOUR SHOPPING EXPERIENCE - </strong>We fixed the shopping cart closing suddenly issue, and we added <strong>Airtel Money</strong> as a payment option!</span>
                                                     {/* <span>🎉 Announcement 4</span> */}
@@ -9924,6 +10159,9 @@ export default class LandingPg extends Component {
                                         ))}
                                     </div>
                                     <div className={`homepage-body-inner-header-option-dropdown-option-35 ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
+                                        <div className='homepage-body-inner-header-option-dropdown-option-35-search-container'>
+
+                                        </div>
                                         {this.state.brandOptions.map((brand) => (
                                             <div 
                                                 key={brand}
