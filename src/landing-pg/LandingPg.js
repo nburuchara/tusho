@@ -466,7 +466,7 @@ const Styles = styled.div `
 .searchResultCellAccount:hover {
     background-color: #faece9;
     cursor: pointer;
-    border-bottom: 0.5px solid #ff5733;
+    border-bottom: 0.15px solid #ff5733;
 }
 
 .searchResultCellAccount:hover .searchResultCellAccountContainer {
@@ -7858,7 +7858,17 @@ export default class LandingPg extends Component {
                                                 }
                                                 {!isSearchLoading && !resultsFound &&
                                                     <div className='navbar-search-bar-no-results-account' style={{textAlign: "center"}}>
-                                                        <p style={{fontWeight: "bold", color: "#FF5733"}}>No results found</p>
+                                                        <RotatingLines
+                                                        visible={true}
+                                                        height="23.5"
+                                                        width="23.5"
+                                                        strokeColor="#FF5733"
+                                                        strokeWidth="3"
+                                                        animationDuration="0.75"
+                                                        ariaLabel="rotating-lines-loading"
+                                                        wrapperStyle={{}}
+                                                        wrapperClass=""
+                                                        />
                                                     </div>
                                                 }
                                             </div>
