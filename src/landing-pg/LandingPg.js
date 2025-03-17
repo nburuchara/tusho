@@ -558,6 +558,8 @@ const Styles = styled.div `
 
 .navbar-search-bar-no-results-account {
     height: 1.85rem;
+    margin-top: 1rem;
+    font-family: poppins;
 }
 
 .navbar-search-bar-no-results-account p {
