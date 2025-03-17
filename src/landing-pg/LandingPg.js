@@ -501,8 +501,8 @@ const Styles = styled.div `
 }
 
 .searchResultCellAccountDetails p {
-    font-size: 60% !important;
-    margin-left: 5% !important;
+    font-size: 80%;
+    margin-left: 10%;
     margin-top: 5px;
     margin-bottom: 0px !important;
     margin-right: 5%;
@@ -526,7 +526,7 @@ const Styles = styled.div `
 }
 
 .searchResultCellAccount h5 {
-    margin-top: 1rem;
+    margin-top: 0rem;
     margin-bottom:0px;
     font-family: poppins;
     font-weight: normal;
