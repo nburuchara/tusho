@@ -2108,6 +2108,7 @@ const Styles = styled.div `
     overflow: hidden;
     transform: translateY(-35rem);
     visibility: hidden;
+    transition-property: transform;
  }
 
  .navbar-profile-account-popup-body-search-bar-results.display {
@@ -5395,7 +5396,7 @@ const Styles = styled.div `
 .navbar-profile-dropdown-body-signed-in-options-cell-label p,
 .navbar-profile-account-popup,
 .navbar-profile-account-popup-header-right-close img,
-.navbar-profile-account-popup-body-search-bar-results
+.navbar-profile-account-popup-body-search-bar-results,
 .navbar-profile-account-popup-body-left-settings-option-cell,
 .navbar-profile-account-popup-body-left-settings-option-cell-label p,
 .navbar-profile-account-popup-body-left-footer-sign-out,
@@ -7827,7 +7828,7 @@ export default class LandingPg extends Component {
                             <div className='navbar-profile-account-popup-body'>
                             
                                 <div className='navbar-profile-account-popup-body-left'>
-                                    <div className='navbar-profile-account-popup-body-search-bar-results'>
+                                    <div className={`navbar-profile-account-popup-body-search-bar-results ${this.state.searchBarInputAccountPopup !== '' ? 'display' : ''}`}>
                                         {searchInput !== "" && (
                                             <div className={`searchResultAccount ${this.state.searchBarInputAccountPopup === '' ? 'empty' : ''}`}>
                                                 {isSearchLoading && 
