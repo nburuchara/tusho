@@ -452,7 +452,6 @@ const Styles = styled.div `
     border-radius: 8px;
     background-color: white;
     // margin-top: 10px;
-    padding: 0px;
     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     display: block;
     overflow-y: auto;
@@ -462,15 +461,6 @@ const Styles = styled.div `
 .searchResultAccount.empty {
     display: none;
     pointer-events: none;
-}
-
-.searchResultsAccount {
-    padding: 1%;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
 }
 
 .searchResultCellAccount:hover {
@@ -501,11 +491,11 @@ const Styles = styled.div `
 }
 
 .searchResultCellAccountDetails p {
-    font-size: 80%;
+    font-size: 70%;
     margin-left: 10%;
-    margin-top: 5px;
-    margin-bottom: 0px !important;
-    margin-right: 5%;
+    margin-bottom: 0px;
+    margin-right: 10%;
+    padding-top: 0.35rem;
 }
 
 .searchResultCellAccountLabel {
@@ -539,10 +529,10 @@ const Styles = styled.div `
 
 .searchResultCategoryAccount {
     font-size: 40%;
-    margin-top: 3.5px;
-    margin-bottom: 0px;
+    margin-top: 2.5px;
     margin-left: 10%;
-    margin-right: 5%;
+    margin-right: 10%;
+    padding-bottom: 0.35rem;
 }
 
 .navbar-search-bar-no-results-account {
