@@ -469,16 +469,20 @@ const Styles = styled.div `
     border-bottom: 0.15px solid #ff5733;
 }
 
-.searchResultCellAccount:hover .searchResultCellAccountContainer {
-    border-bottom: 0.5px solid transparent;
-}
-
 .searchResultAccountLoading {
-    margin-top: -5rem;
+    margin-top: 6.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.searchResultAccountLoading p {
+    font-family: poppins;
+    font-size: 75%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #5e626a;
 }
 
 .searchResultCellAccountContainer {
@@ -519,7 +523,8 @@ const Styles = styled.div `
 }
 
 .searchResultCellAccountDetails p {
-    font-size: 70%;
+    font-size: 65%;
+    font-family: poppins;
     margin-left: 10%;
     margin-bottom: 0px;
     margin-right: 10%;
@@ -2114,6 +2119,7 @@ const Styles = styled.div `
     z-index: 3;
     overflow: hidden;
     transform: translateY(-35rem);
+    border-right: 1px solid transparent;
     visibility: hidden;
     transition-property: transform;
  }
