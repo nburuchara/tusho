@@ -466,7 +466,8 @@ const Styles = styled.div `
 .searchResultCellAccount:hover {
     background-color: #faece9;
     cursor: pointer;
-    border-bottom: 0.15px solid #ff5733;
+    border-bottom: 0.05px solid #ccc;
+    border-top: 0.05px solid #ccc;
 }
 
 .searchResultAccountLoading {
