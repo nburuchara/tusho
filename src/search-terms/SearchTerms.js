@@ -1,10 +1,10 @@
 const results = [
 
-    {"id": "998573", "name": "Change my profile picture", "category": "Profile", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
+    {"id": "998573", "name": "Change my profile picture", "category": "Profile", "subCat1": "Edit profile picture", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
 
-    {"id": "998573", "name": "Add new delivery address", "category": "Delivery Information", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
+    {"id": "998573", "name": "Add new delivery address", "category": "Delivery Information", "subCat1": "New address", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
 
-    {"id": "998573", "name": "Update delivery address", "category": "Delivery Information", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
+    {"id": "998573", "name": "Update delivery address", "category": "Delivery Information", "subCat1": "Edit address", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
 
     {"id": "998573", "name": "How long will my order take to arrive if I live on the outskirts of Nairobi?", "category": "FAQ", "subCat1": "Delivery", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
 
@@ -12,7 +12,7 @@ const results = [
 
     {"id": "998573", "name": "How can I add a product to 'Shop Pamoja'?", "category": "FAQ", "subCat1": "Shop Pamoja", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
 
-    {"id": "998573", "name": "Add new Jipange order", "category": "Jipange", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
+    {"id": "998573", "name": "Add new Jipange order", "category": "Jipange", "subCat1": "New order", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
 
     {"id": "998573", "name": "Can I pay for my delivery  with cash?", "category": "FAQ", "subCat1": "Payment", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
 
