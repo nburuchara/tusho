@@ -6,6 +6,7 @@ import ProductCard from './ProductCard';
 
 //? - - FILES - - //
 import SearchTerms from '../product-list/products'
+import AccountSearchTerms from '../search-terms/SearchTerms'
 import products from '../product-list/products'; 
 
 const Styles = styled.div `
@@ -549,7 +550,8 @@ const Styles = styled.div `
 }
 
 .searchResultCategoryAccount {
-    font-size: 40%;
+    font-size: 30%;
+    font-weight: normal;
     font-family: poppins;
     margin-top: 2.5px;
     margin-left: 10%;
@@ -5059,10 +5061,11 @@ const Styles = styled.div `
 
 .homepage-body-inner-header-option-pamoja {
     width: auto;
-    border: 1px solid #ccc;
+    border: 1px solid #20313a;
     height: 42.5%;
     display: flex;
     align-items: center;
+    background-color: #20313a;
     justify-content: space-between;
     padding-left: 15px;
     padding-right: 15px;
@@ -5077,6 +5080,14 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
 }
 
+.homepage-body-inner-header-option-pamoja:hover .dial-container {
+    background-color: #fff;
+}
+
+.homepage-body-inner-header-option-pamoja:hover .dial-button {
+    background-color: #ff5733;
+}
+
 .homepage-body-inner-header-option-pamoja.selected {
     border: 1px solid #ff5733;
     background-color: #ff5733;
@@ -5086,7 +5097,7 @@ const Styles = styled.div `
     margin-top: 0px;
     margin-bottom: 0px;
     margin-right: 10px;
-    color: #5e626a;
+    color: #fff;
     font-family: poppins;
     font-size: 80%;
     // font-weight: normal;
@@ -6089,7 +6100,7 @@ export default class LandingPg extends Component {
                 });
             } else {
                 this.setState({ isSearchLoading: true, searchedData: searchInput, searchCloseBtn: true }, () => {
-                    let filteredOptions = SearchTerms.filter(option => {
+                    let filteredOptions = AccountSearchTerms.filter(option => {
                         const name = option.name.toLowerCase();
                         const searchWords = searchInput.toLowerCase().split(" ");
                         const optionWords = name.split(" ");
@@ -7632,7 +7643,7 @@ export default class LandingPg extends Component {
                                         {this.state.accountSetupComplete && 
                                             <>
                                                 <h4><span></span>{this.state.accountSettingFirstName} {this.state.accountSettingLastName}</h4>
-                                                <p>Account Information</p>
+                                                <p>Account Settings</p>
                                             </>
                                         }
                                         
@@ -7794,7 +7805,7 @@ export default class LandingPg extends Component {
                                         <div className='navbar-profile-account-popup-header-left-search-bar'>
                                             <input
                                             value={this.state.searchBarInputAccountPopup}
-                                            placeholder='Search for an item...'
+                                            placeholder='Search...'
                                             onChange={this.handleSearchChangeAccount}
                                             />
                                         </div>
@@ -7874,7 +7885,7 @@ export default class LandingPg extends Component {
                                                                 key={option.id}>
                                                                     <div className='searchResultCellAccountDetails'>
                                                                         <p className='searchResultOptionAccount'>{option.highlightedName}</p>
-                                                                        <h5 className='searchResultCategoryAccount'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null } </h5> 
+                                                                        <h5 className='searchResultCategoryAccount'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'>'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat4}</label> : null } </h5> 
                                                                     </div>
                                                                     <div className='searchResultCellAccountLabel'>
                                                                         {/* <p>[click to add to cart]</p> */}

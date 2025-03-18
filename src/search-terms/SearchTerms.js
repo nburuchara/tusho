@@ -1,7 +1,9 @@
 const results = [
 
-    {"id": "998573", "name": "Change profile picture", "category": "Rina Brands", "page": "Event types", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
-    {"id": "998573", "name": "MacCoffee Classic (200g)", "category": "Coffee House", "img": "/assets/images/products/mac-coffee-product.webp", "page": "Event types", "lastCat": "top"},
+    {"id": "998573", "name": "How long will my order take to arrive if I live on the outskirts of Nairobi?", "category": "FAQ", "subCat1": "Delivery", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
+
+    {"id": "998573", "name": "How do I know when my Jipange order will arrive?", "category": "FAQ", "subCat1": "Delivery", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
+
    
   
 
