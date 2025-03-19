@@ -4570,6 +4570,47 @@ const Styles = styled.div `
     margin-left: 0px;
 }
 
+    // # FAQs SCREEN SETTINGS
+
+.navbar-profile-account-popup-faqs-settings {
+    margin-left: 6.5%;
+    // border: 1px solid black;
+    height: 37.65rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-profile-account-popup-faqs-settings-header {
+    height: 50%;
+    // border: 1px solid black;
+    position: relative;
+}
+
+.navbar-profile-account-popup-faqs-settings-header p {
+    margin-left: 2.5%;
+    margin-bottom: 5px;
+    color: #5e626a;
+    font-family: poppins;
+    font-size: 80%;
+}
+
+.navbar-profile-account-popup-faqs-settings-header-top-container {
+    // border: 1px solid black;
+    border-top: 1px solid #5e626a;
+    width: 95%;
+    margin-left: 2.5%;
+    height: 20.5%;
+    position: relative;
+}
+
+.navbar-profile-account-popup-faqs-settings-header-top-container p {
+    margin-left: 0px;
+    margin-top: 0px;
+    padding-top: 5px;
+    font-size: 72.5%;
+    color: black;
+}
+
     // # LOADING SCREEN SETTINGS
 
 .navbar-profile-loading-popup-settings {
@@ -6397,6 +6438,9 @@ export default class LandingPg extends Component {
                 case 4:
                     prevMenuOption = "showMyOrdersSettings";
                     break;
+                case 5:
+                    prevMenuOption = "showFAQSettings";
+                    break;
                 default:
                     prevMenuOption = "showAccountInformation";
             }
@@ -6413,6 +6457,9 @@ export default class LandingPg extends Component {
                     break;
                 case 4:
                     newMenuOption = "showMyOrdersSettings";
+                    break;
+                case 5:
+                    newMenuOption = "showFAQSettings";
                     break;
                 default:
                     newMenuOption = "showAccountInformation";
@@ -7850,6 +7897,11 @@ export default class LandingPg extends Component {
                                                 <h1>My Orders</h1>
                                             </div>
                                         }
+                                        {this.state.showFAQSettings && 
+                                            <div className='navbar-profile-account-popup-header-account-setup-incomplete'>
+                                                <h1>Frequently Asked Questions</h1>
+                                            </div>
+                                        }
                                     </div>
                                     <div className='navbar-profile-account-popup-header-right-close'>
                                         <img src='/assets/icons/navbar/clear-search-icon-color.png'/>
@@ -7946,7 +7998,7 @@ export default class LandingPg extends Component {
                                     </div>
                                     <div onClick={() => this.menuOptionClicked(5)} className={`navbar-profile-account-popup-body-left-settings-option-cell ${this.state.accountMenuOption5Selected ? 'selected' : ''}`}>
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-icon ${this.state.accountMenuOption5Selected ? 'selected' : ''}`}>
-                                            <img src='/assets/icons/home-profile/edit-my-orders-option-icon.png'/>
+                                            <img src='/assets/icons/home-profile/edit-faq-option-icon.png'/>
                                         </div>
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-label ${this.state.accountMenuOption5Selected ? 'selected' : ''}`}>
                                             <p>FAQs</p>
@@ -10045,6 +10097,13 @@ export default class LandingPg extends Component {
                                                         <img src='/assets/icons/home-my-orders/no-orders-icon.png'/>
                                                         <p>No orders yet</p>
                                                     </div>
+                                                </div>
+                                            </div>
+                                        }
+                                        {this.state.showFAQSettings &&
+                                            <div className='navbar-profile-account-popup-faqs-settings'>
+                                                <div className='navbar-profile-account-popup-faqs-settings-header'>
+                                                    <p>Add a new delivery address:</p>
                                                 </div>
                                             </div>
                                         }
