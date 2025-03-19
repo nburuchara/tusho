@@ -10104,6 +10104,9 @@ export default class LandingPg extends Component {
                                             <div className='navbar-profile-account-popup-faqs-settings'>
                                                 <div className='navbar-profile-account-popup-faqs-settings-header'>
                                                     <p>Add a new delivery address:</p>
+                                                    <div className='navbar-profile-account-popup-faqs-settings-header-top-container'>
+
+                                                    </div>
                                                 </div>
                                             </div>
                                         }
