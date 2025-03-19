@@ -5640,6 +5640,8 @@ export default class LandingPg extends Component {
             deliveryInfoAddressType3: false,
             deliveryInfoAddressType4: false,
 
+            //* # FAQs *//
+
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
             searchBarInput: '',
@@ -5678,6 +5680,7 @@ export default class LandingPg extends Component {
             accountMenuOption2Selected: false,
             accountMenuOption3Selected: false,
             accountMenuOption4Selected: false,
+            accountMenuOption5Selected: false,
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
@@ -7940,6 +7943,15 @@ export default class LandingPg extends Component {
                                             <p>My Orders</p>
                                         </div>
                                         <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption4Selected ? 'selected' : ''}`}></div>
+                                    </div>
+                                    <div onClick={() => this.menuOptionClicked(5)} className={`navbar-profile-account-popup-body-left-settings-option-cell ${this.state.accountMenuOption5Selected ? 'selected' : ''}`}>
+                                        <div className={`navbar-profile-account-popup-body-left-settings-option-cell-icon ${this.state.accountMenuOption5Selected ? 'selected' : ''}`}>
+                                            <img src='/assets/icons/home-profile/edit-my-orders-option-icon.png'/>
+                                        </div>
+                                        <div className={`navbar-profile-account-popup-body-left-settings-option-cell-label ${this.state.accountMenuOption5Selected ? 'selected' : ''}`}>
+                                            <p>FAQs</p>
+                                        </div>
+                                        <div className={`navbar-profile-account-popup-body-left-settings-option-cell-selected ${this.state.accountMenuOption5Selected ? 'selected' : ''}`}></div>
                                     </div>
                                     <div className='navbar-profile-account-popup-body-left-footer'>
                                         <div className='navbar-profile-account-popup-body-left-footer-sign-out'>
