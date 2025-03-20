@@ -4598,7 +4598,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-top-container {
     // border: 1px solid black;
-    border-top: 1px solid #5e626a;
+    // border-top: 1px solid #5e626a;
     width: 95%;
     margin-left: 2.5%;
     height: 20%;
@@ -4627,6 +4627,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-faqs-settings-body-top-container-body {
     flex-grow: 1;
     border: 1px solid #5e626a;
+    border-top: 1px solid transparent;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
 }
