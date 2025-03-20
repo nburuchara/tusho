@@ -4666,7 +4666,11 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-footer button {
-    
+    border: 1px solid #ff5733;
+    background-color: #ff5733;
+    color: white;
+    font-family: poppins;
+    font-size: 75%;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container {
