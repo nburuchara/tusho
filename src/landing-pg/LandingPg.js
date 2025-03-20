@@ -10112,7 +10112,7 @@ export default class LandingPg extends Component {
                                         {this.state.showFAQSettings &&
                                             <div className='navbar-profile-account-popup-faqs-settings'>
                                                 <div className='navbar-profile-account-popup-faqs-settings-body'>
-                                                    <p>Learn more:</p>
+                                                    <p>Select an information category:</p>
                                                     <div className='navbar-profile-account-popup-faqs-settings-body-top-container'></div>
                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container'>
 
@@ -10166,7 +10166,7 @@ export default class LandingPg extends Component {
                                         <div onMouseEnter={this.handleAnnouncementBarMouseEnter} onMouseLeave={this.handleAnnouncementBarMouseLeave} onClick={this.handleAnnouncementBarMouseEnter} className="homepage-header-inner-header-left-update-display-announcement-container">
                                             <div ref={this.marqueeRef} className={`homepage-header-inner-header-left-update-display-announcement-track ${this.state.announcementBarIsPaused ? "paused" : ""}`} id="homepage-header-inner-header-left-update-display-announcement-track">
                                                 <div className="homepage-header-inner-header-left-update-display-announcement-wrapper">
-                                                    <span><strong>{this.state.dateTime} • </strong>TGWMITM: Thank God We Made It Through Monday! Happy Tuesday 😎</span>
+                                                    <span><strong>{this.state.dateTime} • </strong>Look at you! You've almost made it through the week! #GoMama 💪🏿</span>
                                                     <span><strong>OFFER(S) -  15% off</strong> Dairy Fresh Strawberry (offer ends <strong>today at 5:00pm</strong>) <strong>• 10% off</strong> Rinsun 250ml Oil (offer ends <strong>22/03/25 at 1:30pm</strong>) <strong>• 20% off </strong> Afia Multi-Vitamin Fruit Drink (1 litre) (offer ends <strong>31/03/25 at 2:30pm</strong>) <strong>• 20% off </strong> Afia Apple & Ginger Boost Fruit Drink (380ml) (offer ends <strong>31/03/25 at 2:30pm</strong>)</span>
                                                     <span><strong>IMPROVEMENTS TO YOUR SHOPPING EXPERIENCE - </strong>We fixed the shopping cart closing suddenly issue, and we added <strong>Airtel Money</strong> as a payment option!</span>
                                                     {/* <span>🎉 Announcement 4</span> */}
