@@ -4617,23 +4617,38 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-header {
-    height: 25%;
+    height: 22%;
     border: 1px solid #ff5733;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     background-color: #faece9;
 }
 
+.navbar-profile-account-popup-faqs-settings-body-top-container-header-left {
+    // height: 25%;
+    // border: 1px solid black;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-top-container-header-right {
+    // height: 25%;
+    // border: 1px solid black;
+}
+
 .navbar-profile-account-popup-faqs-settings-body-top-container-body {
     flex-grow: 1;
-    border: 1px solid #5e626a;
+    border: 1px solid #ccc;
     border-top: 1px solid transparent;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
 }
 
+.navbar-profile-account-popup-faqs-settings-body-top-container-footer {
+    height: 25%;
+    border: 1px solid blue;
+}
+
 .navbar-profile-account-popup-faqs-settings-body-bottom-container {
-    border: 1px solid black;
+    // border: 1px solid black;
     flex-grow: 1;
     width: 95%;
     margin-left: 2.5%;
@@ -10134,11 +10149,17 @@ export default class LandingPg extends Component {
                                                     <p>Ask us something!</p>
                                                     <div className='navbar-profile-account-popup-faqs-settings-body-top-container'>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-top-container-header'>
-                                                            <div className=''>
+                                                            <div className='navbar-profile-account-popup-faqs-settings-body-top-container-header-left'>
+
+                                                            </div>
+                                                            <div className='navbar-profile-account-popup-faqs-settings-body-top-container-header-right'>
 
                                                             </div>
                                                         </div>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-top-container-body'>
+
+                                                        </div>
+                                                        <div className='navbar-profile-account-popup-faqs-settings-body-top-container-footer'>
 
                                                         </div>
                                                     </div>
