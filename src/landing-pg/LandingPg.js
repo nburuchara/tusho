@@ -4631,6 +4631,11 @@ const Styles = styled.div `
     // border: 1px solid black;
 }
 
+.navbar-profile-account-popup-faqs-settings-body-top-container-header-left p {
+    color: #5e626a;
+    margin-left: 2.5%;
+}
+
 .navbar-profile-account-popup-faqs-settings-body-top-container-header-right {
     width: 10%;
     // border: 1px solid black;
