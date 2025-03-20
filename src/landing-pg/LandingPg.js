@@ -4645,14 +4645,16 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-body textarea {
-    height: 88.5%;
-    width: 95%;
-    border: 0px solid transparent;
+    height: 80%;
+    width: 97.5%;
+    border: 1px solid black;
     resize: none;
     outline: none;
     padding: 5px;
     font-size: 65%;
     font-family: poppins;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-footer {
