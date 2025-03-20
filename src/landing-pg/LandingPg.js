@@ -4627,12 +4627,12 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-header-left {
-    width: 85%;
+    width: 90%;
     border: 1px solid black;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-header-right {
-    width: 15%;
+    width: 10%;
     border: 1px solid black;
 }
 
@@ -4642,6 +4642,11 @@ const Styles = styled.div `
     border-top: 1px solid transparent;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-top-container-body input {
+    height: 97.5%;
+    width: 98.25%;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-footer {
@@ -10166,7 +10171,7 @@ export default class LandingPg extends Component {
                                                             </div>
                                                         </div>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-top-container-body'>
-
+                                                            <input/>
                                                         </div>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-top-container-footer'>
                                                             <button>Submit</button>
