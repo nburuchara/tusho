@@ -4622,16 +4622,18 @@ const Styles = styled.div `
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     background-color: #faece9;
+    display: flex;
+    justify-content: space-between;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-header-left {
-    // height: 25%;
-    // border: 1px solid black;
+    width: 85%;
+    border: 1px solid black;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-header-right {
-    // height: 25%;
-    // border: 1px solid black;
+    width: 15%;
+    border: 1px solid black;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-body {
@@ -4644,10 +4646,10 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-footer {
     height: 25%;
-    border: 1px solid blue;
+    // border: 1px solid blue;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-footer button {
