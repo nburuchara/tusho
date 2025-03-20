@@ -4647,7 +4647,9 @@ const Styles = styled.div `
 .navbar-profile-account-popup-faqs-settings-body-top-container-body textarea {
     height: 90.5%;
     width: 99%;
-    border: 0px solid transparent
+    border: 0px solid transparent;
+    resize: none;
+    outline: none;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-footer {
