@@ -4645,8 +4645,9 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-body input {
-    height: 97.5%;
-    width: 98.25%;
+    height: 90.5%;
+    width: 98.5%;
+    border: 0px solid transparent
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-footer {
