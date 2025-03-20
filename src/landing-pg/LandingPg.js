@@ -4633,7 +4633,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-header-left p {
     color: #5e626a;
-    margin-left: 2.5%;
+    margin-left: 1.5%;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-header-right {
@@ -10185,10 +10185,10 @@ export default class LandingPg extends Component {
                                                     <div className='navbar-profile-account-popup-faqs-settings-body-top-container'>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-top-container-header'>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-top-container-header-left'>
-                                                                <p>Select a inquiry subject:</p>
+                                                                <p>What do you want to know more about?</p>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-top-container-header-right'>
-
+                                                                <img/>
                                                             </div>
                                                         </div>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-top-container-body'>
