@@ -4601,7 +4601,7 @@ const Styles = styled.div `
     border-top: 1px solid #5e626a;
     width: 95%;
     margin-left: 2.5%;
-    height: 10%;
+    height: 20%;
     position: relative;
 }
 
@@ -10113,7 +10113,9 @@ export default class LandingPg extends Component {
                                             <div className='navbar-profile-account-popup-faqs-settings'>
                                                 <div className='navbar-profile-account-popup-faqs-settings-body'>
                                                     <p>Select an information category:</p>
-                                                    <div className='navbar-profile-account-popup-faqs-settings-body-top-container'></div>
+                                                    <div className='navbar-profile-account-popup-faqs-settings-body-top-container'>
+                                                        
+                                                    </div>
                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container'>
 
                                                     </div>
