@@ -4693,12 +4693,12 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-left {
-    width: 30%;
+    width: 37.5%;
     border: 1px solid black;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-right {
-    width: 70%;
+    width: 62.5%;
     border: 1px solid black;
 }
 
