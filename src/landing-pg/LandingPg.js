@@ -4601,7 +4601,7 @@ const Styles = styled.div `
     // border-top: 1px solid #5e626a;
     width: 95%;
     margin-left: 2.5%;
-    height: 20%;
+    height: 22.5%;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -4658,7 +4658,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-footer {
-    height: 25%;
+    height: 30%;
     // border: 1px solid blue;
     display: flex;
     align-items: center;
@@ -4673,6 +4673,7 @@ const Styles = styled.div `
     font-size: 65%;
     border-radius: 5px;
     width: 20%;
+    height: 70%;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container {
