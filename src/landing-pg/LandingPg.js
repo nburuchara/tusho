@@ -4644,9 +4644,9 @@ const Styles = styled.div `
     border-bottom-left-radius: 8px;
 }
 
-.navbar-profile-account-popup-faqs-settings-body-top-container-body input {
+.navbar-profile-account-popup-faqs-settings-body-top-container-body textarea {
     height: 90.5%;
-    width: 98.5%;
+    width: 99%;
     border: 0px solid transparent
 }
 
@@ -10172,7 +10172,7 @@ export default class LandingPg extends Component {
                                                             </div>
                                                         </div>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-top-container-body'>
-                                                            <input/>
+                                                            <textarea/>
                                                         </div>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-top-container-footer'>
                                                             <button>Submit</button>
