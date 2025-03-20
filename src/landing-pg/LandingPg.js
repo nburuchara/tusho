@@ -4617,7 +4617,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-header {
-    height: 22%;
+    height: 20%;
     border: 1px solid #ff5733;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
@@ -4651,7 +4651,7 @@ const Styles = styled.div `
     resize: none;
     outline: none;
     padding: 5px;
-    font-size: 65%;
+    font-size: 70%;
     font-family: poppins;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -4674,6 +4674,7 @@ const Styles = styled.div `
     border-radius: 5px;
     width: 20%;
     height: 65%;
+    cursor: pointer;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container {
@@ -10179,7 +10180,7 @@ export default class LandingPg extends Component {
                                                     <div className='navbar-profile-account-popup-faqs-settings-body-top-container'>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-top-container-header'>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-top-container-header-left'>
-
+                                                                <p>Select a inquiry subject:</p>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-top-container-header-right'>
 
