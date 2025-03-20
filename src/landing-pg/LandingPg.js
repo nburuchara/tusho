@@ -4628,12 +4628,12 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-header-left {
     width: 90%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-header-right {
     width: 10%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-body {
@@ -4647,7 +4647,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-faqs-settings-body-top-container-body textarea {
     height: 80%;
     width: 97.5%;
-    border: 1px solid black;
+    border: 1px solid transparent;
     resize: none;
     outline: none;
     padding: 5px;
