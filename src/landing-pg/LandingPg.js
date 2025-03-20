@@ -4683,10 +4683,21 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container {
-    border: 1px solid black;
+    border: 1px solid #ccc;
     flex-grow: 1;
     width: 95%;
     margin-left: 2.5%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-left {
+    
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-right {
+
 }
 
     // # LOADING SCREEN SETTINGS
