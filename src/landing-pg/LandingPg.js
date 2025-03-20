@@ -4603,6 +4603,9 @@ const Styles = styled.div `
     margin-left: 2.5%;
     height: 20%;
     position: relative;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container p {
@@ -4611,6 +4614,21 @@ const Styles = styled.div `
     padding-top: 5px;
     font-size: 72.5%;
     color: black;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-top-container-header {
+    height: 25%;
+    border: 1px solid #ff5733;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    background-color: #faece9;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-top-container-body {
+    flex-grow: 1;
+    border: 1px solid #ff5733;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container {
@@ -10112,9 +10130,16 @@ export default class LandingPg extends Component {
                                         {this.state.showFAQSettings &&
                                             <div className='navbar-profile-account-popup-faqs-settings'>
                                                 <div className='navbar-profile-account-popup-faqs-settings-body'>
-                                                    <p>Select an information category:</p>
+                                                    <p>Ask us something!</p>
                                                     <div className='navbar-profile-account-popup-faqs-settings-body-top-container'>
-                                                        
+                                                        <div className='navbar-profile-account-popup-faqs-settings-body-top-container-header'>
+                                                            <div className=''>
+
+                                                            </div>
+                                                        </div>
+                                                        <div className='navbar-profile-account-popup-faqs-settings-body-top-container-body'>
+
+                                                        </div>
                                                     </div>
                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container'>
 
