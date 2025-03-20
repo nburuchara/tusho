@@ -4683,7 +4683,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container {
-    // border: 1px solid black;
+    border: 1px solid black;
     flex-grow: 1;
     width: 95%;
     margin-left: 2.5%;
