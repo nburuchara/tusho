@@ -4670,7 +4670,9 @@ const Styles = styled.div `
     background-color: #ff5733;
     color: white;
     font-family: poppins;
-    font-size: 75%;
+    font-size: 65%;
+    border-radius: 5px;
+    width: 20%;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container {
