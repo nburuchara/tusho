@@ -4693,11 +4693,13 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-left {
-    
+    width: 30%;
+    border: 1px solid black;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-right {
-
+    width: 70%;
+    border: 1px solid black;
 }
 
     // # LOADING SCREEN SETTINGS
@@ -10210,7 +10212,12 @@ export default class LandingPg extends Component {
                                                         </div>
                                                     </div>
                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container'>
+                                                        <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-left'>
 
+                                                        </div>
+                                                        <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-right'>
+
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
