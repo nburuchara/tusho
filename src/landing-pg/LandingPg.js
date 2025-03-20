@@ -4645,6 +4645,13 @@ const Styles = styled.div `
 .navbar-profile-account-popup-faqs-settings-body-top-container-footer {
     height: 25%;
     border: 1px solid blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-top-container-footer button {
+    
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container {
@@ -10160,7 +10167,7 @@ export default class LandingPg extends Component {
 
                                                         </div>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-top-container-footer'>
-
+                                                            <button>Submit</button>
                                                         </div>
                                                     </div>
                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container'>
