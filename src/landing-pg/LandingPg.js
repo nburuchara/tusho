@@ -4597,7 +4597,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container {
-    border: 1px solid black;
+    // border: 1px solid black;
     border-top: 1px solid #5e626a;
     width: 95%;
     margin-left: 2.5%;
@@ -4618,7 +4618,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-header {
     height: 25%;
-    // border: 1px solid #ff5733;
+    border: 1px solid #ff5733;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     background-color: #faece9;
