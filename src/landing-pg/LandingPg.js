@@ -4689,6 +4689,19 @@ const Styles = styled.div `
     margin-left: 2.5%;
     border-radius: 8px;
     display: flex;
+    flex-direction: column;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-header {
+    height: 10%;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-body {
+    flex-grow: 1;
+    border: 1px solid black;
+    display: flex;
     justify-content: space-between;
 }
 
@@ -10212,11 +10225,16 @@ export default class LandingPg extends Component {
                                                         </div>
                                                     </div>
                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container'>
-                                                        <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-left'>
+                                                        <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header'>
 
                                                         </div>
-                                                        <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-right'>
+                                                        <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-body'>
+                                                            <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-left'>
 
+                                                            </div>
+                                                            <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-right'>
+
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
