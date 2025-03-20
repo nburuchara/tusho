@@ -4580,13 +4580,15 @@ const Styles = styled.div `
     flex-direction: column;
 }
 
-.navbar-profile-account-popup-faqs-settings-header {
-    height: 50%;
+.navbar-profile-account-popup-faqs-settings-body {
+    height: 100%;
     // border: 1px solid black;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-.navbar-profile-account-popup-faqs-settings-header p {
+.navbar-profile-account-popup-faqs-settings-body p {
     margin-left: 2.5%;
     margin-bottom: 5px;
     color: #5e626a;
@@ -4594,21 +4596,28 @@ const Styles = styled.div `
     font-size: 80%;
 }
 
-.navbar-profile-account-popup-faqs-settings-header-top-container {
-    // border: 1px solid black;
+.navbar-profile-account-popup-faqs-settings-body-top-container {
+    border: 1px solid black;
     border-top: 1px solid #5e626a;
     width: 95%;
     margin-left: 2.5%;
-    height: 20.5%;
+    height: 10%;
     position: relative;
 }
 
-.navbar-profile-account-popup-faqs-settings-header-top-container p {
+.navbar-profile-account-popup-faqs-settings-body-top-container p {
     margin-left: 0px;
     margin-top: 0px;
     padding-top: 5px;
     font-size: 72.5%;
     color: black;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container {
+    border: 1px solid black;
+    flex-grow: 1;
+    width: 95%;
+    margin-left: 2.5%;
 }
 
     // # LOADING SCREEN SETTINGS
@@ -10102,9 +10111,10 @@ export default class LandingPg extends Component {
                                         }
                                         {this.state.showFAQSettings &&
                                             <div className='navbar-profile-account-popup-faqs-settings'>
-                                                <div className='navbar-profile-account-popup-faqs-settings-header'>
-                                                    <p>Add a new delivery address:</p>
-                                                    <div className='navbar-profile-account-popup-faqs-settings-header-top-container'>
+                                                <div className='navbar-profile-account-popup-faqs-settings-body'>
+                                                    <p>Learn more:</p>
+                                                    <div className='navbar-profile-account-popup-faqs-settings-body-top-container'></div>
+                                                    <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container'>
 
                                                     </div>
                                                 </div>
