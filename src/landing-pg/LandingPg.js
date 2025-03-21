@@ -4780,14 +4780,14 @@ const Styles = styled.div `
     position: absolute;
     top: 0;  /* Start at 50% from the top */
     left: 50%; /* Start at 50% from the left */
-    transform: translate(-50%); /* Shift back by 50% of its own size to truly center */
+    // transform: translate(-50%); /* Shift back by 50% of its own size to truly center */
     width: 90%;
     height: 5rem;
     border-radius: 6px;
     border: 1px solid #ccc;
     overflow: auto;
-    visibility: hidden;
-    transition-property: visibility;
+    transform: translate(-50%, -5.5rem);
+    transition-property: transform;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown.display {
@@ -4800,7 +4800,7 @@ const Styles = styled.div `
     border-radius: 6px;
     border: 1px solid #ccc;
     overflow: auto;
-    visibility: visible;
+    transform: translateY(-50%, 0);
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option {
@@ -7227,6 +7227,10 @@ export default class LandingPg extends Component {
     handleFaqSettingsTopicSelected = (topic) => {
         this.setState({
             faqSettingsSelectedTopic: topic
+        }, () => {
+            this.setState({
+                faqSettingsDisplayTopicDropdown: false
+            })
         })
     }
 
