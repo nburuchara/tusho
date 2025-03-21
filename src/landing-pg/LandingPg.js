@@ -4790,7 +4790,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-search-icon {
     width: 10%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4802,15 +4802,17 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-search-bar {
     width: 90%;
-    border: 1px solid black;
+    // border: 1px solid black;
     // overflow: hidden;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-search-bar input {
     width: 95%;
     padding: 5px;
+    padding-left: 0px;
     height: 45%;
     outline: none;
+    border: 1px solid transparent;
     font-family: poppins;
     font-size: 70%;
 }
@@ -10455,7 +10457,9 @@ export default class LandingPg extends Component {
                                                                         <img src='/assets/icons/navbar/search-icon.png'/>
                                                                     </div>
                                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-search-bar'>
-                                                                        <input/>
+                                                                        <input
+                                                                        placeholder='Search...'
+                                                                        />
                                                                     </div>
                                                                 </div>
                                                             </div>
