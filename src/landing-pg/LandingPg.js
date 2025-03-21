@@ -4709,6 +4709,15 @@ const Styles = styled.div `
     width: 37.5%;
     border: 1px solid black;
     border-top-left-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select {
+    width: 90%;
+    border: 1px solid black;
+    height: 60%;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-right {
@@ -5673,10 +5682,11 @@ export default class LandingPg extends Component {
 
             //* - USER ACCOUNT STATUS - *//
             userSignedIn: true,
-            showAccountInformation: true,
+            showAccountInformation: false,
             showJipangeSettings: false,
             showPamojaSettings: false,
             showDeliveryInfoSettings: false,
+            showFAQSettings: true,
             showSettingsPageLoading: false,
 
             //* # Profile
@@ -5805,6 +5815,7 @@ export default class LandingPg extends Component {
             deliveryInfoAddressType4: false,
 
             //* # FAQs *//
+            
 
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -5837,14 +5848,14 @@ export default class LandingPg extends Component {
             transferToProfile: false,
 
             //* - HOME SCREEN ACCOUNT SETTINGS - *//    
-            accountSettingsOpen: false,
+            accountSettingsOpen: true,
             currentMenuOption: 1,
             showAccountSetupIncompleteHeader: true,
-            accountMenuOption1Selected: true,
+            accountMenuOption1Selected: false,
             accountMenuOption2Selected: false,
             accountMenuOption3Selected: false,
             accountMenuOption4Selected: false,
-            accountMenuOption5Selected: false,
+            accountMenuOption5Selected: true,
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
@@ -10248,7 +10259,9 @@ export default class LandingPg extends Component {
                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container'>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header'>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-left'>
+                                                                <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select'>
 
+                                                                </div>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-right'>
 
