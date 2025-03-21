@@ -4777,11 +4777,12 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown {
     position: absolute;
-    top: 50%;  /* Start at 50% from the top */
+    top: 0;  /* Start at 50% from the top */
     left: 50%; /* Start at 50% from the left */
-    transform: translate(-50%, -50%); /* Shift back by 50% of its own size to truly center */
+    transform: translate(-50%); /* Shift back by 50% of its own size to truly center */
     width: 85%;
     height: 5rem;
+    border-radius: 6px;
     border: 1px solid black;
 }
 
