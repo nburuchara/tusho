@@ -4773,6 +4773,17 @@ const Styles = styled.div `
     width: 62.5%;
     // border: 1px solid black;
     border-top-right-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-header-search-container {
+    width: 96%;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 8px;
+    height: 60%;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-body {
@@ -4858,7 +4869,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-right {
     width: 62.5%;
-    // border: 1px solid black;
+    border: 1px solid black;
 }
 
     // # LOADING SCREEN SETTINGS
@@ -10410,7 +10421,9 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-right'>
+                                                                <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-search-container'>
 
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-body'>
