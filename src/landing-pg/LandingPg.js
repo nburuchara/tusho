@@ -4786,6 +4786,14 @@ const Styles = styled.div `
     border-radius: 6px;
     border: 1px solid #ccc;
     overflow: auto;
+    transform: translateY(-5rem);
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown.display {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option {
@@ -5904,6 +5912,7 @@ export default class LandingPg extends Component {
 
             //* # FAQs *//
             faqTopics: ['All topics', 'Delivery', 'Payment', 'Shop Pamoja', 'Jipange', 'Support'],
+            faqSettingsDisplayTopicDropdown: false,
             faqSettingsSelectedTopic: 'All topics',
             
 
@@ -10372,7 +10381,7 @@ export default class LandingPg extends Component {
                                                         </div>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-body'>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-left'>
-                                                                <div className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown ${this.state.faqSettingsDisplayTopicDropdown ? '' : ''}`}>
+                                                                <div className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown ${this.state.faqSettingsDisplayTopicDropdown ? 'display' : ''}`}>
                                                                     {this.state.faqTopics.map((topic, index) => (
                                                                         <div className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option ${this.state.faqSettingsSelectedTopic === topic ? 'selected' : ''}`} key={index} value={topic}>
                                                                             <div 
