@@ -4901,19 +4901,20 @@ const Styles = styled.div `
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-right {
     width: 62.5%;
     border: 1px solid black;
+    position: relative;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-search-results {
     width: 100%;
     position: absolute;
     top: 0;
-    height: 30rem;
-    background-color: white;
+    height: 50%;
+    background-color: blue;
     z-index: 3;
-    overflow: hidden;
-    transform: translateY(-35rem);
+    // overflow: hidden;
+    // transform: translateY(-50%);
     border-right: 1px solid transparent;
-    visibility: hidden;
+    // visibility: hidden;
     transition-property: transform;
 }
 
@@ -6366,6 +6367,81 @@ export default class LandingPg extends Component {
 
         this.setState({
             searchBarInputJipange: e.target.value,
+            isSearchLoading: true,
+            clearSearchBtn: true,
+            showTimezones: false
+        });
+    
+        const searchInput = e.target.value.toLowerCase();
+    
+        // Clear previous timeout
+        clearTimeout(this.searchTimeout);
+    
+        // Set a new timeout to execute after 500ms (debounce)
+        this.searchTimeout = setTimeout(() => {
+            if (searchInput.trim() === "") {
+                this.setState({
+                    searchedData: "",
+                    searchCloseBtn: false,
+                    filteredOptions: [],
+                    isSearchLoading: false,
+                    resultsFound: false,
+                    clearSearchBtn: false,
+                });
+            } else {
+                this.setState({ isSearchLoading: true, searchedData: searchInput, searchCloseBtn: true }, () => {
+                    let filteredOptions = SearchTerms.filter(option => {
+                        const name = option.name.toLowerCase();
+                        const searchWords = searchInput.toLowerCase().split(" ");
+                        const optionWords = name.split(" ");
+    
+                        if (searchWords.length === 1) {
+                            return optionWords.some(optionWord => optionWord.startsWith(searchWords[0]));
+                        } else {
+                            return name.includes(searchWords.join(" "));
+                        }
+                    });
+    
+                    const resultsFound = filteredOptions.length > 0;
+    
+                    // 🔹 Update `qty` for search results based on cart
+                    const updatedOptions = filteredOptions.map(option => {
+                        const cartItem = this.state.products.find(item => item.id === option.id);
+                        return {
+                            ...option,
+                            qty: cartItem ? cartItem.qty : 0, // Use cart qty if exists, otherwise default to 0
+                            highlightedName: this.highlightMatchedCharacters(option, searchInput),
+                        };
+                    });
+    
+                    const groupedResults = this.groupBy(updatedOptions, "category");
+    
+                    // Construct trie for each category
+                    const trieByCategory = {};
+                    Object.entries(groupedResults).forEach(([category, options]) => {
+                        trieByCategory[category] = new Trie();
+                        options.forEach(option => {
+                            trieByCategory[category].insert(option.name.toLowerCase());
+                        });
+                    });
+    
+                    // 🔹 Update state with updated search results (with cart quantities)
+                    this.setState({
+                        trieByCategory,
+                        groupedOptions: groupedResults,
+                        filteredOptions: updatedOptions, // Updated search results
+                        isSearchLoading: false,
+                        resultsFound: resultsFound,
+                    });
+                });
+            }
+        }, 500); // Adjust debounce delay as needed
+    };
+
+    handleSearchChangeFAQ = (e) => {
+
+        this.setState({
+            searchBarInputFAQ: e.target.value,
             isSearchLoading: true,
             clearSearchBtn: true,
             showTimezones: false
@@ -10480,6 +10556,7 @@ export default class LandingPg extends Component {
                                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-search-bar'>
                                                                         <input
                                                                         placeholder='Search...'
+                                                                        onChange={this.handleSearchChangeFA}
                                                                         />
                                                                     </div>
                                                                 </div>
