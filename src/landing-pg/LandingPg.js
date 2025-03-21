@@ -4772,6 +4772,17 @@ const Styles = styled.div `
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-left {
     width: 37.5%;
     border: 1px solid black;
+    position: relative;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown {
+    position: absolute;
+    top: 50%;  /* Start at 50% from the top */
+    left: 50%; /* Start at 50% from the left */
+    transform: translate(-50%, -50%); /* Shift back by 50% of its own size to truly center */
+    width: 85%;
+    height: 5rem;
+    border: 1px solid black;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-right {
@@ -10310,7 +10321,9 @@ export default class LandingPg extends Component {
                                                         </div>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-body'>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-left'>
+                                                                <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown'>
 
+                                                                </div>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-right'>
 
