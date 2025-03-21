@@ -4723,7 +4723,29 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-label {
-    
+    width: 85%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-label p {
+    // font-size: 
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon {
+    width: 15%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon img {
+    width: 60%;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-right {
@@ -10267,10 +10289,10 @@ export default class LandingPg extends Component {
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-left'>
                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select'>
                                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-label'>
-
+                                                                        <p>All topics</p>
                                                                     </div>
                                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon'>
-
+                                                                        <img src='/assets/icons/home-main-header/down-arrow.png'/>
                                                                     </div>
                                                                 </div>
                                                             </div>
