@@ -6568,10 +6568,10 @@ export default class LandingPg extends Component {
         }, 500); // Adjust debounce delay as needed
     };
 
-    handleSearchChangeFAQ = (e) => {
+    handleSearchChangeAccount = (e) => {
 
         this.setState({
-            searchBarInputFAQ: e.target.value,
+            searchBarInputAccountPopup: e.target.value,
             isSearchLoading: true,
             clearSearchBtn: true,
             showTimezones: false
@@ -6595,7 +6595,7 @@ export default class LandingPg extends Component {
                 });
             } else {
                 this.setState({ isSearchLoading: true, searchedData: searchInput, searchCloseBtn: true }, () => {
-                    let filteredOptions = SearchTerms.filter(option => {
+                    let filteredOptions = AccountSearchTerms.filter(option => {
                         const name = option.name.toLowerCase();
                         const searchWords = searchInput.toLowerCase().split(" ");
                         const optionWords = name.split(" ");
@@ -6643,10 +6643,10 @@ export default class LandingPg extends Component {
         }, 500); // Adjust debounce delay as needed
     };
 
-    handleSearchChangeAccount = (e) => {
+    handleSearchChangeFAQ = (e) => {
 
         this.setState({
-            searchBarInputAccountPopup: e.target.value,
+            searchBarInputFAQ: e.target.value,
             isSearchLoading: true,
             clearSearchBtn: true,
             showTimezones: false
@@ -6670,7 +6670,7 @@ export default class LandingPg extends Component {
                 });
             } else {
                 this.setState({ isSearchLoading: true, searchedData: searchInput, searchCloseBtn: true }, () => {
-                    let filteredOptions = AccountSearchTerms.filter(option => {
+                    let filteredOptions = SearchTerms.filter(option => {
                         const name = option.name.toLowerCase();
                         const searchWords = searchInput.toLowerCase().split(" ");
                         const optionWords = name.split(" ");
