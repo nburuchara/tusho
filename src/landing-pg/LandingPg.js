@@ -4782,7 +4782,7 @@ const Styles = styled.div `
     width: 96%;
     border: 1px solid #ccc;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 6px;
     height: 60%;
     display: flex;
     justify-content: space-between;
