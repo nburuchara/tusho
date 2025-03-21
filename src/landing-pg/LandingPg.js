@@ -4706,12 +4706,15 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-left {
-    height: 10%;
-    width: 100%;
-    border: 1px solid transparent;
-    background-color: #f3f5f7;
-    border-top-right-radius: 8px;
+    width: 37.5%;
+    border: 1px solid black;
     border-top-left-radius: 8px;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-header-right {
+    width: 62.5%;
+    border: 1px solid black;
+    border-top-right-radius: 8px;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-body {
