@@ -570,6 +570,135 @@ const Styles = styled.div `
     font-size: 70% !important;
 }
 
+
+// # # SEARCH RESULTS FAQ
+
+.searchResultFAQ {
+    z-index: 4;
+    // position: relative;
+    // margin-left: -6%;
+    width: 100%;
+    // border: 1px solid black;
+    // border-radius: 8px;
+    background-color: white;
+    // margin-top: 10px;
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    display: block;
+    overflow-y: auto;
+}
+
+
+.searchResultFAQ.empty {
+    display: none;
+    pointer-events: none;
+}
+
+.searchResultCellFAQ:hover {
+    background-color: #faece9;
+    cursor: pointer;
+    border-bottom: 0.05px solid #ccc;
+    border-top: 0.05px solid #ccc;
+}
+
+.searchResultFAQLoading {
+    margin-top: 6.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchResultFAQLoading p {
+    font-family: poppins;
+    font-size: 75%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #5e626a;
+}
+
+.searchResultCellFAQContainer {
+    position: sticky;
+    border-bottom: 1px solid #ccc;
+}
+
+.searchResultCellFAQ {
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+    // border-bottom: 1px solid #
+}
+
+.searchResultCellFAQ {
+   height: 100;
+}
+
+.searchResultCellFAQ:hover .searchResultCellImg img {
+    background-color: #fff;
+}
+
+.searchResultCellFAQImg {
+    // width: 10%;
+}
+
+.searchResultCellFAQImg img {
+    width: 18.5px;
+    height: 18.5px;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.searchResultCellFAQDetails {
+    width: 100%;
+    padding-left: 1%;
+}
+
+.searchResultCellFAQDetails p {
+    font-size: 65%;
+    font-family: poppins;
+    margin-left: 10%;
+    margin-bottom: 0px;
+    margin-right: 10%;
+    margin-top: 0.5rem;
+}
+
+.searchResultCellFAQLabel {
+    width: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchResultCellFAQLabel p {
+    font-size: 50% !important;
+    margin-top: 0px;
+}
+
+.searchResultOptionFAQ {
+    // font-size: 10px;
+}
+
+.searchResultCategoryFAQ {
+    font-size: 30%;
+    font-weight: normal;
+    font-family: poppins;
+    margin-top: 2.5px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 0.5rem;
+}
+
+.navbar-search-bar-no-results-faq {
+    height: 1.85rem;
+    margin-top: 1rem;
+    font-family: poppins;
+}
+
+.navbar-search-bar-no-results-faq p {
+    margin-top: 5px;
+    font-size: 70% !important;
+}
+
     // # SEARCH BAR CLEAR SEARCH ICON
 
 .navbar-search-bar-clear-btn {
@@ -4902,18 +5031,19 @@ const Styles = styled.div `
     width: 62.5%;
     border: 1px solid black;
     position: relative;
+    overflow: hidden;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-search-results {
     width: 100%;
     position: absolute;
     top: 0;
-    height: 50%;
-    background-color: blue;
-    z-index: 3;
-    // overflow: hidden;
-    // transform: translateY(-50%);
-    border-right: 1px solid transparent;
+    height: 5rem;
+    background-color: white;
+    z-index: 2;
+    overflow: hidden;
+    transform: translateY(-6rem);
+    border: 1px solid #ccc;
     // visibility: hidden;
     transition-property: transform;
 }
@@ -10555,8 +10685,10 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-search-bar'>
                                                                         <input
+                                                                        id='searchBarInputFAQ'
+                                                                        value={this.state.searchBarInputFAQ}
                                                                         placeholder='Search...'
-                                                                        onChange={this.handleSearchChangeFA}
+                                                                        onChange={this.handleSearchChangeFAQ}
                                                                         />
                                                                     </div>
                                                                 </div>
@@ -10583,9 +10715,9 @@ export default class LandingPg extends Component {
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-right'>
                                                                 <div className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-search-results ${this.state.searchBarInputFAQ !== '' ? 'display' : ''}`}>
                                                                     {searchInput !== "" && (
-                                                                        <div className={`searchResultAccount ${this.state.searchBarInputFAQ === '' ? 'empty' : ''}`}>
+                                                                        <div className={`searchResultFAQ ${this.state.searchBarInputFAQ === '' ? 'empty' : ''}`}>
                                                                             {isSearchLoading && 
-                                                                                <div className='searchResultAccountLoading'>
+                                                                                <div className='searchResultFAQLoading'>
                                                                                     <RotatingLines
                                                                                         visible={true}
                                                                                         height="22.5"
@@ -10602,17 +10734,17 @@ export default class LandingPg extends Component {
                                                                             }
                                                                             {!isSearchLoading && resultsFound && 
                                                                                 Object.entries(groupedOptions).map(([category, options]) => (
-                                                                                    <div className='searchResultCellAccountContainer' key={category}>
+                                                                                    <div className='searchResultCellFAQContainer' key={category}>
                                                                                         {options.map(option => (
                                                                                             <div 
                                                                                             onClick={() => this.searchedTermClicked(category, option, option.page)}
-                                                                                            className='searchResultCellAccount' 
+                                                                                            className='searchResultCellFAQ' 
                                                                                             key={option.id}>
-                                                                                                <div className='searchResultCellAccountDetails'>
-                                                                                                    <p className='searchResultOptionAccount'>{option.highlightedName}</p>
-                                                                                                    <h5 className='searchResultCategoryAccount'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'>'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat4}</label> : null } </h5> 
+                                                                                                <div className='searchResultCellFAQDetails'>
+                                                                                                    <p className='searchResultOptionFAQ'>{option.highlightedName}</p>
+                                                                                                    <h5 className='searchResultCategoryFAQ'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'>'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat4}</label> : null } </h5> 
                                                                                                 </div>
-                                                                                                <div className='searchResultCellAccountLabel'>
+                                                                                                <div className='searchResultCellFAQLabel'>
                                                                                                     {/* <p>[click to add to cart]</p> */}
                                                                                                 </div>
                                                                                             </div>
@@ -10621,7 +10753,7 @@ export default class LandingPg extends Component {
                                                                                 ))
                                                                             }
                                                                             {!isSearchLoading && !resultsFound &&
-                                                                                <div className='navbar-search-bar-no-results-account' style={{textAlign: "center"}}>
+                                                                                <div className='navbar-search-bar-no-results-faq' style={{textAlign: "center"}}>
                                                                                     <p style={{fontWeight: "bold", color: "#FF5733"}}>No results found</p>
                                                                                 </div>
                                                                             }
