@@ -4701,7 +4701,17 @@ const Styles = styled.div `
     background-color: #f3f5f7;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
 
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-header-left {
+    height: 10%;
+    width: 100%;
+    border: 1px solid transparent;
+    background-color: #f3f5f7;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-body {
@@ -10232,7 +10242,12 @@ export default class LandingPg extends Component {
                                                     </div>
                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container'>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header'>
+                                                            <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-left'>
 
+                                                            </div>
+                                                            <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-right'>
+
+                                                            </div>
                                                         </div>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-body'>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-left'>
