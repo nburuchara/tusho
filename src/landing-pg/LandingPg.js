@@ -4707,7 +4707,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-left {
     width: 37.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     border-top-left-radius: 8px;
     display: flex;
     align-items: center;
@@ -4716,7 +4716,8 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select {
     width: 90%;
-    border: 1px solid black;
+    border: 1px solid #ccc;
+    border-radius: 6px;
     height: 60%;
     display: flex;
     justify-content: space-between;
@@ -4724,7 +4725,9 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-label {
     width: 85%;
-    border: 1px solid black;
+    border: 1px solid transparent;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: left;
@@ -4740,20 +4743,22 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon {
     width: 15%;
-    border: 1px solid black;
+    border: 1px solid transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: white;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon img {
-    width: 60%;
+    width: 50%;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-right {
     width: 62.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     border-top-right-radius: 8px;
 }
 
