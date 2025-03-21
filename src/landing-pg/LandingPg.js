@@ -7207,6 +7207,14 @@ export default class LandingPg extends Component {
         })
     }
 
+    handleFaqSettingsTopicSelected = () => {
+        this.setState({
+            
+        })
+    }
+
+        //* - - MAIN HOME PAGE FUNCTIONS - - *//
+
     mainPageProductsHandleFilterChange = (type, value) => {
         // Clear newly loaded items immediately & start loading state
         this.setState({ productsLoading: true, newlyLoadedProducts: [] }, () => {
@@ -10367,7 +10375,9 @@ export default class LandingPg extends Component {
                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown'>
                                                                     {this.state.faqTopics.map((topic, index) => (
                                                                         <div className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option ${this.state.faqSettingsSelectedTopic === topic ? 'selected' : ''}`} key={index} value={topic}>
-                                                                            <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option-left'>
+                                                                            <div 
+                                                                            onClick={() => this.handleFaqSettingsTopicSelected}
+                                                                            className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option-left'>
                                                                                 <p>{topic}</p>
                                                                             </div>
                                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option-right'>
