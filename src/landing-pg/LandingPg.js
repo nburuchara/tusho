@@ -4786,14 +4786,21 @@ const Styles = styled.div `
     border-radius: 6px;
     border: 1px solid #ccc;
     overflow: auto;
-    transform: translateY(-5rem);
-    opacity: 0;
-    transition-property: transform, opacity;
+    visibility: hidden;
+    transition-property: visibility;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown.display {
-    transform: translateY(0);
-    opacity: 1;
+    position: absolute;
+    top: 0;  /* Start at 50% from the top */
+    left: 50%; /* Start at 50% from the left */
+    transform: translate(-50%); /* Shift back by 50% of its own size to truly center */
+    width: 90%;
+    height: 5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    overflow: auto;
+    visibility: visible;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option {
@@ -5707,6 +5714,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-square,
 .jipange-settings-selected-date-screen-body-inner-header-categories-carousel,
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 img,
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown,
 .homepage-body-inner-header-option img,
 .homepage-body-inner-header-option-dropdown-option-1,
 .homepage-body-inner-header-option-dropdown-option-2,
@@ -7220,6 +7228,12 @@ export default class LandingPg extends Component {
         this.setState({
             faqSettingsSelectedTopic: topic
         })
+    }
+
+    handleFaqSettingsDropdownSelected = () => {
+        this.setState((prevState) => ({
+            faqSettingsDisplayTopicDropdown: !prevState.faqSettingsDisplayTopicDropdown
+        }))
     }
 
         //* - - MAIN HOME PAGE FUNCTIONS - - *//
@@ -10366,7 +10380,7 @@ export default class LandingPg extends Component {
                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container'>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header'>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-left'>
-                                                                <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select'>
+                                                                <div onClick={this.handleFaqSettingsDropdownSelected} className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select'>
                                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-label'>
                                                                         <p>{this.state.faqSettingsSelectedTopic}</p>
                                                                     </div>
