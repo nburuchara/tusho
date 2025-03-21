@@ -4903,6 +4903,26 @@ const Styles = styled.div `
     border: 1px solid black;
 }
 
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-search-results {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    height: 30rem;
+    background-color: white;
+    z-index: 3;
+    overflow: hidden;
+    transform: translateY(-35rem);
+    border-right: 1px solid transparent;
+    visibility: hidden;
+    transition-property: transform;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-search-results.display {
+    transform: translateY(0);
+    visibility: visible;
+    border-right: 1px solid #ff5733;
+}
+
     // # LOADING SCREEN SETTINGS
 
 .navbar-profile-loading-popup-settings {
@@ -5980,6 +6000,7 @@ export default class LandingPg extends Component {
             faqTopics: ['All topics', 'Delivery', 'Payment', 'Shop Pamoja', 'Jipange', 'Support'],
             faqSettingsDisplayTopicDropdown: false,
             faqSettingsSelectedTopic: 'All topics',
+            searchBarInputFAQ: '',
             
 
             //* - SEARCH BAR COMPONENTS - *//
@@ -10483,7 +10504,53 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-right'>
-
+                                                                <div className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-search-results ${this.state.searchBarInputFAQ !== '' ? 'display' : ''}`}>
+                                                                    {searchInput !== "" && (
+                                                                        <div className={`searchResultAccount ${this.state.searchBarInputFAQ === '' ? 'empty' : ''}`}>
+                                                                            {isSearchLoading && 
+                                                                                <div className='searchResultAccountLoading'>
+                                                                                    <RotatingLines
+                                                                                        visible={true}
+                                                                                        height="22.5"
+                                                                                        width="22.5"
+                                                                                        strokeColor="#ff5733"
+                                                                                        strokeWidth="3"
+                                                                                        animationDuration="0.75"
+                                                                                        ariaLabel="rotating-lines-loading"
+                                                                                        wrapperStyle={{}}
+                                                                                        wrapperClass=""
+                                                                                        />
+                                                                                        <p>Loading...</p>
+                                                                                </div>
+                                                                            }
+                                                                            {!isSearchLoading && resultsFound && 
+                                                                                Object.entries(groupedOptions).map(([category, options]) => (
+                                                                                    <div className='searchResultCellAccountContainer' key={category}>
+                                                                                        {options.map(option => (
+                                                                                            <div 
+                                                                                            onClick={() => this.searchedTermClicked(category, option, option.page)}
+                                                                                            className='searchResultCellAccount' 
+                                                                                            key={option.id}>
+                                                                                                <div className='searchResultCellAccountDetails'>
+                                                                                                    <p className='searchResultOptionAccount'>{option.highlightedName}</p>
+                                                                                                    <h5 className='searchResultCategoryAccount'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'>'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat4}</label> : null } </h5> 
+                                                                                                </div>
+                                                                                                <div className='searchResultCellAccountLabel'>
+                                                                                                    {/* <p>[click to add to cart]</p> */}
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        ))}
+                                                                                    </div>
+                                                                                ))
+                                                                            }
+                                                                            {!isSearchLoading && !resultsFound &&
+                                                                                <div className='navbar-search-bar-no-results-account' style={{textAlign: "center"}}>
+                                                                                    <p style={{fontWeight: "bold", color: "#FF5733"}}>No results found</p>
+                                                                                </div>
+                                                                            }
+                                                                        </div>
+                                                                    )}
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
