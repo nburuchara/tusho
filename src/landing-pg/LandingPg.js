@@ -4643,10 +4643,11 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-body {
     flex-grow: 1;
-    border: 1px solid #ccc;
+    border: 1px solid #5e626a;
     border-top: 1px solid transparent;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
+
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-body textarea {
