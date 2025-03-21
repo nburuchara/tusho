@@ -4803,13 +4803,16 @@ const Styles = styled.div `
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-search-bar {
     width: 90%;
     border: 1px solid black;
+    // overflow: hidden;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-search-bar input {
     width: 95%;
     padding: 5px;
-    height: 90%;
+    height: 45%;
     outline: none;
+    font-family: poppins;
+    font-size: 70%;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-body {
