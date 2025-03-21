@@ -4773,6 +4773,7 @@ const Styles = styled.div `
     width: 37.5%;
     border: 1px solid black;
     position: relative;
+    overflow: hidden;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown {
@@ -4780,7 +4781,7 @@ const Styles = styled.div `
     top: 0;  /* Start at 50% from the top */
     left: 50%; /* Start at 50% from the left */
     transform: translate(-50%); /* Shift back by 50% of its own size to truly center */
-    width: 85%;
+    width: 90%;
     height: 5rem;
     border-radius: 6px;
     border: 1px solid black;
@@ -5863,6 +5864,7 @@ export default class LandingPg extends Component {
             deliveryInfoAddressType4: false,
 
             //* # FAQs *//
+            faqTopics: ['All topics', 'Delivery', 'Payment', 'Shop Pamoja', 'Jipange', 'Support'],
             
 
             //* - SEARCH BAR COMPONENTS - *//
