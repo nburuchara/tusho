@@ -4811,6 +4811,11 @@ const Styles = styled.div `
     font-size: 67.5%;
 }
 
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option.selected p {
+    color: #ff5733;
+    text-decoration: underline; 
+}
+
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option-left {
     width: 85%;
     // border: 1px solid black;
