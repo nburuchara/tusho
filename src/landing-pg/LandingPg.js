@@ -4690,12 +4690,17 @@ const Styles = styled.div `
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header {
     height: 10%;
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid transparent;
+    background-color: #f3f5f7;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-body {
@@ -9533,7 +9538,7 @@ export default class LandingPg extends Component {
                                                                                         </div>
                                                                                     }
 
-{this.state.jipangeProduct1Cat4Qty !== 0 && 
+                                                                                    {this.state.jipangeProduct1Cat4Qty !== 0 && 
                                                                                         <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
                                                                                             <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
                                                                                                 <p>{this.state.jipangeProduct1Cat4} <label>({this.state.jipangeProduct1Cat4Qty})</label></p>
