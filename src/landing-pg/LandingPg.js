@@ -4618,10 +4618,10 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-header {
     height: 20%;
-    border: 1px solid #ff5733;
+    border: 1px solid #5e626a;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
-    background-color: #faece9;
+    background-color: #f3f5f7;
     display: flex;
     justify-content: space-between;
 }
@@ -5388,7 +5388,7 @@ const Styles = styled.div `
 
 .homepage-body-inner-header-option-dropdown-filter-option {
     // height: 1.5rem;
-    border-bottom: 0.5px solid #ff5733;
+    border-bottom: 0.5px solid #ccc;
     width: 100%;
     padding-top: 0.45rem;
     padding-bottom: 0.45rem;
