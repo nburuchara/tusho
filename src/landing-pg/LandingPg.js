@@ -10237,7 +10237,9 @@ export default class LandingPg extends Component {
                                                             </div>
                                                         </div>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-top-container-body'>
-                                                            <textarea/>
+                                                            <textarea
+                                                            placeholder='Type your question here...'
+                                                            />
                                                         </div>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-top-container-footer'>
                                                             <button>Submit</button>
