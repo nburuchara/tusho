@@ -4792,8 +4792,8 @@ const Styles = styled.div `
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #ccc;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 6px;
+    padding-bottom: 6px;
     cursor: pointer;
 }
 
@@ -10361,7 +10361,7 @@ export default class LandingPg extends Component {
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-left'>
                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown'>
                                                                     {this.state.faqTopics.map((topic, index) => (
-                                                                        <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option' key={index} value={topic}>
+                                                                        <div className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option ${this.state.faqSettingsSelectedTopic === topic ? 'selected' : ''}`} key={index} value={topic}>
                                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option-left'>
                                                                                 <p>{topic}</p>
                                                                             </div>
