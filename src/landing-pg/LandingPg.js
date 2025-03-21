@@ -4784,28 +4784,36 @@ const Styles = styled.div `
     width: 90%;
     height: 5rem;
     border-radius: 6px;
-    border: 1px solid black;
+    border: 1px solid #ccc;
     overflow: auto;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option {
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option:hover {
+    background-color: #faece9;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option p {
     margin-top: 0px;
     margin-bottom: 0px;
+    font-size: 67.5%;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option-left {
     width: 85%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option-right {
     width: 15%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-right {
@@ -10352,7 +10360,7 @@ export default class LandingPg extends Component {
                                                                                 <p>{topic}</p>
                                                                             </div>
                                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option-right'>
-                                                                                <p></p>
+                                                                                <p>✓</p>
                                                                             </div>
                                                                             
                                                                         </div>
