@@ -4698,6 +4698,7 @@ const Styles = styled.div `
     height: 10%;
     width: 100%;
     border: 1px solid transparent;
+    border-bottom: 1px solid #ccc;
     background-color: #f3f5f7;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
@@ -4764,14 +4765,14 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-body {
     flex-grow: 1;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     justify-content: space-between;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-left {
     width: 37.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     position: relative;
     overflow: hidden;
 }
@@ -4782,12 +4783,18 @@ const Styles = styled.div `
     left: 50%; /* Start at 50% from the left */
     // transform: translate(-50%); /* Shift back by 50% of its own size to truly center */
     width: 90%;
-    height: 5rem;
-    border-radius: 6px;
+    height: 6.5rem;
+    border-radius: 3.5px;
     border: 1px solid #ccc;
     overflow: auto;
-    transform: translate(-50%, -5.5rem);
+    transform: translate(-50%, -7.5rem);
     transition-property: transform;
+    border-top: 1px solid transparent;
+    cursor: pointer;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown:hover {
+    border: 1px solid #ff5733;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown.display {
@@ -4796,11 +4803,11 @@ const Styles = styled.div `
     left: 50%; /* Start at 50% from the left */
     transform: translate(-50%); /* Shift back by 50% of its own size to truly center */
     width: 90%;
-    height: 5rem;
+    height: 6.5rem;
     border-radius: 6px;
     border: 1px solid #ccc;
     overflow: auto;
-    transform: translateY(-50%, 0);
+    transform: translate(-50%, 0.2rem);
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option {
@@ -4843,7 +4850,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-right {
     width: 62.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
     // # LOADING SCREEN SETTINGS
