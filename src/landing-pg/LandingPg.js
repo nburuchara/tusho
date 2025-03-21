@@ -4722,6 +4722,11 @@ const Styles = styled.div `
     height: 60%;
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select:hover {
+    border: 1px solid #ff5733;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-label {
@@ -4755,6 +4760,13 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon img {
     width: 50%;
+    transform: rotate(0deg);
+    transition-property: transform;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon.selected img {
+    width: 50%;
+    transform: rotate(180deg);
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-right {
@@ -4790,12 +4802,8 @@ const Styles = styled.div `
     transform: translate(-50%, -7.5rem);
     transition-property: transform;
     border-top: 1px solid transparent;
-    cursor: pointer;
 }
 
-.navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown:hover {
-    border: 1px solid #ff5733;
-}
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown.display {
     position: absolute;
@@ -5721,6 +5729,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-square,
 .jipange-settings-selected-date-screen-body-inner-header-categories-carousel,
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 img,
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon img,
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown,
 .homepage-body-inner-header-option img,
 .homepage-body-inner-header-option-dropdown-option-1,
@@ -10395,7 +10404,7 @@ export default class LandingPg extends Component {
                                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-label'>
                                                                         <p>{this.state.faqSettingsSelectedTopic}</p>
                                                                     </div>
-                                                                    <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon'>
+                                                                    <div className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon ${this.state.faqSettingsDisplayTopicDropdown ? 'selected' : ''}`}>
                                                                         <img src='/assets/icons/home-main-header/down-arrow.png'/>
                                                                     </div>
                                                                 </div>
