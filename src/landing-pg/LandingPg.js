@@ -4784,6 +4784,32 @@ const Styles = styled.div `
     background-color: white;
     border-radius: 8px;
     height: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-header-search-icon {
+    width: 10%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-header-search-icon img {
+    width: 50%;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-header-search-bar {
+    width: 90%;
+    border: 1px solid black;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-header-search-bar input {
+    width: 95%;
+    padding: 5px;
+    height: 90%;
+    outline: none;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-body {
@@ -10422,7 +10448,12 @@ export default class LandingPg extends Component {
                                                             </div>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-right'>
                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-search-container'>
-
+                                                                    <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-search-icon'>
+                                                                        <img src='/assets/icons/navbar/search-icon.png'/>
+                                                                    </div>
+                                                                    <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-search-bar'>
+                                                                        <input/>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
