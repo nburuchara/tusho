@@ -4794,6 +4794,11 @@ const Styles = styled.div `
     border-bottom: 1px solid #ccc;
     padding-top: 5px;
     padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option.selected {
+    background-color: #faece9;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option:hover {
@@ -5894,6 +5899,7 @@ export default class LandingPg extends Component {
 
             //* # FAQs *//
             faqTopics: ['All topics', 'Delivery', 'Payment', 'Shop Pamoja', 'Jipange', 'Support'],
+            faqSettingsSelectedTopic: 'All topics',
             
 
             //* - SEARCH BAR COMPONENTS - *//
@@ -10340,7 +10346,7 @@ export default class LandingPg extends Component {
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-left'>
                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select'>
                                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-label'>
-                                                                        <p>All topics</p>
+                                                                        <p>{this.state.faqSettingsSelectedTopic}</p>
                                                                     </div>
                                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon'>
                                                                         <img src='/assets/icons/home-main-header/down-arrow.png'/>
@@ -10360,7 +10366,7 @@ export default class LandingPg extends Component {
                                                                                 <p>{topic}</p>
                                                                             </div>
                                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option-right'>
-                                                                                <p>✓</p>
+                                                                               
                                                                             </div>
                                                                             
                                                                         </div>
