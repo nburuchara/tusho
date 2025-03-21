@@ -4785,6 +4785,7 @@ const Styles = styled.div `
     height: 5rem;
     border-radius: 6px;
     border: 1px solid black;
+    overflow: hidden;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-right {
@@ -10325,7 +10326,11 @@ export default class LandingPg extends Component {
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-body'>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-left'>
                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown'>
-
+                                                                    {this.state.faqTopics.map((topic, index) => (
+                                                                        <option key={index} value={topic}>
+                                                                            {topic}
+                                                                        </option>
+                                                                    ))}
                                                                 </div>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-right'>
