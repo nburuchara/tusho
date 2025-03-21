@@ -4785,7 +4785,27 @@ const Styles = styled.div `
     height: 5rem;
     border-radius: 6px;
     border: 1px solid black;
-    overflow: hidden;
+    overflow: auto;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option-left {
+    width: 85%;
+    border: 1px solid black;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option-right {
+    width: 15%;
+    border: 1px solid black;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-right {
@@ -10327,9 +10347,15 @@ export default class LandingPg extends Component {
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-left'>
                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown'>
                                                                     {this.state.faqTopics.map((topic, index) => (
-                                                                        <option key={index} value={topic}>
-                                                                            {topic}
-                                                                        </option>
+                                                                        <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option' key={index} value={topic}>
+                                                                            <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option-left'>
+                                                                                <p>{topic}</p>
+                                                                            </div>
+                                                                            <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option-right'>
+                                                                                <p></p>
+                                                                            </div>
+                                                                            
+                                                                        </div>
                                                                     ))}
                                                                 </div>
                                                             </div>
