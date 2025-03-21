@@ -7207,9 +7207,9 @@ export default class LandingPg extends Component {
         })
     }
 
-    handleFaqSettingsTopicSelected = () => {
+    handleFaqSettingsTopicSelected = (topic) => {
         this.setState({
-            
+            faqSettingsSelectedTopic: topic
         })
     }
 
@@ -10372,11 +10372,11 @@ export default class LandingPg extends Component {
                                                         </div>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-body'>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-left'>
-                                                                <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown'>
+                                                                <div className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown ${this.state.faqSettingsDisplayTopicDropdown ? '' : ''}`}>
                                                                     {this.state.faqTopics.map((topic, index) => (
                                                                         <div className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option ${this.state.faqSettingsSelectedTopic === topic ? 'selected' : ''}`} key={index} value={topic}>
                                                                             <div 
-                                                                            onClick={() => this.handleFaqSettingsTopicSelected}
+                                                                            onClick={() => this.handleFaqSettingsTopicSelected(topic)}
                                                                             className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option-left'>
                                                                                 <p>{topic}</p>
                                                                             </div>
