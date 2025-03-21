@@ -4727,13 +4727,15 @@ const Styles = styled.div `
     border: 1px solid black;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
+    background-color: white;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-label p {
-    // font-size: 
+    font-size: 70%;
     margin-top: 0px;
     margin-bottom: 0px;
+    margin-left: 2.5%;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon {
@@ -4742,6 +4744,7 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon img {
