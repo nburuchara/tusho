@@ -5034,7 +5034,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-right {
     width: 62.5%;
-    // border: 1px solid black;
+    border-left: 1px solid #ccc;
     position: relative;
     overflow: hidden;
 }
@@ -5053,6 +5053,7 @@ const Styles = styled.div `
     border: 1px solid #ccc;
     // visibility: hidden;
     transition-property: transform;
+    overflow-y: auto;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-search-results.display {
@@ -10767,6 +10768,8 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                     )}
                                                                 </div>
+
+
                                                             </div>
                                                         </div>
                                                     </div>
