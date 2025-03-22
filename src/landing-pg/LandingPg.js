@@ -470,6 +470,7 @@ const Styles = styled.div `
     cursor: pointer;
     border-bottom: 0.05px solid #ccc;
     border-top: 0.05px solid #ccc;
+    transform: scale(1.02);
 }
 
 .searchResultAccountLoading {
@@ -599,6 +600,7 @@ const Styles = styled.div `
     cursor: pointer;
     border-bottom: 0.05px solid #ccc;
     border-top: 0.05px solid #ccc;
+    transform: scale(1.02);
 }
 
 .searchResultFAQLoading {
@@ -5047,7 +5049,7 @@ const Styles = styled.div `
     overflow: hidden;
     transform: translateY(-100%);
     border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-bottom-right-radius: 0px;
     border: 1px solid #ccc;
     // visibility: hidden;
     transition-property: transform;
