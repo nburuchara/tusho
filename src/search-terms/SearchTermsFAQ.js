@@ -1,6 +1,6 @@
 const results = [
 
-    {"id": "998573", "name": "Change my profile picture", "category": "Profile", "subCat1": "Edit profile picture", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
+    {"id": "998573", "name": "Where can I find discounts?", "category": "FAQ", "subCat1": "General", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top", "answer": "To "},
 
     {"id": "998573", "name": "Add new delivery address", "category": "Delivery Information", "subCat1": "New address", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
 

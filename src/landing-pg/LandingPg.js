@@ -7,7 +7,7 @@ import ProductCard from './ProductCard';
 //? - - FILES - - //
 import SearchTerms from '../product-list/products'
 import AccountSearchTerms from '../search-terms/SearchTerms'
-import FAQSearchTerms from '../search-terms/SearchTerms'
+import FAQSearchTerms from '../search-terms/SearchTermsFAQ'
 import products from '../product-list/products'; 
 
 const Styles = styled.div `
@@ -6137,7 +6137,7 @@ export default class LandingPg extends Component {
             deliveryInfoAddressType4: false,
 
             //* # FAQs *//
-            faqTopics: ['All topics', 'Delivery', 'Payment', 'Shop Pamoja', 'Jipange', 'Support'],
+            faqTopics: ['All topics', 'Delivery', 'Payment', 'Shop Pamoja', 'Jipange', 'General', 'Support'],
             faqSettingsDisplayTopicDropdown: false,
             faqSettingsSelectedTopic: 'All topics',
             searchBarInputFAQ: '',
