@@ -7,6 +7,7 @@ import ProductCard from './ProductCard';
 //? - - FILES - - //
 import SearchTerms from '../product-list/products'
 import AccountSearchTerms from '../search-terms/SearchTerms'
+import FAQSearchTerms from '../search-terms/SearchTerms'
 import products from '../product-list/products'; 
 
 const Styles = styled.div `
@@ -610,7 +611,7 @@ const Styles = styled.div `
 
 .searchResultFAQLoading p {
     font-family: poppins;
-    font-size: 75%;
+    font-size: 65%;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     color: #5e626a;
@@ -654,12 +655,12 @@ const Styles = styled.div `
 }
 
 .searchResultCellFAQDetails p {
-    font-size: 65%;
+    font-size: 12px;
     font-family: poppins;
-    margin-left: 10%;
+    margin-left: 2.5%;
     margin-bottom: 0px;
     margin-right: 10%;
-    margin-top: 0.5rem;
+    margin-top: 0px;
 }
 
 .searchResultCellFAQLabel {
@@ -675,15 +676,17 @@ const Styles = styled.div `
 }
 
 .searchResultOptionFAQ {
-    // font-size: 10px;
+    font-size: 10px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
 }
 
 .searchResultCategoryFAQ {
-    font-size: 30%;
+    font-size: 50%;
     font-weight: normal;
     font-family: poppins;
-    margin-top: 2.5px;
-    margin-left: 10%;
+    margin-top: 1px;
+    margin-left: 2.5%;
     margin-right: 10%;
     margin-bottom: 0.5rem;
 }
@@ -5029,7 +5032,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-right {
     width: 62.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     position: relative;
     overflow: hidden;
 }
@@ -5038,11 +5041,13 @@ const Styles = styled.div `
     width: 100%;
     position: absolute;
     top: 0;
-    height: 5rem;
+    height: 50%;
     background-color: white;
     z-index: 2;
     overflow: hidden;
-    transform: translateY(-6rem);
+    transform: translateY(-100%);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     border: 1px solid #ccc;
     // visibility: hidden;
     transition-property: transform;
@@ -5924,6 +5929,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 img,
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon img,
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown,
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-search-results,
 .homepage-body-inner-header-option img,
 .homepage-body-inner-header-option-dropdown-option-1,
 .homepage-body-inner-header-option-dropdown-option-2,
@@ -6670,7 +6676,7 @@ export default class LandingPg extends Component {
                 });
             } else {
                 this.setState({ isSearchLoadingFAQ: true, searchedData: searchInput, searchCloseBtn: true }, () => {
-                    let filteredOptions = SearchTerms.filter(option => {
+                    let filteredOptions = FAQSearchTerms.filter(option => {
                         const name = option.name.toLowerCase();
                         const searchWords = searchInput.toLowerCase().split(" ");
                         const optionWords = name.split(" ");
@@ -10741,7 +10747,7 @@ export default class LandingPg extends Component {
                                                                                             key={option.id}>
                                                                                                 <div className='searchResultCellFAQDetails'>
                                                                                                     <p className='searchResultOptionFAQ'>{option.highlightedName}</p>
-                                                                                                    <h5 className='searchResultCategoryFAQ'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'>'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat4}</label> : null } </h5> 
+                                                                                                    <h4 className='searchResultCategoryFAQ'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'>'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'>'} {option.subCat4}</label> : null } </h4> 
                                                                                                 </div>
                                                                                                 <div className='searchResultCellFAQLabel'>
                                                                                                     {/* <p>[click to add to cart]</p> */}
