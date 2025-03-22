@@ -6177,7 +6177,7 @@ export default class LandingPg extends Component {
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
             showNavbarDropdownOption2: false,
-            showNavbarDropdownOption3: true,
+            showNavbarDropdownOption3: false,
             showNavbarDropdownOption4: false,
 
             dropdownMenuDisplayed: false,
@@ -6497,7 +6497,7 @@ export default class LandingPg extends Component {
 
         this.setState({
             searchBarInputJipange: e.target.value,
-            isSearchLoading: true,
+            isSearchLoadingJipange: true,
             clearSearchBtn: true,
             showTimezones: false
         });
@@ -6514,12 +6514,12 @@ export default class LandingPg extends Component {
                     searchedData: "",
                     searchCloseBtn: false,
                     filteredOptions: [],
-                    isSearchLoading: false,
+                    isSearchLoadingJipange: false,
                     resultsFound: false,
                     clearSearchBtn: false,
                 });
             } else {
-                this.setState({ isSearchLoading: true, searchedData: searchInput, searchCloseBtn: true }, () => {
+                this.setState({ isSearchLoadingJipange: true, searchedData: searchInput, searchCloseBtn: true }, () => {
                     let filteredOptions = SearchTerms.filter(option => {
                         const name = option.name.toLowerCase();
                         const searchWords = searchInput.toLowerCase().split(" ");
@@ -6558,10 +6558,10 @@ export default class LandingPg extends Component {
                     // 🔹 Update state with updated search results (with cart quantities)
                     this.setState({
                         trieByCategory,
-                        groupedOptions: groupedResults,
+                        groupedOptionsJipange: groupedResults,
                         filteredOptions: updatedOptions, // Updated search results
-                        isSearchLoading: false,
-                        resultsFound: resultsFound,
+                        isSearchLoadingJipange: false,
+                        resultsFoundJipange: resultsFound,
                     });
                 });
             }
@@ -6572,7 +6572,7 @@ export default class LandingPg extends Component {
 
         this.setState({
             searchBarInputAccountPopup: e.target.value,
-            isSearchLoading: true,
+            isSearchLoadingAccountPopup: true,
             clearSearchBtn: true,
             showTimezones: false
         });
@@ -6589,12 +6589,12 @@ export default class LandingPg extends Component {
                     searchedData: "",
                     searchCloseBtn: false,
                     filteredOptions: [],
-                    isSearchLoading: false,
+                    isSearchLoadingAccountPopup: false,
                     resultsFound: false,
                     clearSearchBtn: false,
                 });
             } else {
-                this.setState({ isSearchLoading: true, searchedData: searchInput, searchCloseBtn: true }, () => {
+                this.setState({ isSearchLoadingAccountPopup: true, searchedData: searchInput, searchCloseBtn: true }, () => {
                     let filteredOptions = AccountSearchTerms.filter(option => {
                         const name = option.name.toLowerCase();
                         const searchWords = searchInput.toLowerCase().split(" ");
@@ -6633,10 +6633,10 @@ export default class LandingPg extends Component {
                     // 🔹 Update state with updated search results (with cart quantities)
                     this.setState({
                         trieByCategory,
-                        groupedOptions: groupedResults,
+                        groupedOptionsAccountPopup: groupedResults,
                         filteredOptions: updatedOptions, // Updated search results
-                        isSearchLoading: false,
-                        resultsFound: resultsFound,
+                        isSearchLoadingAccountPopup: false,
+                        resultsFoundAccountPopup: resultsFound,
                     });
                 });
             }
@@ -6647,7 +6647,7 @@ export default class LandingPg extends Component {
 
         this.setState({
             searchBarInputFAQ: e.target.value,
-            isSearchLoading: true,
+            isSearchLoadingFAQ: true,
             clearSearchBtn: true,
             showTimezones: false
         });
@@ -6664,12 +6664,12 @@ export default class LandingPg extends Component {
                     searchedData: "",
                     searchCloseBtn: false,
                     filteredOptions: [],
-                    isSearchLoading: false,
+                    isSearchLoadingFAQ: false,
                     resultsFound: false,
                     clearSearchBtn: false,
                 });
             } else {
-                this.setState({ isSearchLoading: true, searchedData: searchInput, searchCloseBtn: true }, () => {
+                this.setState({ isSearchLoadingFAQ: true, searchedData: searchInput, searchCloseBtn: true }, () => {
                     let filteredOptions = SearchTerms.filter(option => {
                         const name = option.name.toLowerCase();
                         const searchWords = searchInput.toLowerCase().split(" ");
@@ -6708,10 +6708,10 @@ export default class LandingPg extends Component {
                     // 🔹 Update state with updated search results (with cart quantities)
                     this.setState({
                         trieByCategory,
-                        groupedOptions: groupedResults,
+                        groupedOptionsFAQ: groupedResults,
                         filteredOptions: updatedOptions, // Updated search results
-                        isSearchLoading: false,
-                        resultsFound: resultsFound,
+                        isSearchLoadingFAQ: false,
+                        resultsFoundFAQ: resultsFound,
                     });
                 });
             }
@@ -7759,7 +7759,7 @@ export default class LandingPg extends Component {
 
     render () {
 
-        const { searchBarIsClicked, searchInput, isSearchLoading, resultsFound, groupedOptions } = this.state;
+        const { searchBarIsClicked, searchInput, isSearchLoading, isSearchLoadingJipange, isSearchLoadingAccountPopup, isSearchLoadingFAQ, resultsFound, resultsFoundJipange, resultsFoundAccountPopup, resultsFoundFAQ, groupedOptions, groupedOptionsJipange, groupedOptionsAccountPopup, groupedOptionsFAQ } = this.state;
         const { currentMonth, currentYear, selectedDates } = this.state;
         const daysInMonth = this.getDaysInMonth(currentMonth, currentYear);
         const monthNames = [
@@ -8458,7 +8458,7 @@ export default class LandingPg extends Component {
                                     <div className={`navbar-profile-account-popup-body-search-bar-results ${this.state.searchBarInputAccountPopup !== '' ? 'display' : ''}`}>
                                         {searchInput !== "" && (
                                             <div className={`searchResultAccount ${this.state.searchBarInputAccountPopup === '' ? 'empty' : ''}`}>
-                                                {isSearchLoading && 
+                                                {isSearchLoadingAccountPopup && 
                                                     <div className='searchResultAccountLoading'>
                                                         <RotatingLines
                                                             visible={true}
@@ -8474,8 +8474,8 @@ export default class LandingPg extends Component {
                                                             <p>Loading...</p>
                                                     </div>
                                                 }
-                                                {!isSearchLoading && resultsFound && 
-                                                    Object.entries(groupedOptions).map(([category, options]) => (
+                                                {!isSearchLoadingAccountPopup && resultsFoundAccountPopup && 
+                                                    Object.entries(groupedOptionsAccountPopup).map(([category, options]) => (
                                                         <div className='searchResultCellAccountContainer' key={category}>
                                                             {options.map(option => (
                                                                 <div 
@@ -8494,7 +8494,7 @@ export default class LandingPg extends Component {
                                                         </div>
                                                     ))
                                                 }
-                                                {!isSearchLoading && !resultsFound &&
+                                                {!isSearchLoadingAccountPopup && !resultsFoundAccountPopup &&
                                                     <div className='navbar-search-bar-no-results-account' style={{textAlign: "center"}}>
                                                         <p style={{fontWeight: "bold", color: "#FF5733"}}>No results found</p>
                                                     </div>
@@ -9256,13 +9256,13 @@ export default class LandingPg extends Component {
                                                                         <div className='jipange-settings-selected-date-screen-body-inner-header-search-bar-results'>
                                                                             {searchInput !== "" && (
                                                                                 <div className={`searchResultsJipange ${this.state.searchBarInputJipange === '' ? 'empty' : ''}`}>
-                                                                                    {isSearchLoading && 
+                                                                                    {isSearchLoadingJipange && 
                                                                                         <div>
                                                                                             <p>Loading...</p>
                                                                                         </div>
                                                                                     }
-                                                                                    {!isSearchLoading && resultsFound && 
-                                                                                        Object.entries(groupedOptions).map(([category, options]) => (
+                                                                                    {!isSearchLoadingJipange && resultsFoundJipange && 
+                                                                                        Object.entries(groupedOptionsJipange).map(([category, options]) => (
                                                                                             <div style={{borderBottom: "1px solid #ccc", position: "sticky"}} key={category}>
                                                                                                 {options.map(option => (
                                                                                                     <div 
@@ -9284,7 +9284,7 @@ export default class LandingPg extends Component {
                                                                                             </div>
                                                                                         ))
                                                                                     }
-                                                                                    {!isSearchLoading && !resultsFound &&
+                                                                                    {!isSearchLoadingJipange && !resultsFoundJipange &&
                                                                                         <div className='navbar-search-bar-no-results-jipange' style={{textAlign: "center"}}>
                                                                                             <p style={{fontWeight: "bold", color: "#FF5733"}}>No results found</p>
                                                                                         </div>
@@ -10715,7 +10715,7 @@ export default class LandingPg extends Component {
                                                                 <div className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-search-results ${this.state.searchBarInputFAQ !== '' ? 'display' : ''}`}>
                                                                     {searchInput !== "" && (
                                                                         <div className={`searchResultFAQ ${this.state.searchBarInputFAQ === '' ? 'empty' : ''}`}>
-                                                                            {isSearchLoading && 
+                                                                            {isSearchLoadingFAQ && 
                                                                                 <div className='searchResultFAQLoading'>
                                                                                     <RotatingLines
                                                                                         visible={true}
@@ -10731,8 +10731,8 @@ export default class LandingPg extends Component {
                                                                                         <p>Loading...</p>
                                                                                 </div>
                                                                             }
-                                                                            {!isSearchLoading && resultsFound && 
-                                                                                Object.entries(groupedOptions).map(([category, options]) => (
+                                                                            {!isSearchLoadingFAQ && resultsFoundFAQ && 
+                                                                                Object.entries(groupedOptionsFAQ).map(([category, options]) => (
                                                                                     <div className='searchResultCellFAQContainer' key={category}>
                                                                                         {options.map(option => (
                                                                                             <div 
@@ -10751,7 +10751,7 @@ export default class LandingPg extends Component {
                                                                                     </div>
                                                                                 ))
                                                                             }
-                                                                            {!isSearchLoading && !resultsFound &&
+                                                                            {!isSearchLoadingFAQ && !resultsFoundFAQ &&
                                                                                 <div className='navbar-search-bar-no-results-faq' style={{textAlign: "center"}}>
                                                                                     <p style={{fontWeight: "bold", color: "#FF5733"}}>No results found</p>
                                                                                 </div>
