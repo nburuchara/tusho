@@ -604,7 +604,7 @@ const Styles = styled.div `
 }
 
 .searchResultFAQLoading {
-    margin-top: 6.5rem;
+    margin-top: 4.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -613,7 +613,7 @@ const Styles = styled.div `
 
 .searchResultFAQLoading p {
     font-family: poppins;
-    font-size: 65%;
+    font-size: 8px;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     color: #5e626a;
@@ -10727,8 +10727,8 @@ export default class LandingPg extends Component {
                                                                                 <div className='searchResultFAQLoading'>
                                                                                     <RotatingLines
                                                                                         visible={true}
-                                                                                        height="22.5"
-                                                                                        width="22.5"
+                                                                                        height="19.5"
+                                                                                        width="19.5"
                                                                                         strokeColor="#ff5733"
                                                                                         strokeWidth="3"
                                                                                         animationDuration="0.75"
