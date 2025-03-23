@@ -4752,7 +4752,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-header {
-    height: 20%;
+    height: 0%;
     border: 1px solid #5e626a;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
@@ -4778,20 +4778,19 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-body {
     flex-grow: 1;
-    border: 1px solid #5e626a;
-    border-top: 1px solid transparent;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-
+    border: 1px solid transparent;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-body textarea {
     height: 80%;
-    width: 97.5%;
+    width: 97.35%;
     border: 1px solid transparent;
     resize: none;
     outline: none;
     padding: 5px;
+    padding-left: 0px;
     font-size: 70%;
     font-family: poppins;
     border-bottom-right-radius: 8px;
@@ -4989,8 +4988,8 @@ const Styles = styled.div `
     transform: translate(-50%); /* Shift back by 50% of its own size to truly center */
     width: 90%;
     height: 6.5rem;
-    border-radius: 6px;
-    border: 1px solid #5e626a;
+    border-radius: 4px;
+    border: 1px solid #ff5733;
     background-color: white;
     z-index: 3;
     overflow: auto;
@@ -5103,7 +5102,7 @@ const Styles = styled.div `
     position: absolute;
     top: 0;
     left: 0;
-    width: 99.5%;
+    width: 99.35%;
     height: 99.5%;
     border: 1px solid black;
     border-bottom-right-radius: 8px;
@@ -10705,14 +10704,14 @@ export default class LandingPg extends Component {
                                                 <div className='navbar-profile-account-popup-faqs-settings-body'>
                                                     <p>Ask us something!</p>
                                                     <div className='navbar-profile-account-popup-faqs-settings-body-top-container'>
-                                                        <div className='navbar-profile-account-popup-faqs-settings-body-top-container-header'>
+                                                        {/* <div className='navbar-profile-account-popup-faqs-settings-body-top-container-header'>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-top-container-header-left'>
                                                                 <p>What do you want to know more about?</p>
                                                             </div>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-top-container-header-right'>
                                                                 <img/>
                                                             </div>
-                                                        </div>
+                                                        </div> */}
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-top-container-body'>
                                                             <textarea
                                                             placeholder='Type your question here...'
