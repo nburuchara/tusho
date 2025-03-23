@@ -14,9 +14,9 @@ const results = [
 
     {"id": "998573", "name": "How do I know when my Jipange order will arrive?", "category": "Delivery", "subCat1": "", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top", "answer": "The rider will contact you in the morning (from as early as 7:30am) of your designated Jipange order - and you will be able to agree on the most suitable time."},
 
-    {"id": "998573", "name": "How can I add a product to 'Shop Pamoja'?", "category": "Shop Pamoja", "subCat1": "", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top", "answer": "Simply click on "},
+    {"id": "998573", "name": "How can I add a product to 'Shop Pamoja'?", "category": "Shop Pamoja", "subCat1": "", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top", "answer": "Simply activate 'Shop Pamoja' by toggling on the setting on the homepage."},
 
-    {"id": "998573", "name": "Can I pay for my delivery  with cash?", "category": "Payment", "subCat1": "", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
+    {"id": "998573", "name": "Can I pay for my delivery  with cash?", "category": "Payment", "subCat1": "", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top", "answer": "Yes, you can pay for your delivery with cash."},
 
    
   
