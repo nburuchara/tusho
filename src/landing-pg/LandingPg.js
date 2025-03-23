@@ -5171,7 +5171,8 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-loading {
-
+    height: 100%;
+    border: 1px solid black;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-none {
@@ -6256,6 +6257,9 @@ export default class LandingPg extends Component {
             faqSettingsDisplayTopicDropdown: false,
             faqSettingsSelectedTopic: 'All topics',
             searchBarInputFAQ: '',
+            showFAQSingleResponse: false,
+            showFAQResponseLoading: true,
+            showFAQNoResponseSelected: false,
             
 
             //* - SEARCH BAR COMPONENTS - *//
