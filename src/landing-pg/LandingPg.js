@@ -5033,6 +5033,28 @@ const Styles = styled.div `
     // border: 1px solid black;
 }
 
+    // # FAQ RESPONSES
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-responses {
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    overflow-y: auto;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-response {
+    border: 1px solid black;
+    height: 3rem;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-response h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+    // # FAQ FULL RESPONSE DISPLAY
+
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-right {
     width: 62.5%;
     border-left: 1px solid #ccc;
@@ -10716,10 +10738,17 @@ export default class LandingPg extends Component {
                                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option-right'>
                                                                                
                                                                             </div>
-                                                                            
+                                                                        </div>
+                                                                ))}
+                                                                </div>
+                                                                <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-responses'>
+                                                                    {FAQSearchTerms.map((response, index) => (
+                                                                        <div onClick={() => this.handleFaqSettingsTopicSelected(response)} className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-response ${this.state.faqSettingsSelectedResponse === response ? 'selected' : ''}`} key={index} value={response}>
+                                                                            <h5>{response.question}</h5>
                                                                         </div>
                                                                     ))}
                                                                 </div>
+
                                                             </div>
                                                             <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-right'>
                                                                 <div className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-search-results ${this.state.searchBarInputFAQ !== '' ? 'display' : ''}`}>
