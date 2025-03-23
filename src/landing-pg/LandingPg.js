@@ -5153,14 +5153,20 @@ const Styles = styled.div `
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body {
     flex-grow: 1;
     border: 1px solid black;
+    overflow-y: auto;
+    
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body h2 {
     color: #ff5733;
     margin-left: 2.5%;
     margin-right: 2.5%;
+    margin-top: 0px;
+    margin-bottom: 0px;
     padding-top: 2.5%;
     padding-bottom: 2.5%;
+    font-size: 95%;
+    font-family: lexend;
 }
 
     // # LOADING SCREEN SETTINGS
@@ -7632,7 +7638,8 @@ export default class LandingPg extends Component {
     handleFaqSettingsResponseSelected = (response) => {
         this.setState({
             selectedFAQuestion: response.name,
-            selectedFAQTopic: response.category
+            selectedFAQTopic: response.category,
+            selectedFAQResponse: response.answer
         })
     }
 
@@ -10891,7 +10898,7 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                     </div>
                                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body'>
-
+                                                                        <h2>{this.state.selectedFAQResponse}</h2>
                                                                     </div>
                                                                 </div>
 
