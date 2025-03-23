@@ -5023,6 +5023,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option.selected p {
     color: #ff5733;
     text-decoration: underline; 
+    font-weight: bold;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown-option-left {
@@ -5060,6 +5061,7 @@ const Styles = styled.div `
     font-size: 50%;
     font-family: poppins;
     margin-left: 2.5%;
+    margin-right: 2.5%;
     margin-top: 2.5%;
     color: #5e626a;
 }
