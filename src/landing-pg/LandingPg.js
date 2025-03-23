@@ -4963,7 +4963,7 @@ const Styles = styled.div `
     width: 37.5%;
     // border: 1px solid black;
     position: relative;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown {
@@ -4991,6 +4991,8 @@ const Styles = styled.div `
     height: 6.5rem;
     border-radius: 6px;
     border: 1px solid #ccc;
+    background-color: white;
+    z-index: 3;
     overflow: auto;
     transform: translate(-50%, 0.2rem);
 }
@@ -5038,13 +5040,18 @@ const Styles = styled.div `
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-responses {
     height: 100%;
     width: 100%;
-    border: 1px solid #ccc;
-    overflow-y: auto;
+    // border: 1px solid #ccc;
+    overflow-y: scroll;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 3rem;
+    border-bottom: 1px solid #ccc;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response h5 {
@@ -5054,7 +5061,7 @@ const Styles = styled.div `
     font-family: poppins;
     margin-left: 2.5%;
     margin-top: 2.5%;
-    border-bottom: 1px solid #ccc;
+    color: #5e626a;
 }
 
     // # FAQ FULL RESPONSE DISPLAY
@@ -10747,7 +10754,7 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-responses'>
                                                                     {FAQSearchTerms.map((response, index) => (
-                                                                        <div onClick={() => this.handleFaqSettingsTopicSelected(response)} className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-response ${this.state.faqSettingsSelectedResponse === response ? 'selected' : ''}`} key={index} value={response}>
+                                                                        <div onClick={() => this.handleFaqSettingsTopicSelected(response.question)} className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-response ${this.state.faqSettingsSelectedResponse === response.question ? 'selected' : ''}`} key={index} value={response.id}>
                                                                             <h5>{response.question}</h5>
                                                                         </div>
                                                                     ))}
