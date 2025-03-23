@@ -12,9 +12,9 @@ const results = [
 
     {"id": "998573", "name": "How long will my order take to arrive if I live on the outskirts of Nairobi?", "category": "Delivery", "subCat1": "", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top", "answer": "Depending on your order, and our stock of items, delivery can take anywhere from 90 mins to 1 day to deliver. If you live on the outskirts of Nairobi - it will likely take anywhere from a few hours to a day to deliver."},
 
-    {"id": "998573", "name": "How do I know when my Jipange order will arrive?", "category": "Delivery", "subCat1": "", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
+    {"id": "998573", "name": "How do I know when my Jipange order will arrive?", "category": "Delivery", "subCat1": "", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top", "answer": "The rider will contact you in the morning (from as early as 7:30am) of your designated Jipange order - and you will be able to agree on the most suitable time."},
 
-    {"id": "998573", "name": "How can I add a product to 'Shop Pamoja'?", "category": "Shop Pamoja", "subCat1": "", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
+    {"id": "998573", "name": "How can I add a product to 'Shop Pamoja'?", "category": "Shop Pamoja", "subCat1": "", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top", "answer": "Simply click on "},
 
     {"id": "998573", "name": "Can I pay for my delivery  with cash?", "category": "Payment", "subCat1": "", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
 
