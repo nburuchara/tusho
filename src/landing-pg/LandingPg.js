@@ -5099,6 +5099,16 @@ const Styles = styled.div `
     border-right: 1px solid #ff5733;
 }
 
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 99.5%;
+    height: 99.5%;
+    border: 1px solid black;
+    border-bottom-right-radius: 8px;
+}
+
     // # LOADING SCREEN SETTINGS
 
 .navbar-profile-loading-popup-settings {
@@ -10812,7 +10822,9 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                     )}
                                                                 </div>
+                                                                <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display'>
 
+                                                                </div>
 
                                                             </div>
                                                         </div>
