@@ -2,7 +2,7 @@ const results = [
 
     {"id": "998573", "name": "Where can I find discounts?", "category": "General", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top", "answer": "You can find discounted items by browsing 'Promo' products which are listed at the top of the shopping section. You can also activate 'Shop Pamoja' to find products that are being sold in bulk at a discount."},
 
-    {"id": "998573", "name": "Add new delivery address", "category": "Delivery Information", "subCat1": "New address", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
+    {"id": "998573", "name": "Will the delivery cost always be Kshs. 99?", "category": "Delivery", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
 
     {"id": "998573", "name": "Add new Jipange order", "category": "Jipange", "subCat1": "New order", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
 
