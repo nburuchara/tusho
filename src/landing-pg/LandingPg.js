@@ -4990,7 +4990,7 @@ const Styles = styled.div `
     width: 90%;
     height: 6.5rem;
     border-radius: 6px;
-    border: 1px solid #ccc;
+    border: 1px solid #5e626a;
     background-color: white;
     z-index: 3;
     overflow: auto;
@@ -5060,6 +5060,7 @@ const Styles = styled.div `
     margin-bottom: 0px;
     font-size: 50%;
     font-family: poppins;
+    font-weight: normal;
     margin-left: 2.5%;
     margin-right: 2.5%;
     margin-top: 2.5%;
@@ -10756,8 +10757,8 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-responses'>
                                                                     {FAQSearchTerms.map((response, index) => (
-                                                                        <div onClick={() => this.handleFaqSettingsTopicSelected(response.question)} className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-response ${this.state.faqSettingsSelectedResponse === response.question ? 'selected' : ''}`} key={index} value={response.id}>
-                                                                            <h5>{response.question}</h5>
+                                                                        <div onClick={() => this.handleFaqSettingsTopicSelected(response.name)} className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-response ${this.state.faqSettingsSelectedResponse === response.name ? 'selected' : ''}`} key={index} value={response.id}>
+                                                                            <h5>{response.name}</h5>
                                                                         </div>
                                                                     ))}
                                                                 </div>
