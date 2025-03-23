@@ -5154,8 +5154,8 @@ const Styles = styled.div `
     flex-grow: 1;
     // border: 1px solid black;
     overflow-y: auto;
-    
 }
+
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body h2 {
     color: #ff5733;
@@ -5170,6 +5170,13 @@ const Styles = styled.div `
     font-weight: normal;
 }
 
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-loading {
+
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-none {
+
+}
     // # LOADING SCREEN SETTINGS
 
 .navbar-profile-loading-popup-settings {
@@ -10906,12 +10913,12 @@ export default class LandingPg extends Component {
                                                                         </>
                                                                     }
                                                                     {this.state.showFAQResponseLoading && 
-                                                                        <div className=''>
+                                                                        <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-loading'>
 
                                                                         </div>
                                                                     }
                                                                     {this.state.showFAQNoResponseSelected && 
-                                                                        <div className=''>
+                                                                        <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-none'>
 
                                                                         </div>
                                                                     }
