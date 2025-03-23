@@ -5050,8 +5050,11 @@ const Styles = styled.div `
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response h5 {
     margin-top: 0px;
     margin-bottom: 0px;
+    font-size: 50%;
+    font-family: poppins;
+    margin-left: 2.5%;
+    margin-top: 2.5%;
 }
-
 
     // # FAQ FULL RESPONSE DISPLAY
 
