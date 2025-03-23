@@ -533,6 +533,7 @@ const Styles = styled.div `
     margin-bottom: 0px;
     margin-right: 10%;
     margin-top: 0.5rem;
+    color: #5e626a;
 }
 
 .searchResultCellAccountLabel {
@@ -5048,9 +5049,9 @@ const Styles = styled.div `
     z-index: 2;
     overflow: hidden;
     transform: translateY(-100%);
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 0px;
-    border: 1px solid #ccc;
+    // border-bottom-left-radius: 8px;
+    // border-bottom-right-radius: 0px;
+    border-bottom: 1px solid #ccc;
     // visibility: hidden;
     transition-property: transform;
     overflow-y: auto;

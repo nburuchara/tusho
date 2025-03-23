@@ -1,6 +1,6 @@
 const results = [
 
-    {"id": "998573", "name": "Where can I find discounts?", "category": "FAQ", "subCat1": "General", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top", "answer": "To "},
+    {"id": "998573", "name": "Where can I find discounts?", "category": "FAQ", "subCat1": "General", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top", "answer": "You can find discounted items by browsing 'Promo' products which are listed at the top of the shopping section. You can also activate 'Shop Pamoja' to find products that are being sold in bulk at a discount."},
 
     {"id": "998573", "name": "Add new delivery address", "category": "Delivery Information", "subCat1": "New address", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
 
