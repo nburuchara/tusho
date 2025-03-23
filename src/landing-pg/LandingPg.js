@@ -5118,7 +5118,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header {
     height: 35%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header h3 {
@@ -5141,7 +5141,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header-topic button {
     background-color: #faece9;
     border: 0.5px solid #ff5733;
-    border-radius: 8px;
+    border-radius: 4px;
     font-family: poppins;
     font-size: 80%;
 }
