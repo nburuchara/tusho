@@ -5110,7 +5110,7 @@ const Styles = styled.div `
     left: 0;
     width: 99.35%;
     height: 99.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     border-bottom-right-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -5127,13 +5127,13 @@ const Styles = styled.div `
     color: #ff5733;
     margin-top: 2.5%;
     margin-bottom: 1.5%;
-    font-size: 90%;
+    font-size: 82.5%;
     // font-weight: normal;
     font-family: lexend;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header-topic {
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 95%;
     margin-left: 2.5%;
 }
@@ -5143,12 +5143,14 @@ const Styles = styled.div `
     border: 0.5px solid #ff5733;
     border-radius: 4px;
     font-family: poppins;
-    font-size: 80%;
+    font-size: 60%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body {
     flex-grow: 1;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
     // # LOADING SCREEN SETTINGS
