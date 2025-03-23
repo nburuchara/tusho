@@ -5053,6 +5053,7 @@ const Styles = styled.div `
     height: 3rem;
     border-bottom: 1px solid #ccc;
     cursor: pointer;
+    padding-top: 2.5%;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response:hover {
@@ -5067,7 +5068,7 @@ const Styles = styled.div `
     font-weight: normal;
     margin-left: 2.5%;
     margin-right: 2.5%;
-    margin-top: 2.5%;
+    // margin-top: 2.5%;
     color: #5e626a;
 }
 
@@ -5125,7 +5126,8 @@ const Styles = styled.div `
     color: #ff5733;
     margin-top: 2.5%;
     font-size: 90%;
-    // font-family: inter;
+    font-weight: normal;
+    font-family: poppins;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body {
