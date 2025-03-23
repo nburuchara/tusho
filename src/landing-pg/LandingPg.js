@@ -5123,11 +5123,27 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header h3 {
     margin-left: 2.5%;
+    margin-right: 2.5%;
     color: #ff5733;
     margin-top: 2.5%;
+    margin-bottom: 1.5%;
     font-size: 90%;
-    font-weight: normal;
+    // font-weight: normal;
+    font-family: lexend;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header-topic {
+    border: 1px solid black;
+    width: 95%;
+    margin-left: 2.5%;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header-topic button {
+    background-color: #faece9;
+    border: 0.5px solid #ff5733;
+    border-radius: 8px;
     font-family: poppins;
+    font-size: 80%;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body {
@@ -7603,7 +7619,8 @@ export default class LandingPg extends Component {
 
     handleFaqSettingsResponseSelected = (response) => {
         this.setState({
-            selectedFAQuestion: response.name
+            selectedFAQuestion: response.name,
+            selectedFAQTopic: response.category
         })
     }
 
@@ -10857,6 +10874,9 @@ export default class LandingPg extends Component {
                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display'>
                                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header'>
                                                                         <h3>Q: {this.state.selectedFAQuestion}</h3>
+                                                                        <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header-topic'>
+                                                                            <button>{this.state.selectedFAQTopic}</button>
+                                                                        </div>
                                                                     </div>
                                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body'>
 
