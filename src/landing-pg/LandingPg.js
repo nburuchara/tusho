@@ -5066,6 +5066,14 @@ const Styles = styled.div `
     background-color: #faece9;
 }
 
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-response.selected h5 {
+    background-color: #faece9;
+    font-weight: bold;
+    color: black;
+    text-decoration: underline;
+    text-decoration-color: #ff5733;
+}
+
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response h5 {
     margin-top: 0px;
     margin-bottom: 0px;
@@ -5135,7 +5143,7 @@ const Styles = styled.div `
     margin-bottom: 1.5%;
     font-size: 72.5%;
     font-weight: normal;
-    font-family: lexend;
+    font-family: poppins;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header-topic {
@@ -5172,7 +5180,7 @@ const Styles = styled.div `
     padding-top: 0.35rem;
     padding-bottom: 2.5%;
     font-size: 77.5%;
-    font-family: lexend;
+    font-family: poppins;
     font-weight: normal;
 }
 
@@ -7671,22 +7679,24 @@ export default class LandingPg extends Component {
     }
 
     handleFaqSettingsResponseSelected = (response) => {
-        this.setState({
-            showFAQNoResponseSelected: false,
-            showFAQSingleResponse: false,
-            showFAQResponseLoading: true,
-        }, () => {
-            setTimeout(() => {
-                this.setState({
-                    showFAQResponseLoading: false,
-                    showFAQSingleResponse: true,
-                    faqSettingsSelectedResponse: response.name,
-                    selectedFAQuestion: response.name,
-                    selectedFAQTopic: response.category,
-                    selectedFAQResponse: response.answer
-                })
-            }, 2500)
-        })
+        if (!this.state.showFAQResponseLoading) {
+            this.setState({
+                showFAQNoResponseSelected: false,
+                showFAQSingleResponse: false,
+                showFAQResponseLoading: true,
+                faqSettingsSelectedResponse: response.name,
+            }, () => {
+                setTimeout(() => {
+                    this.setState({
+                        showFAQResponseLoading: false,
+                        showFAQSingleResponse: true,
+                        selectedFAQuestion: response.name,
+                        selectedFAQTopic: response.category,
+                        selectedFAQResponse: response.answer
+                    })
+                }, 2500)
+            })
+        }
     }
 
     handleFaqSettingsDropdownSelected = () => {
