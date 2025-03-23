@@ -5118,7 +5118,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header {
     height: autp;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header h3 {
@@ -5127,7 +5127,7 @@ const Styles = styled.div `
     color: #5e626a;
     margin-top: 2%;
     margin-bottom: 1.5%;
-    font-size: 82.5%;
+    font-size: 72.5%;
     font-weight: normal;
     font-family: lexend;
 }
@@ -5146,13 +5146,13 @@ const Styles = styled.div `
     font-size: 60%;
     padding-left: 2.5%;
     padding-right: 2.5%;
-    margin-bottom: 0.5rem;
-    color: #ff5733;
+    margin-bottom: 0.6rem;
+    color: #5e626a;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body {
     flex-grow: 1;
-    border: 1px solid black;
+    // border: 1px solid black;
     overflow-y: auto;
     
 }
@@ -5163,10 +5163,11 @@ const Styles = styled.div `
     margin-right: 2.5%;
     margin-top: 0px;
     margin-bottom: 0px;
-    padding-top: 2.5%;
+    padding-top: 0.35rem;
     padding-bottom: 2.5%;
-    font-size: 95%;
+    font-size: 77.5%;
     font-family: lexend;
+    font-weight: normal;
 }
 
     // # LOADING SCREEN SETTINGS
@@ -10891,15 +10892,29 @@ export default class LandingPg extends Component {
                                                                     )}
                                                                 </div>
                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display'>
-                                                                    <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header'>
-                                                                        <h3>Q: {this.state.selectedFAQuestion}</h3>
-                                                                        <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header-topic'>
-                                                                            <button>{this.state.selectedFAQTopic}</button>
+                                                                    {this.state.showFAQSingleResponse && 
+                                                                        <>
+                                                                            <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header'>
+                                                                                <h3>Q: {this.state.selectedFAQuestion}</h3>
+                                                                                <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header-topic'>
+                                                                                    <button>{this.state.selectedFAQTopic}</button>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body'>
+                                                                                <h2>{this.state.selectedFAQResponse}</h2>
+                                                                            </div>
+                                                                        </>
+                                                                    }
+                                                                    {this.state.showFAQResponseLoading && 
+                                                                        <div className=''>
+
                                                                         </div>
-                                                                    </div>
-                                                                    <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body'>
-                                                                        <h2>{this.state.selectedFAQResponse}</h2>
-                                                                    </div>
+                                                                    }
+                                                                    {this.state.showFAQNoResponseSelected && 
+                                                                        <div className=''>
+
+                                                                        </div>
+                                                                    }
                                                                 </div>
 
                                                             </div>
