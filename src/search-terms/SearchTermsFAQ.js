@@ -4,9 +4,9 @@ const results = [
 
     {"id": "998573", "name": "Will the delivery cost always be Kshs. 99?", "category": "Question", "subCat1": "Delivery", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top", "answer": "In the near future, we anticipate that the delivery price will remain the same. We have relationships with strategic partners arond the city that allows us to maintain this price level."},
 
-    {"id": "998573", "name": "Can I add to my order once it's already on the way?", "category": "Question", "subCat1": "Delivery", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
+    {"id": "998573", "name": "Can I add to my order once it's already on the way?", "category": "Question", "subCat1": "Delivery", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top", "answer": "It depends. Since we don't source most of our items from  Once you are matched with your driver, we will notify you when the driver is picking up your items. I"},
 
-    {"id": "998573", "name": "Can I schedule the time ", "category": "Question", "subCat1": "Delivery", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
+    {"id": "998573", "name": "Can I schedule the specific time of delivery for Jipange?", "category": "Question", "subCat1": "Delivery", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top", "answer" : ""},
 
     {"id": "998573", "name": "How long will my order take to arrive if I live on the outskirts of Nairobi?", "category": "Delivery", "img": "/assets/images/products/min-maid-product.webp", "lastCat": "top"},
 
