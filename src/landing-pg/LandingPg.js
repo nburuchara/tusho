@@ -5124,16 +5124,16 @@ const Styles = styled.div `
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header h3 {
     margin-left: 2.5%;
     margin-right: 2.5%;
-    color: #ff5733;
-    margin-top: 2.5%;
+    color: #5e626a;
+    margin-top: 2%;
     margin-bottom: 1.5%;
     font-size: 82.5%;
-    // font-weight: normal;
+    font-weight: normal;
     font-family: lexend;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header-topic {
-    // border: 1px solid black;
+    border-bottom: 1px solid #ccc;
     width: 95%;
     margin-left: 2.5%;
 }
@@ -5146,6 +5146,8 @@ const Styles = styled.div `
     font-size: 60%;
     padding-left: 2.5%;
     padding-right: 2.5%;
+    margin-bottom: 0.5rem;
+    color: #ff5733;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body {
