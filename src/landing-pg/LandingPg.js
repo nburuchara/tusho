@@ -5117,8 +5117,8 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header {
-    height: 35%;
-    // border: 1px solid black;
+    height: autp;
+    border: 1px solid black;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header h3 {
@@ -5152,7 +5152,15 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body {
     flex-grow: 1;
-    // border: 1px solid black;
+    border: 1px solid black;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body h2 {
+    color: #ff5733;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
 }
 
     // # LOADING SCREEN SETTINGS
