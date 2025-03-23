@@ -5052,6 +5052,11 @@ const Styles = styled.div `
     // border: 1px solid black;
     height: 3rem;
     border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-response:hover {
+    background-color: #faece9;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response h5 {
@@ -5106,6 +5111,26 @@ const Styles = styled.div `
     height: 99.5%;
     border: 1px solid black;
     border-bottom-right-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header {
+    height: 35%;
+    border: 1px solid black;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header h3 {
+    margin-left: 2.5%;
+    color: #ff5733;
+    margin-top: 2.5%;
+    font-size: 90%;
+    // font-family: inter;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body {
+    flex-grow: 1;
+    border: 1px solid black;
 }
 
     // # LOADING SCREEN SETTINGS
@@ -7571,6 +7596,12 @@ export default class LandingPg extends Component {
             this.setState({
                 faqSettingsDisplayTopicDropdown: false
             })
+        })
+    }
+
+    handleFaqSettingsResponseSelected = (response) => {
+        this.setState({
+            selectedFAQuestion: response.name
         })
     }
 
@@ -10766,7 +10797,7 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-responses'>
                                                                     {FAQSearchTerms.map((response, index) => (
-                                                                        <div onClick={() => this.handleFaqSettingsTopicSelected(response.name)} className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-response ${this.state.faqSettingsSelectedResponse === response.name ? 'selected' : ''}`} key={index} value={response.id}>
+                                                                        <div onClick={() => this.handleFaqSettingsResponseSelected(response)} className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-response ${this.state.faqSettingsSelectedResponse === response.name ? 'selected' : ''}`} key={index} value={response.id}>
                                                                             <h5>{response.name}</h5>
                                                                         </div>
                                                                     ))}
@@ -10822,7 +10853,12 @@ export default class LandingPg extends Component {
                                                                     )}
                                                                 </div>
                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display'>
+                                                                    <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header'>
+                                                                        <h3>Q: {this.state.selectedFAQuestion}</h3>
+                                                                    </div>
+                                                                    <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body'>
 
+                                                                    </div>
                                                                 </div>
 
                                                             </div>
