@@ -5058,6 +5058,12 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response:hover {
     background-color: #faece9;
+    text-decoration: underline;
+    text-decoration-color: #ff5733;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-response.selected {
+    background-color: #faece9;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response h5 {
@@ -7674,6 +7680,7 @@ export default class LandingPg extends Component {
                 this.setState({
                     showFAQResponseLoading: false,
                     showFAQSingleResponse: true,
+                    faqSettingsSelectedResponse: response.name,
                     selectedFAQuestion: response.name,
                     selectedFAQTopic: response.category,
                     selectedFAQResponse: response.answer
