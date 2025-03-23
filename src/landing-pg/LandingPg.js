@@ -5038,7 +5038,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-responses {
     height: 100%;
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid #ccc;
     overflow-y: auto;
 }
 
@@ -5054,6 +5054,7 @@ const Styles = styled.div `
     font-family: poppins;
     margin-left: 2.5%;
     margin-top: 2.5%;
+    border-bottom: 1px solid #ccc;
 }
 
     // # FAQ FULL RESPONSE DISPLAY
