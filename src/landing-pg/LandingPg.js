@@ -7666,9 +7666,19 @@ export default class LandingPg extends Component {
 
     handleFaqSettingsResponseSelected = (response) => {
         this.setState({
-            selectedFAQuestion: response.name,
-            selectedFAQTopic: response.category,
-            selectedFAQResponse: response.answer
+            showFAQNoResponseSelected: false,
+            showFAQSingleResponse: false,
+            showFAQResponseLoading: true,
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    showFAQResponseLoading: false,
+                    showFAQSingleResponse: true,
+                    selectedFAQuestion: response.name,
+                    selectedFAQTopic: response.category,
+                    selectedFAQResponse: response.answer
+                })
+            }, 2500)
         })
     }
 
