@@ -5172,12 +5172,29 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-loading {
     height: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    padding-top: 4.25rem;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-none {
-
+    height: 100%;
+    // border: 1px solid black;
+    padding-top: 7.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-none img {
+    width: 36.5px;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-none p {
+    margin-top: 3%;
+    font-size: 75%;
+}
+
     // # LOADING SCREEN SETTINGS
 
 .navbar-profile-loading-popup-settings {
@@ -6258,8 +6275,8 @@ export default class LandingPg extends Component {
             faqSettingsSelectedTopic: 'All topics',
             searchBarInputFAQ: '',
             showFAQSingleResponse: false,
-            showFAQResponseLoading: true,
-            showFAQNoResponseSelected: false,
+            showFAQResponseLoading: false,
+            showFAQNoResponseSelected: true,
             
 
             //* - SEARCH BAR COMPONENTS - *//
@@ -10918,12 +10935,26 @@ export default class LandingPg extends Component {
                                                                     }
                                                                     {this.state.showFAQResponseLoading && 
                                                                         <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-loading'>
-
+                                                                            <div className='searchResultFAQLoading'>
+                                                                                <RotatingLines
+                                                                                    visible={true}
+                                                                                    height="23.5"
+                                                                                    width="23.5"
+                                                                                    strokeColor="#ff5733"
+                                                                                    strokeWidth="3"
+                                                                                    animationDuration="0.75"
+                                                                                    ariaLabel="rotating-lines-loading"
+                                                                                    wrapperStyle={{}}
+                                                                                    wrapperClass=""
+                                                                                    />
+                                                                                    <p>Loading...</p>
+                                                                            </div>
                                                                         </div>
                                                                     }
                                                                     {this.state.showFAQNoResponseSelected && 
                                                                         <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-none'>
-
+                                                                            <img src='/assets/icons/home-faq/faq-placeholder-icon2.png'/>
+                                                                            <p>Select a question to see a response.</p>
                                                                         </div>
                                                                     }
                                                                 </div>
