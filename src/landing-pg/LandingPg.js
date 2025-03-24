@@ -5130,7 +5130,7 @@ const Styles = styled.div `
     flex-direction: column;
 }
 
-.navbar-profile-account-popup-faqs-settings-body-bottom-single-response.display {
+.navbar-profile-account-popup-faqs-settings-body-bottom-single-response {
     transform: translateX(100%);
 }
 
@@ -6088,6 +6088,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon img,
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown,
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-search-results,
+.navbar-profile-account-popup-faqs-settings-body-bottom-single-response,
 .homepage-body-inner-header-option img,
 .homepage-body-inner-header-option-dropdown-option-1,
 .homepage-body-inner-header-option-dropdown-option-2,
@@ -7693,6 +7694,7 @@ export default class LandingPg extends Component {
                 showFAQSingleResponse: false,
                 showFAQResponseLoading: true,
                 faqSettingsSelectedResponse: response.name,
+                faqSettingsSingleResponseDisplay: false
             }, () => {
                 setTimeout(() => {
                     this.setState({
@@ -7705,9 +7707,9 @@ export default class LandingPg extends Component {
                 }, 2500)
                 setTimeout(() => {
                     this.setState({
-
+                        faqSettingsSingleResponseDisplay: true
                     })
-                }, 3000)
+                }, 2800)
             })
         }
     }
@@ -10962,7 +10964,7 @@ export default class LandingPg extends Component {
                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display'>
                                                                     {this.state.showFAQSingleResponse && 
                                                                         <>
-                                                                            <div className='navbar-profile-account-popup-faqs-settings-body-bottom-single-response'>
+                                                                            <div className={`navbar-profile-account-popup-faqs-settings-body-bottom-single-response ${this.state.faqSettingsSingleResponseDisplay ? 'display' : ''}`}>
                                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header'>
                                                                                     <h3>Q: {this.state.selectedFAQuestion}</h3>
                                                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header-topic'>
