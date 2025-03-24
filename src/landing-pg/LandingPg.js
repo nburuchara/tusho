@@ -7709,7 +7709,7 @@ export default class LandingPg extends Component {
                     this.setState({
                         faqSettingsSingleResponseDisplay: true
                     })
-                }, 2800)
+                }, 2700)
             })
         }
     }
