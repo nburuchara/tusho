@@ -5130,6 +5130,14 @@ const Styles = styled.div `
     flex-direction: column;
 }
 
+.navbar-profile-account-popup-faqs-settings-body-bottom-single-response.display {
+    transform: translateX(100%);
+}
+
+.navbar-profile-account-popup-faqs-settings-body-bottom-single-response.display {
+    transform: translateX(0);
+}
+
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header {
     height: autp;
     // border: 1px solid black;
@@ -7695,6 +7703,11 @@ export default class LandingPg extends Component {
                         selectedFAQResponse: response.answer
                     })
                 }, 2500)
+                setTimeout(() => {
+                    this.setState({
+
+                    })
+                }, 3000)
             })
         }
     }
@@ -10949,14 +10962,16 @@ export default class LandingPg extends Component {
                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display'>
                                                                     {this.state.showFAQSingleResponse && 
                                                                         <>
-                                                                            <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header'>
-                                                                                <h3>Q: {this.state.selectedFAQuestion}</h3>
-                                                                                <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header-topic'>
-                                                                                    <button>{this.state.selectedFAQTopic}</button>
+                                                                            <div className='navbar-profile-account-popup-faqs-settings-body-bottom-single-response'>
+                                                                                <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header'>
+                                                                                    <h3>Q: {this.state.selectedFAQuestion}</h3>
+                                                                                    <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-header-topic'>
+                                                                                        <button>{this.state.selectedFAQTopic}</button>
+                                                                                    </div>
                                                                                 </div>
-                                                                            </div>
-                                                                            <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body'>
-                                                                                <h2>{this.state.selectedFAQResponse}</h2>
+                                                                                <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-response-display-body'>
+                                                                                    <h2>{this.state.selectedFAQResponse}</h2>
+                                                                                </div>
                                                                             </div>
                                                                         </>
                                                                     }
