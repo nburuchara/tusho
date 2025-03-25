@@ -4782,6 +4782,7 @@ const Styles = styled.div `
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     z-index: 2;
+    background-color: white;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-body textarea {
@@ -7775,7 +7776,7 @@ export default class LandingPg extends Component {
                 this.setState({
                     faqSubmitTextSuccess: false
                 })
-            }, 4000)
+            }, 5000)
         })
     }
 
