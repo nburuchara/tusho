@@ -6293,13 +6293,14 @@ export default class LandingPg extends Component {
             deliveryInfoAddressType4: false,
 
             //* # FAQs *//
-            faqTopics: ['All topics', 'Delivery', 'Payment', 'Shop Pamoja', 'Jipange', 'General', 'Support'],
+            faqTopics: ['All topics','My FAQ', 'Delivery', 'Payment', 'Shop Pamoja', 'Jipange', 'General', 'Support'],
             faqSettingsDisplayTopicDropdown: false,
             faqSettingsSelectedTopic: 'All topics',
             searchBarInputFAQ: '',
             showFAQSingleResponse: false,
             showFAQResponseLoading: false,
             showFAQNoResponseSelected: true,
+            faqFilteredResults: FAQSearchTerms,
             
 
             //* - SEARCH BAR COMPONENTS - *//
@@ -7679,7 +7680,8 @@ export default class LandingPg extends Component {
 
     handleFaqSettingsTopicSelected = (topic) => {
         this.setState({
-            faqSettingsSelectedTopic: topic
+            faqSettingsSelectedTopic: topic,
+            faqFilteredResults: topic === 'All topics' ? FAQSearchTerms : FAQSearchTerms.filter(item => item.category === topic)
         }, () => {
             this.setState({
                 faqSettingsDisplayTopicDropdown: false
@@ -10905,7 +10907,7 @@ export default class LandingPg extends Component {
                                                                 ))}
                                                                 </div>
                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container-responses'>
-                                                                    {FAQSearchTerms.map((response, index) => (
+                                                                    {this.state.faqFilteredResults.map((response, index) => (
                                                                         <div onClick={() => this.handleFaqSettingsResponseSelected(response)} className={`navbar-profile-account-popup-faqs-settings-body-bottom-container-response ${this.state.faqSettingsSelectedResponse === response.name ? 'selected' : ''}`} key={index} value={response.id}>
                                                                             <h5>{response.name}</h5>
                                                                         </div>
