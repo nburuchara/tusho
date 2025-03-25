@@ -4805,10 +4805,33 @@ const Styles = styled.div `
     justify-content: space-between;
 }
 
+.navbar-profile-account-popup-faqs-settings-body-top-container-footer-notification {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    // border: 1px solid black;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-top-container-footer-notification-left {
+    width: 5%;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-top-container-footer-notification-right {
+    width: 95%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-top-container-footer img {
+    width: 11px;
+    padding-bottom: 0.9rem;
+}
+
 .navbar-profile-account-popup-faqs-settings-body-top-container-footer p {
     margin-top: -1.5rem;
     margin-bottom: 0px;
-    margin-left: 0px;
+    margin-left: 0.5%;
     color: #ff5733;
     font-weight: bold;
     font-size: 65%;
@@ -10928,7 +10951,14 @@ export default class LandingPg extends Component {
                                                             />
                                                         </div>
                                                         <div className={`navbar-profile-account-popup-faqs-settings-body-top-container-footer ${this.state.faqSubmitTextSuccess ? 'success' : ''}`}>
-                                                            <p>{this.state.faqSubmitTextNotification}</p>
+                                                            <div className='navbar-profile-account-popup-faqs-settings-body-top-container-footer-notification'>
+                                                                <div className='navbar-profile-account-popup-faqs-settings-body-top-container-footer-notification-left'>
+                                                                    <img src='/assets/icons/home-faq/submit-text-successful-icon.png'/>
+                                                                </div>
+                                                                <div className='navbar-profile-account-popup-faqs-settings-body-top-container-footer-notification-right'>
+                                                                    <p>{this.state.faqSubmitTextNotification}</p>
+                                                                </div> 
+                                                            </div>
                                                             <button
                                                             onClick={this.faqSubmitBtnClicked}
                                                             >
