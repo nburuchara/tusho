@@ -6887,6 +6887,34 @@ export default class LandingPg extends Component {
         }, 500); // Adjust debounce delay as needed
     };
 
+    searchTermFAQClicked = (category, option) => {
+        if (!this.state.showFAQResponseLoading) {
+            this.setState({
+                showFAQNoResponseSelected: false,
+                showFAQSingleResponse: false,
+                showFAQResponseLoading: true,
+                faqSettingsSelectedResponse: option.name,
+                faqSettingsSingleResponseDisplay: false,
+                searchBarInputFAQ: ''
+            }, () => {
+                setTimeout(() => {
+                    this.setState({
+                        showFAQResponseLoading: false,
+                        showFAQSingleResponse: true,
+                        selectedFAQuestion: option.name,
+                        selectedFAQTopic: category,
+                        selectedFAQResponse: option.answer,
+                    })
+                }, 2500)
+                setTimeout(() => {
+                    this.setState({
+                        faqSettingsSingleResponseDisplay: true
+                    })
+                }, 2700)
+            })
+        }
+    }
+
     highlightMatchedCharacters(option, searchInput, isSearchLoading) {
         const name = option.name.toLowerCase();
         const searchRegex = new RegExp(`\\b${searchInput}`, 'i');
@@ -10940,7 +10968,7 @@ export default class LandingPg extends Component {
                                                                                     <div className='searchResultCellFAQContainer' key={category}>
                                                                                         {options.map(option => (
                                                                                             <div 
-                                                                                            onClick={() => this.searchedTermClicked(category, option, option.page)}
+                                                                                            onClick={() => this.searchTermFAQClicked(category, option)}
                                                                                             className='searchResultCellFAQ' 
                                                                                             key={option.id}>
                                                                                                 <div className='searchResultCellFAQDetails'>
