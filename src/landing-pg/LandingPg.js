@@ -4802,7 +4802,16 @@ const Styles = styled.div `
     // border: 1px solid blue;
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: space-between;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-top-container-footer p {
+    margin-top: -1.5rem;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    color: #ff5733;
+    font-weight: bold;
+    font-size: 65%;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-footer button {
@@ -6307,9 +6316,11 @@ export default class LandingPg extends Component {
             showFAQResponseLoading: false,
             showFAQNoResponseSelected: true,
             faqFilteredResults: FAQSearchTerms,
-            showFAQSubmitBtnTxt: false,
-            showFAQSubmitBtnLoading: true,
+            showFAQSubmitBtnTxt: true,
+            showFAQSubmitBtnLoading: false,
             faqSubmitText: '',
+            faqSubmitTextNotification: 'Your question was submitted successfully!',
+            faqSubmitTextSuccess: false,
             
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
@@ -7723,6 +7734,8 @@ export default class LandingPg extends Component {
                 this.setState({
                     showFAQSubmitBtnTxt: true,
                     showFAQSubmitBtnLoading: false,
+                    faqSubmitText: '',
+                    faqSubmitTextSuccess: true
                 })
             }, 2500)
         })
@@ -10910,10 +10923,12 @@ export default class LandingPg extends Component {
                                                             id='faqSubmitText'
                                                             placeholder='Type your question here...'
                                                             value={this.state.faqSubmitText}
+                                                            disabled={this.state.showFAQSubmitBtnLoading}
                                                             onChange={this.handleSearchStandardInput}
                                                             />
                                                         </div>
-                                                        <div className='navbar-profile-account-popup-faqs-settings-body-top-container-footer'>
+                                                        <div className={`navbar-profile-account-popup-faqs-settings-body-top-container-footer ${this.state.faqSubmitTextSuccess ? 'success' : ''}`}>
+                                                            <p>{this.state.faqSubmitTextNotification}</p>
                                                             <button
                                                             onClick={this.faqSubmitBtnClicked}
                                                             >
