@@ -4781,6 +4781,7 @@ const Styles = styled.div `
     border: 1px solid transparent;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+    z-index: 2;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-body textarea {
@@ -4809,7 +4810,15 @@ const Styles = styled.div `
     display: flex;
     justify-content: space-between;
     width: 60%;
+    transform: translateY(-2rem);
+    margin-left: 0.15%;
+    z-index: 1;
     // border: 1px solid black;
+    transition-property: transform;
+}
+
+.navbar-profile-account-popup-faqs-settings-body-top-container-footer-notification.success {
+    transform: translateY(0);
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-footer-notification-left {
@@ -6123,6 +6132,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-square,
 .jipange-settings-selected-date-screen-body-inner-header-categories-carousel,
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 img,
+.navbar-profile-account-popup-faqs-settings-body-top-container-footer-notification,
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon img,
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-select-dropdown,
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-search-results,
@@ -7761,6 +7771,11 @@ export default class LandingPg extends Component {
                     faqSubmitTextSuccess: true
                 })
             }, 2500)
+            setTimeout(() => {
+                this.setState({
+                    faqSubmitTextSuccess: false
+                })
+            }, 4000)
         })
     }
 
@@ -10950,8 +10965,8 @@ export default class LandingPg extends Component {
                                                             onChange={this.handleSearchStandardInput}
                                                             />
                                                         </div>
-                                                        <div className={`navbar-profile-account-popup-faqs-settings-body-top-container-footer ${this.state.faqSubmitTextSuccess ? 'success' : ''}`}>
-                                                            <div className='navbar-profile-account-popup-faqs-settings-body-top-container-footer-notification'>
+                                                        <div className='navbar-profile-account-popup-faqs-settings-body-top-container-footer'>
+                                                            <div className={`navbar-profile-account-popup-faqs-settings-body-top-container-footer-notification ${this.state.faqSubmitTextSuccess ? 'success' : ''}`}>
                                                                 <div className='navbar-profile-account-popup-faqs-settings-body-top-container-footer-notification-left'>
                                                                     <img src='/assets/icons/home-faq/submit-text-successful-icon.png'/>
                                                                 </div>
