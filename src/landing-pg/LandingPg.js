@@ -4817,6 +4817,12 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+.navbar-profile-account-popup-faqs-settings-body-top-container-footer-btn-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .navbar-profile-account-popup-faqs-settings-body-bottom-container {
     border: 1px solid #ccc;
     flex-grow: 1;
@@ -6301,8 +6307,10 @@ export default class LandingPg extends Component {
             showFAQResponseLoading: false,
             showFAQNoResponseSelected: true,
             faqFilteredResults: FAQSearchTerms,
+            showFAQSubmitBtnTxt: false,
+            showFAQSubmitBtnLoading: true,
+            faqSubmitText: '',
             
-
             //* - SEARCH BAR COMPONENTS - *//
             searchBarIsClicked: false,
             searchBarInput: '',
@@ -7706,6 +7714,20 @@ export default class LandingPg extends Component {
         })
     }
 
+    faqSubmitBtnClicked = () => {
+        this.setState({
+            showFAQSubmitBtnTxt: false,
+            showFAQSubmitBtnLoading: true,
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    showFAQSubmitBtnTxt: true,
+                    showFAQSubmitBtnLoading: false,
+                })
+            }, 2500)
+        })
+    }
+
     handleFaqSettingsTopicSelected = (topic) => {
         this.setState({
             faqSettingsSelectedTopic: topic,
@@ -7749,6 +7771,7 @@ export default class LandingPg extends Component {
             faqSettingsDisplayTopicDropdown: !prevState.faqSettingsDisplayTopicDropdown
         }))
     }
+
 
         //* - - MAIN HOME PAGE FUNCTIONS - - *//
 
@@ -10884,11 +10907,39 @@ export default class LandingPg extends Component {
                                                         </div> */}
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-top-container-body'>
                                                             <textarea
+                                                            id='faqSubmitText'
                                                             placeholder='Type your question here...'
+                                                            value={this.state.faqSubmitText}
+                                                            onChange={this.handleSearchStandardInput}
                                                             />
                                                         </div>
                                                         <div className='navbar-profile-account-popup-faqs-settings-body-top-container-footer'>
-                                                            <button>Submit</button>
+                                                            <button
+                                                            onClick={this.faqSubmitBtnClicked}
+                                                            >
+                                                                {this.state.showFAQSubmitBtnTxt && 
+                                                                    <>
+                                                                        Submit
+                                                                    </>
+                                                                }
+                                                                {this.state.showFAQSubmitBtnLoading && 
+                                                                    <div className='navbar-profile-account-popup-faqs-settings-body-top-container-footer-btn-loading'>
+                                                                        <TailSpin
+                                                                        visible={true}
+                                                                        height="12.5px"
+                                                                        width="12.5px"
+                                                                        color="#fff"
+                                                                        ariaLabel="tail-spin-loading"
+                                                                        radius="2"
+                                                                        wrapperStyle={{}}
+                                                                        wrapperClass=""
+                                                                        />
+                                                                        {/* <div>
+                                                                            <p>Loading...</p>
+                                                                        </div> */}
+                                                                    </div>
+                                                                }
+                                                            </button>
                                                         </div>
                                                     </div>
                                                     <div className='navbar-profile-account-popup-faqs-settings-body-bottom-container'>
