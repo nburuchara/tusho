@@ -5910,7 +5910,7 @@ const Styles = styled.div `
 
 .homepage-body-inner-header-option-dropdown-option-35-search-container  {
     position: sticky;
-    // height: 2rem;
+    // height: 1.5rem;
     border-bottom: 1px solid #ccc;
     border: 1px solid black;
     border-top-right-radius: 8px;
@@ -5918,6 +5918,25 @@ const Styles = styled.div `
     padding: 4.25px;
     display: flex;
     justify-content: space-between;
+}
+
+.homepage-body-inner-header-option-dropdown-option-35-search-container-left {
+    width: 15%;
+    height: 2rem;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-body-inner-header-option-dropdown-option-35-search-container-left img {
+
+}
+
+.homepage-body-inner-header-option-dropdown-option-35-search-container-right {
+    width: 85%;
+    height: 2rem;
+    border: 1px solid black;
 }
 
 .homepage-body-inner-header-option-dropdown-option-35-search-container input {
@@ -11354,7 +11373,12 @@ export default class LandingPg extends Component {
                                     </div>
                                     <div className={`homepage-body-inner-header-option-dropdown-option-35 ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
                                         <div className='homepage-body-inner-header-option-dropdown-option-35-search-container'>
-                                            <input/>
+                                            <div className='homepage-body-inner-header-option-dropdown-option-35-search-container-left'>
+
+                                            </div>
+                                            <div className='homepage-body-inner-header-option-dropdown-option-35-search-container-right'>
+                                                {/* <input/> */}
+                                            </div>
                                         </div>
                                         <div className='homepage-body-inner-header-option-dropdown-option-35-brands'>
                                             {this.state.brandOptions.map((brand) => (
