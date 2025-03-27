@@ -5912,7 +5912,7 @@ const Styles = styled.div `
     position: sticky;
     // height: 1.5rem;
     border-bottom: 1px solid #ccc;
-    border: 1px solid black;
+    // border: 1px solid black;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
     padding: 4.25px;
@@ -5924,7 +5924,8 @@ const Styles = styled.div `
 .homepage-body-inner-header-option-dropdown-option-35-search-container-left {
     width: 13%;
     height: 2rem;
-    border: 1px solid black;
+    border: 1px solid #ccc;
+    border-right: 1px solid transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -5939,15 +5940,19 @@ const Styles = styled.div `
 .homepage-body-inner-header-option-dropdown-option-35-search-container-right {
     width: 87%;
     height: 2rem;
-    border: 1px solid black;
+    border: 1px solid #ccc;
+    border-left: 1px solid transparent;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
 
 .homepage-body-inner-header-option-dropdown-option-35-search-container input {
     height: 1.5rem;
-    padding-left: 3.5px;
     padding-right: 3.5px;
+    font-family: poppins;
 }
 
 .homepage-body-inner-header-option-dropdown-option-35-brands {
@@ -11382,7 +11387,7 @@ export default class LandingPg extends Component {
                                                 <img src='/assets/icons/navbar/search-icon.png'/>
                                             </div>
                                             <div className='homepage-body-inner-header-option-dropdown-option-35-search-container-right'>
-                                                {/* <input/> */}
+                                                <input/>
                                             </div>
                                         </div>
                                         <div className='homepage-body-inner-header-option-dropdown-option-35-brands'>
