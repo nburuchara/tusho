@@ -5967,6 +5967,11 @@ const Styles = styled.div `
     border-bottom-left-radius: 8px;
 }
 
+.homepage-body-inner-header-option-dropdown-option-35-brands-highlight {
+    color: #ff5733;
+    font-weight: bold;
+}
+
 .homepage-body-inner-header-option-dropdown-option-4 {
     width: 20.35rem;
     border: 1px solid white;
@@ -6538,6 +6543,7 @@ export default class LandingPg extends Component {
             priceOptions: ["All", 500, 1000, 1500], // Example price thresholds
             ratingOptions: ["All", 2, 3, 4, 5], // Example minimum ratings
             brandOptions: ["All", 'Ajab', 'Amaize', 'Daima', 'Kabras', 'Weetabix', 'Mount Kenya', 'Rina', 'Sunlight', 'Soko', 'Toilex', 'Ketepa Pride', 'Everfresh', 'Raha Havagara', 'Velvex', 'Festive', 'Peptang', 'Poshy', 'Exe', 'Coca Cola', 'Vaseline', 'Toss', 'Molfix', 'Blueband', 'Geisha', 'Mumias', 'Tropical Heat', 'Brookside', 'Prestige', 'Daawat', 'Santa Lucia', 'Santa Maria', 'MacCoffee', 'McVites', 'Downy', 'Royco', 'Kericho Gold', 'Kings', 'Sunrice', 'Msafi', 'Delmonte', 'Green Forest', 'Nivea', 'Amara', 'Butter Fly', 'Amana', 'Kara', 'Morning Fresh', 'Rinsun', 'Pick \'n\' Peel', 'Caprice', 'Mosoro', 'Boito Delights', 'Pynol', 'Pearl', 'Dove', 'Mlango Farm', 'Kenchic', 'Grounded', 'Nyumbani Greens', 'Rascals', 'Victory Farms', 'Times Bakers', 'Karunguru', 'FunKe Science', 'Highland Castle Farms', 'South Lemon', 'Grounded Baby', 'Booch', 'Jars of Goodness', 'StewsDay', 'Sirimon Cheese', 'Sweetunda', 'WHB', 'Bree\'s Bees Honey', 'Zaifa', 'Savory Leans', 'Kenbeef', 'Afia', 'Over a Drink', 'Global Tilapia', 'Cherubet Foods', 'KROM Rice', 'Serene', 'Flavour Infusion', 'Clavel Flowers', 'Moyo', 'Harmony', 'Godson Organics', 'JollyFill', 'Sumz', 'Clovers', 'Tiba Asili', 'Taliana Foods', 'Blaze', 'VP Foods', 'Royal County Farms', 'Bogani', 'Softcare', 'Hanan', 'Dormans', 'Safisha', 'Celine', 'Garnier', 'Bio', 'Keystone Dental Clinic', 'Adam\'s Harvest', 'Kijani', 'CoffeBee Nemrys', 'Farmer\'s Choice', 'Temmis', 'Royal Care', 'Fresh Bundles', 'Dabur Herbal', '10 Seeds', 'Delish & Nutri', 'Kids Stem & Robotics Toys KE', 'Piquant Spices', 'Sk8City', 'Mugunda Foods', 'KenMeat', 'Brew It', 'The Flower Factory', 'Laki Laki', 'Flora Nuts', 'Time Scent Classy Store', 'Chika Chika', 'ORS Olive Oil', 'Huggies', 'Neil & Co.', 'NIP NAP', 'TuShop Fresh', 'Mountain Juice', 'Ololo Farm', 'KMC', 'Mayers', 'Spring Valley', 'BabyBump'], // Example minimum ratings
+            brandSearchTerm: '',
             homepageProductsCurrentFilter: 0,
             homepagePrdouctsFilter1: false,
             homepagePrdouctsFilter2: false,
@@ -8114,6 +8120,10 @@ export default class LandingPg extends Component {
 
     toggleDial = () => {
         this.setState((prevState) => ({ shopPamojaActive: !prevState.shopPamojaActive }));
+    };
+
+    handleBrandSearch = (event) => {
+        this.setState({ brandSearchTerm: event.target.value });
     };
 
     render () {
@@ -11392,20 +11402,52 @@ export default class LandingPg extends Component {
                                             </div>
                                             <div className='homepage-body-inner-header-option-dropdown-option-35-search-container-right'>
                                                 <input
-                                                placeholder='Search for a brand...'
+                                                type="text"
+                                                placeholder="Search for a brand..."
+                                                value={this.state.brandSearchTerm}
+                                                onChange={this.handleBrandSearch}
                                                 />
                                             </div>
                                         </div>
                                         <div className='homepage-body-inner-header-option-dropdown-option-35-brands'>
-                                            {this.state.brandOptions.map((brand) => (
-                                                <div 
-                                                    key={brand}
-                                                    className={`homepage-body-inner-header-option-dropdown-filter-option ${this.state.selectedFilters.brand === brand ? 'selected' : ''}`}
-                                                    onClick={() => this.mainPageProductsHandleFilterChange("brand", brand)}
-                                                >
-                                                    <label>{brand === "All" ? "All Brands" : `${brand}`}</label>
-                                                </div>
-                                            ))}
+                                            {this.state.brandOptions
+                                            .filter((brand) => brand.toLowerCase().includes(this.state.brandSearchTerm.toLowerCase())) // Filter brands
+                                            .map((brand) => {
+                                                const { brandSearchTerm } = this.state;
+                                                const lowerBrand = brand.toLowerCase();
+                                                const lowerSearchTerm = brandSearchTerm.toLowerCase();
+                                                const matchIndex = lowerBrand.indexOf(lowerSearchTerm);
+
+                                                if (matchIndex === -1) {
+                                                    return (
+                                                        <div
+                                                            key={brand}
+                                                            className={`homepage-body-inner-header-option-dropdown-filter-option ${this.state.selectedFilters.brand === brand ? 'selected' : ''}`}
+                                                            onClick={() => this.mainPageProductsHandleFilterChange("brand", brand)}
+                                                        >
+                                                            <label>{brand === "All" ? "All Brands" : brand}</label>
+                                                        </div>
+                                                    );
+                                                }
+
+                                                const beforeMatch = brand.substring(0, matchIndex);
+                                                const matchText = brand.substring(matchIndex, matchIndex + brandSearchTerm.length);
+                                                const afterMatch = brand.substring(matchIndex + brandSearchTerm.length);
+
+                                                return (
+                                                    <div
+                                                        key={brand}
+                                                        className={`homepage-body-inner-header-option-dropdown-filter-option ${this.state.selectedFilters.brand === brand ? 'selected' : ''}`}
+                                                        onClick={() => this.mainPageProductsHandleFilterChange("brand", brand)}
+                                                    >
+                                                        <label>
+                                                            {beforeMatch}
+                                                            <span className="homepage-body-inner-header-option-dropdown-option-35-brands-highlight">{matchText}</span>
+                                                            {afterMatch}
+                                                        </label>
+                                                    </div>
+                                                );
+                                            })}
                                         </div>
                                     </div>
                                 </div>

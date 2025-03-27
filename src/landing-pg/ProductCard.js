@@ -179,7 +179,7 @@ const Styles = styled.div `
     font-size: 1rem;
     font-family: poppins;
     font-weight: bold;
-    color: #20313a;
+    color: #5e626a;
     text-align: left;
     // margin-left: 0.5%;
     margin-top: 5px;
