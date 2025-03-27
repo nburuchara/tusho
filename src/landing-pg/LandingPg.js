@@ -5918,6 +5918,7 @@ const Styles = styled.div `
     padding: 4.25px;
     display: flex;
     justify-content: space-between;
+    border-radius: 8px;
 }
 
 .homepage-body-inner-header-option-dropdown-option-35-search-container-left {
@@ -5927,16 +5928,20 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .homepage-body-inner-header-option-dropdown-option-35-search-container-left img {
-
+    width: 15px;
 }
 
 .homepage-body-inner-header-option-dropdown-option-35-search-container-right {
     width: 87%;
     height: 2rem;
     border: 1px solid black;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 .homepage-body-inner-header-option-dropdown-option-35-search-container input {
@@ -11374,7 +11379,7 @@ export default class LandingPg extends Component {
                                     <div className={`homepage-body-inner-header-option-dropdown-option-35 ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
                                         <div className='homepage-body-inner-header-option-dropdown-option-35-search-container'>
                                             <div className='homepage-body-inner-header-option-dropdown-option-35-search-container-left'>
-
+                                                <img src='/assets/icons/navbar/search-icon.png'/>
                                             </div>
                                             <div className='homepage-body-inner-header-option-dropdown-option-35-search-container-right'>
                                                 {/* <input/> */}
