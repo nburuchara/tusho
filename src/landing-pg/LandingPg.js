@@ -6209,11 +6209,11 @@ export default class LandingPg extends Component {
 
             //* - USER ACCOUNT STATUS - *//
             userSignedIn: true,
-            showAccountInformation: false,
+            showAccountInformation: true,
             showJipangeSettings: false,
             showPamojaSettings: false,
             showDeliveryInfoSettings: false,
-            showFAQSettings: true,
+            showFAQSettings: false,
             showSettingsPageLoading: false,
 
             //* # Profile
@@ -6387,14 +6387,14 @@ export default class LandingPg extends Component {
             transferToProfile: false,
 
             //* - HOME SCREEN ACCOUNT SETTINGS - *//    
-            accountSettingsOpen: true,
+            accountSettingsOpen: false,
             currentMenuOption: 1,
             showAccountSetupIncompleteHeader: true,
-            accountMenuOption1Selected: false,
+            accountMenuOption1Selected: true,
             accountMenuOption2Selected: false,
             accountMenuOption3Selected: false,
             accountMenuOption4Selected: false,
-            accountMenuOption5Selected: true,
+            accountMenuOption5Selected: false,
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
             showNavbarDropdownOption1: false,
