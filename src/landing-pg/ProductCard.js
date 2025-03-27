@@ -377,7 +377,7 @@ class ProductCard extends Component {
                             </>
                         ) : (
                             <>
-                                <p className="product-price">Ksh. {product.price.toFixed(2)}</p>
+                                <p className="product-price">Ksh. <label style={{color: '#ff5733'}}>{product.price.toFixed(2)}</label></p>
                                 <h3 className="product-name">{product.name}</h3>
                                 <p className="product-rating"><span>★</span> ({product.rating})</p>
                             </>

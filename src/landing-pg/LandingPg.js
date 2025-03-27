@@ -11391,7 +11391,9 @@ export default class LandingPg extends Component {
                                                 <img src='/assets/icons/navbar/search-icon.png'/>
                                             </div>
                                             <div className='homepage-body-inner-header-option-dropdown-option-35-search-container-right'>
-                                                <input/>
+                                                <input
+                                                placeholder='Search for a brand...'
+                                                />
                                             </div>
                                         </div>
                                         <div className='homepage-body-inner-header-option-dropdown-option-35-brands'>
@@ -11405,7 +11407,6 @@ export default class LandingPg extends Component {
                                                 </div>
                                             ))}
                                         </div>
-                                       
                                     </div>
                                 </div>
                                 <div className="grocery-container">
