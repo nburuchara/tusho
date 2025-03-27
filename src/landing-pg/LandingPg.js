@@ -6548,7 +6548,7 @@ export default class LandingPg extends Component {
             homepagePrdouctsFilter1: false,
             homepagePrdouctsFilter2: false,
             homepagePrdouctsFilter3: false,
-            homepagePrdouctsFilter4: true,
+            homepagePrdouctsFilter4: false,
             homepagePrdouctsFilter5: false,
             homepageCurrentCategoryFilter: 'All Products',
             homepageCurrentPriceFilter: 'Price',
