@@ -5922,7 +5922,7 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-option-35-search-container-left {
-    width: 13%;
+    width: 10%;
     height: 2rem;
     border: 1px solid #ccc;
     border-right: 1px solid transparent;
@@ -5938,7 +5938,7 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-option-35-search-container-right {
-    width: 87%;
+    width: 90%;
     height: 2rem;
     border: 1px solid #ccc;
     border-left: 1px solid transparent;
@@ -5953,6 +5953,10 @@ const Styles = styled.div `
     height: 1.5rem;
     padding-right: 3.5px;
     font-family: poppins;
+    font-size: 80%;
+    width: 95%;
+    outline: none;
+    border: none;
 }
 
 .homepage-body-inner-header-option-dropdown-option-35-brands {
