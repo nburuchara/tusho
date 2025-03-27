@@ -5921,7 +5921,7 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-option-35-search-container-left {
-    width: 15%;
+    width: 13%;
     height: 2rem;
     border: 1px solid black;
     display: flex;
@@ -5934,7 +5934,7 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-option-35-search-container-right {
-    width: 85%;
+    width: 87%;
     height: 2rem;
     border: 1px solid black;
 }
