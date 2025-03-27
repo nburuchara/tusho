@@ -5911,18 +5911,23 @@ const Styles = styled.div `
 .homepage-body-inner-header-option-dropdown-option-35-search-container  {
     position: sticky;
     // height: 2rem;
-    // border: 1px solid black;
+    border-bottom: 1px solid #ccc;
+    border: 1px solid black;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
-    padding: 3px;
+    padding: 4.25px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .homepage-body-inner-header-option-dropdown-option-35-search-container input {
     height: 1.5rem;
+    padding-left: 3.5px;
+    padding-right: 3.5px;
 }
 
 .homepage-body-inner-header-option-dropdown-option-35-brands {
-    border: 1px solid black;
+    // border: 1px solid black;
     overflow-y: auto;
     flex-grow: 1;
     border-bottom-right-radius: 8px;
