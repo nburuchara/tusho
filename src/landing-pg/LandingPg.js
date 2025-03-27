@@ -5895,7 +5895,7 @@ const Styles = styled.div `
     padding: 0px;
     border-radius: 8px;
     background-color: white;
-    overflow-y: auto;
+    overflow: hidden;
     transform: translateY(-1.5rem);
     opacity: 0;
     transition-property: transform, opacity;
@@ -5909,15 +5909,24 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-dropdown-option-35-search-container  {
+    position: sticky;
     // height: 2rem;
-    border: 1px solid black;
+    // border: 1px solid black;
     border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
     padding: 3px;
 }
 
-.homepage-body-inner-header-option-dropdown-option-35-search-container  input {
+.homepage-body-inner-header-option-dropdown-option-35-search-container input {
     height: 1.5rem;
+}
+
+.homepage-body-inner-header-option-dropdown-option-35-brands {
+    border: 1px solid black;
+    overflow-y: auto;
+    flex-grow: 1;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .homepage-body-inner-header-option-dropdown-option-4 {
@@ -11342,15 +11351,18 @@ export default class LandingPg extends Component {
                                         <div className='homepage-body-inner-header-option-dropdown-option-35-search-container'>
                                             <input/>
                                         </div>
-                                        {this.state.brandOptions.map((brand) => (
-                                            <div 
-                                                key={brand}
-                                                className={`homepage-body-inner-header-option-dropdown-filter-option ${this.state.selectedFilters.brand === brand ? 'selected' : ''}`}
-                                                onClick={() => this.mainPageProductsHandleFilterChange("brand", brand)}
-                                            >
-                                                <label>{brand === "All" ? "All Brands" : `${brand}`}</label>
-                                            </div>
-                                        ))}
+                                        <div className='homepage-body-inner-header-option-dropdown-option-35-brands'>
+                                            {this.state.brandOptions.map((brand) => (
+                                                <div 
+                                                    key={brand}
+                                                    className={`homepage-body-inner-header-option-dropdown-filter-option ${this.state.selectedFilters.brand === brand ? 'selected' : ''}`}
+                                                    onClick={() => this.mainPageProductsHandleFilterChange("brand", brand)}
+                                                >
+                                                    <label>{brand === "All" ? "All Brands" : `${brand}`}</label>
+                                                </div>
+                                            ))}
+                                        </div>
+                                       
                                     </div>
                                 </div>
                                 <div className="grocery-container">
