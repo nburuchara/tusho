@@ -5908,6 +5908,18 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
 }
 
+.homepage-body-inner-header-option-dropdown-option-35-search-container  {
+    // height: 2rem;
+    border: 1px solid black;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 3px;
+}
+
+.homepage-body-inner-header-option-dropdown-option-35-search-container  input {
+    height: 1.5rem;
+}
+
 .homepage-body-inner-header-option-dropdown-option-4 {
     width: 20.35rem;
     border: 1px solid white;
@@ -6483,7 +6495,7 @@ export default class LandingPg extends Component {
             homepagePrdouctsFilter1: false,
             homepagePrdouctsFilter2: false,
             homepagePrdouctsFilter3: false,
-            homepagePrdouctsFilter4: false,
+            homepagePrdouctsFilter4: true,
             homepagePrdouctsFilter5: false,
             homepageCurrentCategoryFilter: 'All Products',
             homepageCurrentPriceFilter: 'Price',
@@ -11328,7 +11340,7 @@ export default class LandingPg extends Component {
                                     </div>
                                     <div className={`homepage-body-inner-header-option-dropdown-option-35 ${this.state.homepagePrdouctsFilter4 ? 'selected' : ''}`}>
                                         <div className='homepage-body-inner-header-option-dropdown-option-35-search-container'>
-
+                                            <input/>
                                         </div>
                                         {this.state.brandOptions.map((brand) => (
                                             <div 
