@@ -26,7 +26,7 @@ const Styles = styled.div `
     height: 1.25rem;
     width: 2rem;
     background-color: #d6e7f0;
-    border: 1px solid #20313a;
+    // border: 1px solid #20313a;
     border-radius: 20px;
     display: flex;
     flex-direction: row;
@@ -370,7 +370,12 @@ class ProductCard extends Component {
                     </div>
 
                     <div className="product-card-shop-pamoja">
+                        <div className="">
 
+                        </div>
+                        <div className="">
+
+                        </div>
                     </div>
                    
                     {product.qty > 0 && 
