@@ -34,20 +34,27 @@ const Styles = styled.div `
     border-radius: 20px;
     display: flex;
     flex-direction: row;
-    algin-items: center;
+    align-items: center;
     justify-content: center;
+    cursor: pointer;
+    transition: transform 0.35s ease-in-out;
+}
+
+.product-card-shop-pamoja:hover {
+    border: 1px solid #24668a;
+    transform: scale(1.05);
 }
 
 .product-card-shop-pamoja img {
     width: 15px;
     height: 15px;
-    margin-top: 2px;
+    // margin-top: 2px;
 }
 
 .product-card-shop-pamoja p {
-    margin-top: 1px;
+    margin-top: 0px;
     margin-bottom: 0px;
-    margin-left: 4px;
+    margin-left: 5px;
     font-family: poppins;
     font-weight: bold;
     font-size: 75%;
