@@ -529,7 +529,8 @@ class ProductCard extends Component {
 
     handleJipangeMenuClicked = () => {
         this.setState((prevState) => ({
-            showJipangeMenu: !prevState.showJipangeMenu
+            showJipangeMenu: !prevState.showJipangeMenu,
+            showShopPamojaPopout: false
         }))
     }
 
