@@ -42,7 +42,7 @@ const Styles = styled.div `
 
 .product-card-shop-pamoja:hover {
     border: 1px solid #24668a;
-    transform: scale(1.05);
+    transform: scale(1.025);
 }
 
 .product-card-shop-pamoja img {
