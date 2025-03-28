@@ -523,12 +523,19 @@ class ProductCard extends Component {
         super(props)
         this.state = {
             showJipangeMenu: false,
+            showShopPamojaPopout: false
         }
     }
 
     handleJipangeMenuClicked = () => {
         this.setState((prevState) => ({
             showJipangeMenu: !prevState.showJipangeMenu
+        }))
+    }
+
+    displayShopPamojaPopout = () => {
+        this.setState((prevState) => ({
+            showShopPamojaPopout: !prevState.showShopPamojaPopout
         }))
     }
 
@@ -559,13 +566,13 @@ class ProductCard extends Component {
                     </div>
 
                     {product.pamojaCurrentTotal > 0 && (!this.state.showJipangeMenu || product.qty < 0) &&
-                        <div className="product-card-shop-pamoja">
+                        <div onClick={this.displayShopPamojaPopout} className="product-card-shop-pamoja">
                             <img src="/assets/icons/home-main-body/shop-pamoja-icon.png"/>
                             <p>{product.pamojaCurrentSelected}/{product.pamojaCurrentTotal}</p>
                         </div>
                     }
 
-                    <div className="product-card-shop-pamoja-details">
+                    <div className={`product-card-shop-pamoja-details ${this.state.showShopPamojaPopout ? 'selected' : ''}`}>
                         {product.pamojaCurrentTotal > 0 && 
                             <div className="product-card-shop-pamoja-details-inner-container">
                                 <h2>{product.pamojaCurrentTotal-product.pamojaCurrentSelected} <label>units left!</label></h2>
