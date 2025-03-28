@@ -71,6 +71,103 @@ const Styles = styled.div `
     border-radius: 8px;
 }
 
+.product-card-shop-pamoja-details h2 {
+    margin-top: 0.25rem;
+    margin-bottom: 0px;
+    text-align: left;
+    margin-left: 5%;
+    font-family: poppins;
+    // font-size: 95%;
+    color: #ff5733;
+}
+
+.product-card-shop-pamoja-details label {
+    color: #24668a;
+}
+
+.product-card-shop-pamoja-details p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 75%;
+    font-family: poppins;
+    color: #24668a;
+    margin-left: 5%;
+    margin-right: 5%;
+    text-align: left;
+}
+
+.product-card-shop-pamoja-details-inner-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    // border: 1px solid black;
+    border-radius: 8px;
+}
+
+.product-card-shop-pamoja-details-inner-container-footer {
+    position: absolute;
+    bottom: 0.6rem;
+    left: 5%;
+    width: 80%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-card-shop-pamoja-details-inner-container-footer-left {
+    width: 
+}
+
+.product-card-shop-pamoja-details-inner-container-footer-right {
+
+}
+
+.user-row {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-avatar {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-left: -12px; /* Overlapping effect */
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+  }
+  
+  /* Set the first avatar (left-most) on top */
+  .user-avatar:first-child {
+    z-index: 100;
+    margin-left: 0; /* Ensure it starts at the correct position */
+  }
+  
+  /* Decrease z-index for each following avatar */
+  .user-avatar:nth-child(2) { z-index: 99; }
+  .user-avatar:nth-child(3) { z-index: 98; }
+  .user-avatar:nth-child(4) { z-index: 97; }
+  .user-avatar:nth-child(5) { z-index: 96; }
+  
+  /* Extra users placeholder */
+  .extra-users {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: #333;
+    margin-left: 0px;
+    font-family: poppins;
+    position: relative;
+    z-index: 1; /* Ensure it stays behind */
+  }
+
 .product-card-inner-jipange-menu {
     position: absolute;
     top: 0.5rem;
@@ -417,12 +514,12 @@ class ProductCard extends Component {
                                 />
                             </div>
                             <div className="product-card-inner-jipange-menu-option-name">
-                                <p>Mar. 21</p>
+                                <p>Apr. 18</p>
                             </div>
                         </div>
                     </div>
 
-                    {product.pamojaCurrentTotal && product.pamojaCurrentTotal > 1 && (!this.state.showJipangeMenu || product.qty < 0) &&
+                    {product.pamojaCurrentTotal > 0 && (!this.state.showJipangeMenu || product.qty < 0) &&
                         <div className="product-card-shop-pamoja">
                             <img src="/assets/icons/home-main-body/shop-pamoja-icon.png"/>
                             <p>{product.pamojaCurrentSelected}/{product.pamojaCurrentTotal}</p>
@@ -430,7 +527,26 @@ class ProductCard extends Component {
                     }
 
                     <div className="product-card-shop-pamoja-details">
+                        {product.pamojaCurrentTotal > 0 && 
+                            <div className="product-card-shop-pamoja-details-inner-container">
+                                <h2>{product.pamojaCurrentTotal-product.pamojaCurrentSelected} <label>units left.</label></h2>
+                                <p>Get discounts by joining in on a bulk order.</p>
+                                <div className="product-card-shop-pamoja-details-inner-container-footer">
+                                    <div className="product-card-shop-pamoja-details-inner-container-footer-left">
 
+                                    </div>
+                                    <div className="product-card-shop-pamoja-details-inner-container-footer-right">
+                                        <div class="user-row">
+                                            <img src="https://i.pravatar.cc/100?img=1" alt="User 1" class="user-avatar"/>
+                                            <img src="https://i.pravatar.cc/100?img=2" alt="User 2" class="user-avatar"/>
+                                            <img src="https://i.pravatar.cc/100?img=3" alt="User 3" class="user-avatar"/>
+                                            <img src="https://i.pravatar.cc/100?img=4" alt="User 4" class="user-avatar"/>
+                                            <div class="extra-users">+{product.pamojaCurrentSelected - 4}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
                     </div>
                    
                     {product.qty > 0 && 
