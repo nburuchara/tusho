@@ -5918,7 +5918,6 @@ const Styles = styled.div `
     padding: 4.25px;
     display: flex;
     justify-content: space-between;
-    border-radius: 8px;
 }
 
 .homepage-body-inner-header-option-dropdown-option-35-search-container-left {

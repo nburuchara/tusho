@@ -334,7 +334,7 @@ const Styles = styled.div `
     width: 50%;
     // border: 1px solid black;
     padding: 8px;
-    color: #000;
+    color: #5e626a;
 }
 
 .add-to-cart-non-empty-increase {
@@ -396,7 +396,7 @@ class ProductCard extends Component {
                         </div>
                     </div>
 
-                    {product.pamojaCurrentTotal && product.pamojaCurrentTotal > 1 && 
+                    {product.pamojaCurrentTotal && product.pamojaCurrentTotal > 1 && (!this.state.showJipangeMenu || product.qty < 0) &&
                         <div className="product-card-shop-pamoja">
                             <img src="/assets/icons/home-main-body/shop-pamoja-icon.png"/>
                             <p>{product.pamojaCurrentSelected}/{product.pamojaCurrentTotal}</p>
