@@ -61,6 +61,16 @@ const Styles = styled.div `
     color: #24668a;
 }
 
+.product-card-shop-pamoja-details {
+    position: absolute;
+    top: 2.45rem;
+    left: 0.5rem;
+    height: 35%;
+    width: 88%;
+    background-color: #d6e7f0;
+    border-radius: 8px;
+}
+
 .product-card-inner-jipange-menu {
     position: absolute;
     top: 0.5rem;
@@ -220,6 +230,7 @@ const Styles = styled.div `
 .product-price-container {
     display: flex;
     justify-content: space-between;
+
 }
 
 .product-price {
@@ -235,8 +246,12 @@ const Styles = styled.div `
 
 .product-discount-price {
     font-weight: normal;
-    margin-top: 0px;
+    font-size: 90%;
+    margin-top: 5px;
     margin-bottom: 0px;
+    font-family: poppins;
+    color: #24668a;
+    text-decoration: line-through;
 }
 
 .product-rating {
@@ -413,6 +428,10 @@ class ProductCard extends Component {
                             <p>{product.pamojaCurrentSelected}/{product.pamojaCurrentTotal}</p>
                         </div>
                     }
+
+                    <div className="product-card-shop-pamoja-details">
+
+                    </div>
                    
                     {product.qty > 0 && 
                         <div onClick={this.handleJipangeMenuClicked} className="product-card-inner-margin">
@@ -439,7 +458,7 @@ class ProductCard extends Component {
                             <>
                                 <div className="product-price-container">
                                     <p className="product-price">Ksh. <label style={{color: '#ff5733'}}>{product.price.toFixed(2)}</label></p>
-                                    {product.discountPrice ? (<h5 className="product-discount-price"></h5>) : (null)}
+                                    {product.prevPrice ? (<h5 className="product-discount-price">{product.prevPrice}.00</h5>) : (null)}
                                 </div>
                                 <h3 className="product-name">{product.name}</h3>
                                 <p className="product-rating"><span>★</span> ({product.rating})</p>
