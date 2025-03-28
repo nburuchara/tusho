@@ -8513,7 +8513,7 @@ export default class LandingPg extends Component {
                                         </div>
                                         <div className="navbar-options-checkout-home-item-cell-details">
                                             <p>{item.name}</p>
-                                            {item.jipangeSelected ? (<button><h5><span>✓ </span>Jipange: {item.jipangeDate}</h5></button>): null}
+                                            {item.jipangeSelected ? (<button><h5><span>◉ </span>Jipange: {item.jipangeDate}</h5></button>): null}
                                         </div>
                                         <div className="navbar-options-checkout-home-item-cell-qty">
                                             <div className="navbar-options-checkout-home-item-cell-qty-toggle">

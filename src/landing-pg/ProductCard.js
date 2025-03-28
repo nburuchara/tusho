@@ -45,6 +45,10 @@ const Styles = styled.div `
     transform: scale(1.025);
 }
 
+.product-card-shop-pamoja.selected {
+    border: 1px solid #24668a;
+}
+
 .product-card-shop-pamoja img {
     width: 15px;
     height: 15px;
@@ -568,14 +572,14 @@ class ProductCard extends Component {
                         </div>
                     </div>
 
-                    {product.pamojaCurrentTotal > 0 && (!this.state.showJipangeMenu || product.qty < 0) &&
-                        <div onClick={this.displayShopPamojaPopout} className="product-card-shop-pamoja">
+                    {(product.pamojaCurrentTotal > 0 && (!this.state.showJipangeMenu || product.qty < 0) && !productsLoading) &&
+                        <div onClick={this.displayShopPamojaPopout} className={`product-card-shop-pamoja ${this.state.showShopPamojaPopout ? 'selected' : ''}`}>
                             <img src="/assets/icons/home-main-body/shop-pamoja-icon.png"/>
                             <p>{product.pamojaCurrentSelected}/{product.pamojaCurrentTotal}</p>
                         </div>
                     }
 
-                    <div className={`product-card-shop-pamoja-details ${this.state.showShopPamojaPopout ? 'selected' : ''}`}>
+                    <div className={`product-card-shop-pamoja-details ${this.state.showShopPamojaPopout && !productsLoading ? 'selected' : ''}`}>
                         {product.pamojaCurrentTotal > 0 && 
                             <div className="product-card-shop-pamoja-details-inner-container">
                                 <h2>{product.pamojaCurrentTotal-product.pamojaCurrentSelected} <label>units left!</label></h2>
