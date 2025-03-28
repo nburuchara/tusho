@@ -166,12 +166,14 @@ const Styles = styled.div `
   }
   
   .user-avatar {
-    width: 20px;
-    height: 20px;
+    width: 12.5px;
+    height: 12.5px;
+    padding: 3px;
+    background-color: #ff5733;
     border-radius: 50%;
     border: 2px solid white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin-left: -12px; /* Overlapping effect */
+    margin-left: -9.5px; /* Overlapping effect */
     transition: transform 0.3s ease-in-out;
     position: relative;
   }
@@ -584,10 +586,10 @@ class ProductCard extends Component {
                                     </div>
                                     <div className="product-card-shop-pamoja-details-inner-container-footer-right">
                                         <div class="user-row">
-                                            <img src="https://i.pravatar.cc/100?img=1" alt="User 1" class="user-avatar"/>
-                                            <img src="https://i.pravatar.cc/100?img=2" alt="User 2" class="user-avatar"/>
-                                            <img src="https://i.pravatar.cc/100?img=3" alt="User 3" class="user-avatar"/>
-                                            <img src="https://i.pravatar.cc/100?img=4" alt="User 4" class="user-avatar"/>
+                                            <img src="/assets/icons/home-main-body/profile-icon.png" alt="User 1" class="user-avatar"/>
+                                            <img src="/assets/icons/home-main-body/profile-icon.png" alt="User 2" class="user-avatar"/>
+                                            <img src="/assets/icons/home-main-body/profile-icon.png" alt="User 3" class="user-avatar"/>
+                                            <img src="/assets/icons/home-main-body/profile-icon.png" alt="User 4" class="user-avatar"/>
                                             <div class="extra-users">+{product.pamojaCurrentSelected - 4}</div>
                                         </div>
                                     </div>
