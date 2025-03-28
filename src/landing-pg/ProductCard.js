@@ -353,6 +353,10 @@ class ProductCard extends Component {
                             </div>
                         </div>
                     </div>
+
+                    <div>
+
+                    </div>
                    
                     {product.qty > 0 && 
                         <div onClick={this.handleJipangeMenuClicked} className="product-card-inner-margin">
