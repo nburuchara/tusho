@@ -24,7 +24,11 @@ const Styles = styled.div `
     top: 0.5rem;
     left: 0.5rem;
     height: 1.25rem;
-    width: 2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+    width: auto;
     background-color: #d6e7f0;
     // border: 1px solid #20313a;
     border-radius: 20px;
@@ -32,6 +36,22 @@ const Styles = styled.div `
     flex-direction: row;
     algin-items: center;
     justify-content: center;
+}
+
+.product-card-shop-pamoja img {
+    width: 15px;
+    height: 15px;
+    margin-top: 2px;
+}
+
+.product-card-shop-pamoja p {
+    margin-top: 1px;
+    margin-bottom: 0px;
+    margin-left: 4px;
+    font-family: poppins;
+    font-weight: bold;
+    font-size: 75%;
+    color: #24668a;
 }
 
 .product-card-inner-jipange-menu {
@@ -369,14 +389,12 @@ class ProductCard extends Component {
                         </div>
                     </div>
 
-                    <div className="product-card-shop-pamoja">
-                        <div className="">
-
+                    {product.pamojaCurrentTotal && product.pamojaCurrentTotal > 1 && 
+                        <div className="product-card-shop-pamoja">
+                            <img src="/assets/icons/home-main-body/shop-pamoja-icon.png"/>
+                            <p>{product.pamojaCurrentSelected}/{product.pamojaCurrentTotal}</p>
                         </div>
-                        <div className="">
-
-                        </div>
-                    </div>
+                    }
                    
                     {product.qty > 0 && 
                         <div onClick={this.handleJipangeMenuClicked} className="product-card-inner-margin">
