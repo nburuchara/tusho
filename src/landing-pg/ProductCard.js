@@ -19,6 +19,21 @@ const Styles = styled.div `
     overflow: hidden;
 }
 
+.product-card-shop-pamoja {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    height: 1.25rem;
+    width: 2rem;
+    background-color: #d6e7f0;
+    border: 1px solid #20313a;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    algin-items: center;
+    justify-content: center;
+}
+
 .product-card-inner-jipange-menu {
     position: absolute;
     top: 0.5rem;
@@ -354,7 +369,7 @@ class ProductCard extends Component {
                         </div>
                     </div>
 
-                    <div>
+                    <div className="product-card-shop-pamoja">
 
                     </div>
                    
