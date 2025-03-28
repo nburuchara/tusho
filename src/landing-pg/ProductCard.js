@@ -439,7 +439,7 @@ class ProductCard extends Component {
                             <>
                                 <div className="product-price-container">
                                     <p className="product-price">Ksh. <label style={{color: '#ff5733'}}>{product.price.toFixed(2)}</label></p>
-                                    <h5 className="product-discount-price"></h5>
+                                    {product.discountPrice ? (<h5 className="product-discount-price"></h5>) : (null)}
                                 </div>
                                 <h3 className="product-name">{product.name}</h3>
                                 <p className="product-rating"><span>★</span> ({product.rating})</p>
