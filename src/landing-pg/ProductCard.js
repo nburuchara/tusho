@@ -572,12 +572,17 @@ class ProductCard extends Component {
                         </div>
                     </div>
 
-                    {(product.pamojaCurrentTotal > 0 && (!this.state.showJipangeMenu || product.qty < 0) && !productsLoading) &&
+                    {(product.pamojaCurrentTotal > 0 && (!this.state.showJipangeMenu || product.qty < 0) && !productsLoading) ? (
                         <div onClick={this.displayShopPamojaPopout} className={`product-card-shop-pamoja ${this.state.showShopPamojaPopout ? 'selected' : ''}`}>
                             <img src="/assets/icons/home-main-body/shop-pamoja-icon.png"/>
                             <p>{product.pamojaCurrentSelected}/{product.pamojaCurrentTotal}</p>
                         </div>
-                    }
+                    ) : ((!this.state.showJipangeMenu || product.qty < 0) && !productsLoading) ? (
+                        <div onClick={this.displayShopPamojaPopout} className={`product-card-shop-pamoja ${this.state.showShopPamojaPopout ? 'selected' : ''}`}>
+                            <img src="/assets/icons/home-main-body/shop-pamoja-icon.png"/>
+                            <p>+</p>
+                        </div>
+                    ) : null}
 
                     <div className={`product-card-shop-pamoja-details ${this.state.showShopPamojaPopout && !productsLoading ? 'selected' : ''}`}>
                         {product.pamojaCurrentTotal > 0 && 
