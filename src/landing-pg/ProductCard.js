@@ -69,6 +69,12 @@ const Styles = styled.div `
     width: 88%;
     background-color: #d6e7f0;
     border-radius: 8px;
+    transform: translateX(-110%); 
+    transition: transform 0.35s ease-in-out;
+}
+
+.product-card-shop-pamoja-details.selected {
+    transform: translateX(0);
 }
 
 .product-card-shop-pamoja-details h2 {
@@ -108,18 +114,50 @@ const Styles = styled.div `
     position: absolute;
     bottom: 0.6rem;
     left: 5%;
-    width: 80%;
-    border: 1px solid black;
+    width: 90%;
+    // border: 1px solid black;
     display: flex;
     justify-content: space-between;
 }
 
 .product-card-shop-pamoja-details-inner-container-footer-left {
-    width: 
+    width: 50%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 2px;
+}
+
+.product-card-shop-pamoja-details-inner-container-footer-left p { 
+    margin-left: 0px;
+    font-size: 65%;
+    cursor: pointer;
+}
+
+.product-card-shop-pamoja-details-inner-container-footer-left p:hover {
+    text-decoration: underline;
+}   
+
+.product-card-shop-pamoja-details-inner-container-footer-left p:hover + span {
+    transform: translateX(3px); /* Move span 5px to the right */
+}
+
+.product-card-shop-pamoja-details-inner-container-footer-left span { 
+    margin-left: 0px;
+    margin-top: 1px;
+    font-size: 70%;
+    color: #24668a;
+    display: inline-block; /* Ensures transform works properly */
+    transition: transform 0.3s ease-in-out;
 }
 
 .product-card-shop-pamoja-details-inner-container-footer-right {
-
+    width: 50%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: right;
 }
 
 .user-row {
@@ -161,9 +199,10 @@ const Styles = styled.div `
     justify-content: center;
     font-size: 10px;
     font-weight: bold;
-    color: #333;
+    color: #24668a;
     margin-left: 0px;
     font-family: poppins;
+    font-weight: bold;
     position: relative;
     z-index: 1; /* Ensure it stays behind */
   }
@@ -529,11 +568,11 @@ class ProductCard extends Component {
                     <div className="product-card-shop-pamoja-details">
                         {product.pamojaCurrentTotal > 0 && 
                             <div className="product-card-shop-pamoja-details-inner-container">
-                                <h2>{product.pamojaCurrentTotal-product.pamojaCurrentSelected} <label>units left.</label></h2>
+                                <h2>{product.pamojaCurrentTotal-product.pamojaCurrentSelected} <label>units left!</label></h2>
                                 <p>Get discounts by joining in on a bulk order.</p>
                                 <div className="product-card-shop-pamoja-details-inner-container-footer">
                                     <div className="product-card-shop-pamoja-details-inner-container-footer-left">
-
+                                        <p>Learn more</p><span>➞</span>
                                     </div>
                                     <div className="product-card-shop-pamoja-details-inner-container-footer-right">
                                         <div class="user-row">
