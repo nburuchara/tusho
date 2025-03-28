@@ -217,6 +217,11 @@ const Styles = styled.div `
     color: #5e626a;
 }
 
+.product-price-container {
+    display: flex;
+    justify-content: space-between;
+}
+
 .product-price {
     font-size: 1rem;
     font-family: poppins;
@@ -225,6 +230,12 @@ const Styles = styled.div `
     text-align: left;
     // margin-left: 0.5%;
     margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.product-discount-price {
+    font-weight: normal;
+    margin-top: 0px;
     margin-bottom: 0px;
 }
 
@@ -426,7 +437,10 @@ class ProductCard extends Component {
                             </>
                         ) : (
                             <>
-                                <p className="product-price">Ksh. <label style={{color: '#ff5733'}}>{product.price.toFixed(2)}</label></p>
+                                <div className="product-price-container">
+                                    <p className="product-price">Ksh. <label style={{color: '#ff5733'}}>{product.price.toFixed(2)}</label></p>
+                                    <h5 className="product-discount-price"></h5>
+                                </div>
                                 <h3 className="product-name">{product.name}</h3>
                                 <p className="product-rating"><span>★</span> ({product.rating})</p>
                             </>
