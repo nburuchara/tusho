@@ -605,6 +605,11 @@ class ProductCard extends Component {
                                 </div>
                             </div>
                         }
+                        {product.pamojaCurrentTotal === 0 &&
+                            <div className="product-card-shop-pamoja-details-inner-container">
+                                
+                            </div>
+                        }
                     </div>
                    
                     {product.qty > 0 && 
