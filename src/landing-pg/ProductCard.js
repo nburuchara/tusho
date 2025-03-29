@@ -114,6 +114,30 @@ const Styles = styled.div `
     border-radius: 8px;
 }
 
+.product-card-shop-pamoja-details-inner-container-expiry-container {
+    position: absolute;
+    top: -1.5rem;
+    right: 0;
+    width: 50%;
+    // border: 1px solid black;
+    height: 1.5rem;
+    background-color: #d6e7f0;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-card-shop-pamoja-details-inner-container-expiry-container-left {
+    width: 10%;
+    border: 1px solid black;
+}
+
+.product-card-shop-pamoja-details-inner-container-expiry-container-right {
+    width: 90%;
+    border: 1px solid black;
+}
+
 .product-card-shop-pamoja-details-inner-container-footer {
     position: absolute;
     bottom: 0.6rem;
@@ -585,8 +609,17 @@ class ProductCard extends Component {
                     ) : null}
 
                     <div className={`product-card-shop-pamoja-details ${this.state.showShopPamojaPopout && !productsLoading ? 'selected' : ''}`}>
+                        
                         {product.pamojaCurrentTotal > 0 && 
                             <div className="product-card-shop-pamoja-details-inner-container">
+                                <div className="product-card-shop-pamoja-details-inner-container-expiry-container">
+                                    <div className="product-card-shop-pamoja-details-inner-container-expiry-container-left">
+
+                                    </div>
+                                    <div className="product-card-shop-pamoja-details-inner-container-expiry-container-right">
+
+                                    </div>
+                                </div>
                                 <h2>{product.pamojaCurrentTotal-product.pamojaCurrentSelected} <label>units left!</label></h2>
                                 <p>Get discounts by joining in on a bulk order.</p>
                                 <div className="product-card-shop-pamoja-details-inner-container-footer">
@@ -607,7 +640,7 @@ class ProductCard extends Component {
                         }
                         {product.pamojaCurrentTotal === 0 &&
                             <div className="product-card-shop-pamoja-details-inner-container">
-                                
+
                             </div>
                         }
                     </div>
