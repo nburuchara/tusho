@@ -1358,7 +1358,7 @@ const Styles = styled.div `
 
 .navbar-options-checkout-home-header { 
     height: 82.5px; /* Fixed height for header */
-    // border-bottom: 1px solid #ccc;
+    border-bottom: 0.5px solid #24668a;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -1415,7 +1415,9 @@ const Styles = styled.div `
     flex-grow: 1; /* Takes remaining space between header and footer */
     overflow-y: auto; /* Enables scrolling if content overflows */
     // padding: 16px; /* Optional: Adds padding around the content */
-    // border: 1px solid black;
+    border-bottom: 0.5px solid #24668a;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 .navbar-options-checkout-home-body-empty-cart {
