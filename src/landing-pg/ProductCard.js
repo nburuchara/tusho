@@ -118,7 +118,7 @@ const Styles = styled.div `
     position: absolute;
     top: -1.5rem;
     right: 0;
-    width: 50%;
+    width: 60%;
     // border: 1px solid black;
     height: 1.5rem;
     background-color: #d6e7f0;
@@ -129,13 +129,20 @@ const Styles = styled.div `
 }
 
 .product-card-shop-pamoja-details-inner-container-expiry-container-left {
-    width: 10%;
-    border: 1px solid black;
+    width: 18%;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-card-shop-pamoja-details-inner-container-expiry-container-left img {
+    width: 12px;
 }
 
 .product-card-shop-pamoja-details-inner-container-expiry-container-right {
-    width: 90%;
-    border: 1px solid black;
+    width: 80%;
+    // border: 1px solid black;
 }
 
 .product-card-shop-pamoja-details-inner-container-footer {
@@ -553,9 +560,58 @@ class ProductCard extends Component {
         super(props)
         this.state = {
             showJipangeMenu: false,
-            showShopPamojaPopout: false
+            showShopPamojaPopout: false,
+            timeRemaining: this.calculateTimeRemaining()
         }
     }
+
+    componentDidMount() {
+        this.timer = setInterval(() => {
+            const newTime = this.calculateTimeRemaining();
+            if (newTime) {
+                this.setState({ timeRemaining: newTime });
+            } else {
+                clearInterval(this.timer); // Stop countdown if expired
+            }
+        }, 1000);
+    }
+    
+    componentWillUnmount() {
+        clearInterval(this.timer); // Clean up when component unmounts
+    }
+
+    calculateTimeRemaining = () => {
+        const { pamojaExpiryDate, pamojaExpiryTime } = this.props.product;
+        
+        if (!pamojaExpiryDate || !pamojaExpiryTime) return null;
+    
+        // Convert '30/03/25' to 'YYYY-MM-DD' format
+        const [day, month, year] = pamojaExpiryDate.split('/');
+        const formattedDate = `20${year}-${month}-${day}`; // '2025-03-30'
+    
+        // Convert '4:30PM' to 24-hour format
+        const [time, modifier] = pamojaExpiryTime.split(/(AM|PM)/);
+        let [hours, minutes] = time.split(':').map(Number);
+        if (modifier === 'PM' && hours !== 12) hours += 12;
+        if (modifier === 'AM' && hours === 12) hours = 0;
+    
+        // Create the expiry date object
+        const expiryDate = new Date(`${formattedDate}T${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:00`);
+    
+        // Get current time and calculate difference
+        const now = new Date();
+        const difference = expiryDate - now;
+    
+        if (difference <= 0) return null; // Expired
+    
+        // Convert to hours, minutes, and seconds
+        const totalSeconds = Math.floor(difference / 1000);
+        const hoursLeft = Math.floor(totalSeconds / 3600);
+        const minutesLeft = Math.floor((totalSeconds % 3600) / 60);
+        const secondsLeft = totalSeconds % 60;
+    
+        return { hours: hoursLeft, minutes: minutesLeft, seconds: secondsLeft };
+    };
 
     handleJipangeMenuClicked = () => {
         this.setState((prevState) => ({
@@ -572,7 +628,7 @@ class ProductCard extends Component {
 
     render() {
         const { product, onQtyChange, onJipangeSelected, productsLoading, newlyLoadedProducts } = this.props;
-      
+        const { timeRemaining } = this.state;
 
         return (
             <Styles>
@@ -614,10 +670,16 @@ class ProductCard extends Component {
                             <div className="product-card-shop-pamoja-details-inner-container">
                                 <div className="product-card-shop-pamoja-details-inner-container-expiry-container">
                                     <div className="product-card-shop-pamoja-details-inner-container-expiry-container-left">
-
+                                        <img src="/assets/icons/home-main-body/shop-pamoja-countdown-icon.png"/>
                                     </div>
                                     <div className="product-card-shop-pamoja-details-inner-container-expiry-container-right">
-
+                                    {timeRemaining ? (
+                                        <div className="countdown-timer">
+                                            {`${timeRemaining.hours}H ${timeRemaining.minutes}M ${timeRemaining.seconds}S`}
+                                        </div>
+                                    ) : (
+                                        <p className="expired-text">Expired</p>
+                                    )}
                                     </div>
                                 </div>
                                 <h2>{product.pamojaCurrentTotal-product.pamojaCurrentSelected} <label>units left!</label></h2>

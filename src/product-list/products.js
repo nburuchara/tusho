@@ -58,6 +58,8 @@ const products = [
         pamoja: true,
         pamojaCurrentSelected: 9,
         pamojaCurrentTotal: 30,
+        pamojaExpiryDate: '30/03/25',
+        pamojaExpiryTime: '4:30PM',
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'Apr 18'
@@ -76,6 +78,8 @@ const products = [
         pamoja: true,
         pamojaCurrentSelected: 16,
         pamojaCurrentTotal: 20,
+        pamojaExpiryDate: '30/03/25',
+        pamojaExpiryTime: '5:00PM',
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'Apr 18'
@@ -155,6 +159,8 @@ const products = [
         pamoja: true,
         pamojaCurrentSelected: 12,
         pamojaCurrentTotal: 40,
+        pamojaExpiryDate: '30/03/25',
+        pamojaExpiryTime: '3:00PM',
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'Apr 18'
