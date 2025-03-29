@@ -120,7 +120,7 @@ const Styles = styled.div `
     right: 0;
     width: 55%;
     // border: 1px solid black;
-    height: 1.5rem;
+    height: 1.6rem;
     background-color: #d6e7f0;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
@@ -725,7 +725,7 @@ class ProductCard extends Component {
                         }
                         {product.pamojaCurrentTotal === 0 &&
                             <div className="product-card-shop-pamoja-details-inner-container">
-
+                                <div></div>
                             </div>
                         }
                     </div>
