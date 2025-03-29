@@ -114,6 +114,28 @@ const Styles = styled.div `
     border-radius: 8px;
 }
 
+.product-card-shop-pamoja-details-inner-container-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    border: 1px solid black;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.product-card-shop-pamoja-details-inner-container-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    border: 1px solid black;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
 .product-card-shop-pamoja-details-inner-container-expiry-container {
     position: absolute;
     top: -1.5rem;
@@ -723,9 +745,14 @@ class ProductCard extends Component {
                                 </div>
                             </div>
                         }
-                        {product.pamojaCurrentTotal === 0 &&
+                        {product.pamoja === false &&
                             <div className="product-card-shop-pamoja-details-inner-container">
-                                <div></div>
+                                <div className="product-card-shop-pamoja-details-inner-container-header">
+
+                                </div>
+                                <div className="product-card-shop-pamoja-details-inner-container-body">
+
+                                </div>
                             </div>
                         }
                     </div>

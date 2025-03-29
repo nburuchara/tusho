@@ -10,6 +10,8 @@ const products = [
         promo: true,
         qty: 0,
         pamoja: false,
+        pamojaCurrentSelected: 0,
+        pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'Apr 18'
@@ -25,6 +27,8 @@ const products = [
         promo: false,
         qty: 0,
         pamoja: false,
+        pamojaCurrentSelected: 0,
+        pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'Apr 18'
@@ -40,6 +44,8 @@ const products = [
         promo: false,
         qty: 0,
         pamoja: false,
+        pamojaCurrentSelected: 0,
+        pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'Apr 18'
@@ -96,6 +102,8 @@ const products = [
         promo: true,
         qty: 0,
         pamoja: false,
+        pamojaCurrentSelected: 0,
+        pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'Apr 18'
@@ -111,6 +119,8 @@ const products = [
         promo: false,
         qty: 0,
         pamoja: false,
+        pamojaCurrentSelected: 0,
+        pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'Apr 18'
@@ -126,6 +136,8 @@ const products = [
         promo: true,
         qty: 0,
         pamoja: false,
+        pamojaCurrentSelected: 0,
+        pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'Apr 18'
@@ -141,6 +153,8 @@ const products = [
         promo: true,
         qty: 0,
         pamoja: false,
+        pamojaCurrentSelected: 0,
+        pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'Apr 18'
@@ -157,6 +171,8 @@ const products = [
         promo: false,
         qty: 0,
         pamoja: true,
+        pamojaCurrentSelected: 0,
+        pamojaCurrentTotal: 0,
         pamojaCurrentSelected: 12,
         pamojaCurrentTotal: 40,
         pamojaExpiryDate: '30/03/25',
@@ -176,6 +192,8 @@ const products = [
         promo: false,
         qty: 0,
         pamoja: false,
+        pamojaCurrentSelected: 0,
+        pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'Apr 18'
@@ -191,6 +209,8 @@ const products = [
         promo: false,
         qty: 0,
         pamoja: false,
+        pamojaCurrentSelected: 0,
+        pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'Apr 18'
@@ -206,6 +226,8 @@ const products = [
         promo: false,
         qty: 0,
         pamoja: false,
+        pamojaCurrentSelected: 0,
+        pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'Apr 18'
