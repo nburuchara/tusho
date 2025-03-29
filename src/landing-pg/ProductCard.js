@@ -118,7 +118,7 @@ const Styles = styled.div `
     position: absolute;
     top: -1.5rem;
     right: 0;
-    width: 60%;
+    width: 55%;
     // border: 1px solid black;
     height: 1.5rem;
     background-color: #d6e7f0;
@@ -138,11 +138,34 @@ const Styles = styled.div `
 
 .product-card-shop-pamoja-details-inner-container-expiry-container-left img {
     width: 12px;
+    margin-left: 0.5rem;
 }
 
 .product-card-shop-pamoja-details-inner-container-expiry-container-right {
     width: 80%;
     // border: 1px solid black;
+}
+
+.product-card-shop-pamoja-details-inner-container-expiry-container-right p { 
+    margin-top: 1px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    font-family: poppins;
+    font-size: 70%;
+    color: #24668a;
+}
+
+.product-card-shop-pamoja-details-inner-container-expiry-container-right label { 
+    color: #ff5733;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    // border: 1px solid black;
+    height: 100%;
+    width: 100%;
 }
 
 .product-card-shop-pamoja-details-inner-container-footer {
@@ -675,7 +698,7 @@ class ProductCard extends Component {
                                     <div className="product-card-shop-pamoja-details-inner-container-expiry-container-right">
                                     {timeRemaining ? (
                                         <div className="countdown-timer">
-                                            {`${timeRemaining.hours}H ${timeRemaining.minutes}M ${timeRemaining.seconds}S`}
+                                            <p>{`${timeRemaining.hours}`}<label>H</label> {`${timeRemaining.minutes}`}<label>M</label> {`${timeRemaining.seconds}`}<label>S</label></p>
                                         </div>
                                     ) : (
                                         <p className="expired-text">Expired</p>
