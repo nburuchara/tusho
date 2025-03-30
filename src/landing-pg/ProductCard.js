@@ -162,6 +162,19 @@ const Styles = styled.div `
     // font-weight: normal;
 }
 
+.product-card-shop-pamoja-details-inner-container-body label {
+    cursor: pointer;
+}
+
+.product-card-shop-pamoja-details-inner-container-body label:hover {
+    text-decoration: underline;
+}
+
+.product-card-shop-pamoja-details-inner-container-body span {
+    font-size: 20%;
+    margin-left: 2.5px;
+}
+
 .product-card-shop-pamoja-details-inner-container-expiry-container {
     position: absolute;
     top: -1.5rem;
