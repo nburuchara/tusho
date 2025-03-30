@@ -5487,7 +5487,7 @@ const Styles = styled.div `
     // background-color: #fff2ccff;
     width: 99.75%;
     height: 99.8%;
-    border: 1px solid #ff5733;
+    // border: 1px solid #ff5733;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
     position: relative;
@@ -5608,7 +5608,7 @@ const Styles = styled.div `
     bottom: 0;
     width: 100%;
     height: 49%;
-    border: 1px solid white;
+    // border: 1px solid white;
     border-bottom-left-radius: 25px;
 }
 
