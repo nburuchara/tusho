@@ -118,20 +118,29 @@ const Styles = styled.div `
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 97.5%;
     height: 50%;
-    border: 1px solid black;
+    border: 2px solid #d6e7f0;
+    background-color: white;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+}
+
+.product-card-shop-pamoja-details-inner-container-header h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: poppins;
+    font-size: 100%;
+    color: #24668a;
 }
 
 .product-card-shop-pamoja-details-inner-container-body {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
-    height: 50%;
-    border: 1px solid black;
+    width: 99%;
+    height: 47%;
+    border: 1px solid #d6e7f0;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
@@ -748,7 +757,7 @@ class ProductCard extends Component {
                         {product.pamoja === false &&
                             <div className="product-card-shop-pamoja-details-inner-container">
                                 <div className="product-card-shop-pamoja-details-inner-container-header">
-
+                                    {/* <h3>Shop Pamoja for discounts</h3> */}
                                 </div>
                                 <div className="product-card-shop-pamoja-details-inner-container-body">
 
