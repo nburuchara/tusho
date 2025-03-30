@@ -5483,7 +5483,41 @@ const Styles = styled.div `
     position: relative;
 }
 
-.homepage-header-inner-body-poster-left h1 {
+.homepage-header-inner-body-poster-left-logged-in {
+    // background-color: #fff2ccff;
+    width: 99.75%;
+    height: 99.8%;
+    border: 1px solid #ff5733;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header {
+    height: 20%;
+    border-top-left-radius: 25px;
+    border: 1px solid white;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header h1 { 
+    margin-top: 1rem;
+    margin-left: 1rem;
+    text-align: left;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-decor {
+    position: absolute;
+    bottom: 0;
+    right: -1.5rem;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-decor img {
+    width: 180px;
+}
+
+.homepage-header-inner-body-poster-left-logged-out h1 {
     color: white;
     font-family: raleway;
     font-weight: bolder;
@@ -5493,7 +5527,7 @@ const Styles = styled.div `
     margin-bottom: 15px;
 }
 
-.homepage-header-inner-body-poster-left span {
+.homepage-header-inner-body-poster-left-logged-out span {
     text-decoration: underline;
     text-decoration-color: #FF5733;
     text-decoration-thickness: 5px;
@@ -5501,7 +5535,7 @@ const Styles = styled.div `
     text-underline-offset: 8px;
 }
 
-.homepage-header-inner-body-poster-left-subheading h3 {
+.homepage-header-inner-body-poster-left-logged-out-subheading h3 {
     color: white;
     font-family: raleway;
     font-weight: bolder;
@@ -5509,7 +5543,7 @@ const Styles = styled.div `
     margin-top: 6px;
 }
 
-.homepage-header-inner-body-poster-left-subheading span {
+.homepage-header-inner-body-poster-left-logged-out-subheading span {
     text-decoration: underline;
     text-decoration-color: #FF5733;
     text-decoration-thickness: 3px;
@@ -5517,7 +5551,7 @@ const Styles = styled.div `
     text-underline-offset: 8px;
 }
 
-.homepage-header-inner-body-poster-left-cta {
+.homepage-header-inner-body-poster-left-logged-out-cta {
     position: absolute;
     bottom: 1.5rem;
     left: 4%;
@@ -5529,7 +5563,7 @@ const Styles = styled.div `
     justify-content: left;
 }
 
-.homepage-header-inner-body-poster-left-cta-left {
+.homepage-header-inner-body-poster-left-logged-out-cta-left {
     width: 50%;
     height: 100%;
     display: flex;
@@ -5537,7 +5571,7 @@ const Styles = styled.div `
     justify-content: center;
 }
 
-.homepage-header-inner-body-poster-left-cta-left input {
+.homepage-header-inner-body-poster-left-logged-out-cta-left input {
     height: 45%;
     font-size: 13.5px;
     width: 100%;
@@ -5550,7 +5584,7 @@ const Styles = styled.div `
     border: 1px solid white;
 }
 
-.homepage-header-inner-body-poster-left-cta-right {
+.homepage-header-inner-body-poster-left-logged-out-cta-right {
     width: 50%;
     height: 100%;
     display: flex;
@@ -5558,7 +5592,7 @@ const Styles = styled.div `
     justify-content: right;
 }
 
-.homepage-header-inner-body-poster-left-cta-right button {
+.homepage-header-inner-body-poster-left-logged-out-cta-right button {
     background-color: #ff5733;
     border: 1px solid #ff5733;
     border-radius: 8px;
@@ -5573,7 +5607,7 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
-.homepage-header-inner-body-poster-left-cta-right button label {
+.homepage-header-inner-body-poster-left-logged-out-cta-right button label {
     text-decoration: underline;
     text-decoration-color: white;
     text-decoration-thickness: 1.65px;
@@ -5582,11 +5616,11 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
-.homepage-header-inner-body-poster-left-cta-right button:hover label {
+.homepage-header-inner-body-poster-left-logged-out-cta-right button:hover label {
     text-decoration-style: solid;
 }
 
-.homepage-header-inner-body-poster-left-cta-right button span {
+.homepage-header-inner-body-poster-left-logged-out-cta-right button span {
     // margin-left: 0px;
     position: absolute;
     right: 22.5%;
@@ -5594,17 +5628,17 @@ const Styles = styled.div `
     margin-top: 1px;
 }
 
-.homepage-header-inner-body-poster-left-cta-right button:hover span {
+.homepage-header-inner-body-poster-left-logged-out-cta-right button:hover span {
     right: 17.5%;
 }
 
-.homepage-header-inner-body-poster-left-decor {
+.homepage-header-inner-body-poster-left-logged-out-decor {
     position: absolute;
     bottom: 0;
     right: -1.5rem;
 }
 
-.homepage-header-inner-body-poster-left-decor img {
+.homepage-header-inner-body-poster-left-logged-out-decor img {
     width: 180px;
 }
 
@@ -11288,28 +11322,42 @@ export default class LandingPg extends Component {
                             <div className='homepage-header-inner-body'>
                                 <div className='homepage-header-inner-body-poster'>
                                     <div className='homepage-header-inner-body-poster-left'>
-                                        <h1>Save <span>up to 16%</span> on your weekly shopping from the comfort of home</h1>
-                                        <div className='homepage-header-inner-body-poster-left-subheading'>
-                                            <h3>The <span>very best</span> deals for your online grocery shopping</h3>
-                                        </div>
+                                        {this.state.userSignedIn ? (
+                                            <div className='homepage-header-inner-body-poster-left-logged-in'>
+                                                <div className='homepage-header-inner-body-poster-left-logged-in-header'>
 
-                                        <div className='homepage-header-inner-body-poster-left-cta'>
-                                            <div className='homepage-header-inner-body-poster-left-cta-left'>
-                                                <input
-                                                id='homepageRegisteringNumber'
-                                                placeholder='Enter your number'
-                                                value={this.state.homepageRegisteringNumber}
-                                                onChange={this.handleSearchStandardInput}
-                                                />
-                                            </div>
-                                            <div className='homepage-header-inner-body-poster-left-cta-right'>
-                                                <button><label>Sign Up</label> <span>→</span></button>
-                                            </div>
-                                        </div>
+                                                </div>
 
-                                        <div className='homepage-header-inner-body-poster-left-decor'>
-                                            <img src='/assets/icons/home-main-header/header-icon-1.png'/>
-                                        </div>
+                                                <div className='homepage-header-inner-body-poster-left-logged-out-decor'>
+                                                    <img src='/assets/icons/home-main-header/header-icon-1.png'/>
+                                                </div>
+                                            </div>
+                                        ) : (
+                                           <div className='homepage-header-inner-body-poster-left-logged-out'>
+                                                <h1>Save <span>up to 16%</span> on your weekly shopping from the comfort of home</h1>
+                                                <div className='homepage-header-inner-body-poster-left-logged-out-subheading'>
+                                                    <h3>The <span>very best</span> deals for your online grocery shopping</h3>
+                                                </div>
+
+                                                <div className='homepage-header-inner-body-poster-left-logged-out-cta'>
+                                                    <div className='homepage-header-inner-body-poster-left-logged-out-cta-left'>
+                                                        <input
+                                                        id='homepageRegisteringNumber'
+                                                        placeholder='Enter your number'
+                                                        value={this.state.homepageRegisteringNumber}
+                                                        onChange={this.handleSearchStandardInput}
+                                                        />
+                                                    </div>
+                                                    <div className='homepage-header-inner-body-poster-left-logged-out-cta-right'>
+                                                        <button><label>Sign Up</label> <span>→</span></button>
+                                                    </div>
+                                                </div>
+                                                <div className='homepage-header-inner-body-poster-left-logged-out-decor'>
+                                                    <img src='/assets/icons/home-main-header/header-icon-1.png'/>
+                                                </div>
+                                           </div>
+                                        )}
+                                        
                                     </div>
                                     <div className='homepage-header-inner-body-poster-right'>
                                         <div className='homepage-header-inner-body-poster-right-left-section'>
