@@ -69,7 +69,7 @@ const Styles = styled.div `
     position: absolute;
     top: 2.45rem;
     left: 0.5rem;
-    height: 35%;
+    height: 40%;
     width: 88%;
     background-color: #d6e7f0;
     border-radius: 8px;
@@ -121,9 +121,15 @@ const Styles = styled.div `
     width: 97.5%;
     height: 50%;
     border: 2px solid #d6e7f0;
-    background-color: white;
+    background-color: #ff5733;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    overflow: hidden;
+}
+
+.product-card-shop-pamoja-details-inner-container-header img { 
+    width: 58.5%;
+    margin-top: -0.75rem;
 }
 
 .product-card-shop-pamoja-details-inner-container-header h3 {
@@ -143,6 +149,16 @@ const Styles = styled.div `
     border: 1px solid #d6e7f0;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+}
+
+.product-card-shop-pamoja-details-inner-container-body h5 {
+    margin-top: 0.15rem;;
+    margin-right: 0.25rem;
+    margin-left: 0.25rem;
+    text-align: left;
+    color: #24668a;
+    font-family: poppins;
+    font-size: 70%;
 }
 
 .product-card-shop-pamoja-details-inner-container-expiry-container {
@@ -757,10 +773,10 @@ class ProductCard extends Component {
                         {product.pamoja === false &&
                             <div className="product-card-shop-pamoja-details-inner-container">
                                 <div className="product-card-shop-pamoja-details-inner-container-header">
-                                    {/* <h3>Shop Pamoja for discounts</h3> */}
+                                    <img src="/assets/images/home-main-body/shop-pamoja-header.webp"/>
                                 </div>
                                 <div className="product-card-shop-pamoja-details-inner-container-body">
-
+                                    <h5>Shop Pamoja to unlock discounts!</h5>
                                 </div>
                             </div>
                         }
