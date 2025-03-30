@@ -158,7 +158,8 @@ const Styles = styled.div `
     text-align: left;
     color: #24668a;
     font-family: poppins;
-    font-size: 70%;
+    font-size: 60%;
+    // font-weight: normal;
 }
 
 .product-card-shop-pamoja-details-inner-container-expiry-container {
@@ -776,7 +777,7 @@ class ProductCard extends Component {
                                     <img src="/assets/images/home-main-body/shop-pamoja-header.webp"/>
                                 </div>
                                 <div className="product-card-shop-pamoja-details-inner-container-body">
-                                    <h5>Shop Pamoja to unlock discounts!</h5>
+                                    <h5>Get discounts by making a bulk order with fellow shoppers. <label>Learn more <span>➞</span></label></h5>
                                 </div>
                             </div>
                         }
