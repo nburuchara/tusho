@@ -5498,30 +5498,36 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-left-logged-in-header {
     height: 30%;
     border-top-left-radius: 25px;
-    border: 1px solid white;
+    // border: 1px solid white;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body {
     flex-grow: 1;
     border-bottom-left-radius: 25px;
-    border: 1px solid white;
+    // border: 1px solid white;
     position: relative;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-header {
     height: 50%;
-    border: 1px solid #ff5733;
+    // border: 1px solid #ff5733;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #3aae49;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-title {
+    margin-left: 2rem;
+    color: white;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space {
-    width: 96%;
+    width: 100%;
     height: 90%;
-    overflow: hidden;
+    // overflow: hidden;
     border: 1px solid #3aae49;
-    border-radius: 8px;
+    // border-radius: 8px;
     background-color: #3aae49;
     position: relative;
     display: flex;
@@ -5548,42 +5554,42 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box:first-child h2 {
     position: absolute;
-    bottom: 1.45rem;
-    right: -0.2rem;
+    bottom: 1.65rem;
+    right: -0.8rem;
     margin-top: 0px;
     margin-bottom: 0px;
     color: white;
-    font-size: 35px;
+    font-size: 22.5px;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box:last-of-type {
     position: relative;
-    border: 1px solid white;
+    // border: 1px solid white;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box:last-of-type h3 {
     position: absolute;
-    bottom: 1.25rem;
-    left: 2.55rem;
+    bottom: 1.65rem;
+    left: 1.2rem;
     margin-top: 0px;
     margin-bottom: 0px;
     color: white;
-    font-size: 35px;
+    font-size: 22.5px;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box:last-of-type h2 {
     position: absolute;
-    bottom: 1.25rem;
-    right: 1.8rem;
+    bottom: 1.65rem;
+    right: 0.25rem;
     margin-top: 0px;
     margin-bottom: 0px;
     color: white;
-    font-size: 35px;
+    font-size: 22.5px;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-logo {
     position: absolute;
-    bottom: -1.1rem;
+    bottom: -1.45rem;
     right: 0.35rem;
     width: 60px;
     // border: 1px solid white;
@@ -5597,6 +5603,7 @@ const Styles = styled.div `
     width: 100%;
     height: 49%;
     border: 1px solid white;
+    border-bottom-left-radius: 25px;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header h1 { 
@@ -11430,6 +11437,7 @@ export default class LandingPg extends Component {
                                                 </div>
                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body'>
                                                     <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header'>
+                                                        <h3 className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-title'>Start saving for your child's future today.</h3>
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space'>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box'>
                                                                 <img src='/assets/images/home-main-body/saf-ad-letter-1.png'/>
@@ -11444,7 +11452,7 @@ export default class LandingPg extends Component {
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box'>
                                                                 <h3>h</h3>
                                                                 <img src='/assets/images/home-main-body/saf-ad-letter-4.png'/>
-                                                                <h2>re</h2>
+                                                                <h2>re.</h2>
                                                             </div>
                                                             <img className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-logo' src='/assets/images/home-main-body/saf-main-logo.png'/>
                                                         </div>
