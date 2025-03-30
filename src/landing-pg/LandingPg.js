@@ -5518,8 +5518,14 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-title {
+    width: 45%;
     margin-left: 2rem;
+    margin-top: 0.5rem;
     color: white;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-title label {
+    color: #d50a15;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space {
@@ -5555,7 +5561,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box:first-child h2 {
     position: absolute;
     bottom: 1.65rem;
-    right: -0.8rem;
+    right: -0.5rem;
     margin-top: 0px;
     margin-bottom: 0px;
     color: white;
@@ -11437,7 +11443,7 @@ export default class LandingPg extends Component {
                                                 </div>
                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body'>
                                                     <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header'>
-                                                        <h3 className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-title'>Start saving for your child's future today.</h3>
+                                                        <h3 className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-title'>Start saving for your child's future today. Dial <label>*122*1#</label> to enroll in <label>Mpango wa Familia</label>.</h3>
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space'>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box'>
                                                                 <img src='/assets/images/home-main-body/saf-ad-letter-1.png'/>
