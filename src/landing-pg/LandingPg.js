@@ -5496,15 +5496,116 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header {
-    height: 20%;
+    height: 30%;
     border-top-left-radius: 25px;
+    border: 1px solid white;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body {
+    flex-grow: 1;
+    border-bottom-left-radius: 25px;
+    border: 1px solid white;
+    position: relative;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-header {
+    height: 50%;
+    border: 1px solid #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space {
+    width: 96%;
+    height: 90%;
+    overflow: hidden;
+    border: 1px solid #3aae49;
+    border-radius: 8px;
+    background-color: #3aae49;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box {
+    width: 25%;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box img {
+    width: 100px;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box:first-child {
+    position: relative;
+    // border: 1px solid white;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box:first-child h2 {
+    position: absolute;
+    bottom: 1.45rem;
+    right: -0.2rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-size: 35px;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box:last-of-type {
+    position: relative;
+    border: 1px solid white;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box:last-of-type h3 {
+    position: absolute;
+    bottom: 1.25rem;
+    left: 2.55rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-size: 35px;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box:last-of-type h2 {
+    position: absolute;
+    bottom: 1.25rem;
+    right: 1.8rem;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-size: 35px;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-logo {
+    position: absolute;
+    bottom: -1.1rem;
+    right: 0.35rem;
+    width: 60px;
+    // border: 1px solid white;
+    background-color: transparent;
+    filter: invert(1) brightness(1000%);
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 49%;
     border: 1px solid white;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header h1 { 
     margin-top: 1rem;
     margin-left: 1rem;
+    font-size: 50px;
     text-align: left;
+    font-family: raleway;
+    color: #ff5733;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-decor {
@@ -11325,9 +11426,33 @@ export default class LandingPg extends Component {
                                         {this.state.userSignedIn ? (
                                             <div className='homepage-header-inner-body-poster-left-logged-in'>
                                                 <div className='homepage-header-inner-body-poster-left-logged-in-header'>
-
+                                                    <h1>Hi Norman,</h1>
                                                 </div>
+                                                <div className='homepage-header-inner-body-poster-left-logged-in-body'>
+                                                    <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header'>
+                                                        <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space'>
+                                                            <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box'>
+                                                                <img src='/assets/images/home-main-body/saf-ad-letter-1.png'/>
+                                                                <h2>ives</h2>
+                                                            </div>
+                                                            <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box'>
+                                                                <img src='/assets/images/home-main-body/saf-ad-letter-2.png'/>
+                                                            </div>
+                                                            <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box'>
+                                                                <img src='/assets/images/home-main-body/saf-ad-letter-3.png'/>
+                                                            </div>
+                                                            <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box'>
+                                                                <h3>h</h3>
+                                                                <img src='/assets/images/home-main-body/saf-ad-letter-4.png'/>
+                                                                <h2>re</h2>
+                                                            </div>
+                                                            <img className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-logo' src='/assets/images/home-main-body/saf-main-logo.png'/>
+                                                        </div>
+                                                    </div>
+                                                    <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body'>
 
+                                                    </div>
+                                                </div>
                                                 <div className='homepage-header-inner-body-poster-left-logged-out-decor'>
                                                     <img src='/assets/icons/home-main-header/header-icon-1.png'/>
                                                 </div>
