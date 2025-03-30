@@ -5485,7 +5485,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left-logged-in {
     // background-color: #fff2ccff;
-    width: 99.75%;
+    width: 100%;
     height: 99.8%;
     // border: 1px solid #ff5733;
     border-top-left-radius: 25px;
@@ -5498,7 +5498,21 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-left-logged-in-header {
     height: 30%;
     border-top-left-radius: 25px;
-    // border: 1px solid white;
+    border: 1px solid black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-container {
+    position: absolute;
+    top: 7.5%;
+    left: 2.5%;
+    width: 95%;
+    height: 80%;
+    border-bottom: 2px solid #ff5733;
+    border-top-left-radius: 25px;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body {
@@ -5586,7 +5600,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box:last-of-type h2 {
     position: absolute;
     bottom: 1.65rem;
-    right: 0.25rem;
+    right: 0.35rem;
     margin-top: 0px;
     margin-bottom: 0px;
     color: white;
@@ -5610,10 +5624,27 @@ const Styles = styled.div `
     height: 49%;
     // border: 1px solid white;
     border-bottom-left-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container {
+    width: 95%;
+    height: 80%;
+    border: 2px solid #ff5733;
+    border-bottom-left-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box {
+    width: 20%;
+    border: 1px solid white;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header h1 { 
-    margin-top: 1rem;
+    margin-top: 0px;
     margin-left: 1rem;
     font-size: 50px;
     text-align: left;
@@ -11439,6 +11470,9 @@ export default class LandingPg extends Component {
                                         {this.state.userSignedIn ? (
                                             <div className='homepage-header-inner-body-poster-left-logged-in'>
                                                 <div className='homepage-header-inner-body-poster-left-logged-in-header'>
+                                                    <div className='homepage-header-inner-body-poster-left-logged-in-header-container'>
+
+                                                    </div>
                                                     <h1>Hi Norman,</h1>
                                                 </div>
                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body'>
@@ -11464,7 +11498,23 @@ export default class LandingPg extends Component {
                                                         </div>
                                                     </div>
                                                     <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body'>
+                                                        <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container'>
+                                                            <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
+                                                                
+                                                            </div>
+                                                            <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
 
+                                                            </div>
+                                                            <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
+
+                                                            </div>
+                                                            <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
+
+                                                            </div>
+                                                            <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
+
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div className='homepage-header-inner-body-poster-left-logged-out-decor'>
