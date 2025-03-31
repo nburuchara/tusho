@@ -5632,7 +5632,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container {
     width: 95%;
     height: 80%;
-    border: 2px solid #ff5733;
+    border-top: 2px solid #ff5733;
     border-bottom-left-radius: 25px;
     display: flex;
     justify-content: space-between;
@@ -5640,7 +5640,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box {
     width: 20%;
-    border: 1px solid white;
+    // border: 1px solid white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -5650,6 +5650,7 @@ const Styles = styled.div `
     border: 1px solid white;
     width: 85%;
     height: 85%;
+    margin-top: 1rem;
     border-radius: 18px;
     position: relative;
     background-color: white;
@@ -5657,14 +5658,14 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box h3 {
     position: absolute;
-    bottom: 0.5rem;
-    left: 0;
+    bottom: 0.8rem;
+    left: 0.5rem;
     margin-top: 0px;
     margin-bottom: 0px;
-    margin-left: 6.5%;
-    margin-right: 6.5%;
-    font-family: raleway;
-    font-size: 85%;
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+    font-family: inter;
+    font-size: 110%;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 h3 {
@@ -11542,10 +11543,14 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
-
+                                                                <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3'>
+                                                                    <h3>Shopping List</h3>
+                                                                </div>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
-
+                                                                <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4'>
+                                                                    <h3>Shopping List</h3>
+                                                                </div>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
 
