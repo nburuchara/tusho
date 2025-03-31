@@ -5660,20 +5660,31 @@ const Styles = styled.div `
     position: absolute;
     bottom: 0.8rem;
     left: 0.5rem;
+    right: 0.5rem;
     margin-top: 0px;
     margin-bottom: 0px;
-    margin-left: 3.5%;
-    margin-right: 3.5%;
-    font-family: inter;
-    font-size: 110%;
+    margin-left: 6.5%;
+    margin-right: 6.5%;
+    font-family: lexend;
+    color: #ff5733;
+    font-size: 100%;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 h3 {
-    color: #ff5733;
+    // color: #ff5733;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2 h3 {
-    color: #127bd8;
+    // color: #127bd8;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3 h3 {
+    // color: #127bd8;
+    // font-size: 90%;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3 label {
+    font-size: 80%;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header h1 { 
@@ -11544,12 +11555,13 @@ export default class LandingPg extends Component {
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3'>
-                                                                    <h3>Shopping List</h3>
+                                                                    <h3>Jipange <label>(Scheduled Delivery)</label></h3>
+                                                                
                                                                 </div>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4'>
-                                                                    <h3>Shopping List</h3>
+                                                                    <h3>Shop Pamoja</h3>
                                                                 </div>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
