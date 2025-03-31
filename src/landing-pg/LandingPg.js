@@ -5646,11 +5646,11 @@ const Styles = styled.div `
     justify-content: center;
 }
 
-.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option {
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box div {
     border: 1px solid white;
     width: 85%;
     height: 85%;
-    border-radius: 25px;
+    border-radius: 15px;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header h1 { 
@@ -11510,7 +11510,7 @@ export default class LandingPg extends Component {
                                                     <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body'>
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container'>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
-                                                                <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option'>
+                                                                <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1'>
 
                                                                 </div>
                                                             </div>
