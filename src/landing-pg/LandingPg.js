@@ -5521,7 +5521,9 @@ const Styles = styled.div `
     top: 0;
     width: 50%;
     height: 85%;
-    border: 1px solid white;
+    border: 1px solid #ff5733;
+    border-bottom: 5px solid #ff5733;
+    background-color: #faece9;
     border-radius: 8px;
 }
 
@@ -5685,7 +5687,7 @@ const Styles = styled.div `
     margin-bottom: 0px;
     margin-left: 9%;
     margin-right: 9%;
-    font-family: poppins;
+    // font-family: poppins;
     // font-weight: normal;
     color: #ff5733;
     font-size: 85%;
