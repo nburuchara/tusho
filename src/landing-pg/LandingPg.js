@@ -5650,7 +5650,29 @@ const Styles = styled.div `
     border: 1px solid white;
     width: 85%;
     height: 85%;
-    border-radius: 15px;
+    border-radius: 18px;
+    position: relative;
+    background-color: white;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box h3 {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 6.5%;
+    margin-right: 6.5%;
+    font-family: raleway;
+    font-size: 85%;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 h3 {
+    color: #ff5733;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2 h3 {
+    color: #127bd8;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header h1 { 
@@ -11511,11 +11533,13 @@ export default class LandingPg extends Component {
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container'>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1'>
-
+                                                                    <h3>New Products</h3>
                                                                 </div>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
-
+                                                                <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2'>
+                                                                    <h3>Shopping List</h3>
+                                                                </div>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
 
