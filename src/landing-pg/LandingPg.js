@@ -5654,6 +5654,10 @@ const Styles = styled.div `
     border-radius: 18px;
     position: relative;
     background-color: white;
+    border-bottom: 5px solid #ff5733;
+    border-left: 1px solid #ff5733;
+    border-right: 1px solid #ff5733;
+    border-top: 0.5px solid #ff5733;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box h3 {
