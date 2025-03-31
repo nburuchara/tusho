@@ -5650,14 +5650,20 @@ const Styles = styled.div `
     border: 1px solid white;
     width: 85%;
     height: 85%;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
     border-radius: 18px;
     position: relative;
-    background-color: white;
+    background-color: #faece9;
     border-bottom: 5px solid #ff5733;
     border-left: 1px solid #ff5733;
     border-right: 1px solid #ff5733;
     border-top: 0.5px solid #ff5733;
+    transition: background-color 0.35s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box div:hover {
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box h3 {
@@ -5667,19 +5673,50 @@ const Styles = styled.div `
     right: 0.5rem;
     margin-top: 0px;
     margin-bottom: 0px;
-    margin-left: 6.5%;
-    margin-right: 6.5%;
-    font-family: lexend;
+    margin-left: 9%;
+    margin-right: 9%;
+    // font-family: poppins;
+    // font-weight: normal;
     color: #ff5733;
-    font-size: 100%;
+    font-size: 90%;
+}
+
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box img {
+    width: 40px;
+    position: absolute;
+    top: 0.2rem;
+    left: 0.2rem;
+    margin-left: 2.5%;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 {
+
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 img {
+   margin-left: 5%;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1:hover h3 {
+    color: white;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 h3 {
     // color: #ff5733;
+    transition: color 0.35s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2 h3 {
     // color: #127bd8;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2:hover h3 {
+    color: white;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2 img {
+    margin-left: 8.5%;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3 h3 {
@@ -5687,9 +5724,26 @@ const Styles = styled.div `
     // font-size: 90%;
 }
 
-.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3 label {
-    font-size: 80%;
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3:hover h3 {
+    color: white;
 }
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3 label {
+    font-size: 60%;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3 img {
+    margin-left: 9.5%;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4 img {
+    margin-left: 11%;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4:hover h3 {
+    color: white;
+}
+
 
 .homepage-header-inner-body-poster-left-logged-in-header h1 { 
     margin-top: 0px;
@@ -11549,22 +11603,25 @@ export default class LandingPg extends Component {
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container'>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1'>
+                                                                    <img src='/assets/images/home-main-body/product-btn-1.png'/>
                                                                     <h3>New Products</h3>
                                                                 </div>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2'>
+                                                                    <img src='/assets/images/home-main-body/product-btn-2.png'/>
                                                                     <h3>Shopping List</h3>
                                                                 </div>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3'>
-                                                                    <h3>Jipange <label>(Scheduled Delivery)</label></h3>
-                                                                
+                                                                    <img src='/assets/images/home-main-body/product-btn-3.png'/>
+                                                                    <h3>Jipange Delivery</h3>
                                                                 </div>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4'>
+                                                                    <img src='/assets/images/home-main-body/product-btn-4.png'/>
                                                                     <h3>Shop Pamoja</h3>
                                                                 </div>
                                                             </div>
