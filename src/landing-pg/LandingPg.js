@@ -5515,6 +5515,16 @@ const Styles = styled.div `
     border-top-left-radius: 25px;
 }
 
+.homepage-header-inner-body-poster-left-logged-in-header-wallet {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 85%;
+    border: 1px solid white;
+    border-radius: 8px;
+}
+
 .homepage-header-inner-body-poster-left-logged-in-body {
     flex-grow: 1;
     border-bottom-left-radius: 25px;
@@ -5675,10 +5685,10 @@ const Styles = styled.div `
     margin-bottom: 0px;
     margin-left: 9%;
     margin-right: 9%;
-    // font-family: poppins;
+    font-family: poppins;
     // font-weight: normal;
     color: #ff5733;
-    font-size: 90%;
+    font-size: 85%;
 }
 
 
@@ -11573,7 +11583,9 @@ export default class LandingPg extends Component {
                                             <div className='homepage-header-inner-body-poster-left-logged-in'>
                                                 <div className='homepage-header-inner-body-poster-left-logged-in-header'>
                                                     <div className='homepage-header-inner-body-poster-left-logged-in-header-container'>
+                                                        <div className='homepage-header-inner-body-poster-left-logged-in-header-wallet'>
 
+                                                        </div>
                                                     </div>
                                                     <h1>Hi Norman,</h1>
                                                 </div>
