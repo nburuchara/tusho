@@ -11717,7 +11717,7 @@ export default class LandingPg extends Component {
                                             <div className='homepage-header-inner-body-poster-right-left-section'>
                                                  <div className='homepage-header-inner-body-poster-right-left-section-logged-in'>
                                                     <div className='homepage-header-inner-body-poster-right-left-section-logged-in-container'>
-                                                    
+                                                        
                                                     </div>
                                                 </div>
                                             </div>
@@ -11729,9 +11729,15 @@ export default class LandingPg extends Component {
                                             </div>
                                         )}
                                         <div className='homepage-header-inner-body-poster-right-right-section'>
-                                            <div className='homepage-header-inner-body-poster-right-right-section-top'>
-                                                <img src='/assets/images/home-main-header/header-poster-img-1.webp'/>
-                                            </div>
+                                            {this.state.userSignedIn ? (
+                                                <div className='homepage-header-inner-body-poster-right-right-section-top'>
+                                                    {/* <img src='/assets/images/home-main-header/header-poster-img-1.webp'/> */}
+                                                </div>
+                                            ) : (
+                                                <div className='homepage-header-inner-body-poster-right-right-section-top'>
+                                                    <img src='/assets/images/home-main-header/header-poster-img-1.webp'/>
+                                                </div>
+                                            )}
                                             <div className='homepage-header-inner-body-poster-right-right-section-bottom'>
                                                 <img src='/assets/images/home-main-header/header-poster-img-3.webp'/>
                                             </div>
