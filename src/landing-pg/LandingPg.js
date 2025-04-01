@@ -5534,10 +5534,9 @@ const Styles = styled.div `
     right: 0;
     top: 0;
     width: 50%;
-    height: 85%;
-    border: 1px solid #ff5733;
-    border-bottom: 5px solid #ff5733;
-    background-color: #faece9;
+    height: 88%;
+    border: 1px solid white;
+    background-color: white;
     border-radius: 8px;
 }
 
