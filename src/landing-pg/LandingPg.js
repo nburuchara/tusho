@@ -5952,15 +5952,15 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-decor {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: -0.7rem;
+    right: -3.5rem;
     width: 45%;
-    height: 25%;
-    border: 1px solid white;
+    height: 20%;
+    // border: 1px solid white;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-decor img {
-    width: 60%;
+    width: 65%;
     
     border: none;
 }
