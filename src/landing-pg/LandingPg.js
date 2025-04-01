@@ -5962,7 +5962,7 @@ const Styles = styled.div `
     height: 50%;
     // border: 1px solid white;
     overflow: hidden;
-    border-top-right-radius: 25px;
+    border-top-right-radius: 24px;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top img {
@@ -5970,6 +5970,19 @@ const Styles = styled.div `
     height: 100%;
     // border-top-right-radius: 24px;
     border-left: 5px solid white;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container {
+    background-color: #faece9;
+    margin-left: 0.25rem;
+    width: 100%;
+    height: 100%;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom {
@@ -11731,6 +11744,11 @@ export default class LandingPg extends Component {
                                         <div className='homepage-header-inner-body-poster-right-right-section'>
                                             {this.state.userSignedIn ? (
                                                 <div className='homepage-header-inner-body-poster-right-right-section-top'>
+                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in'>
+                                                        <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container'>
+
+                                                        </div>
+                                                    </div>
                                                     {/* <img src='/assets/images/home-main-header/header-poster-img-1.webp'/> */}
                                                 </div>
                                             ) : (
