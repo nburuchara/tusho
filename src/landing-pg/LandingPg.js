@@ -5683,12 +5683,13 @@ const Styles = styled.div `
     border-bottom: 5px solid #ff5733;
     border-left: 1px solid #ff5733;
     border-right: 1px solid #ff5733;
-    border-top: 0.5px solid #ff5733;
-    transition: background-color 0.35s ease-in-out;
+    border-top: 1px solid #ff5733;
+    transition: background-color 0.35s ease-in-out, border-bottom 0.25s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box div:hover {
     background-color: transparent;
+    border-bottom: 2px solid #ff5733;
     cursor: pointer;
 }
 
