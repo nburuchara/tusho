@@ -5925,13 +5925,31 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section {
     width: 50%;
+    overflow: hidden;
 }
 
 .homepage-header-inner-body-poster-right-left-section img {
     width: 100%;
-    height: 100%;
     border-left: 5px solid white;
 }
+
+.homepage-header-inner-body-poster-right-left-section-logged-in {
+    border: 1px solid white;
+    width: 96%;
+    height: 100%;
+    background-color: white;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container {
+    margin-left: 0.25rem;
+    margin-top: -0.08rem;
+    height: 99.6%;
+    width: 101.9%;
+    background-color: #faece9;
+    border: 1px solid #ff5733;
+}
+
+    // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
 
 .homepage-header-inner-body-poster-right-right-section {
     width: 50%;
@@ -11695,9 +11713,21 @@ export default class LandingPg extends Component {
                                         
                                     </div>
                                     <div className='homepage-header-inner-body-poster-right'>
-                                        <div className='homepage-header-inner-body-poster-right-left-section'>
-                                            <img src='/assets/images/home-main-header/header-poster-img-2.webp'/>
-                                        </div>
+                                        {this.state.userSignedIn ? (
+                                            <div className='homepage-header-inner-body-poster-right-left-section'>
+                                                 <div className='homepage-header-inner-body-poster-right-left-section-logged-in'>
+                                                    <div className='homepage-header-inner-body-poster-right-left-section-logged-in-container'>
+                                                    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ) : (
+                                            <div className='homepage-header-inner-body-poster-right-left-section'>
+                                                <div className='homepage-header-inner-body-poster-right-left-section-logged-off'>
+                                                    <img src='/assets/images/home-main-header/header-poster-img-2.webp'/>
+                                                </div>
+                                            </div>
+                                        )}
                                         <div className='homepage-header-inner-body-poster-right-right-section'>
                                             <div className='homepage-header-inner-body-poster-right-right-section-top'>
                                                 <img src='/assets/images/home-main-header/header-poster-img-1.webp'/>
