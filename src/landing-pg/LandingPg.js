@@ -5695,11 +5695,16 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box:hover h4 {
+    transform: translate(5px, -5px); /* Moves it 5px right and 5px down */
+}
+
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box h4 {
     position: absolute;
     top: 0.5rem;
     right: 2rem;
-
+    color: #ff5733;
+    transition: transform 0.3s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box h3 {
