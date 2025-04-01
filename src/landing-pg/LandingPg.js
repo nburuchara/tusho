@@ -5961,8 +5961,27 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-decor img {
     width: 65%;
-    
     border: none;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container h1 {
+    font-size: 35px;
+    color: white;
+    font-family: raleway;
+    margin-top: 0.65rem;
+    margin-left: 4.5%;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-cart {
+    position: absolute;
+    bottom: 1.5rem;
+    width: 85%;
+    left: 7.5%;
+    height: 80%;
+    background-color: #faece9;
+    border: 1px solid #ff5733;
+    border-bottom: 5px solid #ff5733;
+    border-radius: 8px;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
@@ -6001,6 +6020,13 @@ const Styles = styled.div `
     height: 96.25%;
     border: 1px solid #ff5733;
     border-top-right-radius: 24px;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container h2 {
+    color: white;
+    font-family: raleway;
+    margin-top: 0.8rem;
+    margin-left: 3%;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom {
@@ -11713,13 +11739,13 @@ export default class LandingPg extends Component {
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container'>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1'>
-                                                                    <img src='/assets/images/home-main-body/product-btn-1.png'/>
+                                                                    <img src='/assets/images/home-main-body/product-btn-15.png'/>
                                                                     <h3>New Products</h3>
                                                                 </div>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2'>
-                                                                    <img src='/assets/images/home-main-body/product-btn-2.png'/>
+                                                                    <img src='/assets/images/home-main-body/product-btn-25.png'/>
                                                                     <h3>Shopping List</h3>
                                                                 </div>
                                                             </div>
@@ -11777,8 +11803,15 @@ export default class LandingPg extends Component {
                                             <div className='homepage-header-inner-body-poster-right-left-section'>
                                                  <div className='homepage-header-inner-body-poster-right-left-section-logged-in'>
                                                     <div className='homepage-header-inner-body-poster-right-left-section-logged-in-container'>
+
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-container-decor'>
                                                             <img src='/assets/images/home-main-body/header-logged-in-decor.png'/>
+                                                        </div>
+
+                                                        <h1>Cart</h1>
+
+                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-cart'>
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -11795,7 +11828,7 @@ export default class LandingPg extends Component {
                                                 <div className='homepage-header-inner-body-poster-right-right-section-top'>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in'>
                                                         <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container'>
-
+                                                            <h2>FYI</h2>
                                                         </div>
                                                     </div>
                                                     {/* <img src='/assets/images/home-main-header/header-poster-img-1.webp'/> */}
