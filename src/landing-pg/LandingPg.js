@@ -5662,6 +5662,7 @@ const Styles = styled.div `
     border-bottom-left-radius: 25px;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box {
@@ -5670,6 +5671,7 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box div {
@@ -5679,18 +5681,25 @@ const Styles = styled.div `
     margin-top: 0.75rem;
     border-radius: 18px;
     position: relative;
-    background-color: #faece9;
-    border-bottom: 5px solid #ff5733;
-    border-left: 1px solid #ff5733;
-    border-right: 1px solid #ff5733;
-    border-top: 1px solid #ff5733;
-    transition: background-color 0.35s ease-in-out, border-bottom 0.25s ease-in-out;
+    background-color: white;
+    border-bottom: 1px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-top: 1px solid transparent;
+    transition: background-color 0.35s ease-in-out, border 0.25s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box div:hover {
     background-color: transparent;
-    border-bottom: 2px solid #ff5733;
+    border: 1px solid #ff5733;
     cursor: pointer;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box h4 {
+    position: absolute;
+    top: 0.5rem;
+    right: 2rem;
+
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box h3 {
@@ -5703,9 +5712,9 @@ const Styles = styled.div `
     margin-left: 9%;
     margin-right: 9%;
     // font-family: poppins;
-    // font-weight: normal;
+    font-weight: normal;
     color: #ff5733;
-    font-size: 90%;
+    font-size: 95%;
 }
 
 
@@ -11740,8 +11749,10 @@ export default class LandingPg extends Component {
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1'>
                                                                     <img src='/assets/images/home-main-body/product-btn-15.png'/>
+                                                                    
                                                                     <h3>New Products</h3>
                                                                 </div>
+                                                                <h4>↗︎</h4>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2'>
