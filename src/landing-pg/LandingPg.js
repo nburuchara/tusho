@@ -6035,11 +6035,12 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container h1 {
     font-size: 40px;
-    margin-left: 3%;
-    margin-right: 3%;
-    margin-top: 0.1rem;
+    font-family: raleway;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 0.5rem;
     margin-bottom: 0.1rem;
-    color: #24668a;
+    color: white;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container label {
