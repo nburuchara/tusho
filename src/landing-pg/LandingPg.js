@@ -11764,18 +11764,21 @@ export default class LandingPg extends Component {
                                                                     <img src='/assets/images/home-main-body/product-btn-25.png'/>
                                                                     <h3>Shopping List</h3>
                                                                 </div>
+                                                                <h4>↗︎</h4>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3'>
                                                                     <img src='/assets/images/home-main-body/product-btn-3.png'/>
                                                                     <h3>Jipange Delivery</h3>
                                                                 </div>
+                                                                <h4>↗︎</h4>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4'>
                                                                     <img src='/assets/images/home-main-body/product-btn-4.png'/>
                                                                     <h3>Shop Pamoja</h3>
                                                                 </div>
+                                                                <h4>↗︎</h4>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
 
