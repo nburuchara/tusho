@@ -5729,6 +5729,11 @@ const Styles = styled.div `
     top: 0.2rem;
     left: 0.2rem;
     margin-left: 2.5%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box:hover img {
+    transform: scale(1.05);
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 {
