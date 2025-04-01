@@ -5982,7 +5982,7 @@ const Styles = styled.div `
     background-color: #faece9;
     margin-left: 0.28rem;
     width: 98%;
-    height: 98.5%;
+    height: 96.25%;
     border: 1px solid #ff5733;
     border-top-right-radius: 24px;
 }
@@ -6000,6 +6000,34 @@ const Styles = styled.div `
     // border-top-right-radius: 25px;
     border-top: 5px solid white;
     border-left: 5px solid white;
+}
+
+.homepage-header-inner-body-poster-right-right-section-bottom-logged-in {
+    background-color: white;
+    height: 100%;
+    width: 100%;
+}
+
+.homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container {
+    background-color: #d6e7f0;
+    margin-left: 0.28rem;
+    width: 98%;
+    height: 98.6%;
+    border: 1px solid #20313a;
+    border-bottom-right-radius: 24px;
+}
+
+.homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container h1 {
+    font-size: 40px;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    color: #20313a;
+}
+
+.homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container label {
+   
 }
 
     // - - HOMEPAGE BODY - - //
@@ -11758,9 +11786,21 @@ export default class LandingPg extends Component {
                                                     <img src='/assets/images/home-main-header/header-poster-img-1.webp'/>
                                                 </div>
                                             )}
-                                            <div className='homepage-header-inner-body-poster-right-right-section-bottom'>
-                                                <img src='/assets/images/home-main-header/header-poster-img-3.webp'/>
-                                            </div>
+                                            {this.state.userSignedIn ? (
+                                                <div className='homepage-header-inner-body-poster-right-right-section-bottom'>
+                                                    <div className='homepage-header-inner-body-poster-right-right-section-bottom-logged-in'>
+                                                        <div className='homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container'>
+                                                            <h1>D<label>id you know?</label></h1>
+                                                        </div>
+                                                    </div>
+                                                    {/* <img src='/assets/images/home-main-header/header-poster-img-1.webp'/> */}
+                                                </div>
+                                            ) : (
+                                                <div className='homepage-header-inner-body-poster-right-right-section-bottom'>
+                                                    <img src='/assets/images/home-main-header/header-poster-img-3.webp'/>
+                                                </div>
+                                            )}
+                                            
                                         </div>
                                     </div>
                                 </div>
