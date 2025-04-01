@@ -5945,8 +5945,24 @@ const Styles = styled.div `
     margin-top: -0.08rem;
     height: 99.6%;
     width: 101.9%;
-    background-color: #faece9;
+    background-color: #20313a;
     border: 1px solid #ff5733;
+    position: relative;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container-decor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 25%;
+    border: 1px solid white;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container-decor img {
+    width: 60%;
+    
+    border: none;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
@@ -5979,7 +5995,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container {
-    background-color: #faece9;
+    background-color: #20313a;
     margin-left: 0.28rem;
     width: 98%;
     height: 96.25%;
@@ -6009,11 +6025,11 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container {
-    background-color: #d6e7f0;
+    background-color: #20313a;
     margin-left: 0.28rem;
     width: 98%;
     height: 98.6%;
-    border: 1px solid #20313a;
+    border: 1px solid #ff5733;
     border-bottom-right-radius: 24px;
 }
 
@@ -6023,7 +6039,7 @@ const Styles = styled.div `
     margin-right: 3%;
     margin-top: 0.1rem;
     margin-bottom: 0.1rem;
-    color: #20313a;
+    color: #24668a;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container label {
@@ -11760,7 +11776,9 @@ export default class LandingPg extends Component {
                                             <div className='homepage-header-inner-body-poster-right-left-section'>
                                                  <div className='homepage-header-inner-body-poster-right-left-section-logged-in'>
                                                     <div className='homepage-header-inner-body-poster-right-left-section-logged-in-container'>
-                                                        
+                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-container-decor'>
+                                                            <img src='/assets/images/home-main-body/header-logged-in-decor.png'/>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
