@@ -5515,6 +5515,20 @@ const Styles = styled.div `
     border-top-left-radius: 25px;
 }
 
+.homepage-header-inner-body-poster-left-logged-in-header-container-decor {
+    position: absolute; 
+    left: 33.5%;
+    top: 0;
+    // border: 1px solid white;
+    height: 80%;
+    width: 15%;
+}
+
+
+.homepage-header-inner-body-poster-left-logged-in-header-container-decor img {
+    width: 95%;
+}
+
 .homepage-header-inner-body-poster-left-logged-in-header-wallet {
     position: absolute;
     right: 0;
@@ -5690,7 +5704,7 @@ const Styles = styled.div `
     // font-family: poppins;
     // font-weight: normal;
     color: #ff5733;
-    font-size: 85%;
+    font-size: 90%;
 }
 
 
@@ -11585,6 +11599,9 @@ export default class LandingPg extends Component {
                                             <div className='homepage-header-inner-body-poster-left-logged-in'>
                                                 <div className='homepage-header-inner-body-poster-left-logged-in-header'>
                                                     <div className='homepage-header-inner-body-poster-left-logged-in-header-container'>
+                                                        <div className='homepage-header-inner-body-poster-left-logged-in-header-container-decor'>
+                                                            {/* <img src='/assets/images/home-main-body/header-logged-in-decor.png'/> */}
+                                                        </div>
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-header-wallet'>
 
                                                         </div>
