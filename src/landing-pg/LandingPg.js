@@ -5980,9 +5980,11 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container {
     background-color: #faece9;
-    margin-left: 0.25rem;
-    width: 100%;
-    height: 100%;
+    margin-left: 0.28rem;
+    width: 98%;
+    height: 98.5%;
+    border: 1px solid #ff5733;
+    border-top-right-radius: 24px;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom {
