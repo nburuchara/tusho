@@ -5958,6 +5958,15 @@ const Styles = styled.div `
     background-color: white;
 }
 
+@keyframes peelLeftToRight {
+    0% {
+        clip-path: polygon(0 100%, 0 100%, 0 0, 0 0);
+    }
+    100% {
+        clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+    }
+}
+
 .homepage-header-inner-body-poster-right-left-section-logged-in-container {
     margin-left: 0.25rem;
     margin-top: -0.08rem;
@@ -5966,6 +5975,30 @@ const Styles = styled.div `
     background-color: #20313a;
     border: 1px solid #ff5733;
     position: relative;
+    overflow: hidden;
+    transition: background-color 0.6s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff5733;
+    clip-path: polygon(0 100%, 0 100%, 0 0, 0 0);
+    transition: clip-path 0.6s ease-in-out;
+}
+
+/* The class that gets added on click */
+.animate-peel::after {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}
+
+/* Ensures the container fully changes color */
+.animate-peel {
+    background-color: #ff5733 !important;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-decor {
@@ -5996,9 +6029,8 @@ const Styles = styled.div `
     width: 85%;
     left: 7.5%;
     height: 80%;
-    background-color: #faece9;
+    background-color: white;
     border: 1px solid #ff5733;
-    border-bottom: 5px solid #ff5733;
     border-radius: 8px;
 }
 
@@ -6956,6 +6988,7 @@ export default class LandingPg extends Component {
 
             //* - - HOMESCREEN PRODUCTS GRID DISPLAY - - *//
 
+            isLeftHeaderTransitionActive: false,
             products: products,
             visibleCount: 6, // Initial number of items to render
             filteredProductCount: 0,
@@ -8555,6 +8588,15 @@ export default class LandingPg extends Component {
 
     handleBrandSearch = (event) => {
         this.setState({ brandSearchTerm: event.target.value });
+    };
+
+    handleTriggerHeaderTransitions = () => {
+        this.setState({ isLeftHeaderTransitionActive: true });
+    
+        // Optional: Reset after animation ends
+        setTimeout(() => {
+          this.setState({ isLeftHeaderTransitionActive: false });
+        }, 600); // Matches CSS transition time
     };
 
     render () {
@@ -11764,7 +11806,7 @@ export default class LandingPg extends Component {
                                                                 <h4>↗︎</h4>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
-                                                                <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2'>
+                                                                <div onClick={this.handleTriggerHeaderTransitions} className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2'>
                                                                     <img src='/assets/images/home-main-body/product-btn-25.png'/>
                                                                     <h3>Shopping List</h3>
                                                                 </div>
@@ -11825,7 +11867,7 @@ export default class LandingPg extends Component {
                                         {this.state.userSignedIn ? (
                                             <div className='homepage-header-inner-body-poster-right-left-section'>
                                                  <div className='homepage-header-inner-body-poster-right-left-section-logged-in'>
-                                                    <div className='homepage-header-inner-body-poster-right-left-section-logged-in-container'>
+                                                    <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container ${this.state.isLeftHeaderTransitionActive ? "animate-peel" : ""}`}>
 
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-container-decor'>
                                                             <img src='/assets/images/home-main-body/header-logged-in-decor.png'/>
