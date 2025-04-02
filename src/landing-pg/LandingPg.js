@@ -5979,7 +5979,7 @@ const Styles = styled.div `
     transition: background-color 0.6s ease-in-out;
 }
 
-.homepage-header-inner-body-poster-right-left-section-logged-in-container::after {
+.homepage-header-inner-body-poster-right-left-section-logged-in-container.option-1::after {
     content: "";
     position: absolute;
     top: 0;
@@ -5992,12 +5992,56 @@ const Styles = styled.div `
 }
 
 /* The class that gets added on click */
-.animate-peel::after {
+.animate-peel.option-1::after {
     clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 }
 
 /* Ensures the container fully changes color */
-.animate-peel {
+.animate-peel.option-1 {
+    background-color: #ff5733 !important;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container.option-2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff5733;
+    clip-path: polygon(0 100%, 0 100%, 0 0, 0 0);
+    transition: clip-path 0.6s ease-in-out;
+}
+
+/* The class that gets added on click */
+.animate-peel.option-2::after {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}
+
+/* Ensures the container fully changes color */
+.animate-peel.option-2 {
+    background-color: #ff5733 !important;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container.option-3::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff5733;
+    clip-path: polygon(0 100%, 0 100%, 0 0, 0 0);
+    transition: clip-path 0.6s ease-in-out;
+}
+
+/* The class that gets added on click */
+.animate-peel.option-3::after {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}
+
+/* Ensures the container fully changes color */
+.animate-peel.option-3 {
     background-color: #ff5733 !important;
 }
 
