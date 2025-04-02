@@ -5752,6 +5752,14 @@ const Styles = styled.div `
     transition: color 0.35s ease-in-out;
 }
 
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2 {
+    background-color: #fff2ccff !important;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2:hover {
+    background-color: transparent !important;
+}
+
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2 h3 {
     // color: #127bd8;
 }
@@ -5986,7 +5994,7 @@ const Styles = styled.div `
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #ff5733;
+    background-color: #fff2ccff;
     clip-path: polygon(0 100%, 0 100%, 0 0, 0 0);
     transition: clip-path 0.6s ease-in-out;
 }
@@ -5998,7 +6006,7 @@ const Styles = styled.div `
 
 /* Ensures the container fully changes color */
 .animate-peel {
-    background-color: #ff5733;
+    background-color: #fff2ccff;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-decor {
@@ -6163,7 +6171,7 @@ const Styles = styled.div `
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #ff5733;
+    background-color: #fff2ccff;
     clip-path: polygon(0 100%, 0 100%, 0 0, 0 0);
     transition: clip-path 0.6s ease-in-out;
 }
@@ -6175,7 +6183,7 @@ const Styles = styled.div `
 
 /* Ensures the container fully changes color */
 .animate-peel {
-    background-color: #ff5733 !important;
+    background-color: #fff2ccff !important;
 }
 
     // - - HOMEPAGE BODY - - //
@@ -7043,10 +7051,10 @@ export default class LandingPg extends Component {
 
             //* - - HOMESCREEN PRODUCTS GRID DISPLAY - - *//
 
-            isTransitionActive: false,
+            isLeftHeaderTransitionActive: false,
             isRightTopHeaderTransitionActive: false,
             isRightBottomHeaderTransitionActive: false,
-            headerTransitionBgColor: '',
+            transitionBackgroundColor: '',
             products: products,
             visibleCount: 6, // Initial number of items to render
             filteredProductCount: 0,
@@ -8655,7 +8663,6 @@ export default class LandingPg extends Component {
             isRightBottomHeaderTransitionActive: !prevState.isRightBottomHeaderTransitionActive,
             isRightTopHeaderTransitionActive: !prevState.isRightTopHeaderTransitionActive
         }));
-
     
         // Optional: Reset after animation ends
         // setTimeout(() => {
@@ -8665,7 +8672,7 @@ export default class LandingPg extends Component {
 
     render () {
 
-        const { searchBarIsClicked, searchInput, isSearchLoading, isSearchLoadingJipange, isSearchLoadingAccountPopup, isSearchLoadingFAQ, resultsFound, resultsFoundJipange, resultsFoundAccountPopup, resultsFoundFAQ, groupedOptions, groupedOptionsJipange, groupedOptionsAccountPopup, groupedOptionsFAQ, headerTransitionBgColor } = this.state;
+        const { searchBarIsClicked, searchInput, isSearchLoading, isSearchLoadingJipange, isSearchLoadingAccountPopup, isSearchLoadingFAQ, resultsFound, resultsFoundJipange, resultsFoundAccountPopup, resultsFoundFAQ, groupedOptions, groupedOptionsJipange, groupedOptionsAccountPopup, groupedOptionsFAQ } = this.state;
         const { currentMonth, currentYear, selectedDates } = this.state;
         const daysInMonth = this.getDaysInMonth(currentMonth, currentYear);
         const monthNames = [
@@ -11931,9 +11938,7 @@ export default class LandingPg extends Component {
                                         {this.state.userSignedIn ? (
                                             <div className='homepage-header-inner-body-poster-right-left-section'>
                                                  <div className='homepage-header-inner-body-poster-right-left-section-logged-in'>
-                                                    <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container ${this.state.isTransitionActive ? "animate-peel" : ""}`}
-                                                    style={{ backgroundColor: headerTransitionBgColor }}
-                                                    >
+                                                    <div style={{backgroundColor: this.state.isLeftHeaderTransitionActive ? '' : ''}} className={`homepage-header-inner-body-poster-right-left-section-logged-in-container ${this.state.isLeftHeaderTransitionActive ? "animate-peel" : ""}`}>
 
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-container-decor'>
                                                             <img src='/assets/images/home-main-body/header-logged-in-decor.png'/>
@@ -11958,9 +11963,7 @@ export default class LandingPg extends Component {
                                             {this.state.userSignedIn ? (
                                                 <div className='homepage-header-inner-body-poster-right-right-section-top'>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in'>
-                                                        <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container ${this.state.isTransitionActive ? "animate-peel" : ""}`}
-                                                        style={{ backgroundColor: headerTransitionBgColor }}
-                                                        >
+                                                        <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container ${this.state.isRightTopHeaderTransitionActive ? "animate-peel" : ""}`}>
                                                             <h2>FYI</h2>
                                                         </div>
                                                     </div>
@@ -11974,9 +11977,7 @@ export default class LandingPg extends Component {
                                             {this.state.userSignedIn ? (
                                                 <div className='homepage-header-inner-body-poster-right-right-section-bottom'>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-bottom-logged-in'>
-                                                        <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container ${this.state.isTransitionActive ? "animate-peel" : ""}`}
-                                                        style={{ backgroundColor: headerTransitionBgColor }}
-                                                        >
+                                                        <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container ${this.state.isRightBottomHeaderTransitionActive ? "animate-peel" : ""}`}>
                                                             <h1>D<label>id you know?</label></h1>
                                                         </div>
                                                     </div>
