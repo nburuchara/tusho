@@ -6123,6 +6123,61 @@ const Styles = styled.div `
    
 }
 
+@keyframes peelLeftToRight {
+    0% {
+        clip-path: polygon(0 100%, 0 100%, 0 0, 0 0);
+    }
+    100% {
+        clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+    }
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container,
+.homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container {
+    background-color: #20313a;
+    width: 98%;
+    border: 1px solid #ff5733;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.6s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container {
+    margin-left: 0.28rem;
+    height: 96.25%;
+    border-top-right-radius: 24px;
+}
+
+.homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container {
+    margin-left: 0.28rem;
+    height: 98.6%;
+    border-bottom-right-radius: 24px;
+}
+
+/* Pseudo-element for the peel effect */
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container::after,
+.homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff5733;
+    clip-path: polygon(0 100%, 0 100%, 0 0, 0 0);
+    transition: clip-path 0.6s ease-in-out;
+}
+
+/* The class that gets added on click */
+.animate-peel::after {
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+}
+
+/* Ensures the container fully changes color */
+.animate-peel {
+    background-color: #ff5733 !important;
+}
+
     // - - HOMEPAGE BODY - - //
 
 .homepage-body {
@@ -8591,12 +8646,14 @@ export default class LandingPg extends Component {
     };
 
     handleTriggerHeaderTransitions = () => {
-        this.setState({ isLeftHeaderTransitionActive: true });
+        this.setState((prevState) => ({ 
+            isLeftHeaderTransitionActive: !prevState.isLeftHeaderTransitionActive 
+        }));
     
         // Optional: Reset after animation ends
-        setTimeout(() => {
-          this.setState({ isLeftHeaderTransitionActive: false });
-        }, 600); // Matches CSS transition time
+        // setTimeout(() => {
+        //   this.setState({ isLeftHeaderTransitionActive: false });
+        // }, 600); // Matches CSS transition time
     };
 
     render () {
@@ -11771,7 +11828,7 @@ export default class LandingPg extends Component {
 
                                                         </div>
                                                     </div>
-                                                    <h1>Hi Norman,</h1>
+                                                    <h1>Hi there,</h1>
                                                 </div>
                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body'>
                                                     <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header'>
@@ -11892,7 +11949,7 @@ export default class LandingPg extends Component {
                                             {this.state.userSignedIn ? (
                                                 <div className='homepage-header-inner-body-poster-right-right-section-top'>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in'>
-                                                        <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container'>
+                                                        <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container ${this.state.isLeftHeaderTransitionActive ? "animate-peel" : ""}`}>
                                                             <h2>FYI</h2>
                                                         </div>
                                                     </div>
@@ -11906,7 +11963,7 @@ export default class LandingPg extends Component {
                                             {this.state.userSignedIn ? (
                                                 <div className='homepage-header-inner-body-poster-right-right-section-bottom'>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-bottom-logged-in'>
-                                                        <div className='homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container'>
+                                                        <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container ${this.state.isLeftHeaderTransitionActive ? "animate-peel" : ""}`}>
                                                             <h1>D<label>id you know?</label></h1>
                                                         </div>
                                                     </div>
