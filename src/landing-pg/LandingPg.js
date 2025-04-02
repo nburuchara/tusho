@@ -7043,9 +7043,10 @@ export default class LandingPg extends Component {
 
             //* - - HOMESCREEN PRODUCTS GRID DISPLAY - - *//
 
-            isLeftHeaderTransitionActive: false,
+            isTransitionActive: false,
             isRightTopHeaderTransitionActive: false,
             isRightBottomHeaderTransitionActive: false,
+            transitionBackgroundColor: '',
             products: products,
             visibleCount: 6, // Initial number of items to render
             filteredProductCount: 0,
@@ -8648,9 +8649,13 @@ export default class LandingPg extends Component {
     };
 
     handleTriggerHeaderTransitions = () => {
+
         this.setState((prevState) => ({ 
-            isLeftHeaderTransitionActive: !prevState.isLeftHeaderTransitionActive 
+            isLeftHeaderTransitionActive: !prevState.isLeftHeaderTransitionActive,
+            isRightBottomHeaderTransitionActive: !prevState.isRightBottomHeaderTransitionActive,
+            isRightTopHeaderTransitionActive: !prevState.isRightTopHeaderTransitionActive
         }));
+
     
         // Optional: Reset after animation ends
         // setTimeout(() => {
@@ -11926,7 +11931,9 @@ export default class LandingPg extends Component {
                                         {this.state.userSignedIn ? (
                                             <div className='homepage-header-inner-body-poster-right-left-section'>
                                                  <div className='homepage-header-inner-body-poster-right-left-section-logged-in'>
-                                                    <div style={{backgroundColor: this.state.isLeftHeaderTransitionActive ? '' : ''}} className={`homepage-header-inner-body-poster-right-left-section-logged-in-container ${this.state.isLeftHeaderTransitionActive ? "animate-peel" : ""}`}>
+                                                    <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container ${this.state.isTransitionActive ? "animate-peel" : ""}`}
+                                                    style={{ backgroundColor }}
+                                                    >
 
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-container-decor'>
                                                             <img src='/assets/images/home-main-body/header-logged-in-decor.png'/>
@@ -11951,7 +11958,9 @@ export default class LandingPg extends Component {
                                             {this.state.userSignedIn ? (
                                                 <div className='homepage-header-inner-body-poster-right-right-section-top'>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in'>
-                                                        <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container ${this.state.isRightTopHeaderTransitionActive ? "animate-peel" : ""}`}>
+                                                        <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container ${this.state.isTransitionActive ? "animate-peel" : ""}`}
+                                                        style={{ backgroundColor }}
+                                                        >
                                                             <h2>FYI</h2>
                                                         </div>
                                                     </div>
@@ -11965,7 +11974,9 @@ export default class LandingPg extends Component {
                                             {this.state.userSignedIn ? (
                                                 <div className='homepage-header-inner-body-poster-right-right-section-bottom'>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-bottom-logged-in'>
-                                                        <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container ${this.state.isRightBottomHeaderTransitionActive ? "animate-peel" : ""}`}>
+                                                        <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container ${this.state.isTransitionActive ? "animate-peel" : ""}`}
+                                                        style={{ backgroundColor }}
+                                                        >
                                                             <h1>D<label>id you know?</label></h1>
                                                         </div>
                                                     </div>
