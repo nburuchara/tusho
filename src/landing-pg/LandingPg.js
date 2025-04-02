@@ -7046,7 +7046,7 @@ export default class LandingPg extends Component {
             isTransitionActive: false,
             isRightTopHeaderTransitionActive: false,
             isRightBottomHeaderTransitionActive: false,
-            transitionBackgroundColor: '',
+            headerTransitionBgColor: '',
             products: products,
             visibleCount: 6, // Initial number of items to render
             filteredProductCount: 0,
@@ -8665,7 +8665,7 @@ export default class LandingPg extends Component {
 
     render () {
 
-        const { searchBarIsClicked, searchInput, isSearchLoading, isSearchLoadingJipange, isSearchLoadingAccountPopup, isSearchLoadingFAQ, resultsFound, resultsFoundJipange, resultsFoundAccountPopup, resultsFoundFAQ, groupedOptions, groupedOptionsJipange, groupedOptionsAccountPopup, groupedOptionsFAQ } = this.state;
+        const { searchBarIsClicked, searchInput, isSearchLoading, isSearchLoadingJipange, isSearchLoadingAccountPopup, isSearchLoadingFAQ, resultsFound, resultsFoundJipange, resultsFoundAccountPopup, resultsFoundFAQ, groupedOptions, groupedOptionsJipange, groupedOptionsAccountPopup, groupedOptionsFAQ, headerTransitionBgColor } = this.state;
         const { currentMonth, currentYear, selectedDates } = this.state;
         const daysInMonth = this.getDaysInMonth(currentMonth, currentYear);
         const monthNames = [
@@ -11932,7 +11932,7 @@ export default class LandingPg extends Component {
                                             <div className='homepage-header-inner-body-poster-right-left-section'>
                                                  <div className='homepage-header-inner-body-poster-right-left-section-logged-in'>
                                                     <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container ${this.state.isTransitionActive ? "animate-peel" : ""}`}
-                                                    style={{ backgroundColor }}
+                                                    style={{ backgroundColor: headerTransitionBgColor }}
                                                     >
 
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-container-decor'>
@@ -11959,7 +11959,7 @@ export default class LandingPg extends Component {
                                                 <div className='homepage-header-inner-body-poster-right-right-section-top'>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in'>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container ${this.state.isTransitionActive ? "animate-peel" : ""}`}
-                                                        style={{ backgroundColor }}
+                                                        style={{ backgroundColor: headerTransitionBgColor }}
                                                         >
                                                             <h2>FYI</h2>
                                                         </div>
@@ -11975,7 +11975,7 @@ export default class LandingPg extends Component {
                                                 <div className='homepage-header-inner-body-poster-right-right-section-bottom'>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-bottom-logged-in'>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container ${this.state.isTransitionActive ? "animate-peel" : ""}`}
-                                                        style={{ backgroundColor }}
+                                                        style={{ backgroundColor: headerTransitionBgColor }}
                                                         >
                                                             <h1>D<label>id you know?</label></h1>
                                                         </div>
