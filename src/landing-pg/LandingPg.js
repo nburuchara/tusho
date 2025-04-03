@@ -7055,6 +7055,10 @@ export default class LandingPg extends Component {
             isRightTopHeaderTransitionActive: false,
             isRightBottomHeaderTransitionActive: false,
             transitionBackgroundColor: '',
+            headerOption1Selected: false,
+            headerOption2Selected: false,
+            headerOption3Selected: false,
+            headerOption4Selected: false,
             products: products,
             visibleCount: 6, // Initial number of items to render
             filteredProductCount: 0,
@@ -11938,7 +11942,7 @@ export default class LandingPg extends Component {
                                         {this.state.userSignedIn ? (
                                             <div className='homepage-header-inner-body-poster-right-left-section'>
                                                  <div className='homepage-header-inner-body-poster-right-left-section-logged-in'>
-                                                    <div style={{backgroundColor: this.state.isLeftHeaderTransitionActive ? '' : ''}} className={`homepage-header-inner-body-poster-right-left-section-logged-in-container ${this.state.isLeftHeaderTransitionActive ? "animate-peel" : ""}`}>
+                                                    <div style={{backgroundColor: this.state.isLeftHeaderTransitionActive ? '' : ''}} className={`homepage-header-inner-body-poster-right-left-section-logged-in-container ${this.state.headerOption1Selected ? "animate-peel" : ""}`}>
 
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-container-decor'>
                                                             <img src='/assets/images/home-main-body/header-logged-in-decor.png'/>
@@ -11949,6 +11953,9 @@ export default class LandingPg extends Component {
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-cart'>
 
                                                         </div>
+                                                    </div>
+                                                    <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-1 ${this.state.headerOption1Selected ? 'animate-peel' : ''}`}>
+
                                                     </div>
                                                 </div>
                                             </div>
