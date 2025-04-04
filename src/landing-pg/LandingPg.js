@@ -6091,9 +6091,17 @@ const Styles = styled.div `
     margin-top: 0.25rem;
     margin-bottom: 0px;
     color: #ff5733;
-    font-weight: normal;
+    // font-weight: normal;
     // font-size: 95%;
     font-family: raleway;
+}
+
+.shopping-list-feature-container {
+    position: absolute;
+    bottom: 1rem;
+    border: 1px solid black;
+    width: 99.35%;
+    height: 80%;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-cart {
@@ -12070,6 +12078,9 @@ export default class LandingPg extends Component {
                                                     </div>
                                                     <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
                                                         <h3>What do you need to buy?</h3>
+                                                        <div className='shopping-list-feature-container'>
+                                                            
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
