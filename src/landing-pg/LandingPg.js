@@ -5699,11 +5699,11 @@ const Styles = styled.div `
     border-left: 1px solid transparent;
     border-right: 1px solid transparent;
     border-top: 1px solid transparent;
-    transition: background-color 0.35s ease-in-out, border 0.25s ease-in-out;
+    transition: border 0.25s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box button:hover {
-    background-color: transparent;
+    // background-color: transparent;
     border: 1px solid #ff5733;
     cursor: pointer;
 }
@@ -5751,7 +5751,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 {
-
+    
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 img {
@@ -5769,6 +5769,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2 {
     background-color: #fff2ccff !important;
+    transition: background-color 0.35s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2:hover {
@@ -5990,8 +5991,20 @@ const Styles = styled.div `
     }
 }
 
+.homepage-header-inner-body-poster:has(.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1-btn:focus) {
+    --background-color: #fff2ccff;
+}
+
 .homepage-header-inner-body-poster:has(.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2-btn:focus) {
-    --background-color: #fff;
+    --background-color: #fff2ccff;
+}
+
+.homepage-header-inner-body-poster:has(.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3-btn:focus) {
+    --background-color: #fff2ccff;
+}
+
+.homepage-header-inner-body-poster:has(.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4-btn:focus) {
+    --background-color: #fff2ccff;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container {
@@ -6025,7 +6038,7 @@ const Styles = styled.div `
 
 /* Ensures the container fully changes color */
 .animate-peel {
-    background-color: #fff2ccff;
+    background-color: var(--background-color);
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-decor {
@@ -6181,7 +6194,7 @@ const Styles = styled.div `
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #fff2ccff;
+    background-color: var(--background-color);
     clip-path: polygon(0 100%, 0 100%, 0 0, 0 0);
     transition: clip-path 0.6s ease-in-out;
 }
@@ -6193,7 +6206,7 @@ const Styles = styled.div `
 
 /* Ensures the container fully changes color */
 .animate-peel {
-    // background-color: #fff2ccff !important;
+    background-color: var(--background-color);
 }
 
     // - - HOMEPAGE BODY - - //
@@ -11883,7 +11896,7 @@ export default class LandingPg extends Component {
                                                     <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body'>
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container'>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
-                                                                <button className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1-btn'>
+                                                                <button onClick={this.handleTriggerHeaderTransitions} className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1-btn'>
                                                                     <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1'>
                                                                         <img src='/assets/images/home-main-body/product-btn-15.png'/>
                                                                         <h3>New Products</h3>
@@ -11901,7 +11914,7 @@ export default class LandingPg extends Component {
                                                                 <h4>↗︎</h4>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
-                                                            <button className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3-btn'>
+                                                            <button onClick={this.handleTriggerHeaderTransitions} className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3-btn'>
                                                                     <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3'>
                                                                         <img src='/assets/images/home-main-body/product-btn-3.png'/>
                                                                         <h3>Jipange Delivery</h3>
@@ -11910,7 +11923,7 @@ export default class LandingPg extends Component {
                                                                 <h4>↗︎</h4>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
-                                                                <button className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4-btn'>
+                                                                <button onClick={this.handleTriggerHeaderTransitions} className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4-btn'>
                                                                     <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4'>
                                                                         <img src='/assets/images/home-main-body/product-btn-4.png'/>
                                                                         <h3>Shop Pamoja</h3>
