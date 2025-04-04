@@ -6219,7 +6219,7 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
     border-bottom-right-radius: 0px;
     transform: translateY(-100%);
-    transition: transform 1s ease-in-out, visibility 1s ease-in-out, border-bottom-right-radius 1s ease-in-out;
+    transition: transform 1s ease-in-out, visibility 1s ease-in-out, border-bottom-right-radius 1.25s ease-in-out;
     visibility: hidden;
 }
 
