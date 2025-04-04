@@ -7163,6 +7163,7 @@ export default class LandingPg extends Component {
             isRightBottomHeaderTransitionActive: false,
             transitionBackgroundColor: '',
             selectedHeaderOption: '',
+            items: [''], // Start with one empty bullet
             products: products,
             visibleCount: 6, // Initial number of items to render
             filteredProductCount: 0,
@@ -7211,6 +7212,9 @@ export default class LandingPg extends Component {
         this.sentinelRef = React.createRef();
         this.observer = null;
         this.elementRef = React.createRef();
+
+        //* - SHOPPING LIST REFERENCE - *//
+        this.inputRefs = [React.createRef()];
     }
 
     componentDidMount = () => {
@@ -8787,6 +8791,49 @@ export default class LandingPg extends Component {
         // setTimeout(() => {
         //   this.setState({ isLeftHeaderTransitionActive: false });
         // }, 600); // Matches CSS transition time
+    };
+
+    handleShoppingListTextKeyDown = (e, index) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+    
+          const newItems = [...this.state.items];
+          newItems.splice(index + 1, 0, '');
+    
+          this.setState({ items: newItems }, () => {
+            this.inputRefs.splice(index + 1, 0, React.createRef());
+            setTimeout(() => {
+                const nextInput = this.inputRefs[index + 1]?.current;
+                if (nextInput) {
+                  nextInput.focus();
+                  // Move cursor to the end of the input
+                  const value = nextInput.value;
+                  nextInput.setSelectionRange(value.length, value.length);
+                }
+              }, 10);
+          });
+        }
+    
+        if (e.key === 'Backspace' && this.state.items[index] === '' && this.state.items.length > 1) {
+          e.preventDefault();
+    
+          const newItems = [...this.state.items];
+          newItems.splice(index, 1);
+          this.inputRefs.splice(index, 1);
+    
+          this.setState({ items: newItems }, () => {
+            const newIndex = Math.max(0, index - 1);
+            setTimeout(() => {
+              this.inputRefs[newIndex]?.current?.focus();
+            }, 0);
+          });
+        }
+    };
+    
+    handleShoppingListTextChange = (e, index) => {
+        const newItems = [...this.state.items];
+        newItems[index] = e.target.value;
+        this.setState({ items: newItems });
     };
 
     render () {
@@ -12079,7 +12126,47 @@ export default class LandingPg extends Component {
                                                     <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
                                                         <h3>What do you need to buy?</h3>
                                                         <div className='shopping-list-feature-container'>
-                                                            
+                                                            <div
+                                                            className="shopping-list-container"
+                                                            style={{
+                                                            // padding: '1rem',
+                                                            // maxWidth: '500px',
+                                                            // margin: '2rem auto',
+                                                            // borderRadius: '12px',
+                                                            // backgroundColor: '#f9f9f9',
+                                                            // boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+                                                            // fontFamily: 'sans-serif',
+                                                            }}
+                                                            >
+                                                                <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+                                                                {this.state.items.map((item, index) => (
+                                                                    <li key={index} style={{ marginBottom: '0.75rem' }}>
+                                                                    <input
+                                                                        type="text"
+                                                                        value={item}
+                                                                        onChange={(e) => this.handleShoppingListTextChange(e, index)}
+                                                                        onKeyDown={(e) => this.handleShoppingListTextKeyDown(e, index)}
+                                                                        ref={this.inputRefs[index]}
+                                                                        placeholder="Enter item..."
+                                                                        style={{
+                                                                        width: '100%',
+                                                                        padding: '0.5rem 0.75rem',
+                                                                        fontSize: '1rem',
+                                                                        border: '1px solid #ccc',
+                                                                        borderRadius: '6px',
+                                                                        outline: 'none',
+                                                                        transition: 'border-color 0.2s',
+                                                                        }}
+                                                                        onFocus={(e) => (e.target.style.borderColor = '#007BFF')}
+                                                                        onBlur={(e) => (e.target.style.borderColor = '#ccc')}
+                                                                    />
+                                                                    </li>
+                                                                ))}
+                                                                </ul>
+                                                                <p style={{ fontSize: '0.85rem', color: '#666', marginTop: '1rem' }}>
+                                                                Press <strong>Enter</strong> to add a new item, <strong>Backspace</strong> on an empty item to delete it.
+                                                                </p>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
