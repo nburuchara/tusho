@@ -6120,7 +6120,7 @@ const Styles = styled.div `
     margin-left: 3%;
 }
 
-.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-1 {
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -6130,10 +6130,14 @@ const Styles = styled.div `
     height: 96.25%;
     border: 1px solid #ff5733;
     border-top-right-radius: 24px;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    visibility: hidden;
 }
 
-.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-1.open {
-
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2.open {
+    transform: translateY(0);
+    visibility: visible;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom {
@@ -8700,11 +8704,21 @@ export default class LandingPg extends Component {
     handleTriggerHeaderTransitions = (option) => {
 
         this.setState((prevState) => ({ 
-            selectedHeaderOption: option,
+            // selectedHeaderOption: option,
             isLeftHeaderTransitionActive: !prevState.isLeftHeaderTransitionActive,
             isRightBottomHeaderTransitionActive: !prevState.isRightBottomHeaderTransitionActive,
             isRightTopHeaderTransitionActive: !prevState.isRightTopHeaderTransitionActive
-        }));
+        }), () => {
+            setTimeout(() => {
+                if (this.state.selectedHeaderOption !== option) {
+                    this.setState({
+                        selectedHeaderOption: option
+                    })
+                } else {
+                    this.setState({selectedHeaderOption: ''})
+                }
+            }, 1500)
+        });
     
         // Optional: Reset after animation ends
         // setTimeout(() => {
@@ -12015,8 +12029,8 @@ export default class LandingPg extends Component {
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container ${this.state.isRightTopHeaderTransitionActive ? "animate-peel" : ""}`}>
                                                             <h2>FYI</h2>
                                                         </div>
-                                                        <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-1 ${this.state.selectedHeaderOption === 'option-1' ? 'open' : ''}`}>
-
+                                                        <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
+                                                            <h3>everybody say yeeeaah</h3>
                                                         </div>
                                                     </div>
                                                     {/* <img src='/assets/images/home-main-header/header-poster-img-1.webp'/> */}
