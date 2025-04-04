@@ -6217,13 +6217,14 @@ const Styles = styled.div `
     width: 98%;
     height: 98.6%;
     border: 1px solid #ff5733;
-    border-bottom-right-radius: 24px;
+    border-bottom-right-radius: 0px;
     transform: translateY(-100%);
-    transition: transform 1s ease-in-out, visibility 1s ease-in-out;
+    transition: transform 1s ease-in-out, visibility 1s ease-in-out, border-bottom-right-radius 1s ease-in-out;
     visibility: hidden;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-2.open {
+    border-bottom-right-radius: 24px;
     transform: translateY(0);
     visibility: visible;
 }
