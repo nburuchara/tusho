@@ -6092,8 +6092,8 @@ const Styles = styled.div `
     margin-bottom: 0px;
     color: #ff5733;
     font-weight: normal;
-    font-size: 95%;
-    font-family: poppins;
+    // font-size: 95%;
+    font-family: raleway;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-cart {
