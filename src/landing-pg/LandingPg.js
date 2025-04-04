@@ -6090,8 +6090,9 @@ const Styles = styled.div `
     margin-left: 2.5%;
     margin-top: 0.25rem;
     margin-bottom: 0px;
-    color: #5e626a;
+    color: #ff5733;
     font-weight: normal;
+    font-size: 95%;
     font-family: poppins;
 }
 
@@ -12068,7 +12069,7 @@ export default class LandingPg extends Component {
                                                         </div>
                                                     </div>
                                                     <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
-                                                        <h3>everybody say yeeeaah</h3>
+                                                        <h3>What do you need to buy?</h3>
                                                     </div>
                                                 </div>
                                             </div>
