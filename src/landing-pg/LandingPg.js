@@ -6092,6 +6092,7 @@ const Styles = styled.div `
     margin-bottom: 0px;
     color: #5e626a;
     font-weight: normal;
+    font-family: poppins;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-cart {
