@@ -6076,14 +6076,14 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
     overflow: hidden;
     transition: background-color 0.6s ease-in-out;
-    transform: translateY(-100%);
-    transition: transform 1s ease-in-out, visibility 1s ease-in-out;
-    visibility: hidden;
+    transform: translateY(3rem);
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    opacity: 0;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2.open {
     transform: translateY(0);
-    visibility: visible;
+    opacity: 1;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 h3 {
