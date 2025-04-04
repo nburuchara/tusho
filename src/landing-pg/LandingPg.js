@@ -5980,6 +5980,7 @@ const Styles = styled.div `
     width: 96%;
     height: 100%;
     background-color: white;
+    position: relative;
 }
 
 @keyframes peelLeftToRight {
@@ -6063,6 +6064,28 @@ const Styles = styled.div `
     margin-left: 4.5%;
 }
 
+.homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff2ccff;
+    margin-left: 0.25rem;
+    margin-top: -0.08rem;
+    height: 99.6%;
+    width: 101.9%;
+    border: 1px solid #ff5733;
+    overflow: hidden;
+    transition: background-color 0.6s ease-in-out;
+    transform: translateY(-100%);
+    transition: transform 1s ease-in-out, visibility 1s ease-in-out;
+    visibility: hidden;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2.open {
+    transform: translateY(0);
+    visibility: visible;
+}
+
 .homepage-header-inner-body-poster-right-left-section-logged-in-cart {
     position: absolute;
     bottom: 1.5rem;
@@ -6131,7 +6154,7 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
     border-top-right-radius: 24px;
     transform: translateY(-100%);
-    transition: transform 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    transition: transform 1s ease-in-out, visibility 1s ease-in-out;
     visibility: hidden;
 }
 
@@ -8717,7 +8740,7 @@ export default class LandingPg extends Component {
                 } else {
                     this.setState({selectedHeaderOption: ''})
                 }
-            }, 1500)
+            }, 1000)
         });
     
         // Optional: Reset after animation ends
@@ -12012,6 +12035,9 @@ export default class LandingPg extends Component {
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-cart'>
 
                                                         </div>
+                                                    </div>
+                                                    <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
+                                                        <h3>everybody say yeeeaah</h3>
                                                     </div>
                                                 </div>
                                             </div>
