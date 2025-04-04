@@ -6087,7 +6087,11 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 h3 {
-    
+    margin-left: 2.5%;
+    margin-top: 0.25rem;
+    margin-bottom: 0px;
+    color: #5e626a;
+    font-weight: normal;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-cart {
