@@ -6182,6 +6182,7 @@ const Styles = styled.div `
     background-color: white;
     height: 100%;
     width: 100%;
+    position: relative;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container {
@@ -6205,6 +6206,26 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container label {
    
+}
+
+.homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #fff2ccff;
+    margin-left: 0.28rem;
+    width: 98%;
+    height: 98.6%;
+    border: 1px solid #ff5733;
+    border-bottom-right-radius: 24px;
+    transform: translateY(-100%);
+    transition: transform 1s ease-in-out, visibility 1s ease-in-out;
+    visibility: hidden;
+}
+
+.homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-2.open {
+    transform: translateY(0);
+    visibility: visible;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container,
@@ -12071,6 +12092,9 @@ export default class LandingPg extends Component {
                                                     <div className='homepage-header-inner-body-poster-right-right-section-bottom-logged-in'>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container ${this.state.isRightBottomHeaderTransitionActive ? "animate-peel" : ""}`}>
                                                             <h1>D<label>id you know?</label></h1>
+                                                        </div>
+                                                        <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
+                                                            <h3>everybody say yeeeaah</h3>
                                                         </div>
                                                     </div>
                                                     {/* <img src='/assets/images/home-main-header/header-poster-img-1.webp'/> */}
