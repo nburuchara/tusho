@@ -5673,14 +5673,28 @@ const Styles = styled.div `
     position: relative;
 }
 
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box button { 
+    all: unset; /* removes all default button styles */
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box div {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box button {
     border: 1px solid white;
     width: 85%;
     height: 85%;
     margin-top: 0.75rem;
     border-radius: 18px;
     position: relative;
-    background-color: white;
+    // background-color: transparent;
     border-bottom: 1px solid transparent;
     border-left: 1px solid transparent;
     border-right: 1px solid transparent;
@@ -5688,7 +5702,7 @@ const Styles = styled.div `
     transition: background-color 0.35s ease-in-out, border 0.25s ease-in-out;
 }
 
-.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box div:hover {
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box button:hover {
     background-color: transparent;
     border: 1px solid #ff5733;
     cursor: pointer;
@@ -5703,6 +5717,7 @@ const Styles = styled.div `
     top: 0.5rem;
     right: 2rem;
     color: #ff5733;
+    pointer-events: none;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -5975,6 +5990,10 @@ const Styles = styled.div `
     }
 }
 
+.homepage-header-inner-body-poster:has(.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2-btn:focus) {
+    --background-color: #fff;
+}
+
 .homepage-header-inner-body-poster-right-left-section-logged-in-container {
     margin-left: 0.25rem;
     margin-top: -0.08rem;
@@ -5994,7 +6013,7 @@ const Styles = styled.div `
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #fff2ccff;
+    background-color: var(--background-color);
     clip-path: polygon(0 100%, 0 100%, 0 0, 0 0);
     transition: clip-path 0.6s ease-in-out;
 }
@@ -6131,15 +6150,6 @@ const Styles = styled.div `
    
 }
 
-@keyframes peelLeftToRight {
-    0% {
-        clip-path: polygon(0 100%, 0 100%, 0 0, 0 0);
-    }
-    100% {
-        clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
-    }
-}
-
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container,
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container {
     background-color: #20313a;
@@ -6183,7 +6193,7 @@ const Styles = styled.div `
 
 /* Ensures the container fully changes color */
 .animate-peel {
-    background-color: #fff2ccff !important;
+    // background-color: #fff2ccff !important;
 }
 
     // - - HOMEPAGE BODY - - //
@@ -11873,32 +11883,39 @@ export default class LandingPg extends Component {
                                                     <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body'>
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container'>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
-                                                                <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1'>
-                                                                    <img src='/assets/images/home-main-body/product-btn-15.png'/>
-                                                                    
-                                                                    <h3>New Products</h3>
-                                                                </div>
+                                                                <button className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1-btn'>
+                                                                    <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1'>
+                                                                        <img src='/assets/images/home-main-body/product-btn-15.png'/>
+                                                                        <h3>New Products</h3>
+                                                                    </div>
+                                                                </button>
                                                                 <h4>↗︎</h4>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
-                                                                <div onClick={this.handleTriggerHeaderTransitions} className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2'>
-                                                                    <img src='/assets/images/home-main-body/product-btn-25.png'/>
-                                                                    <h3>Shopping List</h3>
-                                                                </div>
+                                                                <button onClick={this.handleTriggerHeaderTransitions}className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2-btn'>
+                                                                    <div  className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2'>
+                                                                        <img src='/assets/images/home-main-body/product-btn-25.png'/>
+                                                                        <h3>Shopping List</h3>
+                                                                    </div>
+                                                                </button>
                                                                 <h4>↗︎</h4>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
-                                                                <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3'>
-                                                                    <img src='/assets/images/home-main-body/product-btn-3.png'/>
-                                                                    <h3>Jipange Delivery</h3>
-                                                                </div>
+                                                            <button className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3-btn'>
+                                                                    <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3'>
+                                                                        <img src='/assets/images/home-main-body/product-btn-3.png'/>
+                                                                        <h3>Jipange Delivery</h3>
+                                                                    </div>
+                                                                </button>
                                                                 <h4>↗︎</h4>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
-                                                                <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4'>
-                                                                    <img src='/assets/images/home-main-body/product-btn-4.png'/>
-                                                                    <h3>Shop Pamoja</h3>
-                                                                </div>
+                                                                <button className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4-btn'>
+                                                                    <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4'>
+                                                                        <img src='/assets/images/home-main-body/product-btn-4.png'/>
+                                                                        <h3>Shop Pamoja</h3>
+                                                                    </div>
+                                                                </button>
                                                                 <h4>↗︎</h4>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
@@ -11942,7 +11959,7 @@ export default class LandingPg extends Component {
                                         {this.state.userSignedIn ? (
                                             <div className='homepage-header-inner-body-poster-right-left-section'>
                                                  <div className='homepage-header-inner-body-poster-right-left-section-logged-in'>
-                                                    <div style={{backgroundColor: this.state.isLeftHeaderTransitionActive ? '' : ''}} className={`homepage-header-inner-body-poster-right-left-section-logged-in-container ${this.state.headerOption1Selected ? "animate-peel" : ""}`}>
+                                                    <div style={{backgroundColor: this.state.isLeftHeaderTransitionActive ? '' : ''}} className={`homepage-header-inner-body-poster-right-left-section-logged-in-container ${this.state.isLeftHeaderTransitionActive ? "animate-peel" : ""}`}>
 
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-container-decor'>
                                                             <img src='/assets/images/home-main-body/header-logged-in-decor.png'/>
