@@ -6086,6 +6086,10 @@ const Styles = styled.div `
     visibility: visible;
 }
 
+.homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 h3 {
+    
+}
+
 .homepage-header-inner-body-poster-right-left-section-logged-in-cart {
     position: absolute;
     bottom: 1.5rem;
