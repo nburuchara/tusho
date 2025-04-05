@@ -12124,7 +12124,7 @@ export default class LandingPg extends Component {
                                                         </div>
                                                     </div>
                                                     <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
-                                                        <h3>What do you need to buy?</h3>
+                                                        <h3>What do you need?</h3>
                                                         <div className='shopping-list-feature-container'>
                                                             <div
                                                             className="shopping-list-container"
