@@ -6088,7 +6088,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 h3 {
     margin-left: 2.5%;
-    margin-top: 0.25rem;
+    margin-top: 0.5rem;
     margin-bottom: 0px;
     color: #ff5733;
     // font-weight: normal;
@@ -6101,7 +6101,7 @@ const Styles = styled.div `
     bottom: 1rem;
     // border: 1px solid black;
     width: 99.35%;
-    height: 90%;
+    height: 89%;
 }
 
 .shopping-list-feature-container p {
@@ -6128,7 +6128,7 @@ const Styles = styled.div `
     border-radius: 6px;
     background-color: transparent;
     outline: none;
-    // border: none;
+    border: none;
     // transition: border-color 0.2s;
 }
 
