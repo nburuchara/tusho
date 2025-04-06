@@ -8810,38 +8810,30 @@ export default class LandingPg extends Component {
 
     handleShoppingListTextKeyDown = (e, index) => {
         if (e.key === 'Enter') {
-          e.preventDefault();
-    
-          const newItems = [...this.state.items];
-          newItems.splice(index + 1, 0, '');
-    
-          this.setState({ items: newItems }, () => {
-            this.inputRefs.splice(index + 1, 0, React.createRef());
-            setTimeout(() => {
-                const nextInput = this.inputRefs[index + 1]?.current;
-                if (nextInput) {
-                  nextInput.focus();
-                  // Move cursor to the end of the input
-                  const value = nextInput.value;
-                  nextInput.setSelectionRange(value.length, value.length);
-                }
-              }, 10);
-          });
+            e.preventDefault();
+        
+            const newItems = [...this.state.items];
+            newItems.splice(index + 1, 0, '');
+        
+            this.inputRefs.splice(index + 1, 0, React.ChildrencreateRef()); // Create a new ref for the new input
+        
+            this.setState({
+                items: newItems,
+                focusIndex: index + 1, // 👈 Mark the new input to receive focus
+            });
         }
     
         if (e.key === 'Backspace' && this.state.items[index] === '' && this.state.items.length > 1) {
-          e.preventDefault();
-    
-          const newItems = [...this.state.items];
-          newItems.splice(index, 1);
-          this.inputRefs.splice(index, 1);
-    
-          this.setState({ items: newItems }, () => {
-            const newIndex = Math.max(0, index - 1);
-            setTimeout(() => {
-              this.inputRefs[newIndex]?.current?.focus();
-            }, 0);
-          });
+            e.preventDefault();
+        
+            const newItems = [...this.state.items];
+            newItems.splice(index, 1);
+            this.inputRefs.splice(index, 1);
+        
+            this.setState({
+                items: newItems,
+                focusIndex: Math.max(0, index - 1), // 👈 Focus previous input
+            });
         }
     };
     
@@ -12142,17 +12134,18 @@ export default class LandingPg extends Component {
                                                         <h3>What do you need?</h3>
                                                         <div className='shopping-list-feature-container'>
                                                             <div
-                                                            className="shopping-list-container"
-                                                            style={{
-                                                            // padding: '1rem',
-                                                            // maxWidth: '500px',
-                                                            // margin: '2rem auto',
-                                                            // borderRadius: '12px',
-                                                            // backgroundColor: '#f9f9f9',
-                                                            // boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
-                                                            // fontFamily: 'sans-serif',
-                                                            }}
+                                                                className="shopping-list-container"
+                                                                // style={{
+                                                                // padding: '1rem',
+                                                                // maxWidth: '500px',
+                                                                // margin: '2rem auto',
+                                                                // borderRadius: '12px',
+                                                                // backgroundColor: '#f9f9f9',
+                                                                // boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+                                                                // fontFamily: 'sans-serif',
+                                                                // }}
                                                             >
+                                                                <h2 style={{ marginBottom: '1rem', color: '#333' }}>🛒 Shopping List</h2>
                                                                 <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
                                                                 {this.state.items.map((item, index) => (
                                                                     <li key={index} style={{ marginBottom: '0.75rem' }}>
