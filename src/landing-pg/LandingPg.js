@@ -6102,6 +6102,7 @@ const Styles = styled.div `
     // border: 1px solid black;
     width: 99.35%;
     height: 89%;
+    overflow-y: auto;
 }
 
 .shopping-list-feature-container p {
@@ -6117,19 +6118,20 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container li {
-    margin-bottom: 0.35rem;
+    margin-bottom: 0.15rem;
 }
 
 .shopping-list-feature-container input {
     width: 90%;
     padding: 0.2rem 0.35rem;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-family: poppins;
     // border: 1px solid #ccc;
     border-radius: 6px;
     background-color: transparent;
     outline: none;
     border: none;
+    color: #5e626a;
     // transition: border-color 0.2s;
 }
 
@@ -12174,7 +12176,7 @@ export default class LandingPg extends Component {
                                                                     onChange={(e) => this.handleShoppingListTextChange(e, index)}
                                                                     onKeyDown={(e) => this.handleShoppingListTextKeyDown(e, index)}
                                                                     ref={this.inputRefs[index]}
-                                                                    placeholder="Enter item..."
+                                                                    placeholder="Add item..."
                                                                     onFocus={(e) => (e.target.style.borderColor = '#007BFF')}
                                                                     onBlur={(e) => (e.target.style.borderColor = '#ccc')}
                                                                     />
