@@ -6107,6 +6107,7 @@ const Styles = styled.div `
 .shopping-list-feature-container p {
     margin-left: 3.5%;
     margin-right: 3.5%;
+    margin-top: 0.2rem;
     font-size: 80%;
     color: #5e626a;
 }
