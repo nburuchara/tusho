@@ -6123,7 +6123,7 @@ const Styles = styled.div `
 .shopping-list-feature-container input {
     width: 90%;
     padding: 0.2rem 0.35rem;
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-family: poppins;
     // border: 1px solid #ccc;
     border-radius: 6px;
