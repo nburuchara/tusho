@@ -6099,7 +6099,7 @@ const Styles = styled.div `
 .shopping-list-feature-container {
     position: absolute;
     bottom: 1rem;
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 99.35%;
     height: 90%;
 }
@@ -6118,8 +6118,9 @@ const Styles = styled.div `
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 6px;
+    background-color: transparent;
     outline: none;
-    transition: border-color 0.2s;
+    // transition: border-color 0.2s;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-cart {
