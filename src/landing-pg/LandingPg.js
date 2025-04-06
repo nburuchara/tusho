@@ -6101,7 +6101,14 @@ const Styles = styled.div `
     bottom: 1rem;
     border: 1px solid black;
     width: 99.35%;
-    height: 80%;
+    height: 90%;
+}
+
+.shopping-list-feature-container p {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    font-size: 80%;
+    color: #5e626a;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-cart {
@@ -12133,20 +12140,10 @@ export default class LandingPg extends Component {
                                                     <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
                                                         <h3>What do you need?</h3>
                                                         <div className='shopping-list-feature-container'>
-                                                            <div
-                                                                className="shopping-list-container"
-                                                                // style={{
-                                                                // padding: '1rem',
-                                                                // maxWidth: '500px',
-                                                                // margin: '2rem auto',
-                                                                // borderRadius: '12px',
-                                                                // backgroundColor: '#f9f9f9',
-                                                                // boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
-                                                                // fontFamily: 'sans-serif',
-                                                                // }}
-                                                            >
-                                                                <h2 style={{ marginBottom: '1rem', color: '#333' }}>🛒 Shopping List</h2>
-                                                                <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+                                                            <p>
+                                                            Press <strong>Enter</strong> to add a new item, <strong>Backspace</strong> on an empty item to delete it.
+                                                            </p>
+                                                            <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
                                                                 {this.state.items.map((item, index) => (
                                                                     <li key={index} style={{ marginBottom: '0.75rem' }}>
                                                                     <input
@@ -12157,7 +12154,7 @@ export default class LandingPg extends Component {
                                                                         ref={this.inputRefs[index]}
                                                                         placeholder="Enter item..."
                                                                         style={{
-                                                                        width: '100%',
+                                                                        width: '90%',
                                                                         padding: '0.5rem 0.75rem',
                                                                         fontSize: '1rem',
                                                                         border: '1px solid #ccc',
@@ -12170,11 +12167,7 @@ export default class LandingPg extends Component {
                                                                     />
                                                                     </li>
                                                                 ))}
-                                                                </ul>
-                                                                <p style={{ fontSize: '0.85rem', color: '#666', marginTop: '1rem' }}>
-                                                                Press <strong>Enter</strong> to add a new item, <strong>Backspace</strong> on an empty item to delete it.
-                                                                </p>
-                                                            </div>
+                                                            </ul>
                                                         </div>
                                                     </div>
                                                 </div>
