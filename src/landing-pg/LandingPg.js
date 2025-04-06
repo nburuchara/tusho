@@ -6112,14 +6112,23 @@ const Styles = styled.div `
     color: #5e626a;
 }
 
+.shopping-list-feature-container ul {
+    padding-left: 1.5rem;
+}
+
+.shopping-list-feature-container li {
+    margin-bottom: 0.35rem;
+}
+
 .shopping-list-feature-container input {
     width: 90%;
-    padding: 0.5rem 0.75rem;
+    padding: 0.2rem 0.35rem;
     font-size: 1rem;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
     border-radius: 6px;
     background-color: transparent;
     outline: none;
+    // border: none;
     // transition: border-color 0.2s;
 }
 
@@ -12155,18 +12164,18 @@ export default class LandingPg extends Component {
                                                             <p>
                                                             Press <strong>Enter</strong> to add a new item, <strong>Backspace</strong> on an empty item to delete it.
                                                             </p>
-                                                            <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+                                                            <ul style={{listStyleType: 'disc'}}>
                                                                 {this.state.items.map((item, index) => (
-                                                                    <li key={index} style={{ marginBottom: '0.75rem' }}>
+                                                                    <li key={index}>
                                                                     <input
-                                                                        type="text"
-                                                                        value={item}
-                                                                        onChange={(e) => this.handleShoppingListTextChange(e, index)}
-                                                                        onKeyDown={(e) => this.handleShoppingListTextKeyDown(e, index)}
-                                                                        ref={this.inputRefs[index]}
-                                                                        placeholder="Enter item..."
-                                                                        onFocus={(e) => (e.target.style.borderColor = '#007BFF')}
-                                                                        onBlur={(e) => (e.target.style.borderColor = '#ccc')}
+                                                                    type="text"
+                                                                    value={item}
+                                                                    onChange={(e) => this.handleShoppingListTextChange(e, index)}
+                                                                    onKeyDown={(e) => this.handleShoppingListTextKeyDown(e, index)}
+                                                                    ref={this.inputRefs[index]}
+                                                                    placeholder="Enter item..."
+                                                                    onFocus={(e) => (e.target.style.borderColor = '#007BFF')}
+                                                                    onBlur={(e) => (e.target.style.borderColor = '#ccc')}
                                                                     />
                                                                     </li>
                                                                 ))}
