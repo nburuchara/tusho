@@ -6105,10 +6105,20 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container p {
-    margin-left: 2.5%;
-    margin-right: 2.5%;
+    margin-left: 3.5%;
+    margin-right: 3.5%;
     font-size: 80%;
     color: #5e626a;
+}
+
+.shopping-list-feature-container input {
+    width: 90%;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.2s;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-cart {
@@ -12153,15 +12163,6 @@ export default class LandingPg extends Component {
                                                                         onKeyDown={(e) => this.handleShoppingListTextKeyDown(e, index)}
                                                                         ref={this.inputRefs[index]}
                                                                         placeholder="Enter item..."
-                                                                        style={{
-                                                                        width: '90%',
-                                                                        padding: '0.5rem 0.75rem',
-                                                                        fontSize: '1rem',
-                                                                        border: '1px solid #ccc',
-                                                                        borderRadius: '6px',
-                                                                        outline: 'none',
-                                                                        transition: 'border-color 0.2s',
-                                                                        }}
                                                                         onFocus={(e) => (e.target.style.borderColor = '#007BFF')}
                                                                         onBlur={(e) => (e.target.style.borderColor = '#ccc')}
                                                                     />
