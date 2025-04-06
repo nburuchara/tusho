@@ -8815,7 +8815,7 @@ export default class LandingPg extends Component {
             const newItems = [...this.state.items];
             newItems.splice(index + 1, 0, '');
         
-            this.inputRefs.splice(index + 1, 0, React.ChildrencreateRef()); // Create a new ref for the new input
+            this.inputRefs.splice(index + 1, 0, React.createRef()); // Create a new ref for the new input
         
             this.setState({
                 items: newItems,
