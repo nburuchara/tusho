@@ -12176,7 +12176,7 @@ export default class LandingPg extends Component {
                                                                     onChange={(e) => this.handleShoppingListTextChange(e, index)}
                                                                     onKeyDown={(e) => this.handleShoppingListTextKeyDown(e, index)}
                                                                     ref={this.inputRefs[index]}
-                                                                    placeholder="Add item..."
+                                                                    placeholder="Add item"
                                                                     onFocus={(e) => (e.target.style.borderColor = '#007BFF')}
                                                                     onBlur={(e) => (e.target.style.borderColor = '#ccc')}
                                                                     />
