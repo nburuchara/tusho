@@ -7163,7 +7163,8 @@ export default class LandingPg extends Component {
             isRightBottomHeaderTransitionActive: false,
             transitionBackgroundColor: '',
             selectedHeaderOption: '',
-            items: [''], // Start with one empty bullet
+            items: [''], // Shopping list items (starts with one empty bullet)
+            focusIndex: null, // 👈 Track which input to focus
             products: products,
             visibleCount: 6, // Initial number of items to render
             filteredProductCount: 0,
@@ -7267,9 +7268,23 @@ export default class LandingPg extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
+
+            //* - - FILTERING PRODUCTS - - *//
         if (prevState.products !== this.state.products || prevState.selectedFilters !== this.state.selectedFilters) {
             this.updateFilteredProductCount();
         }
+
+            //* - - MOVING CURSOR TO NEXT SHOPPING LIST ITEM - - *//
+        if (this.state.focusIndex !== null) {
+            const inputToFocus = this.inputRefs[this.state.focusIndex]?.current;
+            if (inputToFocus) {
+              inputToFocus.focus();
+              // Move cursor to end of input
+              const val = inputToFocus.value;
+              inputToFocus.setSelectionRange(val.length, val.length);
+            }
+            this.setState({ focusIndex: null }); // Reset
+          }
     }
 
     componentWillUnmount() {
