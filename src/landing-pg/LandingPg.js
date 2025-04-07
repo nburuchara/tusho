@@ -6235,7 +6235,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-shopping-assist {
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 99.5%;
     height: 66.25%;
 }
@@ -6245,7 +6245,7 @@ const Styles = styled.div `
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 2.85rem;
+    margin-top: 2.99rem;
 }
 
 .shopping-assistant-loading p {
