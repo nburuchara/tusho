@@ -6215,7 +6215,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 h1 {
     color: #5e626a;
     font-family: lexend;
-    font-size: 28px;
+    font-size: 26px;
     margin-left: 3%;
     margin-top: 0.25rem;
     margin-bottom: 0.5rem;
@@ -6223,7 +6223,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 p {
     margin-top: 0.25rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.45rem;
     margin-left: 3%;
     font-size: 85%;
     font-family: poppins;
