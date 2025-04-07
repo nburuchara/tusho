@@ -6221,10 +6221,19 @@ const Styles = styled.div `
     margin-bottom: 0.5rem;
 }
 
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 p {
+    margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
+    margin-left: 3%;
+    font-size: 85%;
+    font-family: poppins;
+    color: #5e626a;
+}
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-shopping-assist {
     border: 1px solid black;
     width: 99.5%;
-    height: 78.5%;
+    height: 57.25%;
 }
 
 .shopping-assistant-loading {
@@ -6232,7 +6241,7 @@ const Styles = styled.div `
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 3.85rem;
+    margin-top: 2.15rem;
 }
 
 .shopping-assistant-loading p {
@@ -12235,7 +12244,7 @@ export default class LandingPg extends Component {
                                                         </div>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
                                                             <h1>Shopping Assistant</h1>
-
+                                                            <p>We'll help you find what you're looking for! 🛒</p>
                                                             {this.state.showShopAssistantLoading && 
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-shopping-assist'>
                                                                     <div className='shopping-assistant-loading'>
