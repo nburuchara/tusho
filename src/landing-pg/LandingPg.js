@@ -6218,12 +6218,29 @@ const Styles = styled.div `
     font-size: 28px;
     margin-left: 3%;
     margin-top: 0.25rem;
+    margin-bottom: 0.5rem;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-shopping-assist {
     border: 1px solid black;
-    width: 100%;
-    height: 80%;
+    width: 99.5%;
+    height: 78.5%;
+}
+
+.shopping-assistant-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3.85rem;
+}
+
+.shopping-assistant-loading p {
+    margin-top: 0.35rem;
+    margin-bottom: 0px;
+    font-family: poppins;
+    font-size: 80%;
+    color: #5e626a;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom {
@@ -7210,6 +7227,7 @@ export default class LandingPg extends Component {
             selectedHeaderOption: '',
             items: [''], // Shopping list items (starts with one empty bullet)
             focusIndex: null, // 👈 Track which input to focus
+            showShopAssistantLoading: true,
             products: products,
             visibleCount: 6, // Initial number of items to render
             filteredProductCount: 0,
@@ -12220,7 +12238,20 @@ export default class LandingPg extends Component {
 
                                                             {this.state.showShopAssistantLoading && 
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-shopping-assist'>
-
+                                                                    <div className='shopping-assistant-loading'>
+                                                                        <RotatingLines
+                                                                        visible={true}
+                                                                        height="23.5"
+                                                                        width="23.5"
+                                                                        strokeColor="#FF5733"
+                                                                        strokeWidth="3"
+                                                                        animationDuration="0.75"
+                                                                        ariaLabel="rotating-lines-loading"
+                                                                        wrapperStyle={{}}
+                                                                        wrapperClass=""
+                                                                        />
+                                                                        <p>Fetching products...</p>
+                                                                    </div>
                                                                 </div>
                                                             }
                                                         </div>
