@@ -6233,7 +6233,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-shopping-assist {
     border: 1px solid black;
     width: 99.5%;
-    height: 57.25%;
+    height: 65.1%;
 }
 
 .shopping-assistant-loading {
@@ -12243,8 +12243,8 @@ export default class LandingPg extends Component {
                                                             <h2>FYI</h2>
                                                         </div>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
-                                                            <h1>Shopping Assistant</h1>
-                                                            <p>We'll help you find what you're looking for! 🛒</p>
+                                                            <h1>🛒 Shopping Assistant</h1>
+                                                            <p>We'll help you find what you're looking for!</p>
                                                             {this.state.showShopAssistantLoading && 
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-shopping-assist'>
                                                                     <div className='shopping-assistant-loading'>
