@@ -6221,8 +6221,12 @@ const Styles = styled.div `
     margin-bottom: 0.5rem;
 }
 
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 label {
+    margin-right: 2.5%;
+}
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 p {
-    margin-top: 0.25rem;
+    margin-top: 0.15rem;
     margin-bottom: 0.45rem;
     margin-left: 3%;
     font-size: 85%;
@@ -6233,7 +6237,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-shopping-assist {
     border: 1px solid black;
     width: 99.5%;
-    height: 65.1%;
+    height: 66.25%;
 }
 
 .shopping-assistant-loading {
@@ -6241,7 +6245,7 @@ const Styles = styled.div `
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 2.15rem;
+    margin-top: 2.85rem;
 }
 
 .shopping-assistant-loading p {
@@ -12243,7 +12247,7 @@ export default class LandingPg extends Component {
                                                             <h2>FYI</h2>
                                                         </div>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
-                                                            <h1>🛒 Shopping Assistant</h1>
+                                                            <h1><label>🛒</label> Shopping Assistant</h1>
                                                             <p>We'll help you find what you're looking for!</p>
                                                             {this.state.showShopAssistantLoading && 
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-shopping-assist'>
