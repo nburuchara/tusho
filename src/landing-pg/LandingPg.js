@@ -12202,7 +12202,7 @@ export default class LandingPg extends Component {
                                                             <h2>FYI</h2>
                                                         </div>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
-                                                            <h3>everybody say yeeeaah</h3>
+                                                            {/* <h3>everybody say yeeeaah</h3> */}
                                                         </div>
                                                     </div>
                                                     {/* <img src='/assets/images/home-main-header/header-poster-img-1.webp'/> */}
@@ -12219,7 +12219,7 @@ export default class LandingPg extends Component {
                                                             <h1>D<label>id you know?</label></h1>
                                                         </div>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
-                                                            <h3>everybody say yeeeaah</h3>
+                                                            <h3></h3>
                                                         </div>
                                                     </div>
                                                     {/* <img src='/assets/images/home-main-header/header-poster-img-1.webp'/> */}
