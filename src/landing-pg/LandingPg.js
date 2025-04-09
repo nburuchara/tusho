@@ -6993,7 +6993,7 @@ export default class LandingPg extends Component {
             accountSettingFirstName: '',
             accountSettingLastName: '',
             accountSettingEmail: '',
-            phoneNumberVerified: true,
+            phoneNumberVerified: false,
             accountSettingsFirstNameUnverifiedLabel: true,
             accountSettingsFirstNameVerifiedLabel: false,
             showFirstNameAccountSettingsLabel: true,
@@ -7240,7 +7240,7 @@ export default class LandingPg extends Component {
             selectedHeaderOption: '',
             items: [''], // Shopping list items (starts with one empty bullet)
             focusIndex: null, // 👈 Track which input to focus
-            showShopAssistantLoading: true,
+            showShopAssistantLoading: false,
             products: products,
             visibleCount: 6, // Initial number of items to render
             filteredProductCount: 0,
@@ -12059,7 +12059,7 @@ export default class LandingPg extends Component {
                                         <div onMouseEnter={this.handleAnnouncementBarMouseEnter} onMouseLeave={this.handleAnnouncementBarMouseLeave} onClick={this.handleAnnouncementBarMouseEnter} className="homepage-header-inner-header-left-update-display-announcement-container">
                                             <div ref={this.marqueeRef} className={`homepage-header-inner-header-left-update-display-announcement-track ${this.state.announcementBarIsPaused ? "paused" : ""}`} id="homepage-header-inner-header-left-update-display-announcement-track">
                                                 <div className="homepage-header-inner-header-left-update-display-announcement-wrapper">
-                                                    <span><strong>{this.state.dateTime} • </strong>No Monday blues are stopping this mama from getting things done today! #GoMamaGoMama 😤</span>
+                                                    <span><strong>{this.state.dateTime} • </strong>Made it half way through the week! You're doing great mama 😊</span>
                                                     <span><strong>OFFER(S) -  15% off</strong> Dairy Fresh Strawberry (offer ends <strong>today at 5:00pm</strong>) <strong>• 10% off</strong> Rinsun 250ml Oil (offer ends <strong>22/03/25 at 1:30pm</strong>) <strong>• 20% off </strong> Afia Multi-Vitamin Fruit Drink (1 litre) (offer ends <strong>31/03/25 at 2:30pm</strong>) <strong>• 20% off </strong> Afia Apple & Ginger Boost Fruit Drink (380ml) (offer ends <strong>31/03/25 at 2:30pm</strong>)</span>
                                                     <span><strong>IMPROVEMENTS TO YOUR SHOPPING EXPERIENCE - </strong>We fixed the shopping cart closing suddenly issue, and we added <strong>Airtel Money</strong> as a payment option!</span>
                                                     {/* <span>🎉 Announcement 4</span> */}
@@ -12266,6 +12266,9 @@ export default class LandingPg extends Component {
                                                                         <p>Fetching products...</p>
                                                                     </div>
                                                                 </div>
+                                                            }
+                                                            {this.state.showShopAssistant
+
                                                             }
                                                         </div>
                                                     </div>
