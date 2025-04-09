@@ -6202,13 +6202,15 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top {
-    height: 65%;
+    height: 60%;
     width: 100%;
-    border-bottom: 1px solid white;
+    border: 1px solid white;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom {
-
+    flex-grow: 1;
+    width: 100%;
+    border: 1px solid white;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
