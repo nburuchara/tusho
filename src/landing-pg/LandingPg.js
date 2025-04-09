@@ -6141,7 +6141,7 @@ const Styles = styled.div `
     width: 85%;
     left: 7.5%;
     height: 80%;
-    background-color: white;
+    background-color: #faece9;
     border: 1px solid #ff5733;
     border-radius: 8px;
 }
@@ -6190,6 +6190,12 @@ const Styles = styled.div `
     font-family: raleway;
     margin-top: 0.8rem;
     margin-left: 3%;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home {
+    border: 1px solid white;
+    width: 99.3%;
+    height: 70%;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
@@ -6980,7 +6986,7 @@ export default class LandingPg extends Component {
             displayScrollUpBtn: false,
 
             //* - USER ACCOUNT STATUS - *//
-            userSignedIn: false,
+            userSignedIn: true,
             showAccountInformation: true,
             showJipangeSettings: false,
             showPamojaSettings: false,
@@ -7151,7 +7157,7 @@ export default class LandingPg extends Component {
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
             OTPBtnClicked: false,
-            OTPVerifySuccess: false,
+            OTPVerifySuccess: true,
             showEnterOPTBtnTextHome: true,
             showVerifyOPTBtnTextHome: true,
             verifyOTPBtnText: 'Verify OTP',
@@ -12200,7 +12206,7 @@ export default class LandingPg extends Component {
                                                             <img src='/assets/images/home-main-body/header-logged-in-decor.png'/>
                                                         </div>
 
-                                                        <h1>Cart</h1>
+                                                        <h1>Promo</h1>
 
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-cart'>
 
@@ -12245,6 +12251,9 @@ export default class LandingPg extends Component {
                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in'>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container ${this.state.isRightTopHeaderTransitionActive ? "animate-peel" : ""}`}>
                                                             <h2>FYI</h2>
+                                                            <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home'>
+
+                                                            </div>
                                                         </div>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
                                                             <h1><label>🛒</label> Shopping Assistant</h1>
