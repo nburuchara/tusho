@@ -6189,13 +6189,26 @@ const Styles = styled.div `
     color: white;
     font-family: raleway;
     margin-top: 0.8rem;
+    margin-bottom: 0.35rem;
     margin-left: 3%;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home {
     border: 1px solid white;
-    width: 99.3%;
-    height: 70%;
+    width: 99.45%;
+    height: 78.6%;
+    display: flex;
+    flex-direction: column;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top {
+    height: 65%;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom {
+
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
@@ -12252,7 +12265,12 @@ export default class LandingPg extends Component {
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container ${this.state.isRightTopHeaderTransitionActive ? "animate-peel" : ""}`}>
                                                             <h2>FYI</h2>
                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home'>
+                                                                <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top'>
 
+                                                                </div>
+                                                                <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom'>
+
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
