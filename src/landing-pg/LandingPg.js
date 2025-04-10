@@ -12348,7 +12348,7 @@ export default class LandingPg extends Component {
                                                                     style={{
                                                                         left: `${Math.random() * 100}vw`,
                                                                         backgroundColor: '#ff5733',
-                                                                        animationDuration: `${10 + Math.random() * 10}s`, // slower fall
+                                                                        animationDuration: `${20 + Math.random() * 20}s`, // slower fall
                                                                         animationDelay: `${Math.random() * 10}s`,
                                                                     }}
                                                                     />
