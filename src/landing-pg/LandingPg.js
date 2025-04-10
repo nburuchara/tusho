@@ -6146,6 +6146,40 @@ const Styles = styled.div `
     border-radius: 8px;
 }
 
+.confetti-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+  
+  .confetti-piece {
+    position: absolute;
+    top: -10px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: hsl(var(--hue), 100%, 70%);
+    opacity: 0.8;
+    animation: confetti-fall linear infinite;
+  }
+  
+  /* Optional keyframe animation */
+  @keyframes confetti-fall {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(110vh) rotate(360deg);
+            opacity: 0.2;
+        }
+  }
+
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header {
 
 }
@@ -12226,6 +12260,20 @@ export default class LandingPg extends Component {
                                                         <h1>Promo</h1>
 
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab'>
+                                                            <div className="confetti-background">
+                                                                {[...Array(500)].map((_, i) => (
+                                                                    <div
+                                                                    key={i}
+                                                                    className="confetti-piece"
+                                                                    style={{
+                                                                        left: `${Math.random() * 100}vw`,
+                                                                        backgroundColor: '#ff5733',
+                                                                        animationDuration: `${5 + Math.random() * 10}s`, // slower fall
+                                                                        animationDelay: `${Math.random() * 10}s`,
+                                                                    }}
+                                                                    />
+                                                                ))}
+                                                            </div>
                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header'>
 
                                                             </div>
