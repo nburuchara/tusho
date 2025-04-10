@@ -11342,7 +11342,7 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                         }
 
-                                                                        {this.state.selectedJipangeProductCategory > 1 && this.state.selectedJipangeProductCategory !== 5 && this.state.selectedJipangeProductCategory !== 3 && this.state.selectedJipangeProductCategory !== 4 && this.state.selectedJipangeProductCategory !== 2 && this.state.selectedJipangeProductCategory !== 12 && this.state.selectedJipangeProductCategory !== 13 && 
+                                                                        {this.state.selectedJipangeProductCategory > 1 && this.state.selectedJipangeProductCategory !== 5 && this.state.selectedJipangeProductCategory !== 3 && this.state.selectedJipangeProductCategory !== 4 && this.state.selectedJipangeProductCategory !== 6 && this.state.selectedJipangeProductCategory !== 2 && this.state.selectedJipangeProductCategory !== 12 && this.state.selectedJipangeProductCategory !== 13 && 
                                                                             <div className='jipange-settings-no-products'>
                                                                                 <div className='jipange-settings-no-products-icon'>
                                                                                     <img src='/assets/icons/home-jipange/empty-crate-icon.png'/>
