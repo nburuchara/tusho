@@ -7235,7 +7235,7 @@ export default class LandingPg extends Component {
             jipangeProduct2Cat4: 'Brookside Full Cream Milk Powder Tin (500g)',
             jipangeProduct2Cat4Qty: 0,
             jipangeProduct2Cat4Price: 0,
-            jipangeProduct3Cat4: 'TuShop Fresh Mixed Sizes',
+            jipangeProduct3Cat4: 'TuShop Fresh Mixed Sizes Eggs (30pcs)',
             jipangeProduct3Cat4Qty: 0,
             jipangeProduct3Cat4Price: 0,
             jipangeProduct1Cat5: 'Blueband Original (250g)',
@@ -11130,6 +11130,34 @@ export default class LandingPg extends Component {
                                                                                             <p>Rinsun 100% Sunflower Oil (3L)</p>
                                                                                         </div>
                                                                                     </div>
+
+                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                                            <img src='/assets/images/products/rice-product.png'/>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                                            <div    className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                                {this.state.jipangeProduct4Cat5CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(5, 5, this.state.jipangeProduct5Cat5CountBtn, 1149)}>+</button> }
+                                                                                                {this.state.jipangeProduct5Cat5CountBtn > 0 && 
+                                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyDecrease(5, 5, this.state.jipangeProduct5Cat5CountBtn, 1149)}
+                                                                                                        className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
+                                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
+                                                                                                            {this.state.jipangeProduct4Cat5CountBtn}
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyIncrease(5, 5, this.state.jipangeProduct5Cat5CountBtn, 1149)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                                    </div> 
+                                                                                                }
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-price-details'>
+                                                                                                <h5>Ksh 1149</h5>
+                                                                                            </div>
+                                                                                            <p>Rinsun 100% Sunflower Oil (3L)</p>
+                                                                                        </div>
+                                                                                    </div>
+
                                                                                 </div>
                                                                             </div>
                                                                         }
@@ -11346,6 +11374,16 @@ export default class LandingPg extends Component {
                                                                                             </div>
                                                                                         </div>
                                                                                     }
+                                                                                    {this.state.jipangeProduct1Cat3Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct1Cat3} <label>({this.state.jipangeProduct1Cat3Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct1Cat3Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
 
                                                                                     {this.state.jipangeProduct1Cat4Qty !== 0 && 
                                                                                         <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
@@ -11367,7 +11405,16 @@ export default class LandingPg extends Component {
                                                                                             </div>
                                                                                         </div>
                                                                                     }
-
+                                                                                    {this.state.jipangeProduct3Cat4Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct3Cat4} <label>({this.state.jipangeProduct3Cat4Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct3Cat4Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
                                                                                     {this.state.jipangeProduct1Cat5Qty !== 0 && 
                                                                                         <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
                                                                                             <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
@@ -11405,6 +11452,16 @@ export default class LandingPg extends Component {
                                                                                             </div>
                                                                                             <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
                                                                                                 <p>{this.state.jipangeProduct4Cat5Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+                                                                                    {this.state.jipangeProduct6Cat5Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct6Cat5} <label>({this.state.jipangeProduct6Cat5Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct6Cat5Price}</p>
                                                                                             </div>
                                                                                         </div>
                                                                                     }
