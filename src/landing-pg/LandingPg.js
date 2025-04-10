@@ -9047,17 +9047,23 @@ export default class LandingPg extends Component {
 
     promoCategoryClicked = (type) => {
         if (type === 'all') {
-            this.setState({
-                
-            })
+            if (!this.state.promoAllCategorySelected) { this.setState({ 
+                promoAllCategorySelected: true,
+                promoDiscountCodeCategorySelected: false,
+                promoProductCategorySelected: false
+             })}
         } else if (type === 'produtcs') {
-            this.setState({
-
-            })
+            if (!this.state.promoProductCategorySelected) { this.setState({ 
+                promoProductCategorySelected: true,
+                promoDiscountCodeCategorySelected: false,
+                promoAllCategorySelected: false
+             })}
         } else {
-            this.setState({
-
-            })
+            if (!this.state.promoDiscountCodeCategorySelected) { this.setState({ 
+                promoDiscountCodeCategorySelected: true,
+                promoProductCategorySelected: false,
+                promoAllCategorySelected: false
+            })}
         }
     }
 
@@ -12360,7 +12366,7 @@ export default class LandingPg extends Component {
                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header'>
                                                                 <button onClick={() => this.promoCategoryClicked('all')} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-1 ${this.state.promoAllCategorySelected ? 'selected' : ''}`}>All</button>
                                                                 <button onClick={() => this.promoCategoryClicked('products')} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-2 ${this.state.promoProductCategorySelected ? 'selected' : ''}`}>Products</button>
-                                                                <button onClick={() => this.promoCategoryClicked('code')} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-3 ${this.state.promoDiscountCodeCategorySelected ? 'selcted' : ''}`}>Discount codes</button>
+                                                                <button onClick={() => this.promoCategoryClicked('code')} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-3 ${this.state.promoDiscountCodeCategorySelected ? 'selected' : ''}`}>Discount codes</button>
                                                             </div>
                                                         </div>
                                                     </div>
