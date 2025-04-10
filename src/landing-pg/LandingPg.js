@@ -11217,6 +11217,39 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                         }
 
+                                                                        {this.state.selectedJipangeProductCategory === 6 && 
+                                                                            <div className=''>
+                                                                                <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
+
+                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                                            <img src='/assets/images/products/diapers-product.png'/>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                                {this.state.jipangeProduct1Cat6CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(1, 6, this.state.jipangeProduct1Cat6CountBtn, 560)}>+</button> }
+                                                                                                {this.state.jipangeProduct1Cat6CountBtn > 0 && 
+                                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyDecrease(1, 6, this.state.jipangeProduct1Cat6CountBtn, 560)}
+                                                                                                        className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
+                                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
+                                                                                                            {this.state.jipangeProduct1Cat6CountBtn}
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyIncrease(1, 6, this.state.jipangeProduct1Cat6CountBtn, 560)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                                    </div> 
+                                                                                                }
+                                                                                            </div>
+                                                                                            <h5>Ksh 1999</h5>
+                                                                                            <p>Rascals 17kgs Premium CoComelon Training Diaper Pants - Size 7 (22pcs)</p>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>         
+                                                                            </div>
+                                                                        }
+
                                                                         {this.state.selectedJipangeProductCategory === 12 && 
                                                                             <div className=''>
                                                                                 <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
