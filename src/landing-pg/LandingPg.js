@@ -6208,16 +6208,17 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header button:last-child {
     margin-right: 0%;
-    border-radius: 20px;
-    background-color: #faece9;
-    border: 1px solid #ff5733;
-    padding: 1.5%;
-    padding-left: 3.5%;
-    padding-right: 3.5%;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn {
     background-color: #faece9;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn:hover {
+    background-color: #ff5733;
+    color: white;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn.selected {
