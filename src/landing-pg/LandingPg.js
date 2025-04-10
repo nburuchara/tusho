@@ -6187,10 +6187,17 @@ const Styles = styled.div `
     border: 1px solid black;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    padding-left: 3.5%;
+    padding-right: 3.5%;
 }
 
-.homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn {
-
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header button {
+    margin-right: 5%;
+    border-radius: 20px;
+    background-color: #faece9;
+    border: 1px solid #ff5733;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
@@ -12284,7 +12291,9 @@ export default class LandingPg extends Component {
                                                                 ))}
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header'>
-                                                                
+                                                                <button>All</button>
+                                                                <button>Products</button>
+                                                                <button>Discount codes</button>
                                                             </div>
                                                         </div>
                                                     </div>
