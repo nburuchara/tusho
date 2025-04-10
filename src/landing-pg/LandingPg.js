@@ -6250,6 +6250,15 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-img {
     width: 30%;
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-img img {
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text {
@@ -7393,9 +7402,9 @@ export default class LandingPg extends Component {
             promoProductCategorySelected: false,
             promoDiscountCodeCategorySelected: false,
             promoItems: [
-                { id: 1, name: 'TuShop Fresh Mixed Sizes Eggs', type: '', description: 'This is item 1' },
-                { id: 2, name: 'TuShop Fresh Mwea Pishori Rice', type: '', description: 'This is item 2' },
-                { id: 3, name: 'Serene Mango Passion Fruit Preserves 370g', type: '', description: 'This is item 3' },
+                { id: 1, name: 'TuShop Fresh Mixed Sizes Eggs', type: '', description: 'This is item 1', img: ''},
+                { id: 2, name: 'TuShop Fresh Mwea Pishori Rice', type: '', description: 'This is item 2' , img: ''},
+                { id: 3, name: 'Serene Mango Passion Fruit Preserves 370g', type: '', description: 'This is item 3', img: ''},
               ],
             
             //* # SHOPPING LIST *//
@@ -12415,7 +12424,7 @@ export default class LandingPg extends Component {
                                                                 {this.state.promoItems.map((item) => (
                                                                     <div key={item.id} className="homepage-header-inner-body-poster-right-left-section-logged-in-promo-item">
                                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-img'>
-
+                                                                            <img src={item.img}/>
                                                                         </div>
                                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text'>
                                                                             <h4>{item.name}</h4>
