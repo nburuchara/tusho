@@ -11071,11 +11071,11 @@ export default class LandingPg extends Component {
 
                                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
                                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-                                                                                            <img src='/assets/images/products/brookside-milk-powder-product.webp'/>
+                                                                                            <img src='/assets/images/products/eggs-product.png'/>
                                                                                         </div>
                                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
                                                                                             <div    className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
-                                                                                                {this.state.jipangeProduct2Cat4CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(3, 4, this.state.jipangeProduct3Cat4CountBtn, 411)}>+</button> }
+                                                                                                {this.state.jipangeProduct3Cat4CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(3, 4, this.state.jipangeProduct3Cat4CountBtn, 411)}>+</button> }
                                                                                                 {this.state.jipangeProduct3Cat4CountBtn > 0 && 
                                                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
                                                                                                         <div
