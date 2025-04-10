@@ -11075,7 +11075,37 @@ export default class LandingPg extends Component {
                                                                                         </div>
                                                                                     </div>
 
-                                                                                </div>         
+                                                                                </div> 
+
+                                                                                <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
+                                                                                    
+                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                                            <img src='/assets/images/products/butter-product.webp'/>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                                {this.state.jipangeProduct5Cat4CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(5, 4, this.state.jipangeProduct5Cat4CountBtn, 879)}>+</button> }
+                                                                                                {this.state.jipangeProduct5Cat4CountBtn > 0 && 
+                                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyDecrease(5, 4, this.state.jipangeProduct5Cat4CountBtn, 879)}
+                                                                                                        className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
+                                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
+                                                                                                            {this.state.jipangeProduct5Cat4CountBtn}
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyIncrease(5, 4, this.state.jipangeProduct5Cat4CountBtn, 879)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                                    </div> 
+                                                                                                }
+                                                                                            </div>
+                                                                                            <h5>Ksh 879</h5>
+                                                                                            <p>Bio Salted Artisinal Butter (500g)</p>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                </div>    
+
                                                                             </div>
                                                                         }
 
