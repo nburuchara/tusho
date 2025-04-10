@@ -7322,7 +7322,7 @@ export default class LandingPg extends Component {
 
             //* - - HOMESCREEN PRODUCTS GRID DISPLAY - - *//
 
-            //* # WEBSITE HEADER
+            //* # HEADER CONTAINER
             isLeftHeaderTransitionActive: false,
             isRightTopHeaderTransitionActive: false,
             isRightBottomHeaderTransitionActive: false,
@@ -7330,6 +7330,8 @@ export default class LandingPg extends Component {
             selectedHeaderOption: '',
             items: [''], // Shopping list items (starts with one empty bullet)
             focusIndex: null, // 👈 Track which input to focus
+
+            //# SHOPPING 
             showShopAssistantLoading: false,
 
             //* # PRODUCT GRID
