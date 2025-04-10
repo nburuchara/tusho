@@ -6256,8 +6256,8 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-img img {
-    width: 25px;
-    height: 25px;
+    width: 55px;
+    height: 55px;
     border: 1px solid black;
 }
 
@@ -6267,7 +6267,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text h4 {
-    margin-top: 0.15rem;
+    margin-top: 0.55rem;
     margin-left: 2.5%;
     margin-right: 2.5%;
     margin-bottom: 0.25rem;
