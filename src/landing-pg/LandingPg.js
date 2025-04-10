@@ -12405,7 +12405,7 @@ export default class LandingPg extends Component {
 
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab'>
                                                             <div className="confetti-background">
-                                                                {[...Array(150)].map((_, i) => (
+                                                                {[...Array(50)].map((_, i) => (
                                                                     <div
                                                                     key={i}
                                                                     className="confetti-piece"
