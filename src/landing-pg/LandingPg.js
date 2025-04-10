@@ -6214,6 +6214,18 @@ const Styles = styled.div `
     padding-right: 3.5%;
 }
 
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-1 {
+    
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-2 {
+
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-3 {
+
+}
+
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
 
 .homepage-header-inner-body-poster-right-right-section {
@@ -7330,6 +7342,9 @@ export default class LandingPg extends Component {
             selectedHeaderOption: '',
 
             //* # PROMO *//
+            promoAllCategorySelected: true,
+            promoProductCategorySelected: false,
+            promoDiscountCodeCategorySelected: false,
             
             //* # SHOPPING LIST *//
             showShopAssistantLoading: false,
@@ -12312,9 +12327,9 @@ export default class LandingPg extends Component {
                                                                 ))}
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header'>
-                                                                <button>All</button>
-                                                                <button>Products</button>
-                                                                <button>Discount codes</button>
+                                                                <button className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-1 ${this.state.promoAllCategorySelected ? '' : ''}`}>All</button>
+                                                                <button className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-2 ${this.state.promoAllCategorySelected ? '' : ''}`}>Products</button>
+                                                                <button className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-3 ${this.state.promoAllCategorySelected ? '' : ''}`}>Discount codes</button>
                                                             </div>
                                                         </div>
                                                     </div>
