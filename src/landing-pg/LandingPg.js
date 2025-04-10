@@ -6144,6 +6144,7 @@ const Styles = styled.div `
     background-color: #faece9;
     border: 1px solid #ff5733;
     border-radius: 8px;
+    display: flex;
 }
 
 .confetti-background {
@@ -6181,6 +6182,14 @@ const Styles = styled.div `
   }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header {
+    height: 12.5%;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn {
 
 }
 
@@ -12268,14 +12277,14 @@ export default class LandingPg extends Component {
                                                                     style={{
                                                                         left: `${Math.random() * 100}vw`,
                                                                         backgroundColor: '#ff5733',
-                                                                        animationDuration: `${5 + Math.random() * 10}s`, // slower fall
+                                                                        animationDuration: `${10 + Math.random() * 10}s`, // slower fall
                                                                         animationDelay: `${Math.random() * 10}s`,
                                                                     }}
                                                                     />
                                                                 ))}
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header'>
-
+                                                                
                                                             </div>
                                                         </div>
                                                     </div>
