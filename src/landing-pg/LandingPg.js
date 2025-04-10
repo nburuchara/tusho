@@ -6234,6 +6234,8 @@ const Styles = styled.div `
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
     overflow-y: auto;
+    z-index: 1;
+    background-color: transparent;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item {
@@ -6242,6 +6244,33 @@ const Styles = styled.div `
     width: 100%;
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-img {
+    width: 30%;
+    border: 1px solid black;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text {
+    width: 70%;
+    border: 1px solid black;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text h4 {
+    margin-top: 0.15rem;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: 0.25rem;
+    font-size: 80%;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text p {
+    margin-top: 0px;
+    margin-bottom: 0.25rem;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    font-size: 80%;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
@@ -7364,9 +7393,9 @@ export default class LandingPg extends Component {
             promoProductCategorySelected: false,
             promoDiscountCodeCategorySelected: false,
             promoItems: [
-                { id: 1, name: '', type: '', description: 'This is item 1' },
-                { id: 2, name: '', type: '', description: 'This is item 2' },
-                { id: 3, name: '', type: '', description: 'This is item 3' },
+                { id: 1, name: 'TuShop Fresh Mixed Sizes Eggs', type: '', description: 'This is item 1' },
+                { id: 2, name: 'TuShop Fresh Mwea Pishori Rice', type: '', description: 'This is item 2' },
+                { id: 3, name: 'Serene Mango Passion Fruit Preserves 370g', type: '', description: 'This is item 3' },
               ],
             
             //* # SHOPPING LIST *//
@@ -12364,7 +12393,7 @@ export default class LandingPg extends Component {
 
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab'>
                                                             <div className="confetti-background">
-                                                                {[...Array(500)].map((_, i) => (
+                                                                {[...Array(150)].map((_, i) => (
                                                                     <div
                                                                     key={i}
                                                                     className="confetti-piece"
@@ -12385,8 +12414,13 @@ export default class LandingPg extends Component {
                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-body'>
                                                                 {this.state.promoItems.map((item) => (
                                                                     <div key={item.id} className="homepage-header-inner-body-poster-right-left-section-logged-in-promo-item">
-                                                                        <h3>{item.name}</h3>
-                                                                        <p>{item.description}</p>
+                                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-img'>
+
+                                                                        </div>
+                                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text'>
+                                                                            <h4>{item.name}</h4>
+                                                                            <p>{item.description}</p>
+                                                                        </div>
                                                                     </div>
                                                                 ))}
                                                             </div>
