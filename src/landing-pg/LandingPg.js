@@ -6213,7 +6213,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn {
     background-color: #faece9;
     cursor: pointer;
-    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn:hover {
