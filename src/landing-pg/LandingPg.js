@@ -6230,7 +6230,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-body {
     flex-grow: 1;
     width: 99.4%;
-    // border: 1px solid black;
+    border-top: 1px solid #ccc;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
     overflow-y: auto;
@@ -6244,8 +6244,8 @@ const Styles = styled.div `
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
+    // padding-top: 0.1rem;
+    // padding-bottom: 0.1rem;
     overflow: hidden;
 }
 
@@ -6274,7 +6274,8 @@ const Styles = styled.div `
     margin-left: 2.5%;
     margin-right: 2.5%;
     margin-bottom: 0.25rem;
-    font-size: 77.5%;
+    font-size: 72.5%;
+    font-family: poppins;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text p {
@@ -6282,7 +6283,8 @@ const Styles = styled.div `
     margin-bottom: 0.25rem;
     margin-left: 2.5%;
     margin-right: 2.5%;
-    font-size: 75%;
+    font-size: 69%;
+    font-family: poppins;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
