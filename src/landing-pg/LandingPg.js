@@ -11089,8 +11089,8 @@ export default class LandingPg extends Component {
                                                                                                     </div> 
                                                                                                 }
                                                                                             </div>
-                                                                                            <h5>Ksh 1198</h5>
-                                                                                            <p>Brookside Full Cream Milk Powder Tin (500g)</p>
+                                                                                            <h5>Ksh 411</h5>
+                                                                                            <p>TuShop Fresh Mixed Size Eggs (30pcs)</p>
                                                                                         </div>
                                                                                     </div>
 
