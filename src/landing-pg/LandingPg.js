@@ -6273,9 +6273,10 @@ const Styles = styled.div `
     margin-top: 0.65rem;
     margin-left: 2.5%;
     margin-right: 2.5%;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.1rem;
     font-size: 72.5%;
     font-family: poppins;
+    line-height: 1.25;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text p {
