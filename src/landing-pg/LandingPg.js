@@ -6233,6 +6233,15 @@ const Styles = styled.div `
     border: 1px solid black;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
+    overflow-y: auto;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item {
+    border: 1px solid black;
+    height: 25%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
@@ -12375,7 +12384,7 @@ export default class LandingPg extends Component {
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-body'>
                                                                 {this.state.promoItems.map((item) => (
-                                                                    <div key={item.id} className="item">
+                                                                    <div key={item.id} className="homepage-header-inner-body-poster-right-left-section-logged-in-promo-item">
                                                                         <h3>{item.name}</h3>
                                                                         <p>{item.description}</p>
                                                                     </div>
