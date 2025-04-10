@@ -6196,7 +6196,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header button {
-    margin-right: 5%;
+    margin-right: 3.5%;
     border-radius: 20px;
     background-color: #faece9;
     border: 1px solid #ff5733;
@@ -6229,7 +6229,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-body {
     flex-grow: 1;
-    width: 99.5%;
+    width: 99.4%;
     border: 1px solid black;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -7354,6 +7354,11 @@ export default class LandingPg extends Component {
             promoAllCategorySelected: true,
             promoProductCategorySelected: false,
             promoDiscountCodeCategorySelected: false,
+            promoItems: [
+                { id: 1, name: '', type: '', description: 'This is item 1' },
+                { id: 2, name: '', type: '', description: 'This is item 2' },
+                { id: 3, name: '', type: '', description: 'This is item 3' },
+              ],
             
             //* # SHOPPING LIST *//
             showShopAssistantLoading: false,
@@ -12369,7 +12374,12 @@ export default class LandingPg extends Component {
                                                                 <button onClick={() => this.promoCategoryClicked('code')} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn ${this.state.promoDiscountCodeCategorySelected ? 'selected' : ''}`}>Discount codes</button>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-body'>
-
+                                                                {this.state.promoItems.map((item) => (
+                                                                    <div key={item.id} className="item">
+                                                                        <h3>{item.name}</h3>
+                                                                        <p>{item.description}</p>
+                                                                    </div>
+                                                                ))}
                                                             </div>
                                                         </div>
                                                     </div>
