@@ -6184,7 +6184,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header {
     height: 12.5%;
     width: 100%;
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -6202,6 +6202,8 @@ const Styles = styled.div `
     padding: 1.5%;
     padding-left: 3.5%;
     padding-right: 3.5%;
+    font-size: 72.5%;
+    font-family: poppins;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header button:last-child {
@@ -6220,6 +6222,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-1.selected {
     background-color: #ff5733;
+    color: white;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-2 {
@@ -9042,8 +9045,20 @@ export default class LandingPg extends Component {
         this.setState({ items: newItems });
     };
 
-    promoCategoryClicked = () => {
-        
+    promoCategoryClicked = (type) => {
+        if (type === 'all') {
+            this.setState({
+                
+            })
+        } else if (type === 'produtcs') {
+            this.setState({
+
+            })
+        } else {
+            this.setState({
+
+            })
+        }
     }
 
     render () {
@@ -12343,9 +12358,9 @@ export default class LandingPg extends Component {
                                                                 ))}
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header'>
-                                                                <button onClick={this.promoCategoryClicked} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-1 ${this.state.promoAllCategorySelected ? 'selected' : ''}`}>All</button>
-                                                                <button onClick={this.promoCategoryClicked} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-2 ${this.state.promoProductCategorySelected ? 'selected' : ''}`}>Products</button>
-                                                                <button onClick={this.promoCategoryClicked} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-3 ${this.state.promoDiscountCodeCategorySelected ? 'selcted' : ''}`}>Discount codes</button>
+                                                                <button onClick={() => this.promoCategoryClicked('all')} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-1 ${this.state.promoAllCategorySelected ? 'selected' : ''}`}>All</button>
+                                                                <button onClick={() => this.promoCategoryClicked('products')} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-2 ${this.state.promoProductCategorySelected ? 'selected' : ''}`}>Products</button>
+                                                                <button onClick={() => this.promoCategoryClicked('code')} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-3 ${this.state.promoDiscountCodeCategorySelected ? 'selcted' : ''}`}>Discount codes</button>
                                                             </div>
                                                         </div>
                                                     </div>
