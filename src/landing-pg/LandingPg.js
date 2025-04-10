@@ -6230,7 +6230,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-body {
     flex-grow: 1;
     width: 99.4%;
-    border: 1px solid black;
+    // border: 1px solid black;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
     overflow-y: auto;
@@ -6270,11 +6270,11 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text h4 {
-    margin-top: 0.55rem;
+    margin-top: 0.65rem;
     margin-left: 2.5%;
     margin-right: 2.5%;
     margin-bottom: 0.25rem;
-    font-size: 80%;
+    font-size: 77.5%;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text p {
