@@ -6135,7 +6135,7 @@ const Styles = styled.div `
     // transition: border-color 0.2s;
 }
 
-.homepage-header-inner-body-poster-right-left-section-logged-in-cart {
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab {
     position: absolute;
     bottom: 1.5rem;
     width: 85%;
@@ -6144,6 +6144,10 @@ const Styles = styled.div `
     background-color: #faece9;
     border: 1px solid #ff5733;
     border-radius: 8px;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header {
+    
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
@@ -6195,7 +6199,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home {
     border: 1px solid white;
-    width: 99.45%;
+    width: 99.4%;
     height: 78.6%;
     display: flex;
     flex-direction: column;
@@ -6239,7 +6243,7 @@ const Styles = styled.div `
     font-size: 23.5px;
     margin-left: 3%;
     margin-top: 0.25rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.1rem;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 label {
@@ -6247,7 +6251,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 p {
-    margin-top: 0.15rem;
+    margin-top: 0rem;
     margin-bottom: 0.45rem;
     margin-left: 3%;
     font-size: 85%;
@@ -8945,9 +8949,7 @@ export default class LandingPg extends Component {
         const { searchBarIsClicked, searchInput, isSearchLoading, isSearchLoadingJipange, isSearchLoadingAccountPopup, isSearchLoadingFAQ, resultsFound, resultsFoundJipange, resultsFoundAccountPopup, resultsFoundFAQ, groupedOptions, groupedOptionsJipange, groupedOptionsAccountPopup, groupedOptionsFAQ } = this.state;
         const { currentMonth, currentYear, selectedDates } = this.state;
         const daysInMonth = this.getDaysInMonth(currentMonth, currentYear);
-        const monthNames = [
-        "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
-        ];
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         const today = new Date();
         const isCurrentMonth = today.getMonth() === currentMonth && today.getFullYear() === currentYear;
         const filteredProducts = this.mainPageProductsFilterProducts();
@@ -12223,8 +12225,10 @@ export default class LandingPg extends Component {
 
                                                         <h1>Promo</h1>
 
-                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-cart'>
+                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab'>
+                                                            <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header'>
 
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
