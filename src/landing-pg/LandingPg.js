@@ -10842,7 +10842,7 @@ export default class LandingPg extends Component {
 
                                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
                                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-                                                                                            <img src='/assets/images/products/onions-product.webp'/>
+                                                                                            <img src='/assets/images/products/baby-plum-tomatos-product.png'/>
                                                                                         </div>
                                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
                                                                                             <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
@@ -10867,7 +10867,7 @@ export default class LandingPg extends Component {
 
                                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
                                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-                                                                                            <img src='/assets/images/products/onions-product.webp'/>
+                                                                                            <img src='/assets/images/products/red-chard-spinach-product.png'/>
                                                                                         </div>
                                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
                                                                                             <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
@@ -10886,10 +10886,10 @@ export default class LandingPg extends Component {
                                                                                                 }
                                                                                             </div>
                                                                                             <h5>Ksh 55</h5>
-                                                                                            <p>VP Foods Baby Plum Tomatoes</p>
+                                                                                            <p>Mlango Farm Organic Red Chard Spinach (1 bunch)</p>
                                                                                         </div>
                                                                                     </div>
-
+                                                                                                    
                                                                                 
                                                                                 </div>
                                                                             </div>
@@ -11024,6 +11024,56 @@ export default class LandingPg extends Component {
                                                                                             </div>
                                                                                             <h5>Ksh 98</h5>
                                                                                             <p>Tushop Fresh Red Onions</p>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                                            <img src='/assets/images/products/baby-plum-tomatos-product.png'/>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                                {this.state.jipangeProduct6Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(6, 1, this.state.jipangeProduct6Cat1CountBtn, 59)}>+</button> }
+                                                                                                {this.state.jipangeProduct6Cat1CountBtn > 0 && 
+                                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyDecrease(6, 1, this.state.jipangeProduct6Cat1CountBtn, 59)}
+                                                                                                        className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
+                                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
+                                                                                                            {this.state.jipangeProduct6Cat1CountBtn}
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyIncrease(6, 1, this.state.jipangeProduct6Cat1CountBtn, 59)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                                    </div> 
+                                                                                                }
+                                                                                            </div>
+                                                                                            <h5>Ksh 59</h5>
+                                                                                            <p>VP Foods Baby Plum Tomatoes</p>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                                            <img src='/assets/images/products/red-chard-spinach-product.png'/>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                                {this.state.jipangeProduct7Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(7, 1, this.state.jipangeProduct7Cat1CountBtn, 55)}>+</button> }
+                                                                                                {this.state.jipangeProduct7Cat1CountBtn > 0 && 
+                                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyDecrease(7, 1, this.state.jipangeProduct7Cat1CountBtn, 55)}
+                                                                                                        className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
+                                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
+                                                                                                            {this.state.jipangeProduct7Cat1CountBtn}
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyIncrease(7, 1, this.state.jipangeProduct7Cat1CountBtn, 55)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                                    </div> 
+                                                                                                }
+                                                                                            </div>
+                                                                                            <h5>Ksh 55</h5>
+                                                                                            <p>Mlango Farm Organic Red Chard Spinach (1 bunch)</p>
                                                                                         </div>
                                                                                     </div>
                                                                                 
