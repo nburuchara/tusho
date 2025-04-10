@@ -6258,6 +6258,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-img img {
     width: 55px;
     height: 55px;
+    border-radius: 8px;
     border: 1px solid black;
 }
 
@@ -6279,7 +6280,7 @@ const Styles = styled.div `
     margin-bottom: 0.25rem;
     margin-left: 2.5%;
     margin-right: 2.5%;
-    font-size: 80%;
+    font-size: 75%;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
