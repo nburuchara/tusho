@@ -6161,8 +6161,8 @@ const Styles = styled.div `
   .confetti-piece {
     position: absolute;
     top: -10px;
-    width: 5px;
-    height: 5px;
+    width: 3.5px;
+    height: 3.5px;
     border-radius: 50%;
     background-color: hsl(var(--hue), 100%, 70%);
     opacity: 0.8;
@@ -6191,6 +6191,7 @@ const Styles = styled.div `
     justify-content: left;
     padding-left: 3.5%;
     padding-right: 3.5%;
+    z-index: 1;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header button {
@@ -6198,6 +6199,19 @@ const Styles = styled.div `
     border-radius: 20px;
     background-color: #faece9;
     border: 1px solid #ff5733;
+    padding: 1.5%;
+    padding-left: 3.5%;
+    padding-right: 3.5%;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header button:last-child {
+    margin-right: 0%;
+    border-radius: 20px;
+    background-color: #faece9;
+    border: 1px solid #ff5733;
+    padding: 1.5%;
+    padding-left: 3.5%;
+    padding-right: 3.5%;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
