@@ -6231,6 +6231,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-2.selected {
     background-color: #ff5733;
+    color: white;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-3 {
@@ -6239,6 +6240,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn-3.selected {
     background-color: #ff5733;
+    color: white;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
@@ -9045,25 +9047,31 @@ export default class LandingPg extends Component {
         this.setState({ items: newItems });
     };
 
-    promoCategoryClicked = (type) => {
-        if (type === 'all') {
-            if (!this.state.promoAllCategorySelected) { this.setState({ 
-                promoAllCategorySelected: true,
-                promoDiscountCodeCategorySelected: false,
-                promoProductCategorySelected: false
-             })}
-        } else if (type === 'produtcs') {
-            if (!this.state.promoProductCategorySelected) { this.setState({ 
-                promoProductCategorySelected: true,
-                promoDiscountCodeCategorySelected: false,
-                promoAllCategorySelected: false
-             })}
+    promoCategoryClicked = (promoType) => {
+        if (promoType === 'all') {
+            if (this.state.promoAllCategorySelected === false) { 
+                this.setState({ 
+                    promoAllCategorySelected: true,
+                    promoDiscountCodeCategorySelected: false,
+                    promoProductCategorySelected: false
+                })
+            }
+        } else if (promoType === 'products') {
+            if (this.state.promoProductCategorySelected === false) { 
+                this.setState({ 
+                    promoProductCategorySelected: true,
+                    promoDiscountCodeCategorySelected: false,
+                    promoAllCategorySelected: false
+                })
+            }
         } else {
-            if (!this.state.promoDiscountCodeCategorySelected) { this.setState({ 
-                promoDiscountCodeCategorySelected: true,
-                promoProductCategorySelected: false,
-                promoAllCategorySelected: false
-            })}
+            if (this.state.promoDiscountCodeCategorySelected === false) { 
+                this.setState({ 
+                    promoDiscountCodeCategorySelected: true,
+                    promoProductCategorySelected: false,
+                    promoAllCategorySelected: false
+                })
+            }
         }
     }
 
