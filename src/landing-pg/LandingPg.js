@@ -6145,6 +6145,7 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
     border-radius: 8px;
     display: flex;
+    flex-direction: column;
 }
 
 .confetti-background {
@@ -6184,7 +6185,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header {
     height: 12.5%;
     width: 100%;
-    border-bottom: 1px solid black;
+    // border-bottom: 1px solid black;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -6224,6 +6225,14 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn.selected {
     background-color: #ff5733;
     color: white;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-body {
+    flex-grow: 1;
+    width: 99.5%;
+    border: 1px solid black;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
@@ -12358,6 +12367,9 @@ export default class LandingPg extends Component {
                                                                 <button onClick={() => this.promoCategoryClicked('all')} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn ${this.state.promoAllCategorySelected ? 'selected' : ''}`}>All</button>
                                                                 <button onClick={() => this.promoCategoryClicked('products')} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn ${this.state.promoProductCategorySelected ? 'selected' : ''}`}>Products</button>
                                                                 <button onClick={() => this.promoCategoryClicked('code')} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn ${this.state.promoDiscountCodeCategorySelected ? 'selected' : ''}`}>Discount codes</button>
+                                                            </div>
+                                                            <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-body'>
+
                                                             </div>
                                                         </div>
                                                     </div>
