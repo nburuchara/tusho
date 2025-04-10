@@ -7408,9 +7408,9 @@ export default class LandingPg extends Component {
             promoProductCategorySelected: false,
             promoDiscountCodeCategorySelected: false,
             promoItems: [
-                { id: 1, name: 'TuShop Fresh Mixed Sizes Eggs', type: '', description: 'This is item 1', img: ''},
-                { id: 2, name: 'TuShop Fresh Mwea Pishori Rice', type: '', description: 'This is item 2' , img: ''},
-                { id: 3, name: 'Serene Mango Passion Fruit Preserves 370g', type: '', description: 'This is item 3', img: ''},
+                { id: 1, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: '', newPrice: '', type: '', description: 'This is item 1', img: ''},
+                { id: 2, name: 'TuShop Fresh Mwea Pishori Rice', oldPrice: '', newPrice: '', type: '', description: 'This is item 2' , img: ''},
+                { id: 3, name: 'Serene Mango Passion Fruit Preserves 370g', oldPrice: '', newPrice: '', type: '', description: 'This is item 3', img: ''},
               ],
             
             //* # SHOPPING LIST *//
