@@ -10371,6 +10371,16 @@ export default class LandingPg extends Component {
                                                                                             </div>
                                                                                         </div>
                                                                                     }
+                                                                                    {this.state.jipangeProduct4Cat4Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct4Cat4} <label>({this.state.jipangeProduct4Cat4Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct4Cat4Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
 
                                                                                     {this.state.jipangeProduct1Cat5Qty !== 0 && 
                                                                                         <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
@@ -10422,6 +10432,16 @@ export default class LandingPg extends Component {
                                                                                             </div>
                                                                                         </div>
                                                                                     }
+                                                                                    {this.state.jipangeProduct1Cat6Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct1Cat6} <label>({this.state.jipangeProduct1Cat6Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct1Cat6Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
                                                                                     
                                                                                     {this.state.jipangeProduct1Cat12Qty !== 0 && 
                                                                                         <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
@@ -10458,6 +10478,7 @@ export default class LandingPg extends Component {
                                                                         }
                                                                     </div>
                                                                 </div>
+
                                                                 <div className='jipange-settings-selected-date-screen-body'>
                                                                     <div className='jipange-settings-selected-date-screen-body-inner-header'>
                                                                         <div className='jipange-settings-selected-date-screen-body-inner-header-search-container'>
@@ -11372,6 +11393,7 @@ export default class LandingPg extends Component {
                                                                         }
                                                                     </div>
                                                                 </div>
+
                                                             </div>   
                                                         }
                                                         {this.state.showJipangeSettingsSelectedDateComplete && 
