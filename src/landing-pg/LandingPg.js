@@ -6166,7 +6166,7 @@ const Styles = styled.div `
     height: 3.5px;
     border-radius: 50%;
     background-color: hsl(var(--hue), 100%, 70%);
-    opacity: 0.8;
+    opacity: 0.9;
     animation: confetti-fall linear infinite;
   }
   
