@@ -52,13 +52,13 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 3,
+        id: 4,
         name: "Bio Salted Artisanal Butter (500g)",
         category: "Dairy",
         brand: 'Bio',
         price: 879.00,
         rating: 4.7,
-        image: "/assets/images/products/butter-product.webp",
+        image: "/assets/images/products/butter-product.png",
         promo: false,
         qty: 0,
         pamoja: false,
@@ -69,7 +69,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 4,
+        id: 5,
         name: "Blueband Original (250g)",
         category: "Food Cupboard",
         brand: "Blueband",
@@ -89,7 +89,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 5,
+        id: 6,
         name: "Brookside Whole Milk 1L Long Life",
         category: "Dairy",
         brand: "Brookside",
@@ -109,7 +109,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 8,
+        id: 7,
         name: "Mlango Farms Organic Curly Kale",
         category: "Fruits & Vegetables",
         brand: 'Mlango Farms',
@@ -126,7 +126,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 6,
+        id: 8,
         name: "Tushop Fresh Local Watermelon",
         category: "Fruits & Vegetables",
         brand: 'TuShop Fresh',
@@ -144,7 +144,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 7,
+        id: 9,
         name: "Brookside Full Cream Milk Powder Tin (500g)",
         category: "Dairy",
         brand: "Brookside",
@@ -161,7 +161,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 8,
+        id: 10,
         name: "Mlango Farms Organic Red Chard",
         category: "Fruits & Vegetables",
         brand: 'Mlango Farms',
@@ -178,7 +178,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 8,
+        id: 11,
         name: "McVities Digestive Biscuits (400g)",
         category: "Snacks",
         brand: 'McVites',
@@ -195,7 +195,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 9,
+        id: 12,
         name: "Tushop Fresh Mixed Size Tomatoes",
         category: "Fruits & Vegetables",
         brand: 'TuShop Fresh',
@@ -212,7 +212,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 10,
+        id: 13,
         name: "Mumias Sugar White (2kg)",
         category: "Food Cupboard",
         brand: 'Mumias',
@@ -234,7 +234,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 11,
+        id: 14,
         name: "Tushop Fresh Fresh Red Cabbage",
         category: "Fruits & Vegetables",
         brand: 'TuShop Fresh',
@@ -251,7 +251,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 11,
+        id: 15,
         name: "Tushop Fresh Red Onions",
         category: "Fruits & Vegetables",
         brand: 'TuShop Fresh',
@@ -268,7 +268,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 12,
+        id: 16,
         name: "Rinsun 100% Sunflower Oil (3L)",
         category: "Food Cupboard",
         brand: 'Rinsun',
@@ -285,7 +285,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 13,
+        id: 17,
         name: "VP Foods Baby Plum Tomatoes",
         category: "Fruits & Vegetables",
         brand: 'VP Foods',
@@ -302,7 +302,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 14,
+        id: 18,
         name: "Tushop Fresh Ripe Bananas",
         category: "Fruits & Vegetables",
         brand: 'TuShop Fresh',
