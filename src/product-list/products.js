@@ -1,3 +1,4 @@
+
 const products = [
     {
         id: 1,
@@ -222,7 +223,7 @@ const products = [
         brand: 'TuShop Fresh',
         price: 152.00,
         rating: 4.7,
-        image: "/assets/images/products/red-ca-product.webp",
+        image: "/assets/images/products/red-cabbage-product.png",
         promo: false,
         qty: 0,
         pamoja: false,
