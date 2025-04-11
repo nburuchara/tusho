@@ -56,7 +56,7 @@ const products = [
         name: "Bio Salted Artisanal Butter (500g)",
         category: "Dairy",
         brand: 'Bio',
-        price: 1350.00,
+        price: 879.00,
         rating: 4.7,
         image: "/assets/images/products/butter-product.webp",
         promo: false,
