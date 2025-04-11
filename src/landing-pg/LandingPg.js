@@ -344,6 +344,7 @@ const Styles = styled.div `
     width: 98%;
     // border: 1px solid black;
     border-radius: 8px;
+    min-height: 2.5rem;
     background-color: white;
     margin-top: 10px;
     padding: 5px;
