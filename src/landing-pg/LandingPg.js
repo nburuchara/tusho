@@ -7199,6 +7199,8 @@ export default class LandingPg extends Component {
             jipangeProduct5Cat1CountBtn: 0,
             jipangeProduct6Cat1CountBtn: 0,
             jipangeProduct7Cat1CountBtn: 0,
+            jipangeProduct8Cat1CountBtn: 0,
+            jipangeProduct9Cat1CountBtn: 0,
             jipangeProduct1Cat3CountBtn: 0,
             jipangeProduct1Cat4CountBtn: 0,
             jipangeProduct2Cat4CountBtn: 0,
@@ -7235,6 +7237,12 @@ export default class LandingPg extends Component {
             jipangeProduct7Cat1Qty: 0,
             jipangeProduct7Cat1Price: 0,
             jipangeProduct7Cat1: 'Mlango Farms Organic Red Chard Spinach (1 bunch)',
+            jipangeProduct8Cat1Qty: 0,
+            jipangeProduct8Cat1Price: 0,
+            jipangeProduct8Cat1: 'Mlango Farm Organic Curly Kale (1 bunch)',
+            jipangeProduct9Cat1Qty: 0,
+            jipangeProduct9Cat1Price: 0,
+            jipangeProduct9Cat1: 'TuShop Fresh Fresh Red Cabbage (1 piece)',
             jipangeProduct5Cat1Qty: 0,
             jipangeProduct5Cat1Price: 0,
             jipangeProduct1Cat3: 'Kenchic Spring Chicken',
@@ -8560,7 +8568,7 @@ export default class LandingPg extends Component {
         this.setState({
             completeJipangeBtnLoading: true,
             completeJipangeBtnTxt: false,
-            totalJipangeOrderQty: this.state.jipangeProduct1Cat1Qty + this.state.jipangeProduct2Cat1Qty + this.state.jipangeProduct3Cat1Qty + this.state.jipangeProduct4Cat1Qty + this.state.jipangeProduct5Cat1Qty + this.state.jipangeProduct1Cat3Qty + this.state.jipangeProduct1Cat4Qty + this.state.jipangeProduct2Cat4Qty + this.state.jipangeProduct3Cat4Qty + this.state.jipangeProduct1Cat5Qty + this.state.jipangeProduct2Cat5Qty + this.state.jipangeProduct3Cat5Qty + this.state.jipangeProduct4Cat5Qty + this.state.jipangeProduct5Cat5Qty + this.state.jipangeProduct1Cat12Qty + this.state.jipangeProduct1Cat13Qty
+            totalJipangeOrderQty: this.state.jipangeProduct1Cat1Qty + this.state.jipangeProduct2Cat1Qty + this.state.jipangeProduct3Cat1Qty + this.state.jipangeProduct4Cat1Qty + this.state.jipangeProduct5Cat1Qty + this.state.jipangeProduct6Cat1Qty + this.state.jipangeProduct7Cat1Qty + this.state.jipangeProduct8Cat1Qty + this.state.jipangeProduct9Cat1Qty + this.state.jipangeProduct1Cat3Qty + this.state.jipangeProduct1Cat4Qty + this.state.jipangeProduct2Cat4Qty + this.state.jipangeProduct3Cat4Qty + this.state.jipangeProduct1Cat5Qty + this.state.jipangeProduct2Cat5Qty + this.state.jipangeProduct3Cat5Qty + this.state.jipangeProduct4Cat5Qty + this.state.jipangeProduct5Cat5Qty + this.state.jipangeProduct1Cat12Qty + this.state.jipangeProduct1Cat13Qty
         }, () => {
             setTimeout(() => {
                 this.setState({
@@ -10368,6 +10376,28 @@ export default class LandingPg extends Component {
                                                                                         </div>
                                                                                     }
 
+                                                                                    {this.state.jipangeProduct8Cat1Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct8Cat1} <label>({this.state.jipangeProduct8Cat1Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct8Cat1Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+
+                                                                                    {this.state.jipangeProduct9Cat1Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct9Cat1} <label>({this.state.jipangeProduct9Cat1Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct9Cat1Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+
                                                                                     {this.state.jipangeProduct1Cat3Qty !== 0 && 
                                                                                         <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
                                                                                             <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
@@ -10723,6 +10753,7 @@ export default class LandingPg extends Component {
                                                                     </div>
 
                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body'>
+
                                                                         {this.state.selectedJipangeProductCategory === 1 && 
                                                                             <div className=''>
                                                                                 <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
@@ -10905,9 +10936,62 @@ export default class LandingPg extends Component {
                                                                                             <p>Mlango Farm Organic Red Chard Spinach (1 bunch)</p>
                                                                                         </div>
                                                                                     </div>
-                                                                                                    
-                                                                                
+
+                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                                            <img src='/assets/images/products/red-chard-spinach-product.png'/>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                                {this.state.jipangeProduct8Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(8, 1, this.state.jipangeProduct8Cat1CountBtn, 35)}>+</button> }
+                                                                                                {this.state.jipangeProduct8Cat1CountBtn > 0 && 
+                                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyDecrease(8, 1, this.state.jipangeProduct8Cat1CountBtn, 35)}
+                                                                                                        className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
+                                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
+                                                                                                            {this.state.jipangeProduct8Cat1CountBtn}
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyIncrease(8, 1, this.state.jipangeProduct8Cat1CountBtn, 35)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                                    </div> 
+                                                                                                }
+                                                                                            </div>
+                                                                                            <h5>Ksh 35</h5>
+                                                                                            <p>Mlango Farm Organic Curly Kale (1 bunch)</p>
+                                                                                        </div>
+                                                                                    </div>             
+                                                                                                
                                                                                 </div>
+
+                                                                                <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
+                                                                                    
+                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                                                <img src='/assets/images/products/red-chard-spinach-product.png'/>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                                                <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                                    {this.state.jipangeProduct9Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(9, 1, this.state.jipangeProduct9Cat1CountBtn, 152)}>+</button> }
+                                                                                                    {this.state.jipangeProduct9Cat1CountBtn > 0 && 
+                                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
+                                                                                                            <div
+                                                                                                            onClick={() => this.jipangeItemQtyDecrease(9, 1, this.state.jipangeProduct9Cat1CountBtn, 152)}
+                                                                                                            className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
+                                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
+                                                                                                                {this.state.jipangeProduct9Cat1CountBtn}
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                            onClick={() => this.jipangeItemQtyIncrease(9, 1, this.state.jipangeProduct9Cat1CountBtn, 152)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                                        </div> 
+                                                                                                    }
+                                                                                                </div>
+                                                                                                <h5>Ksh 152</h5>
+                                                                                                <p>TuShop Fresh Fresh Red Cabbage (1 piece)</p>
+                                                                                            </div>
+                                                                                    </div>
+                                                                                </div>
+
                                                                             </div>
                                                                         }
 
@@ -11119,6 +11203,7 @@ export default class LandingPg extends Component {
                                                                                     </div>
                                                                                 
                                                                                 </div>
+
                                                                                 <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
                                                                                     
                                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
@@ -11137,15 +11222,14 @@ export default class LandingPg extends Component {
                                                                                                                 {this.state.jipangeProduct9Cat1CountBtn}
                                                                                                             </div>
                                                                                                             <div
-                                                                                                            onClick={() => this.jipangeItemQtyIncrease(8, 1, this.state.jipangeProduct9Cat1CountBtn, 152)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                                            onClick={() => this.jipangeItemQtyIncrease(9, 1, this.state.jipangeProduct9Cat1CountBtn, 152)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
                                                                                                         </div> 
                                                                                                     }
                                                                                                 </div>
                                                                                                 <h5>Ksh 152</h5>
                                                                                                 <p>TuShop Fresh Fresh Red Cabbage (1 piece)</p>
                                                                                             </div>
-                                                                                        </div>
-
+                                                                                    </div>
                                                                                 </div>
 
                                                                             </div>
@@ -11695,6 +11779,28 @@ export default class LandingPg extends Component {
                                                                                             </div>
                                                                                             <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
                                                                                                 <p>{this.state.jipangeProduct7Cat1Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+
+                                                                                    {this.state.jipangeProduct8Cat1Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct8Cat1} <label>({this.state.jipangeProduct8Cat1Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct8Cat1Price}</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    }
+
+                                                                                    {this.state.jipangeProduct9Cat1Qty !== 0 && 
+                                                                                        <div className='jipange-settings-selected-date-screen-header-inner-body-item'>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-name'>
+                                                                                                <p>{this.state.jipangeProduct9Cat1} <label>({this.state.jipangeProduct9Cat1Qty})</label></p>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-header-inner-body-item-qty'>
+                                                                                                <p>{this.state.jipangeProduct9Cat1Price}</p>
                                                                                             </div>
                                                                                         </div>
                                                                                     }
