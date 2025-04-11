@@ -10939,7 +10939,7 @@ export default class LandingPg extends Component {
 
                                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
                                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-                                                                                            <img src='/assets/images/products/red-chard-spinach-product.png'/>
+                                                                                            <img src='/assets/images/products/kale-product.png'/>
                                                                                         </div>
                                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
                                                                                             <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
@@ -10968,7 +10968,7 @@ export default class LandingPg extends Component {
                                                                                     
                                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
                                                                                             <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-                                                                                                <img src='/assets/images/products/red-chard-spinach-product.png'/>
+                                                                                                <img src='/assets/images/products/red-cabbage-product.png'/>
                                                                                             </div>
                                                                                             <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
                                                                                                 <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
@@ -11179,7 +11179,7 @@ export default class LandingPg extends Component {
 
                                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
                                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-                                                                                            <img src='/assets/images/products/red-chard-spinach-product.png'/>
+                                                                                            <img src='/assets/images/products/kale-product.png'/>
                                                                                         </div>
                                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
                                                                                             <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
@@ -11208,7 +11208,7 @@ export default class LandingPg extends Component {
                                                                                     
                                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
                                                                                             <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-                                                                                                <img src='/assets/images/products/red-chard-spinach-product.png'/>
+                                                                                                <img src='/assets/images/products/red-cabbage-product.png'/>
                                                                                             </div>
                                                                                             <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
                                                                                                 <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
