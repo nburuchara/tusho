@@ -217,7 +217,7 @@ const products = [
         brand: 'Rascals',
         price: 85.00,
         rating: 4.8,
-        image: "/assets/images/products/tomatoes-product.webp",
+        image: "/assets/images/products/diapers-product.png",
         promo: true,
         qty: 0,
         pamoja: false,
