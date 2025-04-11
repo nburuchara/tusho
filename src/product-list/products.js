@@ -222,7 +222,7 @@ const products = [
         brand: 'TuShop Fresh',
         price: 152.00,
         rating: 4.7,
-        image: "/assets/images/products/red-cabbage-product.webp",
+        image: "/assets/images/products/red-ca-product.webp",
         promo: false,
         qty: 0,
         pamoja: false,
