@@ -52,6 +52,23 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
+        id: 3,
+        name: "Bio Salted Artisanal Butter (500g)",
+        category: "Dairy",
+        brand: 'Bio',
+        price: 1350.00,
+        rating: 4.7,
+        image: "/assets/images/products/butter-product.webp",
+        promo: false,
+        qty: 0,
+        pamoja: false,
+        pamojaCurrentSelected: 0,
+        pamojaCurrentTotal: 0,
+        jipangeSelected: false,
+        jipanges: [],
+        jipangeDate: 'Apr 18'
+    },
+    {
         id: 4,
         name: "Blueband Original (250g)",
         category: "Food Cupboard",

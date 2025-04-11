@@ -7258,7 +7258,7 @@ export default class LandingPg extends Component {
             jipangeProduct3Cat4: 'TuShop Fresh Mixed Sizes Eggs (30pcs)',
             jipangeProduct3Cat4Qty: 0,
             jipangeProduct3Cat4Price: 0,
-            jipangeProduct4Cat4: 'Bio Salted Artisanal Butter',
+            jipangeProduct4Cat4: 'Bio Salted Artisanal Butter (500g)',
             jipangeProduct4Cat4Qty: 0,
             jipangeProduct4Cat4Price: 0,
             jipangeProduct1Cat5: 'Blueband Original (250g)',
@@ -11368,7 +11368,7 @@ export default class LandingPg extends Component {
                                                                                                 }
                                                                                             </div>
                                                                                             <h5>Ksh 879</h5>
-                                                                                            <p>Bio Salted Artisinal Butter (500g)</p>
+                                                                                            <p>Bio Salted Artisanal Butter (500g)</p>
                                                                                         </div>
                                                                                     </div>
 
