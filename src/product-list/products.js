@@ -1,4 +1,3 @@
-
 const products = [
     {
         id: 1,
@@ -213,6 +212,23 @@ const products = [
     },
     {
         id: 13,
+        name: "Rascals 17kgs Premium CoComelon Training Diaper Pants - Size 7 (22pcs)",
+        category: "Baby Care",
+        brand: 'Rascals',
+        price: 85.00,
+        rating: 4.8,
+        image: "/assets/images/products/tomatoes-product.webp",
+        promo: true,
+        qty: 0,
+        pamoja: false,
+        pamojaCurrentSelected: 0,
+        pamojaCurrentTotal: 0,
+        jipangeSelected: false,
+        jipanges: [],
+        jipangeDate: 'Apr 18'
+    },
+    {
+        id: 14,
         name: "Mumias Sugar White (2kg)",
         category: "Food Cupboard",
         brand: 'Mumias',
@@ -234,7 +250,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 14,
+        id: 15,
         name: "Tushop Fresh Fresh Red Cabbage",
         category: "Fruits & Vegetables",
         brand: 'TuShop Fresh',
@@ -251,7 +267,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 15,
+        id: 16,
         name: "Tushop Fresh Red Onions",
         category: "Fruits & Vegetables",
         brand: 'TuShop Fresh',
@@ -268,7 +284,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 16,
+        id: 17,
         name: "Rinsun 100% Sunflower Oil (3L)",
         category: "Food Cupboard",
         brand: 'Rinsun',
@@ -285,7 +301,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 17,
+        id: 18,
         name: "VP Foods Baby Plum Tomatoes",
         category: "Fruits & Vegetables",
         brand: 'VP Foods',
@@ -302,7 +318,7 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
-        id: 18,
+        id: 19,
         name: "Tushop Fresh Ripe Bananas",
         category: "Fruits & Vegetables",
         brand: 'TuShop Fresh',
