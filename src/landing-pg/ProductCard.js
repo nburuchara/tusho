@@ -482,6 +482,12 @@ const Styles = styled.div `
     margin-top: 0px;
     margin-bottom: 5px;
     color: #5e626a;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .product-price-container {
