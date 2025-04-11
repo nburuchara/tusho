@@ -7197,15 +7197,19 @@ export default class LandingPg extends Component {
             jipangeProduct3Cat1CountBtn: 0,
             jipangeProduct4Cat1CountBtn: 0,
             jipangeProduct5Cat1CountBtn: 0,
+            jipangeProduct6Cat1CountBtn: 0,
+            jipangeProduct7Cat1CountBtn: 0,
             jipangeProduct1Cat3CountBtn: 0,
             jipangeProduct1Cat4CountBtn: 0,
             jipangeProduct2Cat4CountBtn: 0,
             jipangeProduct3Cat4CountBtn: 0,
+            jipangeProduct4Cat4CountBtn: 0,
             jipangeProduct1Cat5CountBtn: 0,
             jipangeProduct2Cat5CountBtn: 0,
             jipangeProduct3Cat5CountBtn: 0,
             jipangeProduct4Cat5CountBtn: 0,
             jipangeProduct5Cat5CountBtn: 0,
+            jipangeProduct1Cat6CountBtn: 0,
             jipangeProduct1Cat12CountBtn: 0,
             jipangeProduct1Cat13CountBtn: 0,
             showJipangeSelectedDateCart: true,
@@ -7254,6 +7258,9 @@ export default class LandingPg extends Component {
             jipangeProduct2Cat5: 'Mumias Sugar White (2kg)',
             jipangeProduct2Cat5Qty: 0,
             jipangeProduct2Cat5Price: 0,
+            jipangeProduct1Cat6: 'Rascals 17kgs Premium CoComelon Training Diaper Pants - Size 7 (22pcs)',
+            jipangeProduct1Cat6Qty: 0,
+            jipangeProduct1Cat6Price: 0,
             jipangeProduct3Cat5: 'MacCoffee Classic (200g)',
             jipangeProduct3Cat5Qty: 0,
             jipangeProduct3Cat5Price: 0,
@@ -11085,8 +11092,62 @@ export default class LandingPg extends Component {
                                                                                             <p>Mlango Farm Organic Red Chard Spinach (1 bunch)</p>
                                                                                         </div>
                                                                                     </div>
+
+                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                                            <img src='/assets/images/products/red-chard-spinach-product.png'/>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                                {this.state.jipangeProduct8Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(8, 1, this.state.jipangeProduct8Cat1CountBtn, 35)}>+</button> }
+                                                                                                {this.state.jipangeProduct8Cat1CountBtn > 0 && 
+                                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyDecrease(8, 1, this.state.jipangeProduct8Cat1CountBtn, 35)}
+                                                                                                        className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
+                                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
+                                                                                                            {this.state.jipangeProduct8Cat1CountBtn}
+                                                                                                        </div>
+                                                                                                        <div
+                                                                                                        onClick={() => this.jipangeItemQtyIncrease(8, 1, this.state.jipangeProduct8Cat1CountBtn, 35)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                                    </div> 
+                                                                                                }
+                                                                                            </div>
+                                                                                            <h5>Ksh 35</h5>
+                                                                                            <p>Mlango Farm Organic Curly Kale (1 bunch)</p>
+                                                                                        </div>
+                                                                                    </div>
                                                                                 
                                                                                 </div>
+                                                                                <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
+                                                                                    
+                                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
+                                                                                                <img src='/assets/images/products/red-chard-spinach-product.png'/>
+                                                                                            </div>
+                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
+                                                                                                <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
+                                                                                                    {this.state.jipangeProduct9Cat1CountBtn === 0 && <button onClick={() => this.jipangeItemQtyIncrease(9, 1, this.state.jipangeProduct9Cat1CountBtn, 152)}>+</button> }
+                                                                                                    {this.state.jipangeProduct9Cat1CountBtn > 0 && 
+                                                                                                        <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart'>
+                                                                                                            <div
+                                                                                                            onClick={() => this.jipangeItemQtyDecrease(9, 1, this.state.jipangeProduct9Cat1CountBtn, 152)}
+                                                                                                            className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-down'>-</div>
+                                                                                                            <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-count'>
+                                                                                                                {this.state.jipangeProduct9Cat1CountBtn}
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                            onClick={() => this.jipangeItemQtyIncrease(8, 1, this.state.jipangeProduct9Cat1CountBtn, 152)} className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-adjust-cart-up'>+</div>
+                                                                                                        </div> 
+                                                                                                    }
+                                                                                                </div>
+                                                                                                <h5>Ksh 152</h5>
+                                                                                                <p>TuShop Fresh Fresh Red Cabbage (1 piece)</p>
+                                                                                            </div>
+                                                                                        </div>
+
+                                                                                </div>
+
                                                                             </div>
                                                                         }
 
