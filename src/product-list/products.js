@@ -91,6 +91,23 @@ const products = [
         jipangeDate: 'Apr 18'
     },
     {
+        id: 8,
+        name: "Mlango Farms Organic Curly Kale",
+        category: "Fruits & Vegetables",
+        brand: 'Mlango Farms',
+        price: 55.00,
+        rating: 4.9,
+        image: "/assets/images/products/red-chard-spinach-product.png",
+        promo: true,
+        qty: 0,
+        pamoja: false,
+        pamojaCurrentSelected: 0,
+        pamojaCurrentTotal: 0,
+        jipangeSelected: false,
+        jipanges: [],
+        jipangeDate: 'Apr 18'
+    },
+    {
         id: 6,
         name: "Tushop Fresh Local Watermelon",
         category: "Fruits & Vegetables",

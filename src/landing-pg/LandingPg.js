@@ -7240,7 +7240,7 @@ export default class LandingPg extends Component {
             jipangeProduct7Cat1: 'Mlango Farms Organic Red Chard Spinach (1 bunch)',
             jipangeProduct8Cat1Qty: 0,
             jipangeProduct8Cat1Price: 0,
-            jipangeProduct8Cat1: 'Mlango Farm Organic Curly Kale (1 bunch)',
+            jipangeProduct8Cat1: 'Mlango Farms Organic Curly Kale (1 bunch)',
             jipangeProduct9Cat1Qty: 0,
             jipangeProduct9Cat1Price: 0,
             jipangeProduct9Cat1: 'TuShop Fresh Fresh Red Cabbage (1 piece)',
@@ -10934,7 +10934,7 @@ export default class LandingPg extends Component {
                                                                                                 }
                                                                                             </div>
                                                                                             <h5>Ksh 55</h5>
-                                                                                            <p>Mlango Farm Organic Red Chard Spinach (1 bunch)</p>
+                                                                                            <p>Mlango Farms Organic Red Chard Spinach (1 bunch)</p>
                                                                                         </div>
                                                                                     </div>
 
@@ -10959,7 +10959,7 @@ export default class LandingPg extends Component {
                                                                                                 }
                                                                                             </div>
                                                                                             <h5>Ksh 35</h5>
-                                                                                            <p>Mlango Farm Organic Curly Kale (1 bunch)</p>
+                                                                                            <p>Mlango Farms Organic Curly Kale (1 bunch)</p>
                                                                                         </div>
                                                                                     </div>             
                                                                                                 
@@ -11174,7 +11174,7 @@ export default class LandingPg extends Component {
                                                                                                 }
                                                                                             </div>
                                                                                             <h5>Ksh 55</h5>
-                                                                                            <p>Mlango Farm Organic Red Chard Spinach (1 bunch)</p>
+                                                                                            <p>Mlango Farms Organic Red Chard Spinach (1 bunch)</p>
                                                                                         </div>
                                                                                     </div>
 
@@ -11199,7 +11199,7 @@ export default class LandingPg extends Component {
                                                                                                 }
                                                                                             </div>
                                                                                             <h5>Ksh 35</h5>
-                                                                                            <p>Mlango Farm Organic Curly Kale (1 bunch)</p>
+                                                                                            <p>Mlango Farms Organic Curly Kale (1 bunch)</p>
                                                                                         </div>
                                                                                     </div>
                                                                                 
