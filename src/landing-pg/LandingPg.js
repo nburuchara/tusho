@@ -6072,6 +6072,7 @@ const Styles = styled.div `
     left: 0;
     background-color: #fff2ccff;
     z-index: 2;
+    visibility: hidden;
     margin-left: 0.25rem;
     margin-top: -0.08rem;
     height: 99.6%;
@@ -6085,6 +6086,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2.open {
+    visibility: visible;
     transform: translateY(0);
     opacity: 1;
 }
@@ -6702,6 +6704,7 @@ const Styles = styled.div `
     border-radius: 8px;
     // margin-right: 20px;
     background-color: white;
+    visibility: hidden;
     overflow-y: auto;
     transform: translateY(-1.5rem);
     opacity: 0;
@@ -6710,6 +6713,7 @@ const Styles = styled.div `
 
 .homepage-body-inner-header-option-dropdown-option-1.selected {
     transform: translateY(0);
+    visibility: visible;
     opacity: 1;
     z-index: 2;
     border: 1px solid #ff5733;
