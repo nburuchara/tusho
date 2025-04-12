@@ -215,7 +215,7 @@ const products = [
         name: "Rascals 17kgs Premium CoComelon Training Diaper Pants - Size 7 (22pcs)",
         category: "Baby Care",
         brand: 'Rascals',
-        price: 85.00,
+        price: 1999.00,
         rating: 4.8,
         image: "/assets/images/products/diapers-product.png",
         promo: true,

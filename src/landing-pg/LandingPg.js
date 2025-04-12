@@ -6728,6 +6728,7 @@ const Styles = styled.div `
     margin-left: -3.5rem;
     padding: 0px;
     border-radius: 8px;
+    visibility: hidden;
     background-color: white;
     overflow-y: auto;
     transform: translateY(-1.5rem);
@@ -6738,6 +6739,7 @@ const Styles = styled.div `
 .homepage-body-inner-header-option-dropdown-option-2.selected {
     transform: translateY(0);
     opacity: 1;
+    visibility: visible;
     z-index: 2;
     border: 1px solid #ff5733;
 }
@@ -6747,11 +6749,13 @@ const Styles = styled.div `
     border: 1px solid white;
     height: 10rem;
     display: flex;
+    visibility: visible;
     flex-direction: column;
     margin-left: -1rem;
     padding: 0px;
     border-radius: 8px;
     background-color: white;
+    visibility: hidden;
     overflow-y: auto;
     transform: translateY(-1.5rem);
     opacity: 0;
@@ -6760,6 +6764,7 @@ const Styles = styled.div `
 
 .homepage-body-inner-header-option-dropdown-option-3.selected {
     transform: translateY(0);
+    visibility: visible;
     opacity: 1;
     z-index: 2;
     border: 1px solid #ff5733;
@@ -6772,6 +6777,7 @@ const Styles = styled.div `
     display: flex;
     flex-direction: column;
     margin-left: -1rem;
+    visibility: hidden;
     padding: 0px;
     border-radius: 8px;
     background-color: white;
@@ -6783,6 +6789,7 @@ const Styles = styled.div `
 
 .homepage-body-inner-header-option-dropdown-option-35.selected {
     transform: translateY(0);
+    visibility: visible;
     opacity: 1;
     z-index: 2;
     border: 1px solid #ff5733;
