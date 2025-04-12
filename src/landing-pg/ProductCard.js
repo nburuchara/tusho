@@ -19,6 +19,25 @@ const Styles = styled.div `
     overflow: hidden;
 }
 
+.product-card:hover .product-name {
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+    overflow: hidden;
+
+    animation: scrollText 8s linear infinite;
+    display: block;
+}
+
+/* Scrolling animation */
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 .product-card-shop-pamoja {
     position: absolute;
     top: 0.5rem;
@@ -472,12 +491,16 @@ const Styles = styled.div `
     border-radius: 8px;
 }
 
+.product-name-wrapper {
+    position: relative;
+    height: 2.7em; /* Approx height for 2 lines based on your font size */
+    overflow: hidden;
+}
+
 .product-name {
     font-size: 0.885rem;
     font-weight: normal;
     font-family: poppins;
-    // margin-left: 0.5%;
-    // margin-right: 0.5%;
     text-align: left;
     margin-top: 0px;
     margin-bottom: 5px;
@@ -488,6 +511,9 @@ const Styles = styled.div `
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    white-space: normal;
+
+    transition: all 0.3s ease;
 }
 
 .product-price-container {
@@ -829,7 +855,9 @@ class ProductCard extends Component {
                                     <p className="product-price">Ksh. <label style={{color: '#ff5733'}}>{product.price.toFixed(2)}</label></p>
                                     {product.prevPrice ? (<h5 className="product-discount-price">{product.prevPrice}.00</h5>) : (null)}
                                 </div>
-                                <h3 className="product-name">{product.name}</h3>
+                                <div class="product-name-wrapper">
+                                    <h3 className="product-name">{product.name}</h3>
+                                </div>
                                 <p className="product-rating"><span>★</span> ({product.rating})</p>
                             </>
                         )}

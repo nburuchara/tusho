@@ -6028,6 +6028,7 @@ const Styles = styled.div `
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
     background-color: var(--background-color);
     clip-path: polygon(0 100%, 0 100%, 0 0, 0 0);
     transition: clip-path 0.6s ease-in-out;
@@ -6070,6 +6071,7 @@ const Styles = styled.div `
     top: 0;
     left: 0;
     background-color: #fff2ccff;
+    z-index: 2;
     margin-left: 0.25rem;
     margin-top: -0.08rem;
     height: 99.6%;
@@ -6221,6 +6223,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn:hover {
     background-color: #ff5733;
     color: white;
+    cursor: pointer;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn.selected {
@@ -12784,7 +12787,7 @@ export default class LandingPg extends Component {
                                         <div onMouseEnter={this.handleAnnouncementBarMouseEnter} onMouseLeave={this.handleAnnouncementBarMouseLeave} onClick={this.handleAnnouncementBarMouseEnter} className="homepage-header-inner-header-left-update-display-announcement-container">
                                             <div ref={this.marqueeRef} className={`homepage-header-inner-header-left-update-display-announcement-track ${this.state.announcementBarIsPaused ? "paused" : ""}`} id="homepage-header-inner-header-left-update-display-announcement-track">
                                                 <div className="homepage-header-inner-header-left-update-display-announcement-wrapper">
-                                                    <span><strong>{this.state.dateTime} • </strong>You've made it through the work week mama (and papa)! Come 5pm, let your hair down and slam that laptop shut 💆🏿‍♀️</span>
+                                                    <span><strong>{this.state.dateTime} • </strong>Have a restful weekend mama (and papa)! 😎</span>
                                                     <span><strong>OFFER(S) -  15% off</strong> Dairy Fresh Strawberry (offer ends <strong>today at 5:00pm</strong>) <strong>• 10% off</strong> Rinsun 250ml Oil (offer ends <strong>22/04/25 at 1:30pm</strong>) <strong>• 20% off </strong> Afia Multi-Vitamin Fruit Drink (1 litre) (offer ends <strong>30/04/25 at 2:30pm</strong>) <strong>• 20% off </strong> Afia Apple & Ginger Boost Fruit Drink (380ml) (offer ends <strong>30/04/25 at 2:30pm</strong>)</span>
                                                     <span><strong>IMPROVEMENTS TO YOUR SHOPPING EXPERIENCE - </strong>We fixed the shopping cart closing suddenly issue, and we added <strong>Airtel Money</strong> as a payment option!</span>
                                                     {/* <span>🎉 Announcement 4</span> */}
