@@ -24,17 +24,17 @@ const Styles = styled.div `
     -webkit-box-orient: unset;
     overflow: hidden;
 
-    animation: scrollText 8s linear infinite;
+    animation: scrollText 6s linear infinite;
     display: block;
 }
 
 /* Scrolling animation */
-@keyframes scrollText {
+@keyframes scrollVertical {
     0% {
-        transform: translateX(100%);
+        transform: translateY(0%);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateY(-100%);
     }
 }
 
