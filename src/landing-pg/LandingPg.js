@@ -11522,7 +11522,7 @@ export default class LandingPg extends Component {
                                                                                             <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-price-details'>
                                                                                                 <h5>Ksh 205</h5>
                                                                                             </div>
-                                                                                            <p>TuShop Fresh Mwea Pishori Rice</p>
+                                                                                            <p>TuShop Fresh Mwea Pishori Rice (1kg)</p>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
