@@ -7158,7 +7158,7 @@ export default class LandingPg extends Component {
             displayScrollUpBtn: false,
 
             //* - USER ACCOUNT STATUS - *//
-            userSignedIn: false,
+            userSignedIn: true,
             showAccountInformation: true,
             showJipangeSettings: false,
             showPamojaSettings: false,
@@ -7365,7 +7365,7 @@ export default class LandingPg extends Component {
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
             OTPBtnClicked: false,
-            OTPVerifySuccess: false,
+            OTPVerifySuccess: true,
             showEnterOPTBtnTextHome: true,
             showVerifyOPTBtnTextHome: true,
             verifyOTPBtnText: 'Verify OTP',
@@ -7419,9 +7419,9 @@ export default class LandingPg extends Component {
             promoProductCategorySelected: false,
             promoDiscountCodeCategorySelected: false,
             promoItems: [
-                { id: 1, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: '', newPrice: '', type: '', description: 'This is item 1', img: ''},
-                { id: 2, name: 'TuShop Fresh Mwea Pishori Rice', oldPrice: '', newPrice: '', type: '', description: 'This is item 2' , img: ''},
-                { id: 3, name: 'Serene Mango Passion Fruit Preserves 370g', oldPrice: '', newPrice: '', type: '', description: 'This is item 3', img: ''},
+                { id: 1, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: '', newPrice: '', type: '', description: '', img: '/assets/images/products/eggs-product.png'},
+                { id: 2, name: 'TuShop Fresh Mwea Pishori Rice', oldPrice: '', newPrice: '', type: '', description: '' , img: '/assets/images/products/rice-product.png'},
+                { id: 3, name: 'Bio Salted Artisanal Butter (500g)', oldPrice: 879.00, newPrice: 850.00, type: '', description: '', img: ''},
               ],
             
             //* # SHOPPING LIST *//
