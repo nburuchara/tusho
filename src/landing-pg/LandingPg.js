@@ -6283,6 +6283,7 @@ const Styles = styled.div `
     font-size: 72.5%;
     font-family: poppins;
     line-height: 1.25;
+    color: #53565c;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text p {
@@ -6290,13 +6291,26 @@ const Styles = styled.div `
     margin-bottom: 0.25rem;
     margin-left: 2.5%;
     margin-right: 2.5%;
-    font-size: 69%;
+    font-size: 72.5%;
     font-family: poppins;
+    font-weight: bold;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text-prices {
     display: flex;
     justify-content: space-between;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text-prices span {
+    color: #ff5733;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-old-price {
+    text-decoration: line-through;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-new-price {
+
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
@@ -12976,8 +12990,8 @@ export default class LandingPg extends Component {
                                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text'>
                                                                             <h4>{item.name}</h4>
                                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text-prices'>
-                                                                                <p>{item.oldPrice}</p>
-                                                                                <p>{item.newPrice}</p>
+                                                                                <p className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-new-price'>Ksh. <span>{item.newPrice}</span></p>
+                                                                                <p className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-old-price'>Ksh. {item.oldPrice}</p>
                                                                             </div>
                                                                             
                                                                         </div>
