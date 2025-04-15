@@ -7419,9 +7419,10 @@ export default class LandingPg extends Component {
             promoProductCategorySelected: false,
             promoDiscountCodeCategorySelected: false,
             promoItems: [
-                { id: 1, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: '', newPrice: '', type: '', description: '', img: '/assets/images/products/eggs-product.png'},
-                { id: 2, name: 'TuShop Fresh Mwea Pishori Rice', oldPrice: '', newPrice: '', type: '', description: '' , img: '/assets/images/products/rice-product.png'},
+                { id: 1, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: 205.00, newPrice: 250.00, type: '', description: '', img: '/assets/images/products/eggs-product.png'},
+                { id: 2, name: 'TuShop Fresh Mwea Pishori Rice', oldPrice: 205.00, newPrice: 190.00, type: '', description: '' , img: '/assets/images/products/rice-product.png'},
                 { id: 3, name: 'Bio Salted Artisanal Butter (500g)', oldPrice: 879.00, newPrice: 850.00, type: '', description: '', img: ''},
+                { id: 4, name: 'Tushop Fresh Local Watermelon', oldPrice: 369.00, newPrice: 320.00, type: '', description: '', img: ''},
               ],
             
             //* # SHOPPING LIST *//

@@ -130,7 +130,7 @@ const products = [
         name: "Tushop Fresh Local Watermelon",
         category: "Fruits & Vegetables",
         brand: 'TuShop Fresh',
-        price: 369.00,
+        price: 320.00,
         oldPrice: 369.00,
         rating: 4.6,
         image: "/assets/images/products/watermelon-product.webp",
