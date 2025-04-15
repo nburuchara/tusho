@@ -6294,6 +6294,11 @@ const Styles = styled.div `
     font-family: poppins;
 }
 
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text-prices {
+    display: flex;
+    justify-content: space-between;
+}
+
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
 
 .homepage-header-inner-body-poster-right-right-section {
@@ -12970,7 +12975,11 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text'>
                                                                             <h4>{item.name}</h4>
-                                                                            <p>{item.description}</p>
+                                                                            <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text-prices'>
+                                                                                <p>{item.oldPrice}</p>
+                                                                                <p>{item.newPrice}</p>
+                                                                            </div>
+                                                                            
                                                                         </div>
                                                                     </div>
                                                                 ))}
