@@ -6267,7 +6267,8 @@ const Styles = styled.div `
     width: 57.5px;
     height: 57.5px;
     border-radius: 8px;
-    border: 1px solid black;
+    border: 1px solid #ccc;
+    background-color: white;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text {
@@ -6291,7 +6292,6 @@ const Styles = styled.div `
     margin-bottom: 0.25rem;
     margin-left: 2.5%;
     margin-right: 2.5%;
-    font-size: 72.5%;
     font-family: poppins;
     font-weight: bold;
 }
@@ -6303,14 +6303,22 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text-prices span {
     color: #ff5733;
+    margin-bottom: 0px;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-old-price {
     text-decoration: line-through;
+    color: #5e626a;
+    font-size: 72.5%;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-new-price {
-
+    font-size: 92.5%;
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
+    text-decoration-thickness: 2px;
+    text-decoration-style: wavy;
+    text-underline-offset: 2.5px;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
@@ -7440,8 +7448,8 @@ export default class LandingPg extends Component {
             promoItems: [
                 { id: 1, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: 205.00, newPrice: 250.00, type: '', description: '', img: '/assets/images/products/eggs-product.png'},
                 { id: 2, name: 'TuShop Fresh Mwea Pishori Rice', oldPrice: 205.00, newPrice: 190.00, type: '', description: '' , img: '/assets/images/products/rice-product.png'},
-                { id: 3, name: 'Bio Salted Artisanal Butter (500g)', oldPrice: 879.00, newPrice: 850.00, type: '', description: '', img: ''},
-                { id: 4, name: 'Tushop Fresh Local Watermelon', oldPrice: 369.00, newPrice: 320.00, type: '', description: '', img: ''},
+                { id: 3, name: 'Bio Salted Artisanal Butter (500g)', oldPrice: 879.00, newPrice: 850.00, type: '', description: '', img: '/assets/images/products/butter-product.png'},
+                { id: 4, name: 'Tushop Fresh Local Watermelon', oldPrice: 369.00, newPrice: 320.00, type: '', description: '', img: '/assets/images/products/watermelon-product.webp'},
               ],
             
             //* # SHOPPING LIST *//
