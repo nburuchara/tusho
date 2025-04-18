@@ -6385,6 +6385,12 @@ const Styles = styled.div `
     border: 1px solid black;
 }
 
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
 
 .homepage-header-inner-body-poster-right-right-section {
@@ -13069,7 +13075,7 @@ export default class LandingPg extends Component {
                                                                             </div>
 
                                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-footer'>
-                                                                                {item.type === 'products' ? (
+                                                                                {item.type === 'product' ? (
                                                                                     <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart'>
                                                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-left'>
 
