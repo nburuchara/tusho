@@ -6377,11 +6377,16 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-center {
     width: 50%;
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-right {
@@ -6390,6 +6395,8 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code {
