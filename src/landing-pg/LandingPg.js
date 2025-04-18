@@ -13069,17 +13069,23 @@ export default class LandingPg extends Component {
                                                                             </div>
 
                                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-footer'>
-                                                                                <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart'>
-                                                                                    <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-left'>
+                                                                                {item.type === 'products' ? (
+                                                                                    <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart'>
+                                                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-left'>
+
+                                                                                        </div>
+                                                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-center'>
+
+                                                                                        </div>
+                                                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-right'>
+
+                                                                                        </div>
+                                                                                    </div>
+                                                                                ) : (
+                                                                                    <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code'>
 
                                                                                     </div>
-                                                                                    <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-center'>
-
-                                                                                    </div>
-                                                                                    <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-right'>
-
-                                                                                    </div>
-                                                                                </div>
+                                                                                )}
                                                                             </div>
                                                     
                                                                         </div>
