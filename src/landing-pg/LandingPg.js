@@ -6253,7 +6253,12 @@ const Styles = styled.div `
     // padding-top: 0.1rem;
     // padding-bottom: 0.1rem;
     overflow: hidden;
+    transition: height 0.5s ease-in-out;
 }
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item:hover {
+    height: 32.5%;
+}   
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-img {
     width: 30%;
@@ -6273,6 +6278,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text {
     width: 70%;
+    position: relative;
     // border: 1px solid black;
 }
 
@@ -6323,9 +6329,17 @@ const Styles = styled.div `
     font-size: 92.5%;
     text-decoration: underline;
     text-decoration-color: #FF5733;
-    text-decoration-thickness: 2px;
+    text-decoration-thickness: 1.5px;
     text-decoration-style: wavy;
     text-underline-offset: 2.5px;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart {
+    position: absolute;
+    bottom: 0.5rem;
+    border: 1px solid black;
+    width: 92.5%;
+    height: 25%;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
@@ -13010,7 +13024,11 @@ export default class LandingPg extends Component {
                                                                                 <p className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-new-price'>{item.type === 'product' ? 'Ksh.' : 'CODE:'} <span>{item.newPrice}</span></p>
                                                                                 <p className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-old-price ${item.type === 'product' ? 'product' : ''} `}>{item.type !== 'product' ? item.promoParams :  item.oldPrice}</p>
                                                                             </div>
-                                                                            
+
+                                                                            <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart'>
+
+                                                                            </div>
+                                                    
                                                                         </div>
                                                                     </div>
                                                                 ))}
