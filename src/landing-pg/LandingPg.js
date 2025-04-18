@@ -6260,6 +6260,22 @@ const Styles = styled.div `
     height: 32.5%;
 }   
 
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item.selected {
+    height: 32.5%;
+}   
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item:hover .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-footer {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+} 
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item.selected .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-footer {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+} 
+
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-img {
     width: 30%;
     // border: 1px solid black;
@@ -6334,12 +6350,39 @@ const Styles = styled.div `
     text-underline-offset: 2.5px;
 }
 
-.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart {
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-footer {
     position: absolute;
     bottom: 0.5rem;
     border: 1px solid black;
     width: 92.5%;
     height: 25%;
+    transform: translateY(1rem);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, pointer-events 0.5s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart {
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-left {
+    width: 25%;
+    border: 1px solid black;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-center {
+    width: 50%;
+    border: 1px solid black;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-right {
+    width: 25%;
+    border: 1px solid black;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
@@ -13025,8 +13068,18 @@ export default class LandingPg extends Component {
                                                                                 <p className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-old-price ${item.type === 'product' ? 'product' : ''} `}>{item.type !== 'product' ? item.promoParams :  item.oldPrice}</p>
                                                                             </div>
 
-                                                                            <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart'>
+                                                                            <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-footer'>
+                                                                                <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart'>
+                                                                                    <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-left'>
 
+                                                                                    </div>
+                                                                                    <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-center'>
+
+                                                                                    </div>
+                                                                                    <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-right'>
+
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
                                                     
                                                                         </div>

@@ -14,7 +14,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 2,
@@ -31,7 +31,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 3,
@@ -48,7 +48,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 4,
@@ -66,7 +66,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 5,
@@ -86,7 +86,7 @@ const products = [
         pamojaExpiryTime: '4:30PM',
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 6,
@@ -106,7 +106,7 @@ const products = [
         pamojaExpiryTime: '5:00PM',
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 7,
@@ -123,7 +123,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 8,
@@ -141,7 +141,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 9,
@@ -159,7 +159,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 10,
@@ -176,7 +176,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 11,
@@ -193,7 +193,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 12,
@@ -210,7 +210,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 13,
@@ -227,7 +227,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 14,
@@ -244,7 +244,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 15,
@@ -266,7 +266,7 @@ const products = [
         pamojaExpiryTime: '3:00PM',
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 16,
@@ -283,7 +283,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 17,
@@ -300,7 +300,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 18,
@@ -317,7 +317,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 19,
@@ -334,7 +334,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 20,
@@ -351,7 +351,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
     {
         id: 21,
@@ -369,7 +369,7 @@ const products = [
         pamojaCurrentTotal: 0,
         jipangeSelected: false,
         jipanges: [],
-        jipangeDate: 'Apr 18'
+        jipangeDate: 'Apr 21'
     },
 ];
 
