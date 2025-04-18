@@ -6381,6 +6381,7 @@ const Styles = styled.div `
     justify-content: center;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    cursor: pointer;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-center {
@@ -6412,6 +6413,7 @@ const Styles = styled.div `
     justify-content: center;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    cursor: pointer;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code {
