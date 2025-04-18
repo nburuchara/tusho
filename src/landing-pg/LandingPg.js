@@ -6390,6 +6390,7 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-center h4 {
@@ -6399,7 +6400,6 @@ const Styles = styled.div `
     font-size: 12.5px;
     color: #5e626a;
     font-weight: bold;
-    background-color: white;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-right {
