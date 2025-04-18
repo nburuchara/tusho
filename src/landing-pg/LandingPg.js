@@ -6072,7 +6072,7 @@ const Styles = styled.div `
     left: 0;
     background-color: #fff2ccff;
     z-index: 2;
-    visibility: hidden;
+    pointer-events: none;
     margin-left: 0.25rem;
     margin-top: -0.08rem;
     height: 99.6%;
@@ -6081,12 +6081,12 @@ const Styles = styled.div `
     overflow: hidden;
     transition: background-color 0.6s ease-in-out;
     transform: translateY(3rem);
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out, pointer-events 1s ease-in-out;
     opacity: 0;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2.open {
-    visibility: visible;
+    pointer-events: auto;
     transform: translateY(0);
     opacity: 1;
 }
