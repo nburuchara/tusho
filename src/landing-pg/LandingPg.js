@@ -6353,8 +6353,9 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-footer {
     position: absolute;
     bottom: 0.5rem;
+    left: 0.15rem;
     border: 1px solid black;
-    width: 92.5%;
+    width: 95%;
     height: 25%;
     transform: translateY(1rem);
     opacity: 0;
