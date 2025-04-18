@@ -6354,7 +6354,7 @@ const Styles = styled.div `
     position: absolute;
     bottom: 0.5rem;
     left: 0.15rem;
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 95%;
     height: 25%;
     transform: translateY(1rem);
@@ -6373,7 +6373,9 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-left {
     width: 25%;
-    border: 1px solid black;
+    border: 1px solid #ff5733;
+    background-color: #ff5733;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6383,7 +6385,8 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-center {
     width: 50%;
-    border: 1px solid black;
+    border-top: 1px solid #ff5733;
+    border-bottom: 1px solid #ff5733;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6391,7 +6394,9 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-right {
     width: 25%;
-    border: 1px solid black;
+    border: 1px solid #ff5733;
+    background-color: #ff5733;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6402,7 +6407,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code {
     width: 100%;
     height: 100%;
-    border: 1px solid black;
+    border: 1px solid #ff5733;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
