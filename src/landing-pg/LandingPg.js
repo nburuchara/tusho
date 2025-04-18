@@ -7388,7 +7388,7 @@ export default class LandingPg extends Component {
             jipangeProduct9Cat1: 'TuShop Fresh Fresh Red Cabbage (1 piece)',
             jipangeProduct5Cat1Qty: 0,
             jipangeProduct5Cat1Price: 0,
-            jipangeProduct1Cat3: 'Kenchic Spring Chicken',
+            jipangeProduct1Cat3: 'Kenchic Spring Chicken (750g)',
             jipangeProduct1Cat3Qty: 0,
             jipangeProduct1Cat3Price: 0,
             jipangeProduct1Cat4: 'Brookside Whole Milk 1L Long Life',
@@ -7547,11 +7547,11 @@ export default class LandingPg extends Component {
             promoProductCategorySelected: false,
             promoDiscountCodeCategorySelected: false,
             promoItems: [
-                { id: 1, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: 205.00, newPrice: 250.00, type: 'product', description: '', img: '/assets/images/products/eggs-product.png'},
-                { id: 2, name: 'TuShop Fresh Mwea Pishori Rice', oldPrice: 205.00, newPrice: 190.00, type: 'product', description: '' , img: '/assets/images/products/rice-product.png'},
+                { id: 21, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: 205.00, newPrice: 250.00, type: 'product', description: '', img: '/assets/images/products/eggs-product.png'},
+                { id: 9, name: 'TuShop Fresh Mwea Pishori Rice', oldPrice: 205.00, newPrice: 190.00, type: 'product', description: '' , img: '/assets/images/products/rice-product.png'},
                 { id: 3, name: 'Get Ksh. 250 off your first order.', oldPrice: 205.00, newPrice: 'MAX250', type: 'code', description: '', promoParams: 'Valid 02/05', img: '/assets/images/codes/promoCode2.png'},
                 { id: 4, name: 'Bio Salted Artisanal Butter (500g)', oldPrice: 879.00, newPrice: 850.00, type: 'product', description: '', img: '/assets/images/products/butter-product.png'},
-                { id: 5, name: 'Tushop Fresh Local Watermelon', oldPrice: 369.00, newPrice: 320.00, type: 'product', description: '', img: '/assets/images/products/watermelon-product.webp'},
+                { id: 8, name: 'Tushop Fresh Local Watermelon', oldPrice: 369.00, newPrice: 320.00, type: 'product', description: '', img: '/assets/images/products/watermelon-product.webp'},
                 { id: 6, name: 'Get Ksh. 300 off orders over Ksh. 1999.', oldPrice: 205.00, newPrice: 'APR300', type: 'code', description: '', promoParams: '', img: '/assets/images/codes/promoCode1.png'},
               ],
             
@@ -11406,7 +11406,7 @@ export default class LandingPg extends Component {
                                                                                                 }
                                                                                             </div>
                                                                                             <h5>Ksh 560</h5>
-                                                                                            <p>Kenchic Spring Chicken</p>
+                                                                                            <p>Kenchic Spring Chicken (750g)</p>
                                                                                         </div>
                                                                                     </div>
 
