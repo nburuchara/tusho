@@ -6398,6 +6398,8 @@ const Styles = styled.div `
     font-family: poppins;
     font-size: 12.5px;
     color: #5e626a;
+    font-weight: bold;
+    background-color: white;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-right {
