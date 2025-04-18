@@ -6392,6 +6392,14 @@ const Styles = styled.div `
     justify-content: center;
 }
 
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-center h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: poppins;
+    font-size: 12.5px;
+    color: #5e626a;
+}
+
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-right {
     width: 25%;
     border: 1px solid #ff5733;
@@ -13100,10 +13108,10 @@ export default class LandingPg extends Component {
                                                                                             -
                                                                                         </div>
                                                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-center'>
-
+                                                                                            <h4>0</h4>
                                                                                         </div>
                                                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-right'>
-
+                                                                                            +
                                                                                         </div>
                                                                                     </div>
                                                                                 ) : (
