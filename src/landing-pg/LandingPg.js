@@ -6374,6 +6374,9 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-left {
     width: 25%;
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-center {
@@ -6384,6 +6387,9 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-right {
     width: 25%;
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code {
@@ -13079,7 +13085,7 @@ export default class LandingPg extends Component {
                                                                                 {item.type === 'product' ? (
                                                                                     <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart'>
                                                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-left'>
-
+                                                                                            -
                                                                                         </div>
                                                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-center'>
 
