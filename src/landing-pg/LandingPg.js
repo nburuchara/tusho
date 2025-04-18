@@ -7448,10 +7448,10 @@ export default class LandingPg extends Component {
             promoItems: [
                 { id: 1, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: 205.00, newPrice: 250.00, type: 'product', description: '', img: '/assets/images/products/eggs-product.png'},
                 { id: 2, name: 'TuShop Fresh Mwea Pishori Rice', oldPrice: 205.00, newPrice: 190.00, type: 'product', description: '' , img: '/assets/images/products/rice-product.png'},
-                { id: 3, name: 'Get Ksh. 300 off orders over Ksh. 1999.', oldPrice: 205.00, newPrice: 190.00, type: 'code', description: '', promoParams: '', img: '/assets/images/codes/promoCode1.png'},
+                { id: 3, name: 'Get Ksh. 250 off your first order.', oldPrice: 205.00, newPrice: 190.00, type: 'code', description: '', promoParams: 'Valid 02/05', img: '/assets/images/codes/promoCode2.png'},
                 { id: 4, name: 'Bio Salted Artisanal Butter (500g)', oldPrice: 879.00, newPrice: 850.00, type: 'product', description: '', img: '/assets/images/products/butter-product.png'},
                 { id: 5, name: 'Tushop Fresh Local Watermelon', oldPrice: 369.00, newPrice: 320.00, type: 'product', description: '', img: '/assets/images/products/watermelon-product.webp'},
-                { id: 6, name: 'Get Ksh. 100 off first', oldPrice: 205.00, newPrice: 190.00, type: 'code', description: '', promoParams: '', img: '/assets/images/codes/promoCode2.png'},
+                { id: 6, name: 'Get Ksh. 300 off orders over Ksh. 1999.', oldPrice: 205.00, newPrice: 190.00, type: 'code', description: '', promoParams: '', img: '/assets/images/codes/promoCode1.png'},
               ],
             
             //* # SHOPPING LIST *//
