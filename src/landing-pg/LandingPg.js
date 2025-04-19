@@ -3905,7 +3905,6 @@ const Styles = styled.div `
     display: flex;
     flex-direction: column;
     position: relative;
-    overflow: hidden;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header {
