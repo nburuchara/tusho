@@ -185,6 +185,9 @@ const Styles = styled.div `
     z-index: 1;
     position: relative;
     margin-left: -6%;
+    max-height: 450px;
+    overflow: hidden;
+    overflow-y: auto;
     width: 112%;
     // border: 1px solid black;
     border-radius: 8px;
@@ -6080,15 +6083,13 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
     overflow: hidden;
     transition: background-color 0.6s ease-in-out;
-    transform: translateY(3rem);
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out, pointer-events 1s ease-in-out;
-    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 1s ease-in-out, pointer-events 1s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2.open {
     pointer-events: auto;
     transform: translateY(0);
-    opacity: 1;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 h3 {
@@ -6115,6 +6116,7 @@ const Styles = styled.div `
     margin-right: 3.5%;
     margin-top: 0.2rem;
     font-size: 80%;
+    font-family: poppins;
     color: #5e626a;
 }
 
@@ -7547,12 +7549,12 @@ export default class LandingPg extends Component {
             promoProductCategorySelected: false,
             promoDiscountCodeCategorySelected: false,
             promoItems: [
-                { id: 21, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: 205.00, newPrice: 250.00, type: 'product', description: '', img: '/assets/images/products/eggs-product.png'},
-                { id: 9, name: 'TuShop Fresh Mwea Pishori Rice', oldPrice: 205.00, newPrice: 190.00, type: 'product', description: '' , img: '/assets/images/products/rice-product.png'},
-                { id: 3, name: 'Get Ksh. 250 off your first order.', oldPrice: 205.00, newPrice: 'MAX250', type: 'code', description: '', promoParams: 'Valid 02/05', img: '/assets/images/codes/promoCode2.png'},
-                { id: 4, name: 'Bio Salted Artisanal Butter (500g)', oldPrice: 879.00, newPrice: 850.00, type: 'product', description: '', img: '/assets/images/products/butter-product.png'},
-                { id: 8, name: 'Tushop Fresh Local Watermelon', oldPrice: 369.00, newPrice: 320.00, type: 'product', description: '', img: '/assets/images/products/watermelon-product.webp'},
-                { id: 6, name: 'Get Ksh. 300 off orders over Ksh. 1999.', oldPrice: 205.00, newPrice: 'APR300', type: 'code', description: '', promoParams: '', img: '/assets/images/codes/promoCode1.png'},
+                { id: 21, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: 205.00, newPrice: 250.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/eggs-product.png'},
+                { id: 9, name: 'TuShop Fresh Mwea Pishori Rice', oldPrice: 205.00, newPrice: 190.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/rice-product.png'},
+                { id: 3, name: 'Get Ksh. 250 off your first order.', oldPrice: 205.00, newPrice: 'MAX250', type: 'code', description: '', qty: 0, promoParams: 'Valid 02/05', img: '/assets/images/codes/promoCode2.png'},
+                { id: 4, name: 'Bio Salted Artisanal Butter (500g)', oldPrice: 879.00, newPrice: 850.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/butter-product.png'},
+                { id: 8, name: 'Tushop Fresh Local Watermelon', oldPrice: 369.00, newPrice: 320.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/watermelon-product.webp'},
+                { id: 6, name: 'Get Ksh. 300 off orders over Ksh. 1999.', oldPrice: 205.00, newPrice: 'APR300', type: 'code', description: '', qty: 0, promoParams: '', img: '/assets/images/codes/promoCode1.png'},
               ],
             
             //* # SHOPPING LIST *//
@@ -9002,6 +9004,13 @@ export default class LandingPg extends Component {
                     : product
             );
     
+            // 🔹 Update promoItems list (if the item exists)
+            const updatedPromoItems = prevState.promoItems.map((item) =>
+                item.id === productId
+                    ? { ...item, qty: Math.max(0, item.qty + change) }
+                    : item
+            );
+    
             // Find updated product
             const updatedProduct = updatedProducts.find((product) => product.id === productId);
     
@@ -9039,9 +9048,10 @@ export default class LandingPg extends Component {
     
             return {
                 products: updatedProducts,
+                promoItems: updatedPromoItems, // 🔹 update added here
                 cart: updatedCart,
                 totalCartPrice,
-                groupedOptions: updatedGroupedOptions, // 🔹 Ensures search results update instantly if available
+                groupedOptions: updatedGroupedOptions,
             };
         });
     };
@@ -9266,6 +9276,67 @@ export default class LandingPg extends Component {
             }
         }
     }
+
+    handlePromoItemQtyChange = (productId, change) => {
+        this.setState((prevState) => {
+            // Update products list (for UI)
+            const updatedProducts = prevState.products.map((product) =>
+                product.id === productId
+                    ? { ...product, qty: Math.max(0, product.qty + change) }
+                    : product
+            );
+    
+            // 🔹 Update promoItems list
+            const updatedPromoItems = prevState.promoItems.map((item) =>
+                item.id === productId
+                    ? { ...item, qty: Math.max(0, item.qty + change) }
+                    : item
+            );
+    
+            // Find updated product
+            const updatedProduct = updatedProducts.find((product) => product.id === productId);
+    
+            // Update the cart
+            let updatedCart = prevState.cart;
+            const existingCartItem = prevState.cart.find((item) => item.id === productId);
+    
+            if (existingCartItem) {
+                if (updatedProduct.qty > 0) {
+                    updatedCart = prevState.cart.map((item) =>
+                        item.id === productId
+                            ? { ...item, quantity: updatedProduct.qty }
+                            : item
+                    );
+                } else {
+                    updatedCart = prevState.cart.filter((item) => item.id !== productId);
+                }
+            } else if (updatedProduct.qty > 0) {
+                updatedCart = [...prevState.cart, { ...updatedProduct, quantity: updatedProduct.qty }];
+            }
+    
+            // 🔹 Check if groupedOptions exists before updating
+            const updatedGroupedOptions = prevState.groupedOptions
+                ? Object.fromEntries(
+                    Object.entries(prevState.groupedOptions).map(([category, options]) => [
+                        category,
+                        options.map(option =>
+                            option.id === productId ? { ...option, qty: updatedProduct.qty } : option
+                        )
+                    ])
+                )
+                : null; // Keep it null if it doesn't exist
+    
+            const totalCartPrice = updatedCart.reduce((total, item) => total + item.price * item.quantity, 0);
+    
+            return {
+                products: updatedProducts,
+                promoItems: updatedPromoItems, // 🔹 update added here
+                cart: updatedCart,
+                totalCartPrice,
+                groupedOptions: updatedGroupedOptions,
+            };
+        });
+    };
 
     render () {
 
@@ -10898,7 +10969,7 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                     </div>
 
-                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body'>
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
 
                                                                         {this.state.selectedJipangeProductCategory === 1 && 
                                                                             <div className=''>
@@ -12916,9 +12987,6 @@ export default class LandingPg extends Component {
                                     <div className='homepage-header-inner-header-left-option'>
                                         <h4>🔥 New <label>(2)</label></h4><span><img src='/assets/icons/home-main-header/down-arrow.png'/></span>
                                     </div>
-                                    {/* <div className='homepage-header-inner-header-left-option'>
-                                        <h4>What's New?</h4>
-                                    </div> */}
                                 </div>
 
                                 <div className={`homepage-header-inner-header-left-update-display ${this.state.homepageNewUpdatesShow ? 'show' : ''}`}>
@@ -12932,7 +13000,6 @@ export default class LandingPg extends Component {
                                                     <span><strong>{this.state.dateTime} • </strong>Have a restful weekend mama (and papa)! 😎</span>
                                                     <span><strong>OFFER(S) -  15% off</strong> Dairy Fresh Strawberry (offer ends <strong>today at 5:00pm</strong>) <strong>• 10% off</strong> Rinsun 250ml Oil (offer ends <strong>22/04/25 at 1:30pm</strong>) <strong>• 20% off </strong> Afia Multi-Vitamin Fruit Drink (1 litre) (offer ends <strong>30/04/25 at 2:30pm</strong>) <strong>• 20% off </strong> Afia Apple & Ginger Boost Fruit Drink (380ml) (offer ends <strong>30/04/25 at 2:30pm</strong>)</span>
                                                     <span><strong>IMPROVEMENTS TO YOUR SHOPPING EXPERIENCE - </strong>We fixed the shopping cart closing suddenly issue, and we added <strong>Airtel Money</strong> as a payment option!</span>
-                                                    {/* <span>🎉 Announcement 4</span> */}
                                                 </div>
                                             </div>
                                         </div>
@@ -12954,8 +13021,7 @@ export default class LandingPg extends Component {
                                             <div className='homepage-header-inner-body-poster-left-logged-in'>
                                                 <div className='homepage-header-inner-body-poster-left-logged-in-header'>
                                                     <div className='homepage-header-inner-body-poster-left-logged-in-header-container'>
-                                                        <div className='homepage-header-inner-body-poster-left-logged-in-header-container-decor'>
-                                                            {/* <img src='/assets/images/home-main-body/header-logged-in-decor.png'/> */}
+                                                        <div className='homepage-header-inner-body-poster-left-logged-in-header-decor'>
                                                         </div>
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-header-wallet'>
 
@@ -13108,13 +13174,19 @@ export default class LandingPg extends Component {
                                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-footer'>
                                                                                 {item.type === 'product' ? (
                                                                                     <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart'>
-                                                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-left'>
+                                                                                        <div 
+                                                                                            onClick={() => this.handlePromoItemQtyChange(item.id, -1)} 
+                                                                                            className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-left'
+                                                                                        >
                                                                                             -
                                                                                         </div>
                                                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-center'>
-                                                                                            <h4>0</h4>
+                                                                                            <h4>{item.qty}</h4>
                                                                                         </div>
-                                                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-right'>
+                                                                                        <div 
+                                                                                            onClick={() => this.handlePromoItemQtyChange(item.id, 1)} 
+                                                                                            className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-right'
+                                                                                        >
                                                                                             +
                                                                                         </div>
                                                                                     </div>
@@ -13205,7 +13277,6 @@ export default class LandingPg extends Component {
                                                             }
                                                         </div>
                                                     </div>
-                                                    {/* <img src='/assets/images/home-main-header/header-poster-img-1.webp'/> */}
                                                 </div>
                                             ) : (
                                                 <div className='homepage-header-inner-body-poster-right-right-section-top'>
@@ -13222,7 +13293,6 @@ export default class LandingPg extends Component {
                                                             <h3></h3>
                                                         </div>
                                                     </div>
-                                                    {/* <img src='/assets/images/home-main-header/header-poster-img-1.webp'/> */}
                                                 </div>
                                             ) : (
                                                 <div className='homepage-header-inner-body-poster-right-right-section-bottom'>
