@@ -3900,15 +3900,16 @@ const Styles = styled.div `
 // # # # JIPANGE SELECTED SCREEN BODY
 
 .jipange-settings-selected-date-screen-body {
-    // border: 1px solid black;
+    border: 1px solid black;
     height: 27.5rem;
     display: flex;
     flex-direction: column;
     position: relative;
+    overflow: hidden;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header {
-    // border: 1px solid black;
+    border: 1px solid black;
     height: 7.125rem;
     position: relative;
     display: flex;
@@ -4050,12 +4051,12 @@ const Styles = styled.div `
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     margin-top: 0.5rem;
-    height: 20rem;
+    height: 10rem;
     overflow-y: auto;
 }
 
 .jipange-settings-selected-date-screen-body-inner-body-product-row {
-    height: auto;
+    height: 10rem;
     // border: 1px solid black;
     width: 100%;
     margin-top: 0.5rem;
@@ -6065,7 +6066,7 @@ const Styles = styled.div `
     font-size: 35px;
     color: white;
     font-family: raleway;
-    margin-top: 0.65rem;
+    margin-top: 0.15rem;
     margin-left: 4.5%;
 }
 
@@ -6440,9 +6441,24 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
     border: 1px solid #ff5733;
+    border-radius: 6px;
+    background-color: #ff5733;
+    color: white;
+    font-family: poppins;
+    font-size: 75%;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code:hover {
+    background-color: transparent;
+    color: #5e626a;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
@@ -13232,7 +13248,7 @@ export default class LandingPg extends Component {
                                                                                         </div>
                                                                                     ) : (
                                                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code'>
-
+                                                                                            Apply Code
                                                                                         </div>
                                                                                     )}
                                                                                 </div>
