@@ -4055,6 +4055,7 @@ const Styles = styled.div `
     border: 1px solid black;
     margin-top: 0.5rem;
     height: 10rem;
+    overflow: hidden;
     // overflow-y: auto;
 }
 
