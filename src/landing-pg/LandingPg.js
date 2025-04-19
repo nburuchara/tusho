@@ -3900,7 +3900,7 @@ const Styles = styled.div `
 // # # # JIPANGE SELECTED SCREEN BODY
 
 .jipange-settings-selected-date-screen-body {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 27.5rem;
     display: flex;
     flex-direction: column;
@@ -3908,7 +3908,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-body-inner-header {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 7.125rem;
     position: relative;
     display: flex;
@@ -4047,11 +4047,15 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-body-inner-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+    border: 1px solid black;
     margin-top: 0.5rem;
     height: 10rem;
-    overflow-y: auto;
+    // overflow-y: auto;
 }
 
 .jipange-settings-selected-date-screen-body-inner-body-product-row {
@@ -4341,11 +4345,11 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body {
-    // border: 1px solid black;
+    border: 1px solid black;
     border-top: 1px solid #5e626a;
     height: 50%;
     margin-left: 3.5%;
-    overflow-y: auto;
+    // overflow-y: auto;
     width: 94.5%;
 }
 
