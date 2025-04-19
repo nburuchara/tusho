@@ -13160,7 +13160,7 @@ export default class LandingPg extends Component {
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-body'>
                                                                 {this.state.promoItems.map((item) => (
-                                                                    <div key={item.id} className="homepage-header-inner-body-poster-right-left-section-logged-in-promo-item">
+                                                                    <div key={item.id} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-item ${item.qty > 0 ? 'selected' : ''}`}>
                                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-img'>
                                                                             <img src={item.img}/>
                                                                         </div>
