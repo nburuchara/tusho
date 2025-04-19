@@ -6503,7 +6503,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container h2 {
     color: white;
     font-family: raleway;
-    margin-top: 0.8rem;
+    margin-top: 0.1rem;
     margin-bottom: 0.35rem;
     margin-left: 3%;
 }
@@ -6511,6 +6511,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home {
     border: 1px solid white;
     width: 99.4%;
+    margin-top: 5.1%;
     height: 78.6%;
     display: flex;
     flex-direction: column;
@@ -7590,10 +7591,10 @@ export default class LandingPg extends Component {
             promoItems: [
                 { id: 21, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: 205.00, newPrice: 250.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/eggs-product.png'},
                 { id: 9, name: 'TuShop Fresh Mwea Pishori Rice', oldPrice: 205.00, newPrice: 190.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/rice-product.png'},
-                { id: 3, name: 'Get Ksh. 250 off your first order.', oldPrice: 205.00, newPrice: 'MAX250', type: 'code', description: '', qty: 0, promoParams: 'Valid 02/05', img: '/assets/images/codes/promoCode2.png'},
+                { id: 3, name: 'Get Ksh. 250 off your first order.', oldPrice: 205.00, newPrice: 'MAX250', type: 'code', description: '', qty: 0, promoParams: 'Valid till 02/05/25', img: '/assets/images/codes/promoCode2.png'},
                 { id: 4, name: 'Bio Salted Artisanal Butter (500g)', oldPrice: 879.00, newPrice: 850.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/butter-product.png'},
                 { id: 8, name: 'Tushop Fresh Local Watermelon', oldPrice: 369.00, newPrice: 320.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/watermelon-product.webp'},
-                { id: 6, name: 'Get Ksh. 300 off orders over Ksh. 1999.', oldPrice: 205.00, newPrice: 'APR300', type: 'code', description: '', qty: 0, promoParams: '', img: '/assets/images/codes/promoCode1.png'},
+                { id: 6, name: 'Get Ksh. 300 off orders over Ksh. 1999.', oldPrice: 205.00, newPrice: 'APR300', type: 'code', description: '', qty: 0, promoParams: 'Valid till 30/04/25', img: '/assets/images/codes/promoCode1.png'},
               ],
             selectedPromoType: 'all',
             //* # SHOPPING LIST *//
@@ -13221,10 +13222,10 @@ export default class LandingPg extends Component {
                                                                                 <img src={item.img}/>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text'>
-                                                                                <h4>{item.name}</h4>
+                                                                                <h4>{item.name} <span>({item.type === 'type' ? '' : ''})</span></h4>
                                                                                 <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text-prices'>
                                                                                     <p className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-new-price'>{item.type === 'product' ? 'Ksh.' : 'CODE:'} <span>{item.newPrice}</span></p>
-                                                                                    <p className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-old-price ${item.type === 'product' ? 'product' : ''} `}>{item.type !== 'product' ? item.promoParams :  item.oldPrice}</p>
+                                                                                    <p className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-old-price ${item.type === 'product' ? 'product' : ''} `}>{item.type !== 'product' ? '' :  item.oldPrice}</p>
                                                                                 </div>
 
                                                                                 <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-footer'>
@@ -13316,7 +13317,7 @@ export default class LandingPg extends Component {
                                                 <div className='homepage-header-inner-body-poster-right-right-section-top'>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in'>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container ${this.state.isRightTopHeaderTransitionActive ? "animate-peel" : ""}`}>
-                                                            <h2>Wallet</h2>
+                                                            <h2>Your Wallet</h2>
                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home'>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top'>
 
