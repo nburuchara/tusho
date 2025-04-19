@@ -4047,20 +4047,16 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-body-inner-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    border: 1px solid black;
     margin-top: 0.5rem;
-    height: 10rem;
-    overflow: hidden;
-    // overflow-y: auto;
+    height: 20rem;
+    // overflow: hidden;
+    overflow-y: auto;
 }
 
 .jipange-settings-selected-date-screen-body-inner-body-product-row {
-    height: 10rem;
+    height: auto;
     // border: 1px solid black;
     width: 100%;
     margin-top: 0.5rem;
@@ -11026,7 +11022,7 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                     </div>
 
-                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body-product-row'>
+                                                                    <div className='jipange-settings-selected-date-screen-body-inner-body'>
 
                                                                         {this.state.selectedJipangeProductCategory === 1 && 
                                                                             <div className=''>
