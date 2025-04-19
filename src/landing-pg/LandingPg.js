@@ -6235,6 +6235,27 @@ const Styles = styled.div `
     color: white;
 }
 
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-loading {
+    width: 100%;
+    height: 100%;
+}
+
+.promo-tab-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6.19rem;
+}
+
+.promo-tab-loading p {
+    margin-top: 0.35rem;
+    margin-bottom: 0px;
+    font-family: poppins;
+    font-size: 80%;
+    color: #5e626a;
+}
+
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-body {
     flex-grow: 1;
     width: 99.4%;
@@ -7545,6 +7566,8 @@ export default class LandingPg extends Component {
             selectedHeaderOption: '',
 
             //* # PROMO *//
+            showPromoItemsList: true,
+            showPromoItemsLoading: false,
             promoAllCategorySelected: true,
             promoProductCategorySelected: false,
             promoDiscountCodeCategorySelected: false,
@@ -7556,7 +7579,7 @@ export default class LandingPg extends Component {
                 { id: 8, name: 'Tushop Fresh Local Watermelon', oldPrice: 369.00, newPrice: 320.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/watermelon-product.webp'},
                 { id: 6, name: 'Get Ksh. 300 off orders over Ksh. 1999.', oldPrice: 205.00, newPrice: 'APR300', type: 'code', description: '', qty: 0, promoParams: '', img: '/assets/images/codes/promoCode1.png'},
               ],
-            
+            selectedPromoType: 'all',
             //* # SHOPPING LIST *//
             showShopAssistantLoading: false,
             items: [''], // Shopping list items (starts with one empty bullet)
@@ -9250,20 +9273,33 @@ export default class LandingPg extends Component {
     };
 
     promoCategoryClicked = (promoType) => {
+        this.setState({
+            showPromoItemsList: false,
+            showPromoItemsLoading: true
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    showPromoItemsList: true,
+                    showPromoItemsLoading: false
+                })
+            }, 2500)
+        })
         if (promoType === 'all') {
             if (this.state.promoAllCategorySelected === false) { 
                 this.setState({ 
                     promoAllCategorySelected: true,
                     promoDiscountCodeCategorySelected: false,
-                    promoProductCategorySelected: false
+                    promoProductCategorySelected: false,
+                    selectedPromoType: promoType
                 })
             }
-        } else if (promoType === 'products') {
+        } else if (promoType === 'product') {
             if (this.state.promoProductCategorySelected === false) { 
                 this.setState({ 
                     promoProductCategorySelected: true,
                     promoDiscountCodeCategorySelected: false,
-                    promoAllCategorySelected: false
+                    promoAllCategorySelected: false,
+                    selectedPromoType: promoType
                 })
             }
         } else {
@@ -9271,7 +9307,8 @@ export default class LandingPg extends Component {
                 this.setState({ 
                     promoDiscountCodeCategorySelected: true,
                     promoProductCategorySelected: false,
-                    promoAllCategorySelected: false
+                    promoAllCategorySelected: false,
+                    selectedPromoType: promoType
                 })
             }
         }
@@ -13155,52 +13192,74 @@ export default class LandingPg extends Component {
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header'>
                                                                 <button onClick={() => this.promoCategoryClicked('all')} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn ${this.state.promoAllCategorySelected ? 'selected' : ''}`}>All</button>
-                                                                <button onClick={() => this.promoCategoryClicked('products')} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn ${this.state.promoProductCategorySelected ? 'selected' : ''}`}>Products</button>
+                                                                <button onClick={() => this.promoCategoryClicked('product')} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn ${this.state.promoProductCategorySelected ? 'selected' : ''}`}>Products</button>
                                                                 <button onClick={() => this.promoCategoryClicked('code')} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-header-btn ${this.state.promoDiscountCodeCategorySelected ? 'selected' : ''}`}>Discount codes</button>
                                                             </div>
-                                                            <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-body'>
-                                                                {this.state.promoItems.map((item) => (
-                                                                    <div key={item.id} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-item ${item.qty > 0 ? 'selected' : ''}`}>
-                                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-img'>
-                                                                            <img src={item.img}/>
-                                                                        </div>
-                                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text'>
-                                                                            <h4>{item.name}</h4>
-                                                                            <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text-prices'>
-                                                                                <p className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-new-price'>{item.type === 'product' ? 'Ksh.' : 'CODE:'} <span>{item.newPrice}</span></p>
-                                                                                <p className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-old-price ${item.type === 'product' ? 'product' : ''} `}>{item.type !== 'product' ? item.promoParams :  item.oldPrice}</p>
+                                                            {this.state.showPromoItemsList &&
+                                                                <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-body'>
+                                                                {this.state.promoItems
+                                                                .filter(item => this.state.selectedPromoType === 'all' || item.type === this.state.selectedPromoType)
+                                                                .map((item) => (
+                                                                        <div key={item.id} className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-item ${item.qty > 0 ? 'selected' : ''}`}>
+                                                                            <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-img'>
+                                                                                <img src={item.img}/>
                                                                             </div>
+                                                                            <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text'>
+                                                                                <h4>{item.name}</h4>
+                                                                                <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text-prices'>
+                                                                                    <p className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-new-price'>{item.type === 'product' ? 'Ksh.' : 'CODE:'} <span>{item.newPrice}</span></p>
+                                                                                    <p className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-old-price ${item.type === 'product' ? 'product' : ''} `}>{item.type !== 'product' ? item.promoParams :  item.oldPrice}</p>
+                                                                                </div>
 
-                                                                            <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-footer'>
-                                                                                {item.type === 'product' ? (
-                                                                                    <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart'>
-                                                                                        <div 
-                                                                                            onClick={() => this.handlePromoItemQtyChange(item.id, -1)} 
-                                                                                            className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-left'
-                                                                                        >
-                                                                                            -
+                                                                                <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-footer'>
+                                                                                    {item.type === 'product' ? (
+                                                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart'>
+                                                                                            <div 
+                                                                                                onClick={() => this.handlePromoItemQtyChange(item.id, -1)} 
+                                                                                                className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-left'
+                                                                                            >
+                                                                                                -
+                                                                                            </div>
+                                                                                            <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-center'>
+                                                                                                <h4>{item.qty}</h4>
+                                                                                            </div>
+                                                                                            <div 
+                                                                                                onClick={() => this.handlePromoItemQtyChange(item.id, 1)} 
+                                                                                                className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-right'
+                                                                                            >
+                                                                                                +
+                                                                                            </div>
                                                                                         </div>
-                                                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-center'>
-                                                                                            <h4>{item.qty}</h4>
-                                                                                        </div>
-                                                                                        <div 
-                                                                                            onClick={() => this.handlePromoItemQtyChange(item.id, 1)} 
-                                                                                            className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-cart-right'
-                                                                                        >
-                                                                                            +
-                                                                                        </div>
-                                                                                    </div>
-                                                                                ) : (
-                                                                                    <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code'>
+                                                                                    ) : (
+                                                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code'>
 
-                                                                                    </div>
-                                                                                )}
+                                                                                        </div>
+                                                                                    )}
+                                                                                </div>
+                                                        
                                                                             </div>
-                                                    
                                                                         </div>
+                                                                    ))}
+                                                                </div>
+                                                            }
+                                                            {this.state.showPromoItemsLoading && 
+                                                                <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-loading'>
+                                                                    <div className='promo-tab-loading'>
+                                                                        <RotatingLines
+                                                                        visible={true}
+                                                                        height="23.5"
+                                                                        width="23.5"
+                                                                        strokeColor="#FF5733"
+                                                                        strokeWidth="3"
+                                                                        animationDuration="0.75"
+                                                                        ariaLabel="rotating-lines-loading"
+                                                                        wrapperStyle={{}}
+                                                                        wrapperClass=""
+                                                                        />
+                                                                        <p>Filtering promotions...</p>
                                                                     </div>
-                                                                ))}
-                                                            </div>
+                                                                </div>
+                                                            }
                                                         </div>
                                                     </div>
                                                     <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
