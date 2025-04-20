@@ -6667,7 +6667,7 @@ const Styles = styled.div `
     flex-grow: 1;
     padding-bottom: 2px;
     width: 100%;
-    border: 2.5px solid #ff5733;
+    border: 2px solid #ff5733;
     border-bottom: 1px solid #ff5733;
     background-color: #faece9;
     border-top-right-radius: 8px;
