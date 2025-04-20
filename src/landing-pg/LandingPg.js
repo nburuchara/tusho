@@ -6841,24 +6841,28 @@ const Styles = styled.div `
 }
 
 .wallet-top-up-select-grid-row {
-    height: 45%;
-    border: 1px solid black;
+    height: 50%;
+    // border: 1px solid black;
     display: flex;
     flex-direction: row;
 }
 
 .wallet-top-up-select-grid-item {
     width: 33%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .wallet-top-up-select-grid-item button {
     width: 85%;
     height: 85%;
     background-color: #ff5733;
+    border: 1px solid #ff5733;
     font-family: poppins;
     color: white;
-    font-size: 70%;
+    font-size: 9px;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
@@ -13725,24 +13729,24 @@ export default class LandingPg extends Component {
                                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-select-container'>
                                                                                         <div className='wallet-top-up-select-grid-row'>
                                                                                             <div className='wallet-top-up-select-grid-item'>
-
+                                                                                                <button>250</button>
                                                                                             </div>
                                                                                             <div className='wallet-top-up-select-grid-item'>
-
+                                                                                                <button>500</button>
                                                                                             </div>
                                                                                             <div className='wallet-top-up-select-grid-item'>
-
+                                                                                                <button>1000</button>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div className='wallet-top-up-select-grid-row'>
                                                                                             <div className='wallet-top-up-select-grid-item'>
-
+                                                                                                <button>2500</button>
                                                                                             </div>
                                                                                             <div className='wallet-top-up-select-grid-item'>
-
-                                                                                            </div>
+                                                                                                <button>5000</button>
+                                                                                            </div>      
                                                                                             <div className='wallet-top-up-select-grid-item'>
-
+                                                                                                <button>10000</button>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
