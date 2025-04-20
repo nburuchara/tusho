@@ -6817,12 +6817,14 @@ const Styles = styled.div `
     height: 12.5px;
     cursor: pointer;
     border: 1px solid black;
-    border-radius: 50%;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1px;
-    background-color: #20313a;
+    padding-left: 1.5px;
+    padding-right: 1.5px;
+    background-color: transparent;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-exit-btn img {
