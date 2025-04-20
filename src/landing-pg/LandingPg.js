@@ -6688,7 +6688,7 @@ const Styles = styled.div `
 }
 
 .wallet-top-up-tab-loading p {
-    margin-top: 0.25rem;
+    margin-top: 0.15rem;
     margin-bottom: 0px;
     font-family: poppins;
     font-size: 80%;
@@ -6762,6 +6762,12 @@ const Styles = styled.div `
     font-weight: bolder;
     color: #ff5733;
     font-size: 80.5%;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
@@ -7841,7 +7847,8 @@ export default class LandingPg extends Component {
 
             //* # WALLET # *//
             showWalletTopUpHomeView: false,
-            showWalletTopUpViewLoading: true,
+            showWalletTopUpMainView: true,
+            showWalletTopUpViewLoading: false,
 
             //* # PRODUCT GRID
             products: products,
@@ -13612,13 +13619,18 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                             </> 
                                                                          } 
+                                                                         {this.state.showWalletTopUpMainView && 
+                                                                            <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options'>
+
+                                                                            </div>
+                                                                         }
                                                                         {this.state.showWalletTopUpViewLoading && 
                                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-loading'>
                                                                                 <div className='wallet-top-up-tab-loading'>
                                                                                     <RotatingLines
                                                                                     visible={true}
-                                                                                    height="16.5"
-                                                                                    width="16.5"
+                                                                                    height="19.5"
+                                                                                    width="19.5"
                                                                                     strokeColor="#FF5733"
                                                                                     strokeWidth="3"
                                                                                     animationDuration="0.75"
@@ -13626,7 +13638,7 @@ export default class LandingPg extends Component {
                                                                                     wrapperStyle={{}}
                                                                                     wrapperClass=""
                                                                                     />
-                                                                                    <p>Filtering promotions...</p>
+                                                                                    <p>Loading top-up options...</p>
                                                                                 </div>
                                                                             </div>
                                                                         }
