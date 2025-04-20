@@ -6067,7 +6067,16 @@ const Styles = styled.div `
     color: white;
     font-family: raleway;
     margin-top: 0.15rem;
+    margin-bottom: 0px;
     margin-left: 4.5%;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container-subheader h5 {
+    font-family: poppins;
+    font-size: 90%;
+    color: white;
+    margin-top: -0.25rem;
+    margin-left: 5%;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 {
@@ -6335,7 +6344,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-params {
     color: #ff5733;
-    font-size: 70.5%;
+    font-size: 85%;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text p {
@@ -7596,7 +7605,7 @@ export default class LandingPg extends Component {
             promoItems: [
                 { id: 21, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: 205.00, newPrice: 250.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/eggs-product.png'},
                 { id: 9, name: 'TuShop Fresh Mwea Pishori Rice', oldPrice: 205.00, newPrice: 190.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/rice-product.png'},
-                { id: 3, name: 'Get Ksh. 250 off your first order.', oldPrice: 205.00, newPrice: 'MAX250', type: 'code', description: '', qty: 0, promoParams: 'Valid till 02/05/25', img: '/assets/images/codes/promoCode2.png'},
+                { id: 3, name: 'Get Ksh. 250 off your first order.', oldPrice: 205.00, newPrice: 'MAX250', type: 'code', description: '', qty: 0, promoParams: 'Valid forever', img: '/assets/images/codes/promoCode2.png'},
                 { id: 4, name: 'Bio Salted Artisanal Butter (500g)', oldPrice: 879.00, newPrice: 850.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/butter-product.png'},
                 { id: 8, name: 'Tushop Fresh Local Watermelon', oldPrice: 369.00, newPrice: 320.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/watermelon-product.webp'},
                 { id: 6, name: 'Get Ksh. 300 off orders over Ksh. 1999.', oldPrice: 205.00, newPrice: 'APR300', type: 'code', description: '', qty: 0, promoParams: 'Valid till 30/04/25', img: '/assets/images/codes/promoCode1.png'},
@@ -13196,6 +13205,11 @@ export default class LandingPg extends Component {
                                                         </div>
 
                                                         <h1>Promo</h1>
+
+                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-container-subheader'>
+                                                            <h5>We'v got deals for you!</h5>
+                                                            {/* <h5>One-click checkout w/ tuShop Wallet</h5> */}
+                                                        </div>
 
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab'>
                                                             <div className="confetti-background">
