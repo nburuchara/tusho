@@ -6867,6 +6867,11 @@ const Styles = styled.div `
     border-radius: 5px;
 }
 
+.wallet-top-up-select-grid-item button:hover {
+    background-color: #faece9;
+    border: 1px solid #ff5733;
+}
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
     position: absolute;
     top: 0;
