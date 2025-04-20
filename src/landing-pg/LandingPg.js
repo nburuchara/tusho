@@ -6522,9 +6522,10 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container h2 {
     color: white;
     font-family: raleway;
-    margin-top: 0.1rem;
+    margin-top: 0.3rem;
     margin-bottom: 0px;
     margin-left: 3%;
+    font-size: 20.5px;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-wallet-subheader h5 {
@@ -6545,10 +6546,10 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home {
-    border-bottom: 1px solid #ff5733;
+    // border: 1px solid white;
     width: 99.4%;
     margin-top: 0px;
-    height: 79%;
+    height: 78.6%;
     display: flex;
     flex-direction: column;
 }
@@ -6665,13 +6666,20 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom {
     flex-grow: 1;
-    padding-bottom: 2px;
     width: 100%;
-    border: 2px solid #ff5733;
-    border-bottom: 1px solid #ff5733;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float {
+    height: 85%;
+    width: 94.5%;
+    margin-left: 2%;
+    border: 1px solid #ff5733;
     background-color: #faece9;
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
+    border-radius: 8px;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
@@ -13488,7 +13496,9 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom'>
+                                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float'>
 
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
