@@ -6592,10 +6592,10 @@ const Styles = styled.div `
     text-underline-offset: 6.5px;
 }
 
-.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-header img {
-    float: right;
-    width: 20px;
-}
+// .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-header img {
+//     float: right;
+//     width: 20px;
+// }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body {
     flex-grow: 1;
@@ -6680,6 +6680,51 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
     background-color: #faece9;
     border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left {
+    width: 60%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    position: relative;
+    overflow: hidden;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left-btn {
+    height: 50%;
+    width: 82.5%;
+    border: 1px solid #ff5733;
+    border-radius: 8px;
+    margin-right: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 0.85rem;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left-btn h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: poppins;
+    color: #ff5733;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left img {
+    position: absolute;
+    left: 4%;
+    bottom: -0.65rem;
+    width: 50px;
+    height: 50px;
+    border: 1px solid transparent;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-right {
+    width: 40%;
+    // border: 1px solid black;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
@@ -13497,7 +13542,15 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom'>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float'>
+                                                                        <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left'>
+                                                                            <img src='/assets/icons/home-main-header/header-wallet-demo-click.png'/>
+                                                                            <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left-btn'>
+                                                                                <h5>Instant Checkout</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-right'>
 
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
