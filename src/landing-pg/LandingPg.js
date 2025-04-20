@@ -7957,6 +7957,7 @@ export default class LandingPg extends Component {
             showWalletTopUpHomeView: false,
             showWalletTopUpMainView: true,
             showWalletTopUpViewLoading: false,
+            tushopTopupAmount: '',
 
             //* # PRODUCT GRID
             products: products,
@@ -13731,6 +13732,9 @@ export default class LandingPg extends Component {
                                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options'>
                                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-left'>
                                                                                     <input 
+                                                                                    id='tushopTopupAmount'
+                                                                                    value={this.state.tushopTopupAmount}
+                                                                                    onChange={this.handleSearchStandardInput}
                                                                                     placeholder='Enter an amount'/>
                                                                                 </div>
                                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right'>
