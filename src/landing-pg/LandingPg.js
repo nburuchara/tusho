@@ -6801,10 +6801,10 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right p {
-    margin-top: 0px;
+    margin-top: 0.1rem;
     font-family: poppins;
     color: #ff5733;
-    font-size: 70%;
+    font-size: 65%;
     font-weight: bold;
     margin-left: 2.5%;
 }
@@ -13744,7 +13744,7 @@ export default class LandingPg extends Component {
                                                                                     placeholder='Enter an amount'/>
                                                                                 </div>
                                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right'>
-                                                                                    <p>or select below:</p>
+                                                                                    <p>or select an amount:</p>
                                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-exit-btn'>
                                                                                         <img src='/assets/icons/navbar/clear-search-icon-color2.png'/>
                                                                                     </div>
