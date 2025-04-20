@@ -6715,7 +6715,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left img {
     position: absolute;
-    left: 4%;
+    left: 4.25%;
     bottom: -0.65rem;
     width: 50px;
     height: 50px;
@@ -6725,6 +6725,20 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-right {
     width: 40%;
     // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-right h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+    font-family: lexend;
+    font-weight: bolder;
+    color: #ff5733;
+    font-size: 80.5%;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
@@ -13549,7 +13563,7 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                         </div>
                                                                         <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-right'>
-
+                                                                            <h3>Top up your wallet to use instant checkout.</h3>
                                                                         </div>
                                                                     </div>
                                                                 </div>
