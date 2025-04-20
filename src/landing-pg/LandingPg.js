@@ -6813,8 +6813,8 @@ const Styles = styled.div `
     position: absolute;
     top: 0.1rem;
     right: 0.45rem;
-    width: 15px;
-    height: 15px;
+    width: 12.5px;
+    height: 12.5px;
     cursor: pointer;
     // border: 1px solid black;
     // background-color: transparent;
@@ -6865,11 +6865,13 @@ const Styles = styled.div `
     font-size: 8.5px;
     font-weight: bold;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .wallet-top-up-select-grid-item button:hover {
-    background-color: #faece9;
+    background-color: white;
     border: 1px solid #ff5733;
+    color: #ff5733;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
