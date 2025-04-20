@@ -6767,7 +6767,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options {
     width: 100%;
     height: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     justify-content: space-between;
     position: relative'
@@ -6800,12 +6800,22 @@ const Styles = styled.div `
     position: relative;
 }
 
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right p {
+    margin-top: 0px;
+    font-family: poppins;
+    color: #ff5733;
+    font-size: 75%;
+    font-weight: bold;
+    margin-left: 2.5%;
+}
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-exit-btn {
     position: absolute;
     top: 0.1rem;
-    right: 0.25rem;
+    right: 0.45rem;
     width: 15px;
     height: 15px;
+    cursor: pointer;
     // border: 1px solid black;
     // background-color: transparent;
 }
@@ -6814,7 +6824,41 @@ const Styles = styled.div `
     width: 100%;
     height: 100%;
     border: 1px solid transparent !important;
+    filter: grayscale(0);
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-exit-btn img:hover {
     filter: grayscale(100%);
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-select-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 65%;
+    width: 85%;
+    border: 1px solid black;
+}
+
+.wallet-top-up-select-grid-row {
+    height: 45%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.wallet-top-up-select-grid-item {
+    width: 33%;
+    border: 1px solid black;
+}
+
+.wallet-top-up-select-grid-item button {
+    width: 85%;
+    height: 85%;
+    background-color: #ff5733;
+    font-family: poppins;
+    color: white;
+    font-size: 70%;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
@@ -13673,8 +13717,34 @@ export default class LandingPg extends Component {
                                                                                     placeholder='Enter an amount'/>
                                                                                 </div>
                                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right'>
+                                                                                    <p>or select below:</p>
                                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-exit-btn'>
                                                                                         <img src='/assets/icons/navbar/clear-search-icon-color.png'/>
+                                                                                    </div>
+
+                                                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-select-container'>
+                                                                                        <div className='wallet-top-up-select-grid-row'>
+                                                                                            <div className='wallet-top-up-select-grid-item'>
+
+                                                                                            </div>
+                                                                                            <div className='wallet-top-up-select-grid-item'>
+
+                                                                                            </div>
+                                                                                            <div className='wallet-top-up-select-grid-item'>
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div className='wallet-top-up-select-grid-row'>
+                                                                                            <div className='wallet-top-up-select-grid-item'>
+
+                                                                                            </div>
+                                                                                            <div className='wallet-top-up-select-grid-item'>
+
+                                                                                            </div>
+                                                                                            <div className='wallet-top-up-select-grid-item'>
+
+                                                                                            </div>
+                                                                                        </div>
                                                                                     </div>
                                                                                     
                                                                                 </div>
