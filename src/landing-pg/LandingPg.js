@@ -6073,7 +6073,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-subheader h5 {
     font-family: poppins;
-    font-size: 90%;
+    font-size: 85%;
     color: white;
     margin-top: -0.25rem;
     margin-left: 5%;
@@ -6518,14 +6518,31 @@ const Styles = styled.div `
     color: white;
     font-family: raleway;
     margin-top: 0.1rem;
-    margin-bottom: 0.35rem;
+    margin-bottom: 0px;
     margin-left: 3%;
 }
 
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-wallet-subheader h5 {
+    font-size: 72.5%;
+    font-family: poppins;
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 4%;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-wallet-subheader label {
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
+    text-decoration-thickness: 1.5px;
+    text-decoration-style: wavy;
+    text-underline-offset: 2.5px;
+}
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home {
-    border: 1px solid white;
+    // border: 1px solid white;
     width: 99.4%;
-    margin-top: 5.1%;
+    margin-top: 0px;
     height: 78.6%;
     display: flex;
     flex-direction: column;
@@ -13207,8 +13224,7 @@ export default class LandingPg extends Component {
                                                         <h1>Promo</h1>
 
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-container-subheader'>
-                                                            <h5>We'v got deals for you!</h5>
-                                                            {/* <h5>One-click checkout w/ tuShop Wallet</h5> */}
+                                                            <h5>We've got deals for you!</h5>
                                                         </div>
 
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab'>
@@ -13337,6 +13353,9 @@ export default class LandingPg extends Component {
                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in'>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container ${this.state.isRightTopHeaderTransitionActive ? "animate-peel" : ""}`}>
                                                             <h2>Your Wallet</h2>
+                                                            <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-wallet-subheader'>
+                                                                <h5>Unlock <label>One-click Checkout</label> with tuShop Wallet</h5>
+                                                            </div>
                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home'>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top'>
 
