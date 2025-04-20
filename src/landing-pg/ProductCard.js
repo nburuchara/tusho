@@ -547,7 +547,7 @@ const Styles = styled.div `
     position: absolute;
     width: 55%;
     bottom: 3.7rem;
-    left: 5%;
+    left: 6%;
     font-size: 0.7rem;
     font-family: poppins;
     font-weight: bold;
