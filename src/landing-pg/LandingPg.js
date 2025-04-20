@@ -6833,7 +6833,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-select-container {
     position: absolute;
-    bottom: 0.15rem;
+    bottom: 0.1rem;
     left: 0;
     height: 65%;
     width: 100%;
