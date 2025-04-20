@@ -6768,6 +6768,45 @@ const Styles = styled.div `
     width: 100%;
     height: 100%;
     border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    position: relative'
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-left {
+    width: 50%;
+    border: 1px solid #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-left input {
+    border: none;
+    border-bottom: 1px solid #ff5733;
+    outline: none;
+    text-align: center;
+    width: 85%;
+    font-family: poppins;
+    font-size: 80%;
+    font-weight: bold;
+    color: #ff5733;
+    background-color: transparent;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right {
+    width: 50%;
+    border: 1px solid #ff5733;
+    position: relative;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-exit-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    filter: grayscale(100%);
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
@@ -13621,7 +13660,13 @@ export default class LandingPg extends Component {
                                                                          } 
                                                                          {this.state.showWalletTopUpMainView && 
                                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options'>
+                                                                                <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-left'>
+                                                                                    <input 
+                                                                                    placeholder='Enter an amount'/>
+                                                                                </div>
+                                                                                <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right'>
 
+                                                                                </div>
                                                                             </div>
                                                                          }
                                                                         {this.state.showWalletTopUpViewLoading && 
