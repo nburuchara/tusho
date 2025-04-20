@@ -6811,12 +6811,13 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-exit-btn {
     position: absolute;
-    top: 0;
+    top: 0.1rem;
     right: 0.45rem;
-    width: 12.5px;
-    height: 12.5px;
+    width: 11px;
+    height: 11px;
     cursor: pointer;
     border: 1px solid black;
+    background-color: #20313a;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -6824,18 +6825,14 @@ const Styles = styled.div `
     padding: 1px;
     padding-left: 1.5px;
     padding-right: 1.5px;
-    background-color: transparent;
+    // background-color: transparent;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-exit-btn img {
-    width: 85%;
-    height: 85%;
+    width: 95%;
+    height: 9%;
     border: 1px solid transparent !important;
     filter: grayscale(0);
-}
-
-.homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-exit-btn img:hover {
-    filter: grayscale(100%);
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-select-container {
@@ -13739,7 +13736,7 @@ export default class LandingPg extends Component {
                                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right'>
                                                                                     <p>or select below:</p>
                                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-exit-btn'>
-                                                                                        <img src='/assets/icons/navbar/clear-search-icon-color.png'/>
+                                                                                        <img src='/assets/icons/navbar/clear-search-icon-color2.png'/>
                                                                                     </div>
 
                                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-select-container'>
