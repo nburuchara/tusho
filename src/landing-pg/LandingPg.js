@@ -6804,7 +6804,7 @@ const Styles = styled.div `
     margin-top: 0px;
     font-family: poppins;
     color: #ff5733;
-    font-size: 75%;
+    font-size: 70%;
     font-weight: bold;
     margin-left: 2.5%;
 }
@@ -6833,11 +6833,11 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-select-container {
     position: absolute;
-    bottom: 0;
+    bottom: 0.15rem;
     left: 0;
     height: 65%;
-    width: 85%;
-    border: 1px solid black;
+    width: 100%;
+    // border: 1px solid black;
 }
 
 .wallet-top-up-select-grid-row {
@@ -6860,9 +6860,11 @@ const Styles = styled.div `
     height: 85%;
     background-color: #ff5733;
     border: 1px solid #ff5733;
-    font-family: poppins;
+    font-family: lexend;
     color: white;
-    font-size: 9px;
+    font-size: 8.5px;
+    font-weight: bold;
+    border-radius: 5px;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
@@ -13746,7 +13748,7 @@ export default class LandingPg extends Component {
                                                                                                 <button>5000</button>
                                                                                             </div>      
                                                                                             <div className='wallet-top-up-select-grid-item'>
-                                                                                                <button>10000</button>
+                                                                                                <button>10k</button>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
