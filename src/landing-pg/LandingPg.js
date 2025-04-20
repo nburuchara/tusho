@@ -6661,8 +6661,18 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-right button:hover {
+    cursor: not-allowed;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-right.not-loading button:hover {
     background-color: #faece9;
-    color: #ff5733;
+    color: #ff5733; 
+}
+
+.tushop-wallet-loading-spinner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom {
@@ -7958,6 +7968,9 @@ export default class LandingPg extends Component {
             showWalletTopUpMainView: true,
             showWalletTopUpViewLoading: false,
             tushopTopupAmount: '',
+            showWalletTopUpBtnHome: false,
+            showWalletTopUpBtnLoading: true,
+            showWalletTopUpBtnConfirm: false,
 
             //* # PRODUCT GRID
             products: products,
@@ -9753,6 +9766,39 @@ export default class LandingPg extends Component {
         this.setState({
             tushopTopupAmount: value
         })
+    }
+
+    topUpWalletBtnClicked = (home, loading, confirm) => {
+        if (!loading) {
+            if (home) {
+                this.setState({
+                    showWalletTopUpBtnHome: false,
+                    showWalletTopUpBtnLoading: true,
+                    showWalletTopUpHomeView: false,
+                    showWalletTopUpViewLoading: true
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+                            showWalletTopUpBtnLoading: false,
+                            showWalletTopUpBtnConfirm: true,
+                            showWalletTopUpViewLoading: false,
+                            showWalletTopUpMainView: true
+                        })
+                    }, 2500)
+                })
+            } else if (confirm) {
+                 this.setState({
+                    showWalletTopUpBtnConfirm: false,
+                    
+                 }, () => {
+                    setTimeout(() => {
+                        this.setState({
+
+                        })
+                    })
+                 })
+            }
+        }
     }
 
     render () {
@@ -13700,8 +13746,33 @@ export default class LandingPg extends Component {
                                                                         <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-left'>
                                                                             <h5>You've saved: <label><span>0.00</span></label></h5>
                                                                         </div>
-                                                                        <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-right'>
-                                                                            <button><span>+</span> Top Up Wallet</button>
+                                                                        <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-right ${this.state.showWalletTopUpBtnHome || this.state.showWalletTopUpBtnConfirm ? 'not-loading' : ''}`}>
+                                                                            <button onClick={() => this.topUpWalletBtnClicked(this.state.showWalletTopUpBtnHome, this.state.showWalletTopUpBtnLoading, this.state.showWalletTopUpBtnConfirm)}>
+                                                                                {this.state.showWalletTopUpBtnHome && 
+                                                                                    <>
+                                                                                        <span>+</span> Top Up Wallet
+                                                                                    </>
+                                                                                }
+                                                                                {this.state.showWalletTopUpBtnLoading && 
+                                                                                    <div className="tushop-wallet-loading-spinner">
+                                                                                        <TailSpin
+                                                                                        visible={true}
+                                                                                        height="15px"
+                                                                                        width="15px"
+                                                                                        color="#fff"
+                                                                                        ariaLabel="tail-spin-loading"
+                                                                                        radius="2"
+                                                                                        wrapperStyle={{}}
+                                                                                        wrapperClass=""
+                                                                                        />
+                                                                                    </div>
+                                                                                }
+                                                                                {this.state.showWalletTopUpBtnConfirm && 
+                                                                                    <>
+
+                                                                                    </>
+                                                                                }
+                                                                            </button>
                                                                         </div>
                                                                     </div>
                                                                 </div>
