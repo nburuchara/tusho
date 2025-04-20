@@ -6675,7 +6675,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float {
     height: 85%;
-    width: 94.5%;
+    width: 95.85%;
     margin-left: 2%;
     border: 1px solid #ff5733;
     background-color: #faece9;
