@@ -6558,7 +6558,52 @@ const Styles = styled.div `
     width: 100%;
     border: 1px solid white;
     display: flex;
+    flex-direction: column;
+}
 
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-header {
+    height: 60%;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-header h1 {
+    margin-left: 4%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-family: lexend;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body {
+    flex-grow: 1;
+    border: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-left {
+    width: 60%;
+    border: 1px solid #ff5733;
+    height: 100%;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-right {
+    width: 40%;
+    border: 1px solid #ff5733;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-right button {
+    background-color: #ff5733;
+    color: white;
+    font-family: poppins;
+    font-size: 70%;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom {
@@ -13368,7 +13413,17 @@ export default class LandingPg extends Component {
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home'>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top'>
+                                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-header'>
+                                                                        <h1>Ksh. 0</h1>
+                                                                    </div>
+                                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body'>
+                                                                        <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-left'>
 
+                                                                        </div>
+                                                                        <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-right'>
+                                                                            <button><span>+</span> Top Up Wallet</button>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom'>
 
