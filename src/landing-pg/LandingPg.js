@@ -9789,7 +9789,7 @@ export default class LandingPg extends Component {
             } else if (confirm) {
                  this.setState({
                     showWalletTopUpBtnConfirm: false,
-                    
+                    showWalletTopUpBtnLoading: true
                  }, () => {
                     setTimeout(() => {
                         this.setState({
@@ -13847,6 +13847,11 @@ export default class LandingPg extends Component {
                                                                                     
                                                                                 </div>
                                                                             </div>
+                                                                         }
+                                                                         {this.state.showWalletTopUpPendingPaymentView && 
+                                                                            <>
+                                                                                
+                                                                            </>
                                                                          }
                                                                         {this.state.showWalletTopUpViewLoading && 
                                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-loading'>
