@@ -6545,10 +6545,10 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home {
-    // border: 1px solid white;
+    border-bottom: 1px solid #ff5733;
     width: 99.4%;
     margin-top: 0px;
-    height: 78.6%;
+    height: 79%;
     display: flex;
     flex-direction: column;
 }
@@ -6556,22 +6556,22 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top {
     height: 60%;
     width: 100%;
-    border: 1px solid white;
+    // border: 1px solid white;
     display: flex;
     flex-direction: column;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-header {
     height: 60%;
-    border: 1px solid white;
+    // border: 1px solid white;
     display: flex;
     align-items: center;
     justify-content: left;
     position: relative;
     background-image: url('/assets/icons/home-main-header/header-logged-in-wallet-decor.png');
     background-repeat: no-repeat;
-    background-position: right center;
-    background-size: auto 80%; /* Adjust size as needed */
+    background-position: right 0.35rem center;
+    background-size: auto 90%; /* Adjust size as needed */
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-header h1 {
@@ -6580,6 +6580,15 @@ const Styles = styled.div `
     margin-bottom: 0px;
     color: white;
     font-family: lexend;
+    font-size: 43.5px;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-header label {
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
+    text-decoration-thickness: 3.5px;
+    text-decoration-style: wavy;
+    text-underline-offset: 6.5px;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-header img {
@@ -6589,7 +6598,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body {
     flex-grow: 1;
-    border: 1px solid white;
+    // border: 1px solid white;
     display: flex;
     justify-content: space-between;
 }
@@ -6608,7 +6617,7 @@ const Styles = styled.div `
     margin-bottom: 0px;
     margin-left: 6.5%;
     font-family: poppins;
-    font-size: 65%;
+    font-size: 70%;
     color: white;
 }
 
@@ -6656,8 +6665,13 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom {
     flex-grow: 1;
+    padding-bottom: 2px;
     width: 100%;
-    border: 1px solid white;
+    border: 2.5px solid #ff5733;
+    border-bottom: 1px solid #ff5733;
+    background-color: #faece9;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
@@ -13462,11 +13476,11 @@ export default class LandingPg extends Component {
                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home'>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top'>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-header'>
-                                                                        <h1>Ksh. 0</h1>
+                                                                        <h1><label>Ksh.</label> 0</h1>
                                                                     </div>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body'>
                                                                         <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-left'>
-                                                                            <h5>You've saved: <label>Kshs.<span>0.00</span></label></h5>
+                                                                            <h5>You've saved: <label><span>0.00</span></label></h5>
                                                                         </div>
                                                                         <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-right'>
                                                                             <button><span>+</span> Top Up Wallet</button>
