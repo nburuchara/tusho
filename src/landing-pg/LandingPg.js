@@ -6802,10 +6802,18 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-exit-btn {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 10px;
-    height: 10px;
+    top: 0.1rem;
+    right: 0.25rem;
+    width: 15px;
+    height: 15px;
+    // border: 1px solid black;
+    // background-color: transparent;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-exit-btn img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid transparent !important;
     filter: grayscale(100%);
 }
 
@@ -13665,7 +13673,10 @@ export default class LandingPg extends Component {
                                                                                     placeholder='Enter an amount'/>
                                                                                 </div>
                                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right'>
-
+                                                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-exit-btn'>
+                                                                                        <img src='/assets/icons/navbar/clear-search-icon-color.png'/>
+                                                                                    </div>
+                                                                                    
                                                                                 </div>
                                                                             </div>
                                                                          }
