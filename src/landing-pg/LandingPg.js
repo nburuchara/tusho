@@ -6567,14 +6567,24 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: left;
+    position: relative;
+    background-image: url('/assets/icons/home-main-header/header-logged-in-wallet-decor.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: auto 80%; /* Adjust size as needed */
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-header h1 {
-    margin-left: 4%;
+    margin-left: 3%;
     margin-top: 0px;
     margin-bottom: 0px;
     color: white;
     font-family: lexend;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-header img {
+    float: right;
+    width: 20px;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body {
@@ -6586,13 +6596,40 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-left {
     width: 60%;
-    border: 1px solid #ff5733;
+    // border: 1px solid #ff5733;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-left h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 6.5%;
+    font-family: poppins;
+    font-size: 65%;
+    color: white;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-left span {
+    color: #ff5733;
+    margin-left: 3.5px;
+    font-size: 125%;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-left label {
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
+    text-decoration-thickness: 1.5px;
+    text-decoration-style: wavy;
+    text-underline-offset: 2.5px;
+}
+
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-right {
     width: 40%;
-    border: 1px solid #ff5733;
+    // border: 1px solid #ff5733;
     height: 100%;
     display: flex;
     align-items: center;
@@ -6601,9 +6638,20 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-right button {
     background-color: #ff5733;
+    border: 1px solid #ff5733;
+    border-radius: 6px;
     color: white;
     font-family: poppins;
     font-size: 70%;
+    height: 70%;
+    width: 90%;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-right button:hover {
+    background-color: #faece9;
+    color: #ff5733;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom {
@@ -13418,7 +13466,7 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body'>
                                                                         <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-left'>
-
+                                                                            <h5>You've saved: <label>Kshs.<span>0.00</span></label></h5>
                                                                         </div>
                                                                         <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-right'>
                                                                             <button><span>+</span> Top Up Wallet</button>
