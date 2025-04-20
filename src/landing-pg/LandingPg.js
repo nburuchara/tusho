@@ -6653,6 +6653,7 @@ const Styles = styled.div `
     color: white;
     font-family: poppins;
     font-size: 70%;
+    font-weight: bold;
     height: 70%;
     width: 90%;
     cursor: pointer;
@@ -6682,6 +6683,7 @@ const Styles = styled.div `
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left {
@@ -13556,15 +13558,38 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom'>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float'>
-                                                                        <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left'>
-                                                                            <img src='/assets/icons/home-main-header/header-wallet-demo-click.png'/>
-                                                                            <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left-btn'>
-                                                                                <h5>Instant Checkout</h5>
+                                                                        <div className="confetti-background">
+                                                                            {[...Array(50)].map((_, i) => (
+                                                                                <div
+                                                                                key={i}
+                                                                                className="confetti-piece"
+                                                                                style={{
+                                                                                    left: `${Math.random() * 100}vw`,
+                                                                                    backgroundColor: '#ff5733',
+                                                                                    animationDuration: `${20 + Math.random() * 20}s`, // slower fall
+                                                                                    animationDelay: `${Math.random() * 10}s`,
+                                                                                }}
+                                                                                />
+                                                                            ))}
+                                                                        </div>
+                                                                        {this.state.showWalletTopUpHomeView && 
+                                                                            <div className=''>
+                                                                                <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left'>
+                                                                                    <img src='/assets/icons/home-main-header/header-wallet-demo-click.png'/>
+                                                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left-btn'>
+                                                                                        <h5>Instant Checkout</h5>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-right'>
+                                                                                    <h3>Top up your wallet to use instant checkout.</h3>
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
-                                                                        <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-right'>
-                                                                            <h3>Top up your wallet to use instant checkout.</h3>
-                                                                        </div>
+                                                                        }
+                                                                        {this.state.showWalletTopUpViewLoading && 
+                                                                            <div className=''>
+
+                                                                            </div>
+                                                                        }
                                                                     </div>
                                                                 </div>
                                                             </div>
