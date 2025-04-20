@@ -6674,6 +6674,27 @@ const Styles = styled.div `
     justify-content: left;
 }
 
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-loading {
+    width: 100%;
+    height: 100%;
+}
+
+.wallet-top-up-tab-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.65rem;
+}
+
+.wallet-top-up-tab-loading p {
+    margin-top: 0.25rem;
+    margin-bottom: 0px;
+    font-family: poppins;
+    font-size: 80%;
+    color: #5e626a;
+}
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float {
     height: 85%;
     width: 95.85%;
@@ -7811,10 +7832,16 @@ export default class LandingPg extends Component {
                 { id: 6, name: 'Get Ksh. 300 off orders over Ksh. 1999.', oldPrice: 205.00, newPrice: 'APR300', type: 'code', description: '', qty: 0, promoParams: 'Valid till 30/04/25', img: '/assets/images/codes/promoCode1.png'},
               ],
             selectedPromoType: 'all',
-            //* # SHOPPING LIST *//
+
+                //* # SHOPPING LIST *//
             showShopAssistantLoading: false,
             items: [''], // Shopping list items (starts with one empty bullet)
             focusIndex: null, // 👈 Track which input to focus
+            
+
+            //* # WALLET # *//
+            showWalletTopUpHomeView: false,
+            showWalletTopUpViewLoading: true,
 
             //* # PRODUCT GRID
             products: products,
@@ -13572,8 +13599,8 @@ export default class LandingPg extends Component {
                                                                                 />
                                                                             ))}
                                                                         </div>
-                                                                        {this.state.showWalletTopUpHomeView && 
-                                                                            <div className=''>
+                                                                        {this.state.showWalletTopUpHomeView &&  
+                                                                            <>
                                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left'>
                                                                                     <img src='/assets/icons/home-main-header/header-wallet-demo-click.png'/>
                                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left-btn'>
@@ -13583,11 +13610,24 @@ export default class LandingPg extends Component {
                                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-right'>
                                                                                     <h3>Top up your wallet to use instant checkout.</h3>
                                                                                 </div>
-                                                                            </div>
-                                                                        }
+                                                                            </> 
+                                                                         } 
                                                                         {this.state.showWalletTopUpViewLoading && 
-                                                                            <div className=''>
-
+                                                                            <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-loading'>
+                                                                                <div className='wallet-top-up-tab-loading'>
+                                                                                    <RotatingLines
+                                                                                    visible={true}
+                                                                                    height="16.5"
+                                                                                    width="16.5"
+                                                                                    strokeColor="#FF5733"
+                                                                                    strokeWidth="3"
+                                                                                    animationDuration="0.75"
+                                                                                    ariaLabel="rotating-lines-loading"
+                                                                                    wrapperStyle={{}}
+                                                                                    wrapperClass=""
+                                                                                    />
+                                                                                    <p>Filtering promotions...</p>
+                                                                                </div>
                                                                             </div>
                                                                         }
                                                                     </div>
