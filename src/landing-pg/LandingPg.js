@@ -6811,18 +6811,23 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-exit-btn {
     position: absolute;
-    top: 0.1rem;
+    top: 0;
     right: 0.45rem;
     width: 12.5px;
     height: 12.5px;
     cursor: pointer;
-    // border: 1px solid black;
-    // background-color: transparent;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px;
+    background-color: #20313a;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-exit-btn img {
-    width: 100%;
-    height: 100%;
+    width: 85%;
+    height: 85%;
     border: 1px solid transparent !important;
     filter: grayscale(0);
 }
