@@ -2744,7 +2744,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-jipange-settings {
     margin-left: 6.5%;
-    // border: 1px solid black;
+    border: 1px solid black;
 }
 
 .navbar-profile-account-popup-jipange-settings p {
@@ -2757,7 +2757,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-calendar-parent-container {
-    // border: 1px solid black;
+    border: 1px solid black;
     // height: 37.65rem;
     // overflow-y: auto;
 }
@@ -2863,7 +2863,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-dates-container {
-    // border: 1px solid black;
+    border: 1px solid black;
     padding-left: 3%;
     padding-right: 2%;
     // overflow-x: auto;
@@ -2875,6 +2875,11 @@ const Styles = styled.div `
     padding-bottom: 0.3rem;
     border-bottom: 1px solid #ccc;
     font-size: 80%;
+}
+
+.jipange-settings-selected-time-slots-container {
+    border: 1px solid black;
+    height: 5.5rem;
 }
 
 .jipange-settings-selected-dates-grid {
@@ -6552,6 +6557,8 @@ const Styles = styled.div `
     height: 60%;
     width: 100%;
     border: 1px solid white;
+    display: flex;
+
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom {
@@ -10540,6 +10547,9 @@ export default class LandingPg extends Component {
                                                                     )
                                                                 }
                                                             </div>
+                                                        </div>
+                                                        <div className='jipange-settings-selected-time-slots-container'>
+
                                                         </div>
                                                     </div>
                                                 }

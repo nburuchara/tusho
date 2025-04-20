@@ -543,6 +543,46 @@ const Styles = styled.div `
     text-decoration: line-through;
 }
 
+.product-promo-label {
+    position: absolute;
+    width: 55%;
+    bottom: 3.7rem;
+    left: 5%;
+    font-size: 0.7rem;
+    font-family: poppins;
+    font-weight: bold;
+    background-color: #20313a;
+    border: 1px solid #ff5733;
+    border-right: 0.5px solid transparent;
+    border-left: 0.5px solid transparent;
+    padding: 2.5px 10px;
+    // border-radius: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.promo-carousel {
+    display: inline-block;
+    animation: scrollPromo 10s linear infinite;
+}
+
+.product-promo-label p {
+    margin: 0;
+    color: white;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* Animation keyframes */
+@keyframes scrollPromo {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 .product-rating {
     position: absolute;
     bottom: 3.7rem;
@@ -858,6 +898,13 @@ class ProductCard extends Component {
                                 <div class="product-name-wrapper">
                                     <h3 className="product-name">{product.name}</h3>
                                 </div>
+                                {product.promo ? (
+                                    <span className="product-promo-label">
+                                        <div className="promo-carousel">
+                                        <p>PROMOTION • PROMOTION • PROMOTION • PROMOTION • PROMOTION • PROMOTION •</p>
+                                        </div>
+                                    </span>
+                                ) : null}
                                 <p className="product-rating"><span>★</span> ({product.rating})</p>
                             </>
                         )}
