@@ -13876,8 +13876,8 @@ export default class LandingPg extends Component {
                                                                          {this.state.showWalletTopUpConfirmationMsg && 
                                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-loading'>
                                                                             <div className='wallet-top-up-tab-confirm-msg'>
-                                                                               <img src='/assets/icons/home-main-header/top-up-wallet-failure.png'/>
-                                                                                <p>Oops something went wrong.</p>
+                                                                               <img src={this.state.walletTopUpPaymentAccepted ? '/assets/icons/home-main-header/top-up-wallet-success.png' : '/assets/icons/home-main-header/top-up-wallet-failure.png'}/>
+                                                                                <p>{this.state.walletTopUpPaymentAccepted ? 'Top-up Successful.' : 'Oops something went wrong.'}</p>
                                                                             </div>
                                                                         </div>
                                                                          }
