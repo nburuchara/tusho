@@ -8012,6 +8012,7 @@ export default class LandingPg extends Component {
             existingTushopWalletAmount: 0,
             showWalletTopUpMainView: false,
             showWalletTopUpViewLoading: false,
+            showWalletTopUpViewLoadingBackwards: false,
             showWalletTopUpPaymentPendingView: false,
             showWalletTopUpConfirmationMsg: false,
             walletTopUpPaymentAccepted: null,
@@ -9858,13 +9859,34 @@ export default class LandingPg extends Component {
                                 showWalletTopUpConfirmationMsg: true,
                                 showWalletTopUpBtnLoading: false,
                                 showWalletTopUpBtnHome: true,
-                                walletTopUpPaymentAccepted: true
+                                walletTopUpPaymentAccepted: true,
+                                existingTushopWalletAmount: this.state.existingTushopWalletAmount + this.state.tushopTopupAmount
                             })
                         }, 10000)
                      })
                 }
             }
         }
+    }
+
+    backToTopUpWalletMainView = () => {
+        this.setState({
+            showWalletTopUpMainView: false,
+            showWalletTopUpBtnConfirm: false,
+            showWalletTopUpBtnLoading: true,
+            showWalletTopUpViewLoadingBackwards: true,
+            showWalletTopUpViewLoading: true
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    showWalletTopUpViewLoadingBackwards: false,
+                    showWalletTopUpViewLoading: false,
+                    showWalletTopUpBtnLoading: false,
+                    showWalletTopUpHomeView: true,
+                    showWalletTopUpBtnHome: true
+                })
+            }, 2500)
+        })
     }
 
     render () {
@@ -13883,7 +13905,9 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right'>
                                                                                     <p>or select an amount:</p>
-                                                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-exit-btn'>
+                                                                                    <div 
+                                                                                    onClick={this.backToTopUpWalletMainView}
+                                                                                    className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right-exit-btn'>
                                                                                         <img src='/assets/icons/navbar/clear-search-icon-color2.png'/>
                                                                                     </div>
 
@@ -13954,7 +13978,7 @@ export default class LandingPg extends Component {
                                                                                     wrapperStyle={{}}
                                                                                     wrapperClass=""
                                                                                     />
-                                                                                    <p>Loading top-up options...</p>
+                                                                                    <p>{this.state.showWalletTopUpViewLoadingBackwards ? 'Going back...' : 'Loading top-up options...'}</p>
                                                                                 </div>
                                                                             </div>
                                                                         }
