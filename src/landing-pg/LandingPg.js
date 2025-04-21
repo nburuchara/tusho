@@ -7996,15 +7996,15 @@ export default class LandingPg extends Component {
             
 
             //* # WALLET # *//
-            showWalletTopUpHomeView: false,
+            showWalletTopUpHomeView: true,
             showWalletTopUpMainView: false,
             showWalletTopUpViewLoading: false,
             showWalletTopUpPaymentPendingView: false,
-            showWalletTopUpConfirmationMsg: true,
+            showWalletTopUpConfirmationMsg: false,
             walletTopUpPaymentAccepted: null,
             tushopTopupAmount: '',
-            showWalletTopUpBtnHome: false,
-            showWalletTopUpBtnLoading: true,
+            showWalletTopUpBtnHome: true,
+            showWalletTopUpBtnLoading: false,
             showWalletTopUpBtnConfirm: false,
 
             //* # PRODUCT GRID
