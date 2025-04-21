@@ -6814,6 +6814,29 @@ const Styles = styled.div `
     font-size: 80.5%;
 }
 
+.title-with-dot {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+  
+.flashing-dot {
+    width: 16.5px;
+    height: 12px;
+    background-color: #39ae4a;
+    border-radius: 20px;
+    animation: flash 1s infinite;
+}
+  
+@keyframes flash {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+}
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options {
     width: 100%;
     height: 100%;
@@ -8009,7 +8032,7 @@ export default class LandingPg extends Component {
 
             //* # WALLET # *//
             showWalletTopUpHomeView: true,
-            existingTushopWalletAmount: 0,
+            existingTushopWalletAmount: 10,
             showWalletTopUpMainView: false,
             showWalletTopUpViewLoading: false,
             showWalletTopUpViewLoadingBackwards: false,
@@ -13889,7 +13912,14 @@ export default class LandingPg extends Component {
                                                                                     </div>
                                                                                 </div>
                                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-right'>
-                                                                                    <h3>Top up your wallet to use instant checkout.</h3>
+                                                                                    {this.state.existingTushopWalletAmount === 0 ? (
+                                                                                        <h3>Top up your wallet to use instant checkout.</h3>
+                                                                                    ): (
+                                                                                        <div class="title-with-dot">
+                                                                                            <span class="flashing-dot"></span>
+                                                                                            <h3>Active</h3>
+                                                                                        </div>
+                                                                                    )}
                                                                                 </div>
                                                                             </> 
                                                                          } 
