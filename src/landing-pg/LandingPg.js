@@ -6724,7 +6724,7 @@ const Styles = styled.div `
     margin-bottom: 0px;
     font-family: poppins;
     font-size: 80%;
-    color: #5e626a;
+    color: white;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float {
@@ -6737,6 +6737,16 @@ const Styles = styled.div `
     display: flex;
     justify-content: space-between;
     position: relative;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float.failure {
+    background-color: #f34141;
+    border: 1px solid white;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float.success {
+    background-color: #39ae4a;
+    border: 1px solid white;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left {
@@ -13802,7 +13812,7 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom'>
-                                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float'>
+                                                                    <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float ${this.state.walletTopUpPaymentAccepted !== null ? this.state.walletTopUpPaymentAccepted === false ? 'failure' : 'success' : ''}`}>
                                                                         <div className="confetti-background">
                                                                             {[...Array(50)].map((_, i) => (
                                                                                 <div
