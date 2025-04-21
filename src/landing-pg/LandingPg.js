@@ -8243,6 +8243,46 @@ export default class LandingPg extends Component {
         return `${date} ${time}`;
     };
 
+    getFormattedDateOnly = () => {
+        const now = new Date();
+
+        // Format date
+        const date = now.toLocaleDateString("en-US", {
+            weekday: "long", // Sunday
+            month: "short",   // Mar
+            day: "numeric"    // 16
+        });
+
+        // Format time
+        const time = now.toLocaleTimeString("en-US", {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true
+        }).toLowerCase().replace(" ", ""); // Convert to lowercase "pm" and remove space
+
+        return `${date} ${time}`;
+    };
+
+    getFormattedTimeOnly = () => {
+        const now = new Date();
+
+        // Format date
+        const date = now.toLocaleDateString("en-US", {
+            weekday: "long", // Sunday
+            month: "short",   // Mar
+            day: "numeric"    // 16
+        });
+
+        // Format time
+        const time = now.toLocaleTimeString("en-US", {
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true
+        }).toLowerCase().replace(" ", ""); // Convert to lowercase "pm" and remove space
+
+        return `${date} ${time}`;
+    };
+
     handleAnnouncementBarMouseEnter = () => {
         this.setState({ announcementBarIsPaused: true });
     };
@@ -13645,7 +13685,12 @@ export default class LandingPg extends Component {
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-header-decor'>
                                                         </div>
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi'>
+                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-left'>
+                                                                <h1>{this.state.dateTime}</h1>
+                                                            </div>
+                                                            <div className=''>
 
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <h1>Hi there,</h1>
