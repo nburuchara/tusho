@@ -5545,7 +5545,7 @@ const Styles = styled.div `
     top: 0;
     width: 50%;
     height: 88%;
-    border: 1px solid white;
+    // border: 1px solid white;
     // background-color: white;
     border-radius: 8px;
     display: flex;
@@ -5554,24 +5554,32 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-left {
     width: 45%;
-    border: 1px solid white;
+    // border: 1px solid white;
     display: flex;
     flex-direction: column;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-left-top {
     height: 35%;
-    border: 1px solid white;
+    // border: 1px solid white;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-left-top h2 {
+    margin-top: -0.1rem;
+    margin-bottom: 0px;
+    color: white;
+    font-family: poppins;
+    // font-size: 85.5%;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-left-bottom {
     flex-grow: 1;
-    border: 1px solid white;
+    // border: 1px solid white;
     overflow: hidden;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-left-bottom h5 {
-    margin-top: 0px;
+    margin-top: 0.15rem;
     margin-bottom: 0px;
     color: white;
     font-family: poppins;
@@ -5590,7 +5598,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right {
     width: 55%;
-    border: 1px solid white;
+    // border: 1px solid white;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body {
@@ -13738,7 +13746,7 @@ export default class LandingPg extends Component {
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi'>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-left'>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-left-top'>
-                                                                    
+                                                                    <h2>Just FYI</h2>
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-left-bottom'>
                                                                     <h5>{this.state.dateOnly}</h5>
