@@ -6832,7 +6832,7 @@ const Styles = styled.div `
 .title-with-dot {
     display: flex;
     align-items: center;
-    gap: 0.45rem;
+    gap: 0.55rem;
     margin-right: 0.5rem;
 }
   
@@ -8076,7 +8076,7 @@ export default class LandingPg extends Component {
 
             //* # WALLET # *//
             showWalletTopUpHomeView: true,
-            existingTushopWalletAmount: 10,
+            existingTushopWalletAmount: 0,
             showWalletTopUpMainView: false,
             showWalletTopUpViewLoading: false,
             showWalletTopUpViewLoadingBackwards: false,
