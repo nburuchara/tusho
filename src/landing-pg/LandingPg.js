@@ -5539,14 +5539,14 @@ const Styles = styled.div `
     width: 95%;
 }
 
-.homepage-header-inner-body-poster-left-logged-in-header-wallet {
+.homepage-header-inner-body-poster-left-logged-in-header-fyi {
     position: absolute;
     right: 0;
     top: 0;
     width: 50%;
     height: 88%;
     border: 1px solid white;
-    background-color: white;
+    // background-color: white;
     border-radius: 8px;
 }
 
@@ -13644,7 +13644,7 @@ export default class LandingPg extends Component {
                                                     <div className='homepage-header-inner-body-poster-left-logged-in-header-container'>
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-header-decor'>
                                                         </div>
-                                                        <div className='homepage-header-inner-body-poster-left-logged-in-header-wallet'>
+                                                        <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi'>
 
                                                         </div>
                                                     </div>
