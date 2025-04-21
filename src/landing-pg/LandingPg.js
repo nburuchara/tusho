@@ -6464,14 +6464,14 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code-container {
     text-align: right;
-    margin-top: -1rem;
+    margin-top: -0.75rem;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code-container p {
     margin-top: 0px;
     margin-bottom: 0.1rem;
-    font-size: 10px;
-    color: #ff5733;
+    font-size: 9px;
+    color: #5e626a;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code {
@@ -6479,7 +6479,7 @@ const Styles = styled.div `
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 1.5rem;
+    height: 1.65rem;
     border: 1px solid #ff5733;
     border-radius: 6px;
     background-color: #ff5733;
