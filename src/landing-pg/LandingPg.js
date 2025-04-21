@@ -6295,7 +6295,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item:hover {
-    height: 32.5%;
+    height: 33.85%;
 }   
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item.selected {
@@ -6386,6 +6386,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-new-price {
     font-size: 92.5%;
+    margin-bottom: 0px;
     text-decoration: underline;
     text-decoration-color: #FF5733;
     text-decoration-thickness: 1.5px;
@@ -6457,6 +6458,17 @@ const Styles = styled.div `
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     cursor: pointer;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code-container {
+    text-align: right;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code-container p {
+    margin-top: 0px;
+    margin-bottom: 0.1rem;
+    font-size: 10px;
+    color: #ff5733;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code {
@@ -6822,7 +6834,7 @@ const Styles = styled.div `
 }
   
 .flashing-dot {
-    width: 15.5px;
+    width: 17.25px;
     height: 12px;
     background-color: #39ae4a;
     border-radius: 20px;
@@ -13750,7 +13762,7 @@ export default class LandingPg extends Component {
                                                                                 <img src={item.img}/>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text'>
-                                                                                <h4>{item.name} <span className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-params'>{item.type === 'code' ? `(${item.promoParams})` : ''}</span></h4>
+                                                                                <h4>{item.name}</h4>
                                                                                 <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text-prices'>
                                                                                     <p className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-new-price'>{item.type === 'product' ? 'Ksh.' : 'CODE:'} <span>{item.newPrice}</span></p>
                                                                                     <p className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-old-price ${item.type === 'product' ? 'product' : ''} `}>{item.type !== 'product' ? '' :  item.oldPrice}</p>
@@ -13776,8 +13788,11 @@ export default class LandingPg extends Component {
                                                                                             </div>
                                                                                         </div>
                                                                                     ) : (
-                                                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code'>
-                                                                                            Apply Code
+                                                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code-container'>
+                                                                                            <h4>{(item.promoParams)}</h4>
+                                                                                            <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code'>
+                                                                                                Apply Code
+                                                                                            </div>
                                                                                         </div>
                                                                                     )}
                                                                                 </div>
