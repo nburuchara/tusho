@@ -6295,7 +6295,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item:hover {
-    height: 33.85%;
+    height: 34.5%;
 }   
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item.selected {
@@ -6836,13 +6836,41 @@ const Styles = styled.div `
     margin-right: 0.5rem;
 }
   
-.flashing-dot {
+.compounding-circle {
+    position: relative;
     width: 17.25px;
     height: 12px;
-    background-color: #39ae4a;
+    background-color: #39ae4a; /* green */
     border-radius: 20px;
-    animation: flash 1s infinite;
+    animation: pulse 1.5s infinite;
 }
+  
+@keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+    }
+}
+
+// .title-with-dot {
+//     display: flex;
+//     align-items: center;
+//     gap: 0.45rem;
+//     margin-right: 0.5rem;
+// }
+  
+// .flashing-dot {
+//     width: 17.25px;
+//     height: 12px;
+//     background-color: #39ae4a;
+//     border-radius: 20px;
+//     animation: flash 1s infinite;
+// }
   
 @keyframes flash {
     0%, 100% {
@@ -13935,7 +13963,7 @@ export default class LandingPg extends Component {
                                                                                         <h3>Top up your wallet to use instant checkout.</h3>
                                                                                     ): (
                                                                                         <div class="title-with-dot">
-                                                                                            <span class="flashing-dot"></span>
+                                                                                            <span class="compounding-circle"></span>
                                                                                             <h3>ACTIVE</h3>
                                                                                         </div>
                                                                                     )}
