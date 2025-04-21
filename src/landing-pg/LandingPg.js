@@ -6464,6 +6464,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code-container {
     text-align: right;
+    margin-top: -1rem;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code-container p {
@@ -6478,7 +6479,7 @@ const Styles = styled.div `
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 1.5rem;
     border: 1px solid #ff5733;
     border-radius: 6px;
     background-color: #ff5733;
@@ -13791,7 +13792,7 @@ export default class LandingPg extends Component {
                                                                                         </div>
                                                                                     ) : (
                                                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code-container'>
-                                                                                            <h4>{(item.promoParams)}</h4>
+                                                                                            <p>{(item.promoParams)}</p>
                                                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-apply-code'>
                                                                                                 Apply Code
                                                                                             </div>
