@@ -6817,11 +6817,12 @@ const Styles = styled.div `
 .title-with-dot {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.45rem;
+    margin-right: 0.5rem;
 }
   
 .flashing-dot {
-    width: 16.5px;
+    width: 15.5px;
     height: 12px;
     background-color: #39ae4a;
     border-radius: 20px;
@@ -13917,7 +13918,7 @@ export default class LandingPg extends Component {
                                                                                     ): (
                                                                                         <div class="title-with-dot">
                                                                                             <span class="flashing-dot"></span>
-                                                                                            <h3>Active</h3>
+                                                                                            <h3>ACTIVE</h3>
                                                                                         </div>
                                                                                     )}
                                                                                 </div>
