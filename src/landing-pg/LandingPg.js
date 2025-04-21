@@ -5575,15 +5575,17 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-left-bottom {
     flex-grow: 1;
     border: 1px solid white;
+    overflow: hidden;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-left-bottom h1 {
-    all: unset;
-    font-size: clamp(0vw, 5vw, 100vw); /* scales between 1rem and 5rem depending on container width */
-    // width: 100%;
-    // height: 100%;
+    font-size: clamp(1rem, 5vw, 2.25rem); /* scales between 1rem and 5rem depending on container width */
+    width: 100%;
+    height: 100%;
     margin: 0;
+    font-family: poppins;
     line-height: 1;
+    color: #ff5733;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right {
@@ -5865,7 +5867,7 @@ const Styles = styled.div `
 }
 
 
-.homepage-header-inner-body-poster-left-logged-in-header h1 { 
+.homepage-header-inner-body-poster-left-logged-in-header-greeting h1 { 
     margin-top: 0px;
     margin-left: 1rem;
     font-size: 50px;
@@ -13747,7 +13749,9 @@ export default class LandingPg extends Component {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <h1>Hi there,</h1>
+                                                    <div className='homepage-header-inner-body-poster-left-logged-in-header-greeting'>
+                                                        <h1>Hi there,</h1>
+                                                    </div>
                                                 </div>
                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body'>
                                                     <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header'>
