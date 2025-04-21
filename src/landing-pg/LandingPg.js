@@ -5564,18 +5564,18 @@ const Styles = styled.div `
     border: 1px solid white;
 }
 
-.homepage-header-inner-body-poster-left-logged-in-header-fyi-left-top h5 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color: white;
-    font-family: poppins;
-    font-size: 78.5%;
-}
-
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-left-bottom {
     flex-grow: 1;
     border: 1px solid white;
     overflow: hidden;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-left-bottom h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-family: poppins;
+    font-size: 76.5%;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-left-bottom h1 {
@@ -5585,7 +5585,7 @@ const Styles = styled.div `
     margin: 0;
     font-family: poppins;
     line-height: 1;
-    color: #ff5733;
+    color: #ff5733;;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right {
@@ -13738,9 +13738,10 @@ export default class LandingPg extends Component {
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi'>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-left'>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-left-top'>
-                                                                    <h5>{this.state.dateOnly}</h5>
+                                                                    
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-left-bottom'>
+                                                                    <h5>{this.state.dateOnly}</h5>
                                                                     <h1>{this.state.timeOnly}</h1>
                                                                 </div>
                                                             </div>
