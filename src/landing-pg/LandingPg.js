@@ -8162,10 +8162,20 @@ export default class LandingPg extends Component {
             this.scrollObserver.observe(this.sentinelRef.current);
         }
 
-        // Update the time every minute
-        this.timer = setInterval(() => {
-            this.setState({ dateTime: this.getFormattedDate(), dateOnly: this.getFormattedDateOnly(), timeOnly: this.getFormattedTimeOnly() });
-        }, 60000);
+        // ⏰ Update immediately
+        this.updateDateTime();
+
+        // ⏰ Wait until the start of the next minute, then update every minute
+        const now = new Date();
+        const delay = (60 - now.getSeconds()) * 1000;
+
+        this.timerTimeout = setTimeout(() => {
+            this.updateDateTime(); // update at the start of the next minute
+
+            this.timerInterval = setInterval(() => {
+                this.updateDateTime();
+            }, 60000);
+        }, delay);
 
         // ✅ Intersection Observer for detecting when an element is out of view
         this.viewObserver = new IntersectionObserver(
@@ -8216,13 +8226,14 @@ export default class LandingPg extends Component {
 
     componentWillUnmount() {
         document.removeEventListener("click", this.handleOutsideSearchBarClick);
-
-            // ✅ Cleanup observers
+    
+        // ✅ Cleanup observers
         if (this.scrollObserver) this.scrollObserver.disconnect();
         if (this.viewObserver) this.viewObserver.disconnect();
-
-        // Clear interval when component unmounts
-        clearInterval(this.timer);
+    
+        // ✅ Clear the timeouts and intervals
+        if (this.timerInterval) clearInterval(this.timerInterval);
+        if (this.timerTimeout) clearTimeout(this.timerTimeout);
     }
 
     getFormattedDate = () => {
@@ -8255,25 +8266,11 @@ export default class LandingPg extends Component {
             day: "numeric"    // 16
         });
 
-        // Format time
-        const time = now.toLocaleTimeString("en-US", {
-            hour: "2-digit",
-            minute: "2-digit",
-            hour12: true
-        }).toLowerCase().replace(" ", ""); // Convert to lowercase "pm" and remove space
-
         return `${date}`;
     };
 
     getFormattedTimeOnly = () => {
         const now = new Date();
-
-        // Format date
-        const date = now.toLocaleDateString("en-US", {
-            weekday: "long", // Sunday
-            month: "short",   // Mar
-            day: "numeric"    // 16
-        });
 
         // Format time
         const time = now.toLocaleTimeString("en-US", {
@@ -8283,6 +8280,14 @@ export default class LandingPg extends Component {
         }).toLowerCase().replace(" ", ""); // Convert to lowercase "pm" and remove space
 
         return `${time}`;
+    };
+
+    updateDateTime = () => {
+        this.setState({
+            dateTime: this.getFormattedDate(),
+            dateOnly: this.getFormattedDateOnly(),
+            timeOnly: this.getFormattedTimeOnly(),
+        });
     };
 
     handleAnnouncementBarMouseEnter = () => {
