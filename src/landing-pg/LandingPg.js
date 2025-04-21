@@ -6705,6 +6705,28 @@ const Styles = styled.div `
     color: #5e626a;
 }
 
+.wallet-top-up-tab-confirm-msg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.65rem;
+}
+
+.wallet-top-up-tab-confirm-msg img {
+    width: 15.5px;
+    height: 15.5px;
+    border: 0.1px solid transparent !important;
+}
+
+.wallet-top-up-tab-confirm-msg p {
+    margin-top: 0.15rem;
+    margin-bottom: 0px;
+    font-family: poppins;
+    font-size: 80%;
+    color: #5e626a;
+}
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float {
     height: 85%;
     width: 95.85%;
@@ -7965,8 +7987,10 @@ export default class LandingPg extends Component {
 
             //* # WALLET # *//
             showWalletTopUpHomeView: false,
-            showWalletTopUpMainView: true,
+            showWalletTopUpMainView: false,
             showWalletTopUpViewLoading: false,
+            showWalletTopUpPaymentPendingView: false,
+            showWalletTopUpConfirmationMsg: true,
             tushopTopupAmount: '',
             showWalletTopUpBtnHome: false,
             showWalletTopUpBtnLoading: true,
@@ -13848,10 +13872,31 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                             </div>
                                                                          }
-                                                                         {this.state.showWalletTopUpPendingPaymentView && 
-                                                                            <>
-                                                                                
-                                                                            </>
+                                                                         {this.state.showWalletTopUpConfirmationMsg && 
+                                                                            <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-loading'>
+                                                                            <div className='wallet-top-up-tab-confirm-msg'>
+                                                                               <img src='/assets/icons/home-main-header/top-up-wallet-failure.png'/>
+                                                                                <p>Oops something went wrong...</p>
+                                                                            </div>
+                                                                        </div>
+                                                                         }
+                                                                         {this.state.showWalletTopUpPaymentPendingView && 
+                                                                            <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-loading'>
+                                                                                <div className='wallet-top-up-tab-loading'>
+                                                                                    <RotatingLines
+                                                                                    visible={true}
+                                                                                    height="19.5"
+                                                                                    width="19.5"
+                                                                                    strokeColor="#FF5733"
+                                                                                    strokeWidth="3"
+                                                                                    animationDuration="0.75"
+                                                                                    ariaLabel="rotating-lines-loading"
+                                                                                    wrapperStyle={{}}
+                                                                                    wrapperClass=""
+                                                                                    />
+                                                                                    <p>Processing payment...</p>
+                                                                                </div>
+                                                                            </div>
                                                                          }
                                                                         {this.state.showWalletTopUpViewLoading && 
                                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-loading'>
