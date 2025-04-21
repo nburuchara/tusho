@@ -7991,6 +7991,7 @@ export default class LandingPg extends Component {
             showWalletTopUpViewLoading: false,
             showWalletTopUpPaymentPendingView: false,
             showWalletTopUpConfirmationMsg: true,
+            walletTopUpPaymentAccepted: null,
             tushopTopupAmount: '',
             showWalletTopUpBtnHome: false,
             showWalletTopUpBtnLoading: true,
@@ -13876,7 +13877,7 @@ export default class LandingPg extends Component {
                                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-loading'>
                                                                             <div className='wallet-top-up-tab-confirm-msg'>
                                                                                <img src='/assets/icons/home-main-header/top-up-wallet-failure.png'/>
-                                                                                <p>Oops something went wrong...</p>
+                                                                                <p>Oops something went wrong.</p>
                                                                             </div>
                                                                         </div>
                                                                          }
