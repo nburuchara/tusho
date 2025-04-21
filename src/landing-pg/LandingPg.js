@@ -14005,7 +14005,7 @@ export default class LandingPg extends Component {
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container ${this.state.isRightTopHeaderTransitionActive ? "animate-peel" : ""}`}>
                                                             <h2>Your Wallet</h2>
                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-wallet-subheader'>
-                                                                <h5>Unlock <label>One-click Checkout</label> with tuShop Wallet</h5>
+                                                                <h5>Use <label>One-click Checkout</label> with tuShop Wallet</h5>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home'>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top'>
