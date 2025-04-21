@@ -5548,6 +5548,38 @@ const Styles = styled.div `
     border: 1px solid white;
     // background-color: white;
     border-radius: 8px;
+    display: flex;
+    justfy-content: space-between;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-left {
+    width: 45%;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-left-top {
+    height: 35%;
+    border: 1px solid white;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-left-top h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-family: poppins;
+    font-size: 78.5%;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-left-bottom {
+    flex-grow: 1;
+    border: 1px solid white;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right {
+    width: 55%;
+    border: 1px solid white;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body {
@@ -8261,9 +8293,10 @@ export default class LandingPg extends Component {
 
         // Format date
         const date = now.toLocaleDateString("en-US", {
-            weekday: "long", // Sunday
-            month: "short",   // Mar
-            day: "numeric"    // 16
+            weekday: "long", // 
+            month: "short",   // 
+            day: "numeric",    // 
+            year: "numeric" // 
         });
 
         return `${date}`;
@@ -13693,9 +13726,15 @@ export default class LandingPg extends Component {
                                                         </div>
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi'>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-left'>
-                                                                <h1>{this.state.dateTime}</h1>
+                                                                <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-left-top'>
+                                                                    <h5>{this.state.dateOnly}</h5>
+                                                                </div>
+                                                                <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-left-bottom'>
+
+                                                                </div>
+                                                                {/* <h1>{this.state.dateTime}</h1> */}
                                                             </div>
-                                                            <div className=''>
+                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right'>
 
                                                             </div>
                                                         </div>
