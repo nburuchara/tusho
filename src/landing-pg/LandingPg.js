@@ -5577,6 +5577,15 @@ const Styles = styled.div `
     border: 1px solid white;
 }
 
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-left-bottom h1 {
+    all: unset;
+    font-size: clamp(0vw, 5vw, 100vw); /* scales between 1rem and 5rem depending on container width */
+    // width: 100%;
+    // height: 100%;
+    margin: 0;
+    line-height: 1;
+}
+
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right {
     width: 55%;
     border: 1px solid white;
@@ -13730,9 +13739,8 @@ export default class LandingPg extends Component {
                                                                     <h5>{this.state.dateOnly}</h5>
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-left-bottom'>
-
+                                                                    <h1>{this.state.timeOnly}</h1>
                                                                 </div>
-                                                                {/* <h1>{this.state.dateTime}</h1> */}
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right'>
 
