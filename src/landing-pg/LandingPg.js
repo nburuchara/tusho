@@ -6366,9 +6366,12 @@ const Styles = styled.div `
     justify-content: space-between;
 }
 
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text-prices p {
+    margin-bottom: 0px;
+}
+
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-text-prices span {
     color: #ff5733;
-    margin-bottom: 0px;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-old-price {
@@ -6386,7 +6389,6 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-item-new-price {
     font-size: 92.5%;
-    margin-bottom: 0px;
     text-decoration: underline;
     text-decoration-color: #FF5733;
     text-decoration-thickness: 1.5px;
