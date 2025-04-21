@@ -6666,6 +6666,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-right.not-loading button:hover {
     background-color: #faece9;
+    cursor: pointer;
     color: #ff5733; 
 }
 
@@ -6710,6 +6711,11 @@ const Styles = styled.div `
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 2.65rem;
+    transition: margin-top 2s ease-in-out;
+}
+
+.wallet-top-up-tab-confirm-msg.triggered {
     margin-top: 0.65rem;
 }
 
@@ -6727,6 +6733,7 @@ const Styles = styled.div `
     color: white;
 }
 
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float {
     height: 85%;
     width: 95.85%;
@@ -6737,6 +6744,7 @@ const Styles = styled.div `
     display: flex;
     justify-content: space-between;
     position: relative;
+    transition: background-color 1.5s ease-in-out, border 1.5s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float.failure {
@@ -6834,6 +6842,10 @@ const Styles = styled.div `
     font-weight: bold;
     color: #ff5733;
     background-color: transparent;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-left.empty input::placeholder {
+    color: red;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-right {
@@ -7997,11 +8009,13 @@ export default class LandingPg extends Component {
 
             //* # WALLET # *//
             showWalletTopUpHomeView: true,
+            existingTushopWalletAmount: 0,
             showWalletTopUpMainView: false,
             showWalletTopUpViewLoading: false,
             showWalletTopUpPaymentPendingView: false,
             showWalletTopUpConfirmationMsg: false,
             walletTopUpPaymentAccepted: null,
+            tushopTopupAmountSubmittedNonEmpty: null,
             tushopTopupAmount: '',
             showWalletTopUpBtnHome: true,
             showWalletTopUpBtnLoading: false,
@@ -9810,7 +9824,11 @@ export default class LandingPg extends Component {
                     showWalletTopUpBtnHome: false,
                     showWalletTopUpBtnLoading: true,
                     showWalletTopUpHomeView: false,
-                    showWalletTopUpViewLoading: true
+                    walletTopUpPaymentAccepted: null,
+                    tushopTopupAmountSubmittedNonEmpty: null,
+                    showWalletTopUpViewLoading: true,
+                    tushopTopupAmount: '',
+                    showWalletTopUpConfirmationMsg: false
                 }, () => {
                     setTimeout(() => {
                         this.setState({
@@ -9822,16 +9840,29 @@ export default class LandingPg extends Component {
                     }, 2500)
                 })
             } else if (confirm) {
-                 this.setState({
-                    showWalletTopUpBtnConfirm: false,
-                    showWalletTopUpBtnLoading: true
-                 }, () => {
-                    setTimeout(() => {
-                        this.setState({
-
-                        })
+                if (this.state.tushopTopupAmount === '') {
+                    this.setState({
+                        tushopTopupAmountSubmittedNonEmpty: false
                     })
-                 })
+                } else {
+                    this.setState({
+                        showWalletTopUpBtnConfirm: false,
+                        showWalletTopUpBtnLoading: true,
+                        showWalletTopUpMainView: false,
+                        tushopTopupAmountSubmittedNonEmpty: true,
+                        showWalletTopUpPaymentPendingView: true
+                     }, () => {
+                        setTimeout(() => {
+                            this.setState({
+                                showWalletTopUpPaymentPendingView: false,
+                                showWalletTopUpConfirmationMsg: true,
+                                showWalletTopUpBtnLoading: false,
+                                showWalletTopUpBtnHome: true,
+                                walletTopUpPaymentAccepted: true
+                            })
+                        }, 10000)
+                     })
+                }
             }
         }
     }
@@ -13775,7 +13806,7 @@ export default class LandingPg extends Component {
                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home'>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top'>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-header'>
-                                                                        <h1><label>Ksh.</label> 0</h1>
+                                                                        <h1><label>Ksh.</label> {this.state.existingTushopWalletAmount}</h1>
                                                                     </div>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body'>
                                                                         <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-body-left'>
@@ -13804,7 +13835,7 @@ export default class LandingPg extends Component {
                                                                                 }
                                                                                 {this.state.showWalletTopUpBtnConfirm && 
                                                                                     <>
-
+                                                                                        Confirm
                                                                                     </>
                                                                                 }
                                                                             </button>
@@ -13842,9 +13873,10 @@ export default class LandingPg extends Component {
                                                                          } 
                                                                          {this.state.showWalletTopUpMainView && 
                                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options'>
-                                                                                <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-left'>
+                                                                                <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-options-left ${this.state.tushopTopupAmountSubmittedNonEmpty === false ? 'empty' : ''}`}>
                                                                                     <input 
                                                                                     id='tushopTopupAmount'
+                                                                                    disabled={this.state.tushopTopupAmountSubmittedNonEmpty === true}
                                                                                     value={this.state.tushopTopupAmount}
                                                                                     onChange={this.handleSearchStandardInput}
                                                                                     placeholder='Enter an amount'/>
@@ -13885,7 +13917,7 @@ export default class LandingPg extends Component {
                                                                          }
                                                                          {this.state.showWalletTopUpConfirmationMsg && 
                                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-loading'>
-                                                                            <div className='wallet-top-up-tab-confirm-msg'>
+                                                                            <div className={`wallet-top-up-tab-confirm-msg ${this.state.walletTopUpPaymentAccepted !== null ? 'triggered' : ''}`}>
                                                                                <img src={this.state.walletTopUpPaymentAccepted ? '/assets/icons/home-main-header/top-up-wallet-success.png' : '/assets/icons/home-main-header/top-up-wallet-failure.png'}/>
                                                                                 <p>{this.state.walletTopUpPaymentAccepted ? 'Top-up Successful.' : 'Oops something went wrong.'}</p>
                                                                             </div>
@@ -13912,14 +13944,13 @@ export default class LandingPg extends Component {
                                                                         {this.state.showWalletTopUpViewLoading && 
                                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-loading'>
                                                                                 <div className='wallet-top-up-tab-loading'>
-                                                                                    <RotatingLines
+                                                                                    <TailSpin
                                                                                     visible={true}
-                                                                                    height="19.5"
-                                                                                    width="19.5"
-                                                                                    strokeColor="#FF5733"
-                                                                                    strokeWidth="3"
-                                                                                    animationDuration="0.75"
-                                                                                    ariaLabel="rotating-lines-loading"
+                                                                                    height="18.5px"
+                                                                                    width="18.5px"
+                                                                                    color="#ff5733"
+                                                                                    ariaLabel="tail-spin-loading"
+                                                                                    radius="2"
                                                                                     wrapperStyle={{}}
                                                                                     wrapperClass=""
                                                                                     />
