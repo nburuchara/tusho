@@ -8041,6 +8041,8 @@ export default class LandingPg extends Component {
 
             homepageNewUpdatesShow: true,
             dateTime: this.getFormattedDate(),
+            dateOnly: this.getFormattedDateOnly(),
+            timeOnly: this.getFormattedTimeOnly(),
             announcementBarIsPaused: false,
 
             //* - - HOMESCREEN PRODUCTS GRID DISPLAY - - *//
@@ -8162,7 +8164,7 @@ export default class LandingPg extends Component {
 
         // Update the time every minute
         this.timer = setInterval(() => {
-            this.setState({ dateTime: this.getFormattedDate() });
+            this.setState({ dateTime: this.getFormattedDate(), dateOnly: this.getFormattedDateOnly(), timeOnly: this.getFormattedTimeOnly() });
         }, 60000);
 
         // ✅ Intersection Observer for detecting when an element is out of view
@@ -8260,7 +8262,7 @@ export default class LandingPg extends Component {
             hour12: true
         }).toLowerCase().replace(" ", ""); // Convert to lowercase "pm" and remove space
 
-        return `${date} ${time}`;
+        return `${date}`;
     };
 
     getFormattedTimeOnly = () => {
@@ -8280,7 +8282,7 @@ export default class LandingPg extends Component {
             hour12: true
         }).toLowerCase().replace(" ", ""); // Convert to lowercase "pm" and remove space
 
-        return `${date} ${time}`;
+        return `${time}`;
     };
 
     handleAnnouncementBarMouseEnter = () => {
