@@ -5914,7 +5914,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box:hover h4 {
-    
+    transform: translate(5px, -5px); /* Moves it 5px right and 5px down */
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box h4 {
@@ -5952,7 +5952,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box:hover img {
-    
+    transform: scale(1.05);
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 {
@@ -5975,14 +5975,6 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 h3 {
     // color: #ff5733;
     transition: color 0.35s ease-in-out;
-}
-
-.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1:hover h4 {
-    transform: translate(5px, -5px); /* Moves it 5px right and 5px down */
-}
-
-.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1:hover img {
-    transform: scale(1.05);
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2 {
@@ -10068,9 +10060,6 @@ export default class LandingPg extends Component {
             });
         } else if (this.state.selectedHeaderOption === option) {
             this.setState((prevState) => ({
-                // isLeftHeaderTransitionActive: !prevState.isLeftHeaderTransitionActive,
-                // isRightBottomHeaderTransitionActive: !prevState.isRightBottomHeaderTransitionActive,
-                // isRightTopHeaderTransitionActive: !prevState.isRightTopHeaderTransitionActive,
             }), () => {
                 setTimeout(() => {
                     this.setState({
