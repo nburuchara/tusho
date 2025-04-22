@@ -539,7 +539,7 @@ const Styles = styled.div `
     margin-top: 5px;
     margin-bottom: 0px;
     font-family: poppins;
-    color: #24668a;
+    color: #5e626a;
     text-decoration: line-through;
 }
 
@@ -893,7 +893,7 @@ class ProductCard extends Component {
                             <>
                                 <div className="product-price-container">
                                     <p className="product-price">Ksh. <label style={{color: '#ff5733'}}>{product.price.toFixed(2)}</label></p>
-                                    {product.prevPrice ? (<h5 className="product-discount-price">{product.prevPrice}.00</h5>) : (null)}
+                                    {product.prevPrice || product.promo ? (<h5 className="product-discount-price">{product.prevPrice}.00</h5>) : (null)}
                                 </div>
                                 <div class="product-name-wrapper">
                                     <h3 className="product-name">{product.name}</h3>

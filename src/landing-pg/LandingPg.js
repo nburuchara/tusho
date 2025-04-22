@@ -5565,11 +5565,16 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-left-top h2 {
-    margin-top: -0.1rem;
+    margin-top: -0.25rem;
     margin-bottom: 0px;
     color: white;
     font-family: poppins;
     // font-size: 85.5%;
+    text-decoration: underline;
+    text-decoration-color: #FF5733;
+    text-decoration-thickness: 1.8px;
+    text-decoration-style: wavy;
+    text-underline-offset: 5px;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-left-bottom {
@@ -5598,6 +5603,145 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right {
     width: 55%;
+    // border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top {
+    position: relative;
+    border: 1px solid #ff5733;
+    border-radius: 8px;
+    height: 50%;
+    overflow: hidden;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top:hover .homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-navigation {
+    transform: translateX(0);
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-navigation {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 10%;
+    border-left: 1px solid #ff5733;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    background-color: #faece9;
+    z-index: 1;
+    transform: translateX(3rem);
+    transition: transform 0.5s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-navigation img {
+    width: 11.5px;
+    height: 11.5px;
+    cursor: pointer;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-navigation-top {
+    height: 50%;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-navigation-top.hidden {
+    visibility: hidden;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-navigation-bottom {
+    height: 50%;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-navigation-bottom.hidden {
+    visibility: hidden;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    transform: translateX(0);
+    z-index: 0;
+    transition: transform 0.5s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-container.slide-next {
+    transform: translateX(-102.5%); 
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-container.slide-prev {
+    transform: translateX(0); 
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell {
+    min-width: 25%;
+    height: 100%;
+    border-right: 1px solid #ccc;
+    // border-top: 1px solid #ff5733;
+    // border-bottom: 1px solid #ff5733;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-time {
+    height: 30%;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-time p {
+    font-family: poppins;
+    color: #ff5733;
+    font-size: 8.85px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon {
+    height: 35%;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon label {
+    margin-top: 0.1rem;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp {
+    height: 35%;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp h5 {
+    font-family: poppins;
+    color: #ff5733;
+    font-size: 9.25px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom {
+    flex-grow: 1;
     // border: 1px solid white;
 }
 
@@ -5770,7 +5914,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box:hover h4 {
-    transform: translate(5px, -5px); /* Moves it 5px right and 5px down */
+    
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box h4 {
@@ -5808,11 +5952,16 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box:hover img {
-    transform: scale(1.05);
+    
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 {
-    
+    background-color: #dff2f8 !important;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1:hover {
+    background-color: transparent !important;
+    transition: background-color 0.35s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 img {
@@ -5826,6 +5975,14 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 h3 {
     // color: #ff5733;
     transition: color 0.35s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1:hover h4 {
+    transform: translate(5px, -5px); /* Moves it 5px right and 5px down */
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1:hover img {
+    transform: scale(1.05);
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2 {
@@ -6054,7 +6211,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster:has(.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1-btn:focus) {
-    --background-color: #fff2ccff;
+    --background-color: #dff2f8;
 }
 
 .homepage-header-inner-body-poster:has(.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2-btn:focus) {
@@ -6133,6 +6290,29 @@ const Styles = styled.div `
     color: white;
     margin-top: -0.25rem;
     margin-left: 5%;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container-option-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #dff2f8;
+    z-index: 2;
+    pointer-events: none;
+    margin-left: 0.25rem;
+    margin-top: -0.08rem;
+    height: 99.6%;
+    width: 101.9%;
+    border: 1px solid #ff5733;
+    overflow: hidden;
+    transition: background-color 0.6s ease-in-out;
+    transform: translateY(100%);
+    transition: transform 1s ease-in-out, pointer-events 1s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container-option-1.open {
+    pointer-events: auto;
+    transform: translateY(0);
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 {
@@ -7050,6 +7230,26 @@ const Styles = styled.div `
     color: #ff5733;
 }
 
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #dff2f8;
+    margin-left: 0.28rem;
+    width: 98%;
+    height: 96.25%;
+    border: 1px solid #ff5733;
+    border-top-right-radius: 24px;
+    transform: translateY(-100%);
+    transition: transform 1s ease-in-out, visibility 1s ease-in-out;
+    visibility: hidden;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-1.open {
+    transform: translateY(0);
+    visibility: visible;
+}
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
     position: absolute;
     top: 0;
@@ -7157,6 +7357,27 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container label {
    
+}
+
+.homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #dff2f8;
+    margin-left: 0.28rem;
+    width: 98%;
+    height: 98.6%;
+    border: 1px solid #ff5733;
+    border-bottom-right-radius: 0px;
+    transform: translateY(-100%);
+    transition: transform 1s ease-in-out, visibility 1s ease-in-out, border-bottom-right-radius 1.25s ease-in-out;
+    visibility: hidden;
+}
+
+.homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-1.open {
+    border-bottom-right-radius: 24px;
+    transform: translateY(0);
+    visibility: visible;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-2 {
@@ -8104,6 +8325,9 @@ export default class LandingPg extends Component {
             isRightBottomHeaderTransitionActive: false,
             transitionBackgroundColor: '',
             selectedHeaderOption: '',
+            displayMoreWeatherOptions: false,
+            displayPrevWeatherOptions: false,
+            weatherDisplaySwiped: false,
 
             //* # PROMO *//
             showPromoItemsList: true,
@@ -8112,7 +8336,7 @@ export default class LandingPg extends Component {
             promoProductCategorySelected: false,
             promoDiscountCodeCategorySelected: false,
             promoItems: [
-                { id: 21, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: 205.00, newPrice: 250.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/eggs-product.png'},
+                { id: 21, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: 279.00, newPrice: 250.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/eggs-product.png'},
                 { id: 9, name: 'TuShop Fresh Mwea Pishori Rice', oldPrice: 205.00, newPrice: 190.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/rice-product.png'},
                 { id: 3, name: 'Get Ksh. 250 off your first order with tuShop wallet.', oldPrice: 205.00, newPrice: 'MAX250', type: 'code', description: '', qty: 0, promoParams: 'No expiry', img: '/assets/images/codes/promoCode2.png'},
                 { id: 4, name: 'Bio Salted Artisanal Butter (500g)', oldPrice: 879.00, newPrice: 850.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/butter-product.png'},
@@ -8126,7 +8350,6 @@ export default class LandingPg extends Component {
             items: [''], // Shopping list items (starts with one empty bullet)
             focusIndex: null, // 👈 Track which input to focus
             
-
             //* # WALLET # *//
             showWalletTopUpHomeView: true,
             existingTushopWalletAmount: 0,
@@ -8274,6 +8497,8 @@ export default class LandingPg extends Component {
             this.setState({ focusIndex: null }); // Reset
           }
     }
+
+    //! - - EASY: bug (Checkout Sidepane / Menu Dropdown / Profile dropdown - reset to GitHub code) - - !// 
 
     componentWillUnmount() {
         document.removeEventListener("click", this.handleOutsideSearchBarClick);
@@ -9816,23 +10041,53 @@ export default class LandingPg extends Component {
     };
 
     handleTriggerHeaderTransitions = (option) => {
+        if (this.state.selectedHeaderOption === '') {
+            this.setState((prevState) => ({ 
+                // selectedHeaderOption: option,
+                isLeftHeaderTransitionActive: !prevState.isLeftHeaderTransitionActive,
+                isRightBottomHeaderTransitionActive: !prevState.isRightBottomHeaderTransitionActive,
+                isRightTopHeaderTransitionActive: !prevState.isRightTopHeaderTransitionActive
+            }), () => {
+                setTimeout(() => {
+                    if (this.state.selectedHeaderOption !== option) {
+                        this.setState({
+                            selectedHeaderOption: option,
+                        })
+                    } else {
+                        this.setState({selectedHeaderOption: ''})
+                    }
+                }, 800)
 
-        this.setState((prevState) => ({ 
-            // selectedHeaderOption: option,
-            isLeftHeaderTransitionActive: !prevState.isLeftHeaderTransitionActive,
-            isRightBottomHeaderTransitionActive: !prevState.isRightBottomHeaderTransitionActive,
-            isRightTopHeaderTransitionActive: !prevState.isRightTopHeaderTransitionActive
-        }), () => {
+                setTimeout(() => {
+                    this.setState({
+                        isLeftHeaderTransitionActive: false,
+                        isRightBottomHeaderTransitionActive: false,
+                        isRightTopHeaderTransitionActive: false
+                    })
+                }, 1800)
+            });
+        } else if (this.state.selectedHeaderOption === option) {
+            this.setState((prevState) => ({
+                // isLeftHeaderTransitionActive: !prevState.isLeftHeaderTransitionActive,
+                // isRightBottomHeaderTransitionActive: !prevState.isRightBottomHeaderTransitionActive,
+                // isRightTopHeaderTransitionActive: !prevState.isRightTopHeaderTransitionActive,
+            }), () => {
+                setTimeout(() => {
+                    this.setState({
+                        selectedHeaderOption: ''
+                    })
+                }, 800)
+            })
+        } else {
             setTimeout(() => {
                 if (this.state.selectedHeaderOption !== option) {
                     this.setState({
                         selectedHeaderOption: option
                     })
-                } else {
-                    this.setState({selectedHeaderOption: ''})
                 }
-            }, 1000)
-        });
+            }, 1000) 
+        }
+        
     
         // Optional: Reset after animation ends
         // setTimeout(() => {
@@ -10052,6 +10307,23 @@ export default class LandingPg extends Component {
                     showWalletTopUpBtnHome: true
                 })
             }, 2500)
+        })
+    }
+
+    fyiShowNextWeatherOptions = () => {
+        this.setState({
+            displayMoreWeatherOptions: true,
+            weatherDisplaySwiped: true,
+            displayPrevWeatherOptions: false,
+        })
+    }
+
+    fyiShowPrevWeatherOptions = () => {
+       
+        this.setState({
+            displayPrevWeatherOptions: true,
+            weatherDisplaySwiped: false,
+            displayMoreWeatherOptions: false
         })
     }
 
@@ -13754,7 +14026,109 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right'>
-
+                                                                <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top'>
+                                                                    <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-navigation'>
+                                                                        <div className={`homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-navigation-top ${this.state.weatherDisplaySwiped ? 'hidden' : ''}`}>
+                                                                            <img onClick={() => this.fyiShowNextWeatherOptions()} src='/assets/icons/home-profile/jipange-settings-next-calendar-icon.png'/>
+                                                                        </div>
+                                                                        <div className={`homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-navigation-bottom ${this.state.weatherDisplaySwiped ? '' : 'hidden'}`}>
+                                                                            <img onClick={() => this.fyiShowPrevWeatherOptions()} src='/assets/icons/home-profile/jipange-settings-prev-calendar-icon.png'/>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className={`homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-container ${this.state.displayMoreWeatherOptions ? 'slide-next' : this.state.displayPrevWeatherOptions ? 'slide-prev' : ''}`}>
+                                                                        <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell'>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-time'>
+                                                                                <p>6</p>
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon'>
+                                                                                <label>☁️</label>
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp'>
+                                                                                <h5>18º</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell'>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-time'>
+                                                                                <p>7</p>
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon'>
+                                                                                <label>☁️</label>
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp'>
+                                                                                <h5>19º</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell'>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-time'>
+                                                                                <p>8</p>
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon'>
+                                                                                <label>☁️</label>
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp'>
+                                                                                <h5>21º</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell'>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-time'>
+                                                                                <p>9</p>
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon'>
+                                                                                <label>⛅️</label>
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp'>
+                                                                                <h5>21º</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell'>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-time'>
+                                                                                <p>10</p>
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon'>
+                                                                                <label>⛅️</label>
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp'>
+                                                                                <h5>22º</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell'>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-time'>
+                                                                                <p>11</p>
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon'>
+                                                                                <label>🌤️</label>
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp'>
+                                                                                <h5>23º</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell'>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-time'>
+                                                                                <p>12</p>
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon'>
+                                                                                <label>☀️</label>
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp'>
+                                                                                <h5>24º</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell'>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-time'>
+                                                                                <p>13</p>
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon'>
+                                                                                <label>☀️</label>
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp'>
+                                                                                <h5>24º</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom'>
+                                                                    
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -13965,6 +14339,11 @@ export default class LandingPg extends Component {
                                                             }
                                                         </div>
                                                     </div>
+
+                                                    <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-1 ${this.state.selectedHeaderOption === 'option-1' ? 'open' : ''}`}>
+
+                                                    </div>
+
                                                     <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
                                                         <h3>What do you need?</h3>
                                                         <div className='shopping-list-feature-container'>
@@ -13989,6 +14368,8 @@ export default class LandingPg extends Component {
                                                             </ul>
                                                         </div>
                                                     </div>
+
+
                                                 </div>
                                             </div>
                                         ) : (
@@ -14175,6 +14556,11 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                             </div>
                                                         </div>
+
+                                                        <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-1 ${this.state.selectedHeaderOption === 'option-1' ? 'open' : ''}`}>
+
+                                                        </div>
+
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
                                                             <h1><label>🛒</label> Shopping Assistant</h1>
                                                             <p>We'll help you find what you're looking for!</p>
@@ -14200,6 +14586,7 @@ export default class LandingPg extends Component {
 
                                                             }
                                                         </div>
+
                                                     </div>
                                                 </div>
                                             ) : (
@@ -14213,7 +14600,14 @@ export default class LandingPg extends Component {
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container ${this.state.isRightBottomHeaderTransitionActive ? "animate-peel" : ""}`}>
                                                             <h1>D<label>id you know?</label></h1>
                                                         </div>
+
+                                                        <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-1 ${this.state.selectedHeaderOption === 'option-1' ? 'open' : ''}`}>
+
+                                                            <h3></h3>
+                                                        </div>
+
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
+
                                                             <h3></h3>
                                                         </div>
                                                     </div>
