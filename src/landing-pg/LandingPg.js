@@ -6385,12 +6385,14 @@ const Styles = styled.div `
     bottom: 0rem;
     border: 1px solid black;
     width: 99.35%;
-    height: 78.5%;
+    height: 82.5%;
 }
 
 .shopping-list-feature-container-new-list {
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    height: 100%;
+    height: 85%%;
     border: 1px solid black;
     overflow-y: auto;
 }
