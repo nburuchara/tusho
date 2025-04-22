@@ -6385,7 +6385,7 @@ const Styles = styled.div `
     bottom: 0rem;
     border: 1px solid black;
     width: 99.35%;
-    height: 75%;
+    height: 78.5%;
 }
 
 .shopping-list-feature-container-new-list {
@@ -6400,7 +6400,8 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container-new-list ul {
-    padding-top: 0px;
+
+    margin-top: 0px;
     padding-left: 1.5rem;
 }
 
