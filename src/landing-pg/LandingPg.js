@@ -6371,16 +6371,7 @@ const Styles = styled.div `
     font-family: raleway;
 }
 
-.shopping-list-feature-container {
-    position: absolute;
-    bottom: 1rem;
-    // border: 1px solid black;
-    width: 99.35%;
-    height: 89%;
-    overflow-y: auto;
-}
-
-.shopping-list-feature-container p {
+.homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 p {
     margin-left: 3.5%;
     margin-right: 3.5%;
     margin-top: 0.2rem;
@@ -6389,15 +6380,35 @@ const Styles = styled.div `
     color: #5e626a;
 }
 
-.shopping-list-feature-container ul {
+.shopping-list-feature-container {
+    position: absolute;
+    bottom: 0rem;
+    border: 1px solid black;
+    width: 99.35%;
+    height: 75%;
+}
+
+.shopping-list-feature-container-new-list {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    overflow-y: auto;
+}
+
+.shopping-list-feature-container-new-list p {
+  
+}
+
+.shopping-list-feature-container-new-list ul {
+    padding-top: 0px;
     padding-left: 1.5rem;
 }
 
-.shopping-list-feature-container li {
+.shopping-list-feature-container-new-list li {
     margin-bottom: 0.15rem;
 }
 
-.shopping-list-feature-container input {
+.shopping-list-feature-container-new-list input {
     width: 90%;
     padding: 0.2rem 0.35rem;
     font-size: 0.85rem;
@@ -14364,31 +14375,36 @@ export default class LandingPg extends Component {
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-new-products-header'>
                                                             <h1>Feature</h1>
                                                             <img src='/assets/images/home-main-header/header-feature-demo.jpg'/>
+                                                            <div className='homepage-header-inner-body-poster-right-left-section-logged-in-new-products-intro-sign'>
+
+                                                            </div>
                                                         </div>
                                                     </div>
 
                                                     <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
                                                         <h3>What do you need?</h3>
+                                                        <p>
+                                                        Press <strong>Enter</strong> to add a new item, <strong>Backspace</strong> on an empty item to delete it.
+                                                        </p>
                                                         <div className='shopping-list-feature-container'>
-                                                            <p>
-                                                            Press <strong>Enter</strong> to add a new item, <strong>Backspace</strong> on an empty item to delete it.
-                                                            </p>
-                                                            <ul style={{listStyleType: 'disc'}}>
-                                                                {this.state.items.map((item, index) => (
-                                                                    <li key={index}>
-                                                                    <input
-                                                                    type="text"
-                                                                    value={item}
-                                                                    onChange={(e) => this.handleShoppingListTextChange(e, index)}
-                                                                    onKeyDown={(e) => this.handleShoppingListTextKeyDown(e, index)}
-                                                                    ref={this.inputRefs[index]}
-                                                                    placeholder="Add item"
-                                                                    onFocus={(e) => (e.target.style.borderColor = '#007BFF')}
-                                                                    onBlur={(e) => (e.target.style.borderColor = '#ccc')}
-                                                                    />
-                                                                    </li>
-                                                                ))}
-                                                            </ul>
+                                                            <div className='shopping-list-feature-container-new-list'>
+                                                                <ul style={{listStyleType: 'disc'}}>
+                                                                    {this.state.items.map((item, index) => (
+                                                                        <li key={index}>
+                                                                        <input
+                                                                        type="text"
+                                                                        value={item}
+                                                                        onChange={(e) => this.handleShoppingListTextChange(e, index)}
+                                                                        onKeyDown={(e) => this.handleShoppingListTextKeyDown(e, index)}
+                                                                        ref={this.inputRefs[index]}
+                                                                        placeholder="Add item"
+                                                                        onFocus={(e) => (e.target.style.borderColor = '#007BFF')}
+                                                                        onBlur={(e) => (e.target.style.borderColor = '#ccc')}
+                                                                        />
+                                                                        </li>
+                                                                    ))}
+                                                                </ul>
+                                                            </div>
                                                         </div>
                                                     </div>
 
