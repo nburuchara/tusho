@@ -6385,14 +6385,14 @@ const Styles = styled.div `
     bottom: 0rem;
     border: 1px solid black;
     width: 99.35%;
-    height: 82.5%;
+    height: 83.5%;
 }
 
 .shopping-list-feature-container-new-list {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 85%%;
+    height: 85%;
     border: 1px solid black;
     overflow-y: auto;
 }
@@ -8873,6 +8873,11 @@ export default class LandingPg extends Component {
         }, 500); // Adjust debounce delay as needed
     };
 
+    handleSearchChangeShoppingAssistant = (e) => {
+
+        
+    }
+
     handleSearchChangeFAQ = (e) => {
 
         this.setState({
@@ -10159,9 +10164,83 @@ export default class LandingPg extends Component {
     };
     
     handleShoppingListTextChange = (e, index) => {
+
         const newItems = [...this.state.items];
         newItems[index] = e.target.value;
         this.setState({ items: newItems });
+
+        this.setState({
+            searchBarInputShopAssistant: e.target.value,
+            isSearchLoadingShopAssistant: true,
+            clearSearchBtn: true,
+            showTimezones: false
+        });
+    
+        const searchInput = e.target.value.toLowerCase();
+    
+        // Clear previous timeout
+        clearTimeout(this.searchTimeout);
+    
+        // Set a new timeout to execute after 500ms (debounce)
+        this.searchTimeout = setTimeout(() => {
+            if (searchInput.trim() === "") {
+                this.setState({
+                    searchedData: "",
+                    searchCloseBtn: false,
+                    filteredOptions: [],
+                    isSearchLoadingShopAssistant: false,
+                    resultsFound: false,
+                    clearSearchBtn: false,
+                });
+            } else {
+                this.setState({ isSearchLoadingShopAssistant: true, searchedData: searchInput, searchCloseBtn: true }, () => {
+                    let filteredOptions = AccountSearchTerms.filter(option => {
+                        const name = option.name.toLowerCase();
+                        const searchWords = searchInput.toLowerCase().split(" ");
+                        const optionWords = name.split(" ");
+    
+                        if (searchWords.length === 1) {
+                            return optionWords.some(optionWord => optionWord.startsWith(searchWords[0]));
+                        } else {
+                            return name.includes(searchWords.join(" "));
+                        }
+                    });
+    
+                    const resultsFound = filteredOptions.length > 0;
+    
+                    // 🔹 Update `qty` for search results based on cart
+                    const updatedOptions = filteredOptions.map(option => {
+                        const cartItem = this.state.products.find(item => item.id === option.id);
+                        return {
+                            ...option,
+                            qty: cartItem ? cartItem.qty : 0, // Use cart qty if exists, otherwise default to 0
+                            highlightedName: this.highlightMatchedCharacters(option, searchInput),
+                        };
+                    });
+    
+                    const groupedResults = this.groupBy(updatedOptions, "category");
+    
+                    // Construct trie for each category
+                    const trieByCategory = {};
+                    Object.entries(groupedResults).forEach(([category, options]) => {
+                        trieByCategory[category] = new Trie();
+                        options.forEach(option => {
+                            trieByCategory[category].insert(option.name.toLowerCase());
+                        });
+                    });
+    
+                    // 🔹 Update state with updated search results (with cart quantities)
+                    this.setState({
+                        trieByCategory,
+                        groupedOptionsShopAssistant: groupedResults,
+                        filteredOptions: updatedOptions, // Updated search results
+                        isSearchLoadingShopAssistant: false,
+                        resultsFoundShopAssistant: resultsFound,
+                    });
+                });
+            }
+        }, 500); // Adjust debounce delay as needed
+
     };
 
     promoCategoryClicked = (promoType) => {
@@ -10363,7 +10442,7 @@ export default class LandingPg extends Component {
 
     render () {
 
-        const { searchBarIsClicked, searchInput, isSearchLoading, isSearchLoadingJipange, isSearchLoadingAccountPopup, isSearchLoadingFAQ, resultsFound, resultsFoundJipange, resultsFoundAccountPopup, resultsFoundFAQ, groupedOptions, groupedOptionsJipange, groupedOptionsAccountPopup, groupedOptionsFAQ } = this.state;
+        const { searchBarIsClicked, searchInput, isSearchLoading, isSearchLoadingJipange, isSearchLoadingAccountPopup, isSearchLoadingFAQ, isSearchLoadingShopAssistant, resultsFound, resultsFoundJipange, resultsFoundAccountPopup, resultsFoundFAQ, resultsFoundShopAssistant, groupedOptions, groupedOptionsJipange, groupedOptionsAccountPopup, groupedOptionsFAQ, groupedOptionsShopAssistant} = this.state;
         const { currentMonth, currentYear, selectedDates } = this.state;
         const daysInMonth = this.getDaysInMonth(currentMonth, currentYear);
         const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -14624,9 +14703,58 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 </div>
                                                             }
-                                                            {this.state.showShopAssistant
-
-                                                            }
+                                                            {searchInput !== "" && (
+                                                                <div className={`searchResults ${this.state.searchBarInput === '' ? 'empty' : ''}`}>
+                                                                    {isSearchLoading && 
+                                                                        <div className='searchResultsLoading'>
+                                                                            <p>Loading...</p>
+                                                                        </div>
+                                                                    }
+                                                                    {!isSearchLoading && resultsFound && 
+                                                                        Object.entries(groupedOptions).map(([category, options]) => (
+                                                                            <div style={{borderBottom: "1px solid #ccc", position: "sticky"}} key={category}>
+                                                                                {options.map(option => (
+                                                                                    <div 
+                                                                                    onClick={() => this.mainSearchBarSearchedTermClicked(category, option)}
+                                                                                    className='searchResultCell' 
+                                                                                    key={option.id}>
+                                                                                        <div className='searchResultCellImg'>
+                                                                                            <img src={option.image}/>
+                                                                                        </div>
+                                                                                        <div className='searchResultCellDetails'>
+                                                                                            <p className='searchResultOption'>{option.highlightedName} • <label><>KES</> {option.price}</label> </p>
+                                                                                            <p className='searchResultCategory'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null }</p> 
+                                                                                        </div>
+                                                                                        <div className='searchResultCellLabel'>
+                                                                                            {option.qty === 0 && 
+                                                                                                <p>[click to add to cart]</p>
+                                                                                            }
+                                                                                            {option.qty > 0 &&
+                                                                                                <div className='searchResultCellLabelNonZeroQty'>
+                                                                                                    <div onClick={() => this.mainPageProductsHandleQtyChange(option.id, -1)} className='searchResultCellLabelNonZeroQtyChangeLeft'>
+                                                                                                        -
+                                                                                                    </div>
+                                                                                                    <div className='searchResultCellLabelNonZeroQtyValue'>
+                                                                                                        <label>{option.qty}</label>
+                                                                                                    </div>
+                                                                                                    <div onClick={() => this.mainPageProductsHandleQtyChange(option.id, 1)} className='searchResultCellLabelNonZeroQtyChangeRight'>
+                                                                                                        +
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            }
+                                                                                        </div>
+                                                                                    </div>
+                                                                                ))}
+                                                                            </div>
+                                                                        ))
+                                                                    }
+                                                                    {!isSearchLoading && !resultsFound &&
+                                                                        <div className='navbar-search-bar-no-results' style={{textAlign: "center"}}>
+                                                                            <p style={{fontWeight: "bold", marginTop: "4.25%", color: "#FF5733"}}>No results found</p>
+                                                                        </div>
+                                                                    }
+                                                                </div>
+                                                            )}
                                                         </div>
 
                                                     </div>
