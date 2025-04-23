@@ -7510,7 +7510,7 @@ const Styles = styled.div `
     height: 100%;
     width: 99.5%;
     border-top-right-radius: 24px;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     justify-content: space-between;
 }
@@ -7519,6 +7519,7 @@ const Styles = styled.div `
     width: 50%;
     // border: 1px solid black;
     position: relative;
+    z-index: 1;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left img {
@@ -7533,7 +7534,7 @@ const Styles = styled.div `
     position: absolute;
     top: 0.75rem;
     left: 1.15rem;
-    z-index: 1;
+    z-index: 3;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -7552,7 +7553,7 @@ const Styles = styled.div `
     bottom: 1rem;
     right: -1.65rem;
     height: 53.5%;
-    z-index: 0;
+    z-index: 2;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -7566,8 +7567,10 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right {
     width: 50%;
-    border: 1px solid black;
+    // border: 1px solid black;
     border-top-right-radius: 24px;
+    position: relative;
+    z-index: 0;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
@@ -14971,7 +14974,7 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right'>
-
+                                                                    <div></div>
                                                                 </div>
                                                             </div>
                                                         </div>
