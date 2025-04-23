@@ -7509,7 +7509,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product {
     height: 100%;
     width: 99.5%;
-    border-top-right-radius: 25px;
+    border-top-right-radius: 24px;
     border: 1px solid black;
     display: flex;
     justify-content: space-between;
@@ -7518,12 +7518,51 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left {
     width: 50%;
     border: 1px solid black;
+    position: relative;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left img {
+    border: 1.5px solid #ff5733 !important;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-img-1 {
+    width: 52%;
+    border: 1px solid black;
+    height: 52%;
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-img-1:hover {
+    transform: scale(2);
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-img-1 img {
+    width: 100%;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-img-2 {
+    width: 52%;
+    border: 1px solid black;
+    position: absolute;
+    bottom: 0.25rem;
+    right: 0.25rem;
+    height: 52%;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-img-2:hover {
+    transform: scale(2);
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-img-2 img {
+    width: 100%;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right {
     width: 50%;
     border: 1px solid black;
-    border-top-right-radius: 25px;
+    border-top-right-radius: 24px;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
@@ -14918,7 +14957,17 @@ export default class LandingPg extends Component {
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-1 ${this.state.selectedHeaderOption === 'option-1' ? 'open' : ''}`}>
                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product'>
-                                                                
+                                                                <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left'>
+                                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-img-1'>
+                                                                        <img src='/assets/images/home-main-header/header-feature-product-1.jpg'/>
+                                                                    </div>
+                                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-img-2'>
+                                                                        <img src='/assets/images/home-main-header/header-feature-product-2.jpg'/>
+                                                                    </div>
+                                                                </div>
+                                                                <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right'>
+
+                                                                </div>
                                                             </div>
                                                         </div>
 
