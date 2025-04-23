@@ -6502,10 +6502,54 @@ const Styles = styled.div `
     text-align: left;
 }
 
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 85%;
+    margin-top: 0.65rem;
+    border: 1px solid transparent;
+    border-top: 8px solid #ff5733;
+    border-right: 7.5px solid #ff5733;
+  }
+  
+  .image-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 8px solid white; /* Match your page background */
+    border-right: 8px solid transparent;
+  }
+
 .homepage-header-inner-body-poster-right-left-section-logged-in-new-products-header img {
     width: 85%;
     margin-top: 0.65rem;
     border: 1px solid transparent;
+    border-top: 8px solid #ff5733;
+    border-right: 7.5px solid #ff5733;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-new-products-intro-sign {
+    position: absolute;
+    bottom: 0.85rem;
+    right: 1rem;
+    height: 1.8rem;
+    width: 60%;
+    border: 1px solid white;
+    background-color: #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-new-products-intro-sign h5 {
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: lexend;
+    font-size: 85%;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 {
@@ -9043,11 +9087,6 @@ export default class LandingPg extends Component {
             }
         }, 500); // Adjust debounce delay as needed
     };
-
-    handleSearchChangeShoppingAssistant = (e) => {
-
-        
-    }
 
     handleSearchChangeFAQ = (e) => {
 
@@ -14629,7 +14668,7 @@ export default class LandingPg extends Component {
                                                             <h1>Feature</h1>
                                                             <img src='/assets/images/home-main-header/header-feature-demo.jpg'/>
                                                             <div className='homepage-header-inner-body-poster-right-left-section-logged-in-new-products-intro-sign'>
-
+                                                                <h5>Meet Chef Mashanda!</h5>
                                                             </div>
                                                         </div>
                                                     </div>
