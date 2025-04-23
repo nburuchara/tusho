@@ -7573,6 +7573,22 @@ const Styles = styled.div `
     z-index: 0;
 }
 
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-quote {
+    position: absolute;
+    top: 0.75rem;
+    height: 30%;
+    right: 0.65rem;
+    width: 85%;
+    border: 1px solid #20313a;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-quote h4 {
+    margin-top: 0px;
+    font-size: 95%;
+    font-family: lexend;
+    color: #20313a;
+}
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
     position: absolute;
     top: 0;
@@ -14974,8 +14990,8 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right'>
-                                                                    <div className=''>
-
+                                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-quote'>
+                                                                        <h4>We bake our goods fresh from scratch fresh everday.</h4>
                                                                     </div>
                                                                 </div>
                                                             </div>
