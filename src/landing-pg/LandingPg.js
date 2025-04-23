@@ -21,7 +21,7 @@ const Styles = styled.div `
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-    z-index: 2; /* Below the side pane but above the full page */
+    z-index: 3; /* Below the side pane but above the full page */
     display: none; /* Hidden by default */
 }
 
@@ -1011,6 +1011,7 @@ const Styles = styled.div `
     justify-content: space-between;
     cursor: pointer;
     pointer-events: none;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, position 0.5s ease-in-out;
 }
 
 .navbar-options-dropdown.clicked {
@@ -1020,7 +1021,6 @@ const Styles = styled.div `
     opacity: 1;
     pointer-events: auto;
     cursor: pointer;
-    transition-property: transform, opacity;
 }
 
 
@@ -1519,13 +1519,13 @@ const Styles = styled.div `
     opacity: 0;
     flex-direction: column;
     transform: translateX(100%); /* Default transform */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     z-index: 3;
 }
 
 .navbar-options-checkout-home.clicked {
     transform: translateX(0); /* Slide into view */
     opacity: 1;
-    transition-property: transform, opacity;
 }
 
     // # NAVBAR CHECKOUT HOME HEADER
@@ -1863,7 +1863,7 @@ const Styles = styled.div `
     transform: translate(5%);
     opacity: 0;
     pointer-events: none;
-    transition-property: transform, opacity.
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .navbar-profile-dropdown.selected {
@@ -2297,7 +2297,7 @@ const Styles = styled.div `
     flex-direction: column;
     opacity: 0;
     pointer-events: none;
-    transition-property: transform, opacity;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .navbar-profile-account-popup.selected {
