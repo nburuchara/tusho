@@ -735,6 +735,176 @@ const Styles = styled.div `
     font-weight: bold;
 }
 
+
+// # SEARCH RESULTS
+
+.searchResultsShopAssistant {
+    z-index: 1;
+    position: relative;
+    // margin-left: -6%;
+    height: 9.15rem;
+    overflow: hidden;
+    overflow-y: auto;
+    width: 96.5%;
+    border-top: 1px solid #ccc;
+    // border-radius: 8px;
+    background-color: transparent;
+    margin-top: 5px;
+    padding: 5px;
+    // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.searchResultsShopAssistant.empty {
+    display: none;
+    pointer-events: none;
+}
+
+.searchResultCellShopAssistant {
+    padding: 2%;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-radius: 0px;
+    padding-bottom: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchResultCellShopAssistant:hover {
+    background-color: #faece9;
+    border-top: 0.5px solid #ff5733;
+    border-bottom: 0.5px solid #ff5733;
+    cursor: pointer;
+    transform: scale(1.02);
+}
+
+.searchResultCellShopAssistant:hover .searchResultCellImgShopAssistant img {
+    // background-color: #fff;
+}
+
+.searchResultCellImgShopAssistant {
+    width: 22.5px;
+    height: 22.5px;
+    margin-left: -0.2rem;
+    margin-top: 0.225rem;
+    // border: 1px solid black;
+}
+
+.searchResultCellImgShopAssistant img {
+    width: 85%;
+    height: 85%;
+    border: 1px solid white !important;
+    border-radius: 8px;
+    padding: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.searchResultCellDetailsShopAssistant {
+    width: 65%;
+    padding-left: 5%;
+    padding-right: 1.5%;
+    // border: 1px solid black;
+}
+
+.searchResultCellLabelShopAssistant {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border: 1px solid black;
+}
+
+.searchResultCellLabelShopAssistant p {
+    font-size: 20%;
+}
+
+.searchResultCellLabelNonZeroQtyShopAssistant {
+    border: 1px solid #ff5733;
+    width: 70%;
+    height: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 6px;
+}
+
+.searchResultCellLabelNonZeroQtyChangeLeftShopAssistant {
+    width: 30%;
+    // border: 1px solid black;
+    color: #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: poppins;
+    font-size: 80%;
+    border: 0.5px solid transparent;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #ff5733;
+    color: white;
+}
+
+.searchResultCellLabelNonZeroQtyChangeLeftShopAssistant:hover {
+    border: 0.5px solid white;
+}
+
+.searchResultCellLabelNonZeroQtyChangeRightShopAssistant {
+    width: 30%;
+    // border: 1px solid black;
+    color: #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-family: poppins;
+    font-size: 80%;
+    border: 0.5px solid transparent;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #ff5733;
+    color: white;
+}
+
+.searchResultCellLabelNonZeroQtyChangeRightShopAssistant:hover {
+    border: 0.5px solid white;
+}
+
+.searchResultCellLabelNonZeroQtyValueShopAssistant {
+    width: 40%;
+    // border: 1px solid black;
+    border-left: 1px solid #ff5733;
+    border-right: 1px solid #ff5733;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70%;
+    font-family: poppins;
+    font-weight: bold;
+}
+
+.searchResultCellShopAssistant p {
+    margin-top: 2.5px;
+    margin-bottom: 3px;
+    font-family: poppins;
+    margin-left: 2.5%;
+}
+
+.searchResultOptionShopAssistant {
+    // margin-top: 10px;
+    font-size: 65%;
+}
+
+.searchResultOptionShopAssistant label {
+    font-weight: bold;
+    color: #ff5733;
+}
+
+.searchResultCategoryShopAssistant {
+    font-size: 70%;
+    margin-bottom: 0px;
+}
+
     // - NAVBAR SHOPPING CART - //
 
 .navbar-shopping-cart-area {
@@ -5693,7 +5863,7 @@ const Styles = styled.div `
     // border-bottom: 1px solid #ff5733;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: #faece9;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-time {
@@ -7332,7 +7502,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-shopping-assist {
     // border: 1px solid black;
     width: 99.5%;
-    height: 66.25%;
+    height: 85.25%;
 }
 
 .shopping-assistant-loading {
@@ -8386,6 +8556,7 @@ export default class LandingPg extends Component {
             showShopAssistantLoading: false,
             items: [''], // Shopping list items (starts with one empty bullet)
             focusIndex: null, // 👈 Track which input to focus
+            searchBarInputShopAssistant: '',
             
             //* # WALLET # *//
             showWalletTopUpHomeView: true,
@@ -10194,7 +10365,7 @@ export default class LandingPg extends Component {
                 });
             } else {
                 this.setState({ isSearchLoadingShopAssistant: true, searchedData: searchInput, searchCloseBtn: true }, () => {
-                    let filteredOptions = AccountSearchTerms.filter(option => {
+                    let filteredOptions = products.filter(option => {
                         const name = option.name.toLowerCase();
                         const searchWords = searchInput.toLowerCase().split(" ");
                         const optionWords = name.split(" ");
@@ -14688,14 +14859,13 @@ export default class LandingPg extends Component {
                                                             {this.state.showShopAssistantLoading && 
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-shopping-assist'>
                                                                     <div className='shopping-assistant-loading'>
-                                                                        <RotatingLines
+                                                                        <TailSpin
                                                                         visible={true}
-                                                                        height="23.5"
-                                                                        width="23.5"
-                                                                        strokeColor="#FF5733"
-                                                                        strokeWidth="3"
-                                                                        animationDuration="0.75"
-                                                                        ariaLabel="rotating-lines-loading"
+                                                                        height="23.5px"
+                                                                        width="23.5px"
+                                                                        color="#ff5733"
+                                                                        ariaLabel="tail-spin-loading"
+                                                                        radius="2"
                                                                         wrapperStyle={{}}
                                                                         wrapperClass=""
                                                                         />
@@ -14704,40 +14874,52 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                             }
                                                             {searchInput !== "" && (
-                                                                <div className={`searchResults ${this.state.searchBarInput === '' ? 'empty' : ''}`}>
-                                                                    {isSearchLoading && 
-                                                                        <div className='searchResultsLoading'>
-                                                                            <p>Loading...</p>
+                                                                <div className={`searchResultsShopAssistant ${this.state.searchBarInputShopAssistant === '' ? 'empty' : ''}`}>
+                                                                    {isSearchLoadingShopAssistant && 
+                                                                        <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-shopping-assist'>
+                                                                            <div className='shopping-assistant-loading'>
+                                                                                <TailSpin
+                                                                                visible={true}
+                                                                                height="23.5px"
+                                                                                width="23.5px"
+                                                                                color="#ff5733"
+                                                                                ariaLabel="tail-spin-loading"
+                                                                                radius="2"
+                                                                                wrapperStyle={{}}
+                                                                                wrapperClass=""
+                                                                                />
+                                                                                <p>Fetching products...</p>
+                                                                            </div>
                                                                         </div>
                                                                     }
-                                                                    {!isSearchLoading && resultsFound && 
-                                                                        Object.entries(groupedOptions).map(([category, options]) => (
+                                                                    {!isSearchLoadingShopAssistant && resultsFoundShopAssistant && 
+                                                                        Object.entries(groupedOptionsShopAssistant).map(([category, options]) => (
                                                                             <div style={{borderBottom: "1px solid #ccc", position: "sticky"}} key={category}>
                                                                                 {options.map(option => (
                                                                                     <div 
                                                                                     onClick={() => this.mainSearchBarSearchedTermClicked(category, option)}
-                                                                                    className='searchResultCell' 
+                                                                                    className='searchResultCellShopAssistant' 
                                                                                     key={option.id}>
-                                                                                        <div className='searchResultCellImg'>
+                                                                                        <div className='searchResultCellImgShopAssistant'>
                                                                                             <img src={option.image}/>
                                                                                         </div>
-                                                                                        <div className='searchResultCellDetails'>
-                                                                                            <p className='searchResultOption'>{option.highlightedName} • <label><>KES</> {option.price}</label> </p>
-                                                                                            <p className='searchResultCategory'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null }</p> 
+                                                                                        <div className='searchResultCellDetailsShopAssistant'>
+                                                                                            <p className='searchResultOptionShopAssistant'>{option.highlightedName} • <label><>KES</> {option.price}</label> </p>
+                                                                                            {/* <p className='searchResultCategoryShopAssistant'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null }</p>  */}
                                                                                         </div>
-                                                                                        <div className='searchResultCellLabel'>
+                                                                                        <div className='searchResultCellLabelShopAssistant'>
                                                                                             {option.qty === 0 && 
                                                                                                 <p>[click to add to cart]</p>
                                                                                             }
                                                                                             {option.qty > 0 &&
-                                                                                                <div className='searchResultCellLabelNonZeroQty'>
-                                                                                                    <div onClick={() => this.mainPageProductsHandleQtyChange(option.id, -1)} className='searchResultCellLabelNonZeroQtyChangeLeft'>
+                                                                                                <div className='searchResultCellLabelNonZeroQtyShopAssistant'>
+                                                                                                    <div onClick={() => this.mainPageProductsHandleQtyChange(option.id, -1)} className='searchResultCellLabelNonZeroQtyChangeLeftShopAssistant'>
                                                                                                         -
                                                                                                     </div>
-                                                                                                    <div className='searchResultCellLabelNonZeroQtyValue'>
+                                                                                                    <div className='searchResultCellLabelNonZeroQtyValueShopAssistant'>
                                                                                                         <label>{option.qty}</label>
                                                                                                     </div>
-                                                                                                    <div onClick={() => this.mainPageProductsHandleQtyChange(option.id, 1)} className='searchResultCellLabelNonZeroQtyChangeRight'>
+                                                                                                    <div onClick={() => this.mainPageProductsHandleQtyChange(option.id, 1)} className='searchResultCellLabelNonZeroQtyChangeRightShopAssistant'>
                                                                                                         +
                                                                                                     </div>
                                                                                                 </div>
@@ -14748,7 +14930,7 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                         ))
                                                                     }
-                                                                    {!isSearchLoading && !resultsFound &&
+                                                                    {!isSearchLoadingShopAssistant && !resultsFoundShopAssistant &&
                                                                         <div className='navbar-search-bar-no-results' style={{textAlign: "center"}}>
                                                                             <p style={{fontWeight: "bold", marginTop: "4.25%", color: "#FF5733"}}>No results found</p>
                                                                         </div>
