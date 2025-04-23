@@ -7506,6 +7506,26 @@ const Styles = styled.div `
     visibility: visible;
 }
 
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product {
+    height: 100%;
+    width: 99.5%;
+    border-top-right-radius: 25px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left {
+    width: 50%;
+    border: 1px solid black;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right {
+    width: 50%;
+    border: 1px solid black;
+    border-top-right-radius: 25px;
+}
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
     position: absolute;
     top: 0;
@@ -14897,7 +14917,9 @@ export default class LandingPg extends Component {
                                                         </div>
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-1 ${this.state.selectedHeaderOption === 'option-1' ? 'open' : ''}`}>
-
+                                                            <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product'>
+                                                                
+                                                            </div>
                                                         </div>
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
