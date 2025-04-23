@@ -6497,14 +6497,14 @@ const Styles = styled.div `
     left: 0.25rem;
     font-weight: normal;
     font-size: 50px;
-    color: #5e626a;
+    color: #20313a;
     font-family: raleway;
     text-align: left;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-new-products-header img {
     width: 85%;
-    margin-top: 0.65rem;
+    margin-top: 0.85rem;
     border: 1px solid transparent;
     border-top: 6px solid #ff5733;
     border-right: 6.5px solid #ff5733;
@@ -6533,18 +6533,26 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-new-products-footer {
     height: 50%;
-    border: 1px solid #ff5733;
+    // border: 1px solid #ff5733;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-new-products-footer h5 {
     font-family: lexend;
-    margin-top: 0px;
+    margin-top: -3.5rem;
     margin-bottom: 0px; 
     margin-left: 2rem; 
-    margin-right: 2rem; 
+    margin-right: 2rem;
+    color: #20313a;
+    font-size: 14.5px;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-new-products-footer label {
+    text-decoration: underline;
+    color: #ff5733;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 {
@@ -14667,7 +14675,7 @@ export default class LandingPg extends Component {
                                                             </div>
                                                         </div>
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-new-products-footer'>
-                                                            <h5>After spending 8 years crafting main courses, baked goods, and desserts in some of Nairobi’s top restaurants, Chef Mashanda launched Mashanda Masterpieces—a line of exquisite baked goods now available for order on the Tushop platform.</h5>
+                                                            <h5>After spending 8 years crafting main courses, baked goods, and desserts in some of Nairobi’s top restaurants, Chef Mashanda launched <label>"Mashanda's Masterpieces"</label> —a line of exquisite baked goods now available for order on the Tushop platform.</h5>
                                                         </div>
                                                     </div>
 
