@@ -7567,7 +7567,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right {
     width: 50%;
-    // border: 1px solid black;
+    border: 1px solid black;
     border-top-right-radius: 24px;
     position: relative;
     z-index: 0;
@@ -14974,7 +14974,9 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right'>
-                                                                    <div></div>
+                                                                    <div className=''>
+
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
