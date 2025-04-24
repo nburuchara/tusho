@@ -7859,6 +7859,19 @@ const Styles = styled.div `
     border-radius: 5px;
     background-color: #faece9;
     border: 1px solid #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.new-product-cell-qty-container-zero:hover {
+    background-color: #ff5733;
+}
+
+.new-product-cell-qty-container-zero:hover p {
+    color: white;
 }
 
 .new-product-cell-qty-container-zero p {
