@@ -6642,6 +6642,7 @@ const Styles = styled.div `
     display: flex;
     padding-left: 3.25%;
     padding-right: 3.25%;
+    padding-bottom: 0.05rem;
     align-items: center;
     justify-content: center;
     border-radius: 20px;
@@ -6649,6 +6650,7 @@ const Styles = styled.div `
     height: 58%;
     margin-bottom: -0.75rem;
     background-color: #ff5733;
+    gap: 0.5rem;
 }
 
 .shopping-list-feature-container-header-left-sample p {
@@ -15269,7 +15271,10 @@ export default class LandingPg extends Component {
                                                             <div className='shopping-list-feature-container-header'>
                                                                 <div className='shopping-list-feature-container-header-left'>
                                                                     <div className='shopping-list-feature-container-header-left-sample'>
-                                                                        <p>weekly essentials  🥖</p>
+                                                                        <p>weekly essentials 🥖</p>
+                                                                    </div>
+                                                                    <div className='shopping-list-feature-container-header-left-sample'>
+                                                                        <p>choma day 🥩</p>
                                                                     </div>
                                                                 </div>
                                                                 <div className='shopping-list-feature-container-header-right'>
