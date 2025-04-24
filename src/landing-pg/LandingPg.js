@@ -6623,8 +6623,8 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     flex-direction: row;
-    padding-left: 1.5%;
-    padding-right: 1.5%;
+    padding-left: 3%;
+    padding-right: 3%;
     position: relative;
 }
 
@@ -6638,8 +6638,8 @@ const Styles = styled.div `
 
 .shopping-list-feature-container-header-left-sample {
     display: flex;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 3.25%;
+    padding-right: 3.25%;
     align-items: center;
     justify-content: center;
     border-radius: 20px;
@@ -6669,8 +6669,6 @@ const Styles = styled.div `
     width: 100%;
     height: 87.5%;
     border-top: 1px solid #ccc;
-    padding-left: 2%;
-    padding-right: 2%;
     overflow-y: auto;
 }
 
