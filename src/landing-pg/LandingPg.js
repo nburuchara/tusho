@@ -6621,8 +6621,10 @@ const Styles = styled.div `
     width: 75%;
     border: 1px solid black;
     display: flex;
-    // align-items: center;
+    align-items: center;
     flex-direction: row;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
 }
 
 .shopping-list-feature-container-header-left-sample {
@@ -6633,7 +6635,7 @@ const Styles = styled.div `
     justify-content: center;
     border-radius: 20px;
     width: auto;
-    height: 50%;
+    height: 55%;
     background-color: #ff5733;
 }
 
