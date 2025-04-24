@@ -6615,7 +6615,6 @@ const Styles = styled.div `
     height: 11.5%;
     display: flex;
     justify-content: space-between;
-    position: relative;
 }
 
 .shopping-list-feature-container-header-left {
@@ -6626,6 +6625,15 @@ const Styles = styled.div `
     flex-direction: row;
     padding-left: 1.5%;
     padding-right: 1.5%;
+    position: relative;
+}
+
+.shopping-list-feature-container-header-left h5 {
+    font-family: poppins;
+    color: #ff5733;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .shopping-list-feature-container-header-left-sample {
@@ -6637,7 +6645,7 @@ const Styles = styled.div `
     border-radius: 20px;
     width: auto;
     height: 58%;
-    margin-bottom: -1rem;
+    margin-bottom: -0.75rem;
     background-color: #ff5733;
 }
 
