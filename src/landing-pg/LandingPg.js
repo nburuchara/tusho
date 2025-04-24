@@ -6644,6 +6644,7 @@ const Styles = styled.div `
     padding-right: 3.25%;
     padding-bottom: 0.05rem;
     align-items: center;
+    border: 1px solid #ff5733;
     justify-content: center;
     border-radius: 20px;
     width: auto;
@@ -6651,7 +6652,17 @@ const Styles = styled.div `
     margin-bottom: -0.75rem;
     background-color: #ff5733;
     margin-right: 0.5rem;
+    cursor: pointer;
 }
+
+.shopping-list-feature-container-header-left-sample:hover { 
+    background-color: #faece9;
+}   
+
+.shopping-list-feature-container-header-left-sample:hover p { 
+    background-color: #faece9;
+    color: #ff5733;
+}   
 
 .shopping-list-feature-container-header-left-sample p {
     font-size: 75%;
