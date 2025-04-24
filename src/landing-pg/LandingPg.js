@@ -6611,7 +6611,7 @@ const Styles = styled.div `
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 85%;
+    height: 87.5%;
     border: 1px solid black;
     overflow-y: auto;
 }
@@ -15204,6 +15204,11 @@ export default class LandingPg extends Component {
                                                         Press <strong>Enter</strong> to add a new item, <strong>Backspace</strong> on an empty item to delete it.
                                                         </p>
                                                         <div className='shopping-list-feature-container'>
+
+                                                            <div className=''>
+
+                                                            </div>
+
                                                             <div className='shopping-list-feature-container-new-list'>
                                                                 <ul style={{listStyleType: 'disc'}}>
                                                                     {this.state.items.map((item, index) => (
