@@ -8940,8 +8940,9 @@ export default class LandingPg extends Component {
                 { id: 15, name: 'Mashanda\'s Rye Brown Loaf (Large)', oldPrice: 205.00, newPrice: 135.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/rye-bread-product.png'},
                 { id: 24, name: 'Mashanda\'s Assorted Buns (4pcs)', oldPrice: 205.00, newPrice: 330.00, type: 'product', description: '', qty: 0, promoParams: 'No expiry', img: '/assets/images/products/bread-product.png'},
                 { id: 9, name: 'Shuka Farms Fresh Strawberry Jam (35g)', oldPrice: 879.00, newPrice: 430.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/jam-product.png'},
-                { id: 12, name: 'Brookside Full Cream Milk Powder Tin (500g)', oldPrice: 369.00, newPrice: 1198.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/watermelon-product.webp'},
-                { id: 6, name: 'Get Ksh. 300 off orders over Ksh. 1999.', oldPrice: 205.00, newPrice: 'product', type: 'code', description: '', qty: 0, promoParams: 'Valid till 30/04/25', img: '/assets/images/codes/promoCode1.png'},
+                { id: 12, name: 'Brookside Full Cream Milk Powder Tin (500g)', oldPrice: 369.00, newPrice: 1198.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/brookside-milk-powder-product.webp'},
+                { id: 13, name: 'Mlango Farms Organic Red Chard', oldPrice: 205.00, newPrice: 55.00, type: 'product', description: '', qty: 0, promoParams: 'Valid till 30/04/25', img: '/assets/images/products/red-chard-spinach-product.png'},
+                { id: 16, name: 'Tushop Fresh Mixed Size Tomatoes', oldPrice: 205.00, newPrice: 85.00, type: 'product', description: '', qty: 0, promoParams: 'Valid till 30/04/25', img: '/assets/images/products/tomatoes-product.webp'},
             ],
 
             //* # PRODUCT GRID
