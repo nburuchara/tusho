@@ -15274,7 +15274,7 @@ export default class LandingPg extends Component {
                                                                         <p>weekly essentials 🥖</p>
                                                                     </div>
                                                                     <div className='shopping-list-feature-container-header-left-sample'>
-                                                                        <p>choma day 🦴</p>
+                                                                        <p>choma day 🐐</p>
                                                                     </div>
                                                                 </div>
                                                                 <div className='shopping-list-feature-container-header-right'>
