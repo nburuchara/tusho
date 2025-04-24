@@ -6580,7 +6580,7 @@ const Styles = styled.div `
     transform: translateY(0);
 }
 
-.homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 h3 {
+.shopping-list h3 {
     margin-left: 2.5%;
     margin-top: 0.5rem;
     margin-bottom: 0px;
@@ -6590,7 +6590,7 @@ const Styles = styled.div `
     font-family: raleway;
 }
 
-.homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 p {
+.shopping-list p {
     margin-left: 3.5%;
     margin-right: 3.5%;
     margin-top: 0.2rem;
@@ -6608,7 +6608,44 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container-header {
-    
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border: 1px solid black;
+    height: 11.5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.shopping-list-feature-container-header-left {
+    width: 75%;
+    border: 1px solid black;
+    display: flex;
+    // align-items: center;
+    flex-direction: row;
+}
+
+.shopping-list-feature-container-header-left-sample {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    width: auto;
+    height: 60%;
+    background-color: #ff5733;
+}
+
+.shopping-list-feature-container-header-left-sample p {
+    font-size: 75%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: poppins;
+    color: white;
+}
+
+.shopping-list-feature-container-header-right {
+    width: 25%;
+    border: 1px solid black;
 }
 
 .shopping-list-feature-container-new-list {
@@ -15203,14 +15240,23 @@ export default class LandingPg extends Component {
                                                     </div>
 
                                                     <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
-                                                        <h3>What do you need?</h3>
-                                                        <p>
-                                                        Press <strong>Enter</strong> to add a new item, <strong>Backspace</strong> on an empty item to delete it.
-                                                        </p>
+                                                        <div className='shopping-list'>
+                                                            <h3>What do you need?</h3>
+                                                            <p>
+                                                            Press <strong>Enter</strong> to add a new item, <strong>Backspace</strong> on an empty item to delete it.
+                                                            </p>
+                                                        </div>
                                                         <div className='shopping-list-feature-container'>
 
                                                             <div className='shopping-list-feature-container-header'>
-
+                                                                <div className='shopping-list-feature-container-header-left'>
+                                                                    <div className='shopping-list-feature-container-header-left-sample'>
+                                                                        <p>weekly stuffs 🥖</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div className='shopping-list-feature-container-header-right'>
+                                                                
+                                                                </div>
                                                             </div>
 
                                                             <div className='shopping-list-feature-container-new-list'>
