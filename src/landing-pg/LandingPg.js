@@ -6650,7 +6650,7 @@ const Styles = styled.div `
     height: 58%;
     margin-bottom: -0.75rem;
     background-color: #ff5733;
-    gap: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .shopping-list-feature-container-header-left-sample p {
