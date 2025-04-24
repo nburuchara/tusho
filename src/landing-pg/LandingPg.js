@@ -6615,6 +6615,7 @@ const Styles = styled.div `
     height: 11.5%;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
 .shopping-list-feature-container-header-left {
@@ -6636,6 +6637,7 @@ const Styles = styled.div `
     border-radius: 20px;
     width: auto;
     height: 58%;
+    margin-bottom: -1rem;
     background-color: #ff5733;
 }
 
