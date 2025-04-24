@@ -6645,6 +6645,7 @@ const Styles = styled.div `
     width: 15px;
     height: 15px;
     border: 0.5px solid transparent !important;
+    cursor: pointer;
 }
 
 .shopping-list-feature-container-header-left-sample {
