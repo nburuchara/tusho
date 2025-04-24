@@ -6641,7 +6641,7 @@ const Styles = styled.div `
 .shopping-list-feature-container-header-left img {
     position: absolute;
     right: 0.15rem; 
-    bottom: 0.45rem;
+    bottom: 0.4rem;
     width: 15px;
     height: 15px;
     border: 0.5px solid transparent !important;
