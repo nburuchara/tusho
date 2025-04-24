@@ -7855,6 +7855,9 @@ const Styles = styled.div `
 .new-product-cell-qty-container-zero {
     height: 100%;
     width: 100%;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #faece9;
 }
 
 .new-product-cell-qty-container-zero p {
