@@ -7858,11 +7858,15 @@ const Styles = styled.div `
     border: 1px solid black;
     border-radius: 5px;
     background-color: #faece9;
+    border: 1px solid #ff5733;
 }
 
 .new-product-cell-qty-container-zero p {
     margin-top: 0px;
     margin-bottom: 0px;
+    font-size: 85%;
+    font-family: poppins;
+    color: #ff5733;
 }
 
 .new-product-cell-qty-container-left {
@@ -15341,7 +15345,7 @@ export default class LandingPg extends Component {
                                                                                 }
                                                                                 {item.qty === 0 &&
                                                                                     <div className='new-product-cell-qty-container-zero'>
-                                                                                        
+                                                                                        <p>Buy</p>
                                                                                     </div>
                                                                                 }
                                                                             </div>
