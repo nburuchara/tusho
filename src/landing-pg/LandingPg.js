@@ -6659,7 +6659,7 @@ const Styles = styled.div `
     margin-bottom: 0px;
     font-family: poppins;
     color: white;
-    font-weight: bold;
+    // font-weight: bold;
 }
 
 .shopping-list-feature-container-header-right {
