@@ -6607,6 +6607,10 @@ const Styles = styled.div `
     height: 83.5%;
 }
 
+.shopping-list-feature-container-header {
+    
+}
+
 .shopping-list-feature-container-new-list {
     position: absolute;
     bottom: 0;
@@ -15205,7 +15209,7 @@ export default class LandingPg extends Component {
                                                         </p>
                                                         <div className='shopping-list-feature-container'>
 
-                                                            <div className=''>
+                                                            <div className='shopping-list-feature-container-header'>
 
                                                             </div>
 
