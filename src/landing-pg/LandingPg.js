@@ -6623,8 +6623,8 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     flex-direction: row;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding-left: 4%;
+    padding-right: 4%;
     position: relative;
 }
 
@@ -6669,6 +6669,8 @@ const Styles = styled.div `
     width: 100%;
     height: 87.5%;
     border-top: 1px solid #ccc;
+    padding-left: 1%;
+    padding-right: 1%;
     overflow-y: auto;
 }
 
