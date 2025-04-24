@@ -7567,7 +7567,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right {
     width: 50%;
-    border: 1px solid black;
+    // border: 1px solid black;
     border-top-right-radius: 24px;
     position: relative;
     z-index: 0;
@@ -7579,14 +7579,36 @@ const Styles = styled.div `
     height: 30%;
     right: 0.65rem;
     width: 85%;
-    border: 1px solid #20313a;
+    // border: 1px solid #20313a;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-quote h4 {
     margin-top: 0px;
-    font-size: 95%;
+    font-size: 83.5%;
     font-family: lexend;
+    font-weight: normal;
     color: #20313a;
+    text-decoration: italic;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-quote-author {
+    position: absolute;
+    top: 4.5rem;
+    height: 10%;
+    right: 0.65rem;
+    width: 85%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-quote-author h5 {
+   font-family: lexend;
+   color: #20313a;
+   margin-top: 0px;
+   margin-bottom: 0px;
+   font-size: 70%;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 {
@@ -7717,6 +7739,177 @@ const Styles = styled.div `
     border-bottom-right-radius: 24px;
     transform: translateY(0);
     visibility: visible;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-new-products {
+    height: 100%;
+    width: 99.5%;
+    border-bottom-right-radius: 24px;
+    // border: 1px solid black;
+    position: relative;
+    overflow: hidden;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-new-products h2 {
+    font-family: raleway;
+    font-weight: normal;
+    margin-top: 0.35rem;
+    margin-left: 0.6rem;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-new-products-list {
+    position: absolute;
+    width: 99.5%;
+    left: 0;
+    bottom: 0;
+    border-bottom-right-radius: 24px;
+    border-top: 1px solid #ccc;
+    height: 80%;
+    overflow-y: auto;
+}
+
+.new-product-cell {
+    width: 100%;
+    height: 4.5rem;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-product-cell-img {
+    width: 20%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.new-product-cell-img img {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ff5733;
+    border-radius: 8px;
+    background-color: white;
+    margin-top: -1.2rem;
+}
+
+.new-product-cell-price {
+    position: absolute;
+    bottom: 0.25rem;
+    left: (0, 50%);
+    width: auto;
+    border: 1px solid #20313a;
+    height: 14.5%;
+    font-size: 10.5px;
+    padding: 1.5px;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    padding-right: 5px;
+    font-family: #5e626a;
+    font-family: poppins;
+    background-color: #faece9;
+    border: 1px solid #ff5733;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    color: #20313a;
+    justify-content: center;
+}
+
+.new-product-cell-details {
+    width: 55%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.new-product-cell-details p {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 67.5%;
+    color: #20313a;
+    font-family: poppins; 
+    font-weight: bold; 
+}
+
+.new-product-cell-cart {
+    width: 25%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-product-cell-qty-container {
+    height: 30%;
+    width: 85%;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.new-product-cell-qty-container-zero {
+    height: 100%;
+    width: 100%;
+}
+
+.new-product-cell-qty-container-zero p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.new-product-cell-qty-container-left {
+    width: 30%;
+    border: 1px solid #ff5733;
+    background-color: #ff5733;
+    border-top-left-radius: 3.5px;
+    border-bottom-left-radius: 3.5px;
+    color: white;
+    font-weight: bold;
+    font-size: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.new-product-cell-qty-container-center {
+    width: 40%;
+    // border: 1px solid black;
+    background-color: white;
+    border-top: 1px solid #ff5733;
+    border-bottom: 1px solid #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-product-cell-qty-container-center p {
+    font-family: poppins;
+    font-size: 65%;
+    font-weight: bold;
+    margin-top: 0px;
+    color: #5e626a;
+    margin-bottom: 0px;
+}
+
+.new-product-cell-qty-container-right {
+    width: 30%;
+    border: 1px solid #ff5733;
+    background-color: #ff5733;
+    border-top-right-radius: 3.5px;
+    border-bottom-right-radius: 3.5px;
+    color: white;
+    font-weight: bold;
+    font-size: 65%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-2 {
@@ -8683,12 +8876,6 @@ export default class LandingPg extends Component {
                 { id: 6, name: 'Get Ksh. 300 off orders over Ksh. 1999.', oldPrice: 205.00, newPrice: 'APR300', type: 'code', description: '', qty: 0, promoParams: 'Valid till 30/04/25', img: '/assets/images/codes/promoCode1.png'},
               ],
             selectedPromoType: 'all',
-
-                //* # SHOPPING LIST *//
-            showShopAssistantLoading: false,
-            items: [''], // Shopping list items (starts with one empty bullet)
-            focusIndex: null, // 👈 Track which input to focus
-            searchBarInputShopAssistant: '',
             
             //* # WALLET # *//
             showWalletTopUpHomeView: true,
@@ -8704,6 +8891,22 @@ export default class LandingPg extends Component {
             showWalletTopUpBtnHome: true,
             showWalletTopUpBtnLoading: false,
             showWalletTopUpBtnConfirm: false,
+
+                //* # SHOPPING LIST *//
+            showShopAssistantLoading: false,
+            items: [''], // Shopping list items (starts with one empty bullet)
+            focusIndex: null, // 👈 Track which input to focus
+            searchBarInputShopAssistant: '',
+              
+                //* # NEW PRODUCTS *//
+            newProducts: [
+                { id: 21, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: 279.00, newPrice: 250.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/eggs-product.png'},
+                { id: 9, name: 'TuShop Fresh Mwea Pishori Rice', oldPrice: 205.00, newPrice: 190.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/rice-product.png'},
+                { id: 3, name: 'Get Ksh. 250 off your first order with tuShop wallet.', oldPrice: 205.00, newPrice: 'MAX250', type: 'code', description: '', qty: 0, promoParams: 'No expiry', img: '/assets/images/codes/promoCode2.png'},
+                { id: 4, name: 'Bio Salted Artisanal Butter (500g)', oldPrice: 879.00, newPrice: 850.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/butter-product.png'},
+                { id: 8, name: 'Tushop Fresh Local Watermelon', oldPrice: 369.00, newPrice: 320.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/watermelon-product.webp'},
+                { id: 6, name: 'Get Ksh. 300 off orders over Ksh. 1999.', oldPrice: 205.00, newPrice: 'APR300', type: 'code', description: '', qty: 0, promoParams: 'Valid till 30/04/25', img: '/assets/images/codes/promoCode1.png'},
+            ],
 
             //* # PRODUCT GRID
             products: products,
@@ -14991,7 +15194,10 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right'>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-quote'>
-                                                                        <h4>We bake our goods fresh from scratch fresh everday.</h4>
+                                                                        <h4>"We bake all our goods from scratch fresh-to-serve everyday."</h4>
+                                                                    </div>
+                                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-quote-author'>
+                                                                        <h5>- Mashanda</h5>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -15098,8 +15304,49 @@ export default class LandingPg extends Component {
                                                         </div>
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-1 ${this.state.selectedHeaderOption === 'option-1' ? 'open' : ''}`}>
+                                                            <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-new-products'>
+                                                                <h2>More New Products:</h2>
+                                                                <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-new-products-list'>
+                                                                {this.state.newProducts.map((item) => (
+                                                                    <div className='new-product-cell' id={item.id}>
+                                                                        <div className=''>
 
-                                                            <h3></h3>
+                                                                        </div>
+                                                                        <div className='new-product-cell-img'>
+                                                                            <img src={item.img}/>
+                                                                            <div className='new-product-cell-price'>
+                                                                                {item.newPrice}
+                                                                            </div>  
+                                                                        </div>
+                                                                        <div className='new-product-cell-details'>
+                                                                            <p>{item.name}</p>
+                                                                        </div>
+                                                                        <div className='new-product-cell-cart'>
+                                                                            <div className='new-product-cell-qty-container'>
+                                                                                {item.qty > 0 &&
+                                                                                   <>
+                                                                                   <div className='new-product-cell-qty-container-left'>
+                                                                                        -
+                                                                                    </div>
+                                                                                    <div className='new-product-cell-qty-container-center'>
+                                                                                        <p>{item.qty}</p>
+                                                                                    </div>
+                                                                                    <div className='new-product-cell-qty-container-right'>
+                                                                                        +
+                                                                                    </div>
+                                                                                   </> 
+                                                                                }
+                                                                                {item.qty === 0 &&
+                                                                                    <div className='new-product-cell-qty-container-zero'>
+                                                                                        
+                                                                                    </div>
+                                                                                }
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                ))}
+                                                                </div>
+                                                            </div>
                                                         </div>
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
