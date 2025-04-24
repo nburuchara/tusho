@@ -6653,6 +6653,7 @@ const Styles = styled.div `
     background-color: #ff5733;
     margin-right: 0.5rem;
     cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
 }
 
 .shopping-list-feature-container-header-left-sample:hover { 
@@ -6660,7 +6661,6 @@ const Styles = styled.div `
 }   
 
 .shopping-list-feature-container-header-left-sample:hover p { 
-    background-color: #faece9;
     color: #ff5733;
 }   
 
@@ -6671,6 +6671,7 @@ const Styles = styled.div `
     font-family: poppins;
     color: white;
     // font-weight: bold;
+    transition: color 0.5s ease-in-out;
 }
 
 .shopping-list-feature-container-header-right {
