@@ -8936,8 +8936,8 @@ export default class LandingPg extends Component {
               
                 //* # NEW PRODUCTS *//
             newProducts: [
-                { id: 25, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: 279.00, newPrice: 250.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/eggs-product.png'},
-                { id: 11, name: 'TuShop Fresh Mwea Pishori Rice', oldPrice: 205.00, newPrice: 190.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/rice-product.png'},
+                { id: 25, name: 'Mashanda\'s Cinammon Muffin (2pcs)', oldPrice: 279.00, newPrice: 385.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/muffin-product.png'},
+                { id: 11, name: 'Mashanda\'s Rye Brown Loaf (Large)', oldPrice: 205.00, newPrice: 135.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/rye-bread-product.png'},
                 { id: 3, name: 'Get Ksh. 250 off your first order with tuShop wallet.', oldPrice: 205.00, newPrice: 'MAX250', type: 'code', description: '', qty: 0, promoParams: 'No expiry', img: '/assets/images/codes/promoCode2.png'},
                 { id: 5, name: 'Bio Salted Artisanal Butter (500g)', oldPrice: 879.00, newPrice: 850.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/butter-product.png'},
                 { id: 10, name: 'Tushop Fresh Local Watermelon', oldPrice: 369.00, newPrice: 320.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/watermelon-product.webp'},
