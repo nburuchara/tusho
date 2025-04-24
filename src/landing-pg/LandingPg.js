@@ -6602,7 +6602,7 @@ const Styles = styled.div `
 .shopping-list-feature-container {
     position: absolute;
     bottom: 0rem;
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 99.35%;
     height: 83.5%;
 }
@@ -6611,15 +6611,15 @@ const Styles = styled.div `
     position: absolute;
     top: 0;
     width: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 11.5%;
     display: flex;
     justify-content: space-between;
 }
 
 .shopping-list-feature-container-header-left {
-    width: 75%;
-    border: 1px solid black;
+    width: 85%;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -6649,8 +6649,8 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container-header-right {
-    width: 25%;
-    border: 1px solid black;
+    width: 15%;
+    // border: 1px solid black;
 }
 
 .shopping-list-feature-container-new-list {
@@ -6658,7 +6658,9 @@ const Styles = styled.div `
     bottom: 0;
     width: 100%;
     height: 87.5%;
-    border: 1px solid black;
+    border-top: 1px solid #ccc;
+    padding-left: 2%;
+    padding-right: 2%;
     overflow-y: auto;
 }
 
@@ -6667,7 +6669,6 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container-new-list ul {
-
     margin-top: 0px;
     padding-left: 1.5rem;
 }
@@ -15256,7 +15257,7 @@ export default class LandingPg extends Component {
                                                             <div className='shopping-list-feature-container-header'>
                                                                 <div className='shopping-list-feature-container-header-left'>
                                                                     <div className='shopping-list-feature-container-header-left-sample'>
-                                                                        <p>weekly essentials 🥖</p>
+                                                                        <p>weekly essentials  🥖</p>
                                                                     </div>
                                                                 </div>
                                                                 <div className='shopping-list-feature-container-header-right'>
