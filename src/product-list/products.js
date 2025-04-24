@@ -250,7 +250,7 @@ const products = [
     },
     {
         id: 15,
-        name: "Mashanda\s Rye Brown Loaf (Large)",
+        name: "Mashanda's Rye Brown Loaf (Large)",
         category: "Food Cupboard",
         brand: 'Mashanda\'s Masterpieces',
         price: 135.00,
