@@ -6623,8 +6623,8 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     flex-direction: row;
-    padding-left: 4%;
-    padding-right: 4%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
     position: relative;
 }
 
@@ -6634,6 +6634,8 @@ const Styles = styled.div `
     position: absolute;
     top: 0;
     left: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .shopping-list-feature-container-header-left-sample {
