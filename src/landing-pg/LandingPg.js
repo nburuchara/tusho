@@ -6638,6 +6638,15 @@ const Styles = styled.div `
     margin-bottom: 0px;
 }
 
+.shopping-list-feature-container-header-left img {
+    position: absolute;
+    right: 0; 
+    bottom: 0.1rem;
+    width: 15px;
+    height: 15px;
+    border: 0.5px solid transparent !important;
+}
+
 .shopping-list-feature-container-header-left-sample {
     display: flex;
     padding-left: 3.25%;
@@ -6665,7 +6674,7 @@ const Styles = styled.div `
 }   
 
 .shopping-list-feature-container-header-left-sample p {
-    font-size: 75%;
+    font-size: 70%;
     margin-top: 0px;
     margin-bottom: 0px;
     font-family: poppins;
@@ -15284,6 +15293,7 @@ export default class LandingPg extends Component {
                                                                 <div className='shopping-list-feature-container-header-left'>
                                                                     <div className='shopping-list-feature-container-header-left-sample'>
                                                                         <p>weekly essentials 🥖</p>
+                                                                        <img src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/>
                                                                     </div>
                                                                     <div className='shopping-list-feature-container-header-left-sample'>
                                                                         <p>choma day 🐐</p>
