@@ -6641,7 +6641,7 @@ const Styles = styled.div `
 .shopping-list-feature-container-header-left img {
     position: absolute;
     right: 0.15rem; 
-    bottom: 0.35rem;
+    bottom: 0.4rem;
     width: 15px;
     height: 15px;
     border: 0.5px solid transparent !important;
@@ -15293,11 +15293,11 @@ export default class LandingPg extends Component {
                                                                 <div className='shopping-list-feature-container-header-left'>
                                                                     <div className='shopping-list-feature-container-header-left-sample'>
                                                                         <p>weekly essentials 🥖</p>
-                                                                        <img src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/>
                                                                     </div>
                                                                     <div className='shopping-list-feature-container-header-left-sample'>
                                                                         <p>choma day 🐐</p>
                                                                     </div>
+                                                                    <img src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/>
                                                                 </div>
                                                                 <div className='shopping-list-feature-container-header-right'>
                                                                 
