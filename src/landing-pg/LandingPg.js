@@ -8712,20 +8712,20 @@ export default class LandingPg extends Component {
             jipangeProduct4Cat1Qty: 0,
             jipangeProduct4Cat1Price: 0,
             jipangeProduct5Cat1: 'Tushop Fresh Red Onions',
-            jipangeProduct6Cat1Qty: 0,
-            jipangeProduct6Cat1Price: 0,
-            jipangeProduct6Cat1: 'VP Foods Baby Plum Tomatoes',
-            jipangeProduct7Cat1Qty: 0,
-            jipangeProduct7Cat1Price: 0,
-            jipangeProduct7Cat1: 'Mlango Farms Organic Red Chard Spinach (1 bunch)',
-            jipangeProduct8Cat1Qty: 0,
-            jipangeProduct8Cat1Price: 0,
-            jipangeProduct8Cat1: 'Mlango Farms Organic Curly Kale (1 bunch)',
-            jipangeProduct9Cat1Qty: 0,
-            jipangeProduct9Cat1Price: 0,
-            jipangeProduct9Cat1: 'TuShop Fresh Fresh Red Cabbage (1 piece)',
             jipangeProduct5Cat1Qty: 0,
             jipangeProduct5Cat1Price: 0,
+            jipangeProduct6Cat1: 'VP Foods Baby Plum Tomatoes',
+            jipangeProduct6Cat1Qty: 0,
+            jipangeProduct6Cat1Price: 0,
+            jipangeProduct7Cat1: 'Mlango Farms Organic Red Chard Spinach (1 bunch)',
+            jipangeProduct7Cat1Qty: 0,
+            jipangeProduct7Cat1Price: 0,
+            jipangeProduct8Cat1: 'Mlango Farms Organic Curly Kale (1 bunch)',
+            jipangeProduct8Cat1Qty: 0,
+            jipangeProduct8Cat1Price: 0,
+            jipangeProduct9Cat1: 'TuShop Fresh Fresh Red Cabbage (1 piece)',
+            jipangeProduct9Cat1Qty: 0,
+            jipangeProduct9Cat1Price: 0,
             jipangeProduct1Cat3: 'Kenchic Spring Chicken (750g)',
             jipangeProduct1Cat3Qty: 0,
             jipangeProduct1Cat3Price: 0,
@@ -8751,8 +8751,8 @@ export default class LandingPg extends Component {
             jipangeProduct3Cat5Qty: 0,
             jipangeProduct3Cat5Price: 0,
             jipangeProduct4Cat5: 'Rinsun 100% Sunflower Oil (3L)',
-            jipangeProduct5Cat5Qty: 0,
-            jipangeProduct5Cat5Price: 0,
+            jipangeProduct4Cat5Qty: 0,
+            jipangeProduct4Cat5Price: 0,
             jipangeProduct5Cat5: 'TuShop Fresh Mwea Pishori Rice (1kg)',
             jipangeProduct5Cat5Qty: 0,
             jipangeProduct5Cat5Price: 0,
@@ -13498,7 +13498,7 @@ export default class LandingPg extends Component {
                                                                                             
                                                                                     <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell'>
                                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-pic'>
-                                                                                            <img src='/assets/images/products/muffin-product.png'/>
+                                                                                            <img src='/assets/images/products/jam-product.png'/>
                                                                                         </div>
                                                                                         <div className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text'>
                                                                                             <div    className='jipange-settings-selected-date-screen-body-inner-body-product-row-cell-text-btn'>
