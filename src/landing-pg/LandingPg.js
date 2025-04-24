@@ -6618,8 +6618,8 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container-header-left {
-    width: 85%;
-    // border: 1px solid black;
+    width: 90%;
+    border: 1px solid black;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -6675,8 +6675,8 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container-header-right {
-    width: 15%;
-    // border: 1px solid black;
+    width: 10%;
+    border: 1px solid black;
 }
 
 .shopping-list-feature-container-new-list {
