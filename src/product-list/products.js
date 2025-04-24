@@ -18,6 +18,24 @@ const products = [
     },
     {
         id: 2,
+        name: "Mashanda's Cinammon Muffin (2pcs)",
+        category: "Food Cupboard",
+        brand: 'Mashanda\'s Masterpieces',
+        price: 385.00,
+        // prevPrice: 560.00,
+        rating: 4.8,
+        image: "/assets/images/products/muffin-product.png",
+        promo: false,
+        qty: 0,
+        pamoja: false,
+        pamojaCurrentSelected: 0,
+        pamojaCurrentTotal: 0,
+        jipangeSelected: false,
+        jipanges: [],
+        jipangeDate: 'Apr 25'
+    },
+    {
+        id: 3,
         name: "Tushop Fresh Imported Oranges",
         category: "Fruits & Vegetables",
         brand: 'TuShop Fresh',
@@ -34,7 +52,7 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 3,
+        id: 4,
         name: "MacCoffee Classic (200g)",
         category: "Food Cupboard",
         brand: 'MacCoffee',
@@ -51,7 +69,7 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 4,
+        id: 5,
         name: "Bio Salted Artisanal Butter (500g)",
         category: "Dairy",
         brand: 'Bio',
@@ -69,7 +87,7 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 5,
+        id: 6,
         name: "Blueband Original (250g)",
         category: "Food Cupboard",
         brand: "Blueband",
@@ -89,7 +107,7 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 6,
+        id: 7,
         name: "Brookside Whole Milk 1L Long Life",
         category: "Dairy",
         brand: "Brookside",
@@ -109,7 +127,7 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 7,
+        id: 8,
         name: "Mlango Farms Organic Curly Kale",
         category: "Fruits & Vegetables",
         brand: 'Mlango Farms',
@@ -126,7 +144,25 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 8,
+        id: 9,
+        name: "Shuka Farms Fresh Strawberry Jam (35g)",
+        category: "Food Cupboard",
+        brand: 'Shuka Farms',
+        price: 430.00,
+        // prevPrice: 560.00,
+        rating: 4.8,
+        image: "/assets/images/products/jam-product.png",
+        promo: false,
+        qty: 0,
+        pamoja: false,
+        pamojaCurrentSelected: 0,
+        pamojaCurrentTotal: 0,
+        jipangeSelected: false,
+        jipanges: [],
+        jipangeDate: 'Apr 25'
+    },
+    {
+        id: 10,
         name: "Tushop Fresh Local Watermelon",
         category: "Fruits & Vegetables",
         brand: 'TuShop Fresh',
@@ -144,7 +180,7 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 9,
+        id: 11,
         name: "TuShop Fresh Mwea Pishori Rice (1kg)",
         category: "Food Cupboard",
         brand: 'TuShop Fresh',
@@ -162,7 +198,7 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 10,
+        id: 12,
         name: "Brookside Full Cream Milk Powder Tin (500g)",
         category: "Dairy",
         brand: "Brookside",
@@ -179,7 +215,7 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 11,
+        id: 13,
         name: "Mlango Farms Organic Red Chard",
         category: "Fruits & Vegetables",
         brand: 'Mlango Farms',
@@ -196,7 +232,7 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 12,
+        id: 14,
         name: "McVities Digestive Biscuits (400g)",
         category: "Snacks",
         brand: 'McVites',
@@ -213,7 +249,25 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 13,
+        id: 15,
+        name: "Mashanda\s Rye Brown Loaf (Large)",
+        category: "Food Cupboard",
+        brand: 'Mashanda\'s Masterpieces',
+        price: 135.00,
+        // prevPrice: 560.00,
+        rating: 5.0,
+        image: "/assets/images/products/rye-bread-product.png",
+        promo: false,
+        qty: 0,
+        pamoja: false,
+        pamojaCurrentSelected: 0,
+        pamojaCurrentTotal: 0,
+        jipangeSelected: false,
+        jipanges: [],
+        jipangeDate: 'Apr 25'
+    },
+    {
+        id: 16,
         name: "Tushop Fresh Mixed Size Tomatoes",
         category: "Fruits & Vegetables",
         brand: 'TuShop Fresh',
@@ -230,7 +284,7 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 14,
+        id: 17,
         name: "Rascals 17kgs Premium CoComelon Training Diaper Pants - Size 7 (22pcs)",
         category: "Baby Care",
         brand: 'Rascals',
@@ -247,7 +301,7 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 15,
+        id: 18,
         name: "Mumias Sugar White (2kg)",
         category: "Food Cupboard",
         brand: 'Mumias',
@@ -267,7 +321,7 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 16,
+        id: 19,
         name: "Tushop Fresh Fresh Red Cabbage",
         category: "Fruits & Vegetables",
         brand: 'TuShop Fresh',
@@ -284,7 +338,7 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 17,
+        id: 20,
         name: "Tushop Fresh Red Onions",
         category: "Fruits & Vegetables",
         brand: 'TuShop Fresh',
@@ -301,7 +355,7 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 18,
+        id: 21,
         name: "Rinsun 100% Sunflower Oil (3L)",
         category: "Food Cupboard",
         brand: 'Rinsun',
@@ -318,7 +372,7 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 19,
+        id: 22,
         name: "VP Foods Baby Plum Tomatoes",
         category: "Fruits & Vegetables",
         brand: 'VP Foods',
@@ -335,67 +389,13 @@ const products = [
         jipangeDate: 'Apr 25'
     },
     {
-        id: 20,
+        id: 23,
         name: "Tushop Fresh Ripe Bananas",
         category: "Fruits & Vegetables",
         brand: 'TuShop Fresh',
         price: 250.00,
         rating: 4.9,
         image: "/assets/images/products/bananas-product.webp",
-        promo: false,
-        qty: 0,
-        pamoja: false,
-        pamojaCurrentSelected: 0,
-        pamojaCurrentTotal: 0,
-        jipangeSelected: false,
-        jipanges: [],
-        jipangeDate: 'Apr 25'
-    },
-    {
-        id: 21,
-        name: "TuShop Fresh Mixed Sizes Eggs",
-        category: "Dairy",
-        brand: 'TuShop Fresh',
-        price: 205.00,
-        prevPrice: 250.00,
-        rating: 4.9,
-        image: "/assets/images/products/eggs-product.png",
-        promo: true,
-        qty: 0,
-        pamoja: false,
-        pamojaCurrentSelected: 0,
-        pamojaCurrentTotal: 0,
-        jipangeSelected: false,
-        jipanges: [],
-        jipangeDate: 'Apr 25'
-    },
-    {
-        id: 22,
-        name: "Kenchic Spring Chicken (750g)",
-        category: "Meat",
-        brand: 'Kenchic',
-        price: 560.00,
-        // prevPrice: 560.00,
-        rating: 4.9,
-        image: "/assets/images/products/chicken-product.png",
-        promo: false,
-        qty: 0,
-        pamoja: false,
-        pamojaCurrentSelected: 0,
-        pamojaCurrentTotal: 0,
-        jipangeSelected: false,
-        jipanges: [],
-        jipangeDate: 'Apr 25'
-    },
-    {
-        id: 23,
-        name: "Mashanda\s Rye Brown Loaf (Large)",
-        category: "Food Cupboard",
-        brand: 'Mashanda\'s Masterpieces',
-        price: 135.00,
-        // prevPrice: 560.00,
-        rating: 5.0,
-        image: "/assets/images/products/rye-bread-product.png",
         promo: false,
         qty: 0,
         pamoja: false,
@@ -425,14 +425,14 @@ const products = [
     },
     {
         id: 25,
-        name: "Mashanda's Cinammon Muffin (2pcs)",
-        category: "Food Cupboard",
-        brand: 'Mashanda\'s Masterpieces',
-        price: 385.00,
-        // prevPrice: 560.00,
-        rating: 4.8,
-        image: "/assets/images/products/muffin-product.png",
-        promo: false,
+        name: "TuShop Fresh Mixed Sizes Eggs",
+        category: "Dairy",
+        brand: 'TuShop Fresh',
+        price: 205.00,
+        prevPrice: 250.00,
+        rating: 4.9,
+        image: "/assets/images/products/eggs-product.png",
+        promo: true,
         qty: 0,
         pamoja: false,
         pamojaCurrentSelected: 0,
@@ -443,13 +443,13 @@ const products = [
     },
     {
         id: 26,
-        name: "Shuka Farms Fresh Strawberry Jam (35g)",
-        category: "Food Cupboard",
-        brand: 'Shuka Farms',
-        price: 430.00,
+        name: "Kenchic Spring Chicken (750g)",
+        category: "Meat",
+        brand: 'Kenchic',
+        price: 560.00,
         // prevPrice: 560.00,
-        rating: 4.8,
-        image: "/assets/images/products/jam-product.png",
+        rating: 4.9,
+        image: "/assets/images/products/chicken-product.png",
         promo: false,
         qty: 0,
         pamoja: false,
