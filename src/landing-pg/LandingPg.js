@@ -6627,6 +6627,8 @@ const Styles = styled.div `
 
 .shopping-list-feature-container-header-left-sample {
     display: flex;
+    padding-left: 3px;
+    padding-right: 3px;
     align-items: center;
     justify-content: center;
     border-radius: 20px;
