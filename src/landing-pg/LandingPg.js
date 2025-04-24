@@ -6623,19 +6623,19 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     flex-direction: row;
-    padding-left: 2.5%;
-    padding-right: 2.5%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
 }
 
 .shopping-list-feature-container-header-left-sample {
     display: flex;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 5%;
+    padding-right: 5%;
     align-items: center;
     justify-content: center;
     border-radius: 20px;
     width: auto;
-    height: 55%;
+    height: 58%;
     background-color: #ff5733;
 }
 
@@ -6645,6 +6645,7 @@ const Styles = styled.div `
     margin-bottom: 0px;
     font-family: poppins;
     color: white;
+    font-weight: bold;
 }
 
 .shopping-list-feature-container-header-right {
@@ -15255,7 +15256,7 @@ export default class LandingPg extends Component {
                                                             <div className='shopping-list-feature-container-header'>
                                                                 <div className='shopping-list-feature-container-header-left'>
                                                                     <div className='shopping-list-feature-container-header-left-sample'>
-                                                                        <p>weekly stuffs 🥖</p>
+                                                                        <p>weekly essentials 🥖</p>
                                                                     </div>
                                                                 </div>
                                                                 <div className='shopping-list-feature-container-header-right'>
