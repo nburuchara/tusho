@@ -6620,17 +6620,26 @@ const Styles = styled.div `
     left: 0;
     height: 100%;
     width: 7%;
-    border: 1px solid black;
+    // border: 1px solid black;
     background-color: #fff2ccff;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
+    transform: translateX(-100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.shopping-list-feature-container-header-left-arrow.display {
+    transform: translateX(0);
 }
 
 .shopping-list-feature-container-header-left-arrow img {
     border: 0.5px solid transparent !important;
     width: 14px;
     height: 14px;
+    transform: rotate(180deg);
+    margin-bottom: -0.6rem;
+    // margin-right: 1rem;
 }
 
 .shopping-list-feature-container-header-left {
@@ -15341,7 +15350,7 @@ export default class LandingPg extends Component {
                                                             <div className='shopping-list-feature-container-header'>
 
                                                                 <div className='shopping-list-feature-container-header-left-arrow'>
-
+                                                                    <img onClick={this.scrollShoppingListsRight} className='shopping-list-feature-container-header-right-arrow' src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/>
                                                                 </div>
 
                                                                 <div className={`shopping-list-feature-container-header-left ${this.state.scrollShoppingLists ? 'scroll' : ''}`}>
