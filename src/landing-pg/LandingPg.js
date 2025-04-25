@@ -6619,7 +6619,7 @@ const Styles = styled.div `
 
 .shopping-list-feature-container-header-left {
     width: 85%;
-    // border: 1px solid black;
+    border: 1px solid black;
     display: flex;
     align-items: center;
     flex-direction: row;
