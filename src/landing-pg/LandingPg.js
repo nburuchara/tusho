@@ -6596,7 +6596,7 @@ const Styles = styled.div `
     margin-top: 0.2rem;
     font-size: 73.5%;
     font-family: poppins;
-    color: #5e626a;
+    color: #20313a;
 }
 
 .shopping-list-feature-container {
@@ -6617,11 +6617,11 @@ const Styles = styled.div `
 
 .shopping-list-feature-container-header-lists-title {
     position: absolute;
-    top: -0.45rem;
+    top: -0.35rem;
     left: 0.65rem;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-family: poppins;
+    font-family: raleway;
     font-size: 80%;
     color: #ff5733;
     z-index: 2;
