@@ -6616,9 +6616,9 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container-header-left {
-    width: 100%;
+    width: 120%;
     height: 100%;
-    // border: 1px solid black;
+    border: 1px solid black;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -6685,12 +6685,13 @@ const Styles = styled.div `
 .shopping-list-feature-container-header-right {
     width: 15%;
     height: 100%;
-    // border: 1px solid black;
+    border: 1px solid black;
+    background-color: #fff2ccff;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    right: 0;
+    right: -0.25rem;
     top: 0;
 }
 
@@ -6699,7 +6700,7 @@ const Styles = styled.div `
     height: 25px;
     border: 0.5px solid transparent !important;
     margin-bottom: -0.75rem;
-    margin-right: -0.8rem;
+    margin-right: -0.65rem;
 }
 
 .shopping-list-feature-container-new-list {
@@ -15310,6 +15311,9 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                     <div className='shopping-list-feature-container-header-left-sample'>
                                                                         <p>choma day 🐐</p>
+                                                                    </div>
+                                                                    <div className='shopping-list-feature-container-header-left-sample'>
+                                                                        <p>ladies night 🍨</p>
                                                                     </div>
                                                                     {/* <img src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/> */}
                                                                 </div>
