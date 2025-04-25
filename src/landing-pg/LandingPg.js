@@ -6681,7 +6681,7 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container-header-right {
-    width: 16.5%;
+    width: 18.5%;
     height: 100%;
     // border: 1px solid black;
     background-color: #fff2ccff;
@@ -6694,18 +6694,18 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container-header-right img {
-    width: 24.5px;
-    height: 24.5px;
+    width: 25px;
+    height: 25px;
     border: 0.5px solid transparent !important;
     margin-bottom: -0.75rem;
-    margin-right: -1rem;
+    margin-right: -1.35rem;
 }
 
 .shopping-list-feature-container-header-right-arrow {
     width: 14px !important;
     height: 14px !important; 
     position: absolute;
-    left: 0.1rem;
+    left: 0.4rem;
 }
 
 .shopping-list-feature-container-new-list {
