@@ -6640,8 +6640,6 @@ const Styles = styled.div `
     position: absolute;
     right: 0.15rem; 
     bottom: 0.55rem;
-    width: 12.5px;
-    height: 12.5px;
     border: 0.5px solid transparent !important;
     cursor: pointer;
 }
@@ -6696,11 +6694,18 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container-header-right img {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     border: 0.5px solid transparent !important;
     margin-bottom: -0.75rem;
-    margin-right: -0.65rem;
+    margin-right: -0.9rem;
+}
+
+.shopping-list-feature-container-header-right-arrow {
+    width: 12.5px !important;
+    height: 12.5px !important; 
+    position: absolute;
+    left: 0;
 }
 
 .shopping-list-feature-container-new-list {
@@ -15315,9 +15320,10 @@ export default class LandingPg extends Component {
                                                                     <div className='shopping-list-feature-container-header-left-sample'>
                                                                         <p>ladies night 🍨</p>
                                                                     </div>
-                                                                    {/* <img src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/> */}
+                                                                    
                                                                 </div>
                                                                 <div className='shopping-list-feature-container-header-right'>
+                                                                    <img className='shopping-list-feature-container-header-right-arrow' src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/>
                                                                     <img src='/assets/icons/home-main-header/save-shopping-list-icon.png'/>
                                                                 </div>
                                                             </div>
