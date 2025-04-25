@@ -6594,7 +6594,7 @@ const Styles = styled.div `
     margin-left: 3.5%;
     margin-right: 3.5%;
     margin-top: 0.2rem;
-    font-size: 80%;
+    font-size: 73.5%;
     font-family: poppins;
     color: #5e626a;
 }
@@ -6617,10 +6617,14 @@ const Styles = styled.div `
 
 .shopping-list-feature-container-header-lists-title {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: -0.45rem;
+    left: 0.65rem;
     margin-top: 0px;
     margin-bottom: 0px;
+    font-family: poppins;
+    font-size: 80%;
+    color: #ff5733;
+    z-index: 2;
 }
 
 .shopping-list-feature-container-header-left-arrow {
