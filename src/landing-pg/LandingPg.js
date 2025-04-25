@@ -6618,13 +6618,13 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container-header-left {
-    width: 90%;
-    border: 1px solid black;
+    width: 85%;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     flex-direction: row;
-    padding-left: 1.5%;
-    padding-right: 1.5%;
+    padding-left: 2%;
+    padding-right: 2%;
     position: relative;
 }
 
@@ -6685,7 +6685,7 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container-header-right {
-    width: 10%;
+    width: 15%;
     border: 1px solid black;
 }
 
@@ -6694,7 +6694,7 @@ const Styles = styled.div `
     bottom: 0;
     width: 100%;
     height: 87.5%;
-    border-top: 1px solid #ccc;
+    // border-top: 1px solid #ccc;
     padding-left: 1%;
     padding-right: 1%;
     overflow-y: auto;
