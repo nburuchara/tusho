@@ -6618,7 +6618,7 @@ const Styles = styled.div `
 .shopping-list-feature-container-header-left {
     width: 120%;
     height: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -6683,7 +6683,7 @@ const Styles = styled.div `
 .shopping-list-feature-container-header-right {
     width: 15%;
     height: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     background-color: #fff2ccff;
     display: flex;
     align-items: center;
@@ -6705,7 +6705,7 @@ const Styles = styled.div `
     width: 12.5px !important;
     height: 12.5px !important; 
     position: absolute;
-    left: 0.2rem;
+    left: 0.1rem;
 }
 
 .shopping-list-feature-container-new-list {
