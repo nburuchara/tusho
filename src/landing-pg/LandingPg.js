@@ -6624,7 +6624,6 @@ const Styles = styled.div `
     flex-direction: row;
     padding-left: 2%;
     padding-right: 2%;
-    position: relative;
 }
 
 .shopping-list-feature-container-header-left h5 {
@@ -6650,7 +6649,7 @@ const Styles = styled.div `
 .shopping-list-feature-container-header-left-sample {
     display: flex;
     padding-left: 3.25%;
-    // padding-right: 3.25%;
+    padding-right: 3.25%;
     padding-bottom: 0.05rem;
     align-items: center;
     border: 1px solid #ff5733;
@@ -6685,17 +6684,22 @@ const Styles = styled.div `
 
 .shopping-list-feature-container-header-right {
     width: 15%;
-    // border: 1px solid black;
+    height: 100%;
+    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .shopping-list-feature-container-header-right img {
     width: 25px;
     height: 25px;
     border: 0.5px solid transparent !important;
-    margin-bottom: -0.7rem;
+    margin-bottom: -0.75rem;
+    margin-right: -0.6rem;
 }
 
 .shopping-list-feature-container-new-list {
@@ -15309,9 +15313,9 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                     {/* <img src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/> */}
                                                                 </div>
-                                                                {/* <div className='shopping-list-feature-container-header-right'>
+                                                                <div className='shopping-list-feature-container-header-right'>
                                                                     <img src='/assets/icons/home-main-header/save-shopping-list-icon.png'/>
-                                                                </div> */}
+                                                                </div>
                                                             </div>
 
                                                             <div className='shopping-list-feature-container-new-list'>
