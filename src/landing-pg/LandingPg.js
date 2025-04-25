@@ -6619,13 +6619,14 @@ const Styles = styled.div `
     position: absolute;
     left: 0;
     height: 100%;
-    width: 7%;
+    width: 9%;
     // border: 1px solid black;
     background-color: #fff2ccff;
     display: flex;
     align-items: center;
     justify-content: left;
     transform: translateX(-100%);
+    z-index: 1;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -6639,7 +6640,8 @@ const Styles = styled.div `
     height: 14px;
     transform: rotate(180deg);
     margin-bottom: -0.6rem;
-    // margin-right: 1rem;
+    left: 0.35rem;
+    cursor: pointer;
 }
 
 .shopping-list-feature-container-header-left {
@@ -6651,6 +6653,7 @@ const Styles = styled.div `
     flex-direction: row;
     // padding-left: 2%;
     padding-right: 2%;
+    z-index: 0;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -6739,6 +6742,13 @@ const Styles = styled.div `
     height: 14px !important; 
     position: absolute;
     left: 0.4rem;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.shopping-list-feature-container-header-right-arrow.hide {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .shopping-list-feature-container-new-list {
@@ -11118,6 +11128,10 @@ export default class LandingPg extends Component {
         this.setState({ scrollShoppingLists: true })
     }
 
+    scrollShoppingListsLeft = () => {
+        this.setState({ scrollShoppingLists: false })
+    }
+
     render () {
 
         const { searchBarIsClicked, searchInput, isSearchLoading, isSearchLoadingJipange, isSearchLoadingAccountPopup, isSearchLoadingFAQ, isSearchLoadingShopAssistant, resultsFound, resultsFoundJipange, resultsFoundAccountPopup, resultsFoundFAQ, resultsFoundShopAssistant, groupedOptions, groupedOptionsJipange, groupedOptionsAccountPopup, groupedOptionsFAQ, groupedOptionsShopAssistant} = this.state;
@@ -15349,8 +15363,8 @@ export default class LandingPg extends Component {
 
                                                             <div className='shopping-list-feature-container-header'>
 
-                                                                <div className='shopping-list-feature-container-header-left-arrow'>
-                                                                    <img onClick={this.scrollShoppingListsRight} className='shopping-list-feature-container-header-right-arrow' src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/>
+                                                                <div className={`shopping-list-feature-container-header-left-arrow ${this.state.scrollShoppingLists ? 'display' : ''}`}>
+                                                                    <img onClick={this.scrollShoppingListsLeft} className='shopping-list-feature-container-header-right-arrow' src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/>
                                                                 </div>
 
                                                                 <div className={`shopping-list-feature-container-header-left ${this.state.scrollShoppingLists ? 'scroll' : ''}`}>
@@ -15366,7 +15380,7 @@ export default class LandingPg extends Component {
                                                                     
                                                                 </div>
                                                                 <div className='shopping-list-feature-container-header-right'>
-                                                                    <img onClick={this.scrollShoppingListsRight} className='shopping-list-feature-container-header-right-arrow' src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/>
+                                                                    <img onClick={this.scrollShoppingListsRight} className={`shopping-list-feature-container-header-right-arrow ${this.state.scrollShoppingLists ? 'hide' : ''}`} src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/>
                                                                     <img src='/assets/icons/home-main-header/save-shopping-list-icon.png'/>
                                                                 </div>
                                                             </div>
