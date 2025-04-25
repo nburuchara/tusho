@@ -6681,29 +6681,29 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container-header-right {
-    width: 15%;
+    width: 16.5%;
     height: 100%;
-    // border: 1px solid black;
+    border: 1px solid black;
     background-color: #fff2ccff;
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    right: -0.25rem;
+    right: -0.15rem;
     top: 0;
 }
 
 .shopping-list-feature-container-header-right img {
-    width: 22.5px;
-    height: 22.5px;
+    width: 25px;
+    height: 25px;
     border: 0.5px solid transparent !important;
     margin-bottom: -0.75rem;
-    margin-right: -0.9rem;
+    margin-right: -1rem;
 }
 
 .shopping-list-feature-container-header-right-arrow {
-    width: 12.5px !important;
-    height: 12.5px !important; 
+    width: 14px !important;
+    height: 14px !important; 
     position: absolute;
     left: 0.1rem;
 }
