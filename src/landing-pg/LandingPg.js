@@ -15321,6 +15321,7 @@ export default class LandingPg extends Component {
                                                         <div className='shopping-list-feature-container'>
 
                                                             <div className='shopping-list-feature-container-header'>
+                                                                
                                                                 <div className={`shopping-list-feature-container-header-left ${this.state.scrollShoppingLists ? 'scroll' : ''}`}>
                                                                     <div className='shopping-list-feature-container-header-left-sample'>
                                                                         <p>weekly essentials 🥖</p>
