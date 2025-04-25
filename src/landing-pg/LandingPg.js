@@ -15298,10 +15298,7 @@ export default class LandingPg extends Component {
                                                                     <div className='shopping-list-feature-container-header-left-sample'>
                                                                         <p>choma day 🐐</p>
                                                                     </div>
-                                                                    <div className='shopping-list-feature-container-header-left-sample'>
-                                                                        <p></p>
-                                                                    </div>
-                                                                    <img src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/>
+                                                                    {/* <img src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/> */}
                                                                 </div>
                                                                 <div className='shopping-list-feature-container-header-right'>
                                                                 
