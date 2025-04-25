@@ -736,7 +736,13 @@ const Styles = styled.div `
 }
 
 
-// # SEARCH RESULTS
+// # SEARCH RESULTS (SHOP ASSISTANT)
+
+.searchResultCellShopAssistantParentContainer {
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
 
 .searchResultsShopAssistant {
     z-index: 1;
@@ -767,7 +773,7 @@ const Styles = styled.div `
     border-radius: 0px;
     padding-bottom: 0.75rem;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 .searchResultCellShopAssistant:hover {
@@ -783,16 +789,15 @@ const Styles = styled.div `
 }
 
 .searchResultCellImgShopAssistant {
-    width: 22.5px;
-    height: 22.5px;
-    margin-left: -0.2rem;
+    width: 100%;
+    // margin-left: -0.2rem;
     margin-top: 0.225rem;
     // border: 1px solid black;
 }
 
 .searchResultCellImgShopAssistant img {
-    width: 85%;
-    height: 85%;
+    width: 50px !important;
+    height: 50px !important;
     border: 1px solid white !important;
     border-radius: 8px;
     padding: 5px;
@@ -15669,38 +15674,41 @@ export default class LandingPg extends Component {
                                                                     {!isSearchLoadingShopAssistant && resultsFoundShopAssistant && 
                                                                         Object.entries(groupedOptionsShopAssistant).map(([category, options]) => (
                                                                             <div style={{borderBottom: "1px solid #ccc", position: "sticky"}} key={category}>
-                                                                                {options.map(option => (
-                                                                                    <div 
-                                                                                    onClick={() => this.mainSearchBarSearchedTermClicked(category, option)}
-                                                                                    className='searchResultCellShopAssistant' 
-                                                                                    key={option.id}>
-                                                                                        <div className='searchResultCellImgShopAssistant'>
-                                                                                            <img src={option.image}/>
-                                                                                        </div>
-                                                                                        <div className='searchResultCellDetailsShopAssistant'>
-                                                                                            <p className='searchResultOptionShopAssistant'>{option.highlightedName} • <label><>KES</> {option.price}</label> </p>
-                                                                                            {/* <p className='searchResultCategoryShopAssistant'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null }</p>  */}
-                                                                                        </div>
-                                                                                        <div className='searchResultCellLabelShopAssistant'>
-                                                                                            {option.qty === 0 && 
-                                                                                                <p>[click to add to cart]</p>
-                                                                                            }
-                                                                                            {option.qty > 0 &&
-                                                                                                <div className='searchResultCellLabelNonZeroQtyShopAssistant'>
-                                                                                                    <div onClick={() => this.mainPageProductsHandleQtyChange(option.id, -1)} className='searchResultCellLabelNonZeroQtyChangeLeftShopAssistant'>
-                                                                                                        -
+                                                                                <div className='searchResultCellShopAssistantParentContainer'>
+
+                                                                                    {options.map(option => (
+                                                                                        <div 
+                                                                                        onClick={() => this.mainSearchBarSearchedTermClicked(category, option)}
+                                                                                        className='searchResultCellShopAssistant' 
+                                                                                        key={option.id}>
+                                                                                            <div className='searchResultCellImgShopAssistant'>
+                                                                                                <img src={option.image}/>
+                                                                                            </div>
+                                                                                            <div className='searchResultCellDetailsShopAssistant'>
+                                                                                                <p className='searchResultOptionShopAssistant'>{option.highlightedName} • <label><>KES</> {option.price}</label> </p>
+                                                                                                {/* <p className='searchResultCategoryShopAssistant'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null }</p>  */}
+                                                                                            </div>
+                                                                                            <div className='searchResultCellLabelShopAssistant'>
+                                                                                                {option.qty === 0 && 
+                                                                                                    <p>[click to add to cart]</p>
+                                                                                                }
+                                                                                                {option.qty > 0 &&
+                                                                                                    <div className='searchResultCellLabelNonZeroQtyShopAssistant'>
+                                                                                                        <div onClick={() => this.mainPageProductsHandleQtyChange(option.id, -1)} className='searchResultCellLabelNonZeroQtyChangeLeftShopAssistant'>
+                                                                                                            -
+                                                                                                        </div>
+                                                                                                        <div className='searchResultCellLabelNonZeroQtyValueShopAssistant'>
+                                                                                                            <label>{option.qty}</label>
+                                                                                                        </div>
+                                                                                                        <div onClick={() => this.mainPageProductsHandleQtyChange(option.id, 1)} className='searchResultCellLabelNonZeroQtyChangeRightShopAssistant'>
+                                                                                                            +
+                                                                                                        </div>
                                                                                                     </div>
-                                                                                                    <div className='searchResultCellLabelNonZeroQtyValueShopAssistant'>
-                                                                                                        <label>{option.qty}</label>
-                                                                                                    </div>
-                                                                                                    <div onClick={() => this.mainPageProductsHandleQtyChange(option.id, 1)} className='searchResultCellLabelNonZeroQtyChangeRightShopAssistant'>
-                                                                                                        +
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            }
+                                                                                                }
+                                                                                            </div>
                                                                                         </div>
-                                                                                    </div>
-                                                                                ))}
+                                                                                    ))}
+                                                                                </div>
                                                                             </div>
                                                                         ))
                                                                     }
