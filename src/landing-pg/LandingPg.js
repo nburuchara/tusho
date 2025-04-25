@@ -6641,7 +6641,7 @@ const Styles = styled.div `
 .shopping-list-feature-container-header-left img {
     position: absolute;
     right: 0.15rem; 
-    bottom: 0.4rem;
+    bottom: 0.5rem;
     width: 15px;
     height: 15px;
     border: 0.5px solid transparent !important;
@@ -6686,16 +6686,17 @@ const Styles = styled.div `
 
 .shopping-list-feature-container-header-right {
     width: 15%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .shopping-list-feature-container-header-right img {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border: 0.5px solid transparent !important;
+    margin-bottom: -0.7rem;
 }
 
 .shopping-list-feature-container-new-list {
@@ -15307,7 +15308,7 @@ export default class LandingPg extends Component {
                                                                     <div className='shopping-list-feature-container-header-left-sample'>
                                                                         <p>choma day 🐐</p>
                                                                     </div>
-                                                                    {/* <img src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/> */}
+                                                                    <img src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/>
                                                                 </div>
                                                                 <div className='shopping-list-feature-container-header-right'>
                                                                     <img src='/assets/icons/home-main-header/save-shopping-list-icon.png'/>
