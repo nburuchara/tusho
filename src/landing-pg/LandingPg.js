@@ -6694,8 +6694,8 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container-header-right img {
-    width: 25px;
-    height: 25px;
+    width: 24.5px;
+    height: 24.5px;
     border: 0.5px solid transparent !important;
     margin-bottom: -0.75rem;
     margin-right: -1rem;
