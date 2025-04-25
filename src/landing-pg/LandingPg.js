@@ -6613,12 +6613,11 @@ const Styles = styled.div `
     width: 100%;
     // border: 1px solid black;
     height: 11.5%;
-    display: flex;
-    justify-content: space-between;
 }
 
 .shopping-list-feature-container-header-left {
-    width: 85%;
+    width: 100%;
+    height: 100%;
     border: 1px solid black;
     display: flex;
     align-items: center;
@@ -6651,7 +6650,7 @@ const Styles = styled.div `
 .shopping-list-feature-container-header-left-sample {
     display: flex;
     padding-left: 3.25%;
-    padding-right: 3.25%;
+    // padding-right: 3.25%;
     padding-bottom: 0.05rem;
     align-items: center;
     border: 1px solid #ff5733;
@@ -15308,11 +15307,11 @@ export default class LandingPg extends Component {
                                                                     <div className='shopping-list-feature-container-header-left-sample'>
                                                                         <p>choma day 🐐</p>
                                                                     </div>
-                                                                    <img src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/>
+                                                                    {/* <img src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/> */}
                                                                 </div>
-                                                                <div className='shopping-list-feature-container-header-right'>
+                                                                {/* <div className='shopping-list-feature-container-header-right'>
                                                                     <img src='/assets/icons/home-main-header/save-shopping-list-icon.png'/>
-                                                                </div>
+                                                                </div> */}
                                                             </div>
 
                                                             <div className='shopping-list-feature-container-new-list'>
