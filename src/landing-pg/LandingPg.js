@@ -6687,6 +6687,15 @@ const Styles = styled.div `
 .shopping-list-feature-container-header-right {
     width: 15%;
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopping-list-feature-container-header-right img {
+    width: 30px;
+    height: 30px;
+    border: 0.5px solid transparent !important;
 }
 
 .shopping-list-feature-container-new-list {
@@ -15301,7 +15310,7 @@ export default class LandingPg extends Component {
                                                                     {/* <img src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/> */}
                                                                 </div>
                                                                 <div className='shopping-list-feature-container-header-right'>
-                                                                
+                                                                    <img src='/assets/icons/home-main-header/save-shopping-list-icon.png'/>
                                                                 </div>
                                                             </div>
 
