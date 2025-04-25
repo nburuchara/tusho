@@ -741,7 +741,7 @@ const Styles = styled.div `
 .searchResultCellShopAssistantParentContainer {
     display: grid; 
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 0;
 }
 
 .searchResultsShopAssistant {
@@ -767,6 +767,7 @@ const Styles = styled.div `
 }
 
 .searchResultCellShopAssistant {
+    border: 1px solid #ccc;
     padding: 2%;
     margin-top: 3px;
     margin-bottom: 3px;
@@ -774,6 +775,7 @@ const Styles = styled.div `
     padding-bottom: 0.75rem;
     display: flex;
     flex-direction: column;
+    transition: transform 0.5s ease-in-out;
 }
 
 .searchResultCellShopAssistant:hover {
@@ -799,8 +801,8 @@ const Styles = styled.div `
 }
 
 .searchResultCellImgShopAssistant img {
-    width: 92.5px !important;
-    height: 80px !important;
+    width: 65px !important;
+    height: 60px !important;
     border: 1px solid white !important;
     border-radius: 8px;
     padding: 5px;
