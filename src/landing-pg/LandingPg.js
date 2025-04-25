@@ -6683,7 +6683,7 @@ const Styles = styled.div `
 .shopping-list-feature-container-header-right {
     width: 16.5%;
     height: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     background-color: #fff2ccff;
     display: flex;
     align-items: center;
