@@ -6624,6 +6624,11 @@ const Styles = styled.div `
     flex-direction: row;
     // padding-left: 2%;
     padding-right: 2%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.shopping-list-feature-container-header-left.scroll {
+    transform: translateX(-30%);
 }
 
 .shopping-list-feature-container-header-left h5 {
@@ -6699,6 +6704,7 @@ const Styles = styled.div `
     border: 0.5px solid transparent !important;
     margin-bottom: -0.75rem;
     margin-right: -1.35rem;
+    cursor: pointer;
 }
 
 .shopping-list-feature-container-header-right-arrow {
@@ -9035,6 +9041,7 @@ export default class LandingPg extends Component {
             items: [''], // Shopping list items (starts with one empty bullet)
             focusIndex: null, // 👈 Track which input to focus
             searchBarInputShopAssistant: '',
+            scrollShoppingLists: false,
               
                 //* # NEW PRODUCTS *//
             newProducts: [
@@ -11078,6 +11085,10 @@ export default class LandingPg extends Component {
             weatherDisplaySwiped: false,
             displayMoreWeatherOptions: false
         })
+    }
+
+    scrollShoppingListsRight = () => {
+        this.setState({ scrollShoppingLists: true })
     }
 
     render () {
@@ -15310,7 +15321,7 @@ export default class LandingPg extends Component {
                                                         <div className='shopping-list-feature-container'>
 
                                                             <div className='shopping-list-feature-container-header'>
-                                                                <div className='shopping-list-feature-container-header-left'>
+                                                                <div className={`shopping-list-feature-container-header-left ${this.state.scrollShoppingLists ? 'scroll' : ''}`}>
                                                                     <div className='shopping-list-feature-container-header-left-sample'>
                                                                         <p>weekly essentials 🥖</p>
                                                                     </div>
@@ -15323,7 +15334,7 @@ export default class LandingPg extends Component {
                                                                     
                                                                 </div>
                                                                 <div className='shopping-list-feature-container-header-right'>
-                                                                    <img className='shopping-list-feature-container-header-right-arrow' src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/>
+                                                                    <img onClick={this.scrollShoppingListsRight} className='shopping-list-feature-container-header-right-arrow' src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/>
                                                                     <img src='/assets/icons/home-main-header/save-shopping-list-icon.png'/>
                                                                 </div>
                                                             </div>
