@@ -6618,7 +6618,7 @@ const Styles = styled.div `
 .shopping-list-feature-container-header-left {
     width: 100%;
     height: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -6685,7 +6685,7 @@ const Styles = styled.div `
 .shopping-list-feature-container-header-right {
     width: 15%;
     height: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6699,7 +6699,7 @@ const Styles = styled.div `
     height: 25px;
     border: 0.5px solid transparent !important;
     margin-bottom: -0.75rem;
-    margin-right: -0.6rem;
+    margin-right: -0.8rem;
 }
 
 .shopping-list-feature-container-new-list {
