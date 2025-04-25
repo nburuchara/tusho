@@ -740,7 +740,7 @@ const Styles = styled.div `
 
 .searchResultCellShopAssistantParentContainer {
     display: grid; 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 0;
 }
 
@@ -810,14 +810,14 @@ const Styles = styled.div `
 }
 
 .searchResultCellDetailsShopAssistant {
-    width: 65%;
-    padding-left: 5%;
+    width: 100%;
+    padding-left: 1.5%;
     padding-right: 1.5%;
     // border: 1px solid black;
 }
 
 .searchResultCellLabelShopAssistant {
-    width: 20%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
