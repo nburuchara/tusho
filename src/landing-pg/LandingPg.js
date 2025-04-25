@@ -6616,7 +6616,7 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container-header-left {
-    width: 120%;
+    width: 200%;
     height: 100%;
     // border: 1px solid black;
     display: flex;
