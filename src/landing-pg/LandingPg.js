@@ -791,13 +791,16 @@ const Styles = styled.div `
 .searchResultCellImgShopAssistant {
     width: 100%;
     // margin-left: -0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 0.225rem;
     // border: 1px solid black;
 }
 
 .searchResultCellImgShopAssistant img {
-    width: 50px !important;
-    height: 50px !important;
+    width: 80px !important;
+    height: 80px !important;
     border: 1px solid white !important;
     border-radius: 8px;
     padding: 5px;
