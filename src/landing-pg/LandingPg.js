@@ -799,7 +799,7 @@ const Styles = styled.div `
 }
 
 .searchResultCellImgShopAssistant img {
-    width: 80px !important;
+    width: 92.5px !important;
     height: 80px !important;
     border: 1px solid white !important;
     border-radius: 8px;
