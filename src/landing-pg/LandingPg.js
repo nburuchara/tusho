@@ -6615,6 +6615,14 @@ const Styles = styled.div `
     height: 11.5%;
 }
 
+.shopping-list-feature-container-header-left-arrow {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 10%;
+    border: 1px solid black;
+}
+
 .shopping-list-feature-container-header-left {
     width: 200%;
     height: 100%;
@@ -15321,7 +15329,11 @@ export default class LandingPg extends Component {
                                                         <div className='shopping-list-feature-container'>
 
                                                             <div className='shopping-list-feature-container-header'>
-                                                                
+
+                                                                <div className='shopping-list-feature-container-header-left-arrow'>
+
+                                                                </div>
+
                                                                 <div className={`shopping-list-feature-container-header-left ${this.state.scrollShoppingLists ? 'scroll' : ''}`}>
                                                                     <div className='shopping-list-feature-container-header-left-sample'>
                                                                         <p>weekly essentials 🥖</p>
