@@ -6651,7 +6651,7 @@ const Styles = styled.div `
     width: 14px;
     height: 14px;
     transform: rotate(180deg);
-    margin-bottom: -0.6rem;
+    margin-bottom: -0.7rem;
     left: 0.35rem;
     cursor: pointer;
 }
