@@ -6694,8 +6694,8 @@ const Styles = styled.div `
 }
 
 .shopping-list-feature-container-header-right img {
-    width: 20px;
-    height: 20px;
+    width: 22.5px;
+    height: 22.5px;
     border: 0.5px solid transparent !important;
     margin-bottom: -0.75rem;
     margin-right: -0.9rem;
@@ -6705,7 +6705,7 @@ const Styles = styled.div `
     width: 12.5px !important;
     height: 12.5px !important; 
     position: absolute;
-    left: 0;
+    left: 0.2rem;
 }
 
 .shopping-list-feature-container-new-list {
