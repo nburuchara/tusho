@@ -6619,8 +6619,18 @@ const Styles = styled.div `
     position: absolute;
     left: 0;
     height: 100%;
-    width: 10%;
+    width: 7%;
     border: 1px solid black;
+    background-color: #fff2ccff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopping-list-feature-container-header-left-arrow img {
+    border: 0.5px solid transparent !important;
+    width: 14px;
+    height: 14px;
 }
 
 .shopping-list-feature-container-header-left {
