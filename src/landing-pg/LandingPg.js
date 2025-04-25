@@ -6615,6 +6615,14 @@ const Styles = styled.div `
     height: 11.5%;
 }
 
+.shopping-list-feature-container-header-lists-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
 .shopping-list-feature-container-header-left-arrow {
     position: absolute;
     left: 0;
@@ -15362,7 +15370,7 @@ export default class LandingPg extends Component {
                                                         <div className='shopping-list-feature-container'>
 
                                                             <div className='shopping-list-feature-container-header'>
-
+                                                                <h5 className='shopping-list-feature-container-header-lists-title'>My Lists</h5>
                                                                 <div className={`shopping-list-feature-container-header-left-arrow ${this.state.scrollShoppingLists ? 'display' : ''}`}>
                                                                     <img onClick={this.scrollShoppingListsLeft} className='shopping-list-feature-container-header-right-arrow' src='/assets/icons/home-main-header/shopping-lists-next-icon.png'/>
                                                                 </div>
