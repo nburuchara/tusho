@@ -6622,7 +6622,7 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     flex-direction: row;
-    padding-left: 2%;
+    // padding-left: 2%;
     padding-right: 2%;
 }
 
@@ -6657,7 +6657,7 @@ const Styles = styled.div `
     height: 58%;
     margin-bottom: -0.75rem;
     background-color: #ff5733; 
-    margin-right: 0.5rem;
+    margin-left: 0.5rem;
     cursor: pointer;
     transition: background-color 0.5s ease-in-out;
 }
@@ -6671,7 +6671,7 @@ const Styles = styled.div `
 }   
 
 .shopping-list-feature-container-header-left-sample p {
-    font-size: 70%;
+    font-size: 75%;
     margin-top: 0px;
     margin-bottom: 0px;
     font-family: poppins;
