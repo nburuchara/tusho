@@ -738,6 +738,25 @@ const Styles = styled.div `
 
 // # SEARCH RESULTS (SHOP ASSISTANT)
 
+.searchResultCategorySpan {
+    background-color: #faece9;
+    border: 1px solid #ff5733;
+    border-radius: 8px;
+    padding-top: 0.3rem;
+    // padding: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.searchResultCategoryLabel {
+    margin-left: 2%;
+    color: #ff5733;
+    font-weight: bold;
+}
+
 .searchResultCellShopAssistantParentContainer {
     display: grid; 
     grid-template-columns: 1fr 1fr 1fr;
@@ -755,7 +774,7 @@ const Styles = styled.div `
     border-top: 1px solid #ccc;
     // border-radius: 8px;
     background-color: transparent;
-    margin-top: 5px;
+    margin-top: 0px;
     padding: 5px;
     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     display: block;
@@ -767,12 +786,12 @@ const Styles = styled.div `
 }
 
 .searchResultCellShopAssistant {
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
     padding: 2%;
     margin-top: 3px;
     margin-bottom: 3px;
-    border-radius: 0px;
-    padding-bottom: 0.75rem;
+    border-radius: 5px;
+    padding-bottom: 0.15rem;
     display: flex;
     flex-direction: column;
     transition: transform 0.5s ease-in-out;
@@ -780,8 +799,9 @@ const Styles = styled.div `
 
 .searchResultCellShopAssistant:hover {
     background-color: #faece9;
-    border-top: 0.5px solid #ff5733;
-    border-bottom: 0.5px solid #ff5733;
+    border: 1px solid #ff5733;
+    // border-top: 0.5px solid #ff5733;
+    // border-bottom: 0.5px solid #ff5733;
     cursor: pointer;
     transform: scale(1.02);
 }
@@ -15678,9 +15698,9 @@ export default class LandingPg extends Component {
                                                                     }
                                                                     {!isSearchLoadingShopAssistant && resultsFoundShopAssistant && 
                                                                         Object.entries(groupedOptionsShopAssistant).map(([category, options]) => (
-                                                                            <div style={{borderBottom: "1px solid #ccc", position: "sticky"}} key={category}>
+                                                                            <div style={{position: "sticky"}} key={category}>
+                                                                                <div className='searchResultCategorySpan'><p className='searchResultCategoryLabel'>{category}</p></div>
                                                                                 <div className='searchResultCellShopAssistantParentContainer'>
-
                                                                                     {options.map(option => (
                                                                                         <div 
                                                                                         onClick={() => this.mainSearchBarSearchedTermClicked(category, option)}
