@@ -931,6 +931,10 @@ const Styles = styled.div `
     color: #ff5733;
 }
 
+.searchResultCellPriceShopAssistant {
+    
+}
+
 .searchResultCategoryShopAssistant {
     font-size: 70%;
     margin-bottom: 0px;
@@ -15711,8 +15715,11 @@ export default class LandingPg extends Component {
                                                                                                 <img src={option.image}/>
                                                                                             </div>
                                                                                             <div className='searchResultCellDetailsShopAssistant'>
-                                                                                                <p className='searchResultOptionShopAssistant'>{option.highlightedName} • <label><>KES</> {option.price}</label> </p>
+                                                                                                <p className='searchResultOptionShopAssistant'>{option.highlightedName}</p>
                                                                                                 {/* <p className='searchResultCategoryShopAssistant'>{category} {option.subCat1 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat1}</label> : null } {option.subCat2 ? <label style={{cursor: "pointer"}}>{'|'} {option.subCat2}</label> : null } {option.subCat3 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat3}</label> : null } {option.subCat4 ? <label style={{cursor: "pointer"}}> {'|'} {option.subCat4}</label> : null }</p>  */}
+                                                                                            </div>
+                                                                                            <div className='searchResultCellPriceShopAssistant'>
+                                                                                                <h5><>KES</> {option.price}</h5>
                                                                                             </div>
                                                                                             <div className='searchResultCellLabelShopAssistant'>
                                                                                                 {option.qty === 0 && 
