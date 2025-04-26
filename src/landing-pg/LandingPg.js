@@ -752,9 +752,10 @@ const Styles = styled.div `
 }
 
 .searchResultCategoryLabel {
-    margin-left: 2%;
+    margin-left: 0px;
     color: #ff5733;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 .searchResultCellShopAssistantParentContainer {
@@ -821,7 +822,7 @@ const Styles = styled.div `
 }
 
 .searchResultCellImgShopAssistant img {
-    width: 65px !important;
+    width: 67.5px !important;
     height: 60px !important;
     border: 1px solid white !important;
     border-radius: 8px;
