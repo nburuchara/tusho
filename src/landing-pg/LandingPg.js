@@ -787,7 +787,7 @@ const Styles = styled.div `
 }
 
 .searchResultCellShopAssistant {
-    // border: 1px solid #ccc;
+    border: 1px solid transparent;
     padding: 2%;
     margin-top: 3px;
     margin-bottom: 3px;
@@ -931,8 +931,12 @@ const Styles = styled.div `
     color: #ff5733;
 }
 
-.searchResultCellPriceShopAssistant {
-    
+.searchResultCellPriceShopAssistant h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: poppins;
+    color: #ff5733;
+    // margin-left: 2.5%;
 }
 
 .searchResultCategoryShopAssistant {
