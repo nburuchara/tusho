@@ -918,7 +918,8 @@ const Styles = styled.div `
     margin-top: 2.5px;
     margin-bottom: 3px;
     font-family: poppins;
-    margin-left: 2.5%;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
 }
 
 .searchResultOptionShopAssistant {
@@ -936,7 +937,8 @@ const Styles = styled.div `
     margin-bottom: 0px;
     font-family: poppins;
     color: #ff5733;
-    // margin-left: 2.5%;
+    margin-left: 3.5%;
+    margin-right: 1.5%;
 }
 
 .searchResultCategoryShopAssistant {
