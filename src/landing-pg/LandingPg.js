@@ -916,15 +916,16 @@ const Styles = styled.div `
 
 .searchResultCellShopAssistant p {
     margin-top: 2.5px;
-    margin-bottom: 3px;
+    margin-bottom: 0.1rem;
     font-family: poppins;
     margin-left: 1.5%;
     margin-right: 1.5%;
+    color: #20313A;
 }
 
 .searchResultOptionShopAssistant {
     // margin-top: 10px;
-    font-size: 65%;
+    font-size: 10px;
 }
 
 .searchResultOptionShopAssistant label {
