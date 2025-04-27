@@ -840,7 +840,7 @@ const Styles = styled.div `
 
 .searchResultCellLabelShopAssistant {
     width: 100%;
-    height: 1.25rem;
+    height: 1.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -857,7 +857,9 @@ const Styles = styled.div `
 .searchResultCellLabelNonZeroQtyShopAssistant {
     border: 1px solid #ff5733;
     width: 90%;
-    height: 1rem;
+    position: absolute;
+    bottom: 0.25rem;
+    height: 1.25rem;
     display: flex;
     justify-content: space-between;
     border-radius: 6px;
