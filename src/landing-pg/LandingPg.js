@@ -787,6 +787,7 @@ const Styles = styled.div `
 }
 
 .searchResultCellShopAssistant {
+    position: relative;
     border: 1px solid transparent;
     padding: 2%;
     margin-top: 3px;
@@ -839,6 +840,7 @@ const Styles = styled.div `
 
 .searchResultCellLabelShopAssistant {
     width: 100%;
+    height: 1.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -846,13 +848,16 @@ const Styles = styled.div `
 }
 
 .searchResultCellLabelShopAssistant p {
-    font-size: 20%;
+    font-size: 25%;
+    color: #20313a;
+    position: absolute;
+    bottom: 0.25rem;
 }
 
 .searchResultCellLabelNonZeroQtyShopAssistant {
     border: 1px solid #ff5733;
-    width: 70%;
-    height: 1.5rem;
+    width: 90%;
+    height: 1rem;
     display: flex;
     justify-content: space-between;
     border-radius: 6px;
