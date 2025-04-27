@@ -752,6 +752,42 @@ const Styles = styled.div `
     position: relative;
 }
 
+.searchResultCategorySpanLeft {
+    position: absolute;
+    left: 0;
+    // border: 1px solid black;
+    height: 100%;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchResultCategorySpanLeft h3 {
+    color: #ff5733;
+    margin-top: -0.2rem;
+    font-size: 8px;
+    margin-bottom: 0px;
+}
+
+.searchResultCategorySpanRight {
+    position: absolute;
+    right: 0;
+    // border: 1px solid black;
+    height: 100%;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchResultCategorySpanRight h3 {
+    color: #ff5733;
+    margin-top: -0.2rem;
+    font-size: 8px;
+    margin-bottom: 0px;
+}
+
 .searchResultCategoryLabel {
     margin-left: 0px;
     color: #ff5733;
@@ -15734,7 +15770,11 @@ export default class LandingPg extends Component {
                                                                     {!isSearchLoadingShopAssistant && resultsFoundShopAssistant && 
                                                                         Object.entries(groupedOptionsShopAssistant).map(([category, options]) => (
                                                                             <div style={{position: "sticky"}} key={category}>
-                                                                                <div className='searchResultCategorySpan'><p className='searchResultCategoryLabel'>{category}</p></div>
+                                                                                <div className='searchResultCategorySpan'>
+                                                                                    <div className='searchResultCategorySpanLeft'><h3>●</h3></div>
+                                                                                    <div className='searchResultCategorySpanRight'><h3>●</h3></div>
+                                                                                    <p className='searchResultCategoryLabel'>{category}</p>
+                                                                                </div>
                                                                                 <div className='searchResultCellShopAssistantParentContainer'>
                                                                                     {options.map(option => (
                                                                                         <div 
