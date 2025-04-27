@@ -749,6 +749,7 @@ const Styles = styled.div `
     justify-content: center;
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
+    position: relative;
 }
 
 .searchResultCategoryLabel {
@@ -827,6 +828,7 @@ const Styles = styled.div `
     height: 60px !important;
     border: 1px solid white !important;
     border-radius: 8px;
+    background-color: white;
     padding: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
@@ -922,7 +924,7 @@ const Styles = styled.div `
 }
 
 .searchResultCellShopAssistant p {
-    margin-top: 2.5px;
+    margin-top: 0.2rem;
     margin-bottom: 0.1rem;
     font-family: poppins;
     margin-left: 1.5%;
