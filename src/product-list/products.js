@@ -100,7 +100,7 @@ const products = [
         pamoja: true,
         pamojaCurrentSelected: 9,
         pamojaCurrentTotal: 30,
-        pamojaExpiryDate: '22/04/25',
+        pamojaExpiryDate: '27/04/25',
         pamojaExpiryTime: '4:30PM',
         jipangeSelected: false,
         jipanges: [],

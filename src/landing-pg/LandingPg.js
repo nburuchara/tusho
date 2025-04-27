@@ -10674,6 +10674,19 @@ export default class LandingPg extends Component {
                     ])
                 )
                 : null; // Keep it null if it doesn't exist
+
+
+            // 🔹 Check if groupedOptions (shop assistant) exists before updating
+            const updatedGroupedOptionsShopAssistant = prevState.groupedOptionsShopAssistant
+                ? Object.fromEntries(
+                    Object.entries(prevState.groupedOptionsShopAssistant).map(([category, options]) => [
+                        category,
+                        options.map(option =>
+                            option.id === productId ? { ...option, qty: updatedProduct.qty } : option
+                        )
+                    ])
+                )
+                : null; // Keep it null if it doesn't exist
     
             const totalCartPrice = updatedCart.reduce((total, item) => total + item.price * item.quantity, 0);
     
@@ -10683,6 +10696,7 @@ export default class LandingPg extends Component {
                 cart: updatedCart,
                 totalCartPrice,
                 groupedOptions: updatedGroupedOptions,
+                groupedOptionsShopAssistant: updatedGroupedOptionsShopAssistant
             };
         });
     };
