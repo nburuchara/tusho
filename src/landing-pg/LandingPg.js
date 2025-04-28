@@ -7916,6 +7916,22 @@ const Styles = styled.div `
     width: 50%;
     border-radius: 8px;
     background-color: #ff5733;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-soon-animation {
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    right: 0.25rem;
+    bottom: 0.25rem;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-radius: 6px;
 }
 
 
@@ -7980,21 +7996,28 @@ const Styles = styled.div `
     border-radius: 8px;
     background-color: #ff5733;
     // padding: 0.25rem;
+    // position: relative;
 }
 
-.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor h5 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 0.2rem;
-    margin-right: 0.2rem;
-    color: white;
-    font-family: lexend;
-    font-size: 1rem;
- }
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor-header {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.25rem;
+    left: 0.25rem;
+    height: 35%;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor {
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor-body {
+    position: absolute;
+    bottom: 0;
+}
 
- }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-quote {
     position: absolute;
@@ -15996,7 +16019,9 @@ export default class LandingPg extends Component {
                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product'>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left'>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-soon'>
+                                                                        <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-soon-animation'>
 
+                                                                        </div>
                                                                     </div>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-img-1'>
                                                                         <img src='/assets/images/home-main-header/header-feature-product-1.jpg'/>
@@ -16007,7 +16032,17 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right'>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor'>
-                                                                        <h5>Did you know?</h5>
+                                                                        <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor-header'>
+                                                                            
+                                                                            <video 
+                                                                            src="/assets/icons/home-main-header/new-product-ftr-animation.mp4" 
+                                                                            autoPlay 
+                                                                            loop 
+                                                                            muted 
+                                                                            playsInline 
+                                                                            style={{ width: '100%', height: 'auto' }}
+                                                                            />
+                                                                        </div>
                                                                     </div>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-quote'>
                                                                         <h4>"We bake all our goods from scratch fresh-to-serve everyday."</h4>
