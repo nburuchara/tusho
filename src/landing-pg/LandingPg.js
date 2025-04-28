@@ -7916,7 +7916,6 @@ const Styles = styled.div `
     width: 50%;
     border-radius: 8px;
     background-color: #ff5733;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7928,10 +7927,14 @@ const Styles = styled.div `
     left: 0.25rem;
     right: 0.25rem;
     bottom: 0.25rem;
-    height: 100%;
-    width: 100%;
+    height: 96.5%;
+    width: 96.6%;
+    border: 1px solid #ff5733;
     background-color: white;
     border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -16020,7 +16023,14 @@ export default class LandingPg extends Component {
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left'>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-soon'>
                                                                         <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-soon-animation'>
-
+                                                                            <video 
+                                                                            src="/assets/icons/home-main-header/new-product-ftr-animation-2.mp4" 
+                                                                            autoPlay 
+                                                                            loop 
+                                                                            muted 
+                                                                            playsInline 
+                                                                            style={{ width: '75%', height: 'auto' }}
+                                                                            />
                                                                         </div>
                                                                     </div>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-img-1'>
