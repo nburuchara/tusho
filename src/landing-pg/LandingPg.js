@@ -6013,7 +6013,7 @@ const Styles = styled.div `
     position: absolute;
     bottom: 0;
     height: 72.5%;
-    width: 100%;
+    width: 98%;
     background-color: #faece9;
     border-radius: 8px;
     border: 2px solid #ff5733;
@@ -10713,6 +10713,7 @@ export default class LandingPg extends Component {
 
         //* - - MAIN HOME PAGE FUNCTIONS - - *//
 
+
     mainPageProductsHandleFilterChange = (type, value) => {
         // Clear newly loaded items immediately & start loading state
         this.setState({ productsLoading: true, newlyLoadedProducts: [] }, () => {
@@ -15330,6 +15331,20 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom'>
                                                                     <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box'>
+                                                                    <   div className="confetti-background">
+                                                                            {[...Array(50)].map((_, i) => (
+                                                                                <div
+                                                                                key={i}
+                                                                                className="confetti-piece"
+                                                                                style={{
+                                                                                    left: `${Math.random() * 100}vw`,
+                                                                                    backgroundColor: '#ff5733',
+                                                                                    animationDuration: `${20 + Math.random() * 20}s`, // slower fall
+                                                                                    animationDelay: `${Math.random() * 10}s`,
+                                                                                }}
+                                                                                />
+                                                                            ))}
+                                                                        </div>
                                                                         <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box-left'>
                                                                             <img src='/assets/icons/home-main-header/notification-bell.png'/>
                                                                         </div>
@@ -15378,7 +15393,7 @@ export default class LandingPg extends Component {
                                                                 <button onClick={() => this.handleTriggerHeaderTransitions('option-1')} className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1-btn'>
                                                                     <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1'>
                                                                         <img src='/assets/images/home-main-body/product-btn-15.png'/>
-                                                                        <h3>New Products</h3>
+                                                                        <h3>New Products (6)</h3>
                                                                     </div>
                                                                 </button>
                                                                 <h4>↗︎</h4>
