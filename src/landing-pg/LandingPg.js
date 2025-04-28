@@ -5963,7 +5963,8 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-time p {
     font-family: poppins;
-    color: #ff5733;
+    color: #20313a;
+    font-weight: bold;
     font-size: 8.85px;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -5975,6 +5976,11 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon img {
+    width: 15px;
+    height: 15px;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon label {
@@ -5991,7 +5997,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp h5 {
     font-family: poppins;
-    color: #ff5733;
+    color: #20313a;
     font-size: 9.25px;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -15153,7 +15159,7 @@ export default class LandingPg extends Component {
                                                                                 <p>6</p>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon'>
-                                                                                <label>☁️</label>
+                                                                                <img src='/assets/icons/home-main-header/weather-day-cloudy-icon.png'/>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp'>
                                                                                 <h5>18º</h5>
@@ -15164,7 +15170,7 @@ export default class LandingPg extends Component {
                                                                                 <p>7</p>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon'>
-                                                                                <label>☁️</label>
+                                                                                <img src='/assets/icons/home-main-header/weather-day-cloudy-sun-icon.png'/>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp'>
                                                                                 <h5>19º</h5>
@@ -15175,7 +15181,7 @@ export default class LandingPg extends Component {
                                                                                 <p>8</p>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon'>
-                                                                                <label>☁️</label>
+                                                                                <img src='/assets/icons/home-main-header/weather-day-sun-icon.png'/>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp'>
                                                                                 <h5>21º</h5>
@@ -15186,7 +15192,7 @@ export default class LandingPg extends Component {
                                                                                 <p>9</p>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon'>
-                                                                                <label>⛅️</label>
+                                                                                <img src='/assets/icons/home-main-header/weather-day-sun-icon.png'/>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp'>
                                                                                 <h5>21º</h5>
