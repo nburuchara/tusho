@@ -8224,25 +8224,30 @@ const Styles = styled.div `
 
 .new-product-promo-label-container {
     position: absolute;
-    width: 65%;
+    width: 90%;
+    // margin-left: 5%;
     // border: 1px solid black;
-    bottom: 0.2rem;
+    bottom: 0.225rem;
     height: 1rem;
-    overflow: hidden;
+    overflow-x: hidden;
+    border-top: 1px solid #ff5733;
+    border-bottom: 1px solid #ff5733;
 }
 
 .new-product-promo-label {
-    // position: absolute;
+    position: absolute;
+    top: 0;
     width: 100%;
     height: 100%;
     font-size: 0.7rem;
     font-family: poppins;
     font-weight: bold;
     background-color: #faece9;
-    border: 1px solid #ff5733;
     border-right: 0.5px solid transparent;
     border-left: 0.5px solid transparent;
-    padding: 2.5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -8254,7 +8259,7 @@ const Styles = styled.div `
     margin: 0;
     // color: white;
     display: inline-block;
-    white-space: nowrap;
+    // white-space: nowrap;
 }
 
 .new-product-promo-carousel {
@@ -16116,7 +16121,7 @@ export default class LandingPg extends Component {
                                                                             <div className='new-product-promo-label-container'>
                                                                                 <span className='new-product-promo-label'>
                                                                                     <div className='new-product-promo-carousel'>
-                                                                                        <h5>NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW •</h5>
+                                                                                        <h5>NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW •</h5>
                                                                                     </div>
                                                                                 </span>
                                                                             </div>
