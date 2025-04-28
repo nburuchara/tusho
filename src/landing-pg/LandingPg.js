@@ -6717,6 +6717,11 @@ const Styles = styled.div `
     position: relative;
 }
 
+.homepage-header-inner-body-poster-right-left-section-logged-in-new-products-footer img {
+    width: 100%;
+    border: 0.1px solid transparent;
+}
+
 .homepage-header-inner-body-poster-right-left-section-logged-in-new-products-footer h5 {
     font-family: lexend;
     margin-top: -2.5rem;
@@ -6725,13 +6730,59 @@ const Styles = styled.div `
     margin-right: 2rem;
     color: #20313a;
     font-size: 14.5px;
-    font-weight: normal
+    font-weight: normal;
+    z-index: 1;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-new-products-footer label {
     text-decoration: underline;
     font-weight: bold;
     color: #ff5733;
+}
+
+.new-products-ftr-icon-1 {
+    position: absolute;
+    // border: 1px solid black;
+    top: 0.65rem;
+    left: 0.5rem;
+    height: 3.2rem;
+    width: 3.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    transform: rotate(-80deg);
+    opacity: 0.35;
+}
+
+.new-products-ftr-icon-2 {
+    position: absolute;
+    // border: 1px solid black;
+    bottom: 0.65rem;
+    left: 25%;
+    height: 3.25rem;
+    width: 3.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    transform: rotate(-10deg);
+    opacity: 0.35;
+}
+
+.new-products-ftr-icon-3 {
+    position: absolute;
+    // border: 1px solid black;
+    top: 0.65rem;
+    right: 1rem;
+    height: 3.65rem;
+    width: 3.65rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    transform: rotate(25deg);
+    opacity: 0.35;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 {
@@ -8104,7 +8155,7 @@ const Styles = styled.div `
 
 .new-product-cell {
     width: 100%;
-    height: 4.5rem;
+    height: 5rem;
     border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
@@ -8157,6 +8208,7 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: left;
+    position: relative;
 }
 
 .new-product-cell-details p {
@@ -8168,6 +8220,59 @@ const Styles = styled.div `
     color: #20313a;
     font-family: poppins; 
     font-weight: bold; 
+}
+
+.new-product-promo-labeel-container {
+    position: absolute;
+    width: 65%;
+    // border: 1px solid black;
+    bottom: 0.2rem;
+    height: 1rem;
+}
+
+.new-product-promo-label {
+    // position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 0.7rem;
+    font-family: poppins;
+    font-weight: bold;
+    background-color: #faece9;
+    border: 1px solid #ff5733;
+    border-right: 0.5px solid transparent;
+    border-left: 0.5px solid transparent;
+    padding: 2.5px 10px;
+    // border-radius: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.new-product-promo-label h5 {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    color: #ff5733;
+}
+
+.new-product-promo-carousel {
+    display: inline-block;
+    animation: scrollPromo 5s linear infinite;
+}
+
+.new-product-product-promo-label p {
+    margin: 0;
+    color: white;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+/* Animation keyframes */
+@keyframes scrollPromo {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 .new-product-cell-cart {
@@ -15362,7 +15467,7 @@ export default class LandingPg extends Component {
                                                         </div>
                                                     </div>
                                                     <div className='homepage-header-inner-body-poster-left-logged-in-header-greeting'>
-                                                        <h1>Hi there,</h1>
+                                                        <h1>Hi Norman,</h1>
                                                     </div>
                                                 </div>
                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body'>
@@ -15579,17 +15684,19 @@ export default class LandingPg extends Component {
                                                         </div>
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-new-products-footer'>
                                                             <h5>After spending 8 years crafting main courses, baked goods, and desserts in some of Nairobi’s top restaurants, Chef Mashanda has launched <label>"Mashanda's Masterpieces"</label> —a line of exquisite baked goods now available for order on the Tushop platform.</h5>
+
+                                                            <div className='new-products-ftr-icon-1'>
+                                                                <img src='/assets/icons/home-main-header/tag-feature-bg-demo.png'/>
+                                                            </div>
+                                                            <div className='new-products-ftr-icon-2'>
+                                                                <img src='/assets/icons/home-main-header/card-feature-bg-demo.png'/>
+                                                            </div>
+                                                            <div className='new-products-ftr-icon-3'>
+                                                                <img src='/assets/icons/home-main-header/cart-feature-bg-demo.png'/>
+                                                            </div>
+
                                                         </div>
 
-                                                        <div className=''>
-                                                            
-                                                        </div>
-                                                        <div className=''>
-
-                                                        </div>
-                                                        <div className=''>
-
-                                                        </div>
                                                     </div>
 
                                                     <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
@@ -16009,6 +16116,13 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                         <div className='new-product-cell-details'>
                                                                             <p>{item.name}</p>
+                                                                            <div className='new-product-promo-labeel-container'>
+                                                                                <span className='new-product-promo-label'>
+                                                                                    <div className='new-product-promo-carousel'>
+                                                                                        <h5>NEW • NEW • NEW • NEW • NEW • NEW •</h5>
+                                                                                    </div>
+                                                                                </span>
+                                                                            </div>
                                                                         </div>
                                                                         <div className='new-product-cell-cart'>
                                                                             <div className='new-product-cell-qty-container'>
