@@ -6012,19 +6012,22 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box {
     position: absolute;
     bottom: 0;
-    height: 75%;
-    border: 1px solid white;
+    height: 72.5%;
     width: 100%;
     background-color: #faece9;
     border-radius: 8px;
-    border: 1px solid #ff5733;
+    border: 2px solid #ff5733;
     display: flex;
     justify-content: space-between;
 }
 
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box:hover {
+
+}
+
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box-left {
-    width: 25%;
-    border: 1px solid black;
+    width: 24%;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6036,8 +6039,8 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box-center {
-    width: 60%;
-    border: 1px solid black;
+    width: 53%;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: left;
@@ -6050,15 +6053,34 @@ const Styles = styled.div `
     color: #ff5733;
     font-family: lexend;
     font-weight: normal;
-    font-size: 95%;
+    font-size: 90%;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box-right {
-    width: 15%;
-    border: 1px solid black;
+    width: 23%;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box-right-counter {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    // padding: 2%;
+    background-color: #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box-right-counter h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-size: 85%;
+    font-family: poppins;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body {
@@ -15306,7 +15328,9 @@ export default class LandingPg extends Component {
                                                                             <h3>Notifications</h3>
                                                                         </div>  
                                                                         <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box-right'>
-                                                                            
+                                                                            <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box-right-counter'>
+                                                                                <h4>3</h4>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
