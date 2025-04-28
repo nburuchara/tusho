@@ -7907,6 +7907,18 @@ const Styles = styled.div `
     z-index: 1;
 }
 
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-soon {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    height: 32%;
+    border: 1px solid white;
+    width: 50%;
+    border-radius: 8px;
+    background-color: #ff5733;
+}
+
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left img {
     border: 2.5px solid #ff5733 !important;
     border-radius: 8px;
@@ -15957,6 +15969,9 @@ export default class LandingPg extends Component {
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-1 ${this.state.selectedHeaderOption === 'option-1' ? 'open' : ''}`}>
                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product'>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left'>
+                                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-soon'>
+
+                                                                    </div>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-img-1'>
                                                                         <img src='/assets/images/home-main-header/header-feature-product-1.jpg'/>
                                                                     </div>
