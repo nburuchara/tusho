@@ -7902,9 +7902,31 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left {
     width: 50%;
-    // border: 1px solid black;
+    border: 1px solid black;
     position: relative;
     z-index: 1;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social {
+    position: absolute;
+    top: 0.6rem;
+    right: -0.25rem;
+    height: 30%;
+    border: 1px solid white;
+    width: 20%;
+    border-radius: 5px;
+    background-color: #ff5733;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body {
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    border: 1px solid #ff5733;
+    height: 95%;
+    width: 90%;
+    background-color: white;
+    border-radius: 5px;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-soon {
@@ -16034,6 +16056,11 @@ export default class LandingPg extends Component {
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-1 ${this.state.selectedHeaderOption === 'option-1' ? 'open' : ''}`}>
                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product'>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left'>
+                                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social'>
+                                                                        <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body'>
+
+                                                                        </div>
+                                                                    </div>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-soon'>
                                                                         <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-soon-animation'>
                                                                             <video 
