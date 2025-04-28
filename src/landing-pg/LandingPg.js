@@ -6005,7 +6005,60 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom {
     flex-grow: 1;
+    // border: 1px solid white;
+    position: relative;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box {
+    position: absolute;
+    bottom: 0;
+    height: 75%;
     border: 1px solid white;
+    width: 100%;
+    background-color: #faece9;
+    border-radius: 8px;
+    border: 1px solid #ff5733;
+    display: flex;
+    justify-content: space-between;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box-left {
+    width: 25%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box-left img {
+    width: 20px;
+    height: 20px;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box-center {
+    width: 60%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box-center h3 {
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 1%;
+    color: #ff5733;
+    font-family: lexend;
+    font-weight: normal;
+    font-size: 95%;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box-right {
+    width: 15%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body {
@@ -15245,7 +15298,17 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom'>
-                                                                    
+                                                                    <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box'>
+                                                                        <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box-left'>
+                                                                            <img src='/assets/icons/home-main-header/notification-bell.png'/>
+                                                                        </div>
+                                                                        <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box-center'>
+                                                                            <h3>Notifications</h3>
+                                                                        </div>  
+                                                                        <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box-right'>
+                                                                            
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
