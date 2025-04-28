@@ -8018,9 +8018,22 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor-body {
     position: absolute;
-    bottom: 0;
+    bottom: 0.25rem;
+    border: 1px solid white;
+    left: 0.25rem;
+    right: 0.25rem;
+    height: 52.5%;
 }
 
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor-body p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 9.25px;
+    font-weight: bold;
+    color: white;
+    font-family: lexend;
+}
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-quote {
     position: absolute;
@@ -16043,7 +16056,7 @@ export default class LandingPg extends Component {
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right'>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor'>
                                                                         <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor-header'>
-                                                                            
+                
                                                                             <video 
                                                                             src="/assets/icons/home-main-header/new-product-ftr-animation.mp4" 
                                                                             autoPlay 
@@ -16052,6 +16065,10 @@ export default class LandingPg extends Component {
                                                                             playsInline 
                                                                             style={{ width: '100%', height: 'auto' }}
                                                                             />
+
+                                                                        </div>
+                                                                        <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor-body'>
+                                                                            <p>Mashanda looks forward to opening his own bakery in 2025.</p>
                                                                         </div>
                                                                     </div>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-quote'>
