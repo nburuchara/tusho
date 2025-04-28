@@ -7972,9 +7972,29 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor {
     position: absolute;
-    bottom: 0.1rem;
-    right: 0;
+    bottom: 0.45rem;
+    right: 0.585rem;
+    height: 50.5%;
+    width: 59%;
+    border: 1.5px solid white;
+    border-radius: 8px;
+    background-color: #ff5733;
+    // padding: 0.25rem;
 }
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    color: white;
+    font-family: lexend;
+    font-size: 1rem;
+ }
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor {
+
+ }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-quote {
     position: absolute;
@@ -15987,7 +16007,7 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right'>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor'>
-
+                                                                        <h5>Did you know?</h5>
                                                                     </div>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-quote'>
                                                                         <h4>"We bake all our goods from scratch fresh-to-serve everyday."</h4>
