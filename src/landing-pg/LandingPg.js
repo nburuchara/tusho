@@ -7941,9 +7941,10 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body-box img {
-    border: 0.2px solid transparent !important;
-    width: 80% !important !important;
-    // height: 5px !important;
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 0px !important;
+    border: 0.1px solid transparent !important;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-soon {
@@ -16076,10 +16077,10 @@ export default class LandingPg extends Component {
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social'>
                                                                         <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body'>
                                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body-box'>
-                                                                                <img src='/assets/icons/home-main-header/new-products-ftr-social-1.png'/>
+                                                                                <img style={{border: '0.1px solid transparent'}} src='/assets/icons/home-main-header/new-products-ftr-social-1.png'/>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body-box'>
-                                                                                <img src='/assets/icons/home-main-header/new-products-ftr-social-2.png'/>
+                                                                                <img style={{border: '0.1px solid transparent'}} src='/assets/icons/home-main-header/new-products-ftr-social-2.png'/>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body-box'>
 
