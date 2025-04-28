@@ -7935,6 +7935,15 @@ const Styles = styled.div `
     height: 33.3%;
     width: 100%;
     border-bottom: 1px solid #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body-box img {
+    border: 0.2px solid transparent !important;
+    width: 80% !important !important;
+    // height: 5px !important;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-soon {
@@ -16067,10 +16076,10 @@ export default class LandingPg extends Component {
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social'>
                                                                         <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body'>
                                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body-box'>
-
+                                                                                <img src='/assets/icons/home-main-header/new-products-ftr-social-1.png'/>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body-box'>
-
+                                                                                <img src='/assets/icons/home-main-header/new-products-ftr-social-2.png'/>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body-box'>
 
