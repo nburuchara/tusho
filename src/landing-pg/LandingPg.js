@@ -7902,7 +7902,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left {
     width: 50%;
-    border: 1px solid black;
+    // border: 1px solid black;
     position: relative;
     z-index: 1;
 }
@@ -7926,7 +7926,15 @@ const Styles = styled.div `
     height: 95%;
     width: 90%;
     background-color: white;
-    border-radius: 5px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body-box {
+    height: 33.3%;
+    width: 100%;
+    border-bottom: 1px solid #ff5733;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-soon {
@@ -16058,7 +16066,15 @@ export default class LandingPg extends Component {
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left'>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social'>
                                                                         <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body'>
+                                                                            <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body-box'>
 
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body-box'>
+
+                                                                            </div>
+                                                                            <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body-box'>
+
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-soon'>
