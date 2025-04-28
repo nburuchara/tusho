@@ -15393,7 +15393,7 @@ export default class LandingPg extends Component {
                                                                 <button onClick={() => this.handleTriggerHeaderTransitions('option-1')} className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1-btn'>
                                                                     <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1'>
                                                                         <img src='/assets/images/home-main-body/product-btn-15.png'/>
-                                                                        <h3>New Products (6)</h3>
+                                                                        <h3>New Products (7)</h3>
                                                                     </div>
                                                                 </button>
                                                                 <h4>↗︎</h4>
@@ -15579,6 +15579,16 @@ export default class LandingPg extends Component {
                                                         </div>
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-new-products-footer'>
                                                             <h5>After spending 8 years crafting main courses, baked goods, and desserts in some of Nairobi’s top restaurants, Chef Mashanda has launched <label>"Mashanda's Masterpieces"</label> —a line of exquisite baked goods now available for order on the Tushop platform.</h5>
+                                                        </div>
+
+                                                        <div className=''>
+                                                            
+                                                        </div>
+                                                        <div className=''>
+
+                                                        </div>
+                                                        <div className=''>
+
                                                         </div>
                                                     </div>
 
@@ -15976,6 +15986,10 @@ export default class LandingPg extends Component {
                                                     <div className='homepage-header-inner-body-poster-right-right-section-bottom-logged-in'>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container ${this.state.isRightBottomHeaderTransitionActive ? "animate-peel" : ""}`}>
                                                             <h1>D<label>id you know?</label></h1>
+
+                                                            <div className=''>
+
+                                                            </div>
                                                         </div>
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-1 ${this.state.selectedHeaderOption === 'option-1' ? 'open' : ''}`}>
