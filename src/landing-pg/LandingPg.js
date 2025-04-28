@@ -8224,7 +8224,7 @@ const Styles = styled.div `
 
 .new-product-promo-label-container {
     position: absolute;
-    width: 90%;
+    width: 80%;
     // margin-left: 5%;
     // border: 1px solid black;
     bottom: 0.225rem;
@@ -8235,9 +8235,9 @@ const Styles = styled.div `
 }
 
 .new-product-promo-label {
-    position: absolute;
+    // position: absolute;
     top: 0;
-    width: 100%;
+    width: 200%;
     height: 100%;
     font-size: 0.7rem;
     font-family: poppins;
