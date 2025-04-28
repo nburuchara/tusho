@@ -5965,7 +5965,7 @@ const Styles = styled.div `
     font-family: poppins;
     color: #20313a;
     font-weight: bold;
-    font-size: 8.85px;
+    font-size: 9.25px;
     margin-top: 0px;
     margin-bottom: 0px;
 }
@@ -5979,8 +5979,8 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon img {
-    width: 15px;
-    height: 15px;
+    width: 16.5px;
+    height: 16.5px;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon label {
@@ -5998,14 +5998,14 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp h5 {
     font-family: poppins;
     color: #20313a;
-    font-size: 9.25px;
+    font-size: 9.85px;
     margin-top: 0px;
     margin-bottom: 0px;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom {
     flex-grow: 1;
-    // border: 1px solid white;
+    border: 1px solid white;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body {
@@ -15203,7 +15203,7 @@ export default class LandingPg extends Component {
                                                                                 <p>10</p>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon'>
-                                                                                <label>⛅️</label>
+                                                                                <img src='/assets/icons/home-main-header/weather-day-sun-icon.png'/>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp'>
                                                                                 <h5>22º</h5>
@@ -15214,7 +15214,7 @@ export default class LandingPg extends Component {
                                                                                 <p>11</p>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon'>
-                                                                                <label>🌤️</label>
+                                                                                <img src='/assets/icons/home-main-header/weather-day-sun-icon.png'/>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp'>
                                                                                 <h5>23º</h5>
@@ -15225,7 +15225,7 @@ export default class LandingPg extends Component {
                                                                                 <p>12</p>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon'>
-                                                                                <label>☀️</label>
+                                                                                <img src='/assets/icons/home-main-header/weather-day-sun-icon.png'/>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp'>
                                                                                 <h5>24º</h5>
@@ -15236,7 +15236,7 @@ export default class LandingPg extends Component {
                                                                                 <p>13</p>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-icon'>
-                                                                                <label>☀️</label>
+                                                                                <img src='/assets/icons/home-main-header/weather-day-sun-icon.png'/>
                                                                             </div>
                                                                             <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-top-cell-temp'>
                                                                                 <h5>24º</h5>
