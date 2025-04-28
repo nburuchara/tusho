@@ -8019,7 +8019,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor-body {
     position: absolute;
     bottom: 0.25rem;
-    border: 1px solid white;
+    // border: 1px solid white;
     left: 0.25rem;
     right: 0.25rem;
     height: 52.5%;
@@ -8029,7 +8029,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor-body p {
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 9.25px;
+    font-size: 9.85px;
     font-weight: bold;
     color: white;
     font-family: lexend;
@@ -16068,7 +16068,7 @@ export default class LandingPg extends Component {
 
                                                                         </div>
                                                                         <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor-body'>
-                                                                            <p>Mashanda looks forward to opening his own bakery in 2025.</p>
+                                                                            <p>Mashanda looks forward to opening his own bakery in 2026.</p>
                                                                         </div>
                                                                     </div>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-quote'>
