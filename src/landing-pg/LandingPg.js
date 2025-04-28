@@ -8222,12 +8222,13 @@ const Styles = styled.div `
     font-weight: bold; 
 }
 
-.new-product-promo-labeel-container {
+.new-product-promo-label-container {
     position: absolute;
     width: 65%;
     // border: 1px solid black;
     bottom: 0.2rem;
     height: 1rem;
+    overflow: hidden;
 }
 
 .new-product-promo-label {
@@ -8242,7 +8243,6 @@ const Styles = styled.div `
     border-right: 0.5px solid transparent;
     border-left: 0.5px solid transparent;
     padding: 2.5px 10px;
-    // border-radius: 20px;
     overflow: hidden;
     white-space: nowrap;
 }
@@ -8251,18 +8251,15 @@ const Styles = styled.div `
     margin-bottom: 0px;
     margin-top: 0px;
     color: #ff5733;
+    margin: 0;
+    // color: white;
+    display: inline-block;
+    white-space: nowrap;
 }
 
 .new-product-promo-carousel {
     display: inline-block;
-    animation: scrollPromo 5s linear infinite;
-}
-
-.new-product-product-promo-label p {
-    margin: 0;
-    color: white;
-    display: inline-block;
-    white-space: nowrap;
+    animation: scrollPromo 10s linear infinite;
 }
 
 /* Animation keyframes */
@@ -16116,10 +16113,10 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                         <div className='new-product-cell-details'>
                                                                             <p>{item.name}</p>
-                                                                            <div className='new-product-promo-labeel-container'>
+                                                                            <div className='new-product-promo-label-container'>
                                                                                 <span className='new-product-promo-label'>
                                                                                     <div className='new-product-promo-carousel'>
-                                                                                        <h5>NEW • NEW • NEW • NEW • NEW • NEW •</h5>
+                                                                                        <h5>NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW •</h5>
                                                                                     </div>
                                                                                 </span>
                                                                             </div>
