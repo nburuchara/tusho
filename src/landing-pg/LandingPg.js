@@ -8075,13 +8075,6 @@ const Styles = styled.div `
     visibility: visible;
 }
 
-
-.homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-1.open-notification {
-    border-bottom-right-radius: 24px;
-    transform: translateY(0);
-    visibility: visible;
-}
-
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-new-products {
     height: 100%;
     width: 99.5%;
@@ -15627,7 +15620,18 @@ export default class LandingPg extends Component {
                                                             </div>
                                                         </div>
                                                     </div>
+                                                            
+                                                    <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-3 ${this.state.selectedHeaderOption === 'option-3' ? 'open' : ''}`}>
 
+                                                    </div>
+
+                                                    <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-4 ${this.state.selectedHeaderOption === 'option-4' ? 'open' : ''}`}>
+
+                                                    </div>
+
+                                                    <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-5 ${this.state.selectedHeaderOption === 'option-5' ? 'open' : ''}`}>
+
+                                                    </div>
 
                                                 </div>
                                             </div>
@@ -15933,6 +15937,18 @@ export default class LandingPg extends Component {
                                                             )}
                                                         </div>
 
+                                                        <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-3 ${this.state.selectedHeaderOption === 'option-3' ? 'open' : ''}`}>
+
+                                                        </div>
+
+                                                        <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-4 ${this.state.selectedHeaderOption === 'option-4' ? 'open' : ''}`}>
+
+                                                        </div>
+
+                                                        <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-5 ${this.state.selectedHeaderOption === 'option-5' ? 'open' : ''}`}>
+
+                                                        </div>
+
                                                     </div>
                                                 </div>
                                             ) : (
@@ -15996,6 +16012,21 @@ export default class LandingPg extends Component {
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
                                                             <h3></h3>
                                                         </div>
+
+                                                        <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-3 ${this.state.selectedHeaderOption === 'option-3' ? 'open' : ''}`}>
+                                                            <h3></h3>
+                                                        </div>
+
+                                                        <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-4 ${this.state.selectedHeaderOption === 'option-4' ? 'open' : ''}`}>
+                                                            <h3></h3>
+                                                        </div>
+
+                                                        <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-5 ${this.state.selectedHeaderOption === 'option-5' ? 'open' : ''}`}>
+                                                            <h3></h3>
+                                                        </div>
+
+                                                        
+
                                                     </div>
                                                 </div>
                                             ) : (
@@ -16009,6 +16040,8 @@ export default class LandingPg extends Component {
                                 </div>
                             </div>
                         </div>
+
+                            {/* - - - - - PRODUCT FILTERS & GRID - - - - - */}
 
                         <div className='homepage-body'>
                             <div className='homepage-body-inner-header'>
