@@ -7970,6 +7970,12 @@ const Styles = styled.div `
     z-index: 0;
 }
 
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor {
+    position: absolute;
+    bottom: 0.1rem;
+    right: 0;
+}
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-quote {
     position: absolute;
     top: 0.75rem;
@@ -8226,7 +8232,7 @@ const Styles = styled.div `
 .new-product-cell-details p {
     margin-left: 3.5%;
     margin-right: 3.5%;
-    margin-top: 0px;
+    margin-top: -0.75rem;
     margin-bottom: 0px;
     font-size: 67.5%;
     color: #20313a;
@@ -8239,7 +8245,7 @@ const Styles = styled.div `
     width: 80%;
     // margin-left: 5%;
     // border: 1px solid black;
-    bottom: 0.225rem;
+    bottom: 0.375rem;
     height: 1rem;
     overflow-x: hidden;
     border-top: 1px solid #ff5733;
@@ -15980,6 +15986,9 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right'>
+                                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-right-decor'>
+
+                                                                    </div>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-quote'>
                                                                         <h4>"We bake all our goods from scratch fresh-to-serve everyday."</h4>
                                                                     </div>
