@@ -8384,6 +8384,10 @@ const Styles = styled.div `
     color: #ff5733;
     margin-top: 0px;
     margin-bottom: 0px;
+    font-family: lexend;
+    font-size: 95%;
+    margin-left: 8.5%;
+    margin-right: 8.5%;
 }
 
     // - - NEW PRODUCTS (BOTTOM BOX - UI) - - //
@@ -16478,7 +16482,7 @@ export default class LandingPg extends Component {
 
                                                             <div className='did-you-know-box'>
                                                                 <div className='did-you-know-box-body'>
-
+                                                                    <h2>Hey! Did you know you can get your products in 90 minutes? Select "Express" at checkout!</h2>
                                                                 </div>
                                                             </div>
                                                         </div>
