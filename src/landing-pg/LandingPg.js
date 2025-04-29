@@ -7934,7 +7934,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body-box {
     height: 33.3%;
     width: 100%;
-    border-bottom: 1px solid #ff5733;
+    border-bottom: 1px solid transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7945,6 +7945,11 @@ const Styles = styled.div `
     height: 15px !important;
     border-radius: 0px !important;
     border: 0.1px solid transparent !important;
+    transition: transform 0.5s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social-body-box img:hover {
+    transform: scale(1.125);
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-soon {
