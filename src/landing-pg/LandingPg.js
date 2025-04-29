@@ -11006,6 +11006,13 @@ export default class LandingPg extends Component {
                     ? { ...item, qty: Math.max(0, item.qty + change) }
                     : item
             );
+
+            // 🔹 Update newItems list (if the item exists)
+            const updatedNewItems = prevState.newProducts.map((item) =>
+                item.id === productId
+                    ? { ...item, qty: Math.max(0, item.qty + change) }
+                    : item
+            );
     
             // Find updated product
             const updatedProduct = updatedProducts.find((product) => product.id === productId);
@@ -11058,6 +11065,7 @@ export default class LandingPg extends Component {
             return {
                 products: updatedProducts,
                 promoItems: updatedPromoItems, // 🔹 update added here
+                newProducts: updatedNewItems,
                 cart: updatedCart,
                 totalCartPrice,
                 groupedOptions: updatedGroupedOptions,
@@ -16306,7 +16314,7 @@ export default class LandingPg extends Component {
                                                                                    </> 
                                                                                 }
                                                                                 {item.qty === 0 &&
-                                                                                    <div className='new-product-cell-qty-container-zero'>
+                                                                                    <div onClick={() => this.mainPageProductsHandleQtyChange(item.id, 1)} className='new-product-cell-qty-container-zero'>
                                                                                         <p>Buy</p>
                                                                                     </div>
                                                                                 }
