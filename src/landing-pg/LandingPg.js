@@ -8338,6 +8338,7 @@ const Styles = styled.div `
     height: 98.6%;
     border: 1px solid #ff5733;
     border-bottom-right-radius: 24px;
+    position: relative;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container h1 {
@@ -8353,6 +8354,22 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container label {
    
 }
+
+.did-you-know-box {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1rem;
+    border: 1px solid #ff5733;
+    width: 85%;
+    height: 60%;
+    border-radius: 8px;
+}
+
+.did-you-know-box-body {
+    
+}
+
+    // - - NEW PRODUCTS (BOTTOM BOX - UI) - - //
 
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-1 {
     position: absolute;
@@ -16442,7 +16459,7 @@ export default class LandingPg extends Component {
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container ${this.state.isRightBottomHeaderTransitionActive ? "animate-peel" : ""}`}>
                                                             <h1>D<label>id you know?</label></h1>
 
-                                                            <div className=''>
+                                                            <div className='did-you-know-box'>
 
                                                             </div>
                                                         </div>
