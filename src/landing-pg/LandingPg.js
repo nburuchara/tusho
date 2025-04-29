@@ -805,7 +805,8 @@ const Styles = styled.div `
     z-index: 1;
     position: relative;
     // margin-left: -6%;
-    height: 9.15rem;
+    height: 81%;
+    // max-height: 110%;
     overflow: hidden;
     overflow-y: auto;
     width: 96.5%;
@@ -7381,6 +7382,11 @@ const Styles = styled.div `
     // border: 1px solid white;
     overflow: hidden;
     border-top-right-radius: 24px;
+    transition: height 0.5s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top.open {
+    height: 100%;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top img {
@@ -8136,6 +8142,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2.open {
     transform: translateY(0);
     visibility: visible;
+    height: 100%;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 h1 {
@@ -8161,7 +8168,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-shopping-assist {
-    // border: 1px solid black;
+    border: 1px solid black;
     width: 99.5%;
     height: 85.25%;
 }
@@ -8187,6 +8194,11 @@ const Styles = styled.div `
     // border: 1px solid white;
     overflow: hidden;
     border-bottom-right-radius: 24px;
+    transition: height 0.5s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-right-right-section-bottom.closed {
+    height: 0.5%;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom img {
@@ -15908,7 +15920,7 @@ export default class LandingPg extends Component {
                                         )}
                                         <div className='homepage-header-inner-body-poster-right-right-section'>
                                             {this.state.userSignedIn ? (
-                                                <div className='homepage-header-inner-body-poster-right-right-section-top'>
+                                                <div className={`homepage-header-inner-body-poster-right-right-section-top ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in'>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container ${this.state.isRightTopHeaderTransitionActive ? "animate-peel" : ""}`}>
                                                             <h2>Your Wallet</h2>
@@ -16263,7 +16275,7 @@ export default class LandingPg extends Component {
                                                 </div>
                                             )}
                                             {this.state.userSignedIn ? (
-                                                <div className='homepage-header-inner-body-poster-right-right-section-bottom'>
+                                                <div className={`homepage-header-inner-body-poster-right-right-section-bottom ${this.state.selectedHeaderOption === 'option-2' ? 'closed' : ''}`}>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-bottom-logged-in'>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container ${this.state.isRightBottomHeaderTransitionActive ? "animate-peel" : ""}`}>
                                                             <h1>D<label>id you know?</label></h1>
