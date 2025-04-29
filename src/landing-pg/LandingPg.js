@@ -980,7 +980,7 @@ const Styles = styled.div `
 }
 
 .searchResultCellPriceShopAssistant h5 {
-    margin-top: 0px;
+    margin-top: -0.15rem;
     margin-bottom: 0px;
     font-family: poppins;
     color: #ff5733;
@@ -8168,9 +8168,9 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-shopping-assist {
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 99.5%;
-    height: 85.25%;
+    height: 90.25%;
 }
 
 .shopping-assistant-loading {
@@ -8178,7 +8178,7 @@ const Styles = styled.div `
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 2.99rem;
+    margin-top: 3.99rem;
 }
 
 .shopping-assistant-loading p {
@@ -8198,7 +8198,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom.closed {
-    height: 0.5%;
+    height: 0.2%;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom img {
