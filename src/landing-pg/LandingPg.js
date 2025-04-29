@@ -8357,16 +8357,24 @@ const Styles = styled.div `
 
 .did-you-know-box {
     position: absolute;
-    bottom: 1.5rem;
+    bottom: 1.75rem;
     left: 1rem;
     border: 1px solid #ff5733;
     width: 85%;
     height: 60%;
     border-radius: 8px;
+    background-color: #ff5733;
 }
 
 .did-you-know-box-body {
-    
+    position: absolute;
+    top: 0.35rem;
+    left: 0.35rem;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    border: 1.5px solid #ff5733;
 }
 
     // - - NEW PRODUCTS (BOTTOM BOX - UI) - - //
@@ -16460,7 +16468,9 @@ export default class LandingPg extends Component {
                                                             <h1>D<label>id you know?</label></h1>
 
                                                             <div className='did-you-know-box'>
+                                                                <div className='did-you-know-box-body'>
 
+                                                                </div>
                                                             </div>
                                                         </div>
 
