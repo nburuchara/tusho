@@ -16302,13 +16302,13 @@ export default class LandingPg extends Component {
                                                                             <div className='new-product-cell-qty-container'>
                                                                                 {item.qty > 0 &&
                                                                                    <>
-                                                                                   <div className='new-product-cell-qty-container-left'>
+                                                                                   <div onClick={() => this.mainPageProductsHandleQtyChange(item.id, -1)} className='new-product-cell-qty-container-left'>
                                                                                         -
                                                                                     </div>
                                                                                     <div className='new-product-cell-qty-container-center'>
                                                                                         <p>{item.qty}</p>
                                                                                     </div>
-                                                                                    <div className='new-product-cell-qty-container-right'>
+                                                                                    <div onClick={() => this.mainPageProductsHandleQtyChange(item.id, 1)} className='new-product-cell-qty-container-right'>
                                                                                         +
                                                                                     </div>
                                                                                    </> 
