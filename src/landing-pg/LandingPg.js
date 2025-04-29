@@ -7910,7 +7910,7 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-sample-product-left-social {
     position: absolute;
     top: 0.6rem;
-    right: -0.25rem;
+    right: 0rem;
     height: 30%;
     border: 1px solid white;
     width: 20%;
@@ -7992,7 +7992,7 @@ const Styles = styled.div `
     height: 53%;
     position: absolute;
     top: 0.75rem;
-    left: 1.15rem;
+    left: 1.0rem;
     z-index: 3;
     transition: transform 0.5s ease-in-out;
 }
