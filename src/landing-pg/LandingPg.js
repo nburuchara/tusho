@@ -6372,6 +6372,15 @@ const Styles = styled.div `
     margin-left: 9.5%;
 }
 
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4 {
+    background-color: #ffdada !important;
+    transition: background-color 0.35s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4:hover {
+    background-color: transparent !important;
+}
+
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4 img {
     margin-left: 11%;
 }
@@ -7381,7 +7390,7 @@ const Styles = styled.div `
     // transition: border-color 0.2s;
 }
 
-    // # SHOP JIPANGE (UI)
+    // # JIPANGE DELIVERY (UI)
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-3 {
     position: absolute;
@@ -7402,6 +7411,31 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-3.open {
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+    // # SHOP PAMOJA (UI)
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container-option-4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #dfffc0;
+    z-index: 2;
+    pointer-events: none;
+    margin-left: 0.25rem;
+    margin-top: -0.08rem;
+    height: 99.6%;
+    width: 101.9%;
+    border: 1px solid #ff5733;
+    overflow: hidden;
+    transition: background-color 0.6s ease-in-out;
+    transform: translateY(100%);
+    transition: transform 1s ease-in-out, pointer-events 1s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container-option-4.open {
     pointer-events: auto;
     transform: translateY(0);
 }
