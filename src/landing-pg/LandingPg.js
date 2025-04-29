@@ -6581,7 +6581,7 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster:has(.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4-btn:focus) {
-    --background-color: #fff2ccff;
+    --background-color: #ffdada;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container {
@@ -7421,7 +7421,7 @@ const Styles = styled.div `
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #dfffc0;
+    background-color: #ffdada;
     z-index: 2;
     pointer-events: none;
     margin-left: 0.25rem;
@@ -8282,6 +8282,28 @@ const Styles = styled.div `
     visibility: visible;
 }
 
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffdada;
+    margin-left: 0.28rem;
+    width: 98%;
+    height: 96.25%;
+    border: 1px solid #ff5733;
+    border-top-right-radius: 24px;
+    transform: translateY(-100%);
+    transition: transform 1s ease-in-out, visibility 1s ease-in-out;
+    visibility: hidden;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-4.open {
+    transform: translateY(0);
+    visibility: visible;
+}
+
+    // # BOTTOM RIGHT UI SECTION
+
 .homepage-header-inner-body-poster-right-right-section-bottom {
     height: 50%;
     // border: 1px solid white;
@@ -8621,6 +8643,8 @@ const Styles = styled.div `
     visibility: visible;
 }
 
+    // # JIPANGE DELIVERY (TOP RIGHT BOX - UI) 
+
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-3 {
     position: absolute;
     top: 0;
@@ -8637,6 +8661,30 @@ const Styles = styled.div `
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-3.open {
+    border-bottom-right-radius: 24px;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+
+    // # SHOP PAMOJA (TOP BOTTOM BOX - UI) 
+
+.homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #ffdada;
+    margin-left: 0.28rem;
+    width: 98%;
+    height: 98.6%;
+    border: 1px solid #ff5733;
+    border-bottom-right-radius: 0px;
+    transform: translateY(-100%);
+    transition: transform 1s ease-in-out, visibility 1s ease-in-out, border-bottom-right-radius 1.25s ease-in-out;
+    visibility: hidden;
+}
+
+.homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-4.open {
     border-bottom-right-radius: 24px;
     transform: translateY(0);
     visibility: visible;
