@@ -8375,6 +8375,15 @@ const Styles = styled.div `
     width: 100%;
     border-radius: 8px;
     border: 1.5px solid #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.did-you-know-box-body h2 {
+    color: #ff5733;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
     // - - NEW PRODUCTS (BOTTOM BOX - UI) - - //
