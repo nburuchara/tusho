@@ -7672,7 +7672,8 @@ const Styles = styled.div `
     font-size: 70%;
     font-weight: bold;
     height: 70%;
-    width: 90%;
+    width: 95%;
+    margin-right: 5%;
     cursor: pointer;
     transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
@@ -7806,9 +7807,9 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left img {
     position: absolute;
     left: 4.25%;
-    bottom: -0.65rem;
-    width: 50px;
-    height: 50px;
+    bottom: -0.25rem;
+    width: 40px;
+    height: 40px;
     border: 1px solid transparent;
 }
 
@@ -7823,12 +7824,12 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-right h3 {
     margin-top: 0px;
     margin-bottom: 0px;
-    margin-left: 3.5%;
-    margin-right: 3.5%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
     font-family: lexend;
     font-weight: bolder;
     color: #ff5733;
-    font-size: 80.5%;
+    font-size: 72.5%;
 }
 
 .title-with-dot {
