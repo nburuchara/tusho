@@ -3215,6 +3215,7 @@ const Styles = styled.div `
     color: white;
     font-size: 60%;
     font-family: poppins;
+    font-weight: normal;
     transition: color 0.5s ease-in-out;
 }
 
