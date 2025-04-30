@@ -3138,16 +3138,17 @@ const Styles = styled.div `
 
 .jipange-settings-selected-time-slots-parent-container {
     border: 1px solid black;
-    height: 7.5rem;
+    height: 7.7rem;
     position: relative;
 }
 
 .jipange-settings-selected-time-slots-header {
     position: absolute;
     top: 0;
-    width: 100%;
-    height: 2rem;
-    border: 1px solid black;
+    width: 95%;
+    margin-left: 2.5%;
+    height: 1.75rem;
+    border-bottom: 1px solid #ccc;
     display: flex;
     align-items: center;
     justify-content: left;
@@ -3156,6 +3157,7 @@ const Styles = styled.div `
 .jipange-settings-selected-time-slots-header p {
     margin-top: 0px;
     margin-bottom: 0px;
+    margin-left: 0px;
     color: #5e626a;
     font-family: poppins;
 }
@@ -12972,7 +12974,7 @@ export default class LandingPg extends Component {
                                                         </div>
                                                         <div className='jipange-settings-selected-time-slots-parent-container'>
                                                             <div className='jipange-settings-selected-time-slots-header'>
-
+                                                                <p>Select a delivery time slot:</p>
                                                             </div>
                                                             <div className='jipange-settings-selected-time-slots-container'>
                                                                 <div className='jipange-settings-selected-time-slots-container-row'>
