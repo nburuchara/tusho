@@ -3205,7 +3205,7 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
 }
 
-.jipange-settings-selected-time-slots-container-cell-container:hover p {
+.jipange-settings-selected-time-slots-container-cell-container:hover h5 {
     color: #ff5733;
 }
 
