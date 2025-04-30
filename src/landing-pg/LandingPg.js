@@ -7790,7 +7790,7 @@ const Styles = styled.div `
     width: 82.5%;
     border: 1px solid #ff5733;
     border-radius: 8px;
-    margin-right: 0.25rem;
+    margin-right: 0.15rem;
     display: flex;
     align-items: center;
     justify-content: right;
@@ -7800,13 +7800,15 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left-btn h5 {
     margin-top: 0px;
     margin-bottom: 0px;
+    margin-right: -0.25rem;
     font-family: poppins;
+    font-size: 80%;
     color: #ff5733;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-bottom-float-left img {
     position: absolute;
-    left: 4.25%;
+    left: 7%;
     bottom: -0.25rem;
     width: 40px;
     height: 40px;
