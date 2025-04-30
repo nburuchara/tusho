@@ -8321,6 +8321,20 @@ const Styles = styled.div `
     color: #5e626a;
 }
 
+.shopping-assistant-placeholder {
+    border: 1px solid black;
+    height: 85.25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shopping-assistant-placeholder img {
+    width: 190px !important;
+    height: 190px !important;
+    border: 0.1px solid transparent !important;
+}
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-shopping-assist {
     // border: 1px solid black;
     width: 99.5%;
@@ -9798,6 +9812,7 @@ export default class LandingPg extends Component {
             showWalletTopUpBtnConfirm: false,
 
                 //* # SHOPPING LIST *//
+            showShoppingAssistantPlaceholder: true,
             showShopAssistantLoading: false,
             items: [''], // Shopping list items (starts with one empty bullet)
             focusIndex: null, // 👈 Track which input to focus
@@ -11602,6 +11617,7 @@ export default class LandingPg extends Component {
 
         this.setState({
             searchBarInputShopAssistant: e.target.value,
+            showShoppingAssistantPlaceholder: false,
             isSearchLoadingShopAssistant: true,
             clearSearchBtn: true,
             showTimezones: false
@@ -16516,6 +16532,11 @@ export default class LandingPg extends Component {
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
                                                             <h1><label>🛒</label> Shopping Assistant</h1>
                                                             <p>We'll help you find what you're looking for!</p>
+                                                            {this.state.showShoppingAssistantPlaceholder && 
+                                                                <div className='shopping-assistant-placeholder'>
+                                                                    <img src='/assets/icons/home-main-header/shopping-assistant-icon.png'/>
+                                                                </div>
+                                                            }
                                                             {this.state.showShopAssistantLoading && 
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-shopping-assist'>
                                                                     <div className='shopping-assistant-loading'>
