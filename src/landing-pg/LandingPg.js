@@ -4684,7 +4684,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-delivery-info-settings-body {
-    border: 1px solid black;
+    // border: 1px solid black;
     border-top: 1px solid #5e626a;
     height: 50%;
     margin-left: 3.5%;
