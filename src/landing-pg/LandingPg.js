@@ -3146,7 +3146,7 @@ const Styles = styled.div `
     top: 0;
     width: 95%;
     margin-left: 2.5%;
-    height: 1.75rem;
+    height: 1.85rem;
     border-bottom: 1px solid #ccc;
     display: flex;
     align-items: center;
