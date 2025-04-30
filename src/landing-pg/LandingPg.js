@@ -8370,7 +8370,7 @@ const Styles = styled.div `
     position: absolute;
     top: 0.35rem;
     left: 0.35rem;
-    background-color: white;
+    background-color: #faece9;
     height: 100%;
     width: 100%;
     border-radius: 8px;
@@ -8389,8 +8389,7 @@ const Styles = styled.div `
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.35;
-    z-index: 0; /* Sends it behind the content */
+    opacity: 0.25;
 }
 
 .did-you-know-box-body h2 {
@@ -8401,7 +8400,6 @@ const Styles = styled.div `
     font-size: 95%;
     margin-left: 8.5%;
     margin-right: 8.5%;
-    z-index: 1;
 }
 
     // - - NEW PRODUCTS (BOTTOM BOX - UI) - - //
@@ -15794,7 +15792,7 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                                 <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom'>
                                                                     <div className='homepage-header-inner-body-poster-left-logged-in-header-fyi-right-bottom-notification-box'>
-                                                                    <   div className="confetti-background">
+                                                                        <div className="confetti-background">
                                                                             {[...Array(50)].map((_, i) => (
                                                                                 <div
                                                                                 key={i}
@@ -16496,14 +16494,20 @@ export default class LandingPg extends Component {
 
                                                             <div className='did-you-know-box'>
                                                                 <div className='did-you-know-box-body'>
-                                                                    <video 
-                                                                    src="/assets/images/home-main-header/did-you-know-video.mp4" 
-                                                                    autoPlay 
-                                                                    loop 
-                                                                    muted 
-                                                                    playsInline 
-                                                                    style={{ width: '100%', height: 'auto' }}
-                                                                    />
+                                                                    <div className="confetti-background">
+                                                                        {[...Array(50)].map((_, i) => (
+                                                                            <div
+                                                                            key={i}
+                                                                            className="confetti-piece"
+                                                                            style={{
+                                                                                left: `${Math.random() * 100}vw`,
+                                                                                backgroundColor: '#ff5733',
+                                                                                animationDuration: `${20 + Math.random() * 20}s`, // slower fall
+                                                                                animationDelay: `${Math.random() * 10}s`,
+                                                                            }}
+                                                                            />
+                                                                        ))}
+                                                                    </div>
                                                                     <h2>Hey! Did you know you can get your products in 90 minutes? Select "Express" at checkout!</h2>
                                                                 </div>
                                                             </div>
