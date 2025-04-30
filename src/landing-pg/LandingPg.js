@@ -8322,17 +8322,26 @@ const Styles = styled.div `
 }
 
 .shopping-assistant-placeholder {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 85.25%;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-.shopping-assistant-placeholder img {
-    width: 190px !important;
-    height: 190px !important;
-    border: 0.1px solid transparent !important;
+.shopping-assistant-placeholder video {
+    margin-top: -2.5rem;
+}
+
+.shopping-assistant-placeholder h3 {
+    margin-left: 8.5%;
+    margin-right: 8.5%;
+    font-family: lexend;
+    color: #ff5733;
+    text-align: center;
+    font-weight: normal;
+    font-size: 92.5%;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-shopping-assist {
@@ -11633,6 +11642,7 @@ export default class LandingPg extends Component {
             if (searchInput.trim() === "") {
                 this.setState({
                     searchedData: "",
+                    showShoppingAssistantPlaceholder: true,
                     searchCloseBtn: false,
                     filteredOptions: [],
                     isSearchLoadingShopAssistant: false,
@@ -16534,7 +16544,16 @@ export default class LandingPg extends Component {
                                                             <p>We'll help you find what you're looking for!</p>
                                                             {this.state.showShoppingAssistantPlaceholder && 
                                                                 <div className='shopping-assistant-placeholder'>
-                                                                    <img src='/assets/icons/home-main-header/shopping-assistant-icon.png'/>
+                                                                    {/* <img src='/assets/icons/home-main-header/shopping-assistant-icon.png'/> */}
+                                                                    <video 
+                                                                    src="/assets/icons/home-main-header/shopping-assistant-icon.mp4" 
+                                                                    autoPlay 
+                                                                    loop 
+                                                                    muted 
+                                                                    playsInline 
+                                                                    style={{ width: '35%', height: 'auto' }}
+                                                                    />
+                                                                    <h3>We'll fetch your items as you type your list.</h3>
                                                                 </div>
                                                             }
                                                             {this.state.showShopAssistantLoading && 
