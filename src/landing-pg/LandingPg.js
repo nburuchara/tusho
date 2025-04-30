@@ -3001,7 +3001,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-jipange-settings {
     margin-left: 6.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .navbar-profile-account-popup-jipange-settings p {
@@ -3014,7 +3014,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-calendar-parent-container {
-    border: 1px solid black;
+    // border: 1px solid black;
     // height: 37.65rem;
     // overflow-y: auto;
 }
@@ -3120,7 +3120,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-dates-container {
-    border: 1px solid black;
+    // border: 1px solid black;
     padding-left: 3%;
     padding-right: 2%;
     // overflow-x: auto;
@@ -3134,11 +3134,10 @@ const Styles = styled.div `
     font-size: 80%;
 }
 
-
-
 .jipange-settings-selected-time-slots-parent-container {
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 7.7rem;
+    margin-top: 1rem;
     position: relative;
 }
 
