@@ -3197,6 +3197,16 @@ const Styles = styled.div `
     align-items: center;
     justify-content: center;
     background-color: #ff5733;
+    cursor: pointer;
+}
+
+.jipange-settings-selected-time-slots-container-cell-container:hover {
+    background-color: #faece9;
+    border: 1px solid #ff5733;
+}
+
+.jipange-settings-selected-time-slots-container-cell-container:hover p {
+    color: #ff5733;
 }
 
 .jipange-settings-selected-time-slots-container-cell-container h5 {
