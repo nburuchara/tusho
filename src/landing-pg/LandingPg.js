@@ -3198,6 +3198,7 @@ const Styles = styled.div `
     justify-content: center;
     background-color: #ff5733;
     cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
 }
 
 .jipange-settings-selected-time-slots-container-cell-container:hover {
@@ -3215,6 +3216,7 @@ const Styles = styled.div `
     color: white;
     font-size: 60%;
     font-family: poppins;
+    transition: color 0.5s ease-in-out;
 }
 
 .jipange-settings-selected-dates-grid {
