@@ -3165,7 +3165,8 @@ const Styles = styled.div `
 .jipange-settings-selected-time-slots-container {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: 96.5%;
+    margin-left: 1.75%;
     // border: 1px solid black;
     height: 5.5rem;
     display: flex;
@@ -3189,9 +3190,21 @@ const Styles = styled.div `
 
 .jipange-settings-selected-time-slots-container-cell-container {
     width: 90%;
-    border: 1px solid black;
-    height: 85%;
+    border: 1px solid #ff5733;
+    height: 80%;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff5733;
+}
+
+.jipange-settings-selected-time-slots-container-cell-container h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-size: 60%;
+    font-family: poppins;
 }
 
 .jipange-settings-selected-dates-grid {
@@ -12972,67 +12985,69 @@ export default class LandingPg extends Component {
                                                                 }
                                                             </div>
                                                         </div>
-                                                        <div className='jipange-settings-selected-time-slots-parent-container'>
-                                                            <div className='jipange-settings-selected-time-slots-header'>
-                                                                <p>Select a delivery time slot:</p>
-                                                            </div>
-                                                            <div className='jipange-settings-selected-time-slots-container'>
-                                                                <div className='jipange-settings-selected-time-slots-container-row'>
-                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
-
+                                                        {this.state.selectedDates.size === 1 &&
+                                                            <div className='jipange-settings-selected-time-slots-parent-container'>
+                                                                <div className='jipange-settings-selected-time-slots-header'>
+                                                                    <p>Select a delivery time slot:</p>
+                                                                </div>
+                                                                <div className='jipange-settings-selected-time-slots-container'>
+                                                                    <div className='jipange-settings-selected-time-slots-container-row'>
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                            <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                <h5>8:00 - 9:00am</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                            <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                <h5>9:00 - 10:00am</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                            <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                <h5>10:00 - 11:00am</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                            <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                <h5>11:00 - 12:00pm</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                            <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                <h5>12:00 - 1:00pm</h5>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
-                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
-
+                                                                    <div className='jipange-settings-selected-time-slots-container-row'>
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                            <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                <h5>1:00 - 2:00pm</h5>
+                                                                            </div>  
                                                                         </div>
-                                                                    </div>
-                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
-
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                            <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                <h5>2:00 - 3:00pm</h5>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
-
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                            <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                <h5>3:00 - 4:00pm</h5>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
-
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                            <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                <h5>4:00 - 5:00pm</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                            <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                <h5>5:00 - 6:00pm</h5>
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div className='jipange-settings-selected-time-slots-container-row'>
-                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
-
-                                                                        </div>  
-                                                                    </div>
-                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
-
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
-
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
-
-                                                                        </div>
-                                                                    </div>
-                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
                                                             </div>
-                                                        </div>
+                                                        }
                                                     </div>
                                                 }
                                                 {this.state.showJipangeSettingsSelectedDate && 
