@@ -58,7 +58,7 @@ const Styles = styled.div `
     visibility: hidden;
     transform: translateX(5px);
     opacity: 0;
-    transition-property: transform, opacity;
+    transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
     cursor: pointer;
 }
 
@@ -103,7 +103,7 @@ const Styles = styled.div `
     border: 1px solid transparent;
     border-radius: 8px;
     cursor: pointer;
-    transition-property: border;
+    transition: border 0.35s ease-in-out;
 }
 
 .navbar-options-icon.clicked img {
@@ -1221,7 +1221,7 @@ const Styles = styled.div `
     padding-bottom: 7%;
     padding-left: 10%;
     padding-right: 10%;
-    transition-property: width, background-color, border;
+    transition: width 0.35s ease-in-out, background-color 0.35s ease-in-out, border 0.35s ease-in-out;
 }
 
 .navbar-options-dropdown-left-menu-options-cell-icon.clicked img {
@@ -1241,7 +1241,7 @@ const Styles = styled.div `
     // margin-left: 2.5%;
     font-family: poppins;
     font-size: 70%;
-    transition-property: text-decoration, text-decoration-color;
+    transition: text-decoration 0.35s ease-in-out, text-decoration-color 0.35s ease-in-out;
 }
 
 .navbar-options-dropdown-left-menu-options-cell-details.clicked h5 {
@@ -1255,7 +1255,7 @@ const Styles = styled.div `
     margin-right: 5%;
     font-size: 70%;
     font-family: poppins;
-    transition-property: text-decoration, text-decoration-color;
+    transition: text-decoration 0.35s ease-in-out, text-decoration-color 0.35s ease-in-out;
 }
 
 .navbar-options-dropdown-left-menu-options-cell-details.clicked p {
@@ -1273,7 +1273,7 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    transition-property: transform;
+    transition: transform 0.35s ease-in-out;
 }
 
 .navbar-options-dropdown-left-menu-options-cell-arrow img {
@@ -1303,7 +1303,6 @@ const Styles = styled.div `
     border-bottom-right-radius: 8px;
     transform: translateX(0%);
     opacity: 1;
-    transition-property: opacity, transform;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
@@ -1663,7 +1662,7 @@ const Styles = styled.div `
 .navbar-options-checkout-home-header-icon img {
     width: 40%;
     filter: grayscale(100%);
-    transition-property: filter;
+    transition: filter 0.35s ease-in-out;
     cursor: pointer;
 }
 
@@ -1968,7 +1967,7 @@ const Styles = styled.div `
     border-top-left-radius: 8px;
     position: relative;
     overflow: hidden;
-    transition-property: background-color;
+    transition: background-color 0.35s ease-in-out;
 }
 
 .navbar-profile-dropdown-header.success {
@@ -2054,7 +2053,7 @@ const Styles = styled.div `
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-    transition-property: background-color;
+    transition: background-color 0.35s ease-in-out;
     border-radius: 8px;
 }
 
@@ -2083,7 +2082,7 @@ const Styles = styled.div `
     border: 2px solid #ccc;
     border-radius: 50%;
     // filter: grayscale(100);
-    transition-property: filter;
+    transition: filter 0.35s ease-in-out;
 }
 
 .profile-dropdown-img-container {
@@ -2093,7 +2092,7 @@ const Styles = styled.div `
     border: 2px solid #FF5733;
     border-radius: 50%;
     // filter: grayscale(100%);
-    transition-property: filter;
+    transition: filter 0.35s ease-in-out;
     
     /* Background image */
     background-image: url('/assets/icons/home-profile/profile-img-bg.png'); /* Set your background image */
@@ -2140,7 +2139,7 @@ const Styles = styled.div `
     padding-bottom: 10px;
     border: 5px solid #f3f5f7;
     border-radius: 8px;
-    transition-property: height;
+    transition: height 0.35s ease-in-out;
 }
 
 .navbar-profile-dropdown-body.profile-loading {
@@ -2253,7 +2252,7 @@ const Styles = styled.div `
     margin-left: 2%;
     color: #5e626a;
     text-decoration: none;
-    transition-property: color, text-decoration;
+    transition: color 0.35s ease-in-out, text-decoration 0.35s ease-in-out;
 }
 
 .navbar-profile-dropdown-body-verify-otp-labels p:hover { 
@@ -2320,7 +2319,7 @@ const Styles = styled.div `
     justify-content: space-between;
     border-radius: 8px;
     cursor: pointer;
-    transition-property: background-color, border;
+    transition: background-color 0.35s ease-in-out, border 0.35s ease-in-out;
 }
 
 .navbar-profile-dropdown-body-signed-in-options-cell:hover {
@@ -2345,7 +2344,7 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    transition-property: filter;
+    transition: filter 0.35s ease-in-out;
 }
 
 .navbar-profile-dropdown-body-signed-in-options-cell-img img {
@@ -2366,7 +2365,7 @@ const Styles = styled.div `
     // margin-top: 0px;
     margin-left: 2.5%;
     font-size:  85%;
-    transition-property: text-decoration, color, text-decoration-color;
+    transition: text-decoration 0.35s ease-in-out, color 0.35s ease-in-out, text-decoration-color 0.35s ease-in-out;
 }
 
     // - - HOMESCREEN ACCOUNT SETTINGS POPUP - - //
@@ -2476,7 +2475,7 @@ const Styles = styled.div `
     margin-top: 0.225rem;
     filter: grayscale(100);
     cursor: pointer;
-    transition-property: filter;
+    transition: filter 0.35s ease-in-out;
 }
 
 .navbar-profile-account-popup-header-right-close img:hover {
@@ -2525,7 +2524,7 @@ const Styles = styled.div `
     transform: translateY(-35rem);
     border-right: 1px solid transparent;
     visibility: hidden;
-    transition-property: transform;
+    transition: transform 0.35s ease-in-out;
  }
 
  .navbar-profile-account-popup-body-search-bar-results.display {
@@ -2544,7 +2543,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-body-left-settings-option-cell:hover {
     background-color:  #faece9;
-    transition-property: background-color;
+    transition: background-color 0.35s ease-in-out;
     cursor: pointer;
 }
 
@@ -2555,7 +2554,7 @@ const Styles = styled.div `
     color: #ff5733;
     // font-weight: bold;
     text-decoration: underline;
-    transition-property: text-decoration;
+    transition: text-decoration 0.35s ease-in-out;
 }
 
 .navbar-profile-account-popup-body-left-settings-option-cell.selected {
@@ -2675,7 +2674,7 @@ const Styles = styled.div `
     background-color: #f6f8fa;
     border: 1px solid #5e626a;
     cursor: pointer;
-    transition-property: background-color, border;
+    transition: background-color 0.35s ease-in-out, border 0.35s ease-in-out;
 }
 
 .navbar-profile-account-popup-body-left-footer-sign-out:hover {
@@ -2696,7 +2695,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-body-left-footer-sign-out-icon img {
     width: 28%;
     filter: grayscale(100);
-    transition-property: filter;
+    transition: filter 0.35s ease-in-out;
 }
 
 .navbar-profile-account-popup-body-left-footer-sign-out-label p {
@@ -2705,7 +2704,7 @@ const Styles = styled.div `
     font-weight: normal;
     font-size: 85%;
     padding-top: 0.5px;
-    transition-property: color;
+    transition: color 0.35s ease-in-out;
 }
 
 .navbar-profile-account-popup-body-left-footer-delete {
@@ -3055,7 +3054,7 @@ const Styles = styled.div `
     width: 16.5px;
     padding-bottom: 6.5px;
     filter: grayscale(100);
-    transition-property: filter;
+    transition: filter 0.35s ease-in-out;
     cursor: pointer;
 }
 
@@ -3135,9 +3134,62 @@ const Styles = styled.div `
     font-size: 80%;
 }
 
-.jipange-settings-selected-time-slots-container {
+
+
+.jipange-settings-selected-time-slots-parent-container {
     border: 1px solid black;
+    height: 7.5rem;
+    position: relative;
+}
+
+.jipange-settings-selected-time-slots-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 2rem;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.jipange-settings-selected-time-slots-header p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #5e626a;
+    font-family: poppins;
+}
+
+.jipange-settings-selected-time-slots-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    // border: 1px solid black;
     height: 5.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.jipange-settings-selected-time-slots-container-row {
+    height: 50%;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jipange-settings-selected-time-slots-container-cell {
+    width: 20%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jipange-settings-selected-time-slots-container-cell-container {
+    width: 90%;
+    border: 1px solid black;
+    height: 85%;
+    border-radius: 8px;
 }
 
 .jipange-settings-selected-dates-grid {
@@ -3177,7 +3229,7 @@ const Styles = styled.div `
     margin-bottom: 0.35rem;
     opacity: 0; /* Initially invisible */
     // transform: translateX(-5px); /* Initially position it above */
-    transition-property: opacity, transform ; /* Smooth transition */
+    transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out; /* Smooth transition */
     cursor: pointer;
     padding-top: 3px;
     padding-bottom: 5px;
@@ -3354,7 +3406,7 @@ const Styles = styled.div `
     width: 15px;
     margin-top: 1.25px;
     filter: grayscale(100%);
-    transition-property: filter;
+    transition: filter 0.35s ease-in-out;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2.selected img {
@@ -3374,7 +3426,7 @@ const Styles = styled.div `
     font-size: 70%;
     margin-top: 0px;
     margin-bottom: 0px;
-    transition-property: color, font-weight;
+    transition: color 0.35s ease-in-out, font-weight 0.35s ease-in-out;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3.selected p {
@@ -3848,7 +3900,7 @@ const Styles = styled.div `
     padding-left: 6px;
     padding-right: 6px;
     border: 1px solid #ffdae0;
-    transition-property: border;
+    transition: border 0.35s ease-in-out;
     cursor: pointer;
 }
 
@@ -3896,7 +3948,7 @@ const Styles = styled.div `
     display: flex;
     color: #5e626a;
     text-decoration: none;
-    transition-property: color;
+    transition: color 0.35s ease-in-out;
     cursor: pointer;
 }
 
@@ -3919,12 +3971,12 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn label {
     margin-right: 5%;
     transform: translateX(0);
-    transition-property: transform;
+    transition: transform 0.35s ease-in-out;
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-back-btn span {
     text-decoration: none;
-    transition-property: text-decoration;
+    transition: text-decoration 0.35s ease-in-out;
 }
 
 .jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn {
@@ -4232,7 +4284,7 @@ const Styles = styled.div `
     flex-direction: row;
     // border: 1px solid black;
     transform: translateX(0);
-    transition-property: transform;
+    transition: transform 0.5s ease-in-out;
 }
 
 .jipange-settings-selected-date-screen-body-inner-header-categories-carousel.next {
@@ -5085,7 +5137,7 @@ const Styles = styled.div `
     margin-left: 0.15%;
     z-index: 1;
     // border: 1px solid black;
-    transition-property: transform;
+    transition: transform 0.35s ease-in-out;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-top-container-footer-notification.success {
@@ -5213,7 +5265,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon img {
     width: 50%;
     transform: rotate(0deg);
-    transition-property: transform;
+    transition: transform 0.35s ease-in-out;
 }
 
 .navbar-profile-account-popup-faqs-settings-body-bottom-container-header-select-icon.selected img {
@@ -5294,7 +5346,7 @@ const Styles = styled.div `
     border: 1px solid #ccc;
     overflow: auto;
     transform: translate(-50%, -7.5rem);
-    transition-property: transform;
+    transition: transform 0.35s ease-in-out;
     border-top: 1px solid transparent;
 }
 
@@ -5426,7 +5478,7 @@ const Styles = styled.div `
     // border-bottom-right-radius: 0px;
     border-bottom: 1px solid #ccc;
     // visibility: hidden;
-    transition-property: transform;
+    transition: transform 0.35s ease-in-out;
     overflow-y: auto;
 }
 
@@ -7454,7 +7506,7 @@ const Styles = styled.div `
     // border: 1px solid white;
     overflow: hidden;
     border-top-right-radius: 24px;
-    transition: height 0.5s ease-in-out;
+    transition: height 1s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top.open {
@@ -8309,7 +8361,7 @@ const Styles = styled.div `
     // border: 1px solid white;
     overflow: hidden;
     border-bottom-right-radius: 24px;
-    transition: height 0.5s ease-in-out;
+    transition: height 1s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-right-right-section-bottom.closed {
@@ -8874,7 +8926,7 @@ const Styles = styled.div `
     margin-top: 0.32rem;
     cursor: pointer;
     transform: rotate(0deg);
-    transition-property: transform
+    transition: transform 0.35s ease-in-out;
 }
 
 .homepage-body-inner-header-option.selected img {
@@ -8935,7 +8987,7 @@ const Styles = styled.div `
     margin-top: 0.32rem;
     cursor: pointer;
     transform: rotate(0deg);
-    transition-property: transform
+    transition: transform 0.35s ease-in-out;
 }
 
 .homepage-body-inner-header-option-pamoja.selected img {
@@ -8957,7 +9009,7 @@ const Styles = styled.div `
     overflow-y: auto;
     transform: translateY(-1.5rem);
     opacity: 0;
-    transition-property: transform, opacity;
+    transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
 }
 
 .homepage-body-inner-header-option-dropdown-option-1.selected {
@@ -8982,7 +9034,7 @@ const Styles = styled.div `
     overflow-y: auto;
     transform: translateY(-1.5rem);
     opacity: 0;
-    transition-property: transform, opacity;
+    transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
 }
 
 .homepage-body-inner-header-option-dropdown-option-2.selected {
@@ -9008,7 +9060,7 @@ const Styles = styled.div `
     overflow-y: auto;
     transform: translateY(-1.5rem);
     opacity: 0;
-    transition-property: transform, opacity;
+    transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
 }
 
 .homepage-body-inner-header-option-dropdown-option-3.selected {
@@ -9033,7 +9085,7 @@ const Styles = styled.div `
     overflow: hidden;
     transform: translateY(-1.5rem);
     opacity: 0;
-    transition-property: transform, opacity;
+    transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
 }
 
 .homepage-body-inner-header-option-dropdown-option-35.selected {
@@ -9120,7 +9172,7 @@ const Styles = styled.div `
     overflow-y: auto;
     transform: translateY(-1.5rem);
     opacity: 0;
-    transition-property: transform, opacity;
+    transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
 }
 
 .homepage-body-inner-header-option-dropdown-option-4.selected {
@@ -12915,8 +12967,66 @@ export default class LandingPg extends Component {
                                                                 }
                                                             </div>
                                                         </div>
-                                                        <div className='jipange-settings-selected-time-slots-container'>
+                                                        <div className='jipange-settings-selected-time-slots-parent-container'>
+                                                            <div className='jipange-settings-selected-time-slots-header'>
 
+                                                            </div>
+                                                            <div className='jipange-settings-selected-time-slots-container'>
+                                                                <div className='jipange-settings-selected-time-slots-container-row'>
+                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div className='jipange-settings-selected-time-slots-container-row'>
+                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
+
+                                                                        </div>  
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                        <div className='jipange-settings-selected-time-slots-container-cell-container'>
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 }
