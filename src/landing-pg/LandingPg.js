@@ -8378,6 +8378,19 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+}
+
+
+.did-you-know-box-body video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35;
+    z-index: 0; /* Sends it behind the content */
 }
 
 .did-you-know-box-body h2 {
@@ -8388,6 +8401,7 @@ const Styles = styled.div `
     font-size: 95%;
     margin-left: 8.5%;
     margin-right: 8.5%;
+    z-index: 1;
 }
 
     // - - NEW PRODUCTS (BOTTOM BOX - UI) - - //
@@ -16482,6 +16496,14 @@ export default class LandingPg extends Component {
 
                                                             <div className='did-you-know-box'>
                                                                 <div className='did-you-know-box-body'>
+                                                                    <video 
+                                                                    src="/assets/images/home-main-header/did-you-know-video.mp4" 
+                                                                    autoPlay 
+                                                                    loop 
+                                                                    muted 
+                                                                    playsInline 
+                                                                    style={{ width: '100%', height: 'auto' }}
+                                                                    />
                                                                     <h2>Hey! Did you know you can get your products in 90 minutes? Select "Express" at checkout!</h2>
                                                                 </div>
                                                             </div>
