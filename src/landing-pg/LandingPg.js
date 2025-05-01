@@ -8698,7 +8698,7 @@ const Styles = styled.div `
 
 .jipange-delivery-header-top-right-step-3-body-left {
     width: 30%;
-    border-right: 3.5px solid #ff5733;
+    border-right: 5px solid #ff5733;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8730,7 +8730,7 @@ const Styles = styled.div `
 }
 
 .jipange-delivery-header-top-right-step-3-body-right-top h4 {
-    margin-top: 0.2rem;
+    margin-top: -0.2rem;
     margin-bottom: 0px;
     margin-left: 5%;
     color: white;
