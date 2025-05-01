@@ -7551,7 +7551,7 @@ const Styles = styled.div `
 .jipange-delivery-header-info-1-body h4 {
     margin-top: 0.5rem;
     margin-bottom: 0px;
-    font-size: 88%;
+    font-size: 93.5%;
     margin-left: 1.5%;
     margin-right: 1.5%;
     color: white;
