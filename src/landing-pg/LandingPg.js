@@ -7505,7 +7505,7 @@ const Styles = styled.div `
     top: 1.5rem;
     left: 1rem;
     right: 1rem;
-    height: 56.5%;
+    height: 60.5%;
     border: 1px solid #ff5733;
     background-color: #ff5733;
     border-radius: 6px;
@@ -7526,7 +7526,7 @@ const Styles = styled.div `
 }
 
 .jipange-delivery-header-info-1-header img {
-   width: 70%;
+   width: 60%;
    border: 0.1px solid transparent !important;
 }
 
@@ -7535,12 +7535,12 @@ const Styles = styled.div `
     bottom: 0;
     width: 95%;
     margin-left: 2.5%;
-    height: 35%;
+    height: 37.5%;
     // border: 1px solid black;
 }
 
 .jipange-delivery-header-info-1-body h2 {
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
     margin-bottom: 0px;
     color: white;
     font-family: raleway;
@@ -7551,7 +7551,7 @@ const Styles = styled.div `
 .jipange-delivery-header-info-1-body h4 {
     margin-top: 0.5rem;
     margin-bottom: 0px;
-    font-size: 85%;
+    font-size: 88%;
     margin-left: 1.5%;
     margin-right: 1.5%;
     color: white;
