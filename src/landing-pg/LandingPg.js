@@ -7526,7 +7526,7 @@ const Styles = styled.div `
 }
 
 .jipange-delivery-header-info-1-header img {
-   width: 70%;
+   width: 100%;
    border: 0.1px solid transparent !important;
 }
 
