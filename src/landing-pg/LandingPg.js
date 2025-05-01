@@ -7505,7 +7505,7 @@ const Styles = styled.div `
     top: 1.5rem;
     left: 1rem;
     right: 1rem;
-    height: 50%;
+    height: 56.5%;
     border: 1px solid #ff5733;
     background-color: #ff5733;
     border-radius: 6px;
@@ -7546,6 +7546,16 @@ const Styles = styled.div `
     font-family: raleway;
     margin-left: 0.5%;
     text-decoration: underline;
+}
+
+.jipange-delivery-header-info-1-body h4 {
+    margin-top: 0.5rem;
+    margin-bottom: 0px;
+    font-size: 85%;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    color: white;
+    font-family: lexend;
 }
 
     // # SHOP PAMOJA (UI)
@@ -16337,6 +16347,7 @@ export default class LandingPg extends Component {
                                                             </div>
                                                             <div className='jipange-delivery-header-info-1-body'>
                                                                 <h2>Jipange Delivery</h2>
+                                                                <h4>Schedule your grocery delivery ahead of time.</h4>
                                                             </div>
                                                         </div>
                                                     </div>
