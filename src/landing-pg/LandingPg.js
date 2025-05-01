@@ -834,6 +834,7 @@ const Styles = styled.div `
     padding-bottom: 0.15rem;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
     transition: transform 0.5s ease-in-out;
 }
 
@@ -842,8 +843,13 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
     // border-top: 0.5px solid #ff5733;
     // border-bottom: 0.5px solid #ff5733;
-    cursor: pointer;
+    // cursor: pointer;
     transform: scale(1.02);
+}
+
+.searchResultCellShopAssistant.selected {
+    background-color: #faece9;
+    border: 1px solid #ff5733;
 }
 
 .searchResultCellShopAssistant:hover .searchResultCellImgShopAssistant img {
@@ -7015,7 +7021,7 @@ const Styles = styled.div `
 }
 
 .promo-tab-loading p {
-    margin-top: 0.35rem;
+    margin-top: 0.65rem;
     margin-bottom: 0px;
     font-family: poppins;
     font-size: 80%;
@@ -7492,6 +7498,36 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-3.open {
     pointer-events: auto;
     transform: translateY(0);
+}
+
+.jipange-delivery-header-info-1 {
+    position: absolute;
+    top: 1.5rem;
+    left: 1rem;
+    right: 1rem;
+    height: 55%;
+    border: 1px solid #ff5733;
+    background-color: #ff5733;
+    border-radius: 6px;
+}
+
+.jipange-delivery-header-info-1-header {
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 45%;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jipange-delivery-header-info-1-header img {
+   width: 70%;
+   border: 0.1px solid transparent !important;
 }
 
     // # SHOP PAMOJA (UI)
@@ -16180,14 +16216,13 @@ export default class LandingPg extends Component {
                                                             {this.state.showPromoItemsLoading && 
                                                                 <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab-loading'>
                                                                     <div className='promo-tab-loading'>
-                                                                        <RotatingLines
+                                                                        <TailSpin
                                                                         visible={true}
-                                                                        height="23.5"
-                                                                        width="23.5"
-                                                                        strokeColor="#FF5733"
-                                                                        strokeWidth="3"
-                                                                        animationDuration="0.75"
-                                                                        ariaLabel="rotating-lines-loading"
+                                                                        height="30px"
+                                                                        width="30px"
+                                                                        color="#ff5733"
+                                                                        ariaLabel="tail-spin-loading"
+                                                                        radius="2"
                                                                         wrapperStyle={{}}
                                                                         wrapperClass=""
                                                                         />
@@ -16278,7 +16313,11 @@ export default class LandingPg extends Component {
                                                     </div>
                                                             
                                                     <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-3 ${this.state.selectedHeaderOption === 'option-3' ? 'open' : ''}`}>
-
+                                                        <div className='jipange-delivery-header-info-1'>
+                                                            <div className='jipange-delivery-header-info-1-header'>
+                                                                <img src='/assets/images/home-main-header/jipange-header-img-1.png'/>
+                                                            </div>
+                                                        </div>
                                                     </div>
 
                                                     <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-4 ${this.state.selectedHeaderOption === 'option-4' ? 'open' : ''}`}>
@@ -16439,14 +16478,13 @@ export default class LandingPg extends Component {
                                                                          {this.state.showWalletTopUpPaymentPendingView && 
                                                                             <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-top-up-loading'>
                                                                                 <div className='wallet-top-up-tab-loading'>
-                                                                                    <RotatingLines
+                                                                                    <TailSpin
                                                                                     visible={true}
-                                                                                    height="19.5"
-                                                                                    width="19.5"
-                                                                                    strokeColor="#FF5733"
-                                                                                    strokeWidth="3"
-                                                                                    animationDuration="0.75"
-                                                                                    ariaLabel="rotating-lines-loading"
+                                                                                    height="22.5px"
+                                                                                    width="22.5px"
+                                                                                    color="#ff5733"
+                                                                                    ariaLabel="tail-spin-loading"
+                                                                                    radius="2"
                                                                                     wrapperStyle={{}}
                                                                                     wrapperClass=""
                                                                                     />
@@ -16604,7 +16642,7 @@ export default class LandingPg extends Component {
                                                                                     {options.map(option => (
                                                                                         <div 
                                                                                         onClick={() => this.mainSearchBarSearchedTermClicked(category, option)}
-                                                                                        className='searchResultCellShopAssistant' 
+                                                                                        className={`searchResultCellShopAssistant ${option.qty > 0 ? 'selected' : ''}`} 
                                                                                         key={option.id}>
                                                                                             <div className='searchResultCellImgShopAssistant'>
                                                                                                 <img src={option.image}/>
