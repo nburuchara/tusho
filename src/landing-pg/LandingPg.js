@@ -8603,7 +8603,7 @@ const Styles = styled.div `
     top: 0.85rem;
     left: 0.85rem;
     right: 0.85rem;
-    height: 45%;
+    height: 42%;
     background-color: #ff5733;
     border-radius: 8px;
 }
@@ -8671,39 +8671,83 @@ const Styles = styled.div `
     overflow: hidden;
 }
 
+.jipange-delivery-header-top-right-step-2-body-right-bottom video {
+    margin-top: 0.15rem;
+}
+
 .jipange-delivery-header-top-right-step-3 {
     position: absolute;
     bottom: 0.85rem;
     left: 0.85rem;
     right: 0.855rem;
-    height: 35%;
+    height: 38%;
     background-color: #ff5733;
+    border-radius: 8px;
+}
+
+.jipange-delivery-header-top-right-step-3-body {
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
 }
 
-.jipange-delivery-header-top-right-step-3-left {
+.jipange-delivery-header-top-right-step-3-body-left {
     width: 30%;
-    border: 1px solid white;
+    border-right: 3.5px solid #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
-.jipange-delivery-header-top-right-step-3-right {
+.jipange-delivery-header-top-right-step-3-body-left img {
+    width: 100%;
+    border: 0.1px solid transparent !important;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.jipange-delivery-header-top-right-step-3-body-right {
     width: 70%;
-    border: 1px solid white;
+    // border: 1px solid white;
     display: flex;
     flex-direction: column;
 }
 
-.jipange-delivery-header-top-right-step-3-right-top {
+.jipange-delivery-header-top-right-step-3-body-right-top {
     height: 35%;
-    border: 1px solid white;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
 
-.jipange-delivery-header-top-right-step-3-right-bottom {
-    height: 65%;
-    border: 1px solid white;
+.jipange-delivery-header-top-right-step-3-body-right-top h4 {
+    margin-top: 0.2rem;
+    margin-bottom: 0px;
+    margin-left: 5%;
+    color: white;
+    font-family: raleway;
 }
+
+.jipange-delivery-header-top-right-step-3-body-right-bottom {
+    height: 65%;
+    // border: 1px solid white;
+    overflow: hidden;
+}
+
+.jipange-delivery-header-top-right-step-3-body-right-bottom video {
+    margin-top: -1rem;
+ }
+
+    // # SHOP PAMOJA (TOP RIGHT GRID - UI)
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-4 {
     position: absolute;
@@ -17028,15 +17072,24 @@ export default class LandingPg extends Component {
                                                             </div>
 
                                                             <div className='jipange-delivery-header-top-right-step-3'>
-                                                                <div className='jipange-delivery-header-top-right-step-3-left'>
-
-                                                                </div>
-                                                                <div className='jipange-delivery-header-top-right-step-3-right'>
-                                                                    <div className='jipange-delivery-header-top-right-step-3-right-top'>
-
+                                                                <div className='jipange-delivery-header-top-right-step-3-body'>
+                                                                    <div className='jipange-delivery-header-top-right-step-3-body-left'>
+                                                                        <img src='/assets/images/home-main-header/jipange-demo-header-step-3.png'/>
                                                                     </div>
-                                                                    <div className='jipange-delivery-header-top-right-step-3-right-bottom'>
-
+                                                                    <div className='jipange-delivery-header-top-right-step-3-body-right'>
+                                                                        <div className='jipange-delivery-header-top-right-step-3-body-right-top'>
+                                                                            <h4>Pay</h4>
+                                                                        </div>
+                                                                        <div className='jipange-delivery-header-top-right-step-3-body-right-bottom'>
+                                                                            <video 
+                                                                            src="/assets/images/home-main-header/jipange-header-demo-3.mov" 
+                                                                            autoPlay 
+                                                                            loop 
+                                                                            muted 
+                                                                            playsInline 
+                                                                            style={{ width: '100%', height: 'auto' }}
+                                                                            />
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
