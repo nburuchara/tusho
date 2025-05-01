@@ -8708,7 +8708,7 @@ const Styles = styled.div `
 }
 
 .jipange-delivery-header-top-right-step-3-body-left img {
-    width: 100%;
+    width: 80% !important;
     border: 0.1px solid transparent !important;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
