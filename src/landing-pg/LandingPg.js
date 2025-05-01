@@ -7505,7 +7505,7 @@ const Styles = styled.div `
     top: 1.5rem;
     left: 1rem;
     right: 1rem;
-    height: 55%;
+    height: 50%;
     border: 1px solid #ff5733;
     background-color: #ff5733;
     border-radius: 6px;
@@ -7517,7 +7517,7 @@ const Styles = styled.div `
     bottom: 0.5rem;
     left: 0.5rem;
     right: 0.5rem;
-    height: 45%;
+    height: 60%;
     background-color: white;
     border-radius: 5px;
     display: flex;
@@ -7528,6 +7528,14 @@ const Styles = styled.div `
 .jipange-delivery-header-info-1-header img {
    width: 70%;
    border: 0.1px solid transparent !important;
+}
+
+.jipange-delivery-header-info-1-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40;
+    border: 1px solid black;
 }
 
     // # SHOP PAMOJA (UI)
