@@ -8679,6 +8679,30 @@ const Styles = styled.div `
     height: 35%;
     background-color: #ff5733;
     border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jipange-delivery-header-top-right-step-3-left {
+    width: 30%;
+    border: 1px solid white;
+}
+
+.jipange-delivery-header-top-right-step-3-right {
+    width: 70%;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+}
+
+.jipange-delivery-header-top-right-step-3-right-top {
+    height: 35%;
+    border: 1px solid white;
+}
+
+.jipange-delivery-header-top-right-step-3-right-bottom {
+    height: 65%;
+    border: 1px solid white;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-4 {
@@ -17004,7 +17028,17 @@ export default class LandingPg extends Component {
                                                             </div>
 
                                                             <div className='jipange-delivery-header-top-right-step-3'>
+                                                                <div className='jipange-delivery-header-top-right-step-3-left'>
 
+                                                                </div>
+                                                                <div className='jipange-delivery-header-top-right-step-3-right'>
+                                                                    <div className='jipange-delivery-header-top-right-step-3-right-top'>
+
+                                                                    </div>
+                                                                    <div className='jipange-delivery-header-top-right-step-3-right-bottom'>
+
+                                                                    </div>
+                                                                </div>
                                                             </div>
 
                                                             {/* <div className='jipange-delivery-header-info-3'>
