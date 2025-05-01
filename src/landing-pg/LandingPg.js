@@ -7526,7 +7526,7 @@ const Styles = styled.div `
 }
 
 .jipange-delivery-header-info-1-header img {
-   width: 60%;
+   width: 70%;
    border: 0.1px solid transparent !important;
 }
 
@@ -7556,6 +7556,16 @@ const Styles = styled.div `
     margin-right: 1.5%;
     color: white;
     font-family: lexend;
+}
+
+.jipange-delivery-header-info-2 {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    height: 27.5%;
+    background-color: #ff5733;
+    border-radius: 6px;
 }
 
     // # SHOP PAMOJA (UI)
@@ -16349,6 +16359,9 @@ export default class LandingPg extends Component {
                                                                 <h2>Jipange Delivery</h2>
                                                                 <h4>Schedule your grocery delivery ahead of time.</h4>
                                                             </div>
+                                                        </div>
+                                                        <div className='jipange-delivery-header-info-2'>
+                                                            
                                                         </div>
                                                     </div>
 
