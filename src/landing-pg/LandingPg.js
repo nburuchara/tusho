@@ -7555,7 +7555,7 @@ const Styles = styled.div `
     margin-left: 1.5%;
     margin-right: 1.5%;
     color: white;
-    font-family: lexend;
+    font-family: raleway;
 }
 
 .jipange-delivery-header-info-2 {
@@ -7566,6 +7566,143 @@ const Styles = styled.div `
     height: 27.5%;
     background-color: #ff5733;
     border-radius: 6px;
+}
+
+.jipange-delivery-header-info-2-body {
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    // border: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jipange-delivery-header-info-2-body-left {
+    width: 30%;
+    height: 100%;
+    border-right: 5px solid #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.jipange-delivery-header-info-2-body-left img {
+    width: 80%;
+}
+
+.jipange-delivery-header-info-2-body-right {
+    width: 70%;
+    height: 100%;
+    // border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+}
+
+.jipange-delivery-header-info-2-body-right-top {
+    border: 1px solid transparent;
+    width: 100%;
+    height: 35%;
+}
+
+.jipange-delivery-header-info-2-body-right-top h2 {
+    margin-top: 0.25rem;
+    margin-bottom: 0px;
+    margin-left: 0.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-family: raleway;
+    // font-size: 100%;
+    color: white;
+}
+
+.jipange-delivery-header-info-2-body-right-bottom {
+    border-top: 3.5px solid #ff5733;
+    height: 65%;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border-bottom-right-radius: 8px;
+}
+
+.jipange-delivery-header-info-2-body-right-bottom video {
+    padding: 2%;
+}
+
+.jipange-delivery-header-info-3-body {
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    // border: 1px solid white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jipange-delivery-header-info-3-body-left {
+    width: 30%;
+    height: 100%;
+    border-right: 5px solid #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.jipange-delivery-header-info-3-body-left img {
+    width: 80%;
+}
+
+.jipange-delivery-header-info-3-body-right {
+    width: 70%;
+    height: 100%;
+    // border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+}
+
+.jipange-delivery-header-info-3-body-right-top {
+    border: 1px solid transparent;
+    width: 100%;
+    height: 35%;
+    display
+}
+
+.jipange-delivery-header-info-3-body-right-top h2 {
+    margin-top: 0.25rem;
+    margin-bottom: 0px;
+    margin-left: 0.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-family: raleway;
+    // font-size: 100%;
+    color: white;
+}
+
+.jipange-delivery-header-info-3-body-right-bottom {
+    border-top: 3.5px solid #ff5733;
+    height: 65%;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border-bottom-right-radius: 8px;
+}
+
+.jipange-delivery-header-info-3-body-right-bottom video {
+    padding: 2%;
 }
 
     // # SHOP PAMOJA (UI)
@@ -8459,6 +8596,89 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-3.open {
     transform: translateY(0);
     visibility: visible;
+}
+
+.jipange-delivery-header-top-right-step-2 {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    right: 0.85rem;
+    height: 45%;
+    background-color: #ff5733;
+    border-radius: 8px;
+}
+
+.jipange-delivery-header-top-right-step-2-body {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    // border: 1px solid white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jipange-delivery-header-top-right-step-2-body-left {
+    width: 30%;
+    height: 100%;
+    border-right: 5px solid #ff5733;
+    background-color: white;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.jipange-delivery-header-top-right-step-2-body-left img {
+    width: 100% !important;
+    border: 0.1px solid transparent !important;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.jipange-delivery-header-top-right-step-2-body-right {
+    width: 70%;
+    height: 100%;
+    // border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+}
+
+.jipange-delivery-header-top-right-step-2-body-right-top {
+    height: 35%;
+    // border: 1px solid white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: le;
+}
+
+.jipange-delivery-header-top-right-step-2-body-right-top h3 {
+    margin-top: -0.2rem;
+    margin-bottom: 0px;
+    margin-left: 5%;
+    color: white;
+    font-family: raleway;
+}
+
+.jipange-delivery-header-top-right-step-2-body-right-bottom {
+    height: 65%;
+    // border: 1px solid white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.jipange-delivery-header-top-right-step-3 {
+    position: absolute;
+    bottom: 0.85rem;
+    left: 0.85rem;
+    right: 0.855rem;
+    height: 35%;
+    background-color: #ff5733;
+    border-radius: 8px;
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-4 {
@@ -16353,7 +16573,14 @@ export default class LandingPg extends Component {
                                                     <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-3 ${this.state.selectedHeaderOption === 'option-3' ? 'open' : ''}`}>
                                                         <div className='jipange-delivery-header-info-1'>
                                                             <div className='jipange-delivery-header-info-1-header'>
-                                                                <img src='/assets/images/home-main-header/jipange-header-img-1.png'/>
+                                                                <video 
+                                                                src="/assets/images/home-main-header/jipange-header-demo-1.mp4" 
+                                                                autoPlay 
+                                                                loop 
+                                                                muted 
+                                                                playsInline 
+                                                                style={{ width: '90%', height: 'auto' }}
+                                                                />
                                                             </div>
                                                             <div className='jipange-delivery-header-info-1-body'>
                                                                 <h2>Jipange Delivery</h2>
@@ -16361,7 +16588,26 @@ export default class LandingPg extends Component {
                                                             </div>
                                                         </div>
                                                         <div className='jipange-delivery-header-info-2'>
-                                                            
+                                                            <div className='jipange-delivery-header-info-2-body'>
+                                                                <div className='jipange-delivery-header-info-2-body-left'>
+                                                                    <img src='/assets/images/home-main-header/jipange-demo-header-step-1.png'/>
+                                                                </div>
+                                                                <div className='jipange-delivery-header-info-2-body-right'>
+                                                                    <div className='jipange-delivery-header-info-2-body-right-top'>
+                                                                        <h2>Schedule</h2>
+                                                                    </div>
+                                                                    <div className='jipange-delivery-header-info-2-body-right-bottom'>
+                                                                        <video 
+                                                                        src="/assets/images/home-main-header/jipange-header-demo-1.mov" 
+                                                                        autoPlay 
+                                                                        loop 
+                                                                        muted 
+                                                                        playsInline 
+                                                                        style={{ width: '100%', height: 'auto' }}
+                                                                        />
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
 
@@ -16733,6 +16979,56 @@ export default class LandingPg extends Component {
                                                         </div>
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-3 ${this.state.selectedHeaderOption === 'option-3' ? 'open' : ''}`}>
+
+                                                            <div className='jipange-delivery-header-top-right-step-2'>
+                                                                <div className='jipange-delivery-header-top-right-step-2-body'>
+                                                                    <div className='jipange-delivery-header-top-right-step-2-body-left'>
+                                                                        <img src='/assets/images/home-main-header/jipange-demo-header-step-2.png'/>
+                                                                    </div>
+                                                                    <div className='jipange-delivery-header-top-right-step-2-body-right'>
+                                                                        <div className='jipange-delivery-header-top-right-step-2-body-right-top'>
+                                                                            <h3>Select</h3>
+                                                                        </div>
+                                                                        <div className='jipange-delivery-header-top-right-step-2-body-right-bottom'>
+                                                                            <video 
+                                                                            src="/assets/images/home-main-header/jipange-header-demo-2.mov" 
+                                                                            autoPlay 
+                                                                            loop 
+                                                                            muted 
+                                                                            playsInline 
+                                                                            style={{ width: '100%', height: 'auto' }}
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div className='jipange-delivery-header-top-right-step-3'>
+
+                                                            </div>
+
+                                                            {/* <div className='jipange-delivery-header-info-3'>
+                                                                <div className='jipange-delivery-header-info-3-body'>
+                                                                    <div className='jipange-delivery-header-info-3-body-left'>
+                                                                        <img src='/assets/images/home-main-header/jipange-demo-header-step-1.png'/>
+                                                                    </div>
+                                                                    <div className='jipange-delivery-header-info-3-body-right'>
+                                                                        <div className='jipange-delivery-header-info-3-body-right-top'>
+                                                                            <h2>Schedule</h2>
+                                                                        </div>
+                                                                        <div className='jipange-delivery-header-info-3-body-right-bottom'>
+                                                                            <video 
+                                                                            src="/assets/images/home-main-header/jipange-header-demo-1.mov" 
+                                                                            autoPlay 
+                                                                            loop 
+                                                                            muted 
+                                                                            playsInline 
+                                                                            style={{ width: '100%', height: 'auto' }}
+                                                                            />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div> */}
 
                                                         </div>
 
