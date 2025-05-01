@@ -7533,9 +7533,19 @@ const Styles = styled.div `
 .jipange-delivery-header-info-1-body {
     position: absolute;
     bottom: 0;
-    width: 100%;
-    height: 40;
-    border: 1px solid black;
+    width: 95%;
+    margin-left: 2.5%;
+    height: 35%;
+    // border: 1px solid black;
+}
+
+.jipange-delivery-header-info-1-body h2 {
+    margin-top: 0.5rem;
+    margin-bottom: 0px;
+    color: white;
+    font-family: raleway;
+    margin-left: 0.5%;
+    text-decoration: underline;
 }
 
     // # SHOP PAMOJA (UI)
@@ -16324,6 +16334,9 @@ export default class LandingPg extends Component {
                                                         <div className='jipange-delivery-header-info-1'>
                                                             <div className='jipange-delivery-header-info-1-header'>
                                                                 <img src='/assets/images/home-main-header/jipange-header-img-1.png'/>
+                                                            </div>
+                                                            <div className='jipange-delivery-header-info-1-body'>
+                                                                <h2>Jipange Delivery</h2>
                                                             </div>
                                                         </div>
                                                     </div>
