@@ -9377,12 +9377,15 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: laft;
+    background-color: #ff5733;
+    border-radius: 8px;
 }
 
 .jipange-header-delivery-bottom-footer-left h3 {
     margin-top: -0.25rem;
     margin-bottom: 0px;
     margin-left: 6.5%;
+    color: white;
 }
 
 .jipange-header-delivery-bottom-footer-right {
