@@ -8627,21 +8627,47 @@ const Styles = styled.div `
     background-color: white;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+    position: relative;
 }
 
 .jipange-delivery-header-top-right-step-2-body-left img {
-    width: 100% !important;
+    width: 90% !important;
     border: 0.1px solid transparent !important;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 }
 
+.jipange-delivery-header-top-right-step-2-body-left-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0px;
+    height: 35%;
+    width: 100%;
+    background-color: #ff5733;
+    // border: 1px solid black;
+    border-top-left-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.jipange-delivery-header-top-right-step-2-body-left-header h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 5%;
+    color: white;
+    font-family: raleway;
+}
+
 .jipange-delivery-header-top-right-step-2-body-right {
     width: 70%;
     height: 100%;
-    // border: 1px solid white;
+    // border: 1px solid black;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .jipange-delivery-header-top-right-step-2-body-right-top {
@@ -17086,22 +17112,28 @@ export default class LandingPg extends Component {
                                                             <div className='jipange-delivery-header-top-right-step-2'>
                                                                 <div className='jipange-delivery-header-top-right-step-2-body'>
                                                                     <div className='jipange-delivery-header-top-right-step-2-body-left'>
+                                                                        <div className='jipange-delivery-header-top-right-step-2-body-left-header'>
+                                                                            <h3>Select</h3>
+                                                                        </div>
                                                                         <img src='/assets/images/home-main-header/jipange-demo-header-step-2.png'/>
                                                                     </div>
                                                                     <div className='jipange-delivery-header-top-right-step-2-body-right'>
-                                                                        <div className='jipange-delivery-header-top-right-step-2-body-right-top'>
+
+                                                                        <video 
+                                                                        src="/assets/images/home-main-header/jipange-header-demo-2.mov" 
+                                                                        autoPlay 
+                                                                        loop 
+                                                                        muted 
+                                                                        playsInline 
+                                                                        style={{ width: '110%', height: 'auto' }}
+                                                                        />
+
+                                                                        {/* <div className='jipange-delivery-header-top-right-step-2-body-right-top'>
                                                                             <h3>Select</h3>
                                                                         </div>
                                                                         <div className='jipange-delivery-header-top-right-step-2-body-right-bottom'>
-                                                                            <video 
-                                                                            src="/assets/images/home-main-header/jipange-header-demo-2.mov" 
-                                                                            autoPlay 
-                                                                            loop 
-                                                                            muted 
-                                                                            playsInline 
-                                                                            style={{ width: '100%', height: 'auto' }}
-                                                                            />
-                                                                        </div>
+                                                                           
+                                                                        </div> */}
                                                                     </div>
                                                                 </div>
                                                             </div>
