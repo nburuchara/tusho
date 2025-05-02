@@ -9243,6 +9243,15 @@ const Styles = styled.div `
     top: 0.85rem;
     left: 0.85rem;
     right: 0.85rem;
+    height: 55%;
+    border: 1px solid black;
+}
+
+.jipange-header-delivery-bottom-header {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    right: 0.85rem;
 }
 
     // # SHOP PAMOJA (TOP BOTTOM BOX - UI) 
