@@ -8714,7 +8714,7 @@ const Styles = styled.div `
     margin-left: 5%;
     color: white;
     font-family: lexend;
-    font-size: 110%;
+    font-size: 112.5%;
     text-decoration: underline;
 }
 
