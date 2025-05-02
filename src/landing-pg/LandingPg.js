@@ -8705,6 +8705,7 @@ const Styles = styled.div `
     background-color: white;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+    position: relative;
 }
 
 .jipange-delivery-header-top-right-step-3-body-left img {
@@ -8714,11 +8715,39 @@ const Styles = styled.div `
     border-bottom-left-radius: 8px;
 }
 
+.jipange-delivery-header-top-right-step-3-body-left-header {
+    position: absolute;
+    top: 0;
+    height: 30%;
+    // border: 1px solid black;
+    background-color: #ff5733;
+    width: 100%;
+    border-top-left-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.jipange-delivery-header-top-right-step-3-body-left-header h4 {
+    margin-top: -0.2rem;
+    margin-bottom: 0px;
+    margin-left: 5%;
+    color: white;
+    font-family: raleway;
+}
+
 .jipange-delivery-header-top-right-step-3-body-right {
     width: 70%;
     // border: 1px solid white;
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.jipange-delivery-header-top-right-step-3-body-right video {
+    margin-top: -0.25rem;
 }
 
 .jipange-delivery-header-top-right-step-3-body-right-top {
@@ -9183,6 +9212,12 @@ const Styles = styled.div `
     visibility: visible;
 }
 
+.jipange-header-delivery-bottom-header {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    right: 0.85rem;
+}
 
     // # SHOP PAMOJA (TOP BOTTOM BOX - UI) 
 
@@ -17074,22 +17109,26 @@ export default class LandingPg extends Component {
                                                             <div className='jipange-delivery-header-top-right-step-3'>
                                                                 <div className='jipange-delivery-header-top-right-step-3-body'>
                                                                     <div className='jipange-delivery-header-top-right-step-3-body-left'>
+                                                                        <div className='jipange-delivery-header-top-right-step-3-body-left-header'>
+                                                                            <h4>Pay</h4>
+                                                                        </div>
                                                                         <img src='/assets/images/home-main-header/jipange-demo-header-step-3.png'/>
                                                                     </div>
                                                                     <div className='jipange-delivery-header-top-right-step-3-body-right'>
-                                                                        <div className='jipange-delivery-header-top-right-step-3-body-right-top'>
+                                                                        {/* <div className='jipange-delivery-header-top-right-step-3-body-right-top'>
                                                                             <h4>Pay</h4>
                                                                         </div>
                                                                         <div className='jipange-delivery-header-top-right-step-3-body-right-bottom'>
-                                                                            <video 
-                                                                            src="/assets/images/home-main-header/jipange-header-demo-3.mov" 
-                                                                            autoPlay 
-                                                                            loop 
-                                                                            muted 
-                                                                            playsInline 
-                                                                            style={{ width: '100%', height: 'auto' }}
-                                                                            />
-                                                                        </div>
+                                                                            
+                                                                        </div> */}
+                                                                        <video 
+                                                                        src="/assets/images/home-main-header/jipange-header-demo-3.mov" 
+                                                                        autoPlay 
+                                                                        loop 
+                                                                        muted 
+                                                                        playsInline 
+                                                                        style={{ width: '100%', height: 'auto' }}
+                                                                        />
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -17215,11 +17254,13 @@ export default class LandingPg extends Component {
                                                         </div>
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
-                                                            <h3></h3>
+                                                            {/* <h3></h3> */}
                                                         </div>
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-3 ${this.state.selectedHeaderOption === 'option-3' ? 'open' : ''}`}>
-                                                            <h3></h3>
+                                                            <div className='jipange-header-delivery-bottom-header'>
+
+                                                            </div>
                                                         </div>
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-4 ${this.state.selectedHeaderOption === 'option-4' ? 'open' : ''}`}>
