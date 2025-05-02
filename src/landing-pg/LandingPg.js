@@ -8699,7 +8699,7 @@ const Styles = styled.div `
       transform: translateY(0px);
     }
     50% {
-      transform: translateY(-1px);
+      transform: translateY(-1.5px);
     }
     100% {
       transform: translateY(0px);
