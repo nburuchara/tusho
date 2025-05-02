@@ -9345,7 +9345,7 @@ const Styles = styled.div `
 
 .jipange-header-delivery-bottom-header-icon { 
     position: absolute;
-    top: 1.5rem;
+    top: 0.5rem;
     right: 0.5rem;
     left: 10.5rem;
     // border: 1px solid black;
@@ -9365,8 +9365,8 @@ const Styles = styled.div `
     bottom: 0.85rem;
     left: 0.85rem;
     right: 2rem;
-    border: 1px solid black;
-    height: 2.2rem;
+    // border: 1px solid black;
+    height: 2.9rem;
     display: flex;
     justify-content: space-between;
     background-color: #ff5733;
@@ -9375,7 +9375,7 @@ const Styles = styled.div `
 
 .jipange-header-delivery-bottom-footer-left {
     width: 75%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: left;
@@ -9390,7 +9390,7 @@ const Styles = styled.div `
 
 .jipange-header-delivery-bottom-footer-right {
     width: 25%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
     // # SHOP PAMOJA (TOP BOTTOM BOX - UI) 
