@@ -8623,7 +8623,7 @@ const Styles = styled.div `
 
 .jipange-delivery-header-top-right-step-2-body-count {
     position: absolute;
-    top: 0;
+    top: -0.1rem;
     left: 0;
     height: 1rem;
     width: 1rem;
@@ -8637,7 +8637,7 @@ const Styles = styled.div `
 }
 
 
-.jipange-delivery-header-top-right-step-2-body-count h4 {
+.jipange-delivery-header-top-right-step-2-body-count h5 {
     margin-top: 0px;
     margin-bottom: 0px;
     color: #ff5733;
@@ -8674,7 +8674,7 @@ const Styles = styled.div `
     top: 0;
     left: 0;
     right: 0px;
-    height: 35%;
+    height: 30%;
     width: 100%;
     background-color: #ff5733;
     // border: 1px solid black;
@@ -8686,12 +8686,13 @@ const Styles = styled.div `
 }
 
 .jipange-delivery-header-top-right-step-2-body-left-header h3 {
-    margin-top: -0.25rem;
+    margin-top: -0.725rem;
     margin-bottom: 0px;
     margin-left: 5%;
     color: white;
     font-family: lexend;
     font-size: 105%;
+    text-decoration: underline;
 }
 
 .jipange-delivery-header-top-right-step-2-body-right {
@@ -17205,7 +17206,7 @@ export default class LandingPg extends Component {
                                                             <div className='jipange-delivery-header-top-right-step-2'>
                                                                 <div className='jipange-delivery-header-top-right-step-2-body'>
                                                                     <div className='jipange-delivery-header-top-right-step-2-body-count'>
-
+                                                                        <h5>2</h5>
                                                                     </div>
                                                                     <div className='jipange-delivery-header-top-right-step-2-body-left'>
                                                                         <div className='jipange-delivery-header-top-right-step-2-body-left-header'>
