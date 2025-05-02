@@ -9356,7 +9356,7 @@ const Styles = styled.div `
 }
 
 .jipange-header-delivery-bottom-header-icon img { 
-   width: 85%;
+   width: 80%;
    border: 0.1px solid transparent !important;
 }
 
@@ -9366,6 +9366,7 @@ const Styles = styled.div `
     left: 0.85rem;
     right: 2rem;
     border: 1px solid black;
+    height: 2rem;
 }
 
     // # SHOP PAMOJA (TOP BOTTOM BOX - UI) 
