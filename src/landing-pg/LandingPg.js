@@ -7615,6 +7615,7 @@ const Styles = styled.div `
 
 .jipange-delivery-header-info-2-body-left img {
     width: 100%;
+    animation: float-jipange-image 3s ease-in-out infinite;
 }
 
 .jipange-delivery-header-info-2-body-right {
@@ -8690,6 +8691,19 @@ const Styles = styled.div `
     border: 0.1px solid transparent !important;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+    animation: float-jipange-image 3s ease-in-out infinite;
+}
+
+@keyframes float-jipange-image {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-1px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
 }
 
 .jipange-delivery-header-top-right-step-2-body-left-header {
@@ -8825,6 +8839,7 @@ const Styles = styled.div `
     border: 0.1px solid transparent !important;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+    animation: float-jipange-image 3s ease-in-out infinite;
 }
 
 .jipange-delivery-header-top-right-step-3-body-left-header {
