@@ -9338,7 +9338,7 @@ const Styles = styled.div `
     // border: 1px solid black;
 }
 .jipange-header-delivery-bottom-header h1 {
-    font-size: 40.5px;
+    font-size: 39.5px;
     color: #ff5733;
     margin-top: 0px;
 }
@@ -9358,6 +9358,20 @@ const Styles = styled.div `
 .jipange-header-delivery-bottom-header-icon img { 
    width: 80%;
    border: 0.1px solid transparent !important;
+}
+
+.jipange-header-delivery-bottom-header-icon-2 {
+    position: absolute;
+    bottom: 4.65rem;
+    right: 6rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    // border: 1px solid black;
+}
+
+.jipange-header-delivery-bottom-header-icon-2 img {
+    width: 100%;
+    border: 0.1px solid transparent;
 }
 
 .jipange-header-delivery-bottom-footer {
@@ -17455,6 +17469,9 @@ export default class LandingPg extends Component {
                                                             </div>
                                                             <div className='jipange-header-delivery-bottom-header-icon'>
                                                                 <img src='/assets/images/home-main-header/jipange-header-bottom-icon.png'/>
+                                                            </div>
+                                                            <div className='jipange-header-delivery-bottom-header-icon-2'>
+                                                                <img src='/assets/images/home-main-header/jipange-demo-header-bottom-right-decor.png'/>
                                                             </div>
                                                             <div className='jipange-header-delivery-bottom-footer'>
                                                                 <div className='jipange-header-delivery-bottom-footer-left'>
