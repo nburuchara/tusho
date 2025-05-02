@@ -8803,7 +8803,7 @@ const Styles = styled.div `
 
 .jipange-delivery-header-top-right-step-3-body-left {
     width: 30%;
-    border-right: 2.5px solid #ff5733;
+    border-right: 5px solid #ff5733;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9369,6 +9369,8 @@ const Styles = styled.div `
     height: 2.2rem;
     display: flex;
     justify-content: space-between;
+    background-color: #ff5733;
+    border-radius: 5px;
 }
 
 .jipange-header-delivery-bottom-footer-left {
@@ -9376,9 +9378,7 @@ const Styles = styled.div `
     border: 1px solid black;
     display: flex;
     align-items: center;
-    justify-content: laft;
-    background-color: #ff5733;
-    border-radius: 8px;
+    justify-content: left;
 }
 
 .jipange-header-delivery-bottom-footer-left h3 {
@@ -17319,7 +17319,7 @@ export default class LandingPg extends Component {
                                                                         loop 
                                                                         muted 
                                                                         playsInline 
-                                                                        style={{ width: '95%', height: 'auto' }}
+                                                                        style={{ width: '100%', height: 'auto' }}
                                                                         />
                                                                     </div>
                                                                 </div>
