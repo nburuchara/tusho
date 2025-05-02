@@ -9242,17 +9242,33 @@ const Styles = styled.div `
     position: absolute;
     top: 0.85rem;
     left: 0.85rem;
-    right: 0.85rem;
-    height: 55%;
+    right: 8rem;
+    height: 75%;
     border: 1px solid black;
 }
+.jipange-header-delivery-bottom-header h1 {
+    font-size: 43px;
+    color: #ff5733;
+    margin-top: 0px;
+}
 
-.jipange-header-delivery-bottom-header {
+.jipange-header-delivery-bottom-header-icon { 
     position: absolute;
     top: 0.85rem;
-    left: 0.85rem;
-    right: 0.85rem;
+    right: 0;
+    left: 12rem;
+    border: 1px solid black;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.jipange-header-delivery-bottom-header-icon img { 
+   width: 85%;
+   border: 0.1px solid transparent !important;
+}
+
 
     // # SHOP PAMOJA (TOP BOTTOM BOX - UI) 
 
@@ -17300,7 +17316,10 @@ export default class LandingPg extends Component {
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-3 ${this.state.selectedHeaderOption === 'option-3' ? 'open' : ''}`}>
                                                             <div className='jipange-header-delivery-bottom-header'>
-
+                                                                <h1>Try out Jipange today.</h1>
+                                                            </div>
+                                                            <div className='jipange-header-delivery-bottom-header-icon'>
+                                                                <img src='/assets/images/home-main-header/jipange-header-bottom-icon.png'/>
                                                             </div>
                                                         </div>
 
