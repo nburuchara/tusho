@@ -8653,7 +8653,7 @@ const Styles = styled.div `
 }
 
 .jipange-delivery-header-top-right-step-2-body-left-header h3 {
-    margin-top: 0px;
+    margin-top: -0.1rem;
     margin-bottom: 0px;
     margin-left: 5%;
     color: white;
