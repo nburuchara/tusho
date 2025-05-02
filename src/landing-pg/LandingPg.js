@@ -7658,7 +7658,6 @@ const Styles = styled.div `
 
 .jipange-delivery-header-info-2-body-right-bottom video {
     // padding: 2%;
-    bo
 }
 
 .jipange-delivery-header-info-3-body {
@@ -7753,6 +7752,64 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-4.open {
     pointer-events: auto;
     transform: translateY(0);
+}
+
+.shop-pamoja-header-info-1 {
+    position: absolute;
+    top: 1.5rem;
+    left: 1rem;
+    right: 1rem;
+    height: 60.5%;
+    border: 1px solid #ff5733;
+    background-color: #ff5733;
+    border-radius: 6px;
+}
+
+.shop-pamoja-header-info-1-header {
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 60%;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-pamoja-header-info-1-header img {
+   width: 100%;
+   border: 0.1px solid transparent !important;
+}
+
+.shop-pamoja-header-info-1-body {
+    position: absolute;
+    bottom: 0;
+    width: 95%;
+    margin-left: 2.5%;
+    height: 37.5%;
+    // border: 1px solid black;
+}
+
+.shop-pamoja-header-info-1-body h2 {
+    margin-top: 0.75rem;
+    margin-bottom: 0px;
+    color: white;
+    font-family: raleway;
+    margin-left: 0.5%;
+    text-decoration: underline;
+}
+
+.shop-pamoja-header-info-1-body h4 {
+    margin-top: 0.5rem;
+    margin-bottom: 0px;
+    font-size: 93.5%;
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    color: white;
+    font-family: raleway;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
@@ -16953,6 +17010,23 @@ export default class LandingPg extends Component {
                                                     </div>
 
                                                     <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-4 ${this.state.selectedHeaderOption === 'option-4' ? 'open' : ''}`}>
+
+                                                        <div className='shop-pamoja-header-info-1'>
+                                                            <div className='shop-pamoja-header-info-1-header'>
+                                                                <video 
+                                                                src="/assets/images/home-main-header/jipange-header-demo-1.mp4" 
+                                                                autoPlay 
+                                                                loop 
+                                                                muted 
+                                                                playsInline 
+                                                                style={{ width: '90%', height: 'auto' }}
+                                                                />
+                                                            </div>
+                                                            <div className='shop-pamoja-header-info-1-body'>
+                                                                <h2>Jipange Delivery</h2>
+                                                                <h4>Schedule your grocery delivery ahead of time.</h4>
+                                                            </div>
+                                                        </div>
 
                                                     </div>
 
