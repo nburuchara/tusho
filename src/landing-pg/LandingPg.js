@@ -7579,6 +7579,27 @@ const Styles = styled.div `
     justify-content: space-between;
 }
 
+.jipange-delivery-header-info-2-body-count { 
+    position: absolute;
+    top: 0;
+    right: 0.025rem;
+    height: 1.6rem;
+    width: 1.6rem;
+    border: 1px solid white;
+    border-radius: 5.5px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jipange-delivery-header-info-2-body-count h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #ff5733;
+    // font-size: 100%;
+ }
+
 .jipange-delivery-header-info-2-body-left {
     width: 30%;
     height: 100%;
@@ -7607,24 +7628,25 @@ const Styles = styled.div `
 .jipange-delivery-header-info-2-body-right-top {
     border: 1px solid transparent;
     width: 100%;
-    height: 35%;
+    height: 30%;
 }
 
 .jipange-delivery-header-info-2-body-right-top h2 {
-    margin-top: 0.1rem;
+    margin-top: -0.25rem;
     margin-bottom: 0px;
-    margin-left: 0.35rem;
+    margin-left: 0.15rem;
     display: flex;
     align-items: center;
     justify-content: left;
     font-family: lexend;
     // font-size: 100%;
     color: white;
+    text-decoration: underline;
 }
 
 .jipange-delivery-header-info-2-body-right-bottom {
     border-top: 3.5px solid #ff5733;
-    height: 65%;
+    height: 70%;
     overflow: hidden;
     background-color: white;
     display: flex;
@@ -7634,7 +7656,8 @@ const Styles = styled.div `
 }
 
 .jipange-delivery-header-info-2-body-right-bottom video {
-    padding: 2%;
+    // padding: 2%;
+    bo
 }
 
 .jipange-delivery-header-info-3-body {
@@ -8795,9 +8818,10 @@ const Styles = styled.div `
     postion: absolute;
     bottom: 0;
     margin-top: 1.35rem;
-    left: (0, 50%);
-    width: 55.5px !important;
-    height: 51.5px !important;
+    margin-left: -0.55rem;
+    // left: (0, 50%);
+    width: 52.5px !important;
+    height: 49.5px !important;
     border: 0.1px solid transparent !important;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -16809,6 +16833,9 @@ export default class LandingPg extends Component {
                                                         </div>
                                                         <div className='jipange-delivery-header-info-2'>
                                                             <div className='jipange-delivery-header-info-2-body'>
+                                                                <div className='jipange-delivery-header-info-2-body-count'>
+                                                                    <h3>1</h3>
+                                                                </div>
                                                                 <div className='jipange-delivery-header-info-2-body-left'>
                                                                     <img src='/assets/images/home-main-header/jipange-demo-header-stepp-1.png'/>
                                                                 </div>
@@ -16826,7 +16853,7 @@ export default class LandingPg extends Component {
                                                                         loop 
                                                                         muted 
                                                                         playsInline 
-                                                                        style={{ width: '100%', height: 'auto' }}
+                                                                        style={{ width: '100%', height: 'auto'}}
                                                                         />
                                                                     </div>
                                                                 </div>
@@ -17217,7 +17244,7 @@ export default class LandingPg extends Component {
                                                                     <div className='jipange-delivery-header-top-right-step-2-body-right'>
 
                                                                         <video 
-                                                                        src="/assets/images/home-main-header/jipange-header-demo-2-edit.mp4" 
+                                                                        src="/assets/images/home-main-header/jipange-header-demo-2-editt.mp4" 
                                                                         autoPlay 
                                                                         loop 
                                                                         muted 
