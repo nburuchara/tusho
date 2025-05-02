@@ -9402,6 +9402,7 @@ const Styles = styled.div `
     border-radius: 6.5px;
     cursor: pointer;
     transition: background-color 0.5s ease-in-out;
+    z-index: -1;
 }
 
 .jipange-header-delivery-bottom-footer:hover {
@@ -17517,6 +17518,20 @@ export default class LandingPg extends Component {
                                                                 <img src='/assets/images/home-main-header/jipange-demo-header-bottom-right-decor.png'/>
                                                             </div>
                                                             <div className='jipange-header-delivery-bottom-footer'>
+                                                                <div className="confetti-background">
+                                                                    {[...Array(50)].map((_, i) => (
+                                                                        <div
+                                                                        key={i}
+                                                                        className="confetti-piece"
+                                                                        style={{
+                                                                            left: `${Math.random() * 100}vw`,
+                                                                            backgroundColor: 'white',
+                                                                            animationDuration: `${20 + Math.random() * 20}s`, // slower fall
+                                                                            animationDelay: `${Math.random() * 10}s`,
+                                                                        }}
+                                                                        />
+                                                                    ))}
+                                                                </div>
                                                                 <div className='jipange-header-delivery-bottom-footer-left'>
                                                                     <h3>Schedule Delivery</h3>
                                                                 </div>
