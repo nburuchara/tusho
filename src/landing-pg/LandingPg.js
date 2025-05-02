@@ -7611,13 +7611,13 @@ const Styles = styled.div `
 }
 
 .jipange-delivery-header-info-2-body-right-top h2 {
-    margin-top: 0.25rem;
+    margin-top: 0.1rem;
     margin-bottom: 0px;
     margin-left: 0.35rem;
     display: flex;
     align-items: center;
     justify-content: left;
-    font-family: raleway;
+    font-family: lexend;
     // font-size: 100%;
     color: white;
 }
@@ -8621,6 +8621,28 @@ const Styles = styled.div `
     justify-content: space-between;
 }
 
+.jipange-delivery-header-top-right-step-2-body-count {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1rem;
+    width: 1rem;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 4px;
+    z-index: 1;
+}
+
+
+.jipange-delivery-header-top-right-step-2-body-count h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #ff5733;
+}
+
 .jipange-delivery-header-top-right-step-2-body-left {
     width: 30%;
     height: 100%;
@@ -8660,6 +8682,7 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: right;
+    z-index: 0;
 }
 
 .jipange-delivery-header-top-right-step-2-body-left-header h3 {
@@ -8667,8 +8690,8 @@ const Styles = styled.div `
     margin-bottom: 0px;
     margin-left: 5%;
     color: white;
-    font-family: raleway;
-    font-size: 110%;
+    font-family: lexend;
+    font-size: 105%;
 }
 
 .jipange-delivery-header-top-right-step-2-body-right {
@@ -8733,6 +8756,27 @@ const Styles = styled.div `
     justify-content: space-between;
 }
 
+.jipange-delivery-header-top-right-step-3-body-count {
+    position: absolute;
+    top: -0.1rem;
+    left: 0;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid white;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    background-color: white;
+}
+
+.jipange-delivery-header-top-right-step-3-body-count h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #ff5733;
+ }
+
 .jipange-delivery-header-top-right-step-3-body-left {
     width: 30%;
     border-right: 2.5px solid #ff5733;
@@ -8751,8 +8795,8 @@ const Styles = styled.div `
     bottom: 0;
     margin-top: 1.35rem;
     left: (0, 50%);
-    width: 48.5px !important;
-    height: 48.5px !important;
+    width: 55.5px !important;
+    height: 51.5px !important;
     border: 0.1px solid transparent !important;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -8769,15 +8813,17 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: right;
+    z-index: 0;
 }
 
 .jipange-delivery-header-top-right-step-3-body-left-header h4 {
-    margin-top: -0.35rem;
+    margin-top: -0.65rem;
     margin-bottom: 0px;
     margin-left: 5%;
     color: white;
-    font-family: raleway;
-    font-size: 110%;
+    font-family: lexend;
+    font-size: 105%;
+    text-decoration: underline;
 }
 
 .jipange-delivery-header-top-right-step-3-body-right {
@@ -17158,6 +17204,9 @@ export default class LandingPg extends Component {
 
                                                             <div className='jipange-delivery-header-top-right-step-2'>
                                                                 <div className='jipange-delivery-header-top-right-step-2-body'>
+                                                                    <div className='jipange-delivery-header-top-right-step-2-body-count'>
+
+                                                                    </div>
                                                                     <div className='jipange-delivery-header-top-right-step-2-body-left'>
                                                                         <div className='jipange-delivery-header-top-right-step-2-body-left-header'>
                                                                             <h3>Select</h3>
@@ -17187,6 +17236,9 @@ export default class LandingPg extends Component {
 
                                                             <div className='jipange-delivery-header-top-right-step-3'>
                                                                 <div className='jipange-delivery-header-top-right-step-3-body'>
+                                                                    <div className='jipange-delivery-header-top-right-step-3-body-count'>
+                                                                        <h5>3</h5>
+                                                                    </div>
                                                                     <div className='jipange-delivery-header-top-right-step-3-body-left'>
                                                                         <div className='jipange-delivery-header-top-right-step-3-body-left-header'>
                                                                             <h4>Pay</h4>
