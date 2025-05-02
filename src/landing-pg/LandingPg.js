@@ -9431,7 +9431,7 @@ const Styles = styled.div `
     margin-left: 6.5%;
     color: white;
     font-family: lexend;
-    font-size: 105%;
+    font-size: 102.5%;
 }
 
 .jipange-header-delivery-bottom-footer-right {
