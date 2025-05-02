@@ -7589,10 +7589,11 @@ const Styles = styled.div `
     background-color: white;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
+    overflow: hidden;
 }
 
 .jipange-delivery-header-info-2-body-left img {
-    width: 80%;
+    width: 100%;
 }
 
 .jipange-delivery-header-info-2-body-right {
@@ -8667,7 +8668,7 @@ const Styles = styled.div `
     margin-left: 5%;
     color: white;
     font-family: raleway;
-    font-size: 105%;
+    font-size: 110%;
 }
 
 .jipange-delivery-header-top-right-step-2-body-right {
@@ -8742,15 +8743,16 @@ const Styles = styled.div `
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     position: relative;
+    overflow: hidden;
 }
 
 .jipange-delivery-header-top-right-step-3-body-left img {
     postion: absolute;
     bottom: 0;
-    margin-top: 1.5rem;
+    margin-top: 1.35rem;
     left: (0, 50%);
-    width: 40px !important;
-    height: 40px !important;
+    width: 48.5px !important;
+    height: 48.5px !important;
     border: 0.1px solid transparent !important;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -8770,11 +8772,12 @@ const Styles = styled.div `
 }
 
 .jipange-delivery-header-top-right-step-3-body-left-header h4 {
-    margin-top: -0.2rem;
+    margin-top: -0.35rem;
     margin-bottom: 0px;
     margin-left: 5%;
     color: white;
     font-family: raleway;
+    font-size: 110%;
 }
 
 .jipange-delivery-header-top-right-step-3-body-right {
@@ -16760,15 +16763,18 @@ export default class LandingPg extends Component {
                                                         <div className='jipange-delivery-header-info-2'>
                                                             <div className='jipange-delivery-header-info-2-body'>
                                                                 <div className='jipange-delivery-header-info-2-body-left'>
-                                                                    <img src='/assets/images/home-main-header/jipange-demo-header-step-1.png'/>
+                                                                    <img src='/assets/images/home-main-header/jipange-demo-header-stepp-1.png'/>
                                                                 </div>
                                                                 <div className='jipange-delivery-header-info-2-body-right'>
                                                                     <div className='jipange-delivery-header-info-2-body-right-top'>
                                                                         <h2>Schedule</h2>
+                                                                        <div className='jipange-delivery-header-info-2-body-right-top'>
+
+                                                                        </div>
                                                                     </div>
                                                                     <div className='jipange-delivery-header-info-2-body-right-bottom'>
                                                                         <video 
-                                                                        src="/assets/images/home-main-header/jipange-header-demo-1.mov" 
+                                                                        src="/assets/images/home-main-header/jipange-header-demo-1-edit.mp4" 
                                                                         autoPlay 
                                                                         loop 
                                                                         muted 
@@ -17156,7 +17162,7 @@ export default class LandingPg extends Component {
                                                                         <div className='jipange-delivery-header-top-right-step-2-body-left-header'>
                                                                             <h3>Select</h3>
                                                                         </div>
-                                                                        <img src='/assets/images/home-main-header/jipange-demo-header-step-2.png'/>
+                                                                        <img src='/assets/images/home-main-header/jipange-demo-header-stepp-2.png'/>
                                                                     </div>
                                                                     <div className='jipange-delivery-header-top-right-step-2-body-right'>
 
@@ -17185,7 +17191,7 @@ export default class LandingPg extends Component {
                                                                         <div className='jipange-delivery-header-top-right-step-3-body-left-header'>
                                                                             <h4>Pay</h4>
                                                                         </div>
-                                                                        <img src='/assets/images/home-main-header/jipange-demo-header-step-3.png'/>
+                                                                        <img src='/assets/images/home-main-header/jipange-demo-header-stepp-3.png'/>
                                                                     </div>
                                                                     <div className='jipange-delivery-header-top-right-step-3-body-right'>
                                                                         {/* <div className='jipange-delivery-header-top-right-step-3-body-right-top'>
