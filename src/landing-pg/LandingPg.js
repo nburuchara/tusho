@@ -8820,8 +8820,8 @@ const Styles = styled.div `
     margin-top: 1.35rem;
     margin-left: -0.55rem;
     // left: (0, 50%);
-    width: 52.5px !important;
-    height: 49.5px !important;
+    width: 46.5px !important;
+    height: 42.5px !important;
     border: 0.1px solid transparent !important;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
