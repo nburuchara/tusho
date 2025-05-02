@@ -8648,8 +8648,8 @@ const Styles = styled.div `
     position: absolute;
     top: -0.1rem;
     left: 0;
-    height: 1rem;
-    width: 1rem;
+    height: 1.05rem;
+    width: 1.05rem;
     border: 1px solid white;
     display: flex;
     align-items: center;
@@ -8714,7 +8714,7 @@ const Styles = styled.div `
     margin-left: 5%;
     color: white;
     font-family: lexend;
-    font-size: 105%;
+    font-size: 110%;
     text-decoration: underline;
 }
 
