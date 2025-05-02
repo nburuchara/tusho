@@ -9394,12 +9394,27 @@ const Styles = styled.div `
     bottom: 0.85rem;
     left: 0.85rem;
     right: 2rem;
-    // border: 1px solid black;
+    border: 1px solid #ff5733;
     height: 2.9rem;
     display: flex;
     justify-content: space-between;
     background-color: #ff5733;
     border-radius: 6.5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.jipange-header-delivery-bottom-footer:hover {
+    background-color: #faece9;
+}
+
+.jipange-header-delivery-bottom-footer:hover .jipange-header-delivery-bottom-footer-left h3 {
+    color: #ff5733;
+}
+
+.jipange-header-delivery-bottom-footer:hover .jipange-header-delivery-bottom-footer-right h3 {
+    transform: translateX(1rem);
+    color: #ff5733;
 }
 
 .jipange-header-delivery-bottom-footer-left {
@@ -9416,11 +9431,23 @@ const Styles = styled.div `
     margin-left: 6.5%;
     color: white;
     font-family: lexend;
+    font-size: 105%;
 }
 
 .jipange-header-delivery-bottom-footer-right {
     width: 25%;
-    // border: 1px solid black;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.jipange-header-delivery-bottom-footer-right h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-family: lexend;
+    transition: transform 0.5s ease-in-out;
 }
 
     // # SHOP PAMOJA (TOP BOTTOM BOX - UI) 
@@ -17494,7 +17521,7 @@ export default class LandingPg extends Component {
                                                                     <h3>Schedule Delivery</h3>
                                                                 </div>
                                                                 <div className='jipange-header-delivery-bottom-footer-right'>
-
+                                                                    <h3>➞</h3>
                                                                 </div>
                                                             </div>
                                                         </div>
