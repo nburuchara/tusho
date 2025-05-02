@@ -9399,7 +9399,7 @@ const Styles = styled.div `
     display: flex;
     justify-content: space-between;
     background-color: #ff5733;
-    border-radius: 5px;
+    border-radius: 6.5px;
 }
 
 .jipange-header-delivery-bottom-footer-left {
@@ -9415,6 +9415,7 @@ const Styles = styled.div `
     margin-bottom: 0px;
     margin-left: 6.5%;
     color: white;
+    font-family: lexend;
 }
 
 .jipange-header-delivery-bottom-footer-right {
