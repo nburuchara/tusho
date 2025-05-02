@@ -8628,10 +8628,19 @@ const Styles = styled.div `
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     position: relative;
+    display: flex;
+    align-items: center;
+    jusify-content: center;
 }
 
 .jipange-delivery-header-top-right-step-2-body-left img {
-    width: 90% !important;
+    postion: absolute;
+    bottom: 0;
+    margin-top: 1.85rem;
+    margin-left: 1rem;
+    // right: 0;
+    width: 50px !important;
+    height: 50px !important;
     border: 0.1px solid transparent !important;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -8653,11 +8662,12 @@ const Styles = styled.div `
 }
 
 .jipange-delivery-header-top-right-step-2-body-left-header h3 {
-    margin-top: -0.1rem;
+    margin-top: -0.25rem;
     margin-bottom: 0px;
     margin-left: 5%;
     color: white;
     font-family: raleway;
+    font-size: 105%;
 }
 
 .jipange-delivery-header-top-right-step-2-body-right {
@@ -8724,7 +8734,7 @@ const Styles = styled.div `
 
 .jipange-delivery-header-top-right-step-3-body-left {
     width: 30%;
-    border-right: 5px solid #ff5733;
+    border-right: 2.5px solid #ff5733;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8735,7 +8745,12 @@ const Styles = styled.div `
 }
 
 .jipange-delivery-header-top-right-step-3-body-left img {
-    width: 80% !important;
+    postion: absolute;
+    bottom: 0;
+    margin-top: 1.5rem;
+    left: (0, 50%);
+    width: 40px !important;
+    height: 40px !important;
     border: 0.1px solid transparent !important;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
@@ -8794,12 +8809,14 @@ const Styles = styled.div `
 
 .jipange-delivery-header-top-right-step-3-body-right-bottom {
     height: 65%;
-    // border: 1px solid white;
+    border-bottom: 2px solid white;
     overflow: hidden;
+    background-color: white;
 }
 
 .jipange-delivery-header-top-right-step-3-body-right-bottom video {
     margin-top: -1rem;
+    background-color: white;
  }
 
     // # SHOP PAMOJA (TOP RIGHT GRID - UI)
@@ -9244,21 +9261,21 @@ const Styles = styled.div `
     left: 0.85rem;
     right: 8rem;
     height: 75%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 .jipange-header-delivery-bottom-header h1 {
-    font-size: 43px;
+    font-size: 40.5px;
     color: #ff5733;
     margin-top: 0px;
 }
 
 .jipange-header-delivery-bottom-header-icon { 
     position: absolute;
-    top: 0.85rem;
-    right: 0;
-    left: 12rem;
-    border: 1px solid black;
-    height: 75%;
+    top: 1.5rem;
+    right: 0.5rem;
+    left: 10.5rem;
+    // border: 1px solid black;
+    height: 65%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9268,7 +9285,6 @@ const Styles = styled.div `
    width: 85%;
    border: 0.1px solid transparent !important;
 }
-
 
     // # SHOP PAMOJA (TOP BOTTOM BOX - UI) 
 
@@ -17145,7 +17161,7 @@ export default class LandingPg extends Component {
                                                                     <div className='jipange-delivery-header-top-right-step-2-body-right'>
 
                                                                         <video 
-                                                                        src="/assets/images/home-main-header/jipange-header-demo-2.mov" 
+                                                                        src="/assets/images/home-main-header/jipange-header-demo-2-edit.mp4" 
                                                                         autoPlay 
                                                                         loop 
                                                                         muted 
@@ -17179,12 +17195,12 @@ export default class LandingPg extends Component {
                                                                             
                                                                         </div> */}
                                                                         <video 
-                                                                        src="/assets/images/home-main-header/jipange-header-demo-3.mov" 
+                                                                        src="/assets/images/home-main-header/jipange-header-demo-3-edit.mp4" 
                                                                         autoPlay 
                                                                         loop 
                                                                         muted 
                                                                         playsInline 
-                                                                        style={{ width: '100%', height: 'auto' }}
+                                                                        style={{ width: '90%', height: 'auto' }}
                                                                         />
                                                                     </div>
                                                                 </div>
