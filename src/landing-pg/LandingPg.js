@@ -9360,6 +9360,14 @@ const Styles = styled.div `
    border: 0.1px solid transparent !important;
 }
 
+.jipange-header-delivery-bottom-footer {
+    position: absolute;
+    bottom: 0.85rem;
+    left: 0.85rem;
+    right: 2rem;
+    border: 1px solid black;
+}
+
     // # SHOP PAMOJA (TOP BOTTOM BOX - UI) 
 
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-4 {
@@ -17286,7 +17294,7 @@ export default class LandingPg extends Component {
                                                                         loop 
                                                                         muted 
                                                                         playsInline 
-                                                                        style={{ width: '90%', height: 'auto' }}
+                                                                        style={{ width: '95%', height: 'auto' }}
                                                                         />
                                                                     </div>
                                                                 </div>
@@ -17422,6 +17430,9 @@ export default class LandingPg extends Component {
                                                             </div>
                                                             <div className='jipange-header-delivery-bottom-header-icon'>
                                                                 <img src='/assets/images/home-main-header/jipange-header-bottom-icon.png'/>
+                                                            </div>
+                                                            <div className='jipange-header-delivery-bottom-footer'>
+
                                                             </div>
                                                         </div>
 
