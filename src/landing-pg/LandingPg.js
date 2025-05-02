@@ -8728,6 +8728,10 @@ const Styles = styled.div `
     overflow: hidden;
 }
 
+.jipange-delivery-header-top-right-step-2-body-right video {
+    margin-top: 0.5rem;
+}
+
 .jipange-delivery-header-top-right-step-2-body-right-top {
     height: 35%;
     // border: 1px solid white;
@@ -8753,10 +8757,6 @@ const Styles = styled.div `
     align-items: center;
     justify-content: center;
     overflow: hidden;
-}
-
-.jipange-delivery-header-top-right-step-2-body-right-bottom video {
-    margin-top: 0.15rem;
 }
 
 .jipange-delivery-header-top-right-step-3 {
@@ -9366,7 +9366,28 @@ const Styles = styled.div `
     left: 0.85rem;
     right: 2rem;
     border: 1px solid black;
-    height: 2rem;
+    height: 2.2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.jipange-header-delivery-bottom-footer-left {
+    width: 75%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: laft;
+}
+
+.jipange-header-delivery-bottom-footer-left h3 {
+    margin-top: -0.25rem;
+    margin-bottom: 0px;
+    margin-left: 6.5%;
+}
+
+.jipange-header-delivery-bottom-footer-right {
+    width: 25%;
+    border: 1px solid black;
 }
 
     // # SHOP PAMOJA (TOP BOTTOM BOX - UI) 
@@ -16857,7 +16878,7 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                     <div className='jipange-delivery-header-info-2-body-right-bottom'>
                                                                         <video 
-                                                                        src="/assets/images/home-main-header/jipange-header-demo-1-edit.mp4" 
+                                                                        src="/assets/images/home-main-header/jipange-header-demo-1-editt.mp4" 
                                                                         autoPlay 
                                                                         loop 
                                                                         muted 
@@ -17290,7 +17311,7 @@ export default class LandingPg extends Component {
                                                                             
                                                                         </div> */}
                                                                         <video 
-                                                                        src="/assets/images/home-main-header/jipange-header-demo-3-edit.mp4" 
+                                                                        src="/assets/images/home-main-header/jipange-header-demo-3-editt.mp4" 
                                                                         autoPlay 
                                                                         loop 
                                                                         muted 
@@ -17433,7 +17454,12 @@ export default class LandingPg extends Component {
                                                                 <img src='/assets/images/home-main-header/jipange-header-bottom-icon.png'/>
                                                             </div>
                                                             <div className='jipange-header-delivery-bottom-footer'>
+                                                                <div className='jipange-header-delivery-bottom-footer-left'>
+                                                                    <h3>Schedule Delivery</h3>
+                                                                </div>
+                                                                <div className='jipange-header-delivery-bottom-footer-right'>
 
+                                                                </div>
                                                             </div>
                                                         </div>
 
