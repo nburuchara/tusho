@@ -5878,7 +5878,7 @@ const Styles = styled.div `
     align-items: center;
     justify-content: left;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity 6.5s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header.hidden {
@@ -6700,6 +6700,16 @@ const Styles = styled.div `
     height: 100%;
     background-color: white;
     position: relative;
+    opacity: 0;
+    transition: opacity 8.5s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in.show {
+    opacity: 1;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in.hidden {
+    opacity: 0;
 }
 
 @keyframes peelLeftToRight {
@@ -6736,7 +6746,16 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
     position: relative;
     overflow: hidden;
-    transition: background-color 0.6s ease-in-out;
+    opacity: 0;
+    transition: background-color 0.6s ease-in-out, opaicty 6.5s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container.show {
+    opacity: 1;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container.hidden {
+    opacity: 0;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container::after {
@@ -16932,7 +16951,7 @@ export default class LandingPg extends Component {
                                         ) : (
                                             <div className='homepage-header-inner-body-poster-right-left-section'>
                                                  <div className='homepage-header-inner-body-poster-right-left-section-logged-in'>
-                                                    <div style={{backgroundColor: this.state.isLeftHeaderTransitionActive ? '' : ''}} className={`homepage-header-inner-body-poster-right-left-section-logged-in-container ${this.state.isLeftHeaderTransitionActive ? "animate-peel" : ""}`}>
+                                                    <div style={{backgroundColor: this.state.isLeftHeaderTransitionActive ? '' : ''}} className={`homepage-header-inner-body-poster-right-left-section-logged-in-container ${this.state.isLeftHeaderTransitionActive ? "animate-peel" : this.state.userSignedInTransition ? "show" : "hidden"}`}>
 
                                                         <div className='homepage-header-inner-body-poster-right-left-section-logged-in-container-decor'>
                                                             <img src='/assets/images/home-main-body/header-logged-in-decor.png'/>
