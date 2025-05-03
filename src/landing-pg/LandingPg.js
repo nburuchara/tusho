@@ -6233,8 +6233,6 @@ const Styles = styled.div `
     align-items: center;
     justify-content: center;
     background-color: #3aae49;
-    opacity: 0;
-    transition: opacity 6.5s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-title {
@@ -6985,6 +6983,16 @@ const Styles = styled.div `
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+    opacity: 1;
+    transition: opacity 6.5s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab.show {
+    opacity: 1;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab.hidden {
+    opacity: 0;
 }
 
 .confetti-background {
@@ -16946,7 +16954,7 @@ export default class LandingPg extends Component {
                                                             <h5>We've got deals for you!</h5>
                                                         </div>
 
-                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab'>
+                                                        <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab ${this.state.userSignedInTransition ? 'show' : 'hidden'}`}>
                                                             <div className="confetti-background">
                                                                 {[...Array(50)].map((_, i) => (
                                                                     <div
