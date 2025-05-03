@@ -16800,7 +16800,7 @@ export default class LandingPg extends Component {
                                                         </div>
                                                     </div>
                                                     <div className='homepage-header-inner-body-poster-left-logged-in-header-greeting'>
-                                                        <h1>Hi Norman,</h1>
+                                                        <h1>Hi {this.state.accountSettingFirstName !== '' && this.state.accountSetupComplete ? this.state.accountSettingFirstName : 'there'},</h1>
                                                     </div>
                                                 </div>
                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body'>
