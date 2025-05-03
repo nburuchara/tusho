@@ -6214,6 +6214,16 @@ const Styles = styled.div `
     border-bottom-left-radius: 25px;
     // border: 1px solid white;
     position: relative;
+    opacity: 0;
+    transition: opacity 5.5s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body.show {
+    opacity: 1;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body.hidden {
+    opacity: 0;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-header {
@@ -6223,16 +6233,6 @@ const Styles = styled.div `
     align-items: center;
     justify-content: center;
     background-color: #3aae49;
-    opacity: 0;
-    transition: opacity 6.5s ease-in-out;
-}
-
-.homepage-header-inner-body-poster-left-logged-in-body-inner-header.hidden {
-    opacity: 0;
-}
-
-.homepage-header-inner-body-poster-left-logged-in-body-inner-header.show {
-   opacity: 1;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-title {
@@ -16803,8 +16803,8 @@ export default class LandingPg extends Component {
                                                         <h1>Hi {this.state.accountSettingFirstName !== '' && this.state.accountSetupComplete ? this.state.accountSettingFirstName : 'there'},</h1>
                                                     </div>
                                                 </div>
-                                                <div className='homepage-header-inner-body-poster-left-logged-in-body'>
-                                                    <div className={`homepage-header-inner-body-poster-left-logged-in-body-inner-header ${this.state.userSignedInTransition ? 'show' : 'hidden'}`}>
+                                                <div className={`homepage-header-inner-body-poster-left-logged-in-body ${this.state.userSignedInTransition ? 'show' : 'hidden'}`}>
+                                                    <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header'>
                                                         <h3 className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-title'>Start saving for your child's future today. Dial <label>*122*1#</label> to enroll in <label>Mpango wa Familia</label>.</h3>
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space'>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box'>
