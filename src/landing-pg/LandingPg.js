@@ -5843,9 +5843,14 @@ const Styles = styled.div `
     flex-direction: column;
 }
 
+.homepage-header-inner-body-poster-left-logged-in-loading video {
+    margin-top: 2rem;
+}
+
 .homepage-header-inner-body-poster-left-logged-in-loading h2 {
     color: white;
     margin-top: 0px;
+    font-family: lexend;
 }
 
 .homepage-header-inner-body-poster-left-logged-in {
@@ -6646,6 +6651,23 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-right-left-section img {
     width: 100%;
     border-left: 5px solid white;
+}
+
+.homepage-header-inner-body-poster-right-left-section-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.homepage-header-inner-body-poster-right-left-section-loading video {
+    margin-top: 6rem;
+}
+
+.homepage-header-inner-body-poster-right-left-section-loading h2 {
+    color: white;
+    font-size: 105%;
+    font-family: lexend;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in {
@@ -7834,6 +7856,26 @@ const Styles = styled.div `
     flex-direction: column;
 }
 
+.homepage-header-inner-body-poster-right-right-section-top-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-loading video {
+    margin-top: 1.5rem;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-loading h2 {
+    color: white;
+    font-size: 95%;
+    font-family: lexend;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 .homepage-header-inner-body-poster-right-right-section-top {
     height: 50%;
     // border: 1px solid white;
@@ -9001,6 +9043,26 @@ const Styles = styled.div `
 }
 
     // # BOTTOM RIGHT UI SECTION
+
+.homepage-header-inner-body-poster-right-right-section-bottom-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.homepage-header-inner-body-poster-right-right-section-bottom-loading video {
+   margin-top: 1.5rem;
+}
+
+.homepage-header-inner-body-poster-right-right-section-bottom-loading h2 {
+   color: white;
+   font-size: 95%;
+   font-family: lexend;
+   text-align: center;
+   margin-left: 5%;
+   margin-right: 5%;
+}
 
 .homepage-header-inner-body-poster-right-right-section-bottom {
     height: 50%;
@@ -16549,7 +16611,7 @@ export default class LandingPg extends Component {
                                                 loop 
                                                 muted 
                                                 playsInline 
-                                                style={{ width: '50%', height: 'auto'}}
+                                                style={{ width: '35%', height: 'auto'}}
                                                 />
                                                 <h2>Bringing you a better online shopping experience...</h2>
                                             </div>
@@ -16803,8 +16865,24 @@ export default class LandingPg extends Component {
                                         )}
                                         
                                     </div>
+
+
                                     <div className='homepage-header-inner-body-poster-right'>
-                                        {this.state.userSignedIn ? (
+                                        {this.state.userSignedIn ? this.state.userSignedInLoading ? (
+                                            <div className='homepage-header-inner-body-poster-right-left-section'>
+                                                <div className='homepage-header-inner-body-poster-right-left-section-loading'>
+                                                    <video 
+                                                    src="/assets/images/home-main-header/homepage-header-right-left-loading-animation.mp4" 
+                                                    autoPlay 
+                                                    loop 
+                                                    muted 
+                                                    playsInline 
+                                                    style={{ width: '50%', height: 'auto'}}
+                                                    />
+                                                    <h2>Negotiating the best deals for you...</h2>
+                                                </div>
+                                            </div>
+                                        ) : (
                                             <div className='homepage-header-inner-body-poster-right-left-section'>
                                                  <div className='homepage-header-inner-body-poster-right-left-section-logged-in'>
                                                     <div style={{backgroundColor: this.state.isLeftHeaderTransitionActive ? '' : ''}} className={`homepage-header-inner-body-poster-right-left-section-logged-in-container ${this.state.isLeftHeaderTransitionActive ? "animate-peel" : ""}`}>
@@ -17069,8 +17147,23 @@ export default class LandingPg extends Component {
                                                 </div>
                                             </div>
                                         )}
+
                                         <div className='homepage-header-inner-body-poster-right-right-section'>
-                                            {this.state.userSignedIn ? (
+                                            {this.state.userSignedIn ? this.state.userSignedInLoading ? (
+                                                <div className='homepage-header-inner-body-poster-right-right-section-top'>
+                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-loading'>
+                                                        <video 
+                                                        src="/assets/images/home-main-header/homepage-header-right-left-top-loading-animation.mp4" 
+                                                        autoPlay 
+                                                        loop 
+                                                        muted 
+                                                        playsInline 
+                                                        style={{ width: '30%', height: 'auto'}}
+                                                        />
+                                                        <h2>Finalizing a few design tweaks...</h2>
+                                                    </div>
+                                                </div>
+                                            ) : (
                                                 <div className={`homepage-header-inner-body-poster-right-right-section-top ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in'>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container ${this.state.isRightTopHeaderTransitionActive ? "animate-peel" : ""}`}>
@@ -17523,7 +17616,21 @@ export default class LandingPg extends Component {
                                                     <img src='/assets/images/home-main-header/header-poster-img-1.webp'/>
                                                 </div>
                                             )}
-                                            {this.state.userSignedIn ? (
+                                            {this.state.userSignedIn ? this.state.userSignedInLoading ? (
+                                                <div className='homepage-header-inner-body-poster-right-right-section-bottom'>
+                                                    <div className='homepage-header-inner-body-poster-right-right-section-bottom-loading'>
+                                                        <video 
+                                                            src="/assets/images/home-main-header/homepage-header-right-left-bottom-loading-animation.mp4" 
+                                                            autoPlay 
+                                                            loop 
+                                                            muted 
+                                                            playsInline 
+                                                            style={{ width: '30%', height: 'auto'}}
+                                                            />
+                                                            <h2>Engineering some innovative shopping experiences...</h2>
+                                                        </div>
+                                                </div>
+                                            ) : (
                                                 <div className={`homepage-header-inner-body-poster-right-right-section-bottom ${this.state.selectedHeaderOption === 'option-2' ? 'closed' : ''}`}>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-bottom-logged-in'>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container ${this.state.isRightBottomHeaderTransitionActive ? "animate-peel" : ""}`}>
