@@ -7983,6 +7983,32 @@ const Styles = styled.div `
     font-size: 20.5px;
 }
 
+.home-wallet-heading {
+    transform: translateX(0);
+    transition: transform 1s ease-in-out;
+}
+
+.home-wallet-heading.show {
+    transform: translateX(0);
+}
+
+.home-wallet-heading.hidden {
+    transform: translateX(-100%);
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-wallet-subheader {
+    transform: translateX(0);
+    transition: transform 1s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-wallet-subheader.show {
+    transform: translateX(0);
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-wallet-subheader.hidden {
+    transform: translateX(-100%);
+}
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-wallet-subheader h5 {
     font-size: 72.5%;
     font-family: poppins;
@@ -8007,6 +8033,16 @@ const Styles = styled.div `
     height: 78.6%;
     display: flex;
     flex-direction: column;
+    transform: translateX(0);
+    transition: transform 1s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home.show {
+    transform: translateX(0);
+}
+
+.homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home.hidden {
+    transform: translateX(100%);
 }
 
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top {
@@ -17290,11 +17326,11 @@ export default class LandingPg extends Component {
                                                 <div className={`homepage-header-inner-body-poster-right-right-section-top ${this.state.selectedHeaderOption === 'option-2' ? 'open' : ''}`}>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in'>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container ${this.state.isRightTopHeaderTransitionActive ? "animate-peel" : ""}`}>
-                                                            <h2>Your Wallet</h2>
-                                                            <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-wallet-subheader'>
+                                                            <h2 className={`home-wallet-heading ${this.state.userSignedInTransition ? 'show' : 'hidden'}`}>Your Wallet</h2>
+                                                            <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-wallet-subheader ${this.state.userSignedInTransition ? 'show' : 'hidden'}`}>
                                                                 <h5>Use <label>One-click Checkout</label> with tuShop Wallet</h5>
                                                             </div>
-                                                            <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home'>
+                                                            <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home ${this.state.userSignedInTransition ? 'show' : 'hidden'}`}>
                                                                 <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top'>
                                                                     <div className='homepage-header-inner-body-poster-right-right-section-top-logged-in-container-home-top-header'>
                                                                         <h1><label>Ksh.</label> {this.state.existingTushopWalletAmount}</h1>
