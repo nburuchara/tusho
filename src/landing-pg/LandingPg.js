@@ -5872,21 +5872,21 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-left-logged-in-header {
     height: 30%;
     border-top-left-radius: 25px;
-    border: 1px solid black;
+    // border: 1px solid black;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: left;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    transform: translateY(0);
+    transition: transform 1s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header.hidden {
-    opacity: 0;
+    transform: translateY(-100%);
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header.show {
-    opacity: 1;
+    transform: translateY(0);
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-container {
@@ -6214,16 +6214,16 @@ const Styles = styled.div `
     border-bottom-left-radius: 25px;
     // border: 1px solid white;
     position: relative;
-    opacity: 0;
-    transition: opacity 5.5s ease-in-out;
+    transform: translateY(0);
+    transition: transform 1s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body.show {
-    opacity: 1;
+    transform: translateY(0);
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body.hidden {
-    opacity: 0;
+    transform: translateY(100%);
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-header {
@@ -6785,12 +6785,41 @@ const Styles = styled.div `
     margin-left: 4.5%;
 }
 
+.homepage-header-inner-body-poster-right-left-section-logged-in-container-heading {
+    transform: translateX(0);
+    transition: transform 1s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container-heading.show {
+    transform: translateX(0);
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container-heading.hidden {
+    transform: translateX(-100%);
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container-subheader {
+    transform: translateX(0);
+    transition: transform 1s ease-in-out;
+}
+
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container-subheader.show {
+    transform: translateX(0);
+}
+
+.homepage-header-inner-body-poster-right-left-section-logged-in-container-subheader.hidden {
+    transform: translateX(-100%);
+}
+
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-subheader h5 {
     font-family: poppins;
     font-size: 85%;
     color: white;
     margin-top: -0.25rem;
     margin-left: 5%;
+    transform: translateY(0);
+    transition: transform 1s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container-option-1 {
@@ -6983,16 +7012,16 @@ const Styles = styled.div `
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    opacity: 1;
-    transition: opacity 6.5s ease-in-out;
+    transform: translateX(0);
+    transition: transform 1s ease-in-out;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab.show {
-    opacity: 1;
+    transform: translateX(0);
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-promo-tab.hidden {
-    opacity: 0;
+    transform: translateX(110%);
 }
 
 .confetti-background {
@@ -9149,6 +9178,19 @@ const Styles = styled.div `
    
 }
 
+.did-you-know-header {
+    transform: translateX(0);
+    transition: transform 1s ease-in-out;
+}
+
+.did-you-know-header.show {
+    transform: translateX(0);
+}
+
+.did-you-know-header.hidden {
+    transform: translateX(-100%);
+}
+
 .did-you-know-box {
     position: absolute;
     bottom: 1.75rem;
@@ -9158,6 +9200,16 @@ const Styles = styled.div `
     height: 60%;
     border-radius: 8px;
     background-color: #ff5733;
+    transform: translateX(0);
+    transition: transform 1s ease-in-out;
+}
+
+.did-you-know-box.show {
+    transform: translateX(0);
+}
+
+.did-you-know-box.hidden {
+    transform: translateX(100%);
 }
 
 .did-you-know-box-body {
@@ -16948,9 +17000,9 @@ export default class LandingPg extends Component {
                                                             <img src='/assets/images/home-main-body/header-logged-in-decor.png'/>
                                                         </div>
 
-                                                        <h1>Promo</h1>
+                                                        <h1 className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-heading ${this.state.userSignedInTransition ? 'show' : 'hidden'}`}>Promo</h1>
 
-                                                        <div className='homepage-header-inner-body-poster-right-left-section-logged-in-container-subheader'>
+                                                        <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-subheader ${this.state.userSignedInTransition ? 'show' : 'hidden'}`}>
                                                             <h5>We've got deals for you!</h5>
                                                         </div>
 
@@ -17721,9 +17773,9 @@ export default class LandingPg extends Component {
                                                 <div className={`homepage-header-inner-body-poster-right-right-section-bottom ${this.state.selectedHeaderOption === 'option-2' ? 'closed' : ''}`}>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-bottom-logged-in'>
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container ${this.state.isRightBottomHeaderTransitionActive ? "animate-peel" : ""}`}>
-                                                            <h1>D<label>id you know?</label></h1>
+                                                            <h1 className={`did-you-know-header ${this.state.userSignedInTransition ? 'show' : 'hidden'}`}>D<label>id you know?</label></h1>
 
-                                                            <div className='did-you-know-box'>
+                                                            <div className={`did-you-know-box ${this.state.userSignedInTransition ? 'show' : 'hidden'}`}>
                                                                 <div className='did-you-know-box-body'>
                                                                     <div className="confetti-background">
                                                                         {[...Array(50)].map((_, i) => (
