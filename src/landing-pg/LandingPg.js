@@ -5836,6 +5836,18 @@ const Styles = styled.div `
     position: relative;
 }
 
+.homepage-header-inner-body-poster-left-logged-in-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-loading h2 {
+    color: white;
+    margin-top: 0px;
+}
+
 .homepage-header-inner-body-poster-left-logged-in {
     // background-color: #fff2ccff;
     width: 100%;
@@ -7543,7 +7555,7 @@ const Styles = styled.div `
     margin-top: 0.75rem;
     margin-bottom: 0px;
     color: white;
-    font-family: raleway;
+    // font-family: raleway;
     margin-left: 0.5%;
     text-decoration: underline;
 }
@@ -7555,7 +7567,7 @@ const Styles = styled.div `
     margin-left: 1.5%;
     margin-right: 1.5%;
     color: white;
-    font-family: raleway;
+    // font-family: raleway;
 }
 
 .jipange-delivery-header-info-2 {
@@ -7760,9 +7772,10 @@ const Styles = styled.div `
     left: 1rem;
     right: 1rem;
     height: 60.5%;
-    border: 1px solid #ff5733;
+    border: 2px solid #ff5733;
     background-color: #ff5733;
     border-radius: 6px;
+    // box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .shop-pamoja-header-info-1-header {
@@ -7797,7 +7810,7 @@ const Styles = styled.div `
     margin-top: 0.75rem;
     margin-bottom: 0px;
     color: white;
-    font-family: raleway;
+    // font-family: raleway;
     margin-left: 0.5%;
     text-decoration: underline;
 }
@@ -7809,7 +7822,7 @@ const Styles = styled.div `
     margin-left: 1.5%;
     margin-right: 1.5%;
     color: white;
-    font-family: raleway;
+    // font-family: raleway;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
@@ -10199,6 +10212,7 @@ export default class LandingPg extends Component {
 
             //* - USER ACCOUNT STATUS - *//
             userSignedIn: true,
+            userSignedInLoading: true,
             showAccountInformation: true,
             showJipangeSettings: false,
             showPamojaSettings: false,
@@ -16527,7 +16541,19 @@ export default class LandingPg extends Component {
                             <div className='homepage-header-inner-body'>
                                 <div className='homepage-header-inner-body-poster'>
                                     <div className='homepage-header-inner-body-poster-left'>
-                                        {this.state.userSignedIn ? (
+                                        {this.state.userSignedIn ? this.state.userSignedInLoading ? (
+                                            <div className='homepage-header-inner-body-poster-left-logged-in-loading'>
+                                                <video 
+                                                src="/assets/images/home-main-header/homepage-header-left-loading-animation.mp4" 
+                                                autoPlay 
+                                                loop 
+                                                muted 
+                                                playsInline 
+                                                style={{ width: '50%', height: 'auto'}}
+                                                />
+                                                <h2>Bringing you a better online shopping experience...</h2>
+                                            </div>
+                                        ) : (
                                             <div className='homepage-header-inner-body-poster-left-logged-in'>
                                                 <div className='homepage-header-inner-body-poster-left-logged-in-header'>
                                                     <div className='homepage-header-inner-body-poster-left-logged-in-header-container'>
@@ -17014,17 +17040,17 @@ export default class LandingPg extends Component {
                                                         <div className='shop-pamoja-header-info-1'>
                                                             <div className='shop-pamoja-header-info-1-header'>
                                                                 <video 
-                                                                src="/assets/images/home-main-header/jipange-header-demo-1.mp4" 
+                                                                src="/assets/images/home-main-header/shop-pamoja-demo-1.mp4" 
                                                                 autoPlay 
                                                                 loop 
                                                                 muted 
                                                                 playsInline 
-                                                                style={{ width: '90%', height: 'auto' }}
+                                                                style={{ width: '80%', height: 'auto' }}
                                                                 />
                                                             </div>
                                                             <div className='shop-pamoja-header-info-1-body'>
-                                                                <h2>Jipange Delivery</h2>
-                                                                <h4>Schedule your grocery delivery ahead of time.</h4>
+                                                                <h2>Shop Pamoja</h2>
+                                                                <h4>Unlock discounts by joining in on bulk orders with other shoppers.</h4>
                                                             </div>
                                                         </div>
 
