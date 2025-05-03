@@ -2214,6 +2214,9 @@ const Styles = styled.div `
 
 .navbar-profile-dropdown-body-otp-btn-loading {
     margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar-profile-dropdown-body-verify-otp {
@@ -5863,6 +5866,7 @@ const Styles = styled.div `
     position: relative;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header {
@@ -5873,6 +5877,16 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: left;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header.hidden {
+    opacity: 0;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-header.show {
+    opacity: 1;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-header-container {
@@ -6209,6 +6223,16 @@ const Styles = styled.div `
     align-items: center;
     justify-content: center;
     background-color: #3aae49;
+    opacity: 0;
+    transition: opacity 6.5s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-header.hidden {
+    opacity: 0;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-header.show {
+   opacity: 1;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-title {
@@ -10273,8 +10297,9 @@ export default class LandingPg extends Component {
             displayScrollUpBtn: false,
 
             //* - USER ACCOUNT STATUS - *//
-            userSignedIn: true,
-            userSignedInLoading: true,
+            userSignedIn: false,
+            userSignedInLoading: false,
+            userSignedInTransition: false,
             showAccountInformation: true,
             showJipangeSettings: false,
             showPamojaSettings: false,
@@ -10497,7 +10522,7 @@ export default class LandingPg extends Component {
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
             OTPBtnClicked: false,
-            OTPVerifySuccess: true,
+            OTPVerifySuccess: false,
             showEnterOPTBtnTextHome: true,
             showVerifyOPTBtnTextHome: true,
             verifyOTPBtnText: 'Verify OTP',
@@ -11471,14 +11496,26 @@ export default class LandingPg extends Component {
             transferToProfile: true,
             // showHomeProfileOTPLoading: true,
             showHomeProfileVerifyOTP: false,
-            showProfileDropdownHeaderSuccess: false
+            showProfileDropdownHeaderSuccess: false,
+            userSignedInLoading: true
         }, () => {
             setTimeout(() => {
                 this.setState({
                     transferToProfile: false,
-                    userSignedIn: true
+                    userSignedIn: true,
+                    userSignedInLoading: true,
                 })
             }, 3500)
+            setTimeout(() => {
+                this.setState({
+                    userSignedInLoading: false,
+                })
+            }, 6500)
+            setTimeout(() => {
+                this.setState({
+                    userSignedInTransition: true,
+                })
+            }, 7000)
         })
     }
 
@@ -13159,14 +13196,13 @@ export default class LandingPg extends Component {
                                 <div className='navbar-profile-dropdown-body-signed-out'>
                                     {this.state.showHomeProfileOTPLoading && 
                                         <div className='navbar-profile-dropdown-body-loading-otp'>
-                                            <RotatingLines
+                                            <TailSpin
                                             visible={true}
-                                            height="23.5"
-                                            width="23.5"
-                                            strokeColor="#FF5733"
-                                            strokeWidth="3"
-                                            animationDuration="0.75"
-                                            ariaLabel="rotating-lines-loading"
+                                            height="23.5px"
+                                            width="23.5px"
+                                            color="#ff5733"
+                                            ariaLabel="tail-spin-loading"
+                                            radius="1.5"
                                             wrapperStyle={{}}
                                             wrapperClass=""
                                             />
@@ -13187,14 +13223,13 @@ export default class LandingPg extends Component {
                                                     }
                                                     {this.state.showEnterOPTHomeLoading && 
                                                         <div className='navbar-profile-dropdown-body-otp-btn-loading'>
-                                                            <RotatingLines
+                                                            <TailSpin
                                                             visible={true}
-                                                            height="16.5"
-                                                            width="16.5"
-                                                            strokeColor="white"
-                                                            strokeWidth="3"
-                                                            animationDuration="0.75"
-                                                            ariaLabel="rotating-lines-loading"
+                                                            height="16.5px"
+                                                            width="16.5px"
+                                                            color="white"
+                                                            ariaLabel="tail-spin-loading"
+                                                            radius="1.5"
                                                             wrapperStyle={{}}
                                                             wrapperClass=""
                                                             />
@@ -16606,7 +16641,7 @@ export default class LandingPg extends Component {
                                         {this.state.userSignedIn ? this.state.userSignedInLoading ? (
                                             <div className='homepage-header-inner-body-poster-left-logged-in-loading'>
                                                 <video 
-                                                src="/assets/images/home-main-header/homepage-header-left-loading-animation.mp4" 
+                                                src="/assets/images/home-main-header/homepage-header-left-loading-animation1.mp4" 
                                                 autoPlay 
                                                 loop 
                                                 muted 
@@ -16617,7 +16652,7 @@ export default class LandingPg extends Component {
                                             </div>
                                         ) : (
                                             <div className='homepage-header-inner-body-poster-left-logged-in'>
-                                                <div className='homepage-header-inner-body-poster-left-logged-in-header'>
+                                                <div className={`homepage-header-inner-body-poster-left-logged-in-header ${this.state.userSignedInTransition ? 'show' : 'hidden'}`}>
                                                     <div className='homepage-header-inner-body-poster-left-logged-in-header-container'>
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-header-decor'>
                                                         </div>
@@ -16769,7 +16804,7 @@ export default class LandingPg extends Component {
                                                     </div>
                                                 </div>
                                                 <div className='homepage-header-inner-body-poster-left-logged-in-body'>
-                                                    <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header'>
+                                                    <div className={`homepage-header-inner-body-poster-left-logged-in-body-inner-header ${this.state.userSignedInTransition ? 'show' : 'hidden'}`}>
                                                         <h3 className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-title'>Start saving for your child's future today. Dial <label>*122*1#</label> to enroll in <label>Mpango wa Familia</label>.</h3>
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space'>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-header-ad-space-image-box'>
@@ -16837,6 +16872,18 @@ export default class LandingPg extends Component {
                                                 <div className='homepage-header-inner-body-poster-left-logged-out-decor'>
                                                     <img src='/assets/icons/home-main-header/header-icon-1.png'/>
                                                 </div>
+                                            </div>
+                                        ) : this.state.userSignedInLoading ? (
+                                            <div className='homepage-header-inner-body-poster-left-logged-in-loading'>
+                                                <video 
+                                                src="/assets/images/home-main-header/homepage-header-left-loading-animation1.mp4" 
+                                                autoPlay 
+                                                loop 
+                                                muted 
+                                                playsInline 
+                                                style={{ width: '35%', height: 'auto'}}
+                                                />
+                                                <h2>Bringing you a better online shopping experience...</h2>
                                             </div>
                                         ) : (
                                            <div className='homepage-header-inner-body-poster-left-logged-out'>
@@ -17140,10 +17187,24 @@ export default class LandingPg extends Component {
 
                                                 </div>
                                             </div>
+                                        ) : this.state.userSignedInLoading ? (
+                                            <div className='homepage-header-inner-body-poster-right-left-section'>
+                                                <div className='homepage-header-inner-body-poster-right-left-section-loading'>
+                                                    <video 
+                                                    src="/assets/images/home-main-header/homepage-header-right-left-loading-animation.mp4" 
+                                                    autoPlay 
+                                                    loop 
+                                                    muted 
+                                                    playsInline 
+                                                    style={{ width: '50%', height: 'auto'}}
+                                                    />
+                                                    <h2>Negotiating the best deals for you...</h2>
+                                                </div>
+                                            </div>
                                         ) : (
                                             <div className='homepage-header-inner-body-poster-right-left-section'>
                                                 <div className='homepage-header-inner-body-poster-right-left-section-logged-off'>
-                                                    <img src='/assets/images/home-main-header/header-poster-img-2.png'/>
+                                                    <img src='/assets/images/home-main-header/header-poster-img-2.webp'/>
                                                 </div>
                                             </div>
                                         )}
@@ -17611,11 +17672,27 @@ export default class LandingPg extends Component {
 
                                                     </div>
                                                 </div>
+                                            ) : this.state.userSignedInLoading ? (
+                                                <div className='homepage-header-inner-body-poster-right-right-section-top'>
+                                                    <div className='homepage-header-inner-body-poster-right-right-section-top-loading'>
+                                                        <video 
+                                                        src="/assets/images/home-main-header/homepage-header-right-left-top-loading-animation.mp4" 
+                                                        autoPlay 
+                                                        loop 
+                                                        muted 
+                                                        playsInline 
+                                                        style={{ width: '30%', height: 'auto'}}
+                                                        />
+                                                        <h2>Finalizing a few design tweaks...</h2>
+                                                    </div>
+                                                </div>
                                             ) : (
                                                 <div className='homepage-header-inner-body-poster-right-right-section-top'>
                                                     <img src='/assets/images/home-main-header/header-poster-img-1.webp'/>
                                                 </div>
                                             )}
+
+
                                             {this.state.userSignedIn ? this.state.userSignedInLoading ? (
                                                 <div className='homepage-header-inner-body-poster-right-right-section-bottom'>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-bottom-loading'>
@@ -17759,6 +17836,20 @@ export default class LandingPg extends Component {
                                                         
 
                                                     </div>
+                                                </div>
+                                            ) : this.state.userSignedInLoading ? (
+                                                <div className='homepage-header-inner-body-poster-right-right-section-bottom'>
+                                                    <div className='homepage-header-inner-body-poster-right-right-section-bottom-loading'>
+                                                        <video 
+                                                            src="/assets/images/home-main-header/homepage-header-right-left-bottom-loading-animation.mp4" 
+                                                            autoPlay 
+                                                            loop 
+                                                            muted 
+                                                            playsInline 
+                                                            style={{ width: '30%', height: 'auto'}}
+                                                            />
+                                                            <h2>Engineering some innovative shopping experiences...</h2>
+                                                        </div>
                                                 </div>
                                             ) : (
                                                 <div className='homepage-header-inner-body-poster-right-right-section-bottom'>
