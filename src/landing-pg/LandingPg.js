@@ -1023,6 +1023,7 @@ const Styles = styled.div `
     padding: 0; /* Adjust padding to avoid misalignment */
     cursor: pointer;
     border: 1px solid white;
+    transition: border 0.5s ease-in-out;
 }
 
 .navbar-shopping-cart:hover {
@@ -1073,6 +1074,7 @@ const Styles = styled.div `
     padding: 0; /* Adjust padding to avoid misalignment */
     cursor: pointer;
     border: 1px solid white;
+    transition: border 0.5s ease-in-out;
 }
 
 .navbar-profile-btn:hover {
