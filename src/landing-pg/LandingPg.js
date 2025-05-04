@@ -9247,7 +9247,7 @@ const Styles = styled.div `
 }
 
 .did-you-know-box.hidden {
-    transform: translateX(100%);
+    transform: translateX(120%);
 }
 
 .did-you-know-box-body {
