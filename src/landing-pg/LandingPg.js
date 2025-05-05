@@ -7912,6 +7912,14 @@ const Styles = styled.div `
     // font-family: raleway;
 }
 
+.shop-pamoja-header-info-2-body {
+    position: absolute;
+    bottom: 0.85rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 35%;
+}
+
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
 
 .homepage-header-inner-body-poster-right-right-section {
@@ -17276,6 +17284,10 @@ export default class LandingPg extends Component {
                                                             <div className='shop-pamoja-header-info-1-body'>
                                                                 <h2>Shop Pamoja</h2>
                                                                 <h4>Unlock discounts by joining in on bulk orders with other shoppers.</h4>
+                                                            </div>
+
+                                                            <div className='shop-pamoja-header-info-2-body'>
+
                                                             </div>
                                                         </div>
 
