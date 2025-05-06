@@ -7914,10 +7914,13 @@ const Styles = styled.div `
 
 .shop-pamoja-header-info-2-body {
     position: absolute;
-    bottom: 0.85rem;
-    left: 0.5rem;
-    right: 0.5rem;
-    height: 35%;
+    bottom: 1.25rem;
+    left: 1rem;
+    right: 1rem;
+    height: 25%;
+    border: 1px solid #ff5733;
+    border-radius: 8px;
+    background-color: #ff5733;
 }
 
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
@@ -10405,9 +10408,9 @@ export default class LandingPg extends Component {
             displayScrollUpBtn: false,
 
             //* - USER ACCOUNT STATUS - *//
-            userSignedIn: false,
+            userSignedIn: true,
             userSignedInLoading: false,
-            userSignedInTransition: false,
+            userSignedInTransition: true,
             showAccountInformation: true,
             showJipangeSettings: false,
             showPamojaSettings: false,
@@ -10630,7 +10633,7 @@ export default class LandingPg extends Component {
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
             OTPBtnClicked: false,
-            OTPVerifySuccess: false,
+            OTPVerifySuccess: true,
             showEnterOPTBtnTextHome: true,
             showVerifyOPTBtnTextHome: true,
             verifyOTPBtnText: 'Verify OTP',
@@ -17285,10 +17288,10 @@ export default class LandingPg extends Component {
                                                                 <h2>Shop Pamoja</h2>
                                                                 <h4>Unlock discounts by joining in on bulk orders with other shoppers.</h4>
                                                             </div>
+                                                        </div>
 
-                                                            <div className='shop-pamoja-header-info-2-body'>
+                                                        <div className='shop-pamoja-header-info-2-body'>
 
-                                                            </div>
                                                         </div>
 
                                                     </div>
