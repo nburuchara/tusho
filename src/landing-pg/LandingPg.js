@@ -9207,9 +9207,13 @@ const Styles = styled.div `
     background-color: #ff5733;
 }
 
+.shop-pamoja-info-3-body { 
+    position: absolute;
+}
+
 .shop-pamoja-info-4 {
     position: absolute;
-    top: 0.85rem;
+    bottom: 0.85rem;
     left: 0.85rem;
     right: 0.85rem;
     height: 40%;
