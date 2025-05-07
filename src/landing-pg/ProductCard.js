@@ -573,6 +573,37 @@ const Styles = styled.div `
     white-space: nowrap;
 }
 
+
+.product-new-label {
+    position: absolute;
+    width: 55%;
+    bottom: 3.7rem;
+    left: 6%;
+    font-size: 0.7rem;
+    font-family: poppins;
+    font-weight: bold;
+    background-color: #faece9;
+    border: 1px solid #ff5733;
+    border-right: 0.5px solid transparent;
+    border-left: 0.5px solid transparent;
+    padding: 2.5px 10px;
+    // border-radius: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.new-carousel {
+    display: inline-block;
+    animation: scrollPromo 10s linear infinite;
+}
+
+.product-new-label p {
+    margin: 0;
+    color: #ff5733;
+    display: inline-block;
+    white-space: nowrap;
+}
+
 /* Animation keyframes */
 @keyframes scrollPromo {
     from {
@@ -902,6 +933,13 @@ class ProductCard extends Component {
                                     <span className="product-promo-label">
                                         <div className="promo-carousel">
                                         <p>PROMOTION • PROMOTION • PROMOTION • PROMOTION • PROMOTION • PROMOTION •</p>
+                                        </div>
+                                    </span>
+                                ) : null}
+                                {product.new ? (
+                                    <span className="product-new-label">
+                                        <div className="new-carousel">
+                                        <p>NEW •  NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • NEW • </p>
                                         </div>
                                     </span>
                                 ) : null}
