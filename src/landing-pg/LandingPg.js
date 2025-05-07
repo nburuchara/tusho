@@ -17970,7 +17970,7 @@ export default class LandingPg extends Component {
                                                                         />
                                                                     </div>
                                                                     <div className='shop-pamoja-info-4-body-right'>
-                                                                        <p>Increase your chances of getting discounts by </p>
+                                                                        <p>Increase your chances of getting discounts by inviting friends and family to shop, so you can meet the brand's order minimum faster!</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
