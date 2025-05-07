@@ -9213,7 +9213,7 @@ const Styles = styled.div `
     left: 0.5rem;
     right: 0.5rem;
     bottom: 0.5rem;
-    border: 1px solid white;
+    // border: 1px solid white;
     border-radius: 8px;
     display: flex;
     flex-direction: row;
@@ -9221,18 +9221,31 @@ const Styles = styled.div `
 
 .shop-pamoja-info-3-body-left { 
     width: 30%;
-    border: 1px solid white;
+    // border: 1px solid white;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
 }
 
 .shop-pamoja-info-3-body-right {
     width: 70%;
-    border: 1px solid white;
+    // border: 1px solid white;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     height: 100%;
+ }
+
+ .shop-pamoja-info-3-body-right p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-family: lexend;
+    font-size: 85%;
+    margin-left: 2.5%;
  }
 
 .shop-pamoja-info-4 {
@@ -17887,10 +17900,17 @@ export default class LandingPg extends Component {
                                                             <div className='shop-pamoja-info-3'>
                                                                 <div className='shop-pamoja-info-3-body'>
                                                                     <div className='shop-pamoja-info-3-body-left'>
-
+                                                                    <   video 
+                                                                        src="/assets/images/home-main-header/shop-pamoja-demo-3.mp4" 
+                                                                        autoPlay 
+                                                                        loop 
+                                                                        muted 
+                                                                        playsInline 
+                                                                        style={{ width: '70%', height: 'auto' }}
+                                                                        />
                                                                     </div>
                                                                     <div className='shop-pamoja-info-3-body-right'>
-
+                                                                        <p></p>
                                                                     </div>
                                                                 </div>
                                                             </div>
