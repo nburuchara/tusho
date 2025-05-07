@@ -17407,7 +17407,7 @@ export default class LandingPg extends Component {
                                                                     />
                                                                 </div>
                                                                 <div className='shop-pamoja-header-info-2-body-container-right'>
-                                                                    <p>You love discounts! Our suppliers love seeing their products fly off our shelves. We love a win-win situation for all our customers.</p>
+                                                                    <p>You love discounts! Our partner brands love seeing their products fly off our shelves. We love a win-win situation for all our customers.</p>
                                                                 </div>
                                                             </div>
                                                         </div>
