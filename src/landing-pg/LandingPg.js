@@ -9258,6 +9258,48 @@ const Styles = styled.div `
     background-color: #ff5733;
 }
 
+.shop-pamoja-info-4-body {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    border: 1px solid white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+}
+
+.shop-pamoja-info-4-body-left {
+    width: 30%;
+    // border: 1px solid white;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    overflow: hidden;
+}
+
+.shop-pamoja-info-4-body-right {
+    width: 70%;
+    // border: 1px solid white;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    height: 100%;
+}
+
+.shop-pamoja-info-4-body-right p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-family: lexend;
+    font-size: 75%;
+    margin-left: 5%;
+ }
+
     // # BOTTOM RIGHT UI SECTION
 
 .homepage-header-inner-body-poster-right-right-section-bottom-loading {
@@ -17900,7 +17942,7 @@ export default class LandingPg extends Component {
                                                             <div className='shop-pamoja-info-3'>
                                                                 <div className='shop-pamoja-info-3-body'>
                                                                     <div className='shop-pamoja-info-3-body-left'>
-                                                                    <   video 
+                                                                        <video 
                                                                         src="/assets/images/home-main-header/shop-pamoja-demo-3.mp4" 
                                                                         autoPlay 
                                                                         loop 
@@ -17916,7 +17958,21 @@ export default class LandingPg extends Component {
                                                             </div>
 
                                                             <div className='shop-pamoja-info-4'>
-
+                                                                <div className='shop-pamoja-info-4-body'>
+                                                                    <div className='shop-pamoja-info-4-body-left'>
+                                                                        <video 
+                                                                        src="/assets/images/home-main-header/shop-pamoja-demo-4.mp4" 
+                                                                        autoPlay 
+                                                                        loop 
+                                                                        muted 
+                                                                        playsInline 
+                                                                        style={{ width: '92.5%', height: 'auto' }}
+                                                                        />
+                                                                    </div>
+                                                                    <div className='shop-pamoja-info-4-body-right'>
+                                                                        <p>Increase your chances of getting discounts by </p>
+                                                                    </div>
+                                                                </div>
                                                             </div>
 
                                                         </div>
