@@ -9264,7 +9264,7 @@ const Styles = styled.div `
     left: 0.5rem;
     right: 0.5rem;
     bottom: 0.5rem;
-    border: 1px solid white;
+    // border: 1px solid white;
     border-radius: 8px;
     display: flex;
     flex-direction: row;
