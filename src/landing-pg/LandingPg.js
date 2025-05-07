@@ -9197,6 +9197,26 @@ const Styles = styled.div `
     visibility: visible;
 }
 
+.shop-pamoja-info-3 {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    right: 0.85rem;
+    height: 40%;
+    border-radius: 8px;
+    background-color: #ff5733;
+}
+
+.shop-pamoja-info-4 {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    right: 0.85rem;
+    height: 40%;
+    border-radius: 8px;
+    background-color: #ff5733;
+}
+
     // # BOTTOM RIGHT UI SECTION
 
 .homepage-header-inner-body-poster-right-right-section-bottom-loading {
@@ -10451,9 +10471,9 @@ export default class LandingPg extends Component {
             displayScrollUpBtn: false,
 
             //* - USER ACCOUNT STATUS - *//
-            userSignedIn: false,
+            userSignedIn: true,
             userSignedInLoading: false,
-            userSignedInTransition: false,
+            userSignedInTransition: true,
             showAccountInformation: true,
             showJipangeSettings: false,
             showPamojaSettings: false,
@@ -10676,7 +10696,7 @@ export default class LandingPg extends Component {
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
             OTPBtnClicked: false,
-            OTPVerifySuccess: false,
+            OTPVerifySuccess: true,
             showEnterOPTBtnTextHome: true,
             showVerifyOPTBtnTextHome: true,
             verifyOTPBtnText: 'Verify OTP',
@@ -17835,6 +17855,14 @@ export default class LandingPg extends Component {
                                                         </div>
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-top-logged-in-container-option-4 ${this.state.selectedHeaderOption === 'option-4' ? 'open' : ''}`}>
+                                                            
+                                                            <div className='shop-pamoja-info-3'>
+
+                                                            </div>
+
+                                                            <div className='shop-pamoja-info-4'>
+
+                                                            </div>
 
                                                         </div>
 
@@ -17998,7 +18026,9 @@ export default class LandingPg extends Component {
                                                         </div>
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-4 ${this.state.selectedHeaderOption === 'option-4' ? 'open' : ''}`}>
-                                                            <h3></h3>
+                                                            
+                                                         
+
                                                         </div>
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-5 ${this.state.selectedHeaderOption === 'option-5' ? 'open' : ''}`}>
