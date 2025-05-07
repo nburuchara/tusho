@@ -9244,8 +9244,8 @@ const Styles = styled.div `
     margin-bottom: 0px;
     color: white;
     font-family: lexend;
-    font-size: 85%;
-    margin-left: 2.5%;
+    font-size: 75%;
+    margin-left: 5%;
  }
 
 .shop-pamoja-info-4 {
@@ -17910,7 +17910,7 @@ export default class LandingPg extends Component {
                                                                         />
                                                                     </div>
                                                                     <div className='shop-pamoja-info-3-body-right'>
-                                                                        <p></p>
+                                                                        <p>We work with your fav brands to provide the option for you to create a bulk order with fellow shoppers to get discounts whenever.</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
