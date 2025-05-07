@@ -17966,11 +17966,11 @@ export default class LandingPg extends Component {
                                                                         loop 
                                                                         muted 
                                                                         playsInline 
-                                                                        style={{ width: '92.5%', height: 'auto' }}
+                                                                        style={{ width: '95%', height: 'auto' }}
                                                                         />
                                                                     </div>
                                                                     <div className='shop-pamoja-info-4-body-right'>
-                                                                        <p>Increase your chances of getting discounts by inviting friends and family to shop, so you can meet the brand's order minimum faster!</p>
+                                                                        <p>Increase your chances of getting discounts by inviting friends and family, so you can meet the product's minimum order quantity faster!</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
