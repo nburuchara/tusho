@@ -10451,9 +10451,9 @@ export default class LandingPg extends Component {
             displayScrollUpBtn: false,
 
             //* - USER ACCOUNT STATUS - *//
-            userSignedIn: true,
+            userSignedIn: false,
             userSignedInLoading: false,
-            userSignedInTransition: true,
+            userSignedInTransition: false,
             showAccountInformation: true,
             showJipangeSettings: false,
             showPamojaSettings: false,
@@ -10676,7 +10676,7 @@ export default class LandingPg extends Component {
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
             OTPBtnClicked: false,
-            OTPVerifySuccess: true,
+            OTPVerifySuccess: false,
             showEnterOPTBtnTextHome: true,
             showVerifyOPTBtnTextHome: true,
             verifyOTPBtnText: 'Verify OTP',
@@ -17981,7 +17981,7 @@ export default class LandingPg extends Component {
                                                                         className="confetti-piece"
                                                                         style={{
                                                                             left: `${Math.random() * 100}vw`,
-                                                                            backgroundColor: 'white',
+                                                                            backgroundColor: '#dfffc0',
                                                                             animationDuration: `${20 + Math.random() * 20}s`, // slower fall
                                                                             animationDelay: `${Math.random() * 10}s`,
                                                                         }}
