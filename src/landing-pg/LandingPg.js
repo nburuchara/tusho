@@ -7923,6 +7923,44 @@ const Styles = styled.div `
     background-color: #ff5733;
 }
 
+.shop-pamoja-header-info-2-body-container {
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    border: 1px solid white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+}
+
+.shop-pamoja-header-info-2-body-container-left {
+    height: 100%;
+    width: 35%;
+    border: 1px solid white;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.shop-pamoja-header-info-2-body-container-right {
+    height: 100%;
+    width: 65%;
+    border: 1px solid white;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.shop-pamoja-header-info-2-body-container-right p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    color: white;
+    font-family: lexend;
+    font-size: 82.5%;
+}
+
     // # HEADER RIGHT SECTION (TWO SMALLER BOXES)
 
 .homepage-header-inner-body-poster-right-right-section {
@@ -17291,7 +17329,14 @@ export default class LandingPg extends Component {
                                                         </div>
 
                                                         <div className='shop-pamoja-header-info-2-body'>
-
+                                                            <div className='shop-pamoja-header-info-2-body-container'>
+                                                                <div className='shop-pamoja-header-info-2-body-container-left'>
+                                                                    
+                                                                </div>
+                                                                <div className='shop-pamoja-header-info-2-body-container-right'>
+                                                                    <p>You love discounts! Suppliers love seeing their products fly off our shelves. We love a win-win situation for our customers.</p>
+                                                                </div>
+                                                            </div>
                                                         </div>
 
                                                     </div>
