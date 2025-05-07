@@ -17952,7 +17952,7 @@ export default class LandingPg extends Component {
                                                                         />
                                                                     </div>
                                                                     <div className='shop-pamoja-info-3-body-right'>
-                                                                        <p>We work with your fav brands to provide the option for you to create a bulk order with fellow shoppers to get discounts whenever.</p>
+                                                                        <p>We work with your fav brands to provide the option for you to create bulk orders with fellow shoppers to get discounts whenever.</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -17970,7 +17970,7 @@ export default class LandingPg extends Component {
                                                                         />
                                                                     </div>
                                                                     <div className='shop-pamoja-info-4-body-right'>
-                                                                        <p>Increase your chances of getting discounts by inviting friends and family, so you can hit the product's discount order quantity faster!</p>
+                                                                        <p>Increase your chances of getting discounts by inviting friends and family, so you can hit the product's discount order quantity (DOQ) faster!</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
