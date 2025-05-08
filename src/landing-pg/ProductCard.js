@@ -176,9 +176,9 @@ const Styles = styled.div `
     margin-left: 0.25rem;
     text-align: left;
     color: #24668a;
-    font-family: poppins;
-    font-size: 60%;
-    font-weight: normal;
+    font-family: lexend;
+    font-size: 57.5%;
+    // font-weight: normal;
 }
 
 .product-card-shop-pamoja-details-inner-container-body label {
@@ -219,12 +219,12 @@ const Styles = styled.div `
     margin-left: 1.5%;
     text-align: left;
     font-family: lexend;
-    font-size: 90%;
+    font-size: 95%;
     color: #20313a;
 }
 
 .product-card-shop-pamoja-details-inner-container-body-footer-left label {
-    font-size: 75%;
+    font-size: 60%;
     margin-left: 0px !important;
 }
 
@@ -236,8 +236,9 @@ const Styles = styled.div `
 .product-card-shop-pamoja-discount-value {
     width: 100%;
     height: 90%;
+    margin-top: 0.15rem;
     background-color: #ff5733;
-    border-radius: 8px;
+    border-radius: 6px;
 }
 
 .product-card-shop-pamoja-details-inner-container-expiry-container {
@@ -943,7 +944,7 @@ class ProductCard extends Component {
                                     <div className="product-card-shop-pamoja-details-inner-container-body-footer">
                                         <div className="product-card-shop-pamoja-details-inner-container-body-footer-left">
                                             {product.pamojaTotal > 0 ? (<h4>{product.pamojaTotal} <label>units for discount</label></h4>) : (
-                                                    <h4><label>No discount at this time.</label></h4>
+                                                    <h4><label>No discount currently.</label></h4>
                                                 )
                                             }
                                         </div>
