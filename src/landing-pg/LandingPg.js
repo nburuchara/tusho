@@ -9892,9 +9892,38 @@ const Styles = styled.div `
     top: 0.85rem;
     left: 0.85rem;
     height: 48%;
-    width: 43%;
+    width: 43.5%;
     background-color: #ff5733;
     border-radius: 8px;
+}
+
+.shop-pamoja-info-5-body {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    border: 1px solid white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.shop-pamoja-info-5-body-top {
+    width: 100%;
+    height: 50%;
+    border: 1px solid white;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+}
+
+.shop-pamoja-info-5-body-bottom {
+    width: 100%;
+    height: 50%;
+    border: 1px solid white;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .shop-pamoja-info-6 {
@@ -9902,7 +9931,7 @@ const Styles = styled.div `
     top: 0.85rem;
     right: 0.85rem;
     height: 48%;
-    width: 43%;
+    width: 43.5%;
     background-color: #ff5733;
     border-radius: 8px;
 }
@@ -17972,7 +18001,7 @@ export default class LandingPg extends Component {
                                                                         />
                                                                     </div>
                                                                     <div className='shop-pamoja-info-3-body-right'>
-                                                                        <p>We work with your fav brands to provide the option for you to create bulk orders with fellow shoppers to get discounts whenever.</p>
+                                                                        <p>We work with your favorite brands to provide the option for you to create bulk orders with fellow shoppers and get more discounts as you shop.</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -17990,7 +18019,7 @@ export default class LandingPg extends Component {
                                                                         />
                                                                     </div>
                                                                     <div className='shop-pamoja-info-4-body-right'>
-                                                                        <p>Increase your chances of getting discounts by inviting friends and family, so you can hit the product's discount order quantity (DOQ) faster!</p>
+                                                                        <p>Increase your chances of getting discounts by inviting friends and family, so you can hit the product's discount order quantity faster!</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -18158,7 +18187,14 @@ export default class LandingPg extends Component {
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-4 ${this.state.selectedHeaderOption === 'option-4' ? 'open' : ''}`}>
                                                             <div className='shop-pamoja-info-5'>
+                                                                <div className='shop-pamoja-info-5-body'>
+                                                                    <div className='shop-pamoja-info-5-body-top'>
+                                                                        
+                                                                    </div>
+                                                                    <div className='shop-pamoja-info-5-body-bottom'>
 
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                             <div className='shop-pamoja-info-6'>
 
