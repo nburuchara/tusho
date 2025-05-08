@@ -204,14 +204,26 @@ const Styles = styled.div `
     border-bottom-right-radius: 7px;
     border: 1px solid black;
     height: 40%;
+    display: flex;
+    flex-direction: row;
 }
 
-.product-card-shop-pamoja-details-inner-container-body-footer h4 {
+.product-card-shop-pamoja-details-inner-container-body-footer-left {
+    width: 75%;
+    border: 1px solid black;
+}
+
+.product-card-shop-pamoja-details-inner-container-body-footer-left h4 {
     margin-top: 0.1rem;
     margin-bottom: 0px;
     text-align: left:
     font-family: lexend;
     color: #20313a;
+}
+
+.product-card-shop-pamoja-details-inner-container-body-footer-right {
+    width: 25%;
+    border: 1px solid black;
 }
 
 .product-card-shop-pamoja-details-inner-container-expiry-container {
@@ -915,7 +927,13 @@ class ProductCard extends Component {
                                 <div className="product-card-shop-pamoja-details-inner-container-body">
                                     <h5>Get discounts by making a bulk order with fellow shoppers. <label>Learn more <span>➞</span></label></h5>
                                     <div className="product-card-shop-pamoja-details-inner-container-body-footer">
-                                        <h4>30 units</h4>
+                                        <div className="product-card-shop-pamoja-details-inner-container-body-footer-left">
+                                            <h4>30 units</h4>
+                                        </div>
+                                        <div className="product-card-shop-pamoja-details-inner-container-body-footer-right">
+                                            
+                                        </div>
+                                        
                                     </div>
                                 </div>
                                 
