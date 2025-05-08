@@ -9887,6 +9887,26 @@ const Styles = styled.div `
     visibility: visible;
 }
 
+.shop-pamoja-info-5 {
+    position: absolute;
+    top: 0.85rem;
+    left: 0.85rem;
+    height: 48%;
+    width: 43%;
+    background-color: #ff5733;
+    border-radius: 8px;
+}
+
+.shop-pamoja-info-6 {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    height: 48%;
+    width: 43%;
+    background-color: #ff5733;
+    border-radius: 8px;
+}
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container,
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container {
     background-color: #20313a;
@@ -18137,9 +18157,12 @@ export default class LandingPg extends Component {
                                                         </div>
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-4 ${this.state.selectedHeaderOption === 'option-4' ? 'open' : ''}`}>
-                                                            
-                                                         
+                                                            <div className='shop-pamoja-info-5'>
 
+                                                            </div>
+                                                            <div className='shop-pamoja-info-6'>
+
+                                                            </div>
                                                         </div>
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-5 ${this.state.selectedHeaderOption === 'option-5' ? 'open' : ''}`}>
