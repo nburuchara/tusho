@@ -224,7 +224,7 @@ const Styles = styled.div `
 }
 
 .product-card-shop-pamoja-details-inner-container-body-footer-left label {
-    font-size: 60%;
+    font-size: 65%;
     margin-left: 0px !important;
 }
 
