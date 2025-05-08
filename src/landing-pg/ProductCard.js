@@ -940,7 +940,7 @@ class ProductCard extends Component {
                                     <img src="/assets/images/home-main-body/shop-pamoja-header.webp"/>
                                 </div>
                                 <div className="product-card-shop-pamoja-details-inner-container-body">
-                                    <h5>Get discounts by making a bulk order with fellow shoppers. <label>Learn more <span>➞</span></label></h5>
+                                    <h5>Get discounts by making a bulk order with fellow shoppers. <label>Learn more</label></h5>
                                     <div className="product-card-shop-pamoja-details-inner-container-body-footer">
                                         <div className="product-card-shop-pamoja-details-inner-container-body-footer-left">
                                             {product.pamojaTotal > 0 ? (<h4>{product.pamojaTotal} <label>units for discount</label></h4>) : (
