@@ -245,7 +245,7 @@ const Styles = styled.div `
     position: absolute;
     top: -1.5rem;
     right: 0;
-    width: 55%;
+    width: 60%;
     // border: 1px solid black;
     height: 1.6rem;
     background-color: #d6e7f0;
