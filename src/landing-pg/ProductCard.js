@@ -209,12 +209,7 @@ const Styles = styled.div `
 }
 
 .product-card-shop-pamoja-details-inner-container-body-footer-left {
-    width: 75%;
-    border: 1px solid black;
-}
-
-.product-card-shop-pamoja-details-inner-container-body-footer-right {
-    width: 25%;
+    width: 85%;
     border: 1px solid black;
 }
 
@@ -229,7 +224,12 @@ const Styles = styled.div `
 
 .product-card-shop-pamoja-details-inner-container-body-footer-left label {
     font-size: 75%;
-    margin-left: 1%;
+    margin-left: 0px !important;
+}
+
+.product-card-shop-pamoja-details-inner-container-body-footer-right {
+    width: 15%;
+    border: 1px solid black;
 }
 
 .product-card-shop-pamoja-details-inner-container-expiry-container {
@@ -934,7 +934,10 @@ class ProductCard extends Component {
                                     <h5>Get discounts by making a bulk order with fellow shoppers. <label>Learn more <span>➞</span></label></h5>
                                     <div className="product-card-shop-pamoja-details-inner-container-body-footer">
                                         <div className="product-card-shop-pamoja-details-inner-container-body-footer-left">
-                                            <h4>30 <label>units till discount</label></h4>
+                                            {product.pamojaTotal > 0 ? (<h4> <label>units for discount</label></h4>) : (
+                                                    <h4></h4>
+                                                )
+                                            }
                                         </div>
                                         <div className="product-card-shop-pamoja-details-inner-container-body-footer-right">
                                             
