@@ -18001,7 +18001,7 @@ export default class LandingPg extends Component {
                                                                         />
                                                                     </div>
                                                                     <div className='shop-pamoja-info-3-body-right'>
-                                                                        <p>We work with your favorite brands to provide the option for you to create bulk orders with fellow shoppers and get more discounts as you shop.</p>
+                                                                        <p>We work with your favorite brands to provide the option for you to create a bulk order with fellow shoppers and get more discounts as you shop.</p>
                                                                     </div>
                                                                 </div>
                                                             </div>

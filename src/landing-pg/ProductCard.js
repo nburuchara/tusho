@@ -197,12 +197,12 @@ const Styles = styled.div `
 
 .product-card-shop-pamoja-details-inner-container-body-footer {
     position: absolute;
-    bottom: 0.25rem;
-    left: 0.25rem;
-    right: 0.25rem;
+    bottom: 0.05rem;
+    left: 0.05rem;
+    right: 0.05rem;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
-    // border: 1px solid black;
+    border: 1px solid black;
     height: 40%;
     display: flex;
     flex-direction: row;
@@ -213,6 +213,12 @@ const Styles = styled.div `
     // border: 1px solid black;
 }
 
+.product-card-shop-pamoja-discount-qty {
+    height: 90%;
+    width: 95%;
+    background-color: #ff5733;
+}
+
 .product-card-shop-pamoja-details-inner-container-body-footer-left h4 {
     margin-top: 0.25rem;
     margin-bottom: 0px;
@@ -220,7 +226,7 @@ const Styles = styled.div `
     text-align: left;
     font-family: lexend;
     font-size: 95%;
-    color: #20313a;
+    color: #24668a;
 }
 
 .product-card-shop-pamoja-details-inner-container-body-footer-left label {
@@ -234,9 +240,11 @@ const Styles = styled.div `
 }
 
 .product-card-shop-pamoja-discount-value {
+    position: absolute;
+    botto
     width: 100%;
     height: 90%;
-    margin-top: 0.15rem;
+    margin-top: 0.25rem;
     background-color: #ff5733;
     border-radius: 6px;
 }
@@ -942,17 +950,23 @@ class ProductCard extends Component {
                                 <div className="product-card-shop-pamoja-details-inner-container-body">
                                     <h5>Get discounts by making a bulk order with fellow shoppers. <label>Learn more</label></h5>
                                     <div className="product-card-shop-pamoja-details-inner-container-body-footer">
-                                        <div className="product-card-shop-pamoja-details-inner-container-body-footer-left">
-                                            {product.pamojaTotal > 0 ? (<h4>{product.pamojaTotal} <label>units for discount</label></h4>) : (
+                                        {/* <div className="product-card-shop-pamoja-details-inner-container-body-footer-left">
+                                            
+                                            {product.pamojaTotal > 0 ? (
+                                                <div className="product-card-shop-pamoja-discount-qty"> 
+                                                    <h4>{product.pamojaTotal} <label>(discount order qty)</label></h4>
+                                                </div>
+                                            ) : (
                                                     <h4><label>No discount currently.</label></h4>
                                                 )
                                             }
+                                            
                                         </div>
                                         <div className="product-card-shop-pamoja-details-inner-container-body-footer-right">
                                             <div className="product-card-shop-pamoja-discount-value">
 
                                             </div>
-                                        </div>
+                                        </div> */}
                                         
                                     </div>
                                 </div>
