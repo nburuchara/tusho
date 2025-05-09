@@ -5014,7 +5014,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-my-orders-settings {
     margin-left: 6.5%;
-    // border: 1px solid black;
+    border: 1px solid black;
     height: 37.65rem;
     display: flex;
     flex-direction: column;
@@ -5022,7 +5022,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-my-orders-settings-container {
     height: 100%;
-    // border: 1px solid black;
+    border: 1px solid black;
     position: relative;
 }
 
@@ -5041,18 +5041,30 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content {
-    // bord/er: 1px solid black;
+    border: 1px solid black;
     border-top: 1px solid #5e626a;
     width: 95%;
     margin-left: 2.5%;
-    height: 20.5%;
+    height: 92.5%;
     position: relative;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-existing-cart {
+    height: 35%;
+    border: 1px solid black;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-empty {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: -7.5rem;
     flex-direction: column;
 }
 
@@ -11046,7 +11058,6 @@ export default class LandingPg extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-
             //* - - FILTERING PRODUCTS - - *//
         if (prevState.products !== this.state.products || prevState.selectedFilters !== this.state.selectedFilters) {
             this.updateFilteredProductCount();
@@ -15773,14 +15784,13 @@ export default class LandingPg extends Component {
                                                                                     {this.state.showConfirmJipangeOrderActive &&
                                                                                         <>
                                                                                             <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn-active'>
-                                                                                                <RotatingLines
+                                                                                                <TailSpin
                                                                                                 visible={true}
-                                                                                                height="16.5"
-                                                                                                width="16.5"
-                                                                                                strokeColor="#FF5733"
-                                                                                                strokeWidth="3"
-                                                                                                animationDuration="0.75"
-                                                                                                ariaLabel="rotating-lines-loading"
+                                                                                                height="16.5px"
+                                                                                                width="16.5px"
+                                                                                                color="#ff5733"
+                                                                                                ariaLabel="tail-spin-loading"
+                                                                                                radius="2"
                                                                                                 wrapperStyle={{}}
                                                                                                 wrapperClass=""
                                                                                                 />
@@ -16662,16 +16672,426 @@ export default class LandingPg extends Component {
                                         }
                                         {this.state.showMyOrdersSettings && 
                                             <div className='navbar-profile-account-popup-my-orders-settings'>
-                                                <div className={`navbar-profile-account-popup-my-orders-settings-container ${this.state.jipangeMyOrdersEmpty ? 'empty' : ''}`}>
+                                                {/* <div className={`navbar-profile-account-popup-my-orders-settings-container`}>
                                                     <p>My Orders:</p>
-                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content'>
-                                                        
+                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content ${this.state.cart.length === 0 ? 'empty' : ''}`}>
+                                                        {this.state.cart.length > 0 && 
+                                                            <>
+                                                            </>
+                                                        }
+
+                                                        {this.state.cart.length === 0 && 
+                                                            <div className='navbar-profile-account-popup-my-orders-settings-container-content-empty'>
+                                                                <img src='/assets/icons/home-my-orders/no-orders-icon.png'/>
+                                                                <p>No orders yet</p>
+                                                            </div>
+                                                        }
                                                     </div>
-                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-empty'>
-                                                        <img src='/assets/icons/home-my-orders/no-orders-icon.png'/>
-                                                        <p>No orders yet</p>
+                                                    
+                                                </div> */}
+                                                {this.state.cart.length > 0 && 
+                                                    <div style={{width: '97.5%', height: "100%", position: 'relative'}} className=''>
+                                                        <div className='jipange-settings-selected-date-screen-complete-body'>
+                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-header'>
+                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
+                                                                    <div onClick={() => this.handleJipangePaymentOptionChange2(1)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.disableJipangePaymentBtns === false && this.state.selectedJipangePaymentOption === 'option1' ? 'selected' : this.state.disableJipangePaymentBtns === true ? 'disabled' : ''}`}>
+                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1`}>
+                                                                            <input
+                                                                            type="radio"
+                                                                            value="option1"
+                                                                            checked={this.state.selectedJipangePaymentOption === "option1"}
+                                                                            onChange={this.handleJipangePaymentOptionChange}
+                                                                            />
+                                                                        </div>
+                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedJipangePaymentOption === 'option1' ? 'selected' : ''}`}>
+                                                                            <img src='/assets/icons/home-jipange/card-checkout-icon.png'/>
+                                                                        </div>
+                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedJipangePaymentOption === 'option1' ? 'selected' : ''}`}>
+                                                                            <p>Card</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
+                                                                    <div onClick={() => this.handleJipangePaymentOptionChange2(2)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.disableJipangePaymentBtns === false && this.state.selectedJipangePaymentOption === 'option2' ? 'selected' : this.state.disableJipangePaymentBtns === true ? 'disabled' : ''}`}>
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1'>
+                                                                            <input
+                                                                            type="radio"
+                                                                            value="option2"
+                                                                            checked={this.state.selectedJipangePaymentOption === "option2"}
+                                                                            onChange={this.handleJipangePaymentOptionChange}
+                                                                            />
+                                                                        </div>
+                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedJipangePaymentOption === 'option2' ? 'selected' : ''}`}>
+                                                                            <img src='/assets/icons/home-jipange/mobile-checkout-icon.png'/>
+                                                                        </div>
+                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedJipangePaymentOption === 'option2' ? 'selected' : ''}`}>
+                                                                            <p>MPESA</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
+                                                                    <div onClick={() => this.handleJipangePaymentOptionChange2(3)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.disableJipangePaymentBtns === false && this.state.selectedJipangePaymentOption === 'option3' ? 'selected' : this.state.disableJipangePaymentBtns === true ? 'disabled' : ''}`}>
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1'>
+                                                                            <input
+                                                                            type="radio"
+                                                                            value="option3"
+                                                                            checked={this.state.selectedJipangePaymentOption === "option3"}
+                                                                            onChange={this.handleJipangePaymentOptionChange}
+                                                                            />
+                                                                        </div>
+                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedJipangePaymentOption === 'option3' ? 'selected' : ''}`}>
+                                                                            <img src='/assets/icons/home-jipange/mobile-checkout-icon.png'/>
+                                                                        </div>
+                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedJipangePaymentOption === 'option3' ? 'selected' : ''}`}>
+                                                                            <p>Airtel</p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body'>
+                                                                {this.state.showJipangePaymentLoading && 
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-payment-loading'>
+                                                                        <TailSpin
+                                                                        visible={true}
+                                                                        height="30px"
+                                                                        width="30px"
+                                                                        color="#ff5733"
+                                                                        ariaLabel="tail-spin-loading"
+                                                                        radius="2"
+                                                                        wrapperStyle={{}}
+                                                                        wrapperClass=""
+                                                                        />
+                                                                        <div>
+                                                                            <p>Loading...</p>
+                                                                        </div>
+                                                                    </div>
+                                                                }
+                                                                {this.state.showJipangeCardPayment && 
+                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment'>
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field'>
+                                                                            <div>
+                                                                                <h5>Credit Card Number</h5>
+                                                                            </div>
+                                                                            <div>
+                                                                                <input
+                                                                                placeholder='XXXX XXXX XXXX XXXX'
+                                                                                />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-half'>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-expiry'>
+                                                                                <h5>Expiry</h5>
+                                                                                <input
+                                                                                placeholder='MM / YY'
+                                                                                />
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-cvv'>
+                                                                                <h5>CVV</h5>
+                                                                                <input
+                                                                                placeholder='XXX'
+                                                                                />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field'>
+                                                                            <div>
+                                                                                <h5>Billing Address</h5>
+                                                                            </div>
+                                                                            <div>
+                                                                                <input
+                                                                                placeholder='Address Line 1'
+                                                                                />
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-address-line'>
+                                                                                <input
+                                                                                placeholder='Address Line 2'
+                                                                                />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer'>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details'>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-1'>
+                                                                                    <p className=''>Subtotal</p>
+                                                                                    <p>Kshs. {this.state.jipangeSelectedDateTotal}.00</p>
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-2'>
+                                                                                    <p className=''>Delivery fee</p>
+                                                                                    <p>Kshs. 99.00</p>
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-total'>
+                                                                                    <h4><strong>Total</strong></h4>
+                                                                                    <h4><strong>Kshs. {this.state.jipangeSelectedDateTotal + 99}.00</strong></h4>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
+                                                                                <button
+                                                                                onClick={() => this.jipangeHandlePaymentConfirmed('Card')}
+                                                                                >
+                                                                                    {this.state.makeJipangePaymentCardDefault && 
+                                                                                        <>
+                                                                                            Make Payment
+                                                                                        </>
+                                                                                    }
+                                                                                    {this.state.makeJipangePaymentCardLoading && 
+                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer-complete-btn-loading'>
+                                                                                            <TailSpin
+                                                                                            visible={true}
+                                                                                            height="20px"
+                                                                                            width="20px"
+                                                                                            color="#fff"
+                                                                                            ariaLabel="tail-spin-loading"
+                                                                                            radius="2"
+                                                                                            wrapperStyle={{}}
+                                                                                            wrapperClass=""
+                                                                                            />
+                                                                                        </div>
+                                                                                    }
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                }
+                                                                
+                                                                {this.state.showJipangeMpesaPayment && 
+                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment'>
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details'>
+                                                                            <h5>Enter your mobile number to receive a prompt:</h5>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field-mpesa'>
+                                                                                <div>
+                                                                                    
+                                                                                </div>
+                                                                                <div>
+                                                                                    <input
+                                                                                    placeholder='0712345678'
+                                                                                    />
+                                                                                </div>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-send-prompt'>
+                                                                                <button>Send Prompt</button>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative'>
+                                                                                <p><strong>OR</strong> follow the instructions below:</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions'>
+                                                                                <ol>
+                                                                                    <p><li>Go to MPESA menu on your phone</li></p>
+                                                                                    <p><li>Select Paybill option</li></p>
+                                                                                    <p><li>Enter Business Number 222222</li></p>
+                                                                                    <p><li>Enter Account Number PXXPWGMR</li></p>
+                                                                                    <p><li>Enter the amount {this.state.jipangeSelectedDateTotal + 99}.00</li></p>
+                                                                                    <p><li>Enter your MPESA PIN and Send</li></p>
+                                                                                    <p><li>You will receive a confirmation SMS from MPESA</li></p>
+                                                                                </ol>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer'>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details'>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-1'>
+                                                                                    <p className=''>Subtotal</p>
+                                                                                    <p>Kshs. {this.state.jipangeSelectedDateTotal}.00</p>
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-2'>
+                                                                                    <p className=''>Delivery fee</p>
+                                                                                    <p>Kshs. 99.00</p>
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-total'>
+                                                                                    <h4><strong>Total</strong></h4>
+                                                                                    <h4><strong>Kshs. {this.state.jipangeSelectedDateTotal + 99}.00</strong></h4>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
+                                                                                <button
+                                                                                onClick={() => this.jipangeHandlePaymentConfirmed('Mpesa')}
+                                                                                >
+                                                                                    {this.state.makeJipangePaymentMpesaDefault && 
+                                                                                        <>
+                                                                                            Confirm Payment
+                                                                                        </>
+                                                                                    }
+                                                                                    {this.state.makeJipangePaymentMpesaLoading && 
+                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer-complete-btn-loading'>
+                                                                                            <TailSpin
+                                                                                            visible={true}
+                                                                                            height="20px"
+                                                                                            width="20px"
+                                                                                            color="#fff"
+                                                                                            ariaLabel="tail-spin-loading"
+                                                                                            radius="2"
+                                                                                            wrapperStyle={{}}
+                                                                                            wrapperClass=""
+                                                                                            />
+                                                                                        </div>
+                                                                                    }
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                }
+
+                                                                {this.state.showJipangeAirtelPayment && 
+                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment'>
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment-details'>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative'>
+                                                                                <p>Dial <strong>*334#</strong> then follow the steps below:</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions'>
+                                                                                <ol>
+                                                                                    <p><li>Select Paybill and Till Payments</li></p>
+                                                                                    <p><li>Select Airtel Paybill</li></p>
+                                                                                    <p><li>Enter Paybill Number 222222</li></p>
+                                                                                    <p><li>Enter Reference Number: PXXPWGMR</li></p>
+                                                                                    <p><li>Enter the amount {this.state.jipangeSelectedDateTotal + 99}.00</li></p>
+                                                                                    <p><li>Enter PIN</li></p>
+                                                                                </ol>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative'>
+                                                                                <p>Click <strong>Confirm Payment</strong> on payment when done</p>
+                                                                            </div>
+
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative2'>
+                                                                            <p><strong>OR</strong> Make payments via MY Airtel APP</p>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions2'>
+                                                                                <ol>
+                                                                                    <p><li>Select Paybill</li></p>
+                                                                                    <p><li>Select Shopping Payment</li></p>
+                                                                                    <p><li>Select tuShop</li></p>
+                                                                                    <p><li>Enter Reference Number: PXXPWGMR</li></p>
+                                                                                    <p><li>Enter the amount {this.state.jipangeSelectedDateTotal + 99}.00</li></p>
+                                                                                    <p><li>Enter PIN</li></p>
+                                                                                </ol>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative3'>
+                                                                                <p>Click <strong>Confirm Payment</strong> when done</p>
+                                                                            </div>
+
+                                                                        </div>
+                                                                    
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer'>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details'>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-1'>
+                                                                                    <p className=''>Subtotal</p>
+                                                                                    <p>Kshs. {this.state.jipangeSelectedDateTotal}.00</p>
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-2'>
+                                                                                    <p className=''>Delivery fee</p>
+                                                                                    <p>Kshs. 99.00</p>
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-total'>
+                                                                                    <h4><strong>Total</strong></h4>
+                                                                                    <h4><strong>Kshs. {this.state.jipangeSelectedDateTotal + 99}.00</strong></h4>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
+                                                                                <button
+                                                                                onClick={() => this.jipangeHandlePaymentConfirmed('Airtel')}
+                                                                                >
+                                                                                    {this.state.makeJipangePaymentAirtelDefault && 
+                                                                                        <>
+                                                                                            Confirm Payment
+                                                                                        </>
+                                                                                    }
+                                                                                    {this.state.makeJipangePaymentAirtelLoading && 
+                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer-complete-btn-loading'>
+                                                                                            <TailSpin
+                                                                                            visible={true}
+                                                                                            height="20px"
+                                                                                            width="20px"
+                                                                                            color="#fff"
+                                                                                            ariaLabel="tail-spin-loading"
+                                                                                            radius="2"
+                                                                                            wrapperStyle={{}}
+                                                                                            wrapperClass=""
+                                                                                            />
+                                                                                        </div>
+                                                                                    }
+                                                                                </button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                }
+                                                                {this.state.showJipangeConfirmAddress && 
+                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-payment'>
+                                                                        <p>Enter your shipping address for this order:</p>
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent'>
+                                                                            <h5>Recently Used (<label>selected by default</label>):</h5>
+                                                                            <div className={`jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select ${this.state.jipangeManualAddressLine1 !== '' || this.state.jipangeManualAddressLine2 !== '' ? 'manual-selected' : ''}`}>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-radio'>
+                                                                                    <img src='/assets/icons/home-jipange/home-address-icon.png'/>
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-details'>
+                                                                                    <h5>Home address</h5>
+                                                                                    <p>Sunshine Villas - Hse No. 3, Spring Valley, Lower Kabete, Nairobi</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter'>
+                                                                            <h4>or enter an address:</h4>
+
+                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form'>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field'>
+                                                                                    <div>
+                                                                                        <h5>Address Line 1</h5>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <input
+                                                                                        id='jipangeManualAddressLine1'
+                                                                                        placeholder='Marula Lane 23C, Lavington'
+                                                                                        value={this.state.jipangeManualAddressLine1}
+                                                                                        onChange={this.handleSearchStandardInput}
+                                                                                        />
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field'>
+                                                                                    <div>
+                                                                                        <h5>Address Line 2</h5>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <input
+                                                                                        id='jipangeManualAddressLine2'
+                                                                                        placeholder='City (e.g. Nairobi)'
+                                                                                        value={this.state.jipangeManualAddressLine2}
+                                                                                        onChange={this.handleSearchStandardInput}
+                                                                                        />
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer'>
+                                                                            <button
+                                                                            onClick={this.completeJipangeBtnClicked}
+                                                                            >
+                                                                                {this.state.completeJipangeBtnTxt && 
+                                                                                    <>
+                                                                                        Complete Jipange
+                                                                                    </>
+                                                                                }
+                                                                                {this.state.completeJipangeBtnLoading && 
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer-complete-btn-loading'>
+                                                                                        <TailSpin
+                                                                                        visible={true}
+                                                                                        height="20px"
+                                                                                        width="20px"
+                                                                                        color="#fff"
+                                                                                        ariaLabel="tail-spin-loading"
+                                                                                        radius="2"
+                                                                                        wrapperStyle={{}}
+                                                                                        wrapperClass=""
+                                                                                        />
+                                                                                        {/* <div>
+                                                                                            <p>Loading...</p>
+                                                                                        </div> */}
+                                                                                    </div>
+                                                                                }
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                }
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                }
                                             </div>
                                         }
                                         {this.state.showFAQSettings &&
