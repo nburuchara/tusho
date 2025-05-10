@@ -42,7 +42,7 @@ const Styles = styled.div `
     position: absolute;
     top: 0.5rem;
     left: 0.5rem;
-    height: 1.25rem;
+    height: 1.35rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     padding-top: 0.15rem;
@@ -89,7 +89,7 @@ const Styles = styled.div `
     top: 2.45rem;
     left: 0.5rem;
     height: 40%;
-    width: 88%;
+    width: 92.5%;
     background-color: #d6e7f0;
     border-radius: 8px;
     transform: translateX(-110%); 
@@ -138,7 +138,7 @@ const Styles = styled.div `
     top: 0;
     left: 0;
     width: 97.5%;
-    height: 50%;
+    height: 45%;
     border: 2px solid #d6e7f0;
     background-color: #ff5733;
     border-top-left-radius: 8px;
@@ -147,8 +147,8 @@ const Styles = styled.div `
 }
 
 .product-card-shop-pamoja-details-inner-container-header img { 
-    width: 58.5%;
-    margin-top: -0.75rem;
+    width: 56.5%;
+    margin-top: -1.1rem;
 }
 
 .product-card-shop-pamoja-details-inner-container-header h3 {
@@ -164,14 +164,14 @@ const Styles = styled.div `
     bottom: 0;
     left: 0;
     width: 99%;
-    height: 47%;
+    height: 50%;
     border: 1px solid #d6e7f0;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 }
 
 .product-card-shop-pamoja-details-inner-container-body h5 {
-    margin-top: 0.15rem;;
+    margin-top: 0.05rem;;
     margin-right: 0.25rem;
     margin-left: 0.25rem;
     text-align: left;
@@ -202,10 +202,11 @@ const Styles = styled.div `
     right: 0.05rem;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 40%;
     display: flex;
     flex-direction: row;
+    background-color: #ff5733;
 }
 
 .product-card-shop-pamoja-details-inner-container-body-footer-left {
@@ -214,6 +215,9 @@ const Styles = styled.div `
 }
 
 .product-card-shop-pamoja-discount-qty {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     height: 90%;
     width: 95%;
     background-color: #ff5733;

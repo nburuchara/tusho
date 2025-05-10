@@ -11076,8 +11076,6 @@ export default class LandingPg extends Component {
           }
     }
 
-    //! - - EASY: bug (Checkout Sidepane / Menu Dropdown / Profile dropdown - reset to GitHub code) - - !// 
-
     componentWillUnmount() {
         document.removeEventListener("click", this.handleOutsideSearchBarClick);
     
@@ -13829,7 +13827,9 @@ export default class LandingPg extends Component {
                                     </div>
                                 </div>
                                 <div className='navbar-profile-account-popup-body-right'>
+
                                     <div className=''>
+
                                         {this.state.showAccountInformation && 
                                             <div className='navbar-profile-account-popup-account-info'>
                                                 <div className='navbar-profile-account-popup-account-info-profile-pic'>
@@ -14052,6 +14052,7 @@ export default class LandingPg extends Component {
                                                 </div>
                                             </div>
                                         }
+
                                         {this.state.showJipangeSettings && 
                                             <div className='navbar-profile-account-popup-jipange-settings'>
                                                 {this.state.showJipangeSettingsHome && 
@@ -16531,6 +16532,7 @@ export default class LandingPg extends Component {
                                                 }
                                             </div>
                                         }
+
                                         {this.state.showPamojaSettings && 
                                             <div className='navbar-profile-account-popup-pamoja-settings'>
                                                 <div className=''>
@@ -16538,6 +16540,7 @@ export default class LandingPg extends Component {
                                                 </div>
                                             </div>
                                         }
+
                                         {this.state.showDeliveryInfoSettings && 
                                             <div className='navbar-profile-account-popup-delivery-info-settings'>
                                                 <div className='navbar-profile-account-popup-delivery-info-settings-header'>
@@ -16670,6 +16673,7 @@ export default class LandingPg extends Component {
                                                 </div>
                                             </div>
                                         }
+
                                         {this.state.showMyOrdersSettings && 
                                             <div className='navbar-profile-account-popup-my-orders-settings'>
                                                 {/* <div className={`navbar-profile-account-popup-my-orders-settings-container`}>
@@ -16690,7 +16694,7 @@ export default class LandingPg extends Component {
                                                     
                                                 </div> */}
                                                 {this.state.cart.length > 0 && 
-                                                    <div style={{width: '97.5%', height: "100%", position: 'relative'}} className=''>
+                                                    <div style={{width: '97.5%', height: "100%", position: 'relative'}} className='my-orders-payment-home-page'>
                                                         <div className='jipange-settings-selected-date-screen-complete-body'>
                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-header'>
                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
