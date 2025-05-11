@@ -202,7 +202,7 @@ const Styles = styled.div `
     right: 0;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
-    border: 1px solid white;
+    border: 1px solid #d6e7f0;
     height: 40%;
     display: flex;
     flex-direction: row;
@@ -211,9 +211,9 @@ const Styles = styled.div `
 
 .product-card-shop-pamoja-details-inner-container-body-footer-left {
     width: 75%;
-    border: 1px solid white;
+    // border: 1px solid white;
     position: relative;
-    border-bottom-left-radius: 7px;
+    border-bottom-left-radius: 6px;
 }
 
 .product-card-shop-pamoja-discount-qty {
@@ -224,13 +224,13 @@ const Styles = styled.div `
     width: 95%;
     // border: 1px solid white;
     background-color: #ff5733;
-    border-bottom-left-radius: 7px;
+    border-bottom-left-radius: 6px;
 }
 
 .product-card-shop-pamoja-details-inner-container-body-footer-left h4 {
     margin-top: 0px;
     margin-bottom: 0px;
-    margin-left: 2.5%;
+    margin-left: 3%;
     text-align: left;
     font-family: lexend;
     font-size: 90%;
@@ -241,22 +241,24 @@ const Styles = styled.div `
     font-size: 65%;
     // margin-left: 0px !important;
     color: white;
-    border-bottom-left-radius: 7px;
 }
 
 .product-card-shop-pamoja-details-inner-container-body-footer-right {
     width: 25%;
-    border: 1px solid white;
+    // border: 1px solid white;
+    border-bottom-right-radius: 6px;
+    position: relative;
 }
 
 .product-card-shop-pamoja-discount-value {
     position: absolute;
-    botto
+    bottom: 0;
+    right: 0;
     width: 100%;
-    height: 90%;
-    margin-top: 0.25rem;
+    height:100%;
     background-color: #ff5733;
-    border-radius: 6px;
+    border-left: 1px solid black;
+    border-bottom-right-radius: 6px;
 }
 
 .product-card-shop-pamoja-details-inner-container-expiry-container {

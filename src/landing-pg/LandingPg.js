@@ -7636,6 +7636,25 @@ const Styles = styled.div `
     justify-content: center;
 }
 
+.jipange-delivery-header-info-1-header-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    background-color: #ff5733;
+    // padding-left: 2.5%;
+    padding-right: 2.5%;
+}
+
+.jipange-delivery-header-info-1-header-title h4 {
+    color: white;
+    // font-family: lexend;
+    font-size: 90%;
+    margin-top: 0px;
+    margin-bottom: 0.3rem;
+}
+
 .jipange-delivery-header-info-1-header img {
    width: 100%;
    border: 0.1px solid transparent !important;
@@ -10615,9 +10634,9 @@ export default class LandingPg extends Component {
             displayScrollUpBtn: false,
 
             //* - USER ACCOUNT STATUS - *//
-            userSignedIn: true,
+            userSignedIn: false,
             userSignedInLoading: false,
-            userSignedInTransition: true,
+            userSignedInTransition: false,
             showAccountInformation: true,
             showJipangeSettings: false,
             showPamojaSettings: false,
@@ -10840,7 +10859,7 @@ export default class LandingPg extends Component {
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
             OTPBtnClicked: false,
-            OTPVerifySuccess: true,
+            OTPVerifySuccess: false,
             showEnterOPTBtnTextHome: true,
             showVerifyOPTBtnTextHome: true,
             verifyOTPBtnText: 'Verify OTP',
@@ -17846,6 +17865,9 @@ export default class LandingPg extends Component {
                                                     <div className={`homepage-header-inner-body-poster-right-left-section-logged-in-container-option-3 ${this.state.selectedHeaderOption === 'option-3' ? 'open' : ''}`}>
                                                         <div className='jipange-delivery-header-info-1'>
                                                             <div className='jipange-delivery-header-info-1-header'>
+                                                                <div className='jipange-delivery-header-info-1-header-title'>
+                                                                    <h4>How it works:</h4>
+                                                                </div>
                                                                 <video 
                                                                 src="/assets/images/home-main-header/jipange-header-demo-1.mp4" 
                                                                 autoPlay 
