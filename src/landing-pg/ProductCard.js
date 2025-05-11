@@ -177,7 +177,7 @@ const Styles = styled.div `
     text-align: left;
     color: #24668a;
     font-family: lexend;
-    font-size: 57.5%;
+    font-size: 0.59rem;
     // font-weight: normal;
 }
 
@@ -197,12 +197,12 @@ const Styles = styled.div `
 
 .product-card-shop-pamoja-details-inner-container-body-footer {
     position: absolute;
-    bottom: 0.05rem;
-    left: 0.05rem;
-    right: 0.05rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
-    // border: 1px solid black;
+    border: 1px solid white;
     height: 40%;
     display: flex;
     flex-direction: row;
@@ -211,7 +211,9 @@ const Styles = styled.div `
 
 .product-card-shop-pamoja-details-inner-container-body-footer-left {
     width: 75%;
-    // border: 1px solid black;
+    border: 1px solid white;
+    position: relative;
+    border-bottom-left-radius: 7px;
 }
 
 .product-card-shop-pamoja-discount-qty {
@@ -220,27 +222,31 @@ const Styles = styled.div `
     left: 0;
     height: 90%;
     width: 95%;
+    // border: 1px solid white;
     background-color: #ff5733;
+    border-bottom-left-radius: 7px;
 }
 
 .product-card-shop-pamoja-details-inner-container-body-footer-left h4 {
-    margin-top: 0.25rem;
+    margin-top: 0px;
     margin-bottom: 0px;
-    margin-left: 1.5%;
+    margin-left: 2.5%;
     text-align: left;
     font-family: lexend;
-    font-size: 95%;
-    color: #24668a;
+    font-size: 90%;
+    color: white;
 }
 
 .product-card-shop-pamoja-details-inner-container-body-footer-left label {
     font-size: 65%;
-    margin-left: 0px !important;
+    // margin-left: 0px !important;
+    color: white;
+    border-bottom-left-radius: 7px;
 }
 
 .product-card-shop-pamoja-details-inner-container-body-footer-right {
     width: 25%;
-    // border: 1px solid black;
+    border: 1px solid white;
 }
 
 .product-card-shop-pamoja-discount-value {
@@ -954,7 +960,7 @@ class ProductCard extends Component {
                                 <div className="product-card-shop-pamoja-details-inner-container-body">
                                     <h5>Get discounts by making a bulk order with fellow shoppers. <label>Learn more</label></h5>
                                     <div className="product-card-shop-pamoja-details-inner-container-body-footer">
-                                        {/* <div className="product-card-shop-pamoja-details-inner-container-body-footer-left">
+                                        <div className="product-card-shop-pamoja-details-inner-container-body-footer-left">
                                             
                                             {product.pamojaTotal > 0 ? (
                                                 <div className="product-card-shop-pamoja-discount-qty"> 
@@ -970,7 +976,7 @@ class ProductCard extends Component {
                                             <div className="product-card-shop-pamoja-discount-value">
 
                                             </div>
-                                        </div> */}
+                                        </div>
                                         
                                     </div>
                                 </div>
