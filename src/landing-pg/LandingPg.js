@@ -9984,6 +9984,51 @@ const Styles = styled.div `
     border-radius: 8px;
 }
 
+.shop-pamoja-info-6-body {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    // border: 1px solid white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.shop-pamoja-info-6-body-top {
+    width: 100%;
+    height: 50%;
+    // border-bottom: 0.5px solid white;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-pamoja-info-6-body-top video {
+    // margin-top: -0.75rem;
+}
+
+.shop-pamoja-info-6-body-bottom {
+    width: 100%;
+    height: 50%;
+    // border: 1px solid white;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.shop-pamoja-info-6-body-bottom p {
+    margin-top: 0.5rem;
+    margin-bottom: 0px;
+    color: white;
+    font-size: 62.5%;
+    font-family: lexend;
+}
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container,
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container {
     background-color: #20313a;
@@ -18684,7 +18729,21 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                             </div>
                                                             <div className='shop-pamoja-info-6'>
-
+                                                                <div className='shop-pamoja-info-6-body'>
+                                                                    <div className='shop-pamoja-info-6-body-top'>
+                                                                        <video 
+                                                                        src="/assets/images/home-main-header/shop-pamoja-header-product-demo-2.mp4" 
+                                                                        autoPlay 
+                                                                        loop 
+                                                                        muted 
+                                                                        playsInline 
+                                                                        style={{ width: '100%', height: 'auto'}}
+                                                                        />
+                                                                    </div>
+                                                                    <div className='shop-pamoja-info-6-body-bottom'>
+                                                                        <p>Keep up with products in real-time so you don't miss a discount.</p>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
 
