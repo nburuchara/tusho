@@ -9947,6 +9947,15 @@ const Styles = styled.div `
     border: 1px solid white;
     border-top-right-radius: 7px;
     border-top-left-radius: 7px;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-pamoja-info-5-body-top video {
+    margin-top: -0.5rem;
 }
 
 .shop-pamoja-info-5-body-bottom {
@@ -18520,15 +18529,15 @@ export default class LandingPg extends Component {
                                                 <div className='homepage-header-inner-body-poster-right-right-section-bottom'>
                                                     <div className='homepage-header-inner-body-poster-right-right-section-bottom-loading'>
                                                         <video 
-                                                            src="/assets/images/home-main-header/homepage-header-right-left-bottom-loading-animation.mp4" 
-                                                            autoPlay 
-                                                            loop 
-                                                            muted 
-                                                            playsInline 
-                                                            style={{ width: '30%', height: 'auto'}}
-                                                            />
-                                                            <h2>Engineering some innovative shopping experiences...</h2>
-                                                        </div>
+                                                        src="/assets/images/home-main-header/homepage-header-right-left-bottom-loading-animation.mp4" 
+                                                        autoPlay 
+                                                        loop 
+                                                        muted 
+                                                        playsInline 
+                                                        style={{ width: '30%', height: 'auto'}}
+                                                        />
+                                                        <h2>Engineering some innovative shopping experiences...</h2>
+                                                    </div>
                                                 </div>
                                             ) : (
                                                 <div className={`homepage-header-inner-body-poster-right-right-section-bottom ${this.state.selectedHeaderOption === 'option-2' ? 'closed' : ''}`}>
@@ -18652,7 +18661,14 @@ export default class LandingPg extends Component {
                                                             <div className='shop-pamoja-info-5'>
                                                                 <div className='shop-pamoja-info-5-body'>
                                                                     <div className='shop-pamoja-info-5-body-top'>
-                                                                        
+                                                                        <video 
+                                                                        src="/assets/images/home-main-header/shop-pamoja-header-product-demo-1.mp4" 
+                                                                        autoPlay 
+                                                                        loop 
+                                                                        muted 
+                                                                        playsInline 
+                                                                        style={{ width: '100%', height: 'auto'}}
+                                                                        />
                                                                     </div>
                                                                     <div className='shop-pamoja-info-5-body-bottom'>
 
