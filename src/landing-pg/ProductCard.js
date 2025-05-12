@@ -144,11 +144,34 @@ const Styles = styled.div `
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: right;
 }
 
 .product-card-shop-pamoja-details-inner-container-header img { 
-    width: 56.5%;
-    margin-top: -1.1rem;
+    width: 43.5%;
+    margin-top: -0.85rem;
+    margin-right: 0.65rem;
+}
+
+.product-card-shop-pamoja-details-inner-container-header-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 51.5%;
+    // border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-card-shop-pamoja-details-inner-container-header-title h4 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
 }
 
 .product-card-shop-pamoja-details-inner-container-header h3 {
@@ -989,6 +1012,10 @@ class ProductCard extends Component {
                         {product.pamoja === false &&
                             <div className="product-card-shop-pamoja-details-inner-container">
                                 <div className="product-card-shop-pamoja-details-inner-container-header">
+                                    <div className="product-card-shop-pamoja-details-inner-container-header-title">
+                                        <h4>Shop</h4>
+                                        <h4>Pamoja</h4>
+                                    </div>
                                     <img src="/assets/images/home-main-body/shop-pamoja-header.webp"/>
                                 </div>
                                 <div className="product-card-shop-pamoja-details-inner-container-body">

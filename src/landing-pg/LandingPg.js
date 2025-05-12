@@ -10109,17 +10109,17 @@ const Styles = styled.div `
 }
 
 .homepage-body-inner-header-option-pamoja {
-    width: auto;
+    width: 11.5%;
     border: 1px solid #20313a;
     height: 42.5%;
     display: flex;
     align-items: center;
     background-color: #20313a;
     justify-content: space-between;
-    padding-left: 15px;
+    padding-left: 15.5px;
     padding-right: 15px;
-    padding-top: 2.5px;
-    padding-bottom: 2.5px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     border-radius: 8px;
     margin-right: 20px;
     cursor: pointer;
@@ -10142,13 +10142,18 @@ const Styles = styled.div `
     background-color: #ff5733;
 }
 
+.homepage-body-inner-header-option-pamoja span {
+    margin-top: -0.7rem;
+    margin-right: 0.65rem;
+}
+
 .homepage-body-inner-header-option-pamoja h4 {
     margin-top: 0px;
     margin-bottom: 0px;
     margin-right: 10px;
     color: #fff;
     font-family: poppins;
-    font-size: 80%;
+    font-size: 85%;
     // font-weight: normal;
     cursor: pointer;
 }
@@ -18720,7 +18725,7 @@ export default class LandingPg extends Component {
 
                                     {/* Last dropdown positioned on the far right */}
                                     <div onClick={() => this.mainPageProductsFilterOptionClicked(5)} className={`homepage-body-inner-header-option-pamoja ${this.state.shopPamojaActive ? 'selected' : ''}`}>
-                                        <h4>🔥 Selling Fast</h4>
+                                        <h4><span>🔥</span> Selling Fast</h4>
                                         <div className={`dial-container ${this.state.shopPamojaActive ? "active" : ""}`}>
                                             <div className={`dial-button ${this.state.shopPamojaActive ? "active" : ""}`}></div>
                                         </div>
