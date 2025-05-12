@@ -9944,7 +9944,7 @@ const Styles = styled.div `
 .shop-pamoja-info-5-body-top {
     width: 100%;
     height: 50%;
-    border: 1px solid white;
+    border: 0.1px solid white;
     border-top-right-radius: 7px;
     border-top-left-radius: 7px;
     background-color: white;
@@ -9955,7 +9955,7 @@ const Styles = styled.div `
 }
 
 .shop-pamoja-info-5-body-top video {
-    margin-top: -0.5rem;
+    margin-top: -0.565rem;
 }
 
 .shop-pamoja-info-5-body-bottom {
