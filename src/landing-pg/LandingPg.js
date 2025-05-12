@@ -9934,7 +9934,7 @@ const Styles = styled.div `
     left: 0.5rem;
     right: 0.5rem;
     bottom: 0.5rem;
-    border: 1px solid white;
+    // border: 1px solid white;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -9944,7 +9944,7 @@ const Styles = styled.div `
 .shop-pamoja-info-5-body-top {
     width: 100%;
     height: 50%;
-    border: 0.1px solid white;
+    // border-bottom: 0.5px solid white;
     border-top-right-radius: 7px;
     border-top-left-radius: 7px;
     background-color: white;
@@ -9967,7 +9967,7 @@ const Styles = styled.div `
 }
 
 .shop-pamoja-info-5-body-bottom p {
-    margin-top: 0.35rem;
+    margin-top: 0.5rem;
     margin-bottom: 0px;
     color: white;
     font-size: 62.5%;
@@ -18679,7 +18679,7 @@ export default class LandingPg extends Component {
                                                                         />
                                                                     </div>
                                                                     <div className='shop-pamoja-info-5-body-bottom'>
-                                                                        <p>Click the 'Shop Pamoja' button on a product to see if it is valid.</p>
+                                                                        <p>Click the 'Shop Pamoja' button on a product to see if it has a discount.</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
