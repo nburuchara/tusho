@@ -10634,9 +10634,9 @@ export default class LandingPg extends Component {
             displayScrollUpBtn: false,
 
             //* - USER ACCOUNT STATUS - *//
-            userSignedIn: false,
+            userSignedIn: true,
             userSignedInLoading: false,
-            userSignedInTransition: false,
+            userSignedInTransition: true,
             showAccountInformation: true,
             showJipangeSettings: false,
             showPamojaSettings: false,
@@ -10859,7 +10859,7 @@ export default class LandingPg extends Component {
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
             OTPBtnClicked: false,
-            OTPVerifySuccess: false,
+            OTPVerifySuccess: true,
             showEnterOPTBtnTextHome: true,
             showVerifyOPTBtnTextHome: true,
             verifyOTPBtnText: 'Verify OTP',
@@ -17916,6 +17916,9 @@ export default class LandingPg extends Component {
 
                                                         <div className='shop-pamoja-header-info-1'>
                                                             <div className='shop-pamoja-header-info-1-header'>
+                                                                <div className='jipange-delivery-header-info-1-header-title'>
+                                                                    <h4>How it works:</h4>
+                                                                </div>
                                                                 <video 
                                                                 src="/assets/images/home-main-header/shop-pamoja-demo-1.mp4" 
                                                                 autoPlay 
@@ -17934,6 +17937,9 @@ export default class LandingPg extends Component {
                                                         <div className='shop-pamoja-header-info-2-body'>
                                                             <div className='shop-pamoja-header-info-2-body-container'>
                                                                 <div className='shop-pamoja-header-info-2-body-container-left'>
+                                                                    <div className='jipange-delivery-header-info-1-header-title'>
+                                                                        <h4>1</h4>
+                                                                    </div>
                                                                     <video 
                                                                     src="/assets/images/home-main-header/shop-pamoja-header-animation-1.mp4" 
                                                                     autoPlay 
@@ -18437,6 +18443,9 @@ export default class LandingPg extends Component {
                                                             <div className='shop-pamoja-info-3'>
                                                                 <div className='shop-pamoja-info-3-body'>
                                                                     <div className='shop-pamoja-info-3-body-left'>
+                                                                        <div className='jipange-delivery-header-info-1-header-title'>
+                                                                            <h4>2</h4>
+                                                                        </div>
                                                                         <video 
                                                                         src="/assets/images/home-main-header/shop-pamoja-demo-3.mp4" 
                                                                         autoPlay 
@@ -18455,6 +18464,9 @@ export default class LandingPg extends Component {
                                                             <div className='shop-pamoja-info-4'>
                                                                 <div className='shop-pamoja-info-4-body'>
                                                                     <div className='shop-pamoja-info-4-body-left'>
+                                                                        <div className='jipange-delivery-header-info-1-header-title'>
+                                                                            <h4>3</h4>
+                                                                        </div>
                                                                         <video 
                                                                         src="/assets/images/home-main-header/shop-pamoja-demo-4.mp4" 
                                                                         autoPlay 
@@ -18708,7 +18720,7 @@ export default class LandingPg extends Component {
 
                                     {/* Last dropdown positioned on the far right */}
                                     <div onClick={() => this.mainPageProductsFilterOptionClicked(5)} className={`homepage-body-inner-header-option-pamoja ${this.state.shopPamojaActive ? 'selected' : ''}`}>
-                                        <h4>Shop Pamoja</h4>
+                                        <h4>🔥 Selling Fast</h4>
                                         <div className={`dial-container ${this.state.shopPamojaActive ? "active" : ""}`}>
                                             <div className={`dial-button ${this.state.shopPamojaActive ? "active" : ""}`}></div>
                                         </div>

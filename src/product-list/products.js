@@ -13,6 +13,7 @@ const products = [
         pamojaCurrentSelected: 0,
         pamojaCurrentTotal: 0,
         pamojaTotal: 50,
+        pamojaDiscount: 10,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'May 30'
@@ -33,6 +34,7 @@ const products = [
         pamojaCurrentSelected: 0,
         pamojaCurrentTotal: 0,
         pamojaTotal: 25,
+        pamojaDiscount: 13,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'May 30'
@@ -51,6 +53,7 @@ const products = [
         pamojaCurrentSelected: 0,
         pamojaCurrentTotal: 0,
         pamojaTotal: 50,
+        pamojaDiscount: 10,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'May 30'
@@ -69,6 +72,7 @@ const products = [
         pamojaCurrentSelected: 0,
         pamojaCurrentTotal: 0,
         pamojaTotal: 35,
+        pamojaDiscount: 15,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'May 30'
@@ -88,6 +92,7 @@ const products = [
         pamojaCurrentSelected: 0,
         pamojaCurrentTotal: 0,
         pamojaTotal: 25,
+        pamojaDiscount: 8,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'May 30'
@@ -107,7 +112,7 @@ const products = [
         pamojaCurrentSelected: 9,
         pamojaCurrentTotal: 30,
         pamojaTotal: 30,
-        pamojaExpiryDate: '12/05/25',
+        pamojaExpiryDate: '13/05/25',
         pamojaExpiryTime: '4:30PM',
         jipangeSelected: false,
         jipanges: [],
@@ -128,7 +133,7 @@ const products = [
         pamojaCurrentSelected: 16,
         pamojaCurrentTotal: 20,
         pamojaTotal: 20,
-        pamojaExpiryDate: '12/05/25',
+        pamojaExpiryDate: '13/05/25',
         pamojaExpiryTime: '5:00PM',
         jipangeSelected: false,
         jipanges: [],
@@ -168,6 +173,7 @@ const products = [
         pamojaCurrentSelected: 0,
         pamojaCurrentTotal: 0,
         pamojaTotal: 30,
+        pamojaDiscount: 18,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'May 30'
@@ -187,6 +193,7 @@ const products = [
         pamojaCurrentSelected: 0,
         pamojaCurrentTotal: 0,
         pamojaTotal: 30,
+        pamojaDiscount: 12,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'May 30'
@@ -206,6 +213,7 @@ const products = [
         pamojaCurrentSelected: 0,
         pamojaCurrentTotal: 0,
         pamojaTotal: 50,
+        pamojaDiscount: 25,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'May 30'
@@ -225,6 +233,7 @@ const products = [
         pamojaCurrentSelected: 0,
         pamojaCurrentTotal: 0,
         pamojaTotal: 50,
+        pamojaDiscount: 18,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'May 30'
@@ -262,6 +271,7 @@ const products = [
         pamojaCurrentSelected: 0,
         pamojaCurrentTotal: 0,
         pamojaTotal: 35,
+        pamojaDiscount: 10,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'May 30'
@@ -319,6 +329,7 @@ const products = [
         pamojaCurrentSelected: 0,
         pamojaCurrentTotal: 0,
         pamojaTotal: 40,
+        pamojaDiscount: 20,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'May 30'
@@ -338,7 +349,7 @@ const products = [
         pamojaCurrentSelected: 12,
         pamojaCurrentTotal: 40,
         pamojaTotal: 40,
-        pamojaExpiryDate: '12/05/25',
+        pamojaExpiryDate: '13/05/25',
         pamojaExpiryTime: '3:00PM',
         jipangeSelected: false,
         jipanges: [],
@@ -376,6 +387,7 @@ const products = [
         pamojaCurrentSelected: 0,
         pamojaCurrentTotal: 0,
         pamojaTotal: 30,
+        pamojaDiscount: 8,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'May 30'
@@ -394,6 +406,7 @@ const products = [
         pamojaCurrentSelected: 0,
         pamojaCurrentTotal: 0,
         pamojaTotal: 45,
+        pamojaDiscount: 15,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'May 30'
@@ -469,6 +482,7 @@ const products = [
         pamojaCurrentSelected: 0,
         pamojaCurrentTotal: 0,
         pamojaTotal: 25,
+        pamojaDiscount: 5,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'May 30'
@@ -488,6 +502,7 @@ const products = [
         pamojaCurrentSelected: 0,
         pamojaCurrentTotal: 0,
         pamojaTotal: 30,
+        pamojaDiscount: 9,
         jipangeSelected: false,
         jipanges: [],
         jipangeDate: 'May 30'

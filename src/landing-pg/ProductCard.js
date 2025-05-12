@@ -245,7 +245,7 @@ const Styles = styled.div `
 
 .product-card-shop-pamoja-details-inner-container-body-footer-right {
     width: 25%;
-    // border: 1px solid white;
+    border: 1px solid transparent;
     border-bottom-right-radius: 6px;
     position: relative;
 }
@@ -255,10 +255,42 @@ const Styles = styled.div `
     bottom: 0;
     right: 0;
     width: 100%;
-    height:100%;
+    height: 100%;
     background-color: #ff5733;
-    border-left: 1px solid black;
+    border: 1px solid #ff5733;
+    border-left: 1px solid #ff5733;
     border-bottom-right-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.product-card-shop-pamoja-discount-value.discount-applied {
+    position: absolute;
+    bottom: 0.05rem;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #faece9;
+    border: 1px solid #ff5733;
+    // border-left: 2px solid #ff5733;
+    border-bottom-right-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-card-shop-pamoja-discount-value h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: -0.05rem;
+    color: #ff5733;
+    font-family: lexend;
+    font-size: 0.55rem;
+}
+
+.product-card-shop-pamoja-discount-value span {
+    font-size: 0.65rem;
 }
 
 .product-card-shop-pamoja-details-inner-container-expiry-container {
@@ -975,8 +1007,8 @@ class ProductCard extends Component {
                                             
                                         </div>
                                         <div className="product-card-shop-pamoja-details-inner-container-body-footer-right">
-                                            <div className="product-card-shop-pamoja-discount-value">
-
+                                            <div className={`product-card-shop-pamoja-discount-value ${product.pamojaDiscount > 0 ? 'discount-applied' : ''}`}>
+                                                {product.pamojaDiscount > 0 ? (<h5><span>{product.pamojaDiscount}%</span> off</h5>) : (null)}
                                             </div>
                                         </div>
                                         
