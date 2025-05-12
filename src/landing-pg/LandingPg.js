@@ -9961,9 +9961,17 @@ const Styles = styled.div `
 .shop-pamoja-info-5-body-bottom {
     width: 100%;
     height: 50%;
-    border: 1px solid white;
+    // border: 1px solid white;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
+}
+
+.shop-pamoja-info-5-body-bottom p {
+    margin-top: 0.35rem;
+    margin-bottom: 0px;
+    color: white;
+    font-size: 62.5%;
+    font-family: lexend;
 }
 
 .shop-pamoja-info-6 {
@@ -18671,7 +18679,7 @@ export default class LandingPg extends Component {
                                                                         />
                                                                     </div>
                                                                     <div className='shop-pamoja-info-5-body-bottom'>
-
+                                                                        <p>Click the 'Shop Pamoja' button on a product to see if it is valid.</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
