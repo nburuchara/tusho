@@ -5164,6 +5164,154 @@ const Styles = styled.div `
     height: 83.5%;
     width: 100%;
     border: 1px solid #ccc;
+    overflow-y: auto;
+}
+
+.my-orders-checkout-home-item-cell {
+    height: auto;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    // margin-bottom: 20px;
+}
+
+.my-orders-checkout-home-item-cell-icon {
+    width: 10%;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Ensures image stays within bounds */
+    overflow: hidden; /* Prevents overflow of larger images */
+    flex-direction: column;
+}
+
+.my-orders-checkout-home-item-cell-icon img {
+    width: 35px; /* Ensures image fills container width */
+    height: 35px; /* Maintains aspect ratio */
+    max-height: 100%; /* Ensures the image fits within the container height */
+    object-fit: contain; /* Ensures the entire image is visible without distortion */
+}
+
+.my-orders-checkout-home-item-cell-icon p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 70%;
+    font-style: italic;
+    text-decoration: underline;
+    color: #FF5733;
+    cursor: pointer;
+}
+
+.my-orders-checkout-home-item-cell-details {
+    width: 72.5%;
+    border: 1px solid black;
+}
+
+.my-orders-checkout-home-item-cell-details p {
+    font-size: 80%;
+    margin-top: 0.25rem;
+    margin-top: 0.5rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: poppins;
+}
+
+.my-orders-checkout-home-item-cell-details button {
+    background-color: #ff5733;
+    border: 1px solid #ff5733;
+    width: 65%;
+    padding: 2px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 8px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.my-orders-checkout-home-item-cell-details h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-family: poppins;
+    font-size: 80%;
+}
+
+.my-orders-checkout-home-item-cell-qty {
+    width: 17.5%;
+    border: 1px solid black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.my-orders-checkout-home-item-cell-qty-toggle {
+    width: 85%;
+    height: 25.5px;
+    border: 1px solid #bababa;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.my-orders-checkout-home-item-cell-qty-toggle-left {
+    width: 30%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.my-orders-checkout-home-item-cell-qty-toggle-left p {
+    font-weight: bold;
+    font-size: 80%;
+    margin-top: 10px;
+}
+
+.my-orders-checkout-home-item-cell-qty-toggle-center {
+    width: 40%;
+    // border-right: 1px solid black;
+    // border-left: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-orders-checkout-home-item-cell-qty-toggle-center p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 90%;
+    font-family: poppins;
+}
+
+.my-orders-checkout-home-item-cell-qty-toggle-right {
+    width: 30%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.my-orders-checkout-home-item-cell-qty-toggle-right p {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 80%;
+}
+
+.my-orders-checkout-home-item-cell-qty-item-price {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 67.5%;
+    font-weight: bold;
+    font-family: lexend;
+    margin-right: 15%;
 }
 
     // # FAQs SCREEN SETTINGS
@@ -16885,7 +17033,39 @@ export default class LandingPg extends Component {
                                                                 </div>
                                                             </div>
                                                             <div className='my-orders-payment-home-page-header-inner-body'>
-
+                                                                {this.state.cart.length > 0 ? (
+                                                                    <div>
+                                                                        {this.state.cart.map((item) => (
+                                                                            <div key={item.id} className="my-orders-checkout-home-item-cell">
+                                                                                <div className="my-orders-checkout-home-item-cell-icon">
+                                                                                    <img src={item.image} alt={item.name} />
+                                                                                    <p onClick={() => this.removeFromCart(item.id)}>remove</p>
+                                                                                </div>
+                                                                                <div className="my-orders-checkout-home-item-cell-details">
+                                                                                    <p>{item.name}</p>
+                                                                                    {item.jipangeSelected ? (<button><h5><span>◉ </span>Jipange: {item.jipangeDate}</h5></button>): null}
+                                                                                </div>
+                                                                                <div className="my-orders-checkout-home-item-cell-qty">
+                                                                                    <div className="my-orders-checkout-home-item-cell-qty-toggle">
+                                                                                        <div onClick={() => this.mainPageProductsHandleQtyChange(item.id, -1)} className="my-orders-checkout-home-item-cell-qty-toggle-left">
+                                                                                            <p>-</p>
+                                                                                        </div>
+                                                                                        <div className="my-orders-checkout-home-item-cell-qty-toggle-center">
+                                                                                            <p>{item.quantity}</p>
+                                                                                        </div>
+                                                                                        <div onClick={() => this.mainPageProductsHandleQtyChange(item.id, 1)} className="my-orders-checkout-home-item-cell-qty-toggle-right">
+                                                                                            <p>+</p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <p className="my-orders-checkout-home-item-cell-qty-item-price">KES {item.price * item.quantity}.00</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        ))}
+                                                                    </div>
+                                                                ) : (
+                                                                    <>
+                                                                    </>
+                                                                )}
                                                             </div>
                                                         </div>
                                                         <div className='jipange-settings-selected-date-screen-complete-body'>
