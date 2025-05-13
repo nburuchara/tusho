@@ -10083,7 +10083,7 @@ const Styles = styled.div `
     background-color: #ff5733;
     border-radius: 6.5px;
     cursor: pointer;
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.35s ease-in-out;
     z-index: -1;
 }
 
@@ -10093,6 +10093,7 @@ const Styles = styled.div `
 
 .jipange-header-delivery-bottom-footer:hover .jipange-header-delivery-bottom-footer-left h3 {
     color: #ff5733;
+    text-decoration: underline;
 }
 
 .jipange-header-delivery-bottom-footer:hover .jipange-header-delivery-bottom-footer-right h3 {
@@ -10111,10 +10112,12 @@ const Styles = styled.div `
 .jipange-header-delivery-bottom-footer-left h3 {
     margin-top: -0.25rem;
     margin-bottom: 0px;
-    margin-left: 6.5%;
+    margin-left: 8.65%;
     color: white;
     font-family: lexend;
-    font-size: 102.5%;
+    font-weight: normal;
+    font-size: 98.5%;
+    transition: color 0.35s ease-in-out;
 }
 
 .jipange-header-delivery-bottom-footer-right {
@@ -19117,7 +19120,7 @@ export default class LandingPg extends Component {
                                                                     ))}
                                                                 </div>
                                                                 <div className='jipange-header-delivery-bottom-footer-left'>
-                                                                    <h3>Schedule Delivery</h3>
+                                                                    <h3>Schedule a delivery</h3>
                                                                 </div>
                                                                 <div className='jipange-header-delivery-bottom-footer-right'>
                                                                     <h3>➞</h3>
