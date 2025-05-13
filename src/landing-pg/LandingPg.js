@@ -3494,7 +3494,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-complete-body-inner-body-card-payment {
     // border: 1px solid black;
     width: 100%;
-    height: 100%;
+    height: 98%;
     position: relative;
 }
 
@@ -3584,6 +3584,9 @@ const Styles = styled.div `
     // border: 1px solid black;
     border-bottom: 1px solid #ccc;
     height: auto;
+    max-height: 15rem;
+    overflow: hidden;
+    overflow-y: auto;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details h5 {
@@ -3593,6 +3596,16 @@ const Styles = styled.div `
     font-weight: normal;
     font-family: poppins;
     font-size: 76.5%;
+    color: #5e626a;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details p {
+    margin-top: 5px;
+    margin-left: 2.5%;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-family: poppins;
+    font-size: 90%;
     color: #5e626a;
 }
 
@@ -3661,8 +3674,24 @@ const Styles = styled.div `
     padding-bottom: 0.25rem;
 }
 
+.jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions p {
+    font-family: poppins;
+    color: #5e626a;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 90%;
+}
+
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions2 {
     // padding-bottom: 0.25rem;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details-instructions2 p {
+    font-family: poppins;
+    color: #5e626a;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 85%;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment {
@@ -3677,6 +3706,16 @@ const Styles = styled.div `
     height: 15.25rem;
     padding-top: 0.3rem;
     overflow-y: auto;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment-details p {
+    margin-top: 5px;
+    margin-left: 2.5%;
+    margin-bottom: 5px;
+    font-weight: normal;
+    font-family: poppins;
+    font-size: 90%;
+    color: #5e626a;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer {
