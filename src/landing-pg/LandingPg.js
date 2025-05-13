@@ -10172,16 +10172,16 @@ const Styles = styled.div `
 
 .homepage-body-inner-header-option-pamoja {
     width: 11.5%;
-    border: 1px solid #20313a;
+    border: 1px solid #ff5733;
     height: 42.5%;
     display: flex;
     align-items: center;
-    background-color: #20313a;
+    background-color: #faece9;
     justify-content: space-between;
     padding-left: 15.5px;
     padding-right: 15px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
     border-radius: 8px;
     margin-right: 20px;
     cursor: pointer;
@@ -10191,8 +10191,13 @@ const Styles = styled.div `
     border: 1px solid #ff5733;
 }
 
+.homepage-body-inner-header-option-pamoja:hover h4 {
+    text-decoration: underline;
+}
+
 .homepage-body-inner-header-option-pamoja:hover .dial-container {
     background-color: #fff;
+    border: 1px solid #ff5733;
 }
 
 .homepage-body-inner-header-option-pamoja:hover .dial-button {
@@ -10213,7 +10218,7 @@ const Styles = styled.div `
     margin-top: 0px;
     margin-bottom: 0px;
     margin-right: 10px;
-    color: #fff;
+    color: #ff5733;
     font-family: poppins;
     font-size: 85%;
     // font-weight: normal;
@@ -17987,12 +17992,12 @@ export default class LandingPg extends Component {
                                                                     <h4>How it works:</h4>
                                                                 </div>
                                                                 <video 
-                                                                src="/assets/images/home-main-header/shop-pamoja-demo-1.mp4" 
+                                                                src="/assets/images/home-main-header/shop-pamoja-demo-3.mp4" 
                                                                 autoPlay 
                                                                 loop 
                                                                 muted 
                                                                 playsInline 
-                                                                style={{ width: '62.5%', height: 'auto' }}
+                                                                style={{ width: '48.5%', height: 'auto' }}
                                                                 />
                                                             </div>
                                                             <div className='shop-pamoja-header-info-1-body'>
@@ -18514,7 +18519,7 @@ export default class LandingPg extends Component {
                                                                             <h4>2</h4>
                                                                         </div>
                                                                         <video 
-                                                                        src="/assets/images/home-main-header/shop-pamoja-demo-3.mp4" 
+                                                                        src="/assets/images/home-main-header/shop-pamoja-demo-3.5.mp4" 
                                                                         autoPlay 
                                                                         loop 
                                                                         muted 
@@ -18523,7 +18528,7 @@ export default class LandingPg extends Component {
                                                                         />
                                                                     </div>
                                                                     <div className='shop-pamoja-info-3-body-right'>
-                                                                        <p>We work with your favorite brands to provide the option for you to create a bulk order with fellow shoppers and get more discounts as you shop.</p>
+                                                                        <p>We work with your favorite brands to unlock the option for you to create a bulk order with fellow shoppers and get more discounts as you shop.</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
