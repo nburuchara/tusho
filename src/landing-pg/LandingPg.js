@@ -10267,6 +10267,38 @@ const Styles = styled.div `
     font-family: lexend;
 }
 
+.shop-pamoja-info-7 {
+    position: absolute;
+    bottom: 0.85rem;
+    left: 0.85rem;
+    right: 0.85rem;
+    height: 35%;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 1px solid #ff5733;
+    display: flex;
+    flex-direction: row;
+}
+
+.shop-pamoja-info-7-left {
+    width: 70%;
+    height: 100%;
+    border: 1px solid white;
+}
+
+.shop-pamoja-info-7-right {
+    width: 30%;
+    height: 100%;
+    border: 1px solid white;
+}
+
+.shop-pamoja-info-7-right img {
+    transform: rotate(10deg);
+    width: 95%;
+    border: 0.1px solid transparent !important;
+}
+
+
 .homepage-header-inner-body-poster-right-right-section-top-logged-in-container,
 .homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container {
     background-color: #20313a;
@@ -18811,7 +18843,7 @@ export default class LandingPg extends Component {
                                                                         />
                                                                     </div>
                                                                     <div className='shop-pamoja-info-3-body-right'>
-                                                                        <p>We work with your favorite brands to unlock the option for you to create a bulk order with fellow shoppers and get more discounts as you shop.</p>
+                                                                        <p>We work with your favorite brands to unlock the option for you to create a bulk order with fellow shoppers to get more discounts as you shop.</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -18999,6 +19031,7 @@ export default class LandingPg extends Component {
                                                         </div>
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-4 ${this.state.selectedHeaderOption === 'option-4' ? 'open' : ''}`}>
+
                                                             <div className='shop-pamoja-info-5'>
                                                                 <div className='shop-pamoja-info-5-body'>
                                                                     <div className='shop-pamoja-info-5-body-top'>
@@ -19016,6 +19049,7 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 </div>
                                                             </div>
+
                                                             <div className='shop-pamoja-info-6'>
                                                                 <div className='shop-pamoja-info-6-body'>
                                                                     <div className='shop-pamoja-info-6-body-top'>
@@ -19033,6 +19067,17 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 </div>
                                                             </div>
+
+                                                            <div className='shop-pamoja-info-7'>
+                                                                <div className='shop-pamoja-info-7-left'>
+
+                                                                </div>
+                                                                <div className='shop-pamoja-info-7-right'>
+                                                                    <img src='/assets/images/home-main-header/shop-pamoja-header-decor-1.png'/>
+                                                                </div>
+                                                            </div>
+                                                            
+
                                                         </div>
 
                                                         <div className={`homepage-header-inner-body-poster-right-right-section-bottom-logged-in-container-option-5 ${this.state.selectedHeaderOption === 'option-5' ? 'open' : ''}`}>
