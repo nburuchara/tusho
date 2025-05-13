@@ -10357,6 +10357,7 @@ const Styles = styled.div `
 
 .shop-pamoja-info-7-left-btn-left-side h4 {
     margin-left: 1rem;
+    padding-bottom: 0.15rem;
     color: white;
     font-family: lexend;
     font-size: 90.5%;
@@ -19171,7 +19172,7 @@ export default class LandingPg extends Component {
                                                                     <div className='shop-pamoja-info-7-left-decor'>
                                                                         <img src='/assets/images/home-main-header/jipange-demo-header-bottom-right-decor.png'/>
                                                                     </div>
-                                                                    <h2>Don't miss out on these discounts!</h2>
+                                                                    <h2>Don't miss out on extra discounts!</h2>
                                                                     <div className='shop-pamoja-info-7-left-btn'>
                                                                         <div className='shop-pamoja-info-7-left-btn-left-side'>
                                                                             <h4>See all bulk orders</h4>
