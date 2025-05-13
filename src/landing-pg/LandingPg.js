@@ -10271,25 +10271,46 @@ const Styles = styled.div `
     position: absolute;
     bottom: 0.85rem;
     left: 0.85rem;
-    right: 0.85rem;
+    right: 0.5rem;
     height: 35%;
     background-color: transparent;
     border-radius: 8px;
-    border: 1px solid #ff5733;
+    // border: 1px solid #ff5733;
     display: flex;
     flex-direction: row;
 }
 
 .shop-pamoja-info-7-left {
-    width: 70%;
+    width: 65%;
     height: 100%;
     border: 1px solid white;
+    position: relative;
+}
+
+.shop-pamoja-info-7-left-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 120%;
+    height: 35%;
+    border: 1px solid #ff5733;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+}
+
+.shop-pamoja-info-7-left-btn-left-side {
+
+}
+
+.shop-pamoja-info-7-left-btn-right-side {
+
 }
 
 .shop-pamoja-info-7-right {
-    width: 30%;
+    width: 45%;
     height: 100%;
-    border: 1px solid white;
+    // border: 1px solid white;
 }
 
 .shop-pamoja-info-7-right img {
@@ -19070,7 +19091,14 @@ export default class LandingPg extends Component {
 
                                                             <div className='shop-pamoja-info-7'>
                                                                 <div className='shop-pamoja-info-7-left'>
+                                                                    <div className='shop-pamoja-info-7-left-btn'>
+                                                                        <div className='shop-pamoja-info-7-left-btn-left-side'>
 
+                                                                        </div>
+                                                                        <div className='shop-pamoja-info-7-left-btn-right-side'>
+
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                                 <div className='shop-pamoja-info-7-right'>
                                                                     <img src='/assets/images/home-main-header/shop-pamoja-header-decor-1.png'/>
