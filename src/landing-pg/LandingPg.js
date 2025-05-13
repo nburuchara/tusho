@@ -3574,7 +3574,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment {
     width: 100%;
-    height: 98.5%;
+    height: 100%;
     position: relative;
     // border: 1px solid black;
 }
@@ -3781,7 +3781,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn {
     height: 32.5%;
     // border: 1px solid black;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
     margin-left: 2.5%;
 }
 
@@ -5053,7 +5053,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-my-orders-settings {
     margin-left: 6.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 37.65rem;
     display: flex;
     flex-direction: column;
@@ -5114,6 +5114,56 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-my-orders-settings-container-content-empty p {
     margin-left: 0px;
+}
+
+.my-orders-payment-home-page {
+    display: flex;
+    flex-direction: column;
+}
+
+.my-orders-payment-home-page-header {
+    height: 25%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    // border: 1px solid black;
+}
+
+.my-orders-payment-home-page-header-inner-header {
+    height: 20%;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-direction: row;
+}
+
+.my-orders-payment-home-page-header-inner-header-left {
+    width: 80%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.my-orders-payment-home-page-header-inner-header-left p { 
+    margin-top: 0px;
+    margin-bottom: 0px;
+    // margin-left: 2.5%;
+    font-family: poppins;
+    color: #5e626a;
+    font-size: 78.5%;
+}
+
+.my-orders-payment-home-page-header-inner-header-right { 
+    width: 25%;
+    // border: 1px solid black;
+}
+
+.my-orders-payment-home-page-header-inner-body {
+    height: 83.5%;
+    width: 100%;
+    border: 1px solid #ccc;
 }
 
     // # FAQs SCREEN SETTINGS
@@ -16825,6 +16875,19 @@ export default class LandingPg extends Component {
                                                 </div> */}
                                                 {this.state.cart.length > 0 && 
                                                     <div style={{width: '97.5%', height: "100%", position: 'relative'}} className='my-orders-payment-home-page'>
+                                                        <div className='my-orders-payment-home-page-header'>
+                                                            <div className='my-orders-payment-home-page-header-inner-header'>
+                                                                <div className='my-orders-payment-home-page-header-inner-header-left'>
+                                                                    <p>My Cart</p>
+                                                                </div>
+                                                                <div className='my-orders-payment-home-page-header-inner-header-right'>
+
+                                                                </div>
+                                                            </div>
+                                                            <div className='my-orders-payment-home-page-header-inner-body'>
+
+                                                            </div>
+                                                        </div>
                                                         <div className='jipange-settings-selected-date-screen-complete-body'>
                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-header'>
                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
