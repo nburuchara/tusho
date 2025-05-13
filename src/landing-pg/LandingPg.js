@@ -10290,7 +10290,7 @@ const Styles = styled.div `
 .shop-pamoja-info-7-left-decor {
     position: absolute;
     top: 0;
-    right: -14%;
+    right: -16.5%;
     height: 50%;
     width: 25.5%;
     // border: 1px solid black;
@@ -10300,39 +10300,81 @@ const Styles = styled.div `
 }
 
 .shop-pamoja-info-7-left-decor img {
-    width: 75%;
+    width: 32.5px;
+    height: 32.5px;
     border: 0.1px solid transparent !important;
-    // transform: rotate(30deg);
+    transform: rotate(30deg);
 }
 
 .shop-pamoja-info-7-left h2 {
-    margin-top: -0.1rem;
+    margin-top: -0.2rem;
     margin-bottom: 0px;
     margin-left: 0px;
     margin-right: 0px;
     color: #ff5733;
-    font-size: 110%;
+    font-size: 105.5%;
 }
 
 .shop-pamoja-info-7-left-btn {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 120%;
-    height: 37.5%;
+    width: 112.5%;
+    height: 42.5%;
     border: 1px solid #ff5733;
     border-radius: 6px;
     display: flex;
     flex-direction: row;
     background-color: #ff5733;
+    cursor: pointer;
+    transition: background-color 0.35s ease-in-out;
+}
+
+.shop-pamoja-info-7-left-btn:hover {
+    background-color: #faece9;
+}
+
+.shop-pamoja-info-7-left-btn:hover .shop-pamoja-info-7-left-btn-right-side h4 {
+    margin-left: 0.45rem;
+    color: #ff5733;
+}
+
+.shop-pamoja-info-7-left-btn:hover .shop-pamoja-info-7-left-btn-left-side h4 {
+    color: #ff5733;
+    text-decoration: underline;
 }
 
 .shop-pamoja-info-7-left-btn-left-side {
+    width: 80%;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
 
+.shop-pamoja-info-7-left-btn-left-side h4 {
+    margin-left: 1rem;
+    color: white;
+    font-family: lexend;
+    font-size: 90.5%;
+    font-weight: normal;
+    transition: color 0.35s ease-in-out;
 }
 
 .shop-pamoja-info-7-left-btn-right-side {
+    width: 20%;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
 
+.shop-pamoja-info-7-left-btn-right-side h4 {
+    margin-left: 0.15rem;
+    color: white;
+    font-family: lexend;
+    font-size: 85%;
+    transition: margin-left 0.5s ease-in-out;
 }
 
 .shop-pamoja-info-7-right {
@@ -19067,6 +19109,7 @@ export default class LandingPg extends Component {
                                                                         style={{
                                                                             left: `${Math.random() * 100}vw`,
                                                                             backgroundColor: '#dfffc0',
+                                                                            border: '1px solid #ff5733',
                                                                             animationDuration: `${20 + Math.random() * 20}s`, // slower fall
                                                                             animationDelay: `${Math.random() * 10}s`,
                                                                         }}
@@ -19125,13 +19168,13 @@ export default class LandingPg extends Component {
                                                                     <div className='shop-pamoja-info-7-left-decor'>
                                                                         <img src='/assets/images/home-main-header/jipange-demo-header-bottom-right-decor.png'/>
                                                                     </div>
-                                                                    <h2>Don't miss out on these discounts.</h2>
+                                                                    <h2>Don't miss out on these discounts!</h2>
                                                                     <div className='shop-pamoja-info-7-left-btn'>
                                                                         <div className='shop-pamoja-info-7-left-btn-left-side'>
-
+                                                                            <h4>See all bulk orders</h4>
                                                                         </div>
                                                                         <div className='shop-pamoja-info-7-left-btn-right-side'>
-
+                                                                            <h4>➞</h4>
                                                                         </div>
                                                                     </div>
                                                                 </div>
