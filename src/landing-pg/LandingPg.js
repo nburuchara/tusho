@@ -10271,7 +10271,7 @@ const Styles = styled.div `
     position: absolute;
     bottom: 0.85rem;
     left: 0.85rem;
-    right: 0.5rem;
+    right: 0;
     height: 35%;
     background-color: transparent;
     border-radius: 8px;
@@ -10283,8 +10283,35 @@ const Styles = styled.div `
 .shop-pamoja-info-7-left {
     width: 65%;
     height: 100%;
-    border: 1px solid white;
+    // border: 1px solid white;
     position: relative;
+}
+
+.shop-pamoja-info-7-left-decor {
+    position: absolute;
+    top: 0;
+    right: -14%;
+    height: 50%;
+    width: 25.5%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justtify-content: center;
+}
+
+.shop-pamoja-info-7-left-decor img {
+    width: 75%;
+    border: 0.1px solid transparent !important;
+    // transform: rotate(30deg);
+}
+
+.shop-pamoja-info-7-left h2 {
+    margin-top: -0.1rem;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    color: #ff5733;
+    font-size: 110%;
 }
 
 .shop-pamoja-info-7-left-btn {
@@ -10292,11 +10319,12 @@ const Styles = styled.div `
     bottom: 0;
     left: 0;
     width: 120%;
-    height: 35%;
+    height: 37.5%;
     border: 1px solid #ff5733;
     border-radius: 6px;
     display: flex;
     flex-direction: row;
+    background-color: #ff5733;
 }
 
 .shop-pamoja-info-7-left-btn-left-side {
@@ -10310,6 +10338,9 @@ const Styles = styled.div `
 .shop-pamoja-info-7-right {
     width: 45%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
     // border: 1px solid white;
 }
 
@@ -19091,6 +19122,10 @@ export default class LandingPg extends Component {
 
                                                             <div className='shop-pamoja-info-7'>
                                                                 <div className='shop-pamoja-info-7-left'>
+                                                                    <div className='shop-pamoja-info-7-left-decor'>
+                                                                        <img src='/assets/images/home-main-header/jipange-demo-header-bottom-right-decor.png'/>
+                                                                    </div>
+                                                                    <h2>Don't miss out on these discounts.</h2>
                                                                     <div className='shop-pamoja-info-7-left-btn'>
                                                                         <div className='shop-pamoja-info-7-left-btn-left-side'>
 
