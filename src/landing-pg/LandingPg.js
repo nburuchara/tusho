@@ -5170,7 +5170,7 @@ const Styles = styled.div `
 .my-orders-checkout-home-item-cell {
     height: auto;
     // border-bottom: 1px solid black;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.65rem;
     padding-top: 0.15rem;
     display: flex;
     justify-content: space-between;
@@ -5285,7 +5285,7 @@ const Styles = styled.div `
 .my-orders-checkout-home-item-cell-qty-toggle-center p {
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 90%;
+    font-size: 80%;
     font-family: poppins;
 }
 
