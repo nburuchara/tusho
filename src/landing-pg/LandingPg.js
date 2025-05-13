@@ -5163,13 +5163,15 @@ const Styles = styled.div `
 .my-orders-payment-home-page-header-inner-body {
     height: 83.5%;
     width: 100%;
-    border: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
     overflow-y: auto;
 }
 
 .my-orders-checkout-home-item-cell {
     height: auto;
-    border-bottom: 1px solid black;
+    // border-bottom: 1px solid black;
+    padding-bottom: 0.5rem;
+    padding-top: 0.15rem;
     display: flex;
     justify-content: space-between;
     // margin-bottom: 20px;
@@ -5177,7 +5179,7 @@ const Styles = styled.div `
 
 .my-orders-checkout-home-item-cell-icon {
     width: 10%;
-    border: 1px solid black;
+    // border: 1px solid black;
     text-align: center;
     display: flex;
     align-items: center;
@@ -5197,7 +5199,7 @@ const Styles = styled.div `
 .my-orders-checkout-home-item-cell-icon p {
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 70%;
+    font-size: 65%;
     font-style: italic;
     text-decoration: underline;
     color: #FF5733;
@@ -5206,11 +5208,11 @@ const Styles = styled.div `
 
 .my-orders-checkout-home-item-cell-details {
     width: 72.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .my-orders-checkout-home-item-cell-details p {
-    font-size: 80%;
+    font-size: 75%;
     margin-top: 0.25rem;
     margin-top: 0.5rem;
     margin-left: 5%;
@@ -5240,7 +5242,7 @@ const Styles = styled.div `
 
 .my-orders-checkout-home-item-cell-qty {
     width: 17.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     position: relative;
     display: flex;
     align-items: center;
@@ -5304,12 +5306,11 @@ const Styles = styled.div `
 
 .my-orders-checkout-home-item-cell-qty-item-price {
     position: absolute;
-    bottom: 0;
+    bottom: -0.15rem;
     right: 0;
-    margin-top: 0px;
     margin-bottom: 0px;
     font-size: 67.5%;
-    font-weight: bold;
+    // font-weight: bold;
     font-family: lexend;
     margin-right: 15%;
 }
