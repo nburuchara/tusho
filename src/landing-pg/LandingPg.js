@@ -3707,7 +3707,7 @@ const Styles = styled.div `
     max-height: 15.225rem;
     overflow: hidden;
     overflow-y: auto;
-    padding-top: 0.15rem;
+    padding-top: 0.05rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment-details p {
@@ -3722,10 +3722,10 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer {
     position: absolute;
-    bottom: -0.25rem;
+    bottom: -0.315rem;
     // border: 1px solid black;
     width: 100%;
-    height: 9.25rem;
+    height: 9rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-details {
@@ -3784,7 +3784,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn {
     height: 32.5%;
     // border: 1px solid black;
-    margin-top: 0.35rem;
+    margin-top: 0.1rem;
     margin-left: 2.5%;
 }
 
@@ -11265,6 +11265,26 @@ export default class LandingPg extends Component {
             deliveryInfoAddressType3: false,
             deliveryInfoAddressType4: false,
 
+            //* # My Orders *//
+            selectedRegPaymentOption: "option1",
+            showRegPaymentLoading: false,
+            showRegCardPayment: true,
+            showRegMpesaPayment: false,
+            showRegAirtelPayment: false,
+            showRegConfirmAddress: false,
+            disableRegPaymentBtns: false,
+            makeRegPaymentCardDefault: true,
+            makeRegPaymentCardLoading: false,
+            makeRegPaymentMpesaDefault: true,
+            makeRegPaymentMpesaLoading: false,
+            makeRegPaymentAirtelDefault: true,
+            makeRegPaymentAirtelLoading: false,
+            regularManualAddressLine1: '',
+            regularManualAddressLine2: '',
+            currentRegPaid: false,
+            completeRegBtnLoading: false,
+            completeRegBtnTxt: true,
+
             //* # FAQs *//
             faqTopics: ['All topics','My FAQ', 'Delivery', 'Payment', 'Shop Pamoja', 'Jipange', 'General', 'Support'],
             faqSettingsDisplayTopicDropdown: false,
@@ -12780,6 +12800,180 @@ export default class LandingPg extends Component {
             }
         })
     }
+
+        //* - - MY ORDERS POPUP - - *//
+
+    handleRegularPaymentOptionChange = (event) => {
+        this.setState({ selectedRegPaymentOption: event.target.value });
+    };
+
+    handleRegularPaymentOptionChange2 = (option) => {
+
+        this.setState({
+            
+        })
+
+        if (this.state.showRegCardPayment) {
+            if  (option === 2 && !this.state.showRegPaymentLoading) {
+                this.setState({
+                    selectedRegPaymentOption: `option${option}`,
+                    showRegCardPayment: false,
+                    showRegPaymentLoading: true
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+                            showRegPaymentLoading: false,
+                            showRegMpesaPayment: true
+                        })
+                    }, 2500)
+                })
+            } else if (option === 3 && !this.state.showRegPaymentLoading) {
+                this.setState({
+                    selectedRegPaymentOption: `option${option}`,
+                    showRegCardPayment: false,
+                    showRegPaymentLoading: true
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+                            showRegPaymentLoading: false,
+                            showRegAirtelPayment: true
+                        })
+                    }, 2500)
+                })
+            }
+        } else if (this.state.showRegMpesaPayment) {
+            if  (option === 1 && !this.state.showRegPaymentLoading) {
+                this.setState({
+                    selectedRegPaymentOption: `option${option}`,
+                    showRegMpesaPayment: false,
+                    showRegPaymentLoading: true
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+                            showRegPaymentLoading: false,
+                            showRegCardPayment: true
+                        })
+                    }, 2500)
+                })
+            } else if (option === 3 && !this.state.showRegPaymentLoading) {
+                this.setState({
+                    selectedRegPaymentOption: `option${option}`,
+                    showRegMpesaPayment: false,
+                    showRegPaymentLoading: true
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+                            showRegPaymentLoading: false,
+                            showRegAirtelPayment: true
+                        })
+                    }, 2500)
+                })
+            }
+        } else if (this.state.showRegAirtelPayment) {
+            if (option === 1 && !this.state.showRegPaymentLoading) {
+                this.setState({
+                    selectedRegPaymentOption: `option${option}`,
+                    showRegAirtelPayment: false,
+                    showRegPaymentLoading: true
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+                            showRegPaymentLoading: false,
+                            showRegCardPayment: true
+                        })
+                    }, 2500)
+                })
+            } else if (option === 2 && !this.state.showRegPaymentLoading) {
+                this.setState({
+                    selectedRegPaymentOption: `option${option}`,
+                    showRegAirtelPayment: false,
+                    showRegPaymentLoading: true
+                }, () => {
+                    setTimeout(() => {
+                        this.setState({
+                            showRegPaymentLoading: false,
+                            showRegMpesaPayment: true
+                        })
+                    }, 2500)
+                })
+            }
+        }
+        
+    }
+
+    regularHandlePaymentConfirmed = (paymentType) => {
+        this.setState({
+            [`makeRegPayment${paymentType}Default`]: false,
+            [`makeRegPayment${paymentType}Loading`]: true
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    [`makeRegPayment${paymentType}Default`]: true,
+            [`makeRegPayment${paymentType}Loading`]: false
+                })
+            }, 2500)
+            setTimeout(() => {
+                this.regularTransitionToShippingAddress()
+            }, 2000)
+        })
+    }
+
+    regularTransitionToShippingAddress = () => {
+        this.setState({
+            showRegPaymentLoading: true,
+            showRegCardPayment: false,
+            showRegAirtelPayment: false,
+            showRegMpesaPayment: false,
+            disableRegPaymentBtns: true,
+            currentRegPaid: true
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    showRegPaymentLoading: false,
+                    showRegConfirmAddress: true,
+                })
+            }, 2500)
+        })
+    }
+
+    completeRegularOrderBtnClicked = () => {
+        this.saveJipangeOrder()
+        this.setState({
+            completeRegBtnLoading: true,
+            completeRegBtnTxt: false,
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    completeRegBtnLoading: false,
+                    completeRegBtnTxt: true
+                })
+                this.regularOrderTransitionBackToHome()
+            }, 2500)
+        })
+    }
+
+    regularOrderTransitionBackToHome = () => {
+        this.setState({
+            // showJipangeSettingsSelectedDate: false,
+            // showJipangeSettingsLoading: true,
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    // showJipangeSettingsLoading: false,
+                    // showJipangeSettingsHome: true,
+                    // currentJipangePaid: false,
+                    // disableJipangePaymentBtns: false,
+                    // showJipangeConfirmAddress: false,
+                    // showJipangeCardPayment: true,
+                    // showJipangeSettingsSelectedDateComplete: false,
+                    // showJipangeSettingsSelectedDateEdit: true,
+                })
+            }, 2500)
+        })
+    }
+
+
+        //* - - FAQ POPUP - - *//
 
     faqSubmitBtnClicked = () => {
         this.setState({
@@ -17206,62 +17400,62 @@ export default class LandingPg extends Component {
                                                         <div className='jipange-settings-selected-date-screen-complete-body'>
                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-header'>
                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
-                                                                    <div onClick={() => this.handleJipangePaymentOptionChange2(1)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.disableJipangePaymentBtns === false && this.state.selectedJipangePaymentOption === 'option1' ? 'selected' : this.state.disableJipangePaymentBtns === true ? 'disabled' : ''}`}>
+                                                                    <div onClick={() => this.handleRegularPaymentOptionChange2(1)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.disableRegPaymentBtns === false && this.state.selectedRegPaymentOption === 'option1' ? 'selected' : this.state.disableRegPaymentBtns === true ? 'disabled' : ''}`}>
                                                                         <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1`}>
                                                                             <input
                                                                             type="radio"
                                                                             value="option1"
-                                                                            checked={this.state.selectedJipangePaymentOption === "option1"}
-                                                                            onChange={this.handleJipangePaymentOptionChange}
+                                                                            checked={this.state.selectedRegPaymentOption === "option1"}
+                                                                            onChange={this.handleRegularPaymentOptionChange}
                                                                             />
                                                                         </div>
-                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedJipangePaymentOption === 'option1' ? 'selected' : ''}`}>
+                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedRegPaymentOption === 'option1' ? 'selected' : ''}`}>
                                                                             <img src='/assets/icons/home-jipange/card-checkout-icon.png'/>
                                                                         </div>
-                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedJipangePaymentOption === 'option1' ? 'selected' : ''}`}>
+                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedRegPaymentOption === 'option1' ? 'selected' : ''}`}>
                                                                             <p>Card</p>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
-                                                                    <div onClick={() => this.handleJipangePaymentOptionChange2(2)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.disableJipangePaymentBtns === false && this.state.selectedJipangePaymentOption === 'option2' ? 'selected' : this.state.disableJipangePaymentBtns === true ? 'disabled' : ''}`}>
+                                                                    <div onClick={() => this.handleRegularPaymentOptionChange2(2)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.disableRegPaymentBtns === false && this.state.selectedRegPaymentOption === 'option2' ? 'selected' : this.state.disableRegPaymentBtns === true ? 'disabled' : ''}`}>
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1'>
                                                                             <input
                                                                             type="radio"
                                                                             value="option2"
-                                                                            checked={this.state.selectedJipangePaymentOption === "option2"}
-                                                                            onChange={this.handleJipangePaymentOptionChange}
+                                                                            checked={this.state.selectedRegPaymentOption === "option2"}
+                                                                            onChange={this.handleRegularPaymentOptionChange}
                                                                             />
                                                                         </div>
-                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedJipangePaymentOption === 'option2' ? 'selected' : ''}`}>
+                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedRegPaymentOption === 'option2' ? 'selected' : ''}`}>
                                                                             <img src='/assets/icons/home-jipange/mobile-checkout-icon.png'/>
                                                                         </div>
-                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedJipangePaymentOption === 'option2' ? 'selected' : ''}`}>
+                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedRegPaymentOption === 'option2' ? 'selected' : ''}`}>
                                                                             <p>MPESA</p>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-option'>
-                                                                    <div onClick={() => this.handleJipangePaymentOptionChange2(3)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.disableJipangePaymentBtns === false && this.state.selectedJipangePaymentOption === 'option3' ? 'selected' : this.state.disableJipangePaymentBtns === true ? 'disabled' : ''}`}>
+                                                                    <div onClick={() => this.handleRegularPaymentOptionChange2(3)} className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn ${this.state.disableRegPaymentBtns === false && this.state.selectedRegPaymentOption === 'option3' ? 'selected' : this.state.disableRegPaymentBtns === true ? 'disabled' : ''}`}>
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-1'>
                                                                             <input
                                                                             type="radio"
                                                                             value="option3"
-                                                                            checked={this.state.selectedJipangePaymentOption === "option3"}
-                                                                            onChange={this.handleJipangePaymentOptionChange}
+                                                                            checked={this.state.selectedRegPaymentOption === "option3"}
+                                                                            onChange={this.handleRegularPaymentOptionChange}
                                                                             />
                                                                         </div>
-                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedJipangePaymentOption === 'option3' ? 'selected' : ''}`}>
+                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-2 ${this.state.selectedRegPaymentOption === 'option3' ? 'selected' : ''}`}>
                                                                             <img src='/assets/icons/home-jipange/mobile-checkout-icon.png'/>
                                                                         </div>
-                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedJipangePaymentOption === 'option3' ? 'selected' : ''}`}>
+                                                                        <div className={`jipange-settings-selected-date-screen-complete-body-inner-header-payment-btn-3 ${this.state.selectedRegPaymentOption === 'option3' ? 'selected' : ''}`}>
                                                                             <p>Airtel</p>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body'>
-                                                                {this.state.showJipangePaymentLoading && 
+                                                                {this.state.showRegPaymentLoading && 
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-payment-loading'>
                                                                         <TailSpin
                                                                         visible={true}
@@ -17278,7 +17472,7 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                     </div>
                                                                 }
-                                                                {this.state.showJipangeCardPayment && 
+                                                                {this.state.showRegCardPayment && 
                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment'>
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-card-payment-input-field'>
                                                                             <div>
@@ -17323,7 +17517,7 @@ export default class LandingPg extends Component {
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details'>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-1'>
                                                                                     <p className=''>Subtotal</p>
-                                                                                    <p>Kshs. {this.state.jipangeSelectedDateTotal}.00</p>
+                                                                                    <p>Kshs. {this.state.totalCartPrice}.00</p>
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-2'>
                                                                                     <p className=''>Delivery fee</p>
@@ -17331,19 +17525,19 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-total'>
                                                                                     <h4><strong>Total</strong></h4>
-                                                                                    <h4><strong>Kshs. {this.state.jipangeSelectedDateTotal + 99}.00</strong></h4>
+                                                                                    <h4><strong>Kshs. {this.state.totalCartPrice + 99}.00</strong></h4>
                                                                                 </div>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
                                                                                 <button
-                                                                                onClick={() => this.jipangeHandlePaymentConfirmed('Card')}
+                                                                                onClick={() => this.regularHandlePaymentConfirmed('Card')}
                                                                                 >
-                                                                                    {this.state.makeJipangePaymentCardDefault && 
+                                                                                    {this.state.makeRegPaymentCardDefault && 
                                                                                         <>
                                                                                             Make Payment
                                                                                         </>
                                                                                     }
-                                                                                    {this.state.makeJipangePaymentCardLoading && 
+                                                                                    {this.state.makeRegPaymentCardLoading && 
                                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer-complete-btn-loading'>
                                                                                             <TailSpin
                                                                                             visible={true}
@@ -17363,7 +17557,7 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 }
                                                                 
-                                                                {this.state.showJipangeMpesaPayment && 
+                                                                {this.state.showRegMpesaPayment && 
                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment'>
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-details'>
                                                                             <h5>Enter your mobile number to receive a prompt:</h5>
@@ -17389,7 +17583,7 @@ export default class LandingPg extends Component {
                                                                                     <p><li>Select Paybill option</li></p>
                                                                                     <p><li>Enter Business Number 222222</li></p>
                                                                                     <p><li>Enter Account Number PXXPWGMR</li></p>
-                                                                                    <p><li>Enter the amount {this.state.jipangeSelectedDateTotal + 99}.00</li></p>
+                                                                                    <p><li>Enter the amount {this.state.totalCartPrice + 99}.00</li></p>
                                                                                     <p><li>Enter your MPESA PIN and Send</li></p>
                                                                                     <p><li>You will receive a confirmation SMS from MPESA</li></p>
                                                                                 </ol>
@@ -17399,7 +17593,7 @@ export default class LandingPg extends Component {
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details'>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-1'>
                                                                                     <p className=''>Subtotal</p>
-                                                                                    <p>Kshs. {this.state.jipangeSelectedDateTotal}.00</p>
+                                                                                    <p>Kshs. {this.state.totalCartPrice}.00</p>
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-2'>
                                                                                     <p className=''>Delivery fee</p>
@@ -17407,19 +17601,19 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-total'>
                                                                                     <h4><strong>Total</strong></h4>
-                                                                                    <h4><strong>Kshs. {this.state.jipangeSelectedDateTotal + 99}.00</strong></h4>
+                                                                                    <h4><strong>Kshs. {this.state.totalCartPrice + 99}.00</strong></h4>
                                                                                 </div>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
                                                                                 <button
-                                                                                onClick={() => this.jipangeHandlePaymentConfirmed('Mpesa')}
+                                                                                onClick={() => this.regularHandlePaymentConfirmed('Mpesa')}
                                                                                 >
-                                                                                    {this.state.makeJipangePaymentMpesaDefault && 
+                                                                                    {this.state.makeRegPaymentMpesaDefault && 
                                                                                         <>
                                                                                             Confirm Payment
                                                                                         </>
                                                                                     }
-                                                                                    {this.state.makeJipangePaymentMpesaLoading && 
+                                                                                    {this.state.makeRegPaymentMpesaLoading && 
                                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer-complete-btn-loading'>
                                                                                             <TailSpin
                                                                                             visible={true}
@@ -17439,7 +17633,7 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                 }
 
-                                                                {this.state.showJipangeAirtelPayment && 
+                                                                {this.state.showRegAirtelPayment && 
                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment'>
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment-details'>
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-mpesa-payment-alternative'>
@@ -17451,7 +17645,7 @@ export default class LandingPg extends Component {
                                                                                     <p><li>Select Airtel Paybill</li></p>
                                                                                     <p><li>Enter Paybill Number 222222</li></p>
                                                                                     <p><li>Enter Reference Number: PXXPWGMR</li></p>
-                                                                                    <p><li>Enter the amount {this.state.jipangeSelectedDateTotal + 99}.00</li></p>
+                                                                                    <p><li>Enter the amount {this.state.totalCartPrice + 99}.00</li></p>
                                                                                     <p><li>Enter PIN</li></p>
                                                                                 </ol>
                                                                             </div>
@@ -17468,7 +17662,7 @@ export default class LandingPg extends Component {
                                                                                     <p><li>Select Shopping Payment</li></p>
                                                                                     <p><li>Select tuShop</li></p>
                                                                                     <p><li>Enter Reference Number: PXXPWGMR</li></p>
-                                                                                    <p><li>Enter the amount {this.state.jipangeSelectedDateTotal + 99}.00</li></p>
+                                                                                    <p><li>Enter the amount {this.state.totalCartPrice + 99}.00</li></p>
                                                                                     <p><li>Enter PIN</li></p>
                                                                                 </ol>
                                                                             </div>
@@ -17482,7 +17676,7 @@ export default class LandingPg extends Component {
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details'>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-1'>
                                                                                     <p className=''>Subtotal</p>
-                                                                                    <p>Kshs. {this.state.jipangeSelectedDateTotal}.00</p>
+                                                                                    <p>Kshs. {this.state.totalCartPrice}.00</p>
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-2'>
                                                                                     <p className=''>Delivery fee</p>
@@ -17490,19 +17684,19 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-details-line-item-total'>
                                                                                     <h4><strong>Total</strong></h4>
-                                                                                    <h4><strong>Kshs. {this.state.jipangeSelectedDateTotal + 99}.00</strong></h4>
+                                                                                    <h4><strong>Kshs. {this.state.totalCartPrice + 99}.00</strong></h4>
                                                                                 </div>
                                                                             </div>
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
                                                                                 <button
-                                                                                onClick={() => this.jipangeHandlePaymentConfirmed('Airtel')}
+                                                                                onClick={() => this.regularHandlePaymentConfirmed('Airtel')}
                                                                                 >
-                                                                                    {this.state.makeJipangePaymentAirtelDefault && 
+                                                                                    {this.state.makeRegPaymentAirtelDefault && 
                                                                                         <>
                                                                                             Confirm Payment
                                                                                         </>
                                                                                     }
-                                                                                    {this.state.makeJipangePaymentAirtelLoading && 
+                                                                                    {this.state.makeRegPaymentAirtelLoading && 
                                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer-complete-btn-loading'>
                                                                                             <TailSpin
                                                                                             visible={true}
@@ -17521,12 +17715,12 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                     </div>
                                                                 }
-                                                                {this.state.showJipangeConfirmAddress && 
+                                                                {this.state.showRegConfirmAddress && 
                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-payment'>
                                                                         <p>Enter your shipping address for this order:</p>
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent'>
                                                                             <h5>Recently Used (<label>selected by default</label>):</h5>
-                                                                            <div className={`jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select ${this.state.jipangeManualAddressLine1 !== '' || this.state.jipangeManualAddressLine2 !== '' ? 'manual-selected' : ''}`}>
+                                                                            <div className={`jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select ${this.state.regularManualAddressLine1 !== '' || this.state.regularManualAddressLine2 !== '' ? 'manual-selected' : ''}`}>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-radio'>
                                                                                     <img src='/assets/icons/home-jipange/home-address-icon.png'/>
                                                                                 </div>
@@ -17549,7 +17743,7 @@ export default class LandingPg extends Component {
                                                                                         <input
                                                                                         id='jipangeManualAddressLine1'
                                                                                         placeholder='Marula Lane 23C, Lavington'
-                                                                                        value={this.state.jipangeManualAddressLine1}
+                                                                                        value={this.state.regularManualAddressLine1}
                                                                                         onChange={this.handleSearchStandardInput}
                                                                                         />
                                                                                     </div>
@@ -17562,7 +17756,7 @@ export default class LandingPg extends Component {
                                                                                         <input
                                                                                         id='jipangeManualAddressLine2'
                                                                                         placeholder='City (e.g. Nairobi)'
-                                                                                        value={this.state.jipangeManualAddressLine2}
+                                                                                        value={this.state.regularManualAddressLine2}
                                                                                         onChange={this.handleSearchStandardInput}
                                                                                         />
                                                                                     </div>
@@ -17572,14 +17766,14 @@ export default class LandingPg extends Component {
 
                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer'>
                                                                             <button
-                                                                            onClick={this.completeJipangeBtnClicked}
+                                                                            onClick={this.completeRegularOrderBtnClicked}
                                                                             >
-                                                                                {this.state.completeJipangeBtnTxt && 
+                                                                                {this.state.completeRegBtnTxt && 
                                                                                     <>
                                                                                         Complete Jipange
                                                                                     </>
                                                                                 }
-                                                                                {this.state.completeJipangeBtnLoading && 
+                                                                                {this.state.completeRegBtnLoading && 
                                                                                     <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer-complete-btn-loading'>
                                                                                         <TailSpin
                                                                                         visible={true}
