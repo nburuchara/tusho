@@ -282,6 +282,7 @@ const Styles = styled.div `
     background-color: #ff5733;
     border: 1px solid #ff5733;
     border-left: 1px solid #ff5733;
+    border-top: 1px solid #d6e7f0;
     border-bottom-right-radius: 6px;
     display: flex;
     align-items: center;
