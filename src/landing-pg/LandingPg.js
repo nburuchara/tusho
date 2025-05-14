@@ -3351,7 +3351,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-header {
-    height: 25%;
+    height: 27.5%;
     margin-bottom: 0.5rem;
     // border-bottom: 1px solid #ccc;
     // border-radius: 8px;
