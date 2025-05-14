@@ -3361,7 +3361,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body {
-    height: 75%;
+    height: 72.5%;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -3584,7 +3584,7 @@ const Styles = styled.div `
     // border: 1px solid black;
     border-bottom: 1px solid #ccc;
     height: auto;
-    max-height: 15rem;
+    max-height: 15.225rem;
     overflow: hidden;
     overflow-y: auto;
 }
@@ -3605,7 +3605,7 @@ const Styles = styled.div `
     margin-bottom: 5px;
     font-weight: normal;
     font-family: poppins;
-    font-size: 90%;
+    font-size: 85%;
     color: #5e626a;
 }
 
@@ -3703,9 +3703,11 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment-details {
     border-bottom: 1px solid #ccc;
-    height: 15.25rem;
-    padding-top: 0.3rem;
+    height: auto;
+    max-height: 15.225rem;
+    overflow: hidden;
     overflow-y: auto;
+    padding-top: 0.15rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment-details p {
@@ -3714,13 +3716,13 @@ const Styles = styled.div `
     margin-bottom: 5px;
     font-weight: normal;
     font-family: poppins;
-    font-size: 90%;
+    font-size: 85%;
     color: #5e626a;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer {
     position: absolute;
-    bottom: 0;
+    bottom: -0.25rem;
     // border: 1px solid black;
     width: 100%;
     height: 9.25rem;
@@ -3728,6 +3730,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-details {
     height: 60%;
+    margin-top: 0.4rem;
     // border-bottom: 2.5px solid #ff5733;
 }
 
@@ -3781,7 +3784,7 @@ const Styles = styled.div `
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn {
     height: 32.5%;
     // border: 1px solid black;
-    margin-top: 0.75rem;
+    margin-top: 0.35rem;
     margin-left: 2.5%;
 }
 
@@ -5122,18 +5125,17 @@ const Styles = styled.div `
 }
 
 .my-orders-payment-home-page-header {
-    height: 25%;
+    height: 27.5%;
     width: 100%;
-
     display: flex;
     flex-direction: column;
     // border: 1px solid black;
 }
 
 .my-orders-payment-home-page-header-inner-header {
-    height: 20%;
+    height: 25%;
     width: 100%;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #5e626a;
     display: flex;
     flex-direction: row;
 }
@@ -5141,13 +5143,15 @@ const Styles = styled.div `
 .my-orders-payment-home-page-header-inner-header-left {
     width: 80%;
     // border: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: left;
+    position: relative;
 }
 
 .my-orders-payment-home-page-header-inner-header-left p { 
+    position: absolute;
+    bottom: 0.3rem;
+    left: 0;
     margin-top: 0px;
+    padding-top: 0.25rem;
     margin-bottom: 0px;
     // margin-left: 2.5%;
     font-family: poppins;
@@ -10320,10 +10324,10 @@ const Styles = styled.div `
 
 .shop-pamoja-info-7-left-btn {
     position: absolute;
-    bottom: 0;
+    bottom: -0.1rem;
     left: 0;
     width: 112.5%;
-    height: 42.5%;
+    height: 45%;
     border: 1px solid #ff5733;
     border-radius: 6px;
     display: flex;
@@ -19174,8 +19178,23 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                     <h2>Don't miss out on extra discounts!</h2>
                                                                     <div className='shop-pamoja-info-7-left-btn'>
+                                                                        <div className="confetti-background">
+                                                                            {[...Array(50)].map((_, i) => (
+                                                                                <div
+                                                                                key={i}
+                                                                                className="confetti-piece"
+                                                                                style={{
+                                                                                    left: `${Math.random() * 100}vw`,
+                                                                                    backgroundColor: '#ffdada',
+                                                                                    border: '1px solid #ff5733',
+                                                                                    animationDuration: `${20 + Math.random() * 20}s`, // slower fall
+                                                                                    animationDelay: `${Math.random() * 10}s`,
+                                                                                }}
+                                                                                />
+                                                                            ))}
+                                                                        </div>
                                                                         <div className='shop-pamoja-info-7-left-btn-left-side'>
-                                                                            <h4>See all bulk orders</h4>
+                                                                            <h4>Popular bulk orders</h4>
                                                                         </div>
                                                                         <div className='shop-pamoja-info-7-left-btn-right-side'>
                                                                             <h4>➞</h4>
