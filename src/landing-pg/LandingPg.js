@@ -3707,7 +3707,7 @@ const Styles = styled.div `
     max-height: 15.225rem;
     overflow: hidden;
     overflow-y: auto;
-    padding-top: 0.05rem;
+    padding-top: 0.15rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-airtel-payment-details p {
@@ -3722,7 +3722,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer {
     position: absolute;
-    bottom: -0.315rem;
+    bottom: -0.36rem;
     // border: 1px solid black;
     width: 100%;
     height: 9rem;
@@ -3789,6 +3789,25 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn button {
+    width: 100%;
+    height: 100%;
+    color: white;
+    background-color: #ff5733;
+    border: 1px solid #ff5733;
+    border-radius: 8px;
+    font-family: poppins;
+    font-size: 85%;
+    cursor: pointer;
+}   
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn-2 {
+    height: 32.5%;
+    // border: 1px solid black;
+    margin-top: 0.85rem;
+    margin-left: 2.5%;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn-2 button {
     width: 100%;
     height: 100%;
     color: white;
@@ -5141,7 +5160,7 @@ const Styles = styled.div `
 }
 
 .my-orders-payment-home-page-header-inner-header-left {
-    width: 80%;
+    width: 60%;
     // border: 1px solid black;
     position: relative;
 }
@@ -5160,8 +5179,10 @@ const Styles = styled.div `
 }
 
 .my-orders-payment-home-page-header-inner-header-right { 
-    width: 25%;
-    // border: 1px solid black;
+    width: 40%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
 }
 
 .my-orders-payment-home-page-header-inner-body {
@@ -11389,7 +11410,7 @@ export default class LandingPg extends Component {
                 { id: 3, name: 'Get Ksh. 250 off your first order with tuShop wallet.', oldPrice: 205.00, newPrice: 'MAX250', type: 'code', description: '', qty: 0, promoParams: 'No expiry', img: '/assets/images/codes/promoCode2.png'},
                 { id: 5, name: 'Bio Salted Artisanal Butter (500g)', oldPrice: 879.00, newPrice: 850.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/butter-product.png'},
                 { id: 10, name: 'Tushop Fresh Local Watermelon', oldPrice: 369.00, newPrice: 320.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/watermelon-product.webp'},
-                { id: 6, name: 'Get Ksh. 300 off orders over Ksh. 1999.', oldPrice: 205.00, newPrice: 'APR300', type: 'code', description: '', qty: 0, promoParams: 'Valid till 30/04/25', img: '/assets/images/codes/promoCode1.png'},
+                { id: 6, name: 'Get Ksh. 300 off orders over Ksh. 1999.', oldPrice: 205.00, newPrice: 'MAY300', type: 'code', description: '', qty: 0, promoParams: 'Valid till 30/05/25', img: '/assets/images/codes/promoCode1.png'},
               ],
             selectedPromoType: 'all',
             
@@ -16898,7 +16919,7 @@ export default class LandingPg extends Component {
                                                                                             <h4><strong>Kshs. {this.state.jipangeSelectedDateTotal + 99}.00</strong></h4>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn-2'>
                                                                                         <button
                                                                                         onClick={() => this.jipangeHandlePaymentConfirmed('Card')}
                                                                                         >
@@ -16974,7 +16995,7 @@ export default class LandingPg extends Component {
                                                                                             <h4><strong>Kshs. {this.state.jipangeSelectedDateTotal + 99}.00</strong></h4>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn-2'>
                                                                                         <button
                                                                                         onClick={() => this.jipangeHandlePaymentConfirmed('Mpesa')}
                                                                                         >
@@ -17057,7 +17078,7 @@ export default class LandingPg extends Component {
                                                                                             <h4><strong>Kshs. {this.state.jipangeSelectedDateTotal + 99}.00</strong></h4>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn'>
+                                                                                    <div className='jipange-settings-selected-date-screen-complete-body-inner-body-footer-btn-2'>
                                                                                         <button
                                                                                         onClick={() => this.jipangeHandlePaymentConfirmed('Airtel')}
                                                                                         >
