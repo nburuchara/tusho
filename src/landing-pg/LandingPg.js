@@ -6768,7 +6768,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1.selected {
     background-color: transparent !important;
-    border: 2px solid #ff5733;
+    border: 1px solid #ff5733;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1:hover {
@@ -6815,14 +6815,33 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2 {
     background-color: #fff2ccff !important;
     transition: background-color 0.35s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2.selected {
+    background-color: transparent !important;
+    border: 2px solid #ff5733;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2:hover {
     background-color: transparent !important;
 }
 
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2.selected:hover {
+    background-color: transparent !important;
+    border: 0px solid transparent;
+}
+
+
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2 h3 {
     // color: #127bd8;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2.selected h3 {
+    font-weight: bold; 
+    text-decoration: underline;
+    font-size: 110%%;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2:hover h3 {
@@ -6833,18 +6852,48 @@ const Styles = styled.div `
     margin-left: 8.5%;
 }
 
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2-loading.display {
+    position: absolute;
+    bottom: -0.6rem;
+    left: 1.25rem;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: transparent;
+}
+
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3 {
     background-color: #dfffc0 !important;
     transition: background-color 0.35s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3.selected {
+    background-color: transparent !important;
+    border: 2px solid #ff5733;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3:hover {
     background-color: transparent !important;
 }
 
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3.selected:hover {
+    background-color: transparent !important;
+    border: 0px solid transparent;
+}
+
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3 h3 {
     // color: #127bd8;
     // font-size: 90%;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3.selected h3 {
+    font-weight: bold; 
+    text-decoration: underline;
+    font-size: 110%%;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3:hover h3 {
@@ -6857,6 +6906,18 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3 img {
     margin-left: 9.5%;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3-loading.display {
+    position: absolute;
+    bottom: -0.6rem;
+    left: 1.25rem;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: transparent;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4 {
@@ -13460,13 +13521,18 @@ export default class LandingPg extends Component {
                 }, 1000)
             })
         } else {
-            setTimeout(() => {
-                if (this.state.selectedHeaderOption !== option) {
-                    this.setState({
-                        selectedHeaderOption: option
-                    })
-                }
-            }, 1000) 
+            this.setState({
+                selectedHeaderOptionLoading: optionNum
+            }, () => {
+                setTimeout(() => {
+                    if (this.state.selectedHeaderOption !== option) {
+                        this.setState({
+                            selectedHeaderOption: option,
+                            selectedHeaderOptionLoading: null
+                        })
+                    }
+                }, 1000) 
+            })
         }
         
     
@@ -18405,21 +18471,49 @@ export default class LandingPg extends Component {
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
                                                                 <button onClick={() => this.handleTriggerHeaderTransitions('option-2', 2)}className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2-btn'>
-                                                                    <div  className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2'>
+                                                                    <div className={`homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2 ${this.state.selectedHeaderOption === 'option-2' ? 'selected' : ''}`}>
                                                                         <img src='/assets/images/home-main-body/product-btn-25.png'/>
-                                                                        <h3>Shopping List</h3>
+                                                                        <div className={`homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2-loading ${this.state.selectedHeaderOptionLoading === 2 ? 'display' : ''}`}>
+                                                                            {this.state.selectedHeaderOptionLoading === 2 && 
+                                                                                <TailSpin
+                                                                                visible={true}
+                                                                                height="20px"
+                                                                                width="20px"
+                                                                                color="#ff5733"
+                                                                                ariaLabel="tail-spin-loading"
+                                                                                radius="2"
+                                                                                wrapperStyle={{}}
+                                                                                wrapperClass=""
+                                                                                />
+                                                                            }
+                                                                        </div>
+                                                                        <h3>{this.state.selectedHeaderOption === 'option-2' && this.state.selectedHeaderOptionLoading !== 2 ? 'Close' : this.state.selectedHeaderOptionLoading === 2 ? '' : `Shopping List`}</h3>
                                                                     </div>
                                                                 </button>
-                                                                <h4>↗︎</h4>
+                                                                <h4>{this.state.selectedHeaderOption !== 'option-2' ? (<>↗︎</>) : (<>✕</>)}</h4>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
                                                             <button onClick={() => this.handleTriggerHeaderTransitions('option-3', 3)} className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3-btn'>
-                                                                    <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3'>
+                                                                    <div className={`homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3 ${this.state.selectedHeaderOption === 'option-3' ? 'selected' : ''}`}>
                                                                         <img src='/assets/images/home-main-body/product-btn-3.png'/>
-                                                                        <h3>Jipange Delivery</h3>
+                                                                        <div className={`homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3-loading ${this.state.selectedHeaderOptionLoading === 3 ? 'display' : ''}`}>
+                                                                            {this.state.selectedHeaderOptionLoading === 3 && 
+                                                                                <TailSpin
+                                                                                visible={true}
+                                                                                height="20px"
+                                                                                width="20px"
+                                                                                color="#ff5733"
+                                                                                ariaLabel="tail-spin-loading"
+                                                                                radius="2"
+                                                                                wrapperStyle={{}}
+                                                                                wrapperClass=""
+                                                                                />
+                                                                            }
+                                                                        </div>
+                                                                        <h3>{this.state.selectedHeaderOption === 'option-3' && this.state.selectedHeaderOptionLoading !== 3 ? 'Close' : this.state.selectedHeaderOptionLoading === 3 ? '' : `Jipange Delivery`}</h3>
                                                                     </div>
                                                                 </button>
-                                                                <h4>↗︎</h4>
+                                                                <h4>{this.state.selectedHeaderOption !== 'option-3' ? (<>↗︎</>) : (<>✕</>)}</h4>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
                                                                 <button onClick={() => this.handleTriggerHeaderTransitions('option-4', 4)} className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4-btn'>
