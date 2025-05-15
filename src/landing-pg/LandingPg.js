@@ -6923,20 +6923,49 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4 {
     background-color: #ffdada !important;
     transition: background-color 0.35s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4.selected {
+    background-color: transparent !important;
+    border: 1px solid #ff5733;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4:hover {
     background-color: transparent !important;
 }
 
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4.selected:hover {
+    background-color: transparent !important;
+    border: 0px solid transparent;
+}
+
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4 img {
     margin-left: 11%;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4.selected h3 {
+    font-weight: bold; 
+    text-decoration: underline;
+    font-size: 110%%;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4:hover h3 {
     color: white;
 }
 
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4-loading.display {
+    position: absolute;
+    bottom: -0.6rem;
+    left: 1.25rem;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: transparent;
+}
 
 .homepage-header-inner-body-poster-left-logged-in-header-greeting h1 { 
     margin-top: 0px;
@@ -18517,12 +18546,26 @@ export default class LandingPg extends Component {
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
                                                                 <button onClick={() => this.handleTriggerHeaderTransitions('option-4', 4)} className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4-btn'>
-                                                                    <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4'>
+                                                                    <div className={`homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4 ${this.state.selectedHeaderOption === 'option-4' ? 'selected' : ''}`}>
                                                                         <img src='/assets/images/home-main-body/product-btn-4.png'/>
-                                                                        <h3>Shop Pamoja</h3>
+                                                                        <div className={`homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4-loading ${this.state.selectedHeaderOptionLoading === 4 ? 'display' : ''}`}>
+                                                                            {this.state.selectedHeaderOptionLoading === 4 && 
+                                                                                <TailSpin
+                                                                                visible={true}
+                                                                                height="20px"
+                                                                                width="20px"
+                                                                                color="#ff5733"
+                                                                                ariaLabel="tail-spin-loading"
+                                                                                radius="2"
+                                                                                wrapperStyle={{}}
+                                                                                wrapperClass=""
+                                                                                />
+                                                                            }
+                                                                        </div>
+                                                                        <h3>{this.state.selectedHeaderOption === 'option-4' && this.state.selectedHeaderOptionLoading !== 4 ? 'Close' : this.state.selectedHeaderOptionLoading === 4 ? '' : `Shop Pamoja`}</h3>
                                                                     </div>
                                                                 </button>
-                                                                <h4>↗︎</h4>
+                                                                <h4>{this.state.selectedHeaderOption !== 'option-4' ? (<>↗︎</>) : (<>✕</>)}</h4>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
 
