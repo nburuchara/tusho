@@ -3830,6 +3830,7 @@ const Styles = styled.div `
     font-family: poppins;
     color: #5e626a;
     font-size: 85%;
+    margin-top: 0.5rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent {
@@ -3851,6 +3852,57 @@ const Styles = styled.div `
     color: black
 }
 
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid blue;
+    justify-content: left;
+    flex-direction: column;
+    position: relative;
+}
+
+// .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-header {
+
+// }
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options p {
+    margin-top: 0px;
+    font-size: 70.5%;
+    text-align: left;
+    position: absolute;
+    top: 0.15rem;
+    margin-left: 1%;
+    left: 0;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-list {
+    border: 1px solid black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 75%;
+    width: 100%;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-loading {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-loading p {
+    margin-top: 0.25rem;
+    font-size: 72.5%;
+    color: #5e626a;
+    font-family: poppins;
+}
+
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select {
     // border: 1px solid black;
     width: 90%;
@@ -3864,6 +3916,11 @@ const Styles = styled.div `
     padding-bottom: 5px;
     background-color: #faece9;
     position: relative;
+    transition: height 0.5s ease-in-out;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select.selector-open {
+    height: 6rem;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select.manual-selected {
@@ -3943,7 +4000,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-enter-form-footer {
     position: absolute;
-    bottom: 0;
+    bottom: -2rem;
     width: 100%;
     height: 28%;
     // border: 1px solid black;
@@ -11491,6 +11548,8 @@ export default class LandingPg extends Component {
             showJipangeAirtelPayment: false,
             showJipangeConfirmAddress: false,
             showJipangeSelectAddressClicked: false,
+            showJipangeSelectAddressLoading: false,
+            showJipangeSelectAddressOptions: false,
             disableJipangePaymentBtns: false,
             makeJipangePaymentCardDefault: true,
             makeJipangePaymentCardLoading: false,
@@ -12936,8 +12995,16 @@ export default class LandingPg extends Component {
 
     selectJipangeDeliveryAddress = () => {
         this.setState((prevState) => ({
-            showJipangeSelectAddressClicked: prevState.showJipangeSelectAddressClicked
-        }))
+            showJipangeSelectAddressClicked: !this.state.showJipangeSelectAddressClicked,
+            showJipangeSelectAddressLoading: true
+        }), () => {
+            setTimeout(() => {
+                this.setState({
+                    showJipangeSelectAddressLoading: false,
+                    showJipangeSelectAddressOptions: true
+                })
+            }, 2000)
+        })
     }
 
     saveJipangeOrder = () => {
@@ -17353,17 +17420,46 @@ export default class LandingPg extends Component {
                                                                                 <p>Enter your shipping address for this order:</p>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent'>
                                                                                     <h5>Recently Used (<label>selected by default</label>):</h5>
-                                                                                    <div className={`jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select ${this.state.jipangeManualAddressLine1 !== '' || this.state.jipangeManualAddressLine2 !== '' ? 'manual-selected' : ''}`}>
-                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-radio'>
-                                                                                            <img src='/assets/icons/home-jipange/home-address-icon.png'/>
-                                                                                        </div>
-                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-details'>
-                                                                                            <h5>Home address</h5>
-                                                                                            <p>Sunshine Villas - Hse No. 3, Spring Valley, Lower Kabete, Nairobi</p>
-                                                                                        </div>
-                                                                                        <div onClick={() => this.setState({ showJipangeSelectAddressClicked: !this.state.showJipangeSelectAddressClicked })} className={`jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-selector ${this.state.showJipangeSelectAddressClicked ? 'selected' : ''}`}>
-                                                                                            <img src='/assets/icons/home-main-header/down-arrow.png' />
-                                                                                        </div>
+                                                                                    <div className={`jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select ${this.state.jipangeManualAddressLine1 !== '' || this.state.jipangeManualAddressLine2 !== '' ? 'manual-selected' : this.state.showJipangeSelectAddressClicked ? 'selector-open' : ''}`}>
+                                                                                        {!this.state.showJipangeSelectAddressLoading && !this.state.showJipangeSelectAddressOptions && 
+                                                                                            <>
+                                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-radio'>
+                                                                                                    <img src='/assets/icons/home-jipange/home-address-icon.png'/>
+                                                                                                </div>
+                                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-details'>
+                                                                                                    <h5>Home address</h5>
+                                                                                                    <p>Sunshine Villas - Hse No. 3, Spring Valley, Lower Kabete, Nairobi</p>
+                                                                                                </div>
+                                                                                                <div onClick={() => this.selectJipangeDeliveryAddress()} className={`jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-selector ${this.state.showJipangeSelectAddressClicked ? 'selected' : ''}`}>
+                                                                                                    <img src='/assets/icons/home-main-header/down-arrow.png' />
+                                                                                                </div>
+                                                                                            </>
+                                                                                        }
+                                                                                        {this.state.showJipangeSelectAddressLoading && 
+                                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-loading'>
+                                                                                                <TailSpin
+                                                                                                visible={true}
+                                                                                                height="18.5px"
+                                                                                                width="18.5px"
+                                                                                                color="#ff5733"
+                                                                                                ariaLabel="tail-spin-loading"
+                                                                                                radius="2"
+                                                                                                wrapperStyle={{}}
+                                                                                                wrapperClass=""
+                                                                                                />
+                                                                                                <p>Loading...</p>
+                                                                                            </div>
+                                                                                        }
+                                                                                        {this.state.showJipangeSelectAddressOptions && 
+                                                                                            <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options'>
+                                                                                                {/* <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-header'> */}
+                                                                                                    <p>Select an address:</p>
+                                                                                                {/* </div> */}
+                                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-list'>
+
+                                                                                                </div>
+                                                                                            </div>  
+                                                                                        }
                                                                                     </div>
                                                                                 </div>
 
