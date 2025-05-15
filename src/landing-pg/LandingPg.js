@@ -6762,6 +6762,8 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 {
     background-color: #dff2f8 !important;
+    position: relative;
+    overflow: hidden;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1.selected {
@@ -6796,6 +6798,18 @@ const Styles = styled.div `
     font-weight: bold; 
     text-decoration: underline;
     font-size: 110%%;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1-loading.display {
+    position: absolute;
+    bottom: -0.6rem;
+    left: 1.25rem;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: transparent;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2 {
@@ -13406,9 +13420,11 @@ export default class LandingPg extends Component {
     };
 
     handleTriggerHeaderTransitions = (option, optionNum) => {
+        let optionLoading
         if (this.state.selectedHeaderOption === '') {
             this.setState((prevState) => ({ 
                 // selectedHeaderOption: option,
+                selectedHeaderOptionLoading: optionNum,
                 isLeftHeaderTransitionActive: !prevState.isLeftHeaderTransitionActive,
                 isRightBottomHeaderTransitionActive: !prevState.isRightBottomHeaderTransitionActive,
                 isRightTopHeaderTransitionActive: !prevState.isRightTopHeaderTransitionActive
@@ -13425,6 +13441,7 @@ export default class LandingPg extends Component {
 
                 setTimeout(() => {
                     this.setState({
+                        selectedHeaderOptionLoading: null,
                         isLeftHeaderTransitionActive: false,
                         isRightBottomHeaderTransitionActive: false,
                         isRightTopHeaderTransitionActive: false
@@ -13433,12 +13450,14 @@ export default class LandingPg extends Component {
             });
         } else if (this.state.selectedHeaderOption === option) {
             this.setState((prevState) => ({
+                selectedHeaderOptionLoading: optionNum
             }), () => {
                 setTimeout(() => {
                     this.setState({
+                        selectedHeaderOptionLoading: null,
                         selectedHeaderOption: ''
                     })
-                }, 800)
+                }, 1000)
             })
         } else {
             setTimeout(() => {
@@ -18365,7 +18384,21 @@ export default class LandingPg extends Component {
                                                                 <button onClick={() => this.handleTriggerHeaderTransitions('option-1', 1)} className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1-btn'>
                                                                     <div className={`homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 ${this.state.selectedHeaderOption === 'option-1' ? 'selected' : ''}`}>
                                                                         <img src='/assets/images/home-main-body/product-btn-15.png'/>
-                                                                        <h3>{this.state.selectedHeaderOption === 'option-1' ? 'Close' : `New Products (${7})`}</h3>
+                                                                        <div className={`homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1-loading ${this.state.selectedHeaderOptionLoading === 1 ? 'display' : ''}`}>
+                                                                            {this.state.selectedHeaderOptionLoading === 1 && 
+                                                                                <TailSpin
+                                                                                visible={true}
+                                                                                height="20px"
+                                                                                width="20px"
+                                                                                color="#ff5733"
+                                                                                ariaLabel="tail-spin-loading"
+                                                                                radius="2"
+                                                                                wrapperStyle={{}}
+                                                                                wrapperClass=""
+                                                                                />
+                                                                            }
+                                                                        </div>
+                                                                        <h3>{this.state.selectedHeaderOption === 'option-1' && this.state.selectedHeaderOptionLoading !== 1 ? 'Close' : this.state.selectedHeaderOptionLoading === 1 ? '' : `New Products (${7})`}</h3>
                                                                     </div>
                                                                 </button>
                                                                 <h4>{this.state.selectedHeaderOption !== 'option-1' ? (<>↗︎</>) : (<>✕</>)}</h4>
