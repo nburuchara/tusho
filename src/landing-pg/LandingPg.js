@@ -5157,10 +5157,11 @@ const Styles = styled.div `
     border-bottom: 1px solid #5e626a;
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 
 .my-orders-payment-home-page-header-inner-header-left {
-    width: 60%;
+    width: 75%;
     // border: 1px solid black;
     position: relative;
 }
@@ -5179,10 +5180,63 @@ const Styles = styled.div `
 }
 
 .my-orders-payment-home-page-header-inner-header-right { 
-    width: 40%;
-    border: 1px solid black;
+    width: 25%;
+    height: 60%;
+    position: absolute;
+    right: 0;
+    bottom: 0.45rem;
+    border: 1px solid #ff5733;
+    border-radius: 6px;
+    background-color: #faece9;
     display: flex;
     flex-direction: row;
+    cursor: pointer;
+}
+
+.my-orders-payment-home-page-header-inner-header-right:hover .my-orders-payment-home-page-header-inner-header-right-left-side p  { 
+    transform: translateX(-0.15rem);
+}
+
+.my-orders-payment-home-page-header-inner-header-right:hover .my-orders-payment-home-page-header-inner-header-right-right-side p  { 
+    text-decoration: underline;
+}
+
+.my-orders-payment-home-page-header-inner-header-right-left-side {
+    width: 20%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.my-orders-payment-home-page-header-inner-header-right-left-side p {
+    margin-top: 0px;
+    padding-top: 0.05rem;
+    margin-bottom: 0px;
+    // margin-left: 2.5%;
+    font-family: poppins;
+    color: #ff5733;
+    font-size: 70%;
+    font-weight: bold;
+    transition: transform 0.35s ease-in-out;
+}
+
+.my-orders-payment-home-page-header-inner-header-right-right-side {
+    width: 80%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-orders-payment-home-page-header-inner-header-right-right-side p {
+    margin-top: 0px;
+    // padding-top: 0.25rem;
+    margin-bottom: 0px;
+    // margin-left: 2.5%;
+    font-family: poppins;
+    color: #ff5733;
+    font-size: 68.5%;
 }
 
 .my-orders-payment-home-page-header-inner-body {
@@ -17379,7 +17433,12 @@ export default class LandingPg extends Component {
                                                                     <p>My Cart</p>
                                                                 </div>
                                                                 <div className='my-orders-payment-home-page-header-inner-header-right'>
-
+                                                                    <div className='my-orders-payment-home-page-header-inner-header-right-left-side'>
+                                                                        <p>←</p>
+                                                                    </div>
+                                                                    <div className='my-orders-payment-home-page-header-inner-header-right-right-side'>
+                                                                        <p>See all orders</p>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div className='my-orders-payment-home-page-header-inner-body'>
