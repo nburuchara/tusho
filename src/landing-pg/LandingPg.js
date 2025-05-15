@@ -3863,6 +3863,7 @@ const Styles = styled.div `
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: #faece9;
+    position: relative;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select.manual-selected {
@@ -3902,6 +3903,23 @@ const Styles = styled.div `
     font-size: 68%;
     margin-right: 2.5%;
     color: #000;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-selector {
+    position: absolute;
+    top: 0.25rem;
+    right: 0.35rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    // border: 1px solid black;
+    border-radius: 3.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-selector img {
+    width: 1000%;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-enter h4 {
@@ -17329,6 +17347,9 @@ export default class LandingPg extends Component {
                                                                                         <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-details'>
                                                                                             <h5>Home address</h5>
                                                                                             <p>Sunshine Villas - Hse No. 3, Spring Valley, Lower Kabete, Nairobi</p>
+                                                                                        </div>
+                                                                                        <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-selector'>
+                                                                                            <img src='/assets/icons/home-main-header/down-arrow.png' />
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
