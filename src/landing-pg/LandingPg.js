@@ -3827,6 +3827,9 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-payment p {
     margin-left: 2.5%;
+    font-family: poppins;
+    color: #5e626a;
+    font-size: 85%;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent {
@@ -5108,6 +5111,26 @@ const Styles = styled.div `
     margin-left: 2.5%;
     height: 92.5%;
     position: relative;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order {
+    height: 40%;
+    border: 1px solid black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header {
+    height: 25%;
+    border: 1px solid black;
+    width: 100%;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-body {
+    height: 75%;
+    border: 1px solid black;
+    width: 100%;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-existing-cart {
@@ -11280,8 +11303,8 @@ export default class LandingPg extends Component {
             userSignedIn: true,
             userSignedInLoading: false,
             userSignedInTransition: true,
-            showAccountInformation: true,
-            showJipangeSettings: false,
+            showAccountInformation: false,
+            showJipangeSettings: true,
             showPamojaSettings: false,
             showDeliveryInfoSettings: false,
             showFAQSettings: false,
@@ -11465,7 +11488,7 @@ export default class LandingPg extends Component {
             deliveryInfoAddressType4: false,
 
             //* # My Orders *//
-            showMyOrdersHome: true,
+            showMyOrdersHome: false,
 
             selectedRegPaymentOption: "option1",
             showRegPaymentLoading: false,
@@ -11532,11 +11555,11 @@ export default class LandingPg extends Component {
             transferToProfile: false,
 
             //* - HOME SCREEN ACCOUNT SETTINGS - *//    
-            accountSettingsOpen: false,
-            currentMenuOption: 1,
+            accountSettingsOpen: true,
+            currentMenuOption: 2,
             showAccountSetupIncompleteHeader: true,
-            accountMenuOption1Selected: true,
-            accountMenuOption2Selected: false,
+            accountMenuOption1Selected: false,
+            accountMenuOption2Selected: true,
             accountMenuOption3Selected: false,
             accountMenuOption4Selected: false,
             accountMenuOption5Selected: false,
@@ -13138,7 +13161,7 @@ export default class LandingPg extends Component {
     }
 
     completeRegularOrderBtnClicked = () => {
-        this.saveJipangeOrder()
+        this.saveRegularOrder()
         this.setState({
             completeRegBtnLoading: true,
             completeRegBtnTxt: false,
@@ -14586,18 +14609,17 @@ export default class LandingPg extends Component {
                                             <div className={`searchResultAccount ${this.state.searchBarInputAccountPopup === '' ? 'empty' : ''}`}>
                                                 {isSearchLoadingAccountPopup && 
                                                     <div className='searchResultAccountLoading'>
-                                                        <RotatingLines
-                                                            visible={true}
-                                                            height="22.5"
-                                                            width="22.5"
-                                                            strokeColor="#ff5733"
-                                                            strokeWidth="3"
-                                                            animationDuration="0.75"
-                                                            ariaLabel="rotating-lines-loading"
-                                                            wrapperStyle={{}}
-                                                            wrapperClass=""
-                                                            />
-                                                            <p>Loading...</p>
+                                                        <TailSpin
+                                                        visible={true}
+                                                        height="25px"
+                                                        width="25px"
+                                                        color="#ff5733"
+                                                        ariaLabel="tail-spin-loading"
+                                                        radius="2"
+                                                        wrapperStyle={{}}
+                                                        wrapperClass=""
+                                                        />
+                                                        <p>Loading...</p>
                                                     </div>
                                                 }
                                                 {!isSearchLoadingAccountPopup && resultsFoundAccountPopup && 
@@ -15101,14 +15123,13 @@ export default class LandingPg extends Component {
                                                                                     {this.state.showConfirmJipangeOrderActive &&
                                                                                         <>
                                                                                             <div className='jipange-settings-selected-date-screen-header-inner-header-lining-options-submit-btn-active'>
-                                                                                                <RotatingLines
+                                                                                                <TailSpin
                                                                                                 visible={true}
-                                                                                                height="16.5"
-                                                                                                width="16.5"
-                                                                                                strokeColor="#FF5733"
-                                                                                                strokeWidth="3"
-                                                                                                animationDuration="0.75"
-                                                                                                ariaLabel="rotating-lines-loading"
+                                                                                                height="16.5px"
+                                                                                                width="16.5px"
+                                                                                                color="#ff5733"
+                                                                                                ariaLabel="tail-spin-loading"
+                                                                                                radius="2"
                                                                                                 wrapperStyle={{}}
                                                                                                 wrapperClass=""
                                                                                                 />
@@ -17544,23 +17565,30 @@ export default class LandingPg extends Component {
 
                                         {this.state.showMyOrdersSettings && 
                                             <div className='navbar-profile-account-popup-my-orders-settings'>
-                                                <div className={`navbar-profile-account-popup-my-orders-settings-container`}>
-                                                    <p>My Orders:</p>
-                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content ${this.state.cart.length === 0 ? 'empty' : ''}`}>
-                                                        {this.state.cart.length > 0 && 
-                                                            <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order'>
+                                                {this.state.cart > 0 && this.state.showMyOrdersHome && 
+                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container`}>
+                                                        <p>My Orders:</p>
+                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content ${this.state.cart.length === 0 ? 'empty' : ''}`}>
+                                                            {this.state.cart.length > 0 && 
+                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order'>
+                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header'>
+                                                                        
+                                                                    </div>
+                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body'>
 
-                                                            </div>
-                                                        }
+                                                                    </div>
+                                                                </div>
+                                                            }
 
-                                                        {this.state.cart.length === 0 && 
-                                                            <div className='navbar-profile-account-popup-my-orders-settings-container-content-empty'>
-                                                                <img src='/assets/icons/home-my-orders/no-orders-icon.png'/>
-                                                                <p>No orders yet</p>
-                                                            </div>
-                                                        }
+                                                            {this.state.cart.length === 0 && 
+                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-empty'>
+                                                                    <img src='/assets/icons/home-my-orders/no-orders-icon.png'/>
+                                                                    <p>No orders yet</p>
+                                                                </div>
+                                                            }
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                }
                                                 {this.state.cart.length > 0 && !this.state.showMyOrdersHome && 
                                                     <div style={{width: '97.5%', height: "100%", position: 'relative'}} className='my-orders-payment-home-page'>
                                                         <div className='my-orders-payment-home-page-header'>
@@ -17986,7 +18014,7 @@ export default class LandingPg extends Component {
                                                                             >
                                                                                 {this.state.completeRegBtnTxt && 
                                                                                     <>
-                                                                                        Complete Jipange
+                                                                                        Complete Order
                                                                                     </>
                                                                                 }
                                                                                 {this.state.completeRegBtnLoading && 
