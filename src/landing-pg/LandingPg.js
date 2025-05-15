@@ -6764,9 +6764,19 @@ const Styles = styled.div `
     background-color: #dff2f8 !important;
 }
 
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1.selected {
+    background-color: transparent !important;
+    border: 2px solid #ff5733;
+}
+
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1:hover {
     background-color: transparent !important;
     transition: background-color 0.35s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1.selected:hover {
+    background-color: transparent !important;
+    border: 0px solid transparent;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 img {
@@ -6780,6 +6790,12 @@ const Styles = styled.div `
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 h3 {
     // color: #ff5733;
     transition: color 0.35s ease-in-out;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1.selected h3 {
+    font-weight: bold; 
+    text-decoration: underline;
+    font-size: 110%%;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2 {
@@ -7056,6 +7072,10 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster:has(.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4-btn:focus) {
     --background-color: #ffdada;
+}
+
+.homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1-btn.selected {
+    background-color: transparent !important;
 }
 
 .homepage-header-inner-body-poster-right-left-section-logged-in-container {
@@ -11341,6 +11361,8 @@ export default class LandingPg extends Component {
             deliveryInfoAddressType4: false,
 
             //* # My Orders *//
+            showMyOrdersHome: true,
+
             selectedRegPaymentOption: "option1",
             showRegPaymentLoading: false,
             showRegCardPayment: true,
@@ -13383,7 +13405,7 @@ export default class LandingPg extends Component {
         this.setState({ brandSearchTerm: event.target.value });
     };
 
-    handleTriggerHeaderTransitions = (option) => {
+    handleTriggerHeaderTransitions = (option, optionNum) => {
         if (this.state.selectedHeaderOption === '') {
             this.setState((prevState) => ({ 
                 // selectedHeaderOption: option,
@@ -17408,12 +17430,13 @@ export default class LandingPg extends Component {
 
                                         {this.state.showMyOrdersSettings && 
                                             <div className='navbar-profile-account-popup-my-orders-settings'>
-                                                {/* <div className={`navbar-profile-account-popup-my-orders-settings-container`}>
+                                                <div className={`navbar-profile-account-popup-my-orders-settings-container`}>
                                                     <p>My Orders:</p>
                                                     <div className={`navbar-profile-account-popup-my-orders-settings-container-content ${this.state.cart.length === 0 ? 'empty' : ''}`}>
                                                         {this.state.cart.length > 0 && 
-                                                            <>
-                                                            </>
+                                                            <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order'>
+
+                                                            </div>
                                                         }
 
                                                         {this.state.cart.length === 0 && 
@@ -17423,9 +17446,8 @@ export default class LandingPg extends Component {
                                                             </div>
                                                         }
                                                     </div>
-                                                    
-                                                </div> */}
-                                                {this.state.cart.length > 0 && 
+                                                </div>
+                                                {this.state.cart.length > 0 && !this.state.showMyOrdersHome && 
                                                     <div style={{width: '97.5%', height: "100%", position: 'relative'}} className='my-orders-payment-home-page'>
                                                         <div className='my-orders-payment-home-page-header'>
                                                             <div className='my-orders-payment-home-page-header-inner-header'>
@@ -18340,16 +18362,16 @@ export default class LandingPg extends Component {
                                                     <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body'>
                                                         <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container'>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
-                                                                <button onClick={() => this.handleTriggerHeaderTransitions('option-1')} className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1-btn'>
-                                                                    <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1'>
+                                                                <button onClick={() => this.handleTriggerHeaderTransitions('option-1', 1)} className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1-btn'>
+                                                                    <div className={`homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-1 ${this.state.selectedHeaderOption === 'option-1' ? 'selected' : ''}`}>
                                                                         <img src='/assets/images/home-main-body/product-btn-15.png'/>
-                                                                        <h3>New Products (7)</h3>
+                                                                        <h3>{this.state.selectedHeaderOption === 'option-1' ? 'Close' : `New Products (${7})`}</h3>
                                                                     </div>
                                                                 </button>
-                                                                <h4>↗︎</h4>
+                                                                <h4>{this.state.selectedHeaderOption !== 'option-1' ? (<>↗︎</>) : (<>✕</>)}</h4>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
-                                                                <button onClick={() => this.handleTriggerHeaderTransitions('option-2')}className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2-btn'>
+                                                                <button onClick={() => this.handleTriggerHeaderTransitions('option-2', 2)}className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2-btn'>
                                                                     <div  className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2'>
                                                                         <img src='/assets/images/home-main-body/product-btn-25.png'/>
                                                                         <h3>Shopping List</h3>
@@ -18358,7 +18380,7 @@ export default class LandingPg extends Component {
                                                                 <h4>↗︎</h4>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
-                                                            <button onClick={() => this.handleTriggerHeaderTransitions('option-3')} className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3-btn'>
+                                                            <button onClick={() => this.handleTriggerHeaderTransitions('option-3', 3)} className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3-btn'>
                                                                     <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3'>
                                                                         <img src='/assets/images/home-main-body/product-btn-3.png'/>
                                                                         <h3>Jipange Delivery</h3>
@@ -18367,7 +18389,7 @@ export default class LandingPg extends Component {
                                                                 <h4>↗︎</h4>
                                                             </div>
                                                             <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-box'>
-                                                                <button onClick={() => this.handleTriggerHeaderTransitions('option-4')} className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4-btn'>
+                                                                <button onClick={() => this.handleTriggerHeaderTransitions('option-4', 4)} className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4-btn'>
                                                                     <div className='homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-4'>
                                                                         <img src='/assets/images/home-main-body/product-btn-4.png'/>
                                                                         <h3>Shop Pamoja</h3>
