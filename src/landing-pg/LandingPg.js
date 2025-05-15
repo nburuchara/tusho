@@ -6821,7 +6821,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2.selected {
     background-color: transparent !important;
-    border: 2px solid #ff5733;
+    border: 1px solid #ff5733;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-2:hover {
@@ -6873,7 +6873,7 @@ const Styles = styled.div `
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3.selected {
     background-color: transparent !important;
-    border: 2px solid #ff5733;
+    border: 1px solid #ff5733;
 }
 
 .homepage-header-inner-body-poster-left-logged-in-body-inner-body-container-option-3:hover {
