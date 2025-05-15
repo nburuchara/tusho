@@ -3907,8 +3907,8 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-selector {
     position: absolute;
-    top: 0.25rem;
-    right: 0.35rem;
+    top: 0.4rem;
+    right: 0.45rem;
     width: 0.8rem;
     height: 0.8rem;
     // border: 1px solid black;
@@ -3916,16 +3916,16 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.35s ease-in-out;
     cursor: pointer;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-selector img {
+    transition: transform 0.35s ease-in-out;
+    width: 100%;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-selector.selected img {
     transform: rotate(180deg);
-}
-
-.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-selector img {
-    width: 100%;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-enter h4 {
@@ -12935,9 +12935,9 @@ export default class LandingPg extends Component {
     }
 
     selectJipangeDeliveryAddress = () => {
-        this.setState((prevState => ({
+        this.setState((prevState) => ({
             showJipangeSelectAddressClicked: prevState.showJipangeSelectAddressClicked
-        })))
+        }))
     }
 
     saveJipangeOrder = () => {
@@ -17361,7 +17361,7 @@ export default class LandingPg extends Component {
                                                                                             <h5>Home address</h5>
                                                                                             <p>Sunshine Villas - Hse No. 3, Spring Valley, Lower Kabete, Nairobi</p>
                                                                                         </div>
-                                                                                        <div onClick={this.selectJipangeDeliveryAddress} className={`jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-selector ${this.state.showJipangeSelectAddressClicked ? 'selected' : ''}`}>
+                                                                                        <div onClick={() => this.setState({ showJipangeSelectAddressClicked: !this.state.showJipangeSelectAddressClicked })} className={`jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-selector ${this.state.showJipangeSelectAddressClicked ? 'selected' : ''}`}>
                                                                                             <img src='/assets/icons/home-main-header/down-arrow.png' />
                                                                                         </div>
                                                                                     </div>
