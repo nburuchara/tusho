@@ -5311,7 +5311,7 @@ const Styles = styled.div `
     width: 92.5%;
     margin-top: 0.5rem;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #ff5733;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -5335,7 +5335,7 @@ const Styles = styled.div `
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img {
     width: 27px;
     height: 27px;
-    border: 1px solid #20313a;
+    border: 1px solid white;
     background-color: #ff5733;
     border-radius: 50%;
     display: flex;
@@ -5353,8 +5353,8 @@ const Styles = styled.div `
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top {
     height: 40%;
     // border: 1px solid black;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
     background-color: #ff5733;
     z-index: 0;
     display: flex;
@@ -5367,8 +5367,8 @@ const Styles = styled.div `
     margin-top: 0px;
     margin-bottom: 0px;
     margin-right: 0.285rem;
-    font-size: 65.5%;
-    font-family: lexend;
+    font-size: 62.5%;
+    // font-family: lexend;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom {
