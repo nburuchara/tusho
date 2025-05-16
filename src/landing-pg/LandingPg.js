@@ -3874,9 +3874,28 @@ const Styles = styled.div `
     font-size: 70.5%;
     text-align: left;
     position: absolute;
-    top: 0.15rem;
+    top: 0;
     margin-left: 1%;
     left: 0;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-header button {
+    position: absolute;
+    top: -0.1rem;
+    right: 0.25rem;
+    height: 1.1rem;
+    border: 1px solid #ff5733;
+    width: 18.5%;
+    color: #ff5733;
+    font-size: 65%;
+    border-radius: 3.5px;
+    cursor: pointer;
+    transition: background-color 0.35 ease-in-out, color 0.35s ease-in-out;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-header button:hover {
+    background-color: #ff5733;
+    color: white;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-list {
@@ -3891,7 +3910,7 @@ const Styles = styled.div `
 .jipange-order-address-option {
     height: 2.25rem;
     border-bottom: 1px solid #ff5733;
-    background-color: #ffd7cf;
+    background-color: #ffdcd5;
     display: flex;
     flex-direction: row;
 }
@@ -17504,6 +17523,7 @@ export default class LandingPg extends Component {
                                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options'>
                                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-header'>
                                                                                                     <p>Select an address:</p>
+                                                                                                    <button>Close</button>
                                                                                                 </div>
                                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-list'>
                                                                                                     {this.state.savedDeliveryAddresses.map((address) => (
