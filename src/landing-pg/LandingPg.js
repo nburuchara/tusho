@@ -17803,7 +17803,7 @@ export default class LandingPg extends Component {
 
                                         {this.state.showMyOrdersSettings && 
                                             <div className='navbar-profile-account-popup-my-orders-settings'>
-                                                {this.state.cart > 0 && this.state.showMyOrdersHome && 
+                                                {this.state.cart.length > 0 && this.state.showMyOrdersHome && 
                                                     <div className={`navbar-profile-account-popup-my-orders-settings-container`}>
                                                         <p>My Orders:</p>
                                                         <div className={`navbar-profile-account-popup-my-orders-settings-container-content ${this.state.cart.length === 0 ? 'empty' : ''}`}>
