@@ -5311,7 +5311,7 @@ const Styles = styled.div `
     width: 92.5%;
     margin-top: 0.5rem;
     border-radius: 5px;
-    border: 1px solid #ff5733;
+    border: 1px solid #20313a;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -5336,12 +5336,16 @@ const Styles = styled.div `
     width: 27px;
     height: 27px;
     border: 1px solid white;
-    background-color: #ff5733;
+    background-color: #20313a;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img img {
+    width: 50%;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img h1 { 
@@ -5353,21 +5357,23 @@ const Styles = styled.div `
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top {
     height: 40%;
     // border: 1px solid black;
+    border-bottom: 1px solid #ff5733;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
-    background-color: #ff5733;
+    background-color: #20313a;
     z-index: 0;
     display: flex;
     align-items: center;
     justify-content: right;
+    overflow: hidden;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top h5 {
     color: white;
     margin-top: 0px;
-    margin-bottom: 0px;
-    margin-right: 0.285rem;
-    font-size: 62.5%;
+    margin-bottom: -0.2rem;
+    margin-right: 0.05rem;
+    font-size: 125.5%;
     // font-family: lexend;
 }
 
@@ -17937,11 +17943,12 @@ export default class LandingPg extends Component {
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
                                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img'>
-                                                                                            <h1>1</h1>
+                                                                                            {/* <h1>1</h1> */}
+                                                                                            <img src='/assets/icons/home-my-orders/location-icon.png'/>
                                                                                         </div>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top'>
-                                                                                        <h5>LOCATION</h5>
+                                                                                        <h5>Location</h5>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom'>
 
@@ -17952,11 +17959,12 @@ export default class LandingPg extends Component {
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
                                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img'>
-                                                                                            <h1>2</h1>
+                                                                                            {/* <h1>2</h1> */}
+                                                                                            <img src='/assets/icons/home-my-orders/delivery-time-icon.png'/>
                                                                                         </div>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top'>
-
+                                                                                        <h5>Delivery</h5>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom'>
 
@@ -17967,11 +17975,12 @@ export default class LandingPg extends Component {
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
                                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img'>
-                                                                                            <h1>3</h1>
+                                                                                            {/* <h1>3</h1> */}
+                                                                                            <img src='/assets/icons/home-my-orders/pay-icon.png'/>
                                                                                         </div>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top'>
-
+                                                                                        <h5>Pay</h5>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom'>
 
