@@ -5310,7 +5310,7 @@ const Styles = styled.div `
     height: 90%;
     width: 95%;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #ff5733;
     display: flex;
     flex-direction: column;
 }
@@ -5319,18 +5319,27 @@ const Styles = styled.div `
     width: 33.3%;
     border: 1px solid black;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }   
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-2 {
     width: 33.3%;
     border: 1px solid black;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-3 {
     width: 33.3%;
     border: 1px solid black;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-body {
