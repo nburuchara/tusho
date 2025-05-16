@@ -5325,7 +5325,7 @@ const Styles = styled.div `
     width: 30.5%;
     // border: 1px solid black;
     z-index: 1;
-    background-color: white;
+    background-color: transparent;
     border-top-left-radius: 5px;
     display: flex;
     align-items: center;
@@ -5335,12 +5335,13 @@ const Styles = styled.div `
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img {
     width: 27px;
     height: 27px;
-    border: 1px solid #ff5733;
+    border: 1px solid #20313a;
     background-color: #ff5733;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img h1 { 
@@ -5354,6 +5355,7 @@ const Styles = styled.div `
     // border: 1px solid black;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
+    background-color: #ff5733;
     z-index: 0;
     display: flex;
     align-items: center;
@@ -5361,11 +5363,11 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top h5 {
-    color: #ff5733;
+    color: white;
     margin-top: 0px;
     margin-bottom: 0px;
-    margin-right: 0.15rem;
-    font-size: 70%;
+    margin-right: 0.285rem;
+    font-size: 65.5%;
     font-family: lexend;
 }
 
