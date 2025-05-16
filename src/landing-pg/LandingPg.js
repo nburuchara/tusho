@@ -5319,25 +5319,62 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0.1rem;
+    left: 0.1rem;
     height: 65%;
     width: 30.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    z-index: 1;
+    background-color: white;
+    border-top-left-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img {
+    width: 27px;
+    height: 27px;
+    border: 1px solid #ff5733;
+    background-color: #ff5733;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img h1 { 
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top {
     height: 40%;
-    border: 1px solid black;
+    // border: 1px solid black;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top h5 {
+    color: #ff5733;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0.15rem;
+    font-size: 70%;
+    font-family: lexend;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom {
     height: 60%;
-    border: 1px solid black;
+    // border: 1px solid black;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+    z-index: 0;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-1 {
@@ -17897,10 +17934,12 @@ export default class LandingPg extends Component {
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-1'>
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
-
+                                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img'>
+                                                                                            <h1>1</h1>
+                                                                                        </div>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top'>
-
+                                                                                        <h5>LOCATION</h5>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom'>
 
@@ -17910,7 +17949,9 @@ export default class LandingPg extends Component {
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-2'>
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
-
+                                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img'>
+                                                                                            <h1>2</h1>
+                                                                                        </div>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top'>
 
@@ -17923,7 +17964,9 @@ export default class LandingPg extends Component {
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-3'>
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
-
+                                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img'>
+                                                                                            <h1>3</h1>
+                                                                                        </div>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top'>
 
