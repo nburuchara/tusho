@@ -5246,7 +5246,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-my-orders-settings-container {
     height: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     position: relative;
 }
 
@@ -5265,7 +5265,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content {
-    border: 1px solid black;
+    // border: 1px solid black;
     border-top: 1px solid #5e626a;
     width: 95%;
     margin-left: 2.5%;
@@ -5275,7 +5275,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order {
     height: 40%;
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -5292,7 +5292,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left {
     width: 25%;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 100%;
 }
 
@@ -5302,22 +5302,47 @@ const Styles = styled.div `
     height: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: bottom;
     justify-content: right;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn {
-    height: 90%;
-    width: 95%;
+    height: 80.5%;
+    width: 92.5%;
+    margin-top: 0.5rem;
     border-radius: 5px;
-    border: 1px solid #ff5733;
+    border: 1px solid #ccc;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 65%;
+    width: 30.5%;
+    border: 1px solid black;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top {
+    height: 40%;
+    border: 1px solid black;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom {
+    height: 60%;
+    border: 1px solid black;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-1 {
     width: 33.3%;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 100%;
     display: flex;
     align-items: center;
@@ -5326,7 +5351,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-2 {
     width: 33.3%;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 100%;
     display: flex;
     align-items: center;
@@ -5335,7 +5360,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-3 {
     width: 33.3%;
-    border: 1px solid black;
+    // border: 1px solid black;
     height: 100%;
     display: flex;
     align-items: center;
@@ -5344,7 +5369,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-body {
     height: 75%;
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 100%;
 }
 
@@ -17871,17 +17896,41 @@ export default class LandingPg extends Component {
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right'>
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-1'>
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
 
+                                                                                    </div>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top'>
+
+                                                                                    </div>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom'>
+
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-2'>
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
 
+                                                                                    </div>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top'>
+
+                                                                                    </div>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom'>
+
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-3'>
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
 
+                                                                                    </div>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top'>
+
+                                                                                    </div>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom'>
+
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>   
