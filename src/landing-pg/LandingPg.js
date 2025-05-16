@@ -3880,7 +3880,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-list {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #ff5733;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -3890,7 +3890,8 @@ const Styles = styled.div `
 
 .jipange-order-address-option {
     height: 2.25rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ff5733;
+    background-color: #ffd7cf;
     display: flex;
     flex-direction: row;
 }
@@ -3921,14 +3922,15 @@ const Styles = styled.div `
 
 .jipange-order-address-option-right {
     width: 10%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .jipange-order-address-option-right img {
-    width: 65%;
+    width: 13.5px;
+    height: 13.5px;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-loading {
