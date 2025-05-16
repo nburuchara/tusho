@@ -3860,14 +3860,16 @@ const Styles = styled.div `
     // border: 1px solid blue;
     justify-content: left;
     flex-direction: column;
+}
+
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-header {
+    height: 23.5%;
+    width: 100%;
+    border: 1px solid black;
     position: relative;
 }
 
-// .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-header {
-
-// }
-
-.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options p {
+.jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-header p {
     margin-top: 0px;
     font-size: 70.5%;
     text-align: left;
@@ -3887,7 +3889,38 @@ const Styles = styled.div `
 }
 
 .jipange-order-address-option {
-    height: 1rem%;
+    height: 2.25rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.jipange-order-address-option-left {
+    width: 90%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.jipange-order-address-option-left h5 {
+    margin-top: 0.2rem;
+    margin-bottom: 0.3rem;
+    margin-left: 1.5%;
+    color: #ff5733;
+    font-family: lexend;
+}
+
+.jipange-order-address-option-left p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 1.5%;
+    color: #ff5733;
+    font-family: poppins;
+    font-size: 70%;
+}
+
+.jipange-order-address-option-right {
+    width: 10%;
     border: 1px solid black;
 }
 
@@ -3969,8 +4002,8 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-selector {
     position: absolute;
-    top: 0.4rem;
-    right: 0.45rem;
+    top: 0.45rem;
+    right: 0.65rem;
     width: 0.8rem;
     height: 0.8rem;
     // border: 1px solid black;
@@ -4317,7 +4350,7 @@ const Styles = styled.div `
 
 .jipange-settings-selected-date-screen-header-inner-body-items-container-modify-order {
     width: 100%;
-    height: 6.5rem;
+    height: 7.25rem;
     // border: 1px solid black;
     overflow-y: auto;
 }
@@ -11570,7 +11603,7 @@ export default class LandingPg extends Component {
 
             //* # Delivery Info *//
             savedDeliveryAddresses: [
-                {id: 0, line1: 'Sunshine Villas - Hse No. 3', line2: 'Spring Valley, Lower Kabete', city: 'Nairobi'}
+                {id: 0, line1: 'Sunshine Villas - Hse No. 3', line2: 'Spring Valley, Lower Kabete', city: 'Nairobi', type: 'Home', selected: true}
             ],
             deliveryInfoDefaultAddressSelected: false,
             deliveryInfoDefaultAddressText: "",
@@ -17460,13 +17493,19 @@ export default class LandingPg extends Component {
                                                                                         }
                                                                                         {this.state.showJipangeSelectAddressOptions && 
                                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options'>
-                                                                                                {/* <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-header'> */}
+                                                                                                <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-header'>
                                                                                                     <p>Select an address:</p>
-                                                                                                {/* </div> */}
+                                                                                                </div>
                                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-list'>
                                                                                                     {this.state.savedDeliveryAddresses.map((address) => (
                                                                                                         <div className='jipange-order-address-option' id={address.id}>
-                                                                                                            
+                                                                                                            <div className='jipange-order-address-option-left'>
+                                                                                                                <h5>{address.type}</h5>
+                                                                                                                <p>{address.line1}, {address.line2}, {address.city}</p>
+                                                                                                            </div>
+                                                                                                            <div className='jipange-order-address-option-right'>
+
+                                                                                                            </div>
                                                                                                         </div>
                                                                                                     ))}
                                                                                                 </div>
