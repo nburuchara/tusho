@@ -3890,7 +3890,7 @@ const Styles = styled.div `
     font-size: 65%;
     border-radius: 3.5px;
     cursor: pointer;
-    transition: background-color 0.35 ease-in-out, color 0.35s ease-in-out;
+    transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-header button:hover {
@@ -3913,6 +3913,17 @@ const Styles = styled.div `
     background-color: #ffdcd5;
     display: flex;
     flex-direction: row;
+    cursor: pointer;
+}
+
+.jipange-order-address-option:hover h5 {
+    text-decoration: underline;
+    transform: scale(1.025);
+}
+
+.jipange-order-address-option:hover p {
+    text-decoration: underline;
+    transform: scale(1.025);
 }
 
 .jipange-order-address-option-left {
@@ -3928,6 +3939,7 @@ const Styles = styled.div `
     margin-left: 1.5%;
     color: #ff5733;
     font-family: lexend;
+    transition: transform 0.35s ease-in-out;
 }
 
 .jipange-order-address-option-left p {
@@ -3937,6 +3949,7 @@ const Styles = styled.div `
     color: #ff5733;
     font-family: poppins;
     font-size: 65.5%;
+    transition: transform 0.35s ease-in-out;
 }
 
 .jipange-order-address-option-right {
@@ -13076,6 +13089,20 @@ export default class LandingPg extends Component {
         })
     }
 
+    closeJipangeDeliveryAddressSelector = () => {
+        this.setState({
+            showJipangeSelectAddressOptions: false,
+            showJipangeSelectAddressLoading: true
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    showJipangeSelectAddressClicked: !this.state.showJipangeSelectAddressClicked,
+                    showJipangeSelectAddressLoading: false
+                })
+            }, 2000)
+        })
+    }
+
     saveJipangeOrder = () => {
         this.setState((prevState) => {
             const newConfirmedJipangeDates = new Set(prevState.selectedDates)
@@ -17523,7 +17550,7 @@ export default class LandingPg extends Component {
                                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options'>
                                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-header'>
                                                                                                     <p>Select an address:</p>
-                                                                                                    <button>Close</button>
+                                                                                                    <button onClick={this.closeJipangeDeliveryAddressSelector}>Close</button>
                                                                                                 </div>
                                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-list'>
                                                                                                     {this.state.savedDeliveryAddresses.map((address) => (
