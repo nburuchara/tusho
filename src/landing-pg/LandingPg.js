@@ -3857,7 +3857,7 @@ const Styles = styled.div `
     height: 100%;
     display: flex;
     align-items: center;
-    border: 1px solid blue;
+    // border: 1px solid blue;
     justify-content: left;
     flex-direction: column;
     position: relative;
@@ -3886,12 +3886,17 @@ const Styles = styled.div `
     width: 100%;
 }
 
+.jipange-order-address-option {
+    height: 1rem%;
+    border: 1px solid black;
+}
+
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-loading {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
-    border: 1px solid black;
+    // border: 1px solid black;
     justify-content: center;
     flex-direction: column;
 }
@@ -11564,6 +11569,9 @@ export default class LandingPg extends Component {
             completeJipangeBtnTxt: true,
 
             //* # Delivery Info *//
+            savedDeliveryAddresses: [
+                {id: 0, line1: 'Sunshine Villas - Hse No. 3', line2: 'Spring Valley, Lower Kabete', city: 'Nairobi'}
+            ],
             deliveryInfoDefaultAddressSelected: false,
             deliveryInfoDefaultAddressText: "",
             deliveryInfoAddressType1: false,
@@ -17456,7 +17464,11 @@ export default class LandingPg extends Component {
                                                                                                     <p>Select an address:</p>
                                                                                                 {/* </div> */}
                                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-list'>
-
+                                                                                                    {this.state.savedDeliveryAddresses.map((address) => (
+                                                                                                        <div className='jipange-order-address-option' id={address.id}>
+                                                                                                            
+                                                                                                        </div>
+                                                                                                    ))}
                                                                                                 </div>
                                                                                             </div>  
                                                                                         }
