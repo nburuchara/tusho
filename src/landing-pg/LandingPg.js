@@ -5306,6 +5306,15 @@ const Styles = styled.div `
     justify-content: right;
 }
 
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn {
+    height: 90%;
+    width: 95%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-1 {
     width: 33.3%;
     border: 1px solid black;
@@ -17852,13 +17861,19 @@ export default class LandingPg extends Component {
                                                                         </div>   
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right'>
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-1'>
+                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
 
+                                                                                </div>
                                                                             </div>
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-2'>
+                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
 
+                                                                                </div>
                                                                             </div>
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-3'>
+                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
 
+                                                                                </div>
                                                                             </div>
                                                                         </div>   
                                                                     </div>
