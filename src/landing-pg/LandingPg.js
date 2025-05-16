@@ -3844,7 +3844,7 @@ const Styles = styled.div `
     margin-top: 1.25rem;
     font-family: poppins;
     font-size: 70%;
-    // font-weight: normal;
+    font-weight: normal;
     color: #5e626a;
 }
 
@@ -3918,12 +3918,12 @@ const Styles = styled.div `
 
 .jipange-order-address-option:hover h5 {
     text-decoration: underline;
-    transform: scale(1.025);
+    transform: scale(1.009);
 }
 
 .jipange-order-address-option:hover p {
     text-decoration: underline;
-    transform: scale(1.025);
+    transform: scale(1.009);
 }
 
 .jipange-order-address-option-left {
@@ -11464,9 +11464,10 @@ export default class LandingPg extends Component {
             userSignedInLoading: false,
             userSignedInTransition: true,
             showAccountInformation: false,
-            showJipangeSettings: true,
+            showJipangeSettings: false,
             showPamojaSettings: false,
             showDeliveryInfoSettings: false,
+            showMyOrdersSettings: true,
             showFAQSettings: false,
             showSettingsPageLoading: false,
 
@@ -11654,7 +11655,7 @@ export default class LandingPg extends Component {
             deliveryInfoAddressType4: false,
 
             //* # My Orders *//
-            showMyOrdersHome: false,
+            showMyOrdersHome: true,
 
             selectedRegPaymentOption: "option1",
             showRegPaymentLoading: false,
@@ -11721,13 +11722,13 @@ export default class LandingPg extends Component {
             transferToProfile: false,
 
             //* - HOME SCREEN ACCOUNT SETTINGS - *//    
-            accountSettingsOpen: true,
-            currentMenuOption: 2,
+            accountSettingsOpen: false,
+            currentMenuOption: 4,
             showAccountSetupIncompleteHeader: true,
             accountMenuOption1Selected: false,
-            accountMenuOption2Selected: true,
+            accountMenuOption2Selected: false,
             accountMenuOption3Selected: false,
-            accountMenuOption4Selected: false,
+            accountMenuOption4Selected: true,
             accountMenuOption5Selected: false,
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
@@ -17515,7 +17516,7 @@ export default class LandingPg extends Component {
                                                                             <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-payment'>
                                                                                 <p>Enter your shipping address for this order:</p>
                                                                                 <div className='jipange-settings-selected-date-screen-complete-body-inner-body-address-recent'>
-                                                                                    <h5>Recently Used (<label>selected by default</label>):</h5>
+                                                                                    <h5>Recently Used:</h5>
                                                                                     <div className={`jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select ${this.state.jipangeManualAddressLine1 !== '' || this.state.jipangeManualAddressLine2 !== '' ? 'manual-selected' : this.state.showJipangeSelectAddressClicked ? 'selector-open' : ''}`}>
                                                                                         {!this.state.showJipangeSelectAddressLoading && !this.state.showJipangeSelectAddressOptions && 
                                                                                             <>
