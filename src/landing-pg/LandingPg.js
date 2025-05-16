@@ -5285,6 +5285,41 @@ const Styles = styled.div `
     height: 25%;
     border: 1px solid black;
     width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left {
+    width: 25%;
+    // border: 1px solid black;
+    height: 100%;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right {
+    width: 75%;
+    // border: 1px solid black;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-1 {
+    width: 25%;
+    border: 1px solid black;
+    height: 100%;
+}   
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-2 {
+    width: 25%;
+    border: 1px solid black;
+    height: 100%;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-3 {
+    width: 25%;
+    border: 1px solid black;
+    height: 100%;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-body {
@@ -17810,7 +17845,12 @@ export default class LandingPg extends Component {
                                                             {this.state.cart.length > 0 && 
                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order'>
                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header'>
-                                                                        
+                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left'>
+
+                                                                        </div>   
+                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right'>
+
+                                                                        </div>   
                                                                     </div>
                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body'>
 
