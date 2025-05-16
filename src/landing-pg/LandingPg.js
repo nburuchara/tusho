@@ -3863,9 +3863,9 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-header {
-    height: 23.5%;
+    height: 20.5%;
     width: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     position: relative;
 }
 
@@ -3880,7 +3880,7 @@ const Styles = styled.div `
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-options-list {
-    border: 1px solid black;
+    border-top: 1px solid #ccc;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -3890,21 +3890,21 @@ const Styles = styled.div `
 
 .jipange-order-address-option {
     height: 2.25rem;
-    border: 1px solid black;
+    border-bottom: 1px solid #ccc;
     display: flex;
     flex-direction: row;
 }
 
 .jipange-order-address-option-left {
     width: 90%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     flex-direction: column;
 }
 
 .jipange-order-address-option-left h5 {
     margin-top: 0.2rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0px;
     margin-left: 1.5%;
     color: #ff5733;
     font-family: lexend;
@@ -3916,12 +3916,19 @@ const Styles = styled.div `
     margin-left: 1.5%;
     color: #ff5733;
     font-family: poppins;
-    font-size: 70%;
+    font-size: 65.5%;
 }
 
 .jipange-order-address-option-right {
     width: 10%;
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jipange-order-address-option-right img {
+    width: 65%;
 }
 
 .jipange-settings-selected-date-screen-complete-body-inner-body-address-recent-select-loading {
@@ -17504,7 +17511,7 @@ export default class LandingPg extends Component {
                                                                                                                 <p>{address.line1}, {address.line2}, {address.city}</p>
                                                                                                             </div>
                                                                                                             <div className='jipange-order-address-option-right'>
-
+                                                                                                                <img src='/assets/icons/home-jipange/checkmark-icon-2.png'/>
                                                                                                             </div>
                                                                                                         </div>
                                                                                                     ))}
