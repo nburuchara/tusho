@@ -5326,7 +5326,7 @@ const Styles = styled.div `
     width: 18.5px;
     height: 18.5px;
     transform: scaleX(-1);
-    // margin-left: 0.25rem;
+    margin-top: -0.25rem;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-right-side {
