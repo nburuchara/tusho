@@ -5287,13 +5287,61 @@ const Styles = styled.div `
     width: 100%;
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left {
-    width: 25%;
+    width: 23.5%;
     // border: 1px solid black;
+    height: 82.5%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top {
+    width: 100%;
+    height: 50%;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-left-side {
+    width: 50%;
     height: 100%;
+    border: 1px solid black;
+    border-top-left-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-right-side {
+    width: 50%;
+    height: 100%;
+    border: 1px solid black;
+    border-top-right-radius: 4px;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-bottom {
+    width: 100%;
+    height: 50%;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: 1px solid black;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left h2 {
+    margin-top: 0.1rem;
+    margin-bottom: 0px;
+    color: #ff5733;
+
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right {
@@ -5304,6 +5352,8 @@ const Styles = styled.div `
     flex-direction: row;
     align-items: bottom;
     justify-content: right;
+    position: absolute;
+    right: 0;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn {
@@ -5311,7 +5361,8 @@ const Styles = styled.div `
     width: 92.5%;
     margin-top: 0.5rem;
     border-radius: 5px;
-    border: 1px solid #20313a;
+    // border: 1px solid #ff5733;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15), 0px 6px 12px rgba(0, 0, 0, 0.15);
     display: flex;
     flex-direction: column;
     position: relative;
@@ -5321,8 +5372,8 @@ const Styles = styled.div `
     position: absolute;
     top: 0.1rem;
     left: 0.1rem;
-    height: 65%;
-    width: 30.5%;
+    height: 44.5%;
+    width: 22.5%;
     // border: 1px solid black;
     z-index: 1;
     background-color: transparent;
@@ -5333,10 +5384,10 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img {
-    width: 27px;
-    height: 27px;
+    width: 13px;
+    height: 13px;
     border: 1px solid white;
-    background-color: #20313a;
+    background-color: #ff5733;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -5352,15 +5403,17 @@ const Styles = styled.div `
     color: white;
     margin-top: 0px;
     margin-bottom: 0px;
+    margin-left: 0px;
+    font-size: 62.5%;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top {
-    height: 40%;
+    height: 50%;
     // border: 1px solid black;
-    border-bottom: 1px solid #ff5733;
+    border-bottom: 1.5px solid #ff5733;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
-    background-color: #20313a;
+    background-color: #ff5733;
     z-index: 0;
     display: flex;
     align-items: center;
@@ -5371,14 +5424,15 @@ const Styles = styled.div `
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top h5 {
     color: white;
     margin-top: 0px;
-    margin-bottom: -0.2rem;
-    margin-right: 0.05rem;
-    font-size: 125.5%;
-    // font-family: lexend;
+    margin-bottom: 0px;
+    margin-right: 0.5rem;
+    font-size: 70.5%;
+    // font-family: raleway;
+    // font-weight: normal;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom {
-    height: 60%;
+    height: 50%;
     // border: 1px solid black;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -17936,15 +17990,25 @@ export default class LandingPg extends Component {
                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order'>
                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header'>
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left'>
+                                                                            <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top'>
+                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-left-side'>
 
+                                                                                </div>
+                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-right-side'>
+
+                                                                                </div>
+                                                                            </div>
+                                                                            <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-bottom'>
+
+                                                                            </div>
                                                                         </div>   
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right'>
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-1'>
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
                                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img'>
-                                                                                            {/* <h1>1</h1> */}
-                                                                                            <img src='/assets/icons/home-my-orders/location-icon.png'/>
+                                                                                            <h1>1</h1>
+                                                                                            {/* <img src='/assets/icons/home-my-orders/location-icon.png'/> */}
                                                                                         </div>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top'>
@@ -17959,12 +18023,12 @@ export default class LandingPg extends Component {
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
                                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img'>
-                                                                                            {/* <h1>2</h1> */}
-                                                                                            <img src='/assets/icons/home-my-orders/delivery-time-icon.png'/>
+                                                                                            <h1>2</h1>
+                                                                                            {/* <img src='/assets/icons/home-my-orders/delivery-time-icon.png'/> */}
                                                                                         </div>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top'>
-                                                                                        <h5>Delivery</h5>
+                                                                                        <h5>Schedule</h5>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom'>
 
@@ -17975,8 +18039,8 @@ export default class LandingPg extends Component {
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
                                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img'>
-                                                                                            {/* <h1>3</h1> */}
-                                                                                            <img src='/assets/icons/home-my-orders/pay-icon.png'/>
+                                                                                            <h1>3</h1>
+                                                                                            {/* <img src='/assets/icons/home-my-orders/pay-icon-3.png'/> */}
                                                                                         </div>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top'>
