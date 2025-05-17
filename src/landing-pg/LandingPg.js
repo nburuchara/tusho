@@ -5307,7 +5307,7 @@ const Styles = styled.div `
     height: 50%;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     flex-direction: row;
 }
@@ -5315,33 +5315,56 @@ const Styles = styled.div `
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-left-side {
     width: 50%;
     height: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     border-top-left-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: left;
 }
 
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-left-side img {
+    width: 18.5px;
+    height: 18.5px;
+    transform: scaleX(-1);
+    // margin-left: 0.25rem;
+}
+
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-right-side {
     width: 50%;
     height: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     border-top-right-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
 }
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-right-side p {
+    font-family: poppins;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0.35rem;
+    color: #ff5733;
+    font-size: 80.5%;
+    font-weight: bold;
+}   
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-bottom {
     width: 100%;
     height: 50%;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px;
-    border: 1px solid black;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
 
-.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left h2 {
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-bottom h2 {
     margin-top: 0.1rem;
     margin-bottom: 0px;
     color: #ff5733;
-
+    font-size: 100%;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right {
@@ -11880,6 +11903,7 @@ export default class LandingPg extends Component {
             //* - HOME SCREEN SHOPPING CART - *//
             homeScreenCartClicked: false,
             cart: [],
+            totalCartQuantity: 0,
 
             //* - HOME SCREEN PROFILE COMPONENTS - *//
             accountOptionsDropdownClicked: false,
@@ -13713,8 +13737,7 @@ export default class LandingPg extends Component {
                     : item
             );
     
-            // Find updated product
-            const updatedProduct = updatedProducts.find((product) => product.id === productId);
+            const updatedProduct = updatedProducts.find((product) => product.id === productId)
     
             // Update the cart
             let updatedCart = prevState.cart;
@@ -13733,6 +13756,7 @@ export default class LandingPg extends Component {
             } else if (updatedProduct.qty > 0) {
                 updatedCart = [...prevState.cart, { ...updatedProduct, quantity: updatedProduct.qty }];
             }
+            
     
             // 🔹 Check if groupedOptions exists before updating
             const updatedGroupedOptions = prevState.groupedOptions
@@ -13760,8 +13784,12 @@ export default class LandingPg extends Component {
                 : null; // Keep it null if it doesn't exist
     
             const totalCartPrice = updatedCart.reduce((total, item) => total + item.price * item.quantity, 0);
+                
+            // Update total quantity of ALL items (not unique items)
+            const totalCartQuantity = updatedCart.reduce((total, item) => total + item.quantity, 0);
     
             return {
+                totalCartQuantity,
                 products: updatedProducts,
                 promoItems: updatedPromoItems, // 🔹 update added here
                 newProducts: updatedNewItems,
@@ -14171,8 +14199,11 @@ export default class LandingPg extends Component {
                 : null; // Keep it null if it doesn't exist
     
             const totalCartPrice = updatedCart.reduce((total, item) => total + item.price * item.quantity, 0);
+            // Update total quantity of ALL items (not unique items)
+            const totalCartQuantity = updatedCart.reduce((total, item) => total + item.quantity, 0);
     
             return {
+                totalCartQuantity,
                 products: updatedProducts,
                 promoItems: updatedPromoItems, // 🔹 update added here
                 cart: updatedCart,
@@ -17992,14 +18023,14 @@ export default class LandingPg extends Component {
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left'>
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top'>
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-left-side'>
-
+                                                                                    <img src='/assets/icons/home-my-orders/cart-icon.png'/>
                                                                                 </div>
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-right-side'>
-
+                                                                                    <p>({this.state.totalCartQuantity})</p>
                                                                                 </div>
                                                                             </div>
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-bottom'>
-
+                                                                                <h2>My Cart</h2>
                                                                             </div>
                                                                         </div>   
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right'>
