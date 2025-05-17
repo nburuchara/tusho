@@ -5274,15 +5274,15 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order {
-    height: 40%;
-    // border: 1px solid black;
+    height: 60%;
+    border: 1px solid black;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header {
-    height: 25%;
+    height: 20%;
     // border: 1px solid black;
     width: 100%;
     display: flex;
@@ -5490,9 +5490,17 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-body {
-    height: 75%;
-    // border: 1px solid black;
+    height: 80%;
+    border: 1px solid black;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-header {
+    height: 30%;
+    width: 100%;
+    border: 1px solid black;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-existing-cart {
@@ -18085,7 +18093,9 @@ export default class LandingPg extends Component {
                                                                         </div>   
                                                                     </div>
                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body'>
+                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-header'>
 
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             }
