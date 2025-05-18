@@ -3202,28 +3202,27 @@ const Styles = styled.div `
     width: 90%;
     border: 1px solid #ff5733;
     height: 80%;
-    border-radius: 8px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ff5733;
+    background-color: #faece9;
     cursor: pointer;
     transition: background-color 0.5s ease-in-out;
 }
 
 .jipange-settings-selected-time-slots-container-cell-container:hover {
-    background-color: #faece9;
-    border: 1px solid #ff5733;
+    background-color: #ff5733;
 }
 
 .jipange-settings-selected-time-slots-container-cell-container:hover h5 {
-    color: #ff5733;
+    color: white;
 }
 
 .jipange-settings-selected-time-slots-container-cell-container h5 {
     margin-top: 0px;
     margin-bottom: 0px;
-    color: white;
+    color: #20313a;
     font-size: 60%;
     font-family: poppins;
     font-weight: normal;
@@ -5720,12 +5719,21 @@ const Styles = styled.div `
 }
 
 .my-orders-schedule-parent-header {
-    height: 25%;
+    height: 30%;
     width: 100%;
-    // border: 1px solid black;
+    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: left;
+    position: relative;
+}
+
+.my-orders-schedule-parent-header-options {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 70%;
 }
 
 .my-orders-schedule-parent-header p { 
@@ -5738,7 +5746,8 @@ const Styles = styled.div `
 }
 
 .my-orders-schedule-parent-body {
-    height: 75%;
+    height: 52.5%;
+    margin-top:
     width: 100%;
     // border: 1px solid black;
     display: flex;
@@ -5748,13 +5757,33 @@ const Styles = styled.div `
 .my-orders-schedule-parent-body-inner-header {
     height: 50%;
     width; 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
 }
 
 .my-orders-schedule-parent-body-inner-body {
     height: 50%;
     width; 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-orders-schedule-parent-footer {
+    // border: 1px solid black;
+    height: 17.5%;
+    width: 100%;
+}
+
+.my-orders-schedule-parent-footer p { 
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #ff5733;
+    font-family: lexend;
+    font-size: 67.5%;
+    font-weight: bold;
+    margin-left: 0px;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-existing-cart {
@@ -18404,11 +18433,62 @@ export default class LandingPg extends Component {
                                                                                         </div>
                                                                                         <div className='my-orders-schedule-parent-body'>
                                                                                             <div className='my-orders-schedule-parent-body-inner-header'>
-                                                                                                
+                                                                                                <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                        <h5>8:00 - 9:00am</h5>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                        <h5>9:00 - 10:00am</h5>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                        <h5>10:00 - 11:00am</h5>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                        <h5>11:00 - 12:00pm</h5>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                        <h5>12:00 - 1:00pm</h5>
+                                                                                                    </div>
+                                                                                                </div>
                                                                                             </div>
                                                                                             <div className='my-orders-schedule-parent-body-inner-body'>
-
+                                                                                                <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                        <h5>1:00 - 2:00pm</h5>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                        <h5>2:00 - 3:00pm</h5>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                        <h5>3:00 - 4:00pm</h5>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                        <h5>4:00 - 5:00pm</h5>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div className='jipange-settings-selected-time-slots-container-cell'>
+                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                        <h5>5:00 - 6:00pm</h5>
+                                                                                                    </div>
+                                                                                                </div>
                                                                                             </div>
+                                                                                        </div>
+                                                                                        <div className='my-orders-schedule-parent-footer'>
+                                                                                            <p>* Express checkout guarantees a 90min delivery (within Nairobi)</p>
                                                                                         </div>
                                                                                     </div>
                                                                                 </>
