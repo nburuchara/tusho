@@ -5275,7 +5275,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order {
     height: 60%;
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -5491,16 +5491,62 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-body {
     height: 80%;
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-header {
-    height: 30%;
+    height: 38.5%;
     width: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.my-orders-dropoff-left-parent {
+    width: 50%;
+    // border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-orders-dropoff-left-parent-header {
+    height: 25%;
+    width: 100%;
+    // border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.my-orders-dropoff-left-parent-header p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #5e626a;
+    font-family: poppins;
+    font-size: 70%;
+    margin-left: 0px;
+}
+
+.my-orders-dropoff-left-parent-body {
+    height: 75%;
+    border: 1px solid #ff5733;
+    border-radius: 8px;
+    width: 95%;
+    // margin-left: 2.5%;
+    background-color: #faece9;
+}
+
+.my-orders-dropoff-left-parent-body-address-cell {
+    height: 1.5rem;
+    border-bottom: 1px solid #ff5733;
+}
+
+.my-orders-dropoff-right-parent {
+    width: 50%;
+    // border: 1px solid black;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-existing-cart {
@@ -18051,7 +18097,7 @@ export default class LandingPg extends Component {
                                                                                         </div>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top'>
-                                                                                        <h5>Location</h5>
+                                                                                        <h5>Dropoff</h5>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom'>
 
@@ -18094,7 +18140,19 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body'>
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-header'>
+                                                                            <>
+                                                                                <div className='my-orders-dropoff-left-parent'>
+                                                                                    <div className='my-orders-dropoff-left-parent-header'>
+                                                                                        <p>Set your dropoff location:</p>
+                                                                                    </div>
+                                                                                    <div className='my-orders-dropoff-left-parent-body'>
 
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div className='my-orders-dropoff-right-parent'>
+
+                                                                                </div>
+                                                                            </>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -19959,7 +20017,7 @@ export default class LandingPg extends Component {
                                                                         />
                                                                     </div>
                                                                     <div className='shop-pamoja-info-3-body-right'>
-                                                                        <p>We work with your favorite brands to unlock the option for you to create a bulk order with fellow shoppers to get more discounts as you shop.</p>
+                                                                        <p>We work with your favorite brands to unlock the option for you to simulate a bulk order with fellow shoppers to get more discounts as you shop.</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -19980,7 +20038,7 @@ export default class LandingPg extends Component {
                                                                         />
                                                                     </div>
                                                                     <div className='shop-pamoja-info-4-body-right'>
-                                                                        <p>Increase your chances of getting discounts by inviting friends and family, so you can hit the product's discount order quantity faster!</p>
+                                                                        <p>Increase your chances of getting a discount by inviting friends and family, so you can hit the product's discount order quantity faster!</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
