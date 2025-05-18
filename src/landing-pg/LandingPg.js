@@ -5709,7 +5709,6 @@ const Styles = styled.div `
 
     // # CURRENT ORDER SELECT DROPOFF TIME
 
-
 .my-orders-schedule-parent {
     width: 100%;
     height: 100%;
@@ -5719,9 +5718,9 @@ const Styles = styled.div `
 }
 
 .my-orders-schedule-parent-header {
-    height: 30%;
+    height: 22.5%;
     width: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: left;
@@ -5733,7 +5732,20 @@ const Styles = styled.div `
     right: 0;
     top: 0;
     bottom: 0;
-    width: 70%;
+    width: 65%;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-orders-schedule-parent-header-options-left {
+    width: 40%;
+    border: 1px solid black;
+}
+
+.my-orders-schedule-parent-header-options-right {
+    width: 60%;
+    border: 1px solid black;
 }
 
 .my-orders-schedule-parent-header p { 
@@ -5746,7 +5758,7 @@ const Styles = styled.div `
 }
 
 .my-orders-schedule-parent-body {
-    height: 55%;
+    height: 62.5%;
     margin-top:
     width: 100%;
     // border: 1px solid black;
@@ -18433,6 +18445,14 @@ export default class LandingPg extends Component {
                                                                                     <div className='my-orders-schedule-parent'>
                                                                                         <div className='my-orders-schedule-parent-header'>
                                                                                             <p>Schedule a drop-off time:</p>
+                                                                                            <div className='my-orders-schedule-parent-header-options'>
+                                                                                                <div className='my-orders-schedule-parent-header-options-left'>
+
+                                                                                                </div>
+                                                                                                <div className='my-orders-schedule-parent-header-options-right'>
+
+                                                                                                </div>
+                                                                                            </div>
                                                                                         </div>
                                                                                         <div className='my-orders-schedule-parent-body'>
                                                                                             <div className='my-orders-schedule-parent-body-inner-header'>
