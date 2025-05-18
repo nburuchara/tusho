@@ -5746,7 +5746,7 @@ const Styles = styled.div `
 }
 
 .my-orders-schedule-parent-body {
-    height: 52.5%;
+    height: 55%;
     margin-top:
     width: 100%;
     // border: 1px solid black;
@@ -5772,8 +5772,11 @@ const Styles = styled.div `
 
 .my-orders-schedule-parent-footer {
     // border: 1px solid black;
-    height: 17.5%;
+    height: 15%;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
 }
 
 .my-orders-schedule-parent-footer p { 
