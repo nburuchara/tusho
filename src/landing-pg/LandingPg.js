@@ -5385,7 +5385,7 @@ const Styles = styled.div `
     margin-top: 0.5rem;
     border-radius: 5px;
     // border: 1px solid #ff5733;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15), 0px 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 6px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     position: relative;
@@ -5505,6 +5505,8 @@ const Styles = styled.div `
     flex-direction: row;
 }
 
+    // # CURRENT ORDER SELECT ADDRESS
+
 .my-orders-dropoff-left-parent {
     width: 50%;
     // border: 1px solid black;
@@ -5592,7 +5594,8 @@ const Styles = styled.div `
     color: #ff5733;
     font-family: poppins;
     font-size: 65%;
-    font-weight: normal;
+    // font-weight: normal;
+    text-decoration: underline;
 }
 
 .my-orders-dropoff-left-parent-body-address-cell-left-body {
@@ -5630,6 +5633,128 @@ const Styles = styled.div `
 .my-orders-dropoff-right-parent {
     width: 50%;
     // border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-orders-dropoff-right-parent-header {
+    height: 25%;
+    width: 100%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    position: relative;
+}
+
+.my-orders-dropoff-right-parent-header p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #5e626a;
+    font-family: poppins;
+    font-size: 70%;
+    margin-left: 0px;
+}
+
+.my-orders-dropoff-right-parent-body {
+    height: 75%;
+    width: 100%;
+    // border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-orders-dropoff-right-parent-body-inner-header {
+    height: 50%;
+    // border: 1px solid black;
+    width: 100%;
+}
+
+.my-orders-dropoff-right-parent-body-inner-header input {
+    width: 95.5%;
+    padding: 3px;
+    font-family: poppins;
+    font-size: 70.5%;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 3.5px;
+}
+
+.my-orders-dropoff-right-parent-body-inner-body {
+    height: 50%;
+    // border: 1px solid black;
+    width: 100%;
+    position: relative;
+}
+
+.my-orders-dropoff-right-parent-body-inner-body button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    height: 80%;
+    background-color: #ff5733;
+    border: 1px solid #ff5733;
+    border-radius: 5px;
+    color: white;
+    font-family: poppins;
+    font-size: 70.5%;
+    cursor: pointer;
+    transition: background-color 0.35s ease-in-out;
+}
+
+.my-orders-dropoff-right-parent-body-inner-body button:hover {
+    background-color: #faece9;
+    color: #ff5733;
+}
+
+    // # CURRENT ORDER SELECT DROPOFF TIME
+
+
+.my-orders-schedule-parent {
+    width: 100%;
+    height: 100%;
+    // border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-orders-schedule-parent-header {
+    height: 25%;
+    width: 100%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.my-orders-schedule-parent-header p { 
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #5e626a;
+    font-family: poppins;
+    font-size: 70%;
+    margin-left: 0px;
+}
+
+.my-orders-schedule-parent-body {
+    height: 75%;
+    width: 100%;
+    // border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-orders-schedule-parent-body-inner-header {
+    height: 50%;
+    width; 100%;
+    border: 1px solid black;
+}
+
+.my-orders-schedule-parent-body-inner-body {
+    height: 50%;
+    width; 100%;
+    border: 1px solid black;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-existing-cart {
@@ -18167,7 +18292,7 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                             </div>
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-bottom'>
-                                                                                <h2>My Cart</h2>
+                                                                                <h2>My Order</h2>
                                                                             </div>
                                                                         </div>   
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right'>
@@ -18180,7 +18305,7 @@ export default class LandingPg extends Component {
                                                                                         </div>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top'>
-                                                                                        <h5>Dropoff</h5>
+                                                                                        <h5>Drop-off</h5>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom'>
 
@@ -18223,40 +18348,71 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body'>
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-header'>
-                                                                            <>
-                                                                                <div className='my-orders-dropoff-left-parent'>
-                                                                                    <div className='my-orders-dropoff-left-parent-header'>
-                                                                                        <p>Set your dropoff location:</p>
-                                                                                    </div>
-                                                                                    <div className='my-orders-dropoff-left-parent-body'>
-                                                                                        {this.state.savedDeliveryAddresses.map((address) => (
-                                                                                            <div id={address.index} className='my-orders-dropoff-left-parent-body-address-cell'>
-                                                                                                <div className='my-orders-dropoff-left-parent-body-address-cell-left'>
-                                                                                                    <div className='my-orders-dropoff-left-parent-body-address-cell-left-header'>
-                                                                                                        <div className='my-orders-dropoff-left-parent-body-address-cell-left-header-left'>
-                                                                                                            <img src={address.typeImg}/>
+                                                                            {this.state.showMyOrdersCurrentAddressSelect && 
+                                                                                <>
+                                                                                    <div className='my-orders-dropoff-left-parent'>
+                                                                                        <div className='my-orders-dropoff-left-parent-header'>
+                                                                                            <p>Select your drop-off location:</p>
+                                                                                        </div>
+                                                                                        <div className='my-orders-dropoff-left-parent-body'>
+                                                                                            {this.state.savedDeliveryAddresses.map((address) => (
+                                                                                                <div id={address.index} className='my-orders-dropoff-left-parent-body-address-cell'>
+                                                                                                    <div className='my-orders-dropoff-left-parent-body-address-cell-left'>
+                                                                                                        <div className='my-orders-dropoff-left-parent-body-address-cell-left-header'>
+                                                                                                            <div className='my-orders-dropoff-left-parent-body-address-cell-left-header-left'>
+                                                                                                                <img src={address.typeImg}/>
+                                                                                                            </div>
+                                                                                                            <div className='my-orders-dropoff-left-parent-body-address-cell-left-header-right'>
+                                                                                                                <h5>{address.type}</h5>
+                                                                                                            </div>
                                                                                                         </div>
-                                                                                                        <div className='my-orders-dropoff-left-parent-body-address-cell-left-header-right'>
-                                                                                                            <h5>{address.type}</h5>
+                                                                                                        <div className='my-orders-dropoff-left-parent-body-address-cell-left-body'>
+                                                                                                            <p>{address.line1}, {address.line2}, {address.city}</p>
                                                                                                         </div>
                                                                                                     </div>
-                                                                                                    <div className='my-orders-dropoff-left-parent-body-address-cell-left-body'>
-                                                                                                        <p>{address.line1}, {address.line2}, {address.city}</p>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                                <div className='my-orders-dropoff-left-parent-body-address-cell-right'>
-                                                                                                    <div className='my-orders-dropoff-left-parent-body-address-cell-right-checkbox'>
+                                                                                                    <div className='my-orders-dropoff-left-parent-body-address-cell-right'>
+                                                                                                        <div className='my-orders-dropoff-left-parent-body-address-cell-right-checkbox'>
 
+                                                                                                        </div>
                                                                                                     </div>
                                                                                                 </div>
+                                                                                            ))}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div className='my-orders-dropoff-right-parent'>
+                                                                                        <div className='my-orders-dropoff-right-parent-header'>
+                                                                                            <p>or set a new location:</p>
+                                                                                        </div>
+                                                                                        <div className='my-orders-dropoff-right-parent-body'>
+                                                                                            <div className='my-orders-dropoff-right-parent-body-inner-header'>
+                                                                                                <input
+                                                                                                placeholder='Enter a delivery address'
+                                                                                                />
                                                                                             </div>
-                                                                                        ))}
+                                                                                            <div className='my-orders-dropoff-right-parent-body-inner-body'>
+                                                                                                <button>Confirm Drop-off</button>
+                                                                                            </div>  
+                                                                                        </div>
                                                                                     </div>
-                                                                                </div>
-                                                                                <div className='my-orders-dropoff-right-parent'>
+                                                                                </>
+                                                                            }
+                                                                            {true && 
+                                                                                <>
+                                                                                    <div className='my-orders-schedule-parent'>
+                                                                                        <div className='my-orders-schedule-parent-header'>
+                                                                                            <p>Schedule a drop-off time:</p>
+                                                                                        </div>
+                                                                                        <div className='my-orders-schedule-parent-body'>
+                                                                                            <div className='my-orders-schedule-parent-body-inner-header'>
+                                                                                                
+                                                                                            </div>
+                                                                                            <div className='my-orders-schedule-parent-body-inner-body'>
 
-                                                                                </div>
-                                                                            </>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </>
+                                                                            }
                                                                         </div>
                                                                     </div>
                                                                 </div>
