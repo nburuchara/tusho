@@ -5540,8 +5540,56 @@ const Styles = styled.div `
 }
 
 .my-orders-dropoff-left-parent-body-address-cell {
-    height: 1.5rem;
+    height: 3.25rem;
     border-bottom: 1px solid #ff5733;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.my-orders-dropoff-left-parent-body-address-cell-left {
+    height: 100%;
+    width: 80%;
+    border: 1px solid #ff5733;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-orders-dropoff-left-parent-body-address-cell-left-header {
+
+}
+
+.my-orders-dropoff-left-parent-body-address-cell-left-header-left {
+    width: 25%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.my-orders-dropoff-left-parent-body-address-cell-left-header-right {
+    width: 75%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.my-orders-dropoff-left-parent-body-address-cell-left-body {
+    height: 75%;
+    border: 1px solid black;
+}
+
+.my-orders-dropoff-left-parent-body-address-cell-right {
+    height: 100%;
+    width: 20%;
+    border: 1px solid #ff5733;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-orders-dropoff-left-parent-body-address-cell-right-checkbox {
+    height: 25px;
+    width: 25px;
+    border: 1px solid #ff5733;
+    border-radius: 3.5px;
 }
 
 .my-orders-dropoff-right-parent {
@@ -18146,7 +18194,28 @@ export default class LandingPg extends Component {
                                                                                         <p>Set your dropoff location:</p>
                                                                                     </div>
                                                                                     <div className='my-orders-dropoff-left-parent-body'>
+                                                                                        {this.state.savedDeliveryAddresses.map((address) => (
+                                                                                            <div id={address.index} className='my-orders-dropoff-left-parent-body-address-cell'>
+                                                                                                <div className='my-orders-dropoff-left-parent-body-address-cell-left'>
+                                                                                                    <div className='my-orders-dropoff-left-parent-body-address-cell-left-header'>
+                                                                                                        <div className='my-orders-dropoff-left-parent-body-address-cell-left-header-left'>
 
+                                                                                                        </div>
+                                                                                                        <div className='my-orders-dropoff-left-parent-body-address-cell-left-header-right'>
+
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div className='my-orders-dropoff-left-parent-body-address-cell-left-body'>
+
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div className='my-orders-dropoff-left-parent-body-address-cell-right'>
+                                                                                                    <div className='my-orders-dropoff-left-parent-body-address-cell-right-checkbox'>
+
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        ))}
                                                                                     </div>
                                                                                 </div>
                                                                                 <div className='my-orders-dropoff-right-parent'>
