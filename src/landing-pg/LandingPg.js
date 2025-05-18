@@ -5550,44 +5550,79 @@ const Styles = styled.div `
 .my-orders-dropoff-left-parent-body-address-cell-left {
     height: 100%;
     width: 80%;
-    border: 1px solid #ff5733;
+    // border: 1px solid #ff5733;
     display: flex;
     flex-direction: column;
 }
 
 .my-orders-dropoff-left-parent-body-address-cell-left-header {
-
+    height: 35%;
+    width: 100%;
+    // border: 1px solid black;
+    display: flex;
+    flex-direction: row;
 }
 
 .my-orders-dropoff-left-parent-body-address-cell-left-header-left {
-    width: 25%;
+    width: 15%;
     height: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-orders-dropoff-left-parent-body-address-cell-left-header-left img {
+    width: 11.25px;
+    height: 11.25px;
 }
 
 .my-orders-dropoff-left-parent-body-address-cell-left-header-right {
-    width: 75%;
+    width: 85%;
     height: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.my-orders-dropoff-left-parent-body-address-cell-left-header-right h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #ff5733;
+    font-family: poppins;
+    font-size: 65%;
+    font-weight: normal;
 }
 
 .my-orders-dropoff-left-parent-body-address-cell-left-body {
-    height: 75%;
-    border: 1px solid black;
+    height: 65%;
+    width: 100%;
+    // border: 1px solid black;
+}
+
+.my-orders-dropoff-left-parent-body-address-cell-left-body p {
+    margin-top: 0px; 
+    margin-bottom: 0px; 
+    font-family: poppins;
+    font-size: 9px;
+    // color: black;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .my-orders-dropoff-left-parent-body-address-cell-right {
     height: 100%;
     width: 20%;
-    border: 1px solid #ff5733;
+    // border: 1px solid #ff5733;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .my-orders-dropoff-left-parent-body-address-cell-right-checkbox {
-    height: 25px;
-    width: 25px;
+    height: 12.5px;
+    width: 12.5px;
     border: 1px solid #ff5733;
     border-radius: 3.5px;
 }
@@ -11949,7 +11984,7 @@ export default class LandingPg extends Component {
 
             //* # Delivery Info *//
             savedDeliveryAddresses: [
-                {id: 0, line1: 'Sunshine Villas - Hse No. 3', line2: 'Spring Valley, Lower Kabete', city: 'Nairobi', type: 'Home', selected: true}
+                {id: 0, line1: 'Sunshine Villas - Hse No. 3', line2: 'Spring Valley, Lower Kabete', city: 'Nairobi', type: 'Home', selected: true, typeImg: '/assets/icons/home-delivery-info/home-icon.png'}
             ],
             deliveryInfoDefaultAddressSelected: false,
             deliveryInfoDefaultAddressText: "",
@@ -18199,14 +18234,14 @@ export default class LandingPg extends Component {
                                                                                                 <div className='my-orders-dropoff-left-parent-body-address-cell-left'>
                                                                                                     <div className='my-orders-dropoff-left-parent-body-address-cell-left-header'>
                                                                                                         <div className='my-orders-dropoff-left-parent-body-address-cell-left-header-left'>
-
+                                                                                                            <img src={address.typeImg}/>
                                                                                                         </div>
                                                                                                         <div className='my-orders-dropoff-left-parent-body-address-cell-left-header-right'>
-
+                                                                                                            <h5>{address.type}</h5>
                                                                                                         </div>
                                                                                                     </div>
                                                                                                     <div className='my-orders-dropoff-left-parent-body-address-cell-left-body'>
-
+                                                                                                        <p>{address.line1}, {address.line2}, {address.city}</p>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div className='my-orders-dropoff-left-parent-body-address-cell-right'>
