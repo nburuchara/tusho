@@ -5635,6 +5635,13 @@ const Styles = styled.div `
     width: 12.5px;
     border: 1px solid #ff5733;
     border-radius: 3.5px;
+    position: relative;
+}
+
+.my-orders-dropoff-left-parent-body-address-cell-right-checkbox img {
+    height: 12.5px;
+    width: 12.5px;
+    padding-bottom: 0.5rem;
 }
 
 .my-orders-dropoff-right-parent {
@@ -12284,6 +12291,8 @@ export default class LandingPg extends Component {
 
             //* # My Orders *//
             showMyOrdersHome: true,
+            showMyOrdersCurrentAddressSelect: true,
+            showMyOrdersCurrentScheduleSelect: false,
             expressDeliverySelected: false,
             currDeliveryTimeSlotSelected: null,
             deliveryTimeSelected: '',
@@ -18554,7 +18563,7 @@ export default class LandingPg extends Component {
                                                                                                     </div>
                                                                                                     <div className='my-orders-dropoff-left-parent-body-address-cell-right'>
                                                                                                         <div className='my-orders-dropoff-left-parent-body-address-cell-right-checkbox'>
-
+                                                                                                            {address.selected ? (<img src='/assets/icons/home-jipange/checkmark-icon-2.png'/>) : (null)}
                                                                                                         </div>
                                                                                                     </div>
                                                                                                 </div>
@@ -18568,17 +18577,17 @@ export default class LandingPg extends Component {
                                                                                         <div className='my-orders-dropoff-right-parent-body'>
                                                                                             <div className='my-orders-dropoff-right-parent-body-inner-header'>
                                                                                                 <input
-                                                                                                placeholder='Enter a delivery address'
+                                                                                                placeholder='Search for a delivery address'
                                                                                                 />
                                                                                             </div>
                                                                                             <div className='my-orders-dropoff-right-parent-body-inner-body'>
-                                                                                                <button>Confirm Drop-off</button>
+                                                                                                <button>Confirm</button>
                                                                                             </div>  
                                                                                         </div>
                                                                                     </div>
                                                                                 </>
                                                                             }
-                                                                            {true && 
+                                                                            {this.state.showMyOrdersCurrentScheduleSelect && 
                                                                                 <>
                                                                                     <div className='my-orders-schedule-parent'>
                                                                                         <div className='my-orders-schedule-parent-header'>
