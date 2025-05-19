@@ -5512,6 +5512,17 @@ const Styles = styled.div `
     flex-direction: row;
 }
 
+    // # CURRENT ORDER LOADING OPTIONS SCREEN
+
+.my-orders-dropoff-loading-parent {
+    height: 100%;
+    width: 100%;
+    display: align;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
     // # CURRENT ORDER SELECT ADDRESS
 
 .my-orders-dropoff-left-parent {
@@ -12291,7 +12302,8 @@ export default class LandingPg extends Component {
 
             //* # My Orders *//
             showMyOrdersHome: true,
-            showMyOrdersCurrentAddressSelect: true,
+            shoMyOrdersCurrentOptionLoading: true,
+            showMyOrdersCurrentAddressSelect: false,
             showMyOrdersCurrentScheduleSelect: false,
             expressDeliverySelected: false,
             currDeliveryTimeSlotSelected: null,
@@ -18539,6 +18551,18 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body'>
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-header'>
+                                                                            {this.state.shoMyOrdersCurrentOptionLoading && 
+                                                                                <div className='my-orders-dropoff-loading-parent'>
+                                                                                    <video 
+                                                                                    src="/assets/images/home-my-orders/my-orders-loading-vid.mp4" 
+                                                                                    autoPlay 
+                                                                                    loop 
+                                                                                    muted 
+                                                                                    playsInline 
+                                                                                    style={{ width: '10%', height: 'auto'}}
+                                                                                    />
+                                                                                </div>
+                                                                            }
                                                                             {this.state.showMyOrdersCurrentAddressSelect && 
                                                                                 <>
                                                                                     <div className='my-orders-dropoff-left-parent'>
