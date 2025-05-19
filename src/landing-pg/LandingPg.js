@@ -3211,6 +3211,14 @@ const Styles = styled.div `
     transition: background-color 0.5s ease-in-out;
 }
 
+.jipange-settings-selected-time-slots-container-cell-container.selected {
+    background-color: #ff5733;
+}
+
+.jipange-settings-selected-time-slots-container-cell-container.selected h5 {
+    color: white;
+}
+
 .jipange-settings-selected-time-slots-container-cell-container:hover {
     background-color: #ff5733;
 }
@@ -5811,6 +5819,16 @@ const Styles = styled.div `
     transition: background-color 0.35s ease-in-out;
 }
 
+.my-orders-schedule-parent-header-options-right-btn-1-container.selected {
+    background-color: #e8f7ff;
+}
+
+.my-orders-schedule-parent-header-options-right-btn-1-container.selected .my-orders-schedule-parent-header-options-right-btn-1-container-right h5 {
+    font-weight: normal;
+    text-decoration: underline;
+    color: #20313a;
+}
+
 .my-orders-schedule-parent-header-options-right-btn-1-container:hover {
     background-color: #e8f7ff;
 }
@@ -5830,7 +5848,7 @@ const Styles = styled.div `
 }
 
 .my-orders-schedule-parent-header-options-right-btn-1-container-left img { 
-    width: 56.5%;
+    width: 45.5%;
 }
 
 .my-orders-schedule-parent-header-options-right-btn-1-container-right {
@@ -12267,6 +12285,7 @@ export default class LandingPg extends Component {
             //* # My Orders *//
             showMyOrdersHome: true,
             expressDeliverySelected: false,
+            currDeliveryTimeSlotSelected: null,
             deliveryTimeSelected: '',
 
             selectedRegPaymentOption: "option1",
@@ -14006,11 +14025,20 @@ export default class LandingPg extends Component {
 
     myOrdersExpressDeliverySelected = () => {
         this.setState({
-            expressDeliverySelected: !this.state.expressDeliverySelected
+            expressDeliverySelected: !this.state.expressDeliverySelected,
+        }, () => {
+            if (this.state.expressDeliverySelected === true) {
+                this.setState({currDeliveryTimeSlotSelected: null })
+            }
         })
     }
 
-
+    myOrdersDeliveryTimeSlotSelected = (slot) => {
+        this.setState({
+            currDeliveryTimeSlotSelected: slot,
+            expressDeliverySelected: false
+        })
+    }
         //* - - FAQ POPUP - - *//
 
     faqSubmitBtnClicked = () => {
@@ -18573,7 +18601,7 @@ export default class LandingPg extends Component {
                                                                                                         onClick={this.myOrdersExpressDeliverySelected}
                                                                                                         className={`my-orders-schedule-parent-header-options-right-btn-1-container ${this.state.expressDeliverySelected ? 'selected' : ''}`}>
                                                                                                             <div className='my-orders-schedule-parent-header-options-right-btn-1-container-left'>
-                                                                                                               {this.state.expressDeliverySelected ? (<h5>⚡️</h5>) : (<img src='/assets/icons/home-my-orders/pay-icon-3'/>)}
+                                                                                                               {this.state.expressDeliverySelected ? (<img src='/assets/icons/home-my-orders/pay-icon-3.png'/>) : (<h5>⚡️</h5>)}
                                                                                                             </div>
                                                                                                             <div className='my-orders-schedule-parent-header-options-right-btn-1-container-right'>
                                                                                                                 <h5>Express</h5>
@@ -18586,54 +18614,54 @@ export default class LandingPg extends Component {
                                                                                         <div className='my-orders-schedule-parent-body'>
                                                                                             <div className='my-orders-schedule-parent-body-inner-header'>
                                                                                                 <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                    <div onClick={() => this.myOrdersDeliveryTimeSlotSelected(1)} className={`jipange-settings-selected-time-slots-container-cell-container ${this.state.currDeliveryTimeSlotSelected === 1 ? 'selected': ''}`}>
                                                                                                         <h5>8:00 - 9:00am</h5>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                    <div onClick={() => this.myOrdersDeliveryTimeSlotSelected(2)} className={`jipange-settings-selected-time-slots-container-cell-container ${this.state.currDeliveryTimeSlotSelected === 2 ? 'selected' : ''}`}>
                                                                                                         <h5>9:00 - 10:00am</h5>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                    <div onClick={() => this.myOrdersDeliveryTimeSlotSelected(3)} className={`jipange-settings-selected-time-slots-container-cell-container ${this.state.currDeliveryTimeSlotSelected === 3 ? 'selected' : ''}`}>
                                                                                                         <h5>10:00 - 11:00am</h5>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                    <div onClick={() => this.myOrdersDeliveryTimeSlotSelected(4)} className={`jipange-settings-selected-time-slots-container-cell-container ${this.state.currDeliveryTimeSlotSelected === 4 ? 'selected' : ''}`}>
                                                                                                         <h5>11:00 - 12:00pm</h5>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                    <div onClick={() => this.myOrdersDeliveryTimeSlotSelected(5)} className={`jipange-settings-selected-time-slots-container-cell-container ${this.state.currDeliveryTimeSlotSelected === 5 ? 'selected' : ''}`}>
                                                                                                         <h5>12:00 - 1:00pm</h5>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div className='my-orders-schedule-parent-body-inner-body'>
                                                                                                 <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                    <div onClick={() => this.myOrdersDeliveryTimeSlotSelected(6)} className={`jipange-settings-selected-time-slots-container-cell-container ${this.state.currDeliveryTimeSlotSelected === 6 ? 'selected' : ''}`}>
                                                                                                         <h5>1:00 - 2:00pm</h5>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                    <div onClick={() => this.myOrdersDeliveryTimeSlotSelected(7)} className={`jipange-settings-selected-time-slots-container-cell-container ${this.state.currDeliveryTimeSlotSelected === 7 ? 'selected' : ''}`}>
                                                                                                         <h5>2:00 - 3:00pm</h5>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                    <div onClick={() => this.myOrdersDeliveryTimeSlotSelected(8)} className={`jipange-settings-selected-time-slots-container-cell-container ${this.state.currDeliveryTimeSlotSelected === 8 ? 'selected' : ''}`}>
                                                                                                         <h5>3:00 - 4:00pm</h5>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                    <div onClick={() => this.myOrdersDeliveryTimeSlotSelected(9)} className={`jipange-settings-selected-time-slots-container-cell-container ${this.state.currDeliveryTimeSlotSelected === 9 ? 'selected' : ''}`}>
                                                                                                         <h5>4:00 - 5:00pm</h5>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                 <div className='jipange-settings-selected-time-slots-container-cell'>
-                                                                                                    <div className='jipange-settings-selected-time-slots-container-cell-container'>
+                                                                                                    <div onClick={() => this.myOrdersDeliveryTimeSlotSelected(10)} className={`jipange-settings-selected-time-slots-container-cell-container ${this.state.currDeliveryTimeSlotSelected === 10 ? 'selected' : ''}`}>
                                                                                                         <h5>5:00 - 6:00pm</h5>
                                                                                                     </div>
                                                                                                 </div>
