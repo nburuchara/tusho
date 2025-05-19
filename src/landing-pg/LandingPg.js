@@ -5383,8 +5383,8 @@ const Styles = styled.div `
     width: 92.5%;
     margin-top: 0.5rem;
     border-radius: 5px;
-    // border: 1px solid #ff5733;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 6px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ff5733;
+    // box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 6px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     position: relative;
@@ -5718,34 +5718,13 @@ const Styles = styled.div `
 }
 
 .my-orders-schedule-parent-header {
-    height: 22.5%;
+    height: 25%;
     width: 100%;
     // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: left;
     position: relative;
-}
-
-.my-orders-schedule-parent-header-options {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 65%;
-    border: 1px solid black;
-    display: flex;
-    justify-content: space-between;
-}
-
-.my-orders-schedule-parent-header-options-left {
-    width: 40%;
-    border: 1px solid black;
-}
-
-.my-orders-schedule-parent-header-options-right {
-    width: 60%;
-    border: 1px solid black;
 }
 
 .my-orders-schedule-parent-header p { 
@@ -5757,8 +5736,115 @@ const Styles = styled.div `
     margin-left: 0px;
 }
 
+.my-orders-schedule-parent-header-options {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 65%;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-orders-schedule-parent-header-options-left {
+    width: 18%;
+    // border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.my-orders-schedule-parent-header-options-left:hover .my-orders-schedule-parent-header-options-left-icon {
+    transform: translateX(-0.15rem);
+}
+
+.my-orders-schedule-parent-header-options-left:hover .my-orders-schedule-parent-header-options-left-text p {
+    text-decoration: underline;
+}
+
+.my-orders-schedule-parent-header-options-left-icon {
+    width: 35%;
+    // border: 1px solid black;
+    text-align: right;
+    transition: transform 0.35s ease-in-out;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 5.5%;
+}
+
+.my-orders-schedule-parent-header-options-left-text {
+    width: 65%;
+    // border: 1px solid black;
+    padding-left: 1%;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.my-orders-schedule-parent-header-options-right {
+    width: 82%;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-orders-schedule-parent-header-options-right-btn-1 {
+    width: 52%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.my-orders-schedule-parent-header-options-right-btn-1-container {
+    height: 80%;
+    width: 65%;
+    border: 1px solid #20313a;
+    background-color: #20313a;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+}
+
+.my-orders-schedule-parent-header-options-right-btn-1-container-left {
+    width: 25%;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.my-orders-schedule-parent-header-options-right-btn-1-container-left img { 
+    width: 56.5%;
+}
+
+.my-orders-schedule-parent-header-options-right-btn-1-container-right {
+    width: 75%;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.my-orders-schedule-parent-header-options-right-btn-1-container-right h5 {
+    margin-top: -0.125rem;
+    margin-bottom: 0px;
+    font-family: lexend;
+    font-size: 73.8%;
+    color: white;
+    margin-left: 0.33rem
+}
+
+.my-orders-schedule-parent-header-options-right-btn-2 {
+    width: 48%;
+    // border: 1px solid black;
+}
+
 .my-orders-schedule-parent-body {
-    height: 62.5%;
+    height: 60%;
     margin-top:
     width: 100%;
     // border: 1px solid black;
@@ -18447,10 +18533,27 @@ export default class LandingPg extends Component {
                                                                                             <p>Schedule a drop-off time:</p>
                                                                                             <div className='my-orders-schedule-parent-header-options'>
                                                                                                 <div className='my-orders-schedule-parent-header-options-left'>
-
+                                                                                                    <div className='my-orders-schedule-parent-header-options-left-icon'>
+                                                                                                        <p>←</p>
+                                                                                                    </div>
+                                                                                                    <div className='my-orders-schedule-parent-header-options-left-text'>
+                                                                                                        <p>Back</p>
+                                                                                                    </div>
                                                                                                 </div>
                                                                                                 <div className='my-orders-schedule-parent-header-options-right'>
+                                                                                                    <div className='my-orders-schedule-parent-header-options-right-btn-1'>
+                                                                                                        <div className='my-orders-schedule-parent-header-options-right-btn-1-container'>
+                                                                                                            <div className='my-orders-schedule-parent-header-options-right-btn-1-container-left'>
+                                                                                                               <h5>⚡️</h5>
+                                                                                                            </div>
+                                                                                                            <div className='my-orders-schedule-parent-header-options-right-btn-1-container-right'>
+                                                                                                                <h5>Express</h5>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div className='my-orders-schedule-parent-header-options-right-btn-2'>
 
+                                                                                                    </div>
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
