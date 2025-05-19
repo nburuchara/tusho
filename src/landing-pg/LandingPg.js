@@ -5330,8 +5330,8 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-left-side img {
-    width: 18.5px;
-    height: 18.5px;
+    width: 21.5px;
+    height: 21.5px;
     transform: scaleX(-1);
     margin-top: -0.25rem;
 }
@@ -5347,13 +5347,14 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-right-side p {
-    // font-family: poppins;
+    font-family: sans-serif;
     margin-top: 0px;
     margin-bottom: 0px;
     margin-right: 0.35rem;
     color: #ff5733;
-    font-size: 80.5%;
+    font-size: 120.5%;
     font-weight: bold;
+    text-decoration: underline;
 }   
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-bottom {
@@ -5467,6 +5468,29 @@ const Styles = styled.div `
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
     z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-orders-dropoff-status-container {
+    height: 50%;
+    width: 85%;
+    border: 1px solid #999;
+    background-color: #e8e8e8;
+    border-radius: 3.5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.my-orders-dropoff-status-container-left {
+    width: 20%;
+    border: 1px solid #999;
+}
+
+.my-orders-dropoff-status-container-right {
+    width: 20%;
+    border: 1px solid #999;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-1 {
@@ -5564,6 +5588,11 @@ const Styles = styled.div `
     width: 95%;
     // margin-left: 2.5%;
     background-color: #faece9;
+    transition: height 0.35s ease-in-out;
+}
+
+.my-orders-dropoff-left-parent-body:hover {
+    height: 100%;
 }
 
 .my-orders-dropoff-left-parent-body-address-cell {
@@ -5571,7 +5600,15 @@ const Styles = styled.div `
     border-bottom: 1px solid #ff5733;
     width: 100%;
     display: flex;
+    background-color: #ffdcd5;
+    border-top-right-radius: 7.5px;
+    border-top-left-radius: 7.5px;
     flex-direction: row;
+    cursor: pointer;
+}
+
+.my-orders-dropoff-left-parent-body-address-cell:hover .my-orders-dropoff-left-parent-body-address-cell-right {
+    transform: scale(1.1);
 }
 
 .my-orders-dropoff-left-parent-body-address-cell-left {
@@ -5600,8 +5637,8 @@ const Styles = styled.div `
 }
 
 .my-orders-dropoff-left-parent-body-address-cell-left-header-left img {
-    width: 11.25px;
-    height: 11.25px;
+    width: 13.85px;
+    height: 13.85px;
 }
 
 .my-orders-dropoff-left-parent-body-address-cell-left-header-right {
@@ -5618,7 +5655,7 @@ const Styles = styled.div `
     margin-bottom: 0px;
     color: #ff5733;
     font-family: poppins;
-    font-size: 65%;
+    font-size: 69%;
     // font-weight: normal;
     text-decoration: underline;
 }
@@ -5646,6 +5683,7 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.1s ease-in-out;
 }
 
 .my-orders-dropoff-left-parent-body-address-cell-right-checkbox {
@@ -18539,7 +18577,14 @@ export default class LandingPg extends Component {
                                                                                         <h5>Drop-off</h5>
                                                                                     </div>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom'>
+                                                                                        <div className='my-orders-dropoff-status-container'>
+                                                                                            <div className='my-orders-dropoff-status-container-left'>
 
+                                                                                            </div>
+                                                                                            <div className='my-orders-dropoff-status-container-right'>
+
+                                                                                            </div>
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -18587,7 +18632,7 @@ export default class LandingPg extends Component {
                                                                                     loop 
                                                                                     muted 
                                                                                     playsInline 
-                                                                                    style={{ width: '15%', height: 'auto'}}
+                                                                                    style={{ width: '13%', height: 'auto'}}
                                                                                     />
                                                                                     <p>Loading schedule...</p>
                                                                                 </div>
