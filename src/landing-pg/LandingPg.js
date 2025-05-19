@@ -5347,7 +5347,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-right-side p {
-    font-family: poppins;
+    // font-family: poppins;
     margin-top: 0px;
     margin-bottom: 0px;
     margin-right: 0.35rem;
@@ -5517,10 +5517,17 @@ const Styles = styled.div `
 .my-orders-dropoff-loading-parent {
     height: 100%;
     width: 100%;
-    display: align;
+    display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid black;
+    // border: 1px solid black;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.my-orders-dropoff-loading-parent p {
+    font-size: 68%;
+    margin-top: 0px;
 }
 
     // # CURRENT ORDER SELECT ADDRESS
@@ -5878,12 +5885,13 @@ const Styles = styled.div `
 }
 
 .my-orders-schedule-parent-header-options-right-btn-1-container-right h5 {
-    margin-top: -0.125rem;
+    margin-top: -0.1rem;
     margin-bottom: 0px;
     font-family: lexend;
-    font-size: 78.8%;
+    font-size: 73.8%;
     color: white;
     margin-left: 0.6rem;
+    font-weight: normal;
 }
 
 .my-orders-schedule-parent-header-options-right-btn-2 {
@@ -12302,8 +12310,8 @@ export default class LandingPg extends Component {
 
             //* # My Orders *//
             showMyOrdersHome: true,
-            shoMyOrdersCurrentOptionLoading: true,
-            showMyOrdersCurrentAddressSelect: false,
+            showMyOrdersCurrentOptionLoading: false,
+            showMyOrdersCurrentAddressSelect: true,
             showMyOrdersCurrentScheduleSelect: false,
             expressDeliverySelected: false,
             currDeliveryTimeSlotSelected: null,
@@ -12430,10 +12438,10 @@ export default class LandingPg extends Component {
             promoItems: [
                 { id: 25, name: 'TuShop Fresh Mixed Sizes Eggs', oldPrice: 279.00, newPrice: 250.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/eggs-product.png'},
                 { id: 11, name: 'TuShop Fresh Mwea Pishori Rice', oldPrice: 205.00, newPrice: 190.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/rice-product.png'},
-                { id: 3, name: 'Get Ksh. 250 off your first order with tuShop wallet.', oldPrice: 205.00, newPrice: 'MAX250', type: 'code', description: '', qty: 0, promoParams: 'No expiry', img: '/assets/images/codes/promoCode2.png'},
+                { id: 0, name: 'Get Ksh. 250 off your first order with tuShop wallet.', oldPrice: 205.00, newPrice: 'MAX250', type: 'code', description: '', qty: 0, promoParams: 'No expiry', img: '/assets/images/codes/promoCode2.png'},
                 { id: 5, name: 'Bio Salted Artisanal Butter (500g)', oldPrice: 879.00, newPrice: 850.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/butter-product.png'},
                 { id: 10, name: 'Tushop Fresh Local Watermelon', oldPrice: 369.00, newPrice: 320.00, type: 'product', description: '', qty: 0, img: '/assets/images/products/watermelon-product.webp'},
-                { id: 6, name: 'Get Ksh. 300 off orders over Ksh. 1999.', oldPrice: 205.00, newPrice: 'MAY300', type: 'code', description: '', qty: 0, promoParams: 'Valid till 30/05/25', img: '/assets/images/codes/promoCode1.png'},
+                { id: 0, name: 'Get Ksh. 300 off orders over Ksh. 1999.', oldPrice: 205.00, newPrice: 'MAY300', type: 'code', description: '', qty: 0, promoParams: 'Valid till 30/05/25', img: '/assets/images/codes/promoCode1.png'},
               ],
             selectedPromoType: 'all',
             
@@ -14041,6 +14049,26 @@ export default class LandingPg extends Component {
                     // showJipangeSettingsSelectedDateEdit: true,
                 })
             }, 2500)
+        })
+    }
+
+    myOrdersConfirmBtnClicked = () => {
+        this.setState({
+            showMyOrdersCurrentAddressSelectBtnLoading: true
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    showMyOrdersCurrentAddressSelectBtnLoading: false,
+                    showMyOrdersCurrentAddressSelect: false,
+                    showMyOrdersCurrentOptionLoading: true
+                })
+            }, 1000)
+            setTimeout(() => {
+                this.setState({
+                    showMyOrdersCurrentOptionLoading: false,
+                    showMyOrdersCurrentScheduleSelect: true
+                })
+            }, 5500)
         })
     }
 
@@ -18491,7 +18519,7 @@ export default class LandingPg extends Component {
                                                                                     <img src='/assets/icons/home-my-orders/cart-icon.png'/>
                                                                                 </div>
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-right-side'>
-                                                                                    <p>({this.state.totalCartQuantity})</p>
+                                                                                    <p>{this.state.totalCartQuantity}</p>
                                                                                 </div>
                                                                             </div>
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-bottom'>
@@ -18551,7 +18579,7 @@ export default class LandingPg extends Component {
                                                                     </div>
                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body'>
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-header'>
-                                                                            {this.state.shoMyOrdersCurrentOptionLoading && 
+                                                                            {this.state.showMyOrdersCurrentOptionLoading && 
                                                                                 <div className='my-orders-dropoff-loading-parent'>
                                                                                     <video 
                                                                                     src="/assets/images/home-my-orders/my-orders-loading-vid.mp4" 
@@ -18559,8 +18587,9 @@ export default class LandingPg extends Component {
                                                                                     loop 
                                                                                     muted 
                                                                                     playsInline 
-                                                                                    style={{ width: '10%', height: 'auto'}}
+                                                                                    style={{ width: '15%', height: 'auto'}}
                                                                                     />
+                                                                                    <p>Loading schedule...</p>
                                                                                 </div>
                                                                             }
                                                                             {this.state.showMyOrdersCurrentAddressSelect && 
@@ -18605,7 +18634,27 @@ export default class LandingPg extends Component {
                                                                                                 />
                                                                                             </div>
                                                                                             <div className='my-orders-dropoff-right-parent-body-inner-body'>
-                                                                                                <button>Confirm</button>
+                                                                                                <button onClick={this.myOrdersConfirmBtnClicked}>
+                                                                                                    {this.state.showMyOrdersCurrentAddressSelectBtnLoading ? ( 
+                                                                                                        <div style={{display: "flex", alignItems: "center", justifyContent: 'center'}}>
+                                                                                                            <TailSpin
+                                                                                                            visible={true}
+                                                                                                            height="13.5px"
+                                                                                                            width="13.5px"
+                                                                                                            color="#20313a"
+                                                                                                            ariaLabel="tail-spin-loading"
+                                                                                                            radius="2"
+                                                                                                            wrapperStyle={{}}
+                                                                                                            wrapperClass=""
+                                                                                                            />
+                                                                                                        </div> ) : (
+                                                                                                            <>
+                                                                                                                Confirm
+                                                                                                            </>
+                                                                                                        )
+                                                                                                    }
+                                                                                                        
+                                                                                                </button>
                                                                                             </div>  
                                                                                         </div>
                                                                                     </div>
