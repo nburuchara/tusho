@@ -5801,12 +5801,24 @@ const Styles = styled.div `
 
 .my-orders-schedule-parent-header-options-right-btn-1-container {
     height: 80%;
-    width: 65%;
+    width: 90%;
     border: 1px solid #20313a;
     background-color: #20313a;
     border-radius: 4px;
     display: flex;
     flex-direction: row;
+    cursor: pointer;
+    transition: background-color 0.35s ease-in-out;
+}
+
+.my-orders-schedule-parent-header-options-right-btn-1-container:hover {
+    background-color: #e8f7ff;
+}
+
+.my-orders-schedule-parent-header-options-right-btn-1-container:hover .my-orders-schedule-parent-header-options-right-btn-1-container-right h5 {
+    font-weight: normal;
+    text-decoration: underline;
+    color: #20313a;
 }
 
 .my-orders-schedule-parent-header-options-right-btn-1-container-left {
@@ -5833,14 +5845,18 @@ const Styles = styled.div `
     margin-top: -0.125rem;
     margin-bottom: 0px;
     font-family: lexend;
-    font-size: 73.8%;
+    font-size: 78.8%;
     color: white;
-    margin-left: 0.33rem
+    margin-left: 0.6rem;
 }
 
 .my-orders-schedule-parent-header-options-right-btn-2 {
     width: 48%;
     // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 1.5%;
 }
 
 .my-orders-schedule-parent-body {
@@ -12250,6 +12266,8 @@ export default class LandingPg extends Component {
 
             //* # My Orders *//
             showMyOrdersHome: true,
+            expressDeliverySelected: false,
+            deliveryTimeSelected: '',
 
             selectedRegPaymentOption: "option1",
             showRegPaymentLoading: false,
@@ -13983,6 +14001,12 @@ export default class LandingPg extends Component {
                     // showJipangeSettingsSelectedDateEdit: true,
                 })
             }, 2500)
+        })
+    }
+
+    myOrdersExpressDeliverySelected = () => {
+        this.setState({
+            expressDeliverySelected: !this.state.expressDeliverySelected
         })
     }
 
@@ -18542,17 +18566,19 @@ export default class LandingPg extends Component {
                                                                                                 </div>
                                                                                                 <div className='my-orders-schedule-parent-header-options-right'>
                                                                                                     <div className='my-orders-schedule-parent-header-options-right-btn-1'>
-                                                                                                        <div className='my-orders-schedule-parent-header-options-right-btn-1-container'>
+                                                                                                        
+                                                                                                    </div>
+                                                                                                    <div className='my-orders-schedule-parent-header-options-right-btn-2'>
+                                                                                                        <div 
+                                                                                                        onClick={this.myOrdersExpressDeliverySelected}
+                                                                                                        className={`my-orders-schedule-parent-header-options-right-btn-1-container ${this.state.expressDeliverySelected ? 'selected' : ''}`}>
                                                                                                             <div className='my-orders-schedule-parent-header-options-right-btn-1-container-left'>
-                                                                                                               <h5>⚡️</h5>
+                                                                                                               {this.state.expressDeliverySelected ? (<h5>⚡️</h5>) : (<img src='/assets/icons/home-my-orders/pay-icon-3'/>)}
                                                                                                             </div>
                                                                                                             <div className='my-orders-schedule-parent-header-options-right-btn-1-container-right'>
                                                                                                                 <h5>Express</h5>
                                                                                                             </div>
                                                                                                         </div>
-                                                                                                    </div>
-                                                                                                    <div className='my-orders-schedule-parent-header-options-right-btn-2'>
-
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
