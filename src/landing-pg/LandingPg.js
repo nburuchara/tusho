@@ -5600,6 +5600,14 @@ const Styles = styled.div `
     color: #50b65d;
 }
 
+.my-orders-dropoff-status-container-right2.verified-express p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0.6rem;
+    font-size: 66.5%;
+    color: #50b65d;
+}
+
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-1 {
     width: 33.3%;
     // border: 1px solid black;
@@ -5804,8 +5812,17 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-footer {
     height: 19.35%;
-    // border: 1px solid black;
+    border: 1px solid black;
     width: 100%;
+    position: relative;
+}
+
+.my-orders-footer-container {
+    position: absolute;
+    bottom: 0;
+    height: 80%;
+    width: 100%;
+    border: 1px solid black;
 }
 
     // # CURRENT ORDER LOADING OPTIONS SCREEN
@@ -18884,7 +18901,7 @@ export default class LandingPg extends Component {
                                                                                             <div className={`my-orders-dropoff-status-container-left ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
                                                                                                 {this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified ? (<img src='/assets/icons/home-my-orders/delivery-time-icon-3.png'/>) : (<img src='/assets/icons/home-my-orders/incomplete-icon.png'/>)}
                                                                                             </div>
-                                                                                            <div className={`my-orders-dropoff-status-container-right2 ${this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified ? 'verified' : ''}`}>
+                                                                                            <div className={`my-orders-dropoff-status-container-right2 ${this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified ? this.state.expressDeliverySelected ? 'verified-express' : 'verified' : ''}`}>
                                                                                                 {this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified ? (<p><strong>{this.state.currOrderSelectedSchedule}</strong></p>) : (<p></p>)}
                                                                                             </div>
                                                                                         </div>
@@ -19124,7 +19141,9 @@ export default class LandingPg extends Component {
                                                                             ))}
                                                                         </div>
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-footer'>
+                                                                            <div className='my-orders-footer-container'>
 
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
