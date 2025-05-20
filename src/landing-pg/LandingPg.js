@@ -5281,7 +5281,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order {
-    height: 60%;
+    height: 75%;
     // border: 1px solid black;
     width: 100%;
     display: flex;
@@ -5289,7 +5289,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header {
-    height: 20%;
+    height: 16%;
     // border: 1px solid black;
     width: 100%;
     display: flex;
@@ -5392,7 +5392,7 @@ const Styles = styled.div `
     width: 92.5%;
     margin-top: 0.5rem;
     border-radius: 5px;
-    border: 1px solid #ff5733;
+    // border: 1px solid #ff5733;
     // box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 6px 12px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
@@ -5423,25 +5423,46 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     overflow: hidden;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img.disabled {
+    border: 1px solid #5e626a;
+    background-color: #e8e8e8;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img.verified {
+    background-color: #50b65d;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img img {
-    width: 50%;
+    width: 60%;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img h1 { 
     color: white;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0.7rem;
+    margin-bottom: 0.3rem;
     margin-left: 0px;
     font-size: 62.5%;
+    transition: margin-top 0.5s ease-in-out;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img.disabled h1 {
+    color: #5e626a;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img.verified h1 {
+    color: #5e626a;
+    margin-top: -1rem;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top {
     height: 50%;
     // border: 1px solid black;
-    border-bottom: 1.5px solid #ff5733;
+    border: 1px solid #ff5733;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
     background-color: #ff5733;
@@ -5450,6 +5471,17 @@ const Styles = styled.div `
     align-items: center;
     justify-content: right;
     overflow: hidden;
+    transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top.disabled {
+    background-color: #e8e8e8;
+    border: 1px solid #999;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top.verified {
+    background-color: #50b65d;
+    border: 1px solid #50b65d;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top h5 {
@@ -5459,12 +5491,22 @@ const Styles = styled.div `
     margin-right: 0.5rem;
     font-size: 70.5%;
     // font-family: raleway;
-    // font-weight: normal;
+    font-weight: normal;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top.disabled h5 {
+    color: #5e626a;    
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top.verified h5 {
+    color: white;    
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom {
     height: 50%;
-    // border: 1px solid black;
+    border-bottom: 1px solid #ff5733;
+    border-left: 1px solid #ff5733;
+    border-right: 1px solid #ff5733;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
     z-index: 0;
@@ -5473,14 +5515,32 @@ const Styles = styled.div `
     justify-content: center;
 }
 
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom.disabled {
+    border-bottom: 1px solid #999;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom.verified {
+    border-bottom: 1px solid #50b65d;
+    border-left: 1px solid #50b65d;
+    border-right: 1px solid #50b65d;
+}
+
 .my-orders-dropoff-status-container {
-    height: 58.5%;
-    width: 85%;
-    border: 1px solid #999;
-    background-color: #e8e8e8;
+    height: 100%;
+    width: 100%;
+    // border: 1px solid #999;
+    background-color: white;
     border-radius: 3.5px;
     display: flex;
     flex-direction: row;
+    transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out;
+}
+
+.my-orders-dropoff-status-container.verified {
+    background-color: #eeffef;
+    // border: 1px solid #50b65d;
 }
 
 .my-orders-dropoff-status-container-left {
@@ -5495,20 +5555,28 @@ const Styles = styled.div `
     width: 55%;
 }
 
+.my-orders-dropoff-status-container-left.verified img {
+    width: 42.5%;
+}
+
 .my-orders-dropoff-status-container-right {
     width: 75%;
     // border: 1px solid #999;
-}
-
-.my-orders-dropoff-status-container-right p { 
-    color: #999;
-    margin-top: -0px;
-    margin-bottom: 0px;
-    margin-left: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: left;
-    font-size: 60%;
+}
+
+.my-orders-dropoff-status-container-right p { 
+    color: #5e626a;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0.6rem;
+    font-size: 66.5%;
+}
+
+.my-orders-dropoff-status-container-right.verified p {
+    color: #50b65d;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-1 {
@@ -5539,7 +5607,7 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-body {
-    height: 80%;
+    height: 84%;
     // border: 1px solid black;
     width: 100%;
     display: flex;
@@ -5547,11 +5615,176 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-header {
-    height: 38.5%;
+    height: 39%;
     width: 100%;
     // border: 1px solid black;
     display: flex;
     flex-direction: row;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-body {
+    height: 39.65%;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-top: 2%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.my-orders-verify-home-item-cell {
+    height: auto;
+    // border-bottom: 1px solid black;
+    padding-bottom: 0.65rem;
+    padding-top: 0.15rem;
+    display: flex;
+    justify-content: space-between;
+    // margin-bottom: 20px;
+}
+
+.my-orders-verify-home-item-cell-icon {
+    width: 10%;
+    // border: 1px solid black;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Ensures image stays within bounds */
+    overflow: hidden; /* Prevents overflow of larger images */
+    flex-direction: column;
+}
+
+.my-orders-verify-home-item-cell-icon img {
+    width: 36.5px; /* Ensures image fills container width */
+    height: 36.5px; /* Maintains aspect ratio */
+    max-height: 100%; /* Ensures the image fits within the container height */
+    object-fit: contain; /* Ensures the entire image is visible without distortion */
+}
+
+.my-orders-verify-home-item-cell-icon p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 65%;
+    font-style: italic;
+    text-decoration: underline;
+    color: #FF5733;
+    cursor: pointer;
+}
+
+.my-orders-verify-home-item-cell-details {
+    width: 67.5%;
+    // border: 1px solid black;
+}
+
+.my-orders-verify-home-item-cell-details p {
+    font-size: 75%;
+    margin-top: 0.25rem;
+    margin-top: 0.5rem;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: poppins;
+}
+
+.my-orders-verify-home-item-cell-details button {
+    background-color: #ff5733;
+    border: 1px solid #ff5733;
+    width: 65%;
+    padding: 2px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 8px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.my-orders-verify-home-item-cell-details h5 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+    font-family: poppins;
+    font-size: 80%;
+}
+
+.my-orders-verify-home-item-cell-qty {
+    width: 22.5%;
+    // border: 1px solid black;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.my-orders-verify-home-item-cell-qty-toggle {
+    width: 80%;
+    height: 25.5px;
+    border: 1px solid #bababa;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.my-orders-verify-home-item-cell-qty-toggle-left {
+    width: 30%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.my-orders-verify-home-item-cell-qty-toggle-left p {
+    font-weight: bold;
+    font-size: 80%;
+    margin-top: 10px;
+}
+
+.my-orders-verify-home-item-cell-qty-toggle-center {
+    width: 40%;
+    // border-right: 1px solid black;
+    // border-left: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-orders-verify-home-item-cell-qty-toggle-center p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 80%;
+    font-family: poppins;
+}
+
+.my-orders-verify-home-item-cell-qty-toggle-right {
+    width: 30%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.my-orders-verify-home-item-cell-qty-toggle-right p {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 80%;
+}
+
+.my-orders-verify-home-item-cell-qty-item-price {
+    position: absolute;
+    bottom: -0.55rem;
+    right: 0;
+    margin-bottom: 0px;
+    font-size: 64.5% !important;
+    // font-weight: bold;
+    font-family: lexend;
+    margin-right: 15%;
+}
+
+    // # CURRONT ORDER VERIFY (FOOTER)
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-footer {
+    height: 19.35%;
+    // border: 1px solid black;
+    width: 100%;
 }
 
     // # CURRENT ORDER LOADING OPTIONS SCREEN
@@ -5780,7 +6013,7 @@ const Styles = styled.div `
     bottom: 0;
     right: 0;
     width: 60%;
-    height: 80%;
+    height: 70%;
     background-color: #ff5733;
     border: 1px solid #ff5733;
     border-radius: 5px;
@@ -12369,6 +12602,8 @@ export default class LandingPg extends Component {
             showMyOrdersCurrentOptionLoading: false,
             showMyOrdersCurrentAddressSelect: true,
             showMyOrdersCurrentScheduleSelect: false,
+            currOrderAddressVerified: false,
+            currOrderScheduleVerified: false,
             expressDeliverySelected: false,
             currDeliveryTimeSlotSelected: null,
             deliveryTimeSelected: '',
@@ -14116,13 +14351,14 @@ export default class LandingPg extends Component {
                 this.setState({
                     showMyOrdersCurrentAddressSelectBtnLoading: false,
                     showMyOrdersCurrentAddressSelect: false,
-                    showMyOrdersCurrentOptionLoading: true
+                    showMyOrdersCurrentOptionLoading: true,
+                    currOrderAddressVerified: true
                 })
             }, 1000)
             setTimeout(() => {
                 this.setState({
                     showMyOrdersCurrentOptionLoading: false,
-                    showMyOrdersCurrentScheduleSelect: true
+                    showMyOrdersCurrentScheduleSelect: true,
                 })
             }, 5500)
         })
@@ -18586,21 +18822,21 @@ export default class LandingPg extends Component {
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-1'>
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
-                                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img'>
+                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
                                                                                             <h1>1</h1>
-                                                                                            {/* <img src='/assets/icons/home-my-orders/location-icon.png'/> */}
+                                                                                            <img src='/assets/icons/home-my-orders/checkmark-icon.png'/>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top'>
+                                                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
                                                                                         <h5>Drop-off</h5>
                                                                                     </div>
-                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom'>
-                                                                                        <div className='my-orders-dropoff-status-container'>
-                                                                                            <div className='my-orders-dropoff-status-container-left'>
-                                                                                                <img src='/assets/icons/home-my-orders/incomplete-icon.png'/>
+                                                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom ${this.state.currOrderAddressVerified ? 'verified' :''}`}>
+                                                                                        <div className={`my-orders-dropoff-status-container ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
+                                                                                            <div className={`my-orders-dropoff-status-container-left ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
+                                                                                                {this.state.currOrderAddressVerified ? (<img src='/assets/icons/home-my-orders/location-icon-3.png'/>) : (<img src='/assets/icons/home-my-orders/incomplete-icon.png'/>)}
                                                                                             </div>
-                                                                                            <div className='my-orders-dropoff-status-container-right'>
-                                                                                                <p>Not set</p>
+                                                                                            <div className={`my-orders-dropoff-status-container-right ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
+                                                                                                {this.state.currOrderAddressVerified ? (<p><strong>Home</strong></p>) : (<p></p>)}
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
@@ -18609,32 +18845,46 @@ export default class LandingPg extends Component {
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-2'>
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
-                                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img'>
+                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img ${this.state.currOrderAddressVerified === false ? 'disabled' : (this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified) ? 'verified' : ''}`}>
                                                                                             <h1>2</h1>
-                                                                                            {/* <img src='/assets/icons/home-my-orders/delivery-time-icon.png'/> */}
+                                                                                            <img src='/assets/icons/home-my-orders/checkmark-icon.png'/>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top'>
+                                                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top ${this.state.currOrderAddressVerified ? '' : 'disabled'}`}>
                                                                                         <h5>Schedule</h5>
                                                                                     </div>
-                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom'>
-
+                                                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom ${this.state.currOrderAddressVerified ? '' : 'disabled'}`}>
+                                                                                        <div className='my-orders-dropoff-status-container'>
+                                                                                            <div className='my-orders-dropoff-status-container-left'>
+                                                                                                <img src='/assets/icons/home-my-orders/incomplete-icon.png'/>
+                                                                                            </div>
+                                                                                            <div className='my-orders-dropoff-status-container-right'>
+                                                                                                <p></p>
+                                                                                            </div>
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-3'>
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
-                                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img'>
+                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img ${(this.state.currOrderAddressVerified === false || this.state.currOrderScheduleVerified === false) ? 'disabled' : (this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified) ? 'verified' : ''}`}>
                                                                                             <h1>3</h1>
-                                                                                            {/* <img src='/assets/icons/home-my-orders/pay-icon-3.png'/> */}
+                                                                                            <img src='/assets/icons/home-my-orders/checkmark-icon.png'/>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top'>
+                                                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top ${(this.state.currOrderAddressVerified === false || this.state.currOrderScheduleVerified === false) ? 'disabled' : ''}`}>
                                                                                         <h5>Pay</h5>
                                                                                     </div>
-                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom'>
-
+                                                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom ${(this.state.currOrderAddressVerified === false || this.state.currOrderScheduleVerified === false) ? 'disabled' : ''}`}>
+                                                                                        <div className='my-orders-dropoff-status-container'>
+                                                                                            <div className='my-orders-dropoff-status-container-left'>
+                                                                                                <img src='/assets/icons/home-my-orders/incomplete-icon.png'/>
+                                                                                            </div>
+                                                                                            <div className='my-orders-dropoff-status-container-right'>
+                                                                                                <p></p>
+                                                                                            </div>
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -18818,6 +19068,37 @@ export default class LandingPg extends Component {
                                                                                     </div>
                                                                                 </>
                                                                             }
+                                                                        </div>
+                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-body'>
+                                                                            {this.state.cart.map((item) => (
+                                                                                <div key={item.id} className="my-orders-verify-home-item-cell">
+                                                                                    <div className="my-orders-verify-home-item-cell-icon">
+                                                                                        <img src={item.image} alt={item.name} />
+                                                                                        <p onClick={() => this.removeFromCart(item.id)}>remove</p>
+                                                                                    </div>
+                                                                                    <div className="my-orders-verify-home-item-cell-details">
+                                                                                        <p>{item.name}</p>
+                                                                                        {item.jipangeSelected ? (<button><h5><span>◉ </span>Jipange: {item.jipangeDate}</h5></button>): null}
+                                                                                    </div>
+                                                                                    <div className="my-orders-verify-home-item-cell-qty">
+                                                                                        <div className="my-orders-verify-home-item-cell-qty-toggle">
+                                                                                            <div onClick={() => this.mainPageProductsHandleQtyChange(item.id, -1)} className="my-orders-verify-home-item-cell-qty-toggle-left">
+                                                                                                <p>-</p>
+                                                                                            </div>
+                                                                                            <div className="my-orders-verify-home-item-cell-qty-toggle-center">
+                                                                                                <p>{item.quantity}</p>
+                                                                                            </div>
+                                                                                            <div onClick={() => this.mainPageProductsHandleQtyChange(item.id, 1)} className="my-orders-verify-home-item-cell-qty-toggle-right">
+                                                                                                <p>+</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <p className="my-orders-verify-home-item-cell-qty-item-price">KES {item.price * item.quantity}.00</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            ))}
+                                                                        </div>
+                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-footer'>
+
                                                                         </div>
                                                                     </div>
                                                                 </div>
