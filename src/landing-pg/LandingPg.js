@@ -5474,7 +5474,7 @@ const Styles = styled.div `
 }
 
 .my-orders-dropoff-status-container {
-    height: 50%;
+    height: 58.5%;
     width: 85%;
     border: 1px solid #999;
     background-color: #e8e8e8;
@@ -5484,13 +5484,31 @@ const Styles = styled.div `
 }
 
 .my-orders-dropoff-status-container-left {
-    width: 20%;
-    border: 1px solid #999;
+    width: 25%;
+    // border: 1px solid #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-orders-dropoff-status-container-left img {
+    width: 55%;
 }
 
 .my-orders-dropoff-status-container-right {
-    width: 20%;
-    border: 1px solid #999;
+    width: 75%;
+    // border: 1px solid #999;
+}
+
+.my-orders-dropoff-status-container-right p { 
+    color: #999;
+    margin-top: -0px;
+    margin-bottom: 0px;
+    margin-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 60%;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-1 {
@@ -18579,10 +18597,10 @@ export default class LandingPg extends Component {
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom'>
                                                                                         <div className='my-orders-dropoff-status-container'>
                                                                                             <div className='my-orders-dropoff-status-container-left'>
-
+                                                                                                <img src='/assets/icons/home-my-orders/incomplete-icon.png'/>
                                                                                             </div>
                                                                                             <div className='my-orders-dropoff-status-container-right'>
-
+                                                                                                <p>Not set</p>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
