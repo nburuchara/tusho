@@ -5820,7 +5820,7 @@ const Styles = styled.div `
 .my-orders-footer-container {
     position: absolute;
     bottom: 0;
-    height: 80%;
+    height: 85%;
     width: 100%;
     border: 1px solid black;
     display: flex;
@@ -5828,20 +5828,20 @@ const Styles = styled.div `
 }
 
 .my-orders-footer-container-left {
-    width: 52.5%;
+    width: 60%;
     // border: 1px solid black;
     display: flex;
     justify-content: space-between;
 }
 
-.my-orders-footer-container-left-child {
-    width: 50%;
+.my-orders-footer-container-left-child-1 {
+    width: 40%;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
 }
 
-.my-orders-footer-container-left-child-top {
+.my-orders-footer-container-left-child-1-top {
     height: 45%;
     width: 100%;
     border: 1px solid black;
@@ -5849,34 +5849,44 @@ const Styles = styled.div `
     flex-direction: row;
 }
 
-.my-orders-footer-container-left-child-top-left {
+.my-orders-footer-container-left-child-1-top-left {
     width: 20%;
     border: 1px solid black;
 }
 
-.my-orders-footer-container-left-child-top-right {
+.my-orders-footer-container-left-child-1-top-right {
     width: 80%;
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: right;
 }
 
-.my-orders-footer-container-left-child-bottom {
+.my-orders-footer-container-left-child-1-bottom {
     height: 55%;
     width: 100%;
     border: 1px solid black;
     position: relative;
 }
 
-.my-orders-footer-container-left-child-bottom h3 {
+.my-orders-footer-container-left-child-1-bottom h3 {
     position: absolute;
     bottom: 0;
     left: 0;
     margin-top: 0px;
     margin-bottom: 0px;
-    color: #20313a;
+    color: #24668a;
+}
+
+.my-orders-footer-container-left-child-2 {
+    width: 60%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
 }
 
 .my-orders-footer-container-right {
-    width: 47.5%;
+    width: 40%;
     // border: 1px solid black;
 }
 
@@ -19198,20 +19208,20 @@ export default class LandingPg extends Component {
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-footer'>
                                                                             <div className='my-orders-footer-container'>
                                                                                 <div className='my-orders-footer-container-left'>
-                                                                                    <div className='my-orders-footer-container-left-child'>
-                                                                                        <div className='my-orders-footer-container-left-child-top'>
-                                                                                            <div className='my-orders-footer-container-left-child-top-left'>
+                                                                                    <div className='my-orders-footer-container-left-child-1'>
+                                                                                        <div className='my-orders-footer-container-left-child-1-top'>
+                                                                                            <div className='my-orders-footer-container-left-child-1-top-left'>
 
                                                                                             </div>
-                                                                                            <div className='my-orders-footer-container-left-child-top-right'>
-
+                                                                                            <div className='my-orders-footer-container-left-child-1-top-right'>
+                                                                                                <h5>{this.state.totalCartPrice}</h5>
                                                                                             </div>
                                                                                         </div>
-                                                                                        <div className='my-orders-footer-container-left-child-bottom'>
+                                                                                        <div className='my-orders-footer-container-left-child-1-bottom'>
                                                                                             <h3>Subtotal:</h3>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div className='my-orders-footer-container-left-child'>
+                                                                                    <div className='my-orders-footer-container-left-child-2'>
 
                                                                                     </div>
                                                                                 </div>
