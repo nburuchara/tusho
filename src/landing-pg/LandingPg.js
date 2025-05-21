@@ -5852,6 +5852,13 @@ const Styles = styled.div `
 .my-orders-footer-container-left-child-1-top-left {
     width: 20%;
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-orders-footer-container-left-child-1-top-left img {
+    width: 95%;
 }
 
 .my-orders-footer-container-left-child-1-top-right {
@@ -5883,6 +5890,43 @@ const Styles = styled.div `
     border: 1px solid black;
     display: flex;
     flex-direction: column;
+}
+
+.my-orders-footer-container-left-child-2-top {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.my-orders-footer-container-left-child-2-top-left {
+    width: 50%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    justify-content: left;
+}
+
+.my-orders-footer-container-left-child-2-top-left p {
+    margin-top: -0.1rem;
+    margin-bottom: 0px;
+    color: #5e626a;
+    font-size: 65%;
+    font-family: poppins;
+    text-align: left;
+}
+
+.my-orders-footer-container-left-child-2-top-right {
+    width: 50%;
+    border: 1px solid black;
+}
+
+.my-orders-footer-container-left-child-2-bottom {
+    height: 50%;
+    width: 100%;
+    border: 1px solid black;
 }
 
 .my-orders-footer-container-right {
@@ -19211,18 +19255,29 @@ export default class LandingPg extends Component {
                                                                                     <div className='my-orders-footer-container-left-child-1'>
                                                                                         <div className='my-orders-footer-container-left-child-1-top'>
                                                                                             <div className='my-orders-footer-container-left-child-1-top-left'>
-
+                                                                                                <img src='/assets/icons/home-my-orders/subtotal-icon.png'/>
                                                                                             </div>
                                                                                             <div className='my-orders-footer-container-left-child-1-top-right'>
-                                                                                                <h5>{this.state.totalCartPrice}</h5>
+                                                                                                {/* <h5>{this.state.totalCartPrice}</h5> */}
                                                                                             </div>
                                                                                         </div>
                                                                                         <div className='my-orders-footer-container-left-child-1-bottom'>
-                                                                                            <h3>Subtotal:</h3>
+                                                                                            <h3>Total:</h3>
                                                                                         </div>
                                                                                     </div>
                                                                                     <div className='my-orders-footer-container-left-child-2'>
+                                                                                        <div className='my-orders-footer-container-left-child-2-top'>
+                                                                                            <div className='my-orders-footer-container-left-child-2-top-left'>
+                                                                                                <p>Subtotal</p>
+                                                                                                <p>Delivery fee</p>
+                                                                                            </div>
+                                                                                            <div className='my-orders-footer-container-left-child-2-top-right'>
 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div className='my-orders-footer-container-left-child-2-bottom'>
+
+                                                                                        </div>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div className='my-orders-footer-container-right'>
