@@ -12848,8 +12848,8 @@ export default class LandingPg extends Component {
             deliveryInfoAddressType4: false,
 
             //* # My Orders *//
-            showMyOrdersHome: false,
-            myOrdersLoadingTransitionActive: true,
+            showMyOrdersHome: true,
+            myOrdersLoadingTransitionActive: false,
             showMyOrdersCurrentOptionLoading: false,
             showMyOrdersCurrentAddressSelect: true,
             showMyOrdersCurrentScheduleSelect: false,
@@ -14640,13 +14640,14 @@ export default class LandingPg extends Component {
     myOrdersPaymentClicked = () => {
         if (this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified) {
             this.setState({
-
+                showMyOrdersHome: false,
+                myOrdersLoadingTransitionActive: true,
             }, () => {
                 setTimeout(() => {
                     this.setState({
-    
+                        myOrdersLoadingTransitionActive: false,
                     })
-                })
+                }, 2500)
             })
         }
     }
@@ -19452,7 +19453,7 @@ export default class LandingPg extends Component {
                                                         <div className='my-orders-payment-home-page-header'>
                                                             <div className='my-orders-payment-home-page-header-inner-header'>
                                                                 <div className='my-orders-payment-home-page-header-inner-header-left'>
-                                                                    <p>My Cart</p>
+                                                                    <p>Checkout</p>
                                                                 </div>
                                                                 <div className='my-orders-payment-home-page-header-inner-header-right'>
                                                                     <div className='my-orders-payment-home-page-header-inner-header-right-left-side'>
