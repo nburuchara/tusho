@@ -5716,8 +5716,9 @@ const Styles = styled.div `
 .my-orders-verify-home-item-cell-details button {
     background-color: #ff5733;
     border: 1px solid #ff5733;
-    width: 65%;
-    padding: 2px;
+    width: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     padding-top: 3px;
     padding-bottom: 3px;
     border-radius: 8px;
@@ -5929,7 +5930,7 @@ const Styles = styled.div `
     margin-bottom: 0px;
     color: #5e626a;
     font-size: 75%;
-    font-family: poppins;
+    // font-family: poppins;
     // font-weight: bold;
     text-align: right;
 }
@@ -6018,6 +6019,43 @@ const Styles = styled.div `
     transition: font-weight 0.1s ease-in-out;
 }
 
+.dots-loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    gap: 8px;
+}
+  
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #333;
+    border-radius: 50%;
+    animation: bounce 0.6s infinite ease-in-out;
+}
+
+.dot1 {
+    animation-delay: 0s;
+}
+
+.dot2 {
+    animation-delay: 0.15s;
+}
+
+.dot3 {
+    animation-delay: 0.3s;
+}
+
+@keyframes bounce {
+    0%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+}
+
     // # CURRENT ORDER LOADING OPTIONS SCREEN
 
 .my-orders-dropoff-loading-parent {
@@ -6057,9 +6095,12 @@ const Styles = styled.div `
 .my-orders-dropoff-left-parent-header p {
     margin-top: 0px;
     margin-bottom: 0px;
-    color: #5e626a;
+    // color: #5e626a;
+    color: #20313a;
     font-family: poppins;
     font-size: 73.5%;
+    // font-weight: bold;
+    // text-decoration: underline;
     margin-left: 0px;
 }
 
@@ -6207,7 +6248,7 @@ const Styles = styled.div `
 .my-orders-dropoff-right-parent-header p {
     margin-top: 0px;
     margin-bottom: 0px;
-    color: #5e626a;
+    color: #20313a;
     font-family: poppins;
     font-size: 73.5%;
     margin-left: 0px;
@@ -6288,7 +6329,7 @@ const Styles = styled.div `
 .my-orders-schedule-parent-header p { 
     margin-top: 0px;
     margin-bottom: 0px;
-    color: #5e626a;
+    color: #20313a;
     font-family: poppins;
     font-size: 73.5%;
     margin-left: 0px;
@@ -6763,6 +6804,7 @@ const Styles = styled.div `
     position: absolute;
     bottom: -0.15rem;
     right: 0;
+    color: #5e626a !important;
     margin-bottom: 0px;
     font-size: 67.5%;
     // font-weight: bold;
@@ -14526,18 +14568,14 @@ export default class LandingPg extends Component {
 
     regularHandlePaymentConfirmed = (paymentType) => {
         this.setState({
-            [`makeRegPayment${paymentType}Default`]: false,
-            [`makeRegPayment${paymentType}Loading`]: true
+            myOrdersLoadingTransitionActive: true
         }, () => {
             setTimeout(() => {
                 this.setState({
-                    [`makeRegPayment${paymentType}Default`]: true,
-            [`makeRegPayment${paymentType}Loading`]: false
+                    myOrdersLoadingTransitionActive: false,
+                    showMyOrdersHome: true
                 })
-            }, 2500)
-            setTimeout(() => {
-                this.regularTransitionToShippingAddress()
-            }, 2000)
+            }, 8000)
         })
     }
 
@@ -19088,7 +19126,7 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                             </div>
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-bottom'>
-                                                                                <h2>My Order:</h2>
+                                                                                <h2>My Cart:</h2>
                                                                             </div>
                                                                         </div>   
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right'>
@@ -19408,7 +19446,12 @@ export default class LandingPg extends Component {
                                                                                             <img src='/assets/icons/home-my-orders/pay-btn-icon2.png'/>
                                                                                         </div>
                                                                                         <div className='my-orders-footer-container-right-pay-btn-text'>
-                                                                                            <h4>Pay</h4>
+                                                                                            {/* <h4>Pay</h4> */}
+                                                                                            <div className="dots-loader">
+                                                                                                <span className="dot dot1"></span>
+                                                                                                <span className="dot dot2"></span>
+                                                                                                <span className="dot dot3"></span>
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
