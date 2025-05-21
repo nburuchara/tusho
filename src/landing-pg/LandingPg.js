@@ -5823,6 +5823,61 @@ const Styles = styled.div `
     height: 80%;
     width: 100%;
     border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.my-orders-footer-container-left {
+    width: 52.5%;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-orders-footer-container-left-child {
+    width: 50%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-orders-footer-container-left-child-top {
+    height: 45%;
+    width: 100%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.my-orders-footer-container-left-child-top-left {
+    width: 20%;
+    border: 1px solid black;
+}
+
+.my-orders-footer-container-left-child-top-right {
+    width: 80%;
+    border: 1px solid black;
+}
+
+.my-orders-footer-container-left-child-bottom {
+    height: 55%;
+    width: 100%;
+    border: 1px solid black;
+    position: relative;
+}
+
+.my-orders-footer-container-left-child-bottom h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #20313a;
+}
+
+.my-orders-footer-container-right {
+    width: 47.5%;
+    // border: 1px solid black;
 }
 
     // # CURRENT ORDER LOADING OPTIONS SCREEN
@@ -19142,7 +19197,27 @@ export default class LandingPg extends Component {
                                                                         </div>
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-footer'>
                                                                             <div className='my-orders-footer-container'>
+                                                                                <div className='my-orders-footer-container-left'>
+                                                                                    <div className='my-orders-footer-container-left-child'>
+                                                                                        <div className='my-orders-footer-container-left-child-top'>
+                                                                                            <div className='my-orders-footer-container-left-child-top-left'>
 
+                                                                                            </div>
+                                                                                            <div className='my-orders-footer-container-left-child-top-right'>
+
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div className='my-orders-footer-container-left-child-bottom'>
+                                                                                            <h3>Subtotal:</h3>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div className='my-orders-footer-container-left-child'>
+
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div className='my-orders-footer-container-right'>
+
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
