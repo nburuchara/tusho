@@ -6504,6 +6504,16 @@ const Styles = styled.div `
     margin-left: 0px;
 }
 
+    // # CURRENT ORDER LOADING PAYMENT PAGE 
+
+.my-orders-loading-payment-screen {
+    width: 99.5%;
+    height: 100%;
+    // border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+}
+
 .my-orders-payment-home-page {
     display: flex;
     flex-direction: column;
@@ -12838,7 +12848,8 @@ export default class LandingPg extends Component {
             deliveryInfoAddressType4: false,
 
             //* # My Orders *//
-            showMyOrdersHome: true,
+            showMyOrdersHome: false,
+            myOrdersLoadingTransitionActive: true,
             showMyOrdersCurrentOptionLoading: false,
             showMyOrdersCurrentAddressSelect: true,
             showMyOrdersCurrentScheduleSelect: false,
@@ -14625,6 +14636,22 @@ export default class LandingPg extends Component {
             expressDeliverySelected: false
         })
     }
+
+    myOrdersPaymentClicked = () => {
+        if (this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified) {
+            this.setState({
+
+            }, () => {
+                setTimeout(() => {
+                    this.setState({
+    
+                    })
+                })
+            })
+        }
+    }
+
+
         //* - - FAQ POPUP - - *//
 
     faqSubmitBtnClicked = () => {
@@ -19043,7 +19070,7 @@ export default class LandingPg extends Component {
 
                                         {this.state.showMyOrdersSettings && 
                                             <div className='navbar-profile-account-popup-my-orders-settings'>
-                                                {this.state.cart.length > 0 && this.state.showMyOrdersHome && 
+                                                {this.state.cart.length > 0 && this.state.showMyOrdersHome && !this.state.myOrdersLoadingTransitionActive && 
                                                     <div className={`navbar-profile-account-popup-my-orders-settings-container`}>
                                                         <p>My Orders:</p>
                                                         <div className={`navbar-profile-account-popup-my-orders-settings-container-content ${this.state.cart.length === 0 ? 'empty' : ''}`}>
@@ -19375,7 +19402,7 @@ export default class LandingPg extends Component {
                                                                                     </div>
                                                                                 </div>
                                                                                 <div className='my-orders-footer-container-right'>
-                                                                                    <div className={`my-orders-footer-container-right-pay-btn ${this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified ? 'active' : ''}`}>
+                                                                                    <div onClick={this.myOrdersPaymentClicked} className={`my-orders-footer-container-right-pay-btn ${this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified ? 'active' : ''}`}>
                                                                                         <div className='my-orders-footer-container-right-pay-btn-icon'>
                                                                                             <img src='/assets/icons/home-my-orders/pay-btn-icon2.png'/>
                                                                                         </div>
@@ -19399,7 +19426,28 @@ export default class LandingPg extends Component {
                                                         </div>
                                                     </div>
                                                 }
-                                                {this.state.cart.length > 0 && !this.state.showMyOrdersHome && 
+                                                {this.state.cart.length > 0 && !this.state.showMyOrdersHome && this.state.myOrdersLoadingTransitionActive && 
+                                                    <div className='navbar-profile-account-popup-my-orders-settings-container'>
+                                                        <div className='my-orders-loading-payment-screen'>
+                                                            <div className='navbar-profile-loading-popup-settings'>
+                                                                <TailSpin
+                                                                visible={true}
+                                                                height="35px"
+                                                                width="35px"
+                                                                color="#ff5733"
+                                                                ariaLabel="tail-spin-loading"
+                                                                radius="2"
+                                                                wrapperStyle={{}}
+                                                                wrapperClass=""
+                                                                />
+                                                                <div>
+                                                                    <p>Loading...</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                                {this.state.cart.length > 0 && !this.state.showMyOrdersHome && !this.state.myOrdersLoadingTransitionActive && 
                                                     <div style={{width: '97.5%', height: "100%", position: 'relative'}} className='my-orders-payment-home-page'>
                                                         <div className='my-orders-payment-home-page-header'>
                                                             <div className='my-orders-payment-home-page-header-inner-header'>
