@@ -5893,7 +5893,7 @@ const Styles = styled.div `
 }
 
 .my-orders-footer-container-left-child-2-top {
-    height: 50%;
+    height: 55%;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -5912,7 +5912,7 @@ const Styles = styled.div `
     margin-top: -0.1rem;
     margin-bottom: 0px;
     color: #5e626a;
-    font-size: 65%;
+    font-size: 75%;
     font-family: poppins;
 }
 
@@ -5928,16 +5928,16 @@ const Styles = styled.div `
     margin-top: -0.1rem;
     margin-bottom: 0px;
     color: #5e626a;
-    font-size: 65%;
+    font-size: 75%;
     font-family: poppins;
-    font-weight: bold;
+    // font-weight: bold;
     text-align: right;
 }
 
 .my-orders-footer-container-left-child-2-bottom {
-    height: 50%;
+    height: 45%;
     width: 100%;
-    border: 1px solid #ccc;
+    border-top: 1px solid #ccc;
     position: relative;
 }
 
@@ -5945,11 +5945,77 @@ const Styles = styled.div `
     position: absolute;
     bottom: 0;
     right: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #24668a;
 }
 
 .my-orders-footer-container-right {
     width: 40%;
     // border: 1px solid black;
+    position: relative;
+}
+
+.my-orders-footer-container-right-pay-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 65%;
+    width: 88.5%;
+    border: 1px solid #20313a;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    cursor: not-allowed;
+    background-color: #e8f7ff;
+    transition: transform 0.35s ease-in-out;
+    filter: grayscale(100%);
+}
+
+.my-orders-footer-container-right-pay-btn.active {
+    cursor: pointer;
+    filter: grayscale(0);
+}
+
+.my-orders-footer-container-right-pay-btn.active:hover {
+    transform: scale(1.025);
+}
+
+.my-orders-footer-container-right-pay-btn.active:hover .my-orders-footer-container-right-pay-btn-text h4 {
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+.my-orders-footer-container-right-pay-btn-icon {
+    width: 30%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-orders-footer-container-right-pay-btn-icon img {
+    width: 35%;
+    padding-bottom: 0.1rem;
+}
+
+.my-orders-footer-container-right-pay-btn-text {
+    width: 70%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.my-orders-footer-container-right-pay-btn-text h4 {
+    font-size: 90%;
+    margin-top: -0.2rem;
+    margin-bottom: 0px;
+    color: #24668a;
+    // font-family: poppins;
+    // font-weight: normal;
+    margin-left: 1.5rem;
+    transition: font-weight 0.1s ease-in-out;
 }
 
     // # CURRENT ORDER LOADING OPTIONS SCREEN
@@ -5993,7 +6059,7 @@ const Styles = styled.div `
     margin-bottom: 0px;
     color: #5e626a;
     font-family: poppins;
-    font-size: 70%;
+    font-size: 73.5%;
     margin-left: 0px;
 }
 
@@ -6023,6 +6089,10 @@ const Styles = styled.div `
     cursor: pointer;
 }
 
+.my-orders-dropoff-left-parent-body-address-cell:hover .my-orders-dropoff-left-parent-body-address-cell-left {
+    transform: scale(1.02);
+}
+
 .my-orders-dropoff-left-parent-body-address-cell:hover .my-orders-dropoff-left-parent-body-address-cell-right {
     transform: scale(1.1);
 }
@@ -6033,6 +6103,7 @@ const Styles = styled.div `
     // border: 1px solid #ff5733;
     display: flex;
     flex-direction: column;
+    transition: transform 0.1s ease-in-out;
 }
 
 .my-orders-dropoff-left-parent-body-address-cell-left-header {
@@ -6138,7 +6209,7 @@ const Styles = styled.div `
     margin-bottom: 0px;
     color: #5e626a;
     font-family: poppins;
-    font-size: 70%;
+    font-size: 73.5%;
     margin-left: 0px;
 }
 
@@ -6219,7 +6290,7 @@ const Styles = styled.div `
     margin-bottom: 0px;
     color: #5e626a;
     font-family: poppins;
-    font-size: 70%;
+    font-size: 73.5%;
     margin-left: 0px;
 }
 
@@ -6235,7 +6306,7 @@ const Styles = styled.div `
 }
 
 .my-orders-schedule-parent-header-options-left {
-    width: 18%;
+    width: 20%;
     // border: 1px solid black;
     display: flex;
     flex-direction: row;
@@ -6258,7 +6329,7 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: right;
-    padding-right: 5.5%;
+    padding-right: 3.5%;
 }
 
 .my-orders-schedule-parent-header-options-left-text {
@@ -6271,8 +6342,12 @@ const Styles = styled.div `
     align-items: center;
 }
 
+.my-orders-schedule-parent-header-options-left-text p {
+    font-size: 73.5%;
+}
+
 .my-orders-schedule-parent-header-options-right {
-    width: 82%;
+    width: 80%;
     // border: 1px solid black;
     display: flex;
     justify-content: space-between;
@@ -18985,7 +19060,7 @@ export default class LandingPg extends Component {
                                                                                 </div>
                                                                             </div>
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-bottom'>
-                                                                                <h2>My Order</h2>
+                                                                                <h2>My Order:</h2>
                                                                             </div>
                                                                         </div>   
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right'>
@@ -19290,17 +19365,24 @@ export default class LandingPg extends Component {
                                                                                                 <p>Delivery fee</p>
                                                                                             </div>
                                                                                             <div className='my-orders-footer-container-left-child-2-top-right'>
-                                                                                                <p>KES {this.state.totalCartPrice}.00</p>
-                                                                                                <p>KES 99.00</p>
+                                                                                                <p><strong>{this.state.totalCartPrice}.00</strong></p>
+                                                                                                <p><strong>99.00</strong></p>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div className='my-orders-footer-container-left-child-2-bottom'>
-
+                                                                                            <h3>KES {this.state.totalCartPrice + 99}.00</h3>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                                 <div className='my-orders-footer-container-right'>
-
+                                                                                    <div className={`my-orders-footer-container-right-pay-btn ${this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified ? 'active' : ''}`}>
+                                                                                        <div className='my-orders-footer-container-right-pay-btn-icon'>
+                                                                                            <img src='/assets/icons/home-my-orders/pay-btn-icon2.png'/>
+                                                                                        </div>
+                                                                                        <div className='my-orders-footer-container-right-pay-btn-text'>
+                                                                                            <h4>Pay</h4>
+                                                                                        </div>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
