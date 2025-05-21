@@ -5812,7 +5812,7 @@ const Styles = styled.div `
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-footer {
     height: 19.35%;
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 100%;
     position: relative;
 }
@@ -5820,9 +5820,9 @@ const Styles = styled.div `
 .my-orders-footer-container {
     position: absolute;
     bottom: 0;
-    height: 85%;
+    height: 88.5%;
     width: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     flex-direction: row;
 }
@@ -5836,7 +5836,7 @@ const Styles = styled.div `
 
 .my-orders-footer-container-left-child-1 {
     width: 40%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     flex-direction: column;
 }
@@ -5844,14 +5844,14 @@ const Styles = styled.div `
 .my-orders-footer-container-left-child-1-top {
     height: 45%;
     width: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     flex-direction: row;
 }
 
 .my-orders-footer-container-left-child-1-top-left {
     width: 20%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -5863,7 +5863,7 @@ const Styles = styled.div `
 
 .my-orders-footer-container-left-child-1-top-right {
     width: 80%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: right;
@@ -5872,7 +5872,7 @@ const Styles = styled.div `
 .my-orders-footer-container-left-child-1-bottom {
     height: 55%;
     width: 100%;
-    border: 1px solid black;
+    // border: 1px solid black;
     position: relative;
 }
 
@@ -5887,7 +5887,7 @@ const Styles = styled.div `
 
 .my-orders-footer-container-left-child-2 {
     width: 60%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     flex-direction: column;
 }
@@ -5897,15 +5897,14 @@ const Styles = styled.div `
     width: 100%;
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .my-orders-footer-container-left-child-2-top-left {
     width: 50%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     flex-direction: column;
-    // align-items: center;
     justify-content: left;
 }
 
@@ -5915,18 +5914,37 @@ const Styles = styled.div `
     color: #5e626a;
     font-size: 65%;
     font-family: poppins;
-    text-align: left;
 }
 
 .my-orders-footer-container-left-child-2-top-right {
     width: 50%;
-    border: 1px solid black;
+    // border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+}
+
+.my-orders-footer-container-left-child-2-top-right p {
+    margin-top: -0.1rem;
+    margin-bottom: 0px;
+    color: #5e626a;
+    font-size: 65%;
+    font-family: poppins;
+    font-weight: bold;
+    text-align: right;
 }
 
 .my-orders-footer-container-left-child-2-bottom {
     height: 50%;
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+.my-orders-footer-container-left-child-2-bottom h3 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .my-orders-footer-container-right {
@@ -19272,7 +19290,8 @@ export default class LandingPg extends Component {
                                                                                                 <p>Delivery fee</p>
                                                                                             </div>
                                                                                             <div className='my-orders-footer-container-left-child-2-top-right'>
-
+                                                                                                <p>KES {this.state.totalCartPrice}.00</p>
+                                                                                                <p>KES 99.00</p>
                                                                                             </div>
                                                                                         </div>
                                                                                         <div className='my-orders-footer-container-left-child-2-bottom'>
