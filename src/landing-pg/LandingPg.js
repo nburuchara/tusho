@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import styled from 'styled-components'; 
 import { ColorRing, RotatingLines, TailSpin } from 'react-loader-spinner'
 import ProductCard from './ProductCard';
+import Typewriter from 'typewriter-effect';
 
 //? - - FILES - - //
 import SearchTerms from '../product-list/products'
@@ -5287,6 +5288,100 @@ const Styles = styled.div `
     width: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-payment-processing {
+    position: absolute;
+    top: 4.5rem;
+    left: 0;
+    right: 0;
+    height: 66.5%;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: white;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.my-orders-payment-processing-loading-container-top {
+    position: absolute;
+    top: 0.85rem;
+    left: 0;
+    right: 0;
+    height: 45%;
+    border: 1px solid #ff5733;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #faece9;
+}
+
+.my-orders-payment-processing-loading-container-top img {
+    width: 17.5%;
+    margin-top: -0.58rem;
+    background-color: #faece9;
+} 
+
+.my-orders-payment-processing-loading-container-top p {
+    all: unset;
+    margin-top: 0.15rem;
+    margin-bottom: 0px;
+    color: #24668a;
+    font-size: 80%;
+    font-weight: bold;
+    // font-family: raleway;
+}
+
+.my-orders-payment-processing-loading-container-top-chat {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.85rem;
+    height: auto;
+    width: 30%;
+    border: 1px solid #ff5733;
+    border-radius: 6px;
+    padding: 0.4rem;
+    background-color: #e8f7ff;
+}
+
+.my-orders-payment-processing-loading-container-top-chat p {
+    all: unset;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #ff5733;
+    font-size: 72.5%;
+    // font-weight: bold;
+    font-family: lexend;
+}
+
+.my-orders-payment-processing-loading-container-bottom {
+    position: absolute;
+    bottom: 0.85rem;
+    left: 0;
+    right: 0;
+    height: 40%;
+    // border: 1px solid #ccc;
+}
+
+.my-orders-payment-processing-loading-container-bottom h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #ff5733;
+    font-size: 22.5px;
+}
+
+.my-orders-payment-processing-loading-container-bottom h5 {
+    margin-top: 0.55rem;
+    margin-bottom: 0px;
+    color: #20313a;
+    font-size: 82.5%;
+    font-family: poppins;
+    font-weight: normal;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header {
@@ -5657,6 +5752,26 @@ const Styles = styled.div `
     border-bottom: 1px solid #ccc;
     margin-top: 2%;
     width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.my-orders-current-order-cart-label {
+    font-size: 75%;
+    color: #20313a;
+    font-weight: bold;
+    background-color: white;
+    padding: 0.25rem;
+    // padding-top: 0.1px;
+    text-decoration: underline;
+    // border: 1px solid black;
+}
+
+.my-orders-current-order-cart-items {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 90%;
     overflow-y: auto;
 }
 
@@ -5970,6 +6085,7 @@ const Styles = styled.div `
     cursor: not-allowed;
     background-color: #e8f7ff;
     transition: transform 0.35s ease-in-out;
+    overflow: hidden;
     filter: grayscale(100%);
 }
 
@@ -6023,14 +6139,17 @@ const Styles = styled.div `
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
+    height: auto;
     gap: 8px;
+    padding-top: 0.25rem;
+    // border: 1px solid black;
+    margin-left: 1.08rem;
 }
   
 .dot {
-    width: 12px;
-    height: 12px;
-    background-color: #333;
+    width: 5px;
+    height: 5px;
+    background-color: #ff5733;
     border-radius: 50%;
     animation: bounce 0.6s infinite ease-in-out;
 }
@@ -12897,6 +13016,7 @@ export default class LandingPg extends Component {
             showMyOrdersCurrentScheduleSelect: false,
             currOrderAddressVerified: false,
             currOrderScheduleVerified: false,
+            currOrderLoadingPaymentActive: false,
             currOrderSelectedSchedule: '',
             expressDeliverySelected: false,
             currDeliveryTimeSlotSelected: null,
@@ -14568,15 +14688,32 @@ export default class LandingPg extends Component {
 
     regularHandlePaymentConfirmed = (paymentType) => {
         this.setState({
-            myOrdersLoadingTransitionActive: true
+            [`makeRegPayment${paymentType}Default`]: false,
+            [`makeRegPayment${paymentType}Loading`]: true
         }, () => {
             setTimeout(() => {
                 this.setState({
-                    myOrdersLoadingTransitionActive: false,
+                    [`makeRegPayment${paymentType}Default`]: true,
+                    [`makeRegPayment${paymentType}Loading`]: false,
+                    currOrderLoadingPaymentActive: true,
                     showMyOrdersHome: true
                 })
-            }, 8000)
+            }, 2500)
+            // setTimeout(() => {
+            //     this.setState({
+            //         myOrdersLoadingTransitionActive: true
+            //     }, () => {
+            //         setTimeout(() => {
+            //             this.setState({
+            //                 myOrdersLoadingTransitionActive: false,
+                            
+                            
+            //             })
+            //         })
+            //     })
+            // }, 3000)
         })
+        
     }
 
     regularTransitionToShippingAddress = () => {
@@ -19115,6 +19252,36 @@ export default class LandingPg extends Component {
                                                         <div className={`navbar-profile-account-popup-my-orders-settings-container-content ${this.state.cart.length === 0 ? 'empty' : ''}`}>
                                                             {this.state.cart.length > 0 && 
                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order'>
+                                                                    {this.state.currOrderLoadingPaymentActive && 
+                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-payment-processing'>
+                                                                            <div className='my-orders-payment-processing-loading-container-top'>
+                                                                                <div className='my-orders-payment-processing-loading-container-top-chat'>
+                                                                                <p>
+                                                                                    <Typewriter
+                                                                                        onInit={(typewriter) => {
+                                                                                            typewriter.typeString('                                                       ...I KNOW GIRL!      He really really tried it!        Hold on girl...        Oop!    One sec girl..          *mutes mic*.')
+                                                                                            .callFunction(() => {
+                                                                                                // console.log('String typed out!');
+                                                                                            })
+                                                                                            .pauseFor(2500)
+                                                                                            .deleteAll()
+                                                                                            .callFunction(() => {
+                                                                                                // console.log('All strings were deleted');
+                                                                                            })
+                                                                                            .start();
+                                                                                        }}
+                                                                                    />  
+                                                                                    </p>        
+                                                                                </div>
+                                                                            <img src='/assets/images/home-my-orders/my-orders-payment-processing-loading-vid.gif'/>
+                                                                            <p>"Hey {this.state.accountSettingFirstName !== '' ? this.state.accountSettingFirstName : 'there'}, give us a quick sec to process this..."</p>
+                                                                            </div>
+                                                                            <div className='my-orders-payment-processing-loading-container-bottom'>
+                                                                                <h1>Processing your payment...</h1>
+                                                                                <h5>Please <strong>do not close this window</strong> or <strong>exit the website</strong> until we have completed processing your payment.</h5>
+                                                                            </div>
+                                                                        </div>
+                                                                    }
                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header'>
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left'>
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top'>
@@ -19303,7 +19470,7 @@ export default class LandingPg extends Component {
                                                                                                         
                                                                                                     </div>
                                                                                                     <div className='my-orders-schedule-parent-header-options-right-btn-2'>
-                                                                                                        <div 
+                                                                                                        {this.state.currOrderLoadingPaymentActive !== true ? (<div 
                                                                                                         onClick={() => this.myOrdersExpressDeliverySelected('Express')}
                                                                                                         className={`my-orders-schedule-parent-header-options-right-btn-1-container ${this.state.expressDeliverySelected ? 'selected' : ''}`}>
                                                                                                             <div className='my-orders-schedule-parent-header-options-right-btn-1-container-left'>
@@ -19312,7 +19479,7 @@ export default class LandingPg extends Component {
                                                                                                             <div className='my-orders-schedule-parent-header-options-right-btn-1-container-right'>
                                                                                                                 <h5>Express</h5>
                                                                                                             </div>
-                                                                                                        </div>
+                                                                                                        </div>) : (null)}
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
@@ -19381,32 +19548,35 @@ export default class LandingPg extends Component {
                                                                             }
                                                                         </div>
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-body'>
-                                                                            {this.state.cart.map((item) => (
-                                                                                <div key={item.id} className="my-orders-verify-home-item-cell">
-                                                                                    <div className="my-orders-verify-home-item-cell-icon">
-                                                                                        <img src={item.image} alt={item.name} />
-                                                                                        <p onClick={() => this.removeFromCart(item.id)}>remove</p>
-                                                                                    </div>
-                                                                                    <div className="my-orders-verify-home-item-cell-details">
-                                                                                        <p>{item.name}</p>
-                                                                                        {item.jipangeSelected ? (<button><h5><span>◉ </span>Jipange: {item.jipangeDate}</h5></button>): null}
-                                                                                    </div>
-                                                                                    <div className="my-orders-verify-home-item-cell-qty">
-                                                                                        <div className="my-orders-verify-home-item-cell-qty-toggle">
-                                                                                            <div onClick={() => this.mainPageProductsHandleQtyChange(item.id, -1)} className="my-orders-verify-home-item-cell-qty-toggle-left">
-                                                                                                <p>-</p>
-                                                                                            </div>
-                                                                                            <div className="my-orders-verify-home-item-cell-qty-toggle-center">
-                                                                                                <p>{item.quantity}</p>
-                                                                                            </div>
-                                                                                            <div onClick={() => this.mainPageProductsHandleQtyChange(item.id, 1)} className="my-orders-verify-home-item-cell-qty-toggle-right">
-                                                                                                <p>+</p>
-                                                                                            </div>
+                                                                            <span className='my-orders-current-order-cart-label'>Items</span>
+                                                                            <div className='my-orders-current-order-cart-items'>
+                                                                                {this.state.cart.map((item) => (
+                                                                                    <div key={item.id} className="my-orders-verify-home-item-cell">
+                                                                                        <div className="my-orders-verify-home-item-cell-icon">
+                                                                                            <img src={item.image} alt={item.name} />
+                                                                                            <p onClick={() => this.removeFromCart(item.id)}>remove</p>
                                                                                         </div>
-                                                                                        <p className="my-orders-verify-home-item-cell-qty-item-price">KES {item.price * item.quantity}.00</p>
+                                                                                        <div className="my-orders-verify-home-item-cell-details">
+                                                                                            <p>{item.name}</p>
+                                                                                            {item.jipangeSelected ? (<button><h5><span>◉ </span>Jipange: {item.jipangeDate}</h5></button>): null}
+                                                                                        </div>
+                                                                                        <div className="my-orders-verify-home-item-cell-qty">
+                                                                                            <div className="my-orders-verify-home-item-cell-qty-toggle">
+                                                                                                <div onClick={() => this.mainPageProductsHandleQtyChange(item.id, -1)} className="my-orders-verify-home-item-cell-qty-toggle-left">
+                                                                                                    <p>-</p>
+                                                                                                </div>
+                                                                                                <div className="my-orders-verify-home-item-cell-qty-toggle-center">
+                                                                                                    <p>{item.quantity}</p>
+                                                                                                </div>
+                                                                                                <div onClick={() => this.mainPageProductsHandleQtyChange(item.id, 1)} className="my-orders-verify-home-item-cell-qty-toggle-right">
+                                                                                                    <p>+</p>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <p className="my-orders-verify-home-item-cell-qty-item-price">KES {item.price * item.quantity}.00</p>
+                                                                                        </div>
                                                                                     </div>
-                                                                                </div>
-                                                                            ))}
+                                                                                ))}
+                                                                            </div>
                                                                         </div>
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-footer'>
                                                                             <div className='my-orders-footer-container'>
@@ -19443,15 +19613,17 @@ export default class LandingPg extends Component {
                                                                                 <div className='my-orders-footer-container-right'>
                                                                                     <div onClick={this.myOrdersPaymentClicked} className={`my-orders-footer-container-right-pay-btn ${this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified ? 'active' : ''}`}>
                                                                                         <div className='my-orders-footer-container-right-pay-btn-icon'>
-                                                                                            <img src='/assets/icons/home-my-orders/pay-btn-icon2.png'/>
+                                                                                        {this.state.currOrderLoadingPaymentActive !== true ? (<img src='/assets/icons/home-my-orders/pay-btn-icon2.png'/>) : (null)}
                                                                                         </div>
                                                                                         <div className='my-orders-footer-container-right-pay-btn-text'>
-                                                                                            {/* <h4>Pay</h4> */}
-                                                                                            <div className="dots-loader">
-                                                                                                <span className="dot dot1"></span>
-                                                                                                <span className="dot dot2"></span>
-                                                                                                <span className="dot dot3"></span>
-                                                                                            </div>
+                                                                                            {this.state.currOrderLoadingPaymentActive ? (
+                                                                                                <div className="dots-loader">
+                                                                                                    <span className="dot dot1"></span>
+                                                                                                    <span className="dot dot2"></span>
+                                                                                                    <span className="dot dot3"></span>
+                                                                                                </div>
+                                                                                            ) : (<h4>Pay</h4>)}
+                                                                                            
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
