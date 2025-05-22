@@ -5334,7 +5334,7 @@ const Styles = styled.div `
     color: #24668a;
     font-size: 80%;
     font-weight: bold;
-    // font-family: raleway;
+    font-family: raleway;
 }
 
 .my-orders-payment-processing-loading-container-top-chat {
@@ -5345,11 +5345,47 @@ const Styles = styled.div `
     width: 30%;
     border: 1px solid #ff5733;
     border-radius: 6px;
+    border-bottom-left-radius: 0px;
     padding: 0.4rem;
     background-color: #e8f7ff;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.my-orders-payment-processing-loading-container-top-chat.show {
+    opacity: 1;
 }
 
 .my-orders-payment-processing-loading-container-top-chat p {
+    all: unset;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #ff5733;
+    font-size: 72.5%;
+    // font-weight: bold;
+    font-family: lexend;
+}
+
+.my-orders-payment-processing-loading-container-bottom-chat {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 0.85rem;
+    height: auto;
+    width: 30%;
+    border: 1px solid #ff5733;
+    border-radius: 6px;
+    border-top-right-radius: 0px;
+    padding: 0.4rem;
+    background-color: #e8f7ff;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.my-orders-payment-processing-loading-container-bottom-chat.hide {
+    opacity: 0;
+}
+
+.my-orders-payment-processing-loading-container-bottom-chat p {
     all: unset;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -5752,26 +5788,6 @@ const Styles = styled.div `
     border-bottom: 1px solid #ccc;
     margin-top: 2%;
     width: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-.my-orders-current-order-cart-label {
-    font-size: 75%;
-    color: #20313a;
-    font-weight: bold;
-    background-color: white;
-    padding: 0.25rem;
-    // padding-top: 0.1px;
-    text-decoration: underline;
-    // border: 1px solid black;
-}
-
-.my-orders-current-order-cart-items {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 90%;
     overflow-y: auto;
 }
 
@@ -19255,26 +19271,44 @@ export default class LandingPg extends Component {
                                                                     {this.state.currOrderLoadingPaymentActive && 
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-payment-processing'>
                                                                             <div className='my-orders-payment-processing-loading-container-top'>
-                                                                                <div className='my-orders-payment-processing-loading-container-top-chat'>
-                                                                                <p>
-                                                                                    <Typewriter
+                                                                                <div className={`my-orders-payment-processing-loading-container-top-chat ${this.state.myOrdersPaymentLoadingSubtitle1Loaded ? 'show' : ''}`}>
+                                                                                    <p>
+                                                                                        <Typewriter
+                                                                                            onInit={(typewriter) => {
+                                                                                                typewriter.typeString('                                                               ...I KNOW GIRL!      He really really tried it!        Hold on girl...        Oop!    One sec girl..          *mutes mic*    ')
+                                                                                                .callFunction(() => {
+                                                                                                    this.setState({myOrdersPaymentLoadingSubtitle1Loaded: false})
+                                                                                                })
+                                                                                                .pauseFor(2500)
+                                                                                                .deleteAll()
+                                                                                                .callFunction(() => {
+                                                                                                    
+                                                                                                })
+                                                                                                .start()
+                                                                                            }}
+                                                                                        />  
+                                                                                    </p>        
+                                                                                </div>
+                                                                                <div className={`my-orders-payment-processing-loading-container-bottom-chat ${this.state.myOrdersPaymentLoadingSubtitle1Loaded ? 'hide' : ''}`}>
+                                                                                    <p>
+                                                                                        <Typewriter
                                                                                         onInit={(typewriter) => {
-                                                                                            typewriter.typeString('                                                       ...I KNOW GIRL!      He really really tried it!        Hold on girl...        Oop!    One sec girl..          *mutes mic*.')
+                                                                                            typewriter.typeString(`Hey ${this.state.accountSettingFirstName !== '' ? this.state.accountSettingFirstName : 'there'}, give us a quick sec to process this for you      `)
                                                                                             .callFunction(() => {
-                                                                                                // console.log('String typed out!');
+                                                                                                this.setState({myOrdersPaymentLoadingSubtitle1Loaded: true})
                                                                                             })
                                                                                             .pauseFor(2500)
                                                                                             .deleteAll()
                                                                                             .callFunction(() => {
-                                                                                                // console.log('All strings were deleted');
+                                                                                                
                                                                                             })
                                                                                             .start();
-                                                                                        }}
-                                                                                    />  
-                                                                                    </p>        
+                                                                                            }}
+                                                                                        />  
+                                                                                    </p>       
                                                                                 </div>
                                                                             <img src='/assets/images/home-my-orders/my-orders-payment-processing-loading-vid.gif'/>
-                                                                            <p>"Hey {this.state.accountSettingFirstName !== '' ? this.state.accountSettingFirstName : 'there'}, give us a quick sec to process this..."</p>
+                                                                            {/* <p>" , "</p> */}
                                                                             </div>
                                                                             <div className='my-orders-payment-processing-loading-container-bottom'>
                                                                                 <h1>Processing your payment...</h1>
@@ -19378,7 +19412,7 @@ export default class LandingPg extends Component {
                                                                                     loop 
                                                                                     muted 
                                                                                     playsInline 
-                                                                                    style={{ width: '13%', height: 'auto'}}
+                                                                                    style={{ width: '15%', height: 'auto'}}
                                                                                     />
                                                                                     <p>Loading schedule...</p>
                                                                                 </div>
@@ -19548,35 +19582,32 @@ export default class LandingPg extends Component {
                                                                             }
                                                                         </div>
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-body'>
-                                                                            <span className='my-orders-current-order-cart-label'>Items</span>
-                                                                            <div className='my-orders-current-order-cart-items'>
-                                                                                {this.state.cart.map((item) => (
-                                                                                    <div key={item.id} className="my-orders-verify-home-item-cell">
-                                                                                        <div className="my-orders-verify-home-item-cell-icon">
-                                                                                            <img src={item.image} alt={item.name} />
-                                                                                            <p onClick={() => this.removeFromCart(item.id)}>remove</p>
-                                                                                        </div>
-                                                                                        <div className="my-orders-verify-home-item-cell-details">
-                                                                                            <p>{item.name}</p>
-                                                                                            {item.jipangeSelected ? (<button><h5><span>◉ </span>Jipange: {item.jipangeDate}</h5></button>): null}
-                                                                                        </div>
-                                                                                        <div className="my-orders-verify-home-item-cell-qty">
-                                                                                            <div className="my-orders-verify-home-item-cell-qty-toggle">
-                                                                                                <div onClick={() => this.mainPageProductsHandleQtyChange(item.id, -1)} className="my-orders-verify-home-item-cell-qty-toggle-left">
-                                                                                                    <p>-</p>
-                                                                                                </div>
-                                                                                                <div className="my-orders-verify-home-item-cell-qty-toggle-center">
-                                                                                                    <p>{item.quantity}</p>
-                                                                                                </div>
-                                                                                                <div onClick={() => this.mainPageProductsHandleQtyChange(item.id, 1)} className="my-orders-verify-home-item-cell-qty-toggle-right">
-                                                                                                    <p>+</p>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <p className="my-orders-verify-home-item-cell-qty-item-price">KES {item.price * item.quantity}.00</p>
-                                                                                        </div>
+                                                                            {this.state.cart.map((item) => (
+                                                                                <div key={item.id} className="my-orders-verify-home-item-cell">
+                                                                                    <div className="my-orders-verify-home-item-cell-icon">
+                                                                                        <img src={item.image} alt={item.name} />
+                                                                                        <p onClick={() => this.removeFromCart(item.id)}>remove</p>
                                                                                     </div>
-                                                                                ))}
-                                                                            </div>
+                                                                                    <div className="my-orders-verify-home-item-cell-details">
+                                                                                        <p>{item.name}</p>
+                                                                                        {item.jipangeSelected ? (<button><h5><span>◉ </span>Jipange: {item.jipangeDate}</h5></button>): null}
+                                                                                    </div>
+                                                                                    <div className="my-orders-verify-home-item-cell-qty">
+                                                                                        <div className="my-orders-verify-home-item-cell-qty-toggle">
+                                                                                            <div onClick={() => this.mainPageProductsHandleQtyChange(item.id, -1)} className="my-orders-verify-home-item-cell-qty-toggle-left">
+                                                                                                <p>-</p>
+                                                                                            </div>
+                                                                                            <div className="my-orders-verify-home-item-cell-qty-toggle-center">
+                                                                                                <p>{item.quantity}</p>
+                                                                                            </div>
+                                                                                            <div onClick={() => this.mainPageProductsHandleQtyChange(item.id, 1)} className="my-orders-verify-home-item-cell-qty-toggle-right">
+                                                                                                <p>+</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <p className="my-orders-verify-home-item-cell-qty-item-price">KES {item.price * item.quantity}.00</p>
+                                                                                    </div>
+                                                                                </div>
+                                                                            ))}
                                                                         </div>
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-footer'>
                                                                             <div className='my-orders-footer-container'>
