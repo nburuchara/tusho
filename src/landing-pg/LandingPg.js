@@ -5395,6 +5395,42 @@ const Styles = styled.div `
     font-family: lexend;
 }
 
+.my-orders-payment-processing-success-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    border: 1px solid black;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.my-orders-payment-processing-success-message-left {
+    width: 6.5%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.my-orders-payment-processing-success-message-left img {
+    width: 93.5%;
+}
+
+.my-orders-payment-processing-success-message-right {
+    width: 93.5%;
+    border: 1px solid black;
+}
+
+.my-orders-payment-processing-success-message h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #50b65d;
+    font-size: 22.5px;
+}
+
 .my-orders-payment-processing-loading-container-bottom {
     position: absolute;
     bottom: 0.85rem;
@@ -13032,6 +13068,7 @@ export default class LandingPg extends Component {
             showMyOrdersCurrentScheduleSelect: false,
             currOrderAddressVerified: false,
             currOrderScheduleVerified: false,
+            currOrderPaymentVerified: false,
             currOrderLoadingPaymentActive: false,
             currOrderSelectedSchedule: '',
             expressDeliverySelected: false,
@@ -14715,19 +14752,12 @@ export default class LandingPg extends Component {
                     showMyOrdersHome: true
                 })
             }, 2500)
-            // setTimeout(() => {
-            //     this.setState({
-            //         myOrdersLoadingTransitionActive: true
-            //     }, () => {
-            //         setTimeout(() => {
-            //             this.setState({
-            //                 myOrdersLoadingTransitionActive: false,
-                            
-                            
-            //             })
-            //         })
-            //     })
-            // }, 3000)
+            setTimeout(() => {
+                this.setState({
+                    myOrdersLoadingTransitionActive: false,
+                    currOrderPaymentVerified: true
+                })
+            }, 35000)
         })
         
     }
@@ -19273,9 +19303,26 @@ export default class LandingPg extends Component {
                                                                             <div className='my-orders-payment-processing-loading-container-top'>
                                                                                 <div className={`my-orders-payment-processing-loading-container-top-chat ${this.state.myOrdersPaymentLoadingSubtitle1Loaded ? 'show' : ''}`}>
                                                                                     <p>
+                                                                                    {this.state.currOrderPaymentVerified === false ? (
                                                                                         <Typewriter
+                                                                                        onInit={(typewriter) => {
+                                                                                            typewriter.typeString('                                                               ...I KNOW GIRL!      He really really tried it!        Hold on girl...        Oop!    One sec girl..          *mutes mic*    ')
+                                                                                            .callFunction(() => {
+                                                                                                this.setState({myOrdersPaymentLoadingSubtitle1Loaded: false})
+                                                                                            })
+                                                                                            .pauseFor(2500)
+                                                                                            .deleteAll()
+                                                                                            .callFunction(() => {
+                                                                                                
+                                                                                            })
+                                                                                            .start()
+                                                                                        }}
+                                                                                    />  
+                                                                                    ) : (
+                                                                                        <Typewriter
+                                                                                        key={this.state.currOrderPaymentVerified ? 0 : null}
                                                                                             onInit={(typewriter) => {
-                                                                                                typewriter.typeString('                                                               ...I KNOW GIRL!      He really really tried it!        Hold on girl...        Oop!    One sec girl..          *mutes mic*    ')
+                                                                                                typewriter.typeString('                            ...She said what?? Ain\'t no way girl!     Don\'t mind her sis,   no one is ready for your post break-up glow up!    ')
                                                                                                 .callFunction(() => {
                                                                                                     this.setState({myOrdersPaymentLoadingSubtitle1Loaded: false})
                                                                                                 })
@@ -19287,30 +19334,59 @@ export default class LandingPg extends Component {
                                                                                                 .start()
                                                                                             }}
                                                                                         />  
+                                                                                    )}
+                                                                                        
                                                                                     </p>        
                                                                                 </div>
                                                                                 <div className={`my-orders-payment-processing-loading-container-bottom-chat ${this.state.myOrdersPaymentLoadingSubtitle1Loaded ? 'hide' : ''}`}>
                                                                                     <p>
-                                                                                        <Typewriter
-                                                                                        onInit={(typewriter) => {
-                                                                                            typewriter.typeString(`Hey ${this.state.accountSettingFirstName !== '' ? this.state.accountSettingFirstName : 'there'}, give us a quick sec to process this for you      `)
-                                                                                            .callFunction(() => {
-                                                                                                this.setState({myOrdersPaymentLoadingSubtitle1Loaded: true})
-                                                                                            })
-                                                                                            .pauseFor(2500)
-                                                                                            .deleteAll()
-                                                                                            .callFunction(() => {
-                                                                                                
-                                                                                            })
-                                                                                            .start();
-                                                                                            }}
-                                                                                        />  
+                                                                                        {this.state.currOrderPaymentVerified === false ? (
+                                                                                            <Typewriter
+                                                                                            onInit={(typewriter) => {
+                                                                                                typewriter.typeString(`Hey ${this.state.accountSettingFirstName !== '' ? this.state.accountSettingFirstName : 'there'}, give us a quick sec to process this for you      `)
+                                                                                                .callFunction(() => {
+                                                                                                    this.setState({myOrdersPaymentLoadingSubtitle1Loaded: true})
+                                                                                                })
+                                                                                                .pauseFor(2500)
+                                                                                                .deleteAll()
+                                                                                                .callFunction(() => {
+                                                                                                    
+                                                                                                })
+                                                                                                .start();
+                                                                                                }}
+                                                                                            />  
+                                                                                        ) : (
+                                                                                            <Typewriter
+                                                                                                key={this.state.currOrderPaymentVerified ? 0 : null}
+                                                                                                onInit={(typewriter) => {
+                                                                                                    typewriter.typeString(`   All done${this.state.accountSettingFirstName !== '' ? ` ${this.state.accountSettingFirstName}` : ''}!          `)
+                                                                                                    .callFunction(() => {
+                                                                                                        this.setState({myOrdersPaymentLoadingSubtitle1Loaded: true})
+                                                                                                    })
+                                                                                                    .pauseFor(2500)
+                                                                                                    .deleteAll()
+                                                                                                    .callFunction(() => {
+                                                                                                        
+                                                                                                    })
+                                                                                                    .start();
+                                                                                                }}
+                                                                                            />  
+                                                                                        )}
+                                                                                        
                                                                                     </p>       
                                                                                 </div>
                                                                             <img src='/assets/images/home-my-orders/my-orders-payment-processing-loading-vid.gif'/>
                                                                             {/* <p>" , "</p> */}
                                                                             </div>
                                                                             <div className='my-orders-payment-processing-loading-container-bottom'>
+                                                                                <div className='my-orders-payment-processing-success-message'>
+                                                                                    <div className='my-orders-payment-processing-success-message-left'>
+                                                                                        <img src='/assets/icons/home-my-orders/checkmark-icon-3.png'/>
+                                                                                    </div>
+                                                                                    <div className='my-orders-payment-processing-success-message-right'>
+                                                                                        <h1>Payment Successful</h1>
+                                                                                    </div>
+                                                                                </div>
                                                                                 <h1>Processing your payment...</h1>
                                                                                 <h5>Please <strong>do not close this window</strong> or <strong>exit the website</strong> until we have completed processing your payment.</h5>
                                                                             </div>
@@ -19380,21 +19456,21 @@ export default class LandingPg extends Component {
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-3'>
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
                                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
-                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img ${(this.state.currOrderAddressVerified === false || this.state.currOrderScheduleVerified === false) ? 'disabled' : ''}`}>
+                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img ${(this.state.currOrderAddressVerified === false || this.state.currOrderScheduleVerified === false) ? 'disabled' : this.state.currOrderPaymentVerified ? 'verified' : ''}`}>
                                                                                             <h1>3</h1>
                                                                                             <img src='/assets/icons/home-my-orders/checkmark-icon.png'/>
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top ${(this.state.currOrderAddressVerified === false || this.state.currOrderScheduleVerified === false) ? 'disabled' : ''}`}>
+                                                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top ${(this.state.currOrderAddressVerified === false || this.state.currOrderScheduleVerified === false) ? 'disabled' : this.state.currOrderPaymentVerified ? 'verified' :''}`}>
                                                                                         <h5>Pay</h5>
                                                                                     </div>
-                                                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom ${(this.state.currOrderAddressVerified === false || this.state.currOrderScheduleVerified === false) ? 'disabled' : ''}`}>
-                                                                                        <div className='my-orders-dropoff-status-container'>
-                                                                                            <div className='my-orders-dropoff-status-container-left'>
-                                                                                                <img src='/assets/icons/home-my-orders/incomplete-icon.png'/>
+                                                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom ${(this.state.currOrderAddressVerified === false || this.state.currOrderScheduleVerified === false) ? 'disabled' : this.state.currOrderPaymentVerified ? 'verified' : ''}`}>
+                                                                                        <div className={`my-orders-dropoff-status-container ${this.state.currOrderPaymentVerified ? 'verified' : ''}`}>
+                                                                                            <div className={`my-orders-dropoff-status-container-left ${this.state.currOrderPaymentVerified ? 'verified' : ''}`}>
+                                                                                                {this.state.currOrderPaymentVerified ? (<img src='/assets/icons/home-my-orders/pay-icon.png'/>) : (<img src='/assets/icons/home-my-orders/incomplete-icon.png'/>)}
                                                                                             </div>
-                                                                                            <div className='my-orders-dropoff-status-container-right'>
-                                                                                               
+                                                                                            <div className={`my-orders-dropoff-status-container-right ${this.state.currOrderPaymentVerified ? 'verified' : ''}`}>
+                                                                                                {this.state.currOrderPaymentVerified ? (<p><strong>Success</strong></p>) : (<p></p>)}
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
