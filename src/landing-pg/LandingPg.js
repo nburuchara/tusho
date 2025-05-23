@@ -5401,7 +5401,7 @@ const Styles = styled.div `
     left: 0;
     width: 100%;
     height: 25%;
-    border: 1px solid black;
+    // border: 1px solid black;
     background-color: white;
     display: flex;
     flex-direction: row;
@@ -5409,25 +5409,26 @@ const Styles = styled.div `
 
 .my-orders-payment-processing-success-message-left {
     width: 6.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: left;
 }
 
 .my-orders-payment-processing-success-message-left img {
-    width: 93.5%;
+    width: 62.5%;
 }
 
 .my-orders-payment-processing-success-message-right {
     width: 93.5%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
-.my-orders-payment-processing-success-message h1 {
+.my-orders-payment-processing-success-message-right h1 {
     margin-top: 0px;
     margin-bottom: 0px;
-    color: #50b65d;
+    margin-left: 0.1rem;
+    color: #50b65d !important;
     font-size: 22.5px;
 }
 
