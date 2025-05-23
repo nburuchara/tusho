@@ -5395,43 +5395,6 @@ const Styles = styled.div `
     font-family: lexend;
 }
 
-.my-orders-payment-processing-success-message {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 25%;
-    // border: 1px solid black;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-}
-
-.my-orders-payment-processing-success-message-left {
-    width: 6.5%;
-    // border: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-}
-
-.my-orders-payment-processing-success-message-left img {
-    width: 62.5%;
-}
-
-.my-orders-payment-processing-success-message-right {
-    width: 93.5%;
-    // border: 1px solid black;
-}
-
-.my-orders-payment-processing-success-message-right h1 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 0.1rem;
-    color: #50b65d !important;
-    font-size: 22.5px;
-}
-
 .my-orders-payment-processing-loading-container-bottom {
     position: absolute;
     bottom: 0.85rem;
@@ -5439,6 +5402,7 @@ const Styles = styled.div `
     right: 0;
     height: 40%;
     // border: 1px solid #ccc;
+    overflow: hidden;
 }
 
 .my-orders-payment-processing-loading-container-bottom h1 {
@@ -5455,6 +5419,49 @@ const Styles = styled.div `
     font-size: 82.5%;
     font-family: poppins;
     font-weight: normal;
+}
+
+.my-orders-payment-processing-success-message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    // border: 1px solid black;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.my-orders-payment-processing-success-message.display {
+    transform: translateY(0);
+}
+
+.my-orders-payment-processing-success-message-left {
+    width: 6.5%;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.my-orders-payment-processing-success-message-left img {
+    width: 66.5%;
+}
+
+.my-orders-payment-processing-success-message-right {
+    width: 93.5%;
+    // border: 1px solid black;
+}
+
+.my-orders-payment-processing-success-message-right h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    // margin-left: 0.1rem;
+    color: #50b65d !important;
+    font-size: 22.5px;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header {
@@ -19380,7 +19387,7 @@ export default class LandingPg extends Component {
                                                                             {/* <p>" , "</p> */}
                                                                             </div>
                                                                             <div className='my-orders-payment-processing-loading-container-bottom'>
-                                                                                <div className='my-orders-payment-processing-success-message'>
+                                                                                <div className={`my-orders-payment-processing-success-message ${this.state.currOrderPaymentVerified ? 'display' : ''}`}>
                                                                                     <div className='my-orders-payment-processing-success-message-left'>
                                                                                         <img src='/assets/icons/home-my-orders/checkmark-icon-3.png'/>
                                                                                     </div>
