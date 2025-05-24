@@ -5443,7 +5443,11 @@ const Styles = styled.div `
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e8f7ff;
+    z-index: 2;
 }
 
 .my-orders-delivery-tracking-container-bottom {
@@ -5453,6 +5457,7 @@ const Styles = styled.div `
     height: 100%;
     width: 100%;
     background-color: white;
+    z-index: 2;
 }
 
 .my-orders-payment-processing-success-message {
@@ -6374,6 +6379,10 @@ const Styles = styled.div `
 .my-orders-footer-container-right-pay-btn-icon img {
     width: 35%;
     padding-bottom: 0.1rem;
+}
+
+.my-orders-footer-container-right-pay-btn-text-close {
+    margin-left: 1rem !important;
 }
 
 .my-orders-footer-container-right-pay-btn-text {
@@ -19515,7 +19524,7 @@ export default class LandingPg extends Component {
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-payment-processing'>
                                                                             <div className={`my-orders-payment-processing-loading-container-top ${this.state.currOrderPaymentVerified ? 'delivery' : ''}`}>
                                                                                 <div className='my-orders-delivery-tracking-container-top'>
-
+                                                                                    <img src='/assets/images/home-my-orders/my-orders-delivery-loading-vid.gif'/>
                                                                                 </div>
                                                                                 <div className={`my-orders-payment-processing-loading-container-top-chat ${this.state.myOrdersPaymentLoadingSubtitle1Loaded ? 'show' : ''}`}>
                                                                                     <p>
@@ -20032,10 +20041,10 @@ export default class LandingPg extends Component {
                                                                                 <div className='my-orders-footer-container-right'>
                                                                                     <div onClick={this.myOrdersPaymentClicked} className={`my-orders-footer-container-right-pay-btn ${this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified ? 'active' : ''}`}>
                                                                                         <div className='my-orders-footer-container-right-pay-btn-icon'>
-                                                                                        {this.state.currOrderLoadingPaymentActive !== true ? (<img src='/assets/icons/home-my-orders/pay-btn-icon2.png'/>) : (null)}
+                                                                                        {this.state.currOrderLoadingPaymentActive !== true ? (<img src='/assets/icons/home-my-orders/pay-btn-icon2.png'/>) : this.state.currOrderDeliveryTrackingActive ? (<img src='/assets/icons/home-my-orders/incomplete-icon2.png'/>) : (null)}
                                                                                         </div>
                                                                                         <div className='my-orders-footer-container-right-pay-btn-text'>
-                                                                                            {this.state.currOrderLoadingPaymentActive ? (
+                                                                                            {this.state.currOrderLoadingPaymentActive ?  this.state.currOrderDeliveryTrackingActive ? (<h4 className='my-orders-footer-container-right-pay-btn-text-close'>Hide</h4>) : (
                                                                                                 <div className="dots-loader">
                                                                                                     <span className="dot dot1"></span>
                                                                                                     <span className="dot dot2"></span>
