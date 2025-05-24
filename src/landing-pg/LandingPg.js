@@ -5493,6 +5493,7 @@ const Styles = styled.div `
     // border: 1px solid black;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-left-side {
@@ -5510,6 +5511,34 @@ const Styles = styled.div `
     height: 21.5px;
     transform: scaleX(-1);
     margin-top: -0.25rem;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-left-side2 {
+    width: 50%;
+    height: 100%;
+    // border: 1px solid black;
+    border-top-left-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-left-side2 img {
+    width: 32.5px;
+    height: 32.5px;
+    transform: scaleX(-1);
+    margin-top: -0.25rem;
+    margin-left: 0.2rem;
+    animation: motorcycle-bob 1s ease-in-out infinite alternate;
+}
+
+@keyframes motorcycle-bob {
+    0% {
+      transform: scaleX(-1) translateX(0);
+    }
+    100% {
+      transform: scaleX(-1) translateX(8px);
+    }
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-right-side {
@@ -5533,6 +5562,56 @@ const Styles = styled.div `
     text-decoration: underline;
 }   
 
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-right-side2 {
+    width: 50%;
+    height: 100%;
+    // border: 1px solid black;
+    border-top-right-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    position: relative;
+    // overflow: hidden;
+}
+
+.wind {
+    position: absolute;
+    top: 50%;
+    right: -50px;
+    width: 60px;
+    height: 2px;
+    background: rgba(100, 100, 100, 0.6);
+    animation: wind-fly 2s linear infinite;
+    pointer-events: none;
+    opacity: 0.8;
+  }
+
+  .wind:nth-child(1) {
+    top: 30%;
+    animation-delay: 0s;
+  }
+  
+  .wind:nth-child(2) {
+    top: 50%;
+    animation-delay: 0.6s;
+  }
+  
+  .wind:nth-child(3) {
+    top: 70%;
+    animation-delay: 1.2s;
+  }
+  
+  @keyframes wind-fly {
+    0% {
+      transform: translateX(0) translateY(-50%);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateX(-100vw) translateY(-50%);
+      opacity: 0;
+    }
+  }
+
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-bottom {
     width: 100%;
     height: 50%;
@@ -5548,6 +5627,24 @@ const Styles = styled.div `
     margin-top: 0.1rem;
     margin-bottom: 0px;
     color: #ff5733;
+    font-size: 100%;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-bottom2 {
+    width: 100%;
+    height: 50%;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-bottom2 h2 {
+    margin-top: 0.1rem;
+    margin-bottom: 0px;
+    color: #20313a;
     font-size: 100%;
 }
 
@@ -5678,6 +5775,50 @@ const Styles = styled.div `
     color: white;    
 }
 
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top2 {
+    height: 50%;
+    // border: 1px solid black;
+    border: 1px solid #20313a;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    background-color: #20313a;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    overflow: hidden;
+    transition: background-color 0.5s ease-in-out, border 0.5s ease-in-out;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top2.disabled {
+    background-color: #e8e8e8;
+    border: 1px solid #999;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top2.verified {
+    background-color: #50b65d;
+    border: 1px solid #50b65d;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top2 h5 {
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0.5rem;
+    font-size: 70.5%;
+    // font-family: raleway;
+    font-weight: normal;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top2.disabled h5 {
+    color: #5e626a;    
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top2.verified h5 {
+    color: white;    
+}
+
+
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom {
     height: 50%;
     border-bottom: 1px solid #ff5733;
@@ -5698,6 +5839,31 @@ const Styles = styled.div `
 }
 
 .navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom.verified {
+    border-bottom: 1px solid #50b65d;
+    border-left: 1px solid #50b65d;
+    border-right: 1px solid #50b65d;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom2 {
+    height: 50%;
+    border-bottom: 1px solid #20313a;
+    border-left: 1px solid #20313a;
+    border-right: 1px solid #20313a;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom2.disabled {
+    border-bottom: 1px solid #999;
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+}
+
+.navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom2.verified {
     border-bottom: 1px solid #50b65d;
     border-left: 1px solid #50b65d;
     border-right: 1px solid #50b65d;
@@ -13074,10 +13240,14 @@ export default class LandingPg extends Component {
             showMyOrdersCurrentOptionLoading: false,
             showMyOrdersCurrentAddressSelect: true,
             showMyOrdersCurrentScheduleSelect: false,
-            currOrderAddressVerified: false,
-            currOrderScheduleVerified: false,
-            currOrderPaymentVerified: false,
-            currOrderLoadingPaymentActive: false,
+            currOrderAddressVerified: true,
+            currOrderScheduleVerified: true,
+            currOrderPaymentVerified: true,
+            currOrderLoadingPaymentActive: true,
+            currOrderDeliveryInfoDisplay: true,
+            currOrderPreparedVerified: false,
+            currOrderPickedUpVerified: false,
+            currOrderDroppedOffVerified: false,
             currOrderSelectedSchedule: '',
             expressDeliverySelected: false,
             currDeliveryTimeSlotSelected: null,
@@ -19400,92 +19570,185 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                         </div>
                                                                     }
-                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header'>
-                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left'>
-                                                                            <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top'>
-                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-left-side'>
-                                                                                    <img src='/assets/icons/home-my-orders/cart-icon.png'/>
-                                                                                </div>
-                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-right-side'>
-                                                                                    <p>{this.state.totalCartQuantity}</p>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-bottom'>
-                                                                                <h2>My Cart:</h2>
-                                                                            </div>
-                                                                        </div>   
-                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right'>
-                                                                            <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-1'>
-                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
-                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
-                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
-                                                                                            <h1>1</h1>
-                                                                                            <img src='/assets/icons/home-my-orders/checkmark-icon.png'/>
-                                                                                        </div>
+                                                                    {(!this.state.currOrderPaymentVerified || !this.state.currOrderDeliveryInfoDisplay) && 
+                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header'>
+                                                                            <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left'>
+                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top'>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-left-side'>
+                                                                                        <img src='/assets/icons/home-my-orders/cart-icon.png'/>
                                                                                     </div>
-                                                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
-                                                                                        <h5>Drop-off</h5>
-                                                                                    </div>
-                                                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom ${this.state.currOrderAddressVerified ? 'verified' :''}`}>
-                                                                                        <div className={`my-orders-dropoff-status-container ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
-                                                                                            <div className={`my-orders-dropoff-status-container-left ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
-                                                                                                {this.state.currOrderAddressVerified ? (<img src='/assets/icons/home-my-orders/location-icon-3.png'/>) : (<img src='/assets/icons/home-my-orders/incomplete-icon.png'/>)}
-                                                                                            </div>
-                                                                                            <div className={`my-orders-dropoff-status-container-right ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
-                                                                                                {this.state.currOrderAddressVerified ? (<p><strong>Home</strong></p>) : (<p></p>)}
-                                                                                            </div>
-                                                                                        </div>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-right-side'>
+                                                                                        <p>{this.state.totalCartQuantity}</p>
                                                                                     </div>
                                                                                 </div>
-                                                                            </div>
-                                                                            <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-2'>
-                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
-                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
-                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img ${this.state.currOrderAddressVerified === false ? 'disabled' : (this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified) ? 'verified' : ''}`}>
-                                                                                            <h1>2</h1>
-                                                                                            <img src='/assets/icons/home-my-orders/checkmark-icon.png'/>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top ${this.state.currOrderAddressVerified ? this.state.currOrderScheduleVerified ? 'verified' : '' : 'disabled'}`}>
-                                                                                        <h5>Schedule</h5>
-                                                                                    </div>
-                                                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom ${this.state.currOrderAddressVerified ? this.state.currOrderScheduleVerified ? 'verified' : '' : 'disabled'}`}>
-                                                                                        <div className={`my-orders-dropoff-status-container ${this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified ? 'verified' : ''}`}>
-                                                                                            <div className={`my-orders-dropoff-status-container-left ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
-                                                                                                {this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified ? (<img src='/assets/icons/home-my-orders/delivery-time-icon-3.png'/>) : (<img src='/assets/icons/home-my-orders/incomplete-icon.png'/>)}
+                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-bottom'>
+                                                                                    <h2>My Cart:</h2>
+                                                                                </div>
+                                                                            </div>   
+                                                                            <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right'>
+                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-1'>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
+                                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
+                                                                                            <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
+                                                                                                <h1>1</h1>
+                                                                                                <img src='/assets/icons/home-my-orders/checkmark-icon.png'/>
                                                                                             </div>
-                                                                                            <div className={`my-orders-dropoff-status-container-right2 ${this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified ? this.state.expressDeliverySelected ? 'verified-express' : 'verified' : ''}`}>
-                                                                                                {this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified ? (<p><strong>{this.state.currOrderSelectedSchedule}</strong></p>) : (<p></p>)}
+                                                                                        </div>
+                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
+                                                                                            <h5>Drop-off</h5>
+                                                                                        </div>
+                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom ${this.state.currOrderAddressVerified ? 'verified' :''}`}>
+                                                                                            <div className={`my-orders-dropoff-status-container ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
+                                                                                                <div className={`my-orders-dropoff-status-container-left ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
+                                                                                                    {this.state.currOrderAddressVerified ? (<img src='/assets/icons/home-my-orders/location-icon-3.png'/>) : (<img src='/assets/icons/home-my-orders/incomplete-icon.png'/>)}
+                                                                                                </div>
+                                                                                                <div className={`my-orders-dropoff-status-container-right ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
+                                                                                                    {this.state.currOrderAddressVerified ? (<p><strong>Home</strong></p>) : (<p></p>)}
+                                                                                                </div>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                            </div>
-                                                                            <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-3'>
-                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
-                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
-                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img ${(this.state.currOrderAddressVerified === false || this.state.currOrderScheduleVerified === false) ? 'disabled' : this.state.currOrderPaymentVerified ? 'verified' : ''}`}>
-                                                                                            <h1>3</h1>
-                                                                                            <img src='/assets/icons/home-my-orders/checkmark-icon.png'/>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top ${(this.state.currOrderAddressVerified === false || this.state.currOrderScheduleVerified === false) ? 'disabled' : this.state.currOrderPaymentVerified ? 'verified' :''}`}>
-                                                                                        <h5>Pay</h5>
-                                                                                    </div>
-                                                                                    <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom ${(this.state.currOrderAddressVerified === false || this.state.currOrderScheduleVerified === false) ? 'disabled' : this.state.currOrderPaymentVerified ? 'verified' : ''}`}>
-                                                                                        <div className={`my-orders-dropoff-status-container ${this.state.currOrderPaymentVerified ? 'verified' : ''}`}>
-                                                                                            <div className={`my-orders-dropoff-status-container-left ${this.state.currOrderPaymentVerified ? 'verified' : ''}`}>
-                                                                                                {this.state.currOrderPaymentVerified ? (<img src='/assets/icons/home-my-orders/pay-icon.png'/>) : (<img src='/assets/icons/home-my-orders/incomplete-icon.png'/>)}
+                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-2'>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
+                                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
+                                                                                            <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img ${this.state.currOrderAddressVerified === false ? 'disabled' : (this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified) ? 'verified' : ''}`}>
+                                                                                                <h1>2</h1>
+                                                                                                <img src='/assets/icons/home-my-orders/checkmark-icon.png'/>
                                                                                             </div>
-                                                                                            <div className={`my-orders-dropoff-status-container-right ${this.state.currOrderPaymentVerified ? 'verified' : ''}`}>
-                                                                                                {this.state.currOrderPaymentVerified ? (<p><strong>Success</strong></p>) : (<p></p>)}
+                                                                                        </div>
+                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top ${this.state.currOrderAddressVerified ? this.state.currOrderScheduleVerified ? 'verified' : '' : 'disabled'}`}>
+                                                                                            <h5>Schedule</h5>
+                                                                                        </div>
+                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom ${this.state.currOrderAddressVerified ? this.state.currOrderScheduleVerified ? 'verified' : '' : 'disabled'}`}>
+                                                                                            <div className={`my-orders-dropoff-status-container ${this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified ? 'verified' : ''}`}>
+                                                                                                <div className={`my-orders-dropoff-status-container-left ${this.state.currOrderAddressVerified ? 'verified' : ''}`}>
+                                                                                                    {this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified ? (<img src='/assets/icons/home-my-orders/delivery-time-icon-3.png'/>) : (<img src='/assets/icons/home-my-orders/incomplete-icon.png'/>)}
+                                                                                                </div>
+                                                                                                <div className={`my-orders-dropoff-status-container-right2 ${this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified ? this.state.expressDeliverySelected ? 'verified-express' : 'verified' : ''}`}>
+                                                                                                    {this.state.currOrderAddressVerified && this.state.currOrderScheduleVerified ? (<p><strong>{this.state.currOrderSelectedSchedule}</strong></p>) : (<p></p>)}
+                                                                                                </div>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                            </div>
-                                                                        </div>   
-                                                                    </div>
+                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-3'>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
+                                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
+                                                                                            <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img ${(this.state.currOrderAddressVerified === false || this.state.currOrderScheduleVerified === false) ? 'disabled' : this.state.currOrderPaymentVerified ? 'verified' : ''}`}>
+                                                                                                <h1>3</h1>
+                                                                                                <img src='/assets/icons/home-my-orders/checkmark-icon.png'/>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top ${(this.state.currOrderAddressVerified === false || this.state.currOrderScheduleVerified === false) ? 'disabled' : this.state.currOrderPaymentVerified ? 'verified' :''}`}>
+                                                                                            <h5>Pay</h5>
+                                                                                        </div>
+                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom ${(this.state.currOrderAddressVerified === false || this.state.currOrderScheduleVerified === false) ? 'disabled' : this.state.currOrderPaymentVerified ? 'verified' : ''}`}>
+                                                                                            <div className={`my-orders-dropoff-status-container ${this.state.currOrderPaymentVerified ? 'verified' : ''}`}>
+                                                                                                <div className={`my-orders-dropoff-status-container-left ${this.state.currOrderPaymentVerified ? 'verified' : ''}`}>
+                                                                                                    {this.state.currOrderPaymentVerified ? (<img src='/assets/icons/home-my-orders/pay-icon.png'/>) : (<img src='/assets/icons/home-my-orders/incomplete-icon.png'/>)}
+                                                                                                </div>
+                                                                                                <div className={`my-orders-dropoff-status-container-right ${this.state.currOrderPaymentVerified ? 'verified' : ''}`}>
+                                                                                                    {this.state.currOrderPaymentVerified ? (<p><strong>Success</strong></p>) : (<p></p>)}
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>   
+                                                                        </div>
+                                                                    }
+                                                                    {this.state.currOrderPaymentVerified && this.state.currOrderDeliveryInfoDisplay && 
+                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header'>
+                                                                            <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left'>
+                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top'>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-left-side2'>
+                                                                                        <img src='/assets/icons/home-my-orders/delivery-icon.png'/>
+                                                                                    </div>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top-right-side2'>
+                                                                                        <div class="wind"></div>
+                                                                                        <div class="wind"></div>
+                                                                                        <div class="wind"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-bottom2'>
+                                                                                    <h2>Delivery:</h2>
+                                                                                </div>
+                                                                            </div>   
+                                                                            <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right'>
+                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-1'>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
+                                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
+                                                                                            <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img ${this.state.currOrderPreparedVerified ? 'verified' : ''}`}>
+                                                                                                <h1>1</h1>
+                                                                                                <img src='/assets/icons/home-my-orders/checkmark-icon.png'/>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top2 ${this.state.currOrderPreparedVerified ? 'verified' : ''}`}>
+                                                                                            <h5>Shopping</h5>
+                                                                                        </div>
+                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom2 ${this.state.currOrderPreparedVerified ? 'verified' :''}`}>
+                                                                                            <div className={`my-orders-dropoff-status-container ${this.state.currOrderPreparedVerified ? 'verified' : ''}`}>
+                                                                                                <div className={`my-orders-dropoff-status-container-left ${this.state.currOrderPreparedVerified ? 'verified' : ''}`}>
+                                                                                                    {this.state.currOrderPreparedVerified ? (<img src='/assets/icons/home-my-orders/location-icon-3.png'/>) : (<img src='/assets/icons/home-my-orders/incomplete-icon.png'/>)}
+                                                                                                </div>
+                                                                                                <div className={`my-orders-dropoff-status-container-right ${this.state.currOrderPreparedVerified ? 'verified' : ''}`}>
+                                                                                                    {this.state.currOrderPreparedVerified ? (<p><strong>Complete</strong></p>) : (<p></p>)}
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-2'>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
+                                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
+                                                                                            <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img ${this.state.currOrderPreparedVerified === false ? 'disabled' : (this.state.currOrderPreparedVerified && this.state.currOrderPickedUpVerified) ? 'verified' : ''}`}>
+                                                                                                <h1>2</h1>
+                                                                                                <img src='/assets/icons/home-my-orders/checkmark-icon.png'/>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top2 ${this.state.currOrderPreparedVerified ? this.state.currOrderPickedUpVerified ? 'verified' : '' : 'disabled'}`}>
+                                                                                            <h5>Pick-up</h5>
+                                                                                        </div>
+                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom2 ${this.state.currOrderPreparedVerified ? this.state.currOrderPickedUpVerified ? 'verified' : '' : 'disabled'}`}>
+                                                                                            <div className={`my-orders-dropoff-status-container ${this.state.currOrderPreparedVerified && this.state.currOrderPickedUpVerified ? 'verified' : ''}`}>
+                                                                                                <div className={`my-orders-dropoff-status-container-left ${this.state.currOrderPreparedVerified ? 'verified' : ''}`}>
+                                                                                                    {this.state.currOrderPreparedVerified && this.state.currOrderPickedUpVerified ? (<img src='/assets/icons/home-my-orders/delivery-time-icon-3.png'/>) : (<img src='/assets/icons/home-my-orders/incomplete-icon.png'/>)}
+                                                                                                </div>
+                                                                                                <div className={`my-orders-dropoff-status-container-right2 ${this.state.currOrderPreparedVerified && this.state.currOrderPickedUpVerified ? this.state.expressDeliverySelected ? 'verified-express' : 'verified' : ''}`}>
+                                                                                                    {this.state.currOrderPreparedVerified && this.state.currOrderPickedUpVerified ? (<p><strong>{this.state.currOrderSelectedSchedule}</strong></p>) : (<p></p>)}
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-3'>
+                                                                                    <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn'>
+                                                                                        <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon'>
+                                                                                            <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-icon-img ${(this.state.currOrderAddressVerified === false || this.state.currOrderPickedUpVerified === false) ? 'disabled' : this.state.currOrderDroppedOffVerified ? 'verified' : ''}`}>
+                                                                                                <h1>3</h1>
+                                                                                                <img src='/assets/icons/home-my-orders/checkmark-icon.png'/>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-top2 ${(this.state.currOrderPreparedVerified === false || this.state.currOrderPickedUpVerified === false) ? 'disabled' : this.state.currOrderDroppedOffVerified ? 'verified' :''}`}>
+                                                                                            <h5>Drop-off</h5>
+                                                                                        </div>
+                                                                                        <div className={`navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-right-btn-bottom2 ${(this.state.currOrderPreparedVerified === false || this.state.currOrderPickedUpVerified === false) ? 'disabled' : this.state.currOrderDroppedOffVerified ? 'verified' : ''}`}>
+                                                                                            <div className={`my-orders-dropoff-status-container ${this.state.currOrderDroppedOffVerified ? 'verified' : ''}`}>
+                                                                                                <div className={`my-orders-dropoff-status-container-left ${this.state.currOrderDroppedOffVerified ? 'verified' : ''}`}>
+                                                                                                    {this.state.currOrderDroppedOffVerified ? (<img src='/assets/icons/home-my-orders/pay-icon.png'/>) : (<img src='/assets/icons/home-my-orders/incomplete-icon.png'/>)}
+                                                                                                </div>
+                                                                                                <div className={`my-orders-dropoff-status-container-right ${this.state.currOrderDroppedOffVerified ? 'verified' : ''}`}>
+                                                                                                    {this.state.currOrderDroppedOffVerified ? (<p><strong>Success</strong></p>) : (<p></p>)}
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>   
+                                                                        </div>
+                                                                    }
+                                                                    
                                                                     <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body'>
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-body-inner-header'>
                                                                             {this.state.showMyOrdersCurrentOptionLoading && 
