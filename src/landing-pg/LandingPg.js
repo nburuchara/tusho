@@ -5460,6 +5460,13 @@ const Styles = styled.div `
     z-index: 2;
 }
 
+.my-orders-delivery-tracking-container-bottom h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #20313a;
+    font-size: 110%;
+}
+
 .my-orders-payment-processing-success-message {
     position: absolute;
     top: 0;
@@ -19605,7 +19612,7 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                             <div className='my-orders-payment-processing-loading-container-bottom'>
                                                                                 <div className={`my-orders-delivery-tracking-container-bottom ${this.state.currOrderDeliveryTrackingActive ? '' : ''}`}>
-
+                                                                                    <h2>Tracking your order</h2>
                                                                                 </div>
                                                                                 <div className={`my-orders-payment-processing-success-message ${this.state.currOrderPaymentVerified ? 'display' : ''}`}>
                                                                                     <div className='my-orders-payment-processing-success-message-left'>
