@@ -5528,8 +5528,8 @@ const Styles = styled.div `
     height: 32.5px;
     transform: scaleX(-1);
     margin-top: -0.25rem;
-    margin-left: 0.2rem;
-    animation: motorcycle-bob 1s ease-in-out infinite alternate;
+    margin-left: 0.25rem;
+    animation: motorcycle-bob 3s ease-in-out infinite alternate;
 }
 
 @keyframes motorcycle-bob {
