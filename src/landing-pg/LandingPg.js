@@ -5450,6 +5450,14 @@ const Styles = styled.div `
     z-index: 2;
 }
 
+.my-orders-delivery-tracking-container-top-chat-right {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    height: 
+
+}
+
 .my-orders-delivery-tracking-container-bottom {
     position: absolute;
     top: 0;
@@ -5460,11 +5468,29 @@ const Styles = styled.div `
     z-index: 2;
 }
 
-.my-orders-delivery-tracking-container-bottom h2 {
+.my-orders-delivery-tracking-container-bottom-header {
+    postion: asbolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    // border: 1px solid black;
+}
+
+.my-orders-delivery-tracking-container-bottom-header h2 {
     margin-top: 0px;
     margin-bottom: 0px;
     color: #20313a;
     font-size: 110%;
+}
+
+.my-orders-delivery-tracking-container-bottom-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 77%;
+    border: 1px solid black;
 }
 
 .my-orders-payment-processing-success-message {
@@ -19531,6 +19557,9 @@ export default class LandingPg extends Component {
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-payment-processing'>
                                                                             <div className={`my-orders-payment-processing-loading-container-top ${this.state.currOrderPaymentVerified ? 'delivery' : ''}`}>
                                                                                 <div className='my-orders-delivery-tracking-container-top'>
+                                                                                    <div className='my-orders-delivery-tracking-container-top-chat-right'>
+
+                                                                                    </div>
                                                                                     <img src='/assets/images/home-my-orders/my-orders-delivery-loading-vid.gif'/>
                                                                                 </div>
                                                                                 <div className={`my-orders-payment-processing-loading-container-top-chat ${this.state.myOrdersPaymentLoadingSubtitle1Loaded ? 'show' : ''}`}>
@@ -19612,7 +19641,12 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                             <div className='my-orders-payment-processing-loading-container-bottom'>
                                                                                 <div className={`my-orders-delivery-tracking-container-bottom ${this.state.currOrderDeliveryTrackingActive ? '' : ''}`}>
-                                                                                    <h2>Tracking your order</h2>
+                                                                                    <div className='my-orders-delivery-tracking-container-bottom-header'>
+                                                                                        <h2>Tracking your order</h2>
+                                                                                    </div>
+                                                                                    <div className='my-orders-delivery-tracking-container-bottom-body'>
+                                                                                            
+                                                                                    </div>
                                                                                 </div>
                                                                                 <div className={`my-orders-payment-processing-success-message ${this.state.currOrderPaymentVerified ? 'display' : ''}`}>
                                                                                     <div className='my-orders-payment-processing-success-message-left'>
