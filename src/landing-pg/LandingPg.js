@@ -5454,7 +5454,8 @@ const Styles = styled.div `
     position: absolute;
     top: 0.85rem;
     right: 0.85rem;
-    height: 
+    height: auto;
+    width: 35%;
 
 }
 
