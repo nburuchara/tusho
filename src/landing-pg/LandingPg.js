@@ -12490,6 +12490,7 @@ const Styles = styled.div `
 
 .homepage-body {
     // border: 1px solid black;
+    // min-height: 50rem;
     height: 50rem;
 }
 
@@ -12996,6 +12997,14 @@ const Styles = styled.div `
     flex-direction: column;
     margin-top: 3.5rem;
     margin-bottom: 3.5rem;
+}
+
+    // - - HOMEPAGE FOOTER - - //
+
+.homepage-footer {
+    height: 5rem;
+    border: 1px solid black;
+    width: 100%;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -22458,6 +22467,11 @@ export default class LandingPg extends Component {
                                 </div> 
                             </div>
                         </div>
+
+                        
+                    </div>
+                    <div className='homepage-footer'>
+
                     </div>
                     
                     <div onClick={this.handleScrollToElement} className={`scroll-to-page-top ${this.state.displayScrollUpBtn ? 'show' : ''}`}>↑</div>
