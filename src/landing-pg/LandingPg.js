@@ -7813,7 +7813,7 @@ const Styles = styled.div `
 //! - - Homepage Elements - - !//
 
 .homepage-fullscreen {
-    // border: 1px solid black;
+    border: 1px solid black;
     position: absolute;
     top: 0rem;
     padding-top: 6rem;
@@ -13002,9 +13002,13 @@ const Styles = styled.div `
     // - - HOMEPAGE FOOTER - - //
 
 .homepage-footer {
-    height: 5rem;
+    padding: 2rem;
+    text-align: center;
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 0.9rem;
+    margin-top: 2rem;
     border: 1px solid black;
-    width: 100%;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -20830,7 +20834,7 @@ export default class LandingPg extends Component {
                                     
                         {/* - - - Homepage - - - */}
 
-                    <div id="scrollable-container" className='homepage-fullscreen'>
+                    <div id="scrollable-container" className='homepage-fullscreen' ref={el => this.scrollContainer = el}>
                         <div id='homepage-header' className='homepage-header'>
                             <div className='homepage-header-inner-header'>
                                 <div className={`homepage-header-inner-header-left ${this.state.homepageNewUpdatesShow ? 'hide' : ''}`}>
@@ -22468,11 +22472,11 @@ export default class LandingPg extends Component {
                             </div>
                         </div>
 
-                        
-                    </div>
-                    <div className='homepage-footer'>
+                        <div className='homepage-footer'>
 
+                        </div>
                     </div>
+                   
                     
                     <div onClick={this.handleScrollToElement} className={`scroll-to-page-top ${this.state.displayScrollUpBtn ? 'show' : ''}`}>↑</div>
 
