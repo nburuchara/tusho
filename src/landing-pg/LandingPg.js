@@ -7813,7 +7813,7 @@ const Styles = styled.div `
 //! - - Homepage Elements - - !//
 
 .homepage-fullscreen {
-    border: 1px solid black;
+    // border: 1px solid black;
     position: absolute;
     top: 0rem;
     padding-top: 6rem;
@@ -7823,10 +7823,13 @@ const Styles = styled.div `
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
+    // display: flex;
+    // flex-direction: column;
 }
 
 .homepage-header {
     height: 35.5rem;
+    position: relative;
     // border: 1px solid black;
 } 
 
@@ -12951,6 +12954,15 @@ const Styles = styled.div `
 }
 
 /* Main Product Grid */
+
+
+.product-grid-content-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
 .product-grid {
     padding: 0px;
     // border: 1px solid black;
@@ -13002,13 +13014,45 @@ const Styles = styled.div `
     // - - HOMEPAGE FOOTER - - //
 
 .homepage-footer {
-    padding: 2rem;
-    text-align: center;
-    background-color: #f4f4f4;
-    color: #333;
-    font-size: 0.9rem;
-    margin-top: 2rem;
+    width: 100%;
+    height: 25rem;
+    border-radius: 25px;
+    background-color: #20313a;
+    margin-top: 5rem;
     border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.homepage-footer-left {
+    width: 55%;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+}
+
+.homepage-footer-left-header {
+    height: 30%;
+    border: 1px solid white;
+    position: relative;
+}
+
+
+.homepage-footer-left-header img {
+    position: absolute;
+    bottom: 0;
+    left: 1.25rem;
+    width: 30%;
+}
+
+.homepage-footer-left-body {
+    height: 70%;
+    border: 1px solid white;
+}
+
+.homepage-footer-right {
+    width: 45%;
+    border: 1px solid white;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -22468,13 +22512,25 @@ export default class LandingPg extends Component {
                                             </div>
                                         </div>
                                     )}
+
+                                    <div className='homepage-footer'>
+                                        <div className='homepage-footer-left'>
+                                            <div className='homepage-footer-left-header'>
+                                                <img src='/assets/images/home-footer/tusho-logo-footer.png'/>
+                                            </div>
+                                            <div className='homepage-footer-left-body'>
+
+                                            </div>
+                                        </div>
+                                        <div className='homepage-footer-right'>
+
+                                        </div>
+                                    </div>
+
                                 </div> 
                             </div>
                         </div>
 
-                        <div className='homepage-footer'>
-
-                        </div>
                     </div>
                    
                     
