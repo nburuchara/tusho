@@ -13018,8 +13018,9 @@ const Styles = styled.div `
     height: 25rem;
     border-radius: 25px;
     background-color: #20313a;
-    margin-top: 5rem;
-    border: 1px solid black;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    // border: 1px solid black;
     display: flex;
     flex-direction: row;
     overflow: hidden;
@@ -13027,34 +13028,44 @@ const Styles = styled.div `
 
 .homepage-footer-left {
     width: 55%;
-    border: 1px solid white;
+    // border: 1px solid white;
     display: flex;
     flex-direction: column;
 }
 
 .homepage-footer-left-header {
     height: 30%;
-    border: 1px solid white;
+    // border: 1px solid white;
     position: relative;
 }
 
 
 .homepage-footer-left-header img {
     position: absolute;
-    bottom: -;
-    left: 3.75rem;
+    bottom: 0;
+    left: 3.5rem;
     width: 125px;
     height: 125px;
 }
 
 .homepage-footer-left-body {
     height: 70%;
-    border: 1px solid white;
+    // border: 1px solid white;
 }
+
+.homepage-footer-left-body h2 {
+    margin-top: 1.25rem;
+    color: #ff5733;
+    margin-bottom: 0px;
+    margin-left: 3.75rem;
+    font-family: raleway;
+    font-weight: bolder;
+    font-size: 105%;
+}   
 
 .homepage-footer-right {
     width: 45%;
-    border: 1px solid white;
+    // border: 1px solid white;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -13376,12 +13387,12 @@ export default class LandingPg extends Component {
             showMyOrdersCurrentOptionLoading: false,
             showMyOrdersCurrentAddressSelect: true,
             showMyOrdersCurrentScheduleSelect: false,
-            currOrderAddressVerified: true,
-            currOrderScheduleVerified: true,
-            currOrderPaymentVerified: true,
-            currOrderLoadingPaymentActive: true,
-            currOrderDeliveryTrackingActive: true,
-            currOrderDeliveryInfoDisplay: true,
+            currOrderAddressVerified: false,
+            currOrderScheduleVerified: false,
+            currOrderPaymentVerified: false,
+            currOrderLoadingPaymentActive: false,
+            currOrderDeliveryTrackingActive: false,
+            currOrderDeliveryInfoDisplay: false,
             currOrderPreparedVerified: false,
             currOrderPickedUpVerified: false,
             currOrderDroppedOffVerified: false,
@@ -19615,13 +19626,17 @@ export default class LandingPg extends Component {
                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order'>
                                                                     {this.state.currOrderLoadingPaymentActive && 
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-payment-processing'>
-                                                                            <div className={`my-orders-payment-processing-loading-container-top ${this.state.currOrderPaymentVerified ? 'delivery' : ''}`}>
-                                                                                <div className='my-orders-delivery-tracking-container-top'>
+                                                                            <div className={`my-orders-payment-processing-loading-container-top ${this.state.currOrderPaymentVerified && this.state.currOrderDeliveryTrackingActive ? 'delivery' : ''}`}>
+
+                                                                                {/* - - - - - - CHECKPOINT - - - - - - */}
+
+                                                                                {/* <div className='my-orders-delivery-tracking-container-top'>
                                                                                     <div className='my-orders-delivery-tracking-container-top-chat-right'>
 
                                                                                     </div>
                                                                                     <img src='/assets/images/home-my-orders/my-orders-delivery-loading-vid.gif'/>
-                                                                                </div>
+                                                                                </div> */}
+
                                                                                 <div className={`my-orders-payment-processing-loading-container-top-chat ${this.state.myOrdersPaymentLoadingSubtitle1Loaded ? 'show' : ''}`}>
                                                                                     <p>
                                                                                     {this.state.currOrderPaymentVerified === false ? (
@@ -19700,14 +19715,18 @@ export default class LandingPg extends Component {
                                                                             {/* <p>" , "</p> */}
                                                                             </div>
                                                                             <div className='my-orders-payment-processing-loading-container-bottom'>
-                                                                                <div className={`my-orders-delivery-tracking-container-bottom ${this.state.currOrderDeliveryTrackingActive ? '' : ''}`}>
+
+                                                                                {/* - - - - - - CHECKPOINT - - - - - - */}
+                                                                                            
+                                                                                {/* <div className={`my-orders-delivery-tracking-container-bottom ${this.state.currOrderDeliveryTrackingActive ? 'tracking' : ''}`}>
                                                                                     <div className='my-orders-delivery-tracking-container-bottom-header'>
                                                                                         <h2>Tracking your order</h2>
                                                                                     </div>
                                                                                     <div className='my-orders-delivery-tracking-container-bottom-body'>
                                                                                             
                                                                                     </div>
-                                                                                </div>
+                                                                                </div> */}
+
                                                                                 <div className={`my-orders-payment-processing-success-message ${this.state.currOrderPaymentVerified ? 'display' : ''}`}>
                                                                                     <div className='my-orders-payment-processing-success-message-left'>
                                                                                         <img src='/assets/icons/home-my-orders/checkmark-icon-3.png'/>
@@ -22521,7 +22540,7 @@ export default class LandingPg extends Component {
                                                 <img src='/assets/images/home-footer/tusho-logo-footer.png'/>
                                             </div>
                                             <div className='homepage-footer-left-body'>
-
+                                                <h2>Nairobi's best products delivered to your door.</h2>
                                             </div>
                                         </div>
                                         <div className='homepage-footer-right'>
