@@ -5448,6 +5448,12 @@ const Styles = styled.div `
     justify-content: center;
     background-color: #e8f7ff;
     z-index: 2;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.my-orders-delivery-tracking-container-top.display {
+    transform: translateX(0);
 }
 
 .my-orders-delivery-tracking-container-top-chat-right {
@@ -5467,6 +5473,12 @@ const Styles = styled.div `
     width: 100%;
     background-color: white;
     z-index: 2;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.my-orders-delivery-tracking-container-bottom.display {
+    transform: translateX(0);
 }
 
 .my-orders-delivery-tracking-container-bottom-header {
@@ -15084,6 +15096,11 @@ export default class LandingPg extends Component {
                     currOrderPaymentVerified: true
                 })
             }, 35000)
+            setTimeout(() => {
+                this.setState({
+                    currOrderDeliveryTrackingActive: true
+                })
+            }, 38500)
         })
         
     }
@@ -19630,12 +19647,12 @@ export default class LandingPg extends Component {
 
                                                                                 {/* - - - - - - CHECKPOINT - - - - - - */}
 
-                                                                                {/* <div className='my-orders-delivery-tracking-container-top'>
+                                                                                <div className={`my-orders-delivery-tracking-container-top ${this.state.currOrderDeliveryTrackingActive ? 'display' : ''}`}>
                                                                                     <div className='my-orders-delivery-tracking-container-top-chat-right'>
 
                                                                                     </div>
                                                                                     <img src='/assets/images/home-my-orders/my-orders-delivery-loading-vid.gif'/>
-                                                                                </div> */}
+                                                                                </div>
 
                                                                                 <div className={`my-orders-payment-processing-loading-container-top-chat ${this.state.myOrdersPaymentLoadingSubtitle1Loaded ? 'show' : ''}`}>
                                                                                     <p>
@@ -19718,14 +19735,14 @@ export default class LandingPg extends Component {
 
                                                                                 {/* - - - - - - CHECKPOINT - - - - - - */}
                                                                                             
-                                                                                {/* <div className={`my-orders-delivery-tracking-container-bottom ${this.state.currOrderDeliveryTrackingActive ? 'tracking' : ''}`}>
+                                                                                <div className={`my-orders-delivery-tracking-container-bottom ${this.state.currOrderDeliveryTrackingActive ? 'display' : ''}`}>
                                                                                     <div className='my-orders-delivery-tracking-container-bottom-header'>
                                                                                         <h2>Tracking your order</h2>
                                                                                     </div>
                                                                                     <div className='my-orders-delivery-tracking-container-bottom-body'>
                                                                                             
                                                                                     </div>
-                                                                                </div> */}
+                                                                                </div>
 
                                                                                 <div className={`my-orders-payment-processing-success-message ${this.state.currOrderPaymentVerified ? 'display' : ''}`}>
                                                                                     <div className='my-orders-payment-processing-success-message-left'>
@@ -19740,7 +19757,7 @@ export default class LandingPg extends Component {
                                                                             </div>
                                                                         </div>
                                                                     }
-                                                                    {(!this.state.currOrderPaymentVerified || !this.state.currOrderDeliveryInfoDisplay) && 
+                                                                    {(!this.state.currOrderPaymentVerified || !this.state.currOrderDeliveryTrackingActive) && 
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header'>
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left'>
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top'>
@@ -19828,7 +19845,7 @@ export default class LandingPg extends Component {
                                                                             </div>   
                                                                         </div>
                                                                     }
-                                                                    {this.state.currOrderPaymentVerified && this.state.currOrderDeliveryInfoDisplay && 
+                                                                    {this.state.currOrderPaymentVerified && this.state.currOrderDeliveryTrackingActive && 
                                                                         <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header'>
                                                                             <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left'>
                                                                                 <div className='navbar-profile-account-popup-my-orders-settings-container-content-current-order-header-left-top'>
