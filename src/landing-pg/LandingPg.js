@@ -13022,6 +13022,7 @@ const Styles = styled.div `
     border: 1px solid black;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
 }
 
 .homepage-footer-left {
@@ -13040,9 +13041,10 @@ const Styles = styled.div `
 
 .homepage-footer-left-header img {
     position: absolute;
-    bottom: 0;
-    left: 1.25rem;
-    width: 30%;
+    bottom: -;
+    left: 3.75rem;
+    width: 125px;
+    height: 125px;
 }
 
 .homepage-footer-left-body {
