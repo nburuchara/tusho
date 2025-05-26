@@ -82,6 +82,7 @@ const Styles = styled.div `
 
 .notification-window-icon img {
    width: 100%;
+//    background-color: transparent;
 }
 
 .notification-window-details {
@@ -13270,6 +13271,9 @@ export default class LandingPg extends Component {
         this.state = {
             //* - NOTIFICATIONS - *//
             selectedProductIcon: '',
+            selectedProductName: '',
+            selectedProductQty: 0,
+            notificationMsg: '',
 
             //* - FULL PAGE ELEMENTS - *//
             displayScrollUpBtn: false,
@@ -15484,9 +15488,14 @@ export default class LandingPg extends Component {
                 
             // Update total quantity of ALL items (not unique items)
             const totalCartQuantity = updatedCart.reduce((total, item) => total + item.quantity, 0);
+
+            const notificationMsg = change > 0 ? 'Added to cart' : 'Removed from cart'
     
             return {
                 selectedProductIcon: updatedProduct.image,
+                selectedProductName: updatedProduct.name,
+                selectedProductQty: updatedProduct.quantity,
+                notificationMsg,
                 totalCartQuantity,
                 products: updatedProducts,
                 promoItems: updatedPromoItems, // 🔹 update added here
@@ -15899,9 +15908,14 @@ export default class LandingPg extends Component {
             const totalCartPrice = updatedCart.reduce((total, item) => total + item.price * item.quantity, 0);
             // Update total quantity of ALL items (not unique items)
             const totalCartQuantity = updatedCart.reduce((total, item) => total + item.quantity, 0);
+
+            const notificationMsg = change > 0 ? 'Added to cart' : 'Removed from cart'
     
             return {
-                selectedProductIcon: products[productId].image,
+                selectedProductIcon: updatedProduct.image,
+                selectedProductName: updatedProduct.name,
+                selectedProductQty: updatedProduct.quantity,
+                notificationMsg,
                 totalCartQuantity,
                 products: updatedProducts,
                 promoItems: updatedPromoItems, // 🔹 update added here
@@ -22671,10 +22685,11 @@ export default class LandingPg extends Component {
                         </div>
                         <div className='notification-window-details'>
                             <div className='notification-window-details-left'>
-
+                                
                             </div>
                             <div className='notification-window-details-right'>
-
+                                <h2>{this.state.selectedProductQty}</h2>
+                                <p>Qty</p>
                             </div>
                         </div>
                     </div>
