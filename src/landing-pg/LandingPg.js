@@ -13746,6 +13746,9 @@ export default class LandingPg extends Component {
         //* - TRIE NODE (for search functionality) - *//
         this.trie = new Trie(); // Initialize the trie
 
+        //* - NOTIFICATION TIMER - *//
+        this.notificationTimeout = null;
+
         //* - SEARCH BAR REFERENCE - *//
         this.searchBarRef = React.createRef();
 
@@ -13761,6 +13764,8 @@ export default class LandingPg extends Component {
 
         //* - SHOPPING LIST REFERENCE - *//
         this.inputRefs = [React.createRef()];
+
+
     }
 
     componentDidMount = () => {
@@ -13851,6 +13856,7 @@ export default class LandingPg extends Component {
         // ✅ Clear the timeouts and intervals
         if (this.timerInterval) clearInterval(this.timerInterval);
         if (this.timerTimeout) clearTimeout(this.timerTimeout);
+        if (this.notificationTimeout) { clearTimeout(this.notificationTimeout);}
     }
 
     getFormattedDate = () => {
@@ -15561,11 +15567,16 @@ export default class LandingPg extends Component {
                 groupedOptionsShopAssistant: updatedGroupedOptionsShopAssistant
             };
         }, () => {
-            setTimeout(() => {
-                this.setState({
-                    showNotificationWindow: false
-                })
-            }, 3000)
+
+            if (this.notificationTimeout) {
+                clearTimeout(this.notificationTimeout);
+            }
+
+            this.notificationTimeout = setTimeout(() => {
+                this.setState({ showNotification: false });
+                this.notificationTimeout = null; // Clear the reference
+              }, 3000);
+
         });
     };
 
