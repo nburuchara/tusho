@@ -64,15 +64,20 @@ const Styles = styled.div `
 }
 
 .notification-window-icon {
-    width: 25%;
+    width: 30%;
     border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.notification-window-icon img {
+    width: 80%;
+    border: 1px solid black;
+}
+
 .notification-window-details {
-    width: 75%;
+    width: 70%;
     border: 1px solid black;
 }
 
@@ -15332,7 +15337,6 @@ export default class LandingPg extends Component {
         }))
     }
 
-
         //* - - MAIN HOME PAGE FUNCTIONS - - *//
 
 
@@ -15459,6 +15463,7 @@ export default class LandingPg extends Component {
             const totalCartQuantity = updatedCart.reduce((total, item) => total + item.quantity, 0);
     
             return {
+                selectedProductIcon: products[productId].image,
                 totalCartQuantity,
                 products: updatedProducts,
                 promoItems: updatedPromoItems, // 🔹 update added here
@@ -15873,6 +15878,7 @@ export default class LandingPg extends Component {
             const totalCartQuantity = updatedCart.reduce((total, item) => total + item.quantity, 0);
     
             return {
+                selectedProductIcon: products[productId].image,
                 totalCartQuantity,
                 products: updatedProducts,
                 promoItems: updatedPromoItems, // 🔹 update added here
