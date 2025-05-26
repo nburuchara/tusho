@@ -15560,7 +15560,7 @@ export default class LandingPg extends Component {
                 totalCartQuantity,
                 products: updatedProducts,
                 promoItems: updatedPromoItems, // 🔹 update added here
-                newProducts: updatedNewItems,
+                newProducts: updatedNewItems, 
                 cart: updatedCart,
                 totalCartPrice,
                 groupedOptions: updatedGroupedOptions,
