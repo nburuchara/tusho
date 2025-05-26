@@ -44,7 +44,7 @@ const Styles = styled.div `
 
 .notification-window {
     position: absolute;
-    top: 5.85rem;
+    top: 5.99rem;
     left: 0;
     width: 25%;
     height: 5.5rem;
@@ -55,12 +55,37 @@ const Styles = styled.div `
     font-weight: bold;
     display: flex;
     flex-direction: row;
+    visibility: hidden;
+    transform: translateX(5px);
+    opacity: 0;
+    transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
+    cursor: pointer;
+}
 
-    // visibility: hidden;
-    // transform: translateX(5px);
-    // opacity: 0;
-    // transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
-    // cursor: pointer;
+.notification-window.display {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.notification-window-exit {
+    position: absolute;
+    top: 0.225rem;
+    right: 0.75rem;
+    height: 0.75rem;
+    width: 0.75rem;
+    // border: 1px solid black;
+    transition: transform 0.35s ease-in-out;
+}
+
+.notification-window-exit:hover {
+    transform: scale(1.1);
+}
+
+.notification-window-exit img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }
 
 .notification-window-icon {
@@ -22706,6 +22731,9 @@ export default class LandingPg extends Component {
                     </div>
                    
                     <div className='notification-window'>
+                        <div className='notification-window-exit'>
+                            <img src='/assets/icons/home-main-header/notification-exit-icon.png'/>
+                        </div>
                         <div className='notification-window-icon'>
                             <div className='notification-window-icon-img-container'>
                                 <img src={this.state.selectedProductIcon}/>   
