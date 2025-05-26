@@ -15573,7 +15573,7 @@ export default class LandingPg extends Component {
             }
 
             this.notificationTimeout = setTimeout(() => {
-                this.setState({ showNotification: false });
+                this.setState({ showNotificationWindow: false });
                 this.notificationTimeout = null; // Clear the reference
               }, 3000);
 
