@@ -42,6 +42,28 @@ const Styles = styled.div `
     background-color: transparent;
 }
 
+
+
+.notification-window {
+    position: absolute;
+    top: 5.85rem;
+    left: 0;
+    width: 22.5%;
+    height: 5rem;
+    border-radius: 6px;
+    padding: 5px;
+    border: 1px solid #20313a;
+    background-color: #e8f7ff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    display: flex;
+    // visibility: hidden;
+    // transform: translateX(5px);
+    // opacity: 0;
+    // transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
+    // cursor: pointer;
+}
+
 .scroll-to-page-top {
     position: absolute;
     bottom: -4.5rem;
@@ -5458,12 +5480,15 @@ const Styles = styled.div `
 
 .my-orders-delivery-tracking-container-top-chat-right {
     position: absolute;
-    top: 0.85rem;
-    right: 0.85rem;
+    top: 0.5rem;
+    right: 0.5rem;
     height: auto;
-    width: 30%;
-    border: 1px solid #20313a;
+    width: 33.5%;
+    border: 1px solid #ff5733;
     background-color: #faece9;
+    border-radius: 6px;
+    border-bottom-left-radius: 0px;
+    padding: 0.4rem;
 }
 
 .my-orders-delivery-tracking-container-top-chat-right p {
@@ -5471,7 +5496,7 @@ const Styles = styled.div `
     margin-top: 0px;
     margin-bottom: 0px;
     color: #ff5733;
-    font-size: 72.5%;
+    font-size: 70.5%;
     // font-weight: bold;
     font-family: lexend;
 }
@@ -19660,20 +19685,23 @@ export default class LandingPg extends Component {
 
                                                                                 <div className={`my-orders-delivery-tracking-container-top ${this.state.currOrderDeliveryTrackingActive ? 'display' : ''}`}>
                                                                                     <div className='my-orders-delivery-tracking-container-top-chat-right'>
-                                                                                        <Typewriter
-                                                                                            onInit={(typewriter) => {
-                                                                                                typewriter.typeString('                                                               ...I KNOW GIRL!      He really really tried it!        Hold on girl...        Oop!    One sec girl..          *mutes mic*    ')
-                                                                                                .callFunction(() => {
-                                                                                                    this.setState({myOrdersPaymentLoadingSubtitle1Loaded: false})
-                                                                                                })
-                                                                                                .pauseFor(2500)
-                                                                                                .deleteAll()
-                                                                                                .callFunction(() => {
-                                                                                                    
-                                                                                                })
-                                                                                                .start()
-                                                                                            }}
-                                                                                        />
+                                                                                        <p>
+                                                                                            <Typewriter
+                                                                                                key={this.state.currOrderDeliveryTrackingActive ? 0 : null}
+                                                                                                onInit={(typewriter) => {
+                                                                                                    typewriter.typeString('     hey there chap, hope you\'re doing alright!          I\'m construction Steve.         If you see me around, just know that we\'re building something new for all of ya.') 
+                                                                                                    .callFunction(() => {
+                                                                                                        this.setState({myOrdersPaymentLoadingSubtitle1Loaded: false})
+                                                                                                    })
+                                                                                                    .pauseFor(2500)
+                                                                                                    .deleteAll()
+                                                                                                    .callFunction(() => {
+                                                                                                        
+                                                                                                    })
+                                                                                                    .start()
+                                                                                                }}
+                                                                                            />
+                                                                                        </p>
                                                                                     </div>
                                                                                     <img src='/assets/images/home-my-orders/my-orders-delivery-loading-vid.gif'/>
                                                                                 </div>
@@ -22594,7 +22622,9 @@ export default class LandingPg extends Component {
 
                     </div>
                    
-                    
+                    <div className='notification-window'>
+
+                    </div>
                     <div onClick={this.handleScrollToElement} className={`scroll-to-page-top ${this.state.displayScrollUpBtn ? 'show' : ''}`}>↑</div>
 
                 </div>
