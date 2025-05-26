@@ -71,10 +71,17 @@ const Styles = styled.div `
     justify-content: center;
 }
 
+.notification-window-icon-img-container {
+    width: 70.5px;
+    height: 70.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // border: 1px solid black;
+}
+
 .notification-window-icon img {
-    width: 78.5px;
-    height: 72.5px;
-    border: 1px solid #e8f7ff;
+   width: 100%;
 }
 
 .notification-window-details {
@@ -85,12 +92,12 @@ const Styles = styled.div `
 }
 
 .notification-window-details-left {
-    width: 80%;
+    width: 70%;
     border: 1px solid black;
 }
 
 .notification-window-details-right {
-    width: 20%;
+    width: 30%;
     border: 1px solid black;
 }
 
@@ -22658,7 +22665,9 @@ export default class LandingPg extends Component {
                    
                     <div className='notification-window'>
                         <div className='notification-window-icon'>
-                            <img src={this.state.selectedProductIcon}/>                     
+                            <div className='notification-window-icon-img-container'>
+                                <img src={this.state.selectedProductIcon}/>   
+                            </div>               
                         </div>
                         <div className='notification-window-details'>
                             <div className='notification-window-details-left'>
