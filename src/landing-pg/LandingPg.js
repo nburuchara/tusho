@@ -13323,6 +13323,7 @@ export default class LandingPg extends Component {
         super(props)
         this.state = {
             //* - NOTIFICATIONS - *//
+            showNotificationWindow: false,
             selectedProductIcon: '',
             selectedProductName: '',
             selectedProductQty: 0,
@@ -15543,8 +15544,9 @@ export default class LandingPg extends Component {
             const totalCartQuantity = updatedCart.reduce((total, item) => total + item.quantity, 0);
 
             const notificationMsg = change > 0 ? 'Added to cart' : 'Deducted from cart'
-    
+
             return {
+                showNotificationWindow: true,
                 selectedProductIcon: updatedProduct.image,
                 selectedProductName: updatedProduct.name,
                 selectedProductQty: updatedProduct.qty,
@@ -15558,6 +15560,12 @@ export default class LandingPg extends Component {
                 groupedOptions: updatedGroupedOptions,
                 groupedOptionsShopAssistant: updatedGroupedOptionsShopAssistant
             };
+        }, () => {
+            setTimeout(() => {
+                this.setState({
+                    showNotificationWindow: false
+                })
+            }, 3000)
         });
     };
 
@@ -16079,6 +16087,12 @@ export default class LandingPg extends Component {
 
     scrollShoppingListsLeft = () => {
         this.setState({ scrollShoppingLists: false })
+    }
+
+    exitNotificationWindow = () => {
+        this.setState({
+            showNotificationWindow: false
+        })
     }
 
     render () {
@@ -22730,8 +22744,8 @@ export default class LandingPg extends Component {
 
                     </div>
                    
-                    <div className='notification-window'>
-                        <div className='notification-window-exit'>
+                    <div className={`notification-window ${this.state.showNotificationWindow ? 'display' : ''}`}>
+                        <div onClick={this.exitNotificationWindow} className='notification-window-exit'>
                             <img src='/assets/icons/home-main-header/notification-exit-icon.png'/>
                         </div>
                         <div className='notification-window-icon'>
