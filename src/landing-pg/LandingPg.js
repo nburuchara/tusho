@@ -5461,8 +5461,19 @@ const Styles = styled.div `
     top: 0.85rem;
     right: 0.85rem;
     height: auto;
-    width: 35%;
+    width: 30%;
+    border: 1px solid #20313a;
+    background-color: #faece9;
+}
 
+.my-orders-delivery-tracking-container-top-chat-right p {
+    all: unset;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #ff5733;
+    font-size: 72.5%;
+    // font-weight: bold;
+    font-family: lexend;
 }
 
 .my-orders-delivery-tracking-container-bottom {
@@ -5503,7 +5514,7 @@ const Styles = styled.div `
     left: 0;
     width: 100%;
     height: 77%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .my-orders-payment-processing-success-message {
@@ -19649,33 +19660,30 @@ export default class LandingPg extends Component {
 
                                                                                 <div className={`my-orders-delivery-tracking-container-top ${this.state.currOrderDeliveryTrackingActive ? 'display' : ''}`}>
                                                                                     <div className='my-orders-delivery-tracking-container-top-chat-right'>
-
+                                                                                        <Typewriter
+                                                                                            onInit={(typewriter) => {
+                                                                                                typewriter.typeString('                                                               ...I KNOW GIRL!      He really really tried it!        Hold on girl...        Oop!    One sec girl..          *mutes mic*    ')
+                                                                                                .callFunction(() => {
+                                                                                                    this.setState({myOrdersPaymentLoadingSubtitle1Loaded: false})
+                                                                                                })
+                                                                                                .pauseFor(2500)
+                                                                                                .deleteAll()
+                                                                                                .callFunction(() => {
+                                                                                                    
+                                                                                                })
+                                                                                                .start()
+                                                                                            }}
+                                                                                        />
                                                                                     </div>
                                                                                     <img src='/assets/images/home-my-orders/my-orders-delivery-loading-vid.gif'/>
                                                                                 </div>
 
                                                                                 <div className={`my-orders-payment-processing-loading-container-top-chat ${this.state.myOrdersPaymentLoadingSubtitle1Loaded ? 'show' : ''}`}>
                                                                                     <p>
-                                                                                    {this.state.currOrderPaymentVerified === false ? (
-                                                                                        <Typewriter
-                                                                                        onInit={(typewriter) => {
-                                                                                            typewriter.typeString('                                                               ...I KNOW GIRL!      He really really tried it!        Hold on girl...        Oop!    One sec girl..          *mutes mic*    ')
-                                                                                            .callFunction(() => {
-                                                                                                this.setState({myOrdersPaymentLoadingSubtitle1Loaded: false})
-                                                                                            })
-                                                                                            .pauseFor(2500)
-                                                                                            .deleteAll()
-                                                                                            .callFunction(() => {
-                                                                                                
-                                                                                            })
-                                                                                            .start()
-                                                                                        }}
-                                                                                    />  
-                                                                                    ) : (
-                                                                                        <Typewriter
-                                                                                        key={this.state.currOrderPaymentVerified ? 0 : null}
+                                                                                        {this.state.currOrderPaymentVerified === false ? (
+                                                                                            <Typewriter
                                                                                             onInit={(typewriter) => {
-                                                                                                typewriter.typeString('                            ...She said what?? Ain\'t no way girl!     Don\'t mind her sis,   no one is ready for your post break-up glow up!    ')
+                                                                                                typewriter.typeString('                                                               ...I KNOW GIRL!      He really really tried it!        Hold on girl...        Oop!    One sec girl..          *mutes mic*    ')
                                                                                                 .callFunction(() => {
                                                                                                     this.setState({myOrdersPaymentLoadingSubtitle1Loaded: false})
                                                                                                 })
@@ -19687,8 +19695,23 @@ export default class LandingPg extends Component {
                                                                                                 .start()
                                                                                             }}
                                                                                         />  
-                                                                                    )}
-                                                                                        
+                                                                                        ) : (
+                                                                                            <Typewriter
+                                                                                            key={this.state.currOrderPaymentVerified ? 0 : null}
+                                                                                                onInit={(typewriter) => {
+                                                                                                    typewriter.typeString('                            ...She said what?? Ain\'t no way girl!     Don\'t mind her sis,   no one is ready for your post break-up glow up!    ')
+                                                                                                    .callFunction(() => {
+                                                                                                        this.setState({myOrdersPaymentLoadingSubtitle1Loaded: false})
+                                                                                                    })
+                                                                                                    .pauseFor(2500)
+                                                                                                    .deleteAll()
+                                                                                                    .callFunction(() => {
+                                                                                                        
+                                                                                                    })
+                                                                                                    .start()
+                                                                                                }}
+                                                                                            />  
+                                                                                        )}
                                                                                     </p>        
                                                                                 </div>
                                                                                 <div className={`my-orders-payment-processing-loading-container-bottom-chat ${this.state.myOrdersPaymentLoadingSubtitle1Loaded ? 'hide' : ''}`}>
@@ -19740,7 +19763,7 @@ export default class LandingPg extends Component {
                                                                                         <h2>Tracking your order</h2>
                                                                                     </div>
                                                                                     <div className='my-orders-delivery-tracking-container-bottom-body'>
-                                                                                            
+                                                                                        <h5>We'll keep you updated on the progress of your order.</h5>
                                                                                     </div>
                                                                                 </div>
 
