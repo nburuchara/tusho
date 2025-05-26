@@ -102,6 +102,19 @@ const Styles = styled.div `
     border: 1px solid black;
 }
 
+.notification-window-details-right h2 {
+    text-align: center;
+    margin-bottom: 0px;
+    // font-size
+}
+
+.notification-window-details-right p {
+    margin-top: 0.5rem;
+    text-align: center;
+    font-size: 85%;
+    font-family: lexend;
+}
+
 .scroll-to-page-top {
     position: absolute;
     bottom: -4.5rem;
@@ -15494,7 +15507,7 @@ export default class LandingPg extends Component {
             return {
                 selectedProductIcon: updatedProduct.image,
                 selectedProductName: updatedProduct.name,
-                selectedProductQty: updatedProduct.quantity,
+                selectedProductQty: updatedProduct.qty,
                 notificationMsg,
                 totalCartQuantity,
                 products: updatedProducts,
@@ -15914,7 +15927,7 @@ export default class LandingPg extends Component {
             return {
                 selectedProductIcon: updatedProduct.image,
                 selectedProductName: updatedProduct.name,
-                selectedProductQty: updatedProduct.quantity,
+                selectedProductQty: updatedProduct.qty,
                 notificationMsg,
                 totalCartQuantity,
                 products: updatedProducts,
