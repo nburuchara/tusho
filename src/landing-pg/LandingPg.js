@@ -94,12 +94,27 @@ const Styles = styled.div `
 
 .notification-window-details-left {
     width: 70%;
-    border: 1px solid black;
+    // border: 1px solid black;
+}
+
+.notification-window-details-left h4 {
+    margin-top: 0.65rem;
+    margin-bottom: 0.15rem;
+    font-family: lexend;
+    color: #20313a;
+    font-size: 90%;
+}
+
+.notification-window-details-left p {
+    font-weight: normal;
+    font-size: 85%;
+    margin-top: 0px;
+    color: #20313a;
 }
 
 .notification-window-details-right {
     width: 30%;
-    border: 1px solid black;
+    // border: 1px solid black;
 }
 
 .notification-window-details-right h2 {
@@ -15502,7 +15517,7 @@ export default class LandingPg extends Component {
             // Update total quantity of ALL items (not unique items)
             const totalCartQuantity = updatedCart.reduce((total, item) => total + item.quantity, 0);
 
-            const notificationMsg = change > 0 ? 'Added to cart' : 'Removed from cart'
+            const notificationMsg = change > 0 ? 'Added to cart' : 'Deducted from cart'
     
             return {
                 selectedProductIcon: updatedProduct.image,
@@ -15922,7 +15937,7 @@ export default class LandingPg extends Component {
             // Update total quantity of ALL items (not unique items)
             const totalCartQuantity = updatedCart.reduce((total, item) => total + item.quantity, 0);
 
-            const notificationMsg = change > 0 ? 'Added to cart' : 'Removed from cart'
+            const notificationMsg = change > 0 ? 'Added to cart' : 'Deducted from cart'
     
             return {
                 selectedProductIcon: updatedProduct.image,
@@ -22698,7 +22713,8 @@ export default class LandingPg extends Component {
                         </div>
                         <div className='notification-window-details'>
                             <div className='notification-window-details-left'>
-                                
+                                <h4>{this.state.notificationMsg}</h4>
+                                <p>{this.state.selectedProductName}</p>
                             </div>
                             <div className='notification-window-details-right'>
                                 <h2>{this.state.selectedProductQty}</h2>
