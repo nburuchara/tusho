@@ -65,19 +65,32 @@ const Styles = styled.div `
 
 .notification-window-icon {
     width: 30%;
-    border: 1px solid black;
+    // border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .notification-window-icon img {
-    width: 80%;
-    border: 1px solid black;
+    width: 78.5px;
+    height: 72.5px;
+    border: 1px solid #e8f7ff;
 }
 
 .notification-window-details {
     width: 70%;
+    // border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+
+.notification-window-details-left {
+    width: 80%;
+    border: 1px solid black;
+}
+
+.notification-window-details-right {
+    width: 20%;
     border: 1px solid black;
 }
 
@@ -13248,6 +13261,9 @@ export default class LandingPg extends Component {
     constructor (props) {
         super(props)
         this.state = {
+            //* - NOTIFICATIONS - *//
+            selectedProductIcon: '',
+
             //* - FULL PAGE ELEMENTS - *//
             displayScrollUpBtn: false,
 
@@ -15463,7 +15479,7 @@ export default class LandingPg extends Component {
             const totalCartQuantity = updatedCart.reduce((total, item) => total + item.quantity, 0);
     
             return {
-                selectedProductIcon: products[productId].image,
+                selectedProductIcon: updatedProduct.image,
                 totalCartQuantity,
                 products: updatedProducts,
                 promoItems: updatedPromoItems, // 🔹 update added here
@@ -22642,10 +22658,15 @@ export default class LandingPg extends Component {
                    
                     <div className='notification-window'>
                         <div className='notification-window-icon'>
-
+                            <img src={this.state.selectedProductIcon}/>                     
                         </div>
                         <div className='notification-window-details'>
+                            <div className='notification-window-details-left'>
 
+                            </div>
+                            <div className='notification-window-details-right'>
+
+                            </div>
                         </div>
                     </div>
 
