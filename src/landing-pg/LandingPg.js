@@ -42,26 +42,38 @@ const Styles = styled.div `
     background-color: transparent;
 }
 
-
-
 .notification-window {
     position: absolute;
     top: 5.85rem;
     left: 0;
-    width: 22.5%;
-    height: 5rem;
+    width: 25%;
+    height: 5.5rem;
     border-radius: 6px;
-    padding: 5px;
     border: 1px solid #20313a;
     background-color: #e8f7ff;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     font-weight: bold;
     display: flex;
+    flex-direction: row;
+
     // visibility: hidden;
     // transform: translateX(5px);
     // opacity: 0;
     // transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
     // cursor: pointer;
+}
+
+.notification-window-icon {
+    width: 25%;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-window-details {
+    width: 75%;
+    border: 1px solid black;
 }
 
 .scroll-to-page-top {
@@ -22623,8 +22635,14 @@ export default class LandingPg extends Component {
                     </div>
                    
                     <div className='notification-window'>
+                        <div className='notification-window-icon'>
 
+                        </div>
+                        <div className='notification-window-details'>
+
+                        </div>
                     </div>
+
                     <div onClick={this.handleScrollToElement} className={`scroll-to-page-top ${this.state.displayScrollUpBtn ? 'show' : ''}`}>↑</div>
 
                 </div>
