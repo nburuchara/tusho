@@ -15575,7 +15575,7 @@ export default class LandingPg extends Component {
             this.notificationTimeout = setTimeout(() => {
                 this.setState({ showNotificationWindow: false });
                 this.notificationTimeout = null; // Clear the reference
-              }, 3000);
+            }, 3000);
 
         });
     };
@@ -15984,6 +15984,7 @@ export default class LandingPg extends Component {
             const notificationMsg = change > 0 ? 'Added to cart' : 'Deducted from cart'
     
             return {
+                showNotificationWindow: true,
                 selectedProductIcon: updatedProduct.image,
                 selectedProductName: updatedProduct.name,
                 selectedProductQty: updatedProduct.qty,
@@ -15995,6 +15996,17 @@ export default class LandingPg extends Component {
                 totalCartPrice,
                 groupedOptions: updatedGroupedOptions,
             };
+        }, () => {
+
+            if (this.notificationTimeout) {
+                clearTimeout(this.notificationTimeout);
+            }
+
+            this.notificationTimeout = setTimeout(() => {
+                this.setState({ showNotificationWindow: false });
+                this.notificationTimeout = null; // Clear the reference
+            }, 3000);
+
         });
     };
 
@@ -22742,6 +22754,9 @@ export default class LandingPg extends Component {
                                             </div>
                                             <div className='homepage-footer-left-body'>
                                                 <h2>Nairobi's best products delivered to your door.</h2>
+                                                <div className=''>
+
+                                                </div>
                                             </div>
                                         </div>
                                         <div className='homepage-footer-right'>
