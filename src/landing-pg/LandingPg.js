@@ -1501,12 +1501,12 @@ const Styles = styled.div `
 #top-navbar-dropdown-option-brand-cell {
     margin-top: 0px;
     // cursor: pointer;
+    transition: background-color 0.35s ease-in-out, border 0.35s ease-in-out;
 }
 
 .navbar-options-dropdown-option-brand-cell:hover {
     background-color: #faece9;
     // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.09), 0 6px 20px 0 rgba(0, 0, 0, 0.09);
-    border: 1px solid #222f3e;
     border: 1px solid #FF5733;
     cursor: pointer;
  }
@@ -1547,6 +1547,7 @@ const Styles = styled.div `
 .navbar-options-dropdown-option-brand-cell-icon img {
     width: 32.5%;
     margin-left: -10px;
+    transition: transform 0.35s ease-in-out;
 }
 
 .navbar-options-dropdown-option-brand-full-list {
@@ -1607,6 +1608,7 @@ const Styles = styled.div `
     width: 35%;
     margin-left: -10px;
     margin-top: 2px;
+    transition: transform 0.35s ease-in-out;
 }
 
     //! # OPTION 2
@@ -13504,9 +13506,9 @@ export default class LandingPg extends Component {
             displayScrollUpBtn: false,
 
             //* - USER ACCOUNT STATUS - *//
-            userSignedIn: true,
+            userSignedIn: false,
             userSignedInLoading: false,
-            userSignedInTransition: true,
+            userSignedInTransition: false,
             showAccountInformation: true,
             showJipangeSettings: false,
             showPamojaSettings: false,
@@ -13776,7 +13778,7 @@ export default class LandingPg extends Component {
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
             OTPBtnClicked: false,
-            OTPVerifySuccess: true,
+            OTPVerifySuccess: false,
             showEnterOPTBtnTextHome: true,
             showVerifyOPTBtnTextHome: true,
             verifyOTPBtnText: 'Verify OTP',
