@@ -13207,6 +13207,29 @@ const Styles = styled.div `
     // border: 1px solid white;
 }
 
+.homepage-footer-left-body-socials {
+    width: auto;
+    margin-top: 0.65rem;
+    margin-left: 3.75rem;
+    // border: 1px solid white;
+    display: flex;
+    flex-direction: row;
+}
+
+.homepage-footer-left-body-socials-box { 
+    width: 2.25rem;
+    height: 2.25rem;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.homepage-footer-left-body-socials-box img { 
+    width: 20px;
+    height: 20px;
+}
+
     // - - CSS TRANSITIONS / ANIMATIONS - - //
 
 .navbar-search-bar,
@@ -22754,8 +22777,19 @@ export default class LandingPg extends Component {
                                             </div>
                                             <div className='homepage-footer-left-body'>
                                                 <h2>Nairobi's best products delivered to your door.</h2>
-                                                <div className=''>
-
+                                                <div className='homepage-footer-left-body-socials'>
+                                                    <div className='homepage-footer-left-body-socials-box'>
+                                                        <img src='/assets/icons/home-footer/instagram-icon.png'/>
+                                                    </div>
+                                                    <div className='homepage-footer-left-body-socials-box'>
+                                                        <img src='/assets/icons/home-footer/facebook-icon.png'/>
+                                                    </div>
+                                                    <div className='homepage-footer-left-body-socials-box'>
+                                                        <img src='/assets/icons/home-footer/tiktok-icon.png'/>
+                                                    </div>
+                                                    <div className='homepage-footer-left-body-socials-box'>
+                                                        <img src='/assets/icons/home-footer/youtube-icon.png'/>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
