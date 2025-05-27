@@ -13224,6 +13224,7 @@ const Styles = styled.div `
 .homepage-footer-left-body-socials-box img { 
     width: 20px;
     height: 20px;
+    cursor: pointer;
 }
 
 .homepage-footer-right {
@@ -13334,14 +13335,14 @@ const Styles = styled.div `
     left: 3.75rem;
     right: 3.75rem;
     height: 6.5rem;
-    border: 3px solid #ff5733;
+    border-top: 2px solid #ff5733;
     display: flex;
     flex-direction: row;
 }
 
 .homepage-footer-bottom-left {
     width: 50%;
-    border: 1px solid white;
+    // border: 1px solid white;
 }
 
 .homepage-footer-bottom-left p {
@@ -13351,7 +13352,7 @@ const Styles = styled.div `
 
 .homepage-footer-bottom-right {
     width: 50%;
-    border: 1px solid white;
+    // border: 1px solid white;
     display: flex;
     flex-direction: row;
     display: flex;
@@ -13361,7 +13362,7 @@ const Styles = styled.div `
 
 .homepage-footer-bottom-right-col {
     width: 25%;
-    border: 1px solid #ff5733;
+    // border: 1px solid #ff5733;
     text-align: right;
 }
 
@@ -13369,6 +13370,12 @@ const Styles = styled.div `
     color: #ff5733;
     font-family: raleway;
     text-decoration: underline;
+    cursor: pointer;
+    transition: transform 0.35s ease-in-out;
+}
+
+.homepage-footer-bottom-right-col p:hover {
+    transform: scale(1.02);
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -22936,7 +22943,7 @@ export default class LandingPg extends Component {
                                         </div>
                                         <div className='homepage-footer-right'>
                                             <div className='homepage-footer-right-col'>
-                                                <h3><label>Brands (130+)</label></h3>
+                                                <h3><label>All Brands (130+)</label></h3>
                                                 <h3><label>Jipange</label></h3>
                                                 <h3><label>Sell With Us</label></h3>
                                                 <h3><label>Sell Tickets</label></h3>
