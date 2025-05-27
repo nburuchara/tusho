@@ -22954,7 +22954,7 @@ export default class LandingPg extends Component {
                                                 
                                             </div>
                                             <div className='homepage-footer-right-col'>
-                                                <h2>Need help?</h2>
+                                                <h2><u>Need help</u>?</h2>
                                                 <div className='homepage-footer-right-col-contact'>
                                                     <div className='homepage-footer-right-col-contact-icon'>
                                                         <img src='/assets/icons/home-footer/phone-icon.png'/>
