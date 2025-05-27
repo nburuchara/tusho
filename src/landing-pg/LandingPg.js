@@ -13154,7 +13154,7 @@ const Styles = styled.div `
 
 .homepage-footer {
     width: 100%;
-    height: 25rem;
+    height: 22rem;
     border-radius: 25px;
     background-color: #20313a;
     margin-top: 3rem;
@@ -13204,7 +13204,7 @@ const Styles = styled.div `
 
 .homepage-footer-right {
     width: 45%;
-    border: 1px solid white;
+    // border: 1px solid white;
     display: flex;
     flex-direction: row;
 }
@@ -13212,13 +13212,19 @@ const Styles = styled.div `
 .homepage-footer-right-col {
     width: 50%;
     // border: 1px solid white;
-    padding-top: 4.1rem;
+    padding-top: 4.8rem;
 }
 
 .homepage-footer-right-col h3 {
     color: #ff5733;
-    font-size: 90%;
+    font-size: 85%;
     font-family: lexend;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.homepage-footer-right-col h3:hover {
+    text-decoration: underline;
 }
 
 .homepage-footer-right-col-careers {
@@ -13233,18 +13239,18 @@ const Styles = styled.div `
 }
 
 .homepage-footer-right-col-careers span {
-    margin-top: -0.15rem;
+    margin-top: -0.05rem;
     margin-bottom: 0px;
     margin-left: 0.5rem;
     background-color: white;
     border-radius: 20px;
-    color: #ff5733;
+    color: #20313a;
     padding: 0.2rem;
     padding-bottom: 0.35rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     font-family: lexend;
-    font-size: 78.5%;
+    font-size: 72.5%;
 }
 
 .homepage-footer-left-body-socials {
