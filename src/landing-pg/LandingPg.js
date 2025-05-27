@@ -13211,33 +13211,40 @@ const Styles = styled.div `
 
 .homepage-footer-right-col {
     width: 50%;
-    border: 1px solid white;
+    // border: 1px solid white;
     padding-top: 4.1rem;
 }
 
 .homepage-footer-right-col h3 {
     color: #ff5733;
-    font-size: 95%;
+    font-size: 90%;
     font-family: lexend;
 }
 
 .homepage-footer-right-col-careers {
     display: flex;
     flex-direction: row;
-    border: 1px solid white;
+    // border: 1px solid white;
 }
 
 .homepage-footer-right-col-careers h3 {
     margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 .homepage-footer-right-col-careers span {
-    margin-top: 0px;
+    margin-top: -0.15rem;
     margin-bottom: 0px;
     margin-left: 0.5rem;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 20px;
     color: #ff5733;
+    padding: 0.2rem;
+    padding-bottom: 0.35rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-family: lexend;
+    font-size: 78.5%;
 }
 
 .homepage-footer-left-body-socials {
