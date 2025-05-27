@@ -13154,11 +13154,12 @@ const Styles = styled.div `
 
 .homepage-footer {
     width: 100%;
-    height: 22rem;
+    height: 25rem;
     border-radius: 25px;
     background-color: #20313a;
     margin-top: 3rem;
     margin-bottom: 2rem;
+    position: relative;
     // border: 1px solid black;
     display: flex;
     flex-direction: row;
@@ -13200,7 +13201,30 @@ const Styles = styled.div `
     font-family: raleway;
     font-weight: bolder;
     font-size: 105%;
-}   
+}  
+
+.homepage-footer-left-body-socials {
+    width: auto;
+    margin-top: 0.65rem;
+    margin-left: 3.75rem;
+    // border: 1px solid white;
+    display: flex;
+    flex-direction: row;
+}
+
+.homepage-footer-left-body-socials-box { 
+    width: 2.25rem;
+    height: 2.25rem;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.homepage-footer-left-body-socials-box img { 
+    width: 20px;
+    height: 20px;
+}
 
 .homepage-footer-right {
     width: 45%;
@@ -13219,12 +13243,22 @@ const Styles = styled.div `
     color: #ff5733;
     font-size: 85%;
     font-family: lexend;
-    font-weight: normal;
-    cursor: pointer;
+    // font-weight: normal;
 }
 
-.homepage-footer-right-col h3:hover {
+.homepage-footer-right-col h2 {
+    color: #ff5733;
+    margin-top: 0.5rem;
+    margin-bottom: 0.65rem;
+    margin-left: -3rem;
+    // font-size: %;
+    font-family: lexend;
+    // font-weight: normal;
+}
+
+.homepage-footer-right-col label:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .homepage-footer-right-col-careers {
@@ -13253,27 +13287,87 @@ const Styles = styled.div `
     font-size: 72.5%;
 }
 
-.homepage-footer-left-body-socials {
-    width: auto;
-    margin-top: 0.65rem;
-    margin-left: 3.75rem;
-    // border: 1px solid white;
+.homepage-footer-right-col-contact { 
     display: flex;
     flex-direction: row;
+    height: 2rem;
+    margin-left: -3rem;
 }
 
-.homepage-footer-left-body-socials-box { 
-    width: 2.25rem;
-    height: 2.25rem;
+.homepage-footer-right-col-contact-icon { 
+    width: 10%;
     // border: 1px solid white;
     display: flex;
     align-items: center;
     justify-content: left;
 }
 
-.homepage-footer-left-body-socials-box img { 
+.homepage-footer-right-col-contact-icon img { 
     width: 20px;
     height: 20px;
+}
+
+.homepage-footer-right-col-contact-text { 
+    width: 90%;
+    // border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.homepage-footer-right-col-contact-text h3 {
+    font-size: 100%;
+    font-family: lexend;
+    color: #ff5733;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.homepage-footer-right-col-contact-text label:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.homepage-footer-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 3.75rem;
+    right: 3.75rem;
+    height: 6.5rem;
+    border: 3px solid #ff5733;
+    display: flex;
+    flex-direction: row;
+}
+
+.homepage-footer-bottom-left {
+    width: 50%;
+    border: 1px solid white;
+}
+
+.homepage-footer-bottom-left p {
+    color: #ff5733;
+    font-family: raleway;
+}   
+
+.homepage-footer-bottom-right {
+    width: 50%;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    justify-content: right;
+}
+
+
+.homepage-footer-bottom-right-col {
+    width: 30%;
+    border: 1px solid #ff5733;
+    text-align: right;
+}
+
+.homepage-footer-bottom-right-col p {
+    color: #ff5733;
+    font-family: raleway;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
@@ -22841,20 +22935,54 @@ export default class LandingPg extends Component {
                                         </div>
                                         <div className='homepage-footer-right'>
                                             <div className='homepage-footer-right-col'>
-                                                <h3>Brands (130+)</h3>
-                                                <h3>Jipange</h3>
-                                                <h3>Sell With Us</h3>
-                                                <h3>Sell Tickets</h3>
+                                                <h3><label>Brands (130+)</label></h3>
+                                                <h3><label>Jipange</label></h3>
+                                                <h3><label>Sell With Us</label></h3>
+                                                <h3><label>Sell Tickets</label></h3>
                                                 <div className='homepage-footer-right-col-careers'>
-                                                    <h3>Careers</h3>
+                                                    <h3><label>Careers</label></h3>
                                                     <span>We're hiring!</span>
                                                 </div>
                                                 
                                             </div>
                                             <div className='homepage-footer-right-col'>
-
+                                                <h2>Need help?</h2>
+                                                <div className='homepage-footer-right-col-contact'>
+                                                    <div className='homepage-footer-right-col-contact-icon'>
+                                                        <img src='/assets/icons/home-footer/phone-icon.png'/>
+                                                    </div>
+                                                    <div className='homepage-footer-right-col-contact-text'>
+                                                        <h3>0111393939</h3>
+                                                    </div>
+                                                </div>
+                                                <div className='homepage-footer-right-col-contact'>
+                                                    <div className='homepage-footer-right-col-contact-icon'>
+                                                        <img src='/assets/icons/home-footer/whatsapp-icon.png'/>
+                                                    </div>
+                                                    <div className='homepage-footer-right-col-contact-text'>
+                                                        <h3><label>Ask us a question on WhatsApp</label></h3>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
+
+                                        <div className='homepage-footer-bottom'>
+                                            <div className='homepage-footer-bottom-left'>
+                                                <p>© 2025 TuShop, All rights reserved.</p>
+                                            </div>
+                                            <div className='homepage-footer-bottom-right'>
+                                                <div className='homepage-footer-bottom-right-col'>
+                                                    <p>Privacy Policy</p>
+                                                </div>
+                                                <div className='homepage-footer-bottom-right-col'>
+                                                    <p>Terms of Service</p>
+                                                </div>
+                                                <div className='homepage-footer-bottom-right-col'>
+                                                    <p>Cookies Settings</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
 
                                 </div> 
