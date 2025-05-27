@@ -13204,7 +13204,40 @@ const Styles = styled.div `
 
 .homepage-footer-right {
     width: 45%;
-    // border: 1px solid white;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: row;
+}
+
+.homepage-footer-right-col {
+    width: 50%;
+    border: 1px solid white;
+    padding-top: 4.1rem;
+}
+
+.homepage-footer-right-col h3 {
+    color: #ff5733;
+    font-size: 95%;
+    font-family: lexend;
+}
+
+.homepage-footer-right-col-careers {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid white;
+}
+
+.homepage-footer-right-col-careers h3 {
+    margin-top: 0px;
+}
+
+.homepage-footer-right-col-careers span {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0.5rem;
+    background-color: white;
+    border-radius: 8px;
+    color: #ff5733;
 }
 
 .homepage-footer-left-body-socials {
@@ -13359,11 +13392,11 @@ export default class LandingPg extends Component {
             userSignedIn: true,
             userSignedInLoading: false,
             userSignedInTransition: true,
-            showAccountInformation: false,
+            showAccountInformation: true,
             showJipangeSettings: false,
             showPamojaSettings: false,
             showDeliveryInfoSettings: false,
-            showMyOrdersSettings: true,
+            showMyOrdersSettings: false,
             showFAQSettings: false,
             showSettingsPageLoading: false,
 
@@ -13637,12 +13670,12 @@ export default class LandingPg extends Component {
 
             //* - HOME SCREEN ACCOUNT SETTINGS - *//    
             accountSettingsOpen: false,
-            currentMenuOption: 4,
+            currentMenuOption: 1,
             showAccountSetupIncompleteHeader: true,
-            accountMenuOption1Selected: false,
+            accountMenuOption1Selected: true,
             accountMenuOption2Selected: false,
             accountMenuOption3Selected: false,
-            accountMenuOption4Selected: true,
+            accountMenuOption4Selected: false,
             accountMenuOption5Selected: false,
 
             //* - NAVBAR DROPDOWN OPTIONS INFO - *//
@@ -22794,7 +22827,20 @@ export default class LandingPg extends Component {
                                             </div>
                                         </div>
                                         <div className='homepage-footer-right'>
+                                            <div className='homepage-footer-right-col'>
+                                                <h3>Brands (130+)</h3>
+                                                <h3>Jipange</h3>
+                                                <h3>Sell With Us</h3>
+                                                <h3>Sell Tickets</h3>
+                                                <div className='homepage-footer-right-col-careers'>
+                                                    <h3>Careers</h3>
+                                                    <span>We're hiring!</span>
+                                                </div>
+                                                
+                                            </div>
+                                            <div className='homepage-footer-right-col'>
 
+                                            </div>
                                         </div>
                                     </div>
 
