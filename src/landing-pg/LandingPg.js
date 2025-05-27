@@ -13360,7 +13360,7 @@ const Styles = styled.div `
 
 
 .homepage-footer-bottom-right-col {
-    width: 30%;
+    width: 25%;
     border: 1px solid #ff5733;
     text-align: right;
 }
@@ -13368,6 +13368,7 @@ const Styles = styled.div `
 .homepage-footer-bottom-right-col p {
     color: #ff5733;
     font-family: raleway;
+    text-decoration: underline;
 }
 
     // - - CSS TRANSITIONS / ANIMATIONS - - //
