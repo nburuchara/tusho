@@ -1396,12 +1396,12 @@ const Styles = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.35s ease-in-out;
 }
 
 .navbar-options-dropdown-left-menu-options-cell-arrow img {
     width: 50%;
     margin-left: -8px;
+    transition: transform 0.35s ease-in-out;
 }
 
 .navbar-options-dropdown-left-menu-options-cell-arrow.clicked img {
@@ -13506,9 +13506,9 @@ export default class LandingPg extends Component {
             displayScrollUpBtn: false,
 
             //* - USER ACCOUNT STATUS - *//
-            userSignedIn: false,
+            userSignedIn: true,
             userSignedInLoading: false,
-            userSignedInTransition: false,
+            userSignedInTransition: true,
             showAccountInformation: true,
             showJipangeSettings: false,
             showPamojaSettings: false,
@@ -13778,7 +13778,7 @@ export default class LandingPg extends Component {
             otp: ['', '', '', '', '', ''], // Initial state for the 6 OTP digits
             countdown: 59, // Starting countdown value (in seconds)
             OTPBtnClicked: false,
-            OTPVerifySuccess: false,
+            OTPVerifySuccess: true,
             showEnterOPTBtnTextHome: true,
             showVerifyOPTBtnTextHome: true,
             verifyOTPBtnText: 'Verify OTP',
@@ -21302,8 +21302,8 @@ export default class LandingPg extends Component {
                                         <div onMouseEnter={this.handleAnnouncementBarMouseEnter} onMouseLeave={this.handleAnnouncementBarMouseLeave} onClick={this.handleAnnouncementBarMouseEnter} className="homepage-header-inner-header-left-update-display-announcement-container">
                                             <div ref={this.marqueeRef} className={`homepage-header-inner-header-left-update-display-announcement-track ${this.state.announcementBarIsPaused ? "paused" : ""}`} id="homepage-header-inner-header-left-update-display-announcement-track">
                                                 <div className="homepage-header-inner-header-left-update-display-announcement-wrapper">
-                                                    <span><strong>{this.state.dateTime} • </strong>Have a restful weekend mama (and papa)! 😎</span>
-                                                    <span><strong>OFFER(S) -  15% off</strong> Dairy Fresh Strawberry (offer ends <strong>today at 5:00pm</strong>) <strong>• 10% off</strong> Rinsun 250ml Oil (offer ends <strong>22/04/25 at 1:30pm</strong>) <strong>• 20% off </strong> Afia Multi-Vitamin Fruit Drink (1 litre) (offer ends <strong>30/04/25 at 2:30pm</strong>) <strong>• 20% off </strong> Afia Apple & Ginger Boost Fruit Drink (380ml) (offer ends <strong>30/04/25 at 2:30pm</strong>)</span>
+                                                    <span><strong>{this.state.dateTime} • </strong>You made it through Monday and made it look effortless! Let's show Tuesday who's boss mama! 😤</span>
+                                                    <span><strong>OFFER(S) </strong> Bio Salted Artisanal Butter (500g) (offer ends <strong>today at 5:00pm</strong>) <strong>• </strong> Tushop Fresh Local Watermelon (offer ends <strong>30/05/25 at 1:30pm</strong>) <strong>• </strong> TuShop Fresh Mwea Pishori Rice (1kg) (offer ends <strong>30/05/25 at 2:30pm</strong>) <strong>• </strong> TuShop Fresh Mixed Sizes Eggs (offer ends <strong>30/05/25 at 2:30pm</strong>)</span>
                                                     <span><strong>IMPROVEMENTS TO YOUR SHOPPING EXPERIENCE - </strong>We fixed the shopping cart closing suddenly issue, and we added <strong>Airtel Money</strong> as a payment option!</span>
                                                 </div>
                                             </div>
